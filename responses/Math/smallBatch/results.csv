@@ -1,4 +1,544 @@
 Question,Response,Correct,BruteForce,Status
 "You are on your way to visit your Grandma, who lives at the end of the valley. It's her birthday, and you want to give her the cakes you've made.
 Between your house and her house, you have to cross 7 bridges, and as it goes in the land of make believe, there is a troll under every bridge! Each troll, quite rightly, insists that you pay a troll toll. Before you can cross their bridge, you have to give them half of the cakes you are carrying, but as they are kind trolls, they each give you back a single cake.
-How many cakes do you have to leave home with to make sure that you arrive at Grandma's with exactly 2 cakes?",,,,incomplete
+How many cakes do you have to leave home with to make sure that you arrive at Grandma's with exactly 2 cakes?","Let the number of cakes you carry
+
+  before the 1st bridge be C₀,  
+  after the 1st (before the 2nd) be C₁,  
+  … ,  
+  after the 7th bridge be C₇.
+
+Rule at every bridge  
+ (1) you hand over half of what you have;  
+ (2) the troll immediately gives one cake back.
+
+Hence, if you reach a bridge with x cakes you leave it with
+
+  x/2 + 1   (you keep the other half and receive one more).
+
+So, for every i = 1,…,7
+
+  Cᵢ = ½ C_{i‑1} + 1.  (1)
+
+We want C₇ = 2 and C₀ a whole number, with “half of the cakes” always an integer.
+
+Working backwards is simplest.  
+Rewrite (1) as
+
+  C_{i‑1} = 2(Cᵢ – 1).  (2)
+
+Start with the desired final amount:
+
+ C₇ = 2.
+
+Bridge 7 (use (2))  
+ C₆ = 2(2 – 1) = 2.
+
+Bridge 6  
+ C₅ = 2(2 – 1) = 2.
+
+And so on.  Repeating (2) five more times always gives
+
+ C₄ = 2, C₃ = 2, C₂ = 2, C₁ = 2, C₀ = 2.
+
+Thus you must leave home with C₀ = 2 cakes.
+
+Check (forward direction):
+
+Start with 2.  
+At each bridge you give 1, keep 1, receive 1 – so you still have 2.  
+After the 7th bridge you therefore have exactly 2 cakes for Grandma.
+
+No other whole starting number can work:  
+Equation (1) iterated seven times gives
+
+ C₇ = (½)⁷ C₀ + 2(1 – (½)⁷).
+
+Setting C₇ = 2 forces C₀ = 2, the unique integer solution.
+
+Hence you must leave home with 2 cakes.",,,completed
+"A bridge was guarded by an evil troll. The troll was very intelligent, but he was also a coward. He was afraid of anyone smarter than him. So every time anyone tried to cross the bridge, the troll would set up a test. If the traveler passed the test, he would be allowed to cross. Otherwise, the troll would eat him.
+A judge named Oscar came across the bridge. The troll said, ""You may only cross my bridge if you know the password."" He then wrote 26 equations on a rock: A=1, B=2, and so on until Z=26.
+""Today's password is the name of a woman,"" said the troll. ""The woman's name has the same 'product' as the word JUDGE, that is, 10*21*4*7*5. It also has the same number of letters as JUDGE. However it has no letters in common with JUDGE.""
+""When the first and second letters in the woman's name are switched around, the letters are in alphabetical order.""
+""Finally,"" said the troll, ""the woman's name does not contain the letter C because I despise the number 3.""
+So, what is the password? And why couldn't the troll use similar rules to create a password using the name OSCAR rather than the word JUDGE?","The password is  
+
+FANNY  
+
+and here is why it is the only five‑letter woman’s name that satisfies every one of the troll’s conditions.
+
+--------------------------------------------------------------------
+1.  “The woman’s name has the same ‘product’ as JUDGE.”
+
+   Assigning A = 1, B = 2, … , Z = 26,  
+
+          JUDGE  → 10·21·4·7·5  
+                   = 2³ · 3 · 5² · 7²         …(1)
+
+   Any admissible name must have exactly this prime factorisation.
+
+--------------------------------------------------------------------
+2.  “However it has no letters in common with JUDGE and may not contain C.”
+
+   Hence the letters  J (10), U (21), D (4), G (7), E (5), C (3)
+   are forbidden.
+
+--------------------------------------------------------------------
+3.  Supplying the factor 7² without using 7 or 21.
+
+   Among the numbers 1–26 the only values that contain a factor 7 are
+   7 (= G), 14 (= N) and 21 (= U).  
+   With 7 and 21 forbidden, the factor 7 can only be obtained from 14,
+   so 14 (= N) must appear twice:
+
+          N · N = 14² = 2² · 7²                           …(2)
+
+--------------------------------------------------------------------
+4.  What remains to be supplied?
+
+   Dividing (1) by (2):
+
+          (2³ · 3 · 5² · 7²) / (2² · 7²) = 2 · 3 · 5² = 150.
+
+   Three letters are still needed whose values multiply to 150
+   and none of them may be J, U, D, G, E or C.
+
+--------------------------------------------------------------------
+5.  Building the remaining factor 150.
+
+   150 = 25 · 6 · 1  ( = Y · F · A )
+
+   • Y = 25 supplies 5².  
+   • F = 6 supplies 2·3.  
+   • A = 1 changes nothing and is allowed.
+
+   So altogether we have the multiset of letters  
+
+          { N, N, Y, F, A }.
+
+--------------------------------------------------------------------
+6.  Arranging the letters.
+
+   The name must be five letters long, and when the first two letters
+   are interchanged the whole word must read in alphabetical order.
+
+   Writing the letters as F A N N Y gives
+
+          FANNY.
+
+   Swapping the first two letters yields
+
+          A F N N Y,
+
+   which is indeed in alphabetical order.
+
+--------------------------------------------------------------------
+7.  Verifying every requirement.
+
+   • Product: 6·1·14·14·25 = 29 400 = product of JUDGE.  
+   • Length: 5 letters.  
+   • No common letter with J, U, D, G, E, or C.  
+   • Contains no C.  
+   • After swapping the first two letters the word is alphabetical.
+
+   Therefore the unique password is FANNY.
+
+--------------------------------------------------------------------
+Why a similar trick cannot be done with the word OSCAR
+------------------------------------------------------
+
+For OSCAR we would have
+
+          O S C A R  → 15·19·3·1·18 = 2 · 3⁴ · 5 · 19.
+
+The prime 19 is present exactly once.  
+Among the numbers 1–26 the only number divisible by 19 is 19 itself,
+which corresponds to the letter S – one of the letters in OSCAR that
+would have to be excluded in any “no‑letters‑in‑common” rule.
+
+Because the factor 19 cannot be supplied without re‑using the forbidden
+letter S, it is impossible to construct any five‑letter word (woman’s
+name or otherwise) that satisfies the same set of conditions with the
+word OSCAR.",,,completed
+"Can you share 1/4 of a pie, 1/3 of a pie, 1/2 of a pie, 2/3 of a pie, 3/4 of a pie, and a whole pie so that two people have the same amount of pie without making any cuts?
+If so, how?","First find out how much pie there is altogether:
+
+1/4 + 1/3 + 1/2 + 2/3 + 3/4 + 1
+= 3/12 + 4/12 + 6/12 + 8/12 + 9/12 + 12/12   (common denominator 12)
+= 42/12
+= 3 1/2 pies.
+
+To divide this equally between two people, each person must receive
+
+(3 1/2) ÷ 2 = 1 3/4 pies.
+
+Now look for an uncuttable combination of the given pieces that totals 1 3/4.
+
+Notice that a whole pie (1) together with the 3/4‑pie piece gives exactly
+
+1 + 3/4 = 1 3/4.
+
+Give these two pieces to the first person.
+
+The remaining pieces are 1/2, 2/3, 1/3, and 1/4.  Check their total:
+
+1/2 + 2/3 + 1/3 + 1/4
+= 6/12 + 8/12 + 4/12 + 3/12
+= 21/12
+= 1 3/4.
+
+Give these four pieces to the second person.
+
+Thus, without making any cuts, the pieces can be shared as follows:
+
+Person A: the whole pie (1) and the 3/4‑pie piece.
+Person B: the 1/2‑pie, the 2/3‑pie, the 1/3‑pie, and the 1/4‑pie pieces.
+
+Each receives exactly 1 3/4 pies, so the division is equal.",,,completed
+"Al and Ben are standing back to back next to a railroad track. When the front of a train passes them, Al starts to walk in the opposite direction of the train, while Ben starts to walk in the same direction as the train. Each stops walking when the back of the train passes him. If the two of them walk at the same speed, and Al walks exactly 30 feet, and Ben walks exactly 45 feet, how long is the train?","Let  
+
+• v = speed of the train (relative to the ground)  
+• w = walking speed of Al and Ben (same for both, w > 0)  
+• L = length of the train (what we want)
+
+Choose the point where Al and Ben stand as the origin x = 0 and the moment the train’s front passes them as t = 0.  
+The train moves in the positive x‑direction.
+
+Positions at any later time t:
+
+Front of train: x = vt  
+Back of train: x = vt – L  
+Al (walking opposite the train): x = –wt  
+Ben (walking with the train): x = +wt
+
+-------------------------------------------------
+1.  When does Al stop?
+
+Al stops when the back of the train reaches him:
+
+  –wt_A = vt_A – L  
+  (v + w) t_A = L  
+  t_A = L / (v + w)
+
+During this time Al walks a distance
+
+  w t_A = w·L /(v + w) = 30 ft. (Equation A)
+-------------------------------------------------
+2.  When does Ben stop?
+
+Ben stops when the back of the train reaches him:
+
+  wt_B = vt_B – L  
+  (v – w) t_B = L  
+  t_B = L / (v – w)
+
+During this time Ben walks a distance
+
+  w t_B = w·L /(v – w) = 45 ft. (Equation B)
+-------------------------------------------------
+3.  Relate v and w.
+
+Divide Equation B by Equation A:
+
+  [wL/(v – w)] ÷ [wL/(v + w)] = 45 / 30 = 3 / 2  
+  (v + w)/(v – w) = 3/2
+
+Cross–multiplying:
+
+  2(v + w) = 3(v – w)  
+  2v + 2w = 3v – 3w  
+  v = 5w.
+
+Thus the train travels 5 times as fast as Al and Ben walk.
+-------------------------------------------------
+4.  Find L.
+
+Insert v = 5w into Equation A:
+
+  w·L /(5w + w) = 30  
+  w·L /(6w) = 30  
+  L / 6 = 30  
+  L = 180 ft.
+
+(We could also check with Equation B: L/4 = 45 ⇒ L = 180 ft, confirming consistency.)
+-------------------------------------------------
+Conclusion.
+
+The length of the train is 180 feet.",,,completed
+"Two 2s can be combined in many ways to express different numbers. Here are some!
+2-2=0
+2/2 = 1
+.2 + 2 = 2.2
+(2^2)! = 24  (4! means 4x3x2x1) (2^2 is 2 to the power of 2)
+**CHALLENGE!**
+Can you write an expression that has the value of exactly 5, using:
+* two, and only two, 2s, and
+* any mathematical symbols or operations?
+You may not use any other numbers. The symbols used would be known by most high school maths students.
+The hint below lists the symbols that are used in this solution. Even with that information, it is a worthy challenge!
+Of course, other solutions may be possible! Solvers should write these in the Comments section.","One possible way is  
+
+          √(0.2 ^ –2)
+
+Why it works  
+1.  0.2 contains one ‘2’.  
+2.  The exponent –2 supplies the second and last ‘2’.  
+   (The minus sign is just a symbol, not another number.)  
+3.  Evaluate the expression:  
+        0.2 = 1/5  
+        (1/5)^(–2) = 5^2 = 25  
+        √25 = 5  
+
+No other numeral appears, so the requirement of “two, and only two, 2s” is met and the value is exactly 5.",,,completed
+"After visiting my Great Aunt Annie, I travelled home in her old jalopy. The car was old and battered, it had a leak from the petrol tank, and I was stuck in second gear.
+This meant that I could only travel along at a steady 30 miles per hour and managed a paltry 20 miles per gallon of fuel.
+At the start of the journey I had placed exactly 10 gallons of fuel into the tank. I knew though, that the fuel tank lost fuel at the rate of half a gallon per hour.
+Just as I arrived home, the car stopped because it had run out of fuel and I had only just made it.
+How far was it from my Great Aunt's to my home?","Let  
+
+t = time of the journey in hours  
+d = distance from Aunt Annie’s house to home (miles)
+
+1.  Constant speed  
+   The car is stuck in second gear, so  
+   d = 30 mi/h × t  ⇒ d = 30t. (1)
+
+2.  Fuel used by the engine  
+   The car covers 20 miles per gallon, i.e.  
+   1 gallon is consumed every 20 miles.  
+   Engine fuel used = d / 20 gallons. (2)
+
+3.  Fuel lost through the leak  
+   The leak empties ½ gallon each hour, so  
+   Leaked fuel = 0.5 t gallons. (3)
+
+4.  Total fuel consumed  
+   Total = (engine) + (leak)  
+   = d/20 + 0.5t gallons. (4)
+
+5.  Fuel balance  
+   The tank held exactly 10 gallons at the start and was empty on arrival, so  
+   d/20 + 0.5t = 10. (5)
+
+6.  Substitute d = 30t from (1) into (5):  
+   (30t)/20 + 0.5t = 10  
+   1.5t + 0.5t = 10  
+   2t = 10  
+   t = 5 hours. (6)
+
+7.  Distance travelled  
+   d = 30t = 30 × 5 = 150 miles. (7)
+
+Therefore, Aunt Annie’s house is 150 miles from home.",,,completed
+"There are a large number of people at a party. As there naturally are a lot of people who haven't met each other before, numerous handshakes occur. Assume that each individual handshake occurs between exactly two people.
+Are there an even or odd number of people at the party who shook hands with an odd number of people?","Answer:  There must be an even number of people who shook hands with an odd number of other people.
+
+Proof:
+
+1.  Model the party as a graph.  
+    • Each person is a vertex.  
+    • Each handshake between two people is an edge joining the corresponding vertices.
+
+2.  Let d(v) denote the degree of a vertex v, i.e. the number of handshakes that person took part in.
+
+3.  Handshake Lemma (degree‑sum formula).  
+    The total of all degrees equals twice the number of edges, because each edge contributes 1 to the degree of each of its two endpoints:  
+               Σ d(v)  =  2 · (# of edges).  
+    Hence Σ d(v) is an even integer.
+
+4.  Separate the vertices into two groups.  
+    • E = set of vertices of even degree.  
+    • O = set of vertices of odd degree.
+
+    Then  
+               Σ d(v)  =  Σ_{v∈E} d(v)  +  Σ_{v∈O} d(v).
+
+5.  Parity considerations.  
+    • Each term in Σ_{v∈E} d(v) is even, so that whole sum is even.  
+    • Each term in Σ_{v∈O} d(v) is odd; adding k odd numbers yields an even total exactly when k itself is even and an odd total when k is odd.
+
+    Let k = |O|, the number of vertices of odd degree.  
+    Then Σ_{v∈O} d(v) has the same parity (even/odd) as k.
+
+6.  Since Σ d(v) is even (step 3) and Σ_{v∈E} d(v) is even (step 5), their difference Σ_{v∈O} d(v) must also be even.  
+    Therefore k must be even.
+
+7.  Conclusion.  
+    The number of people whose handshake count is odd – the number of vertices of odd degree – is necessarily even.
+
+Hence at any party, an even number of attendees shake hands an odd number of times.",,,completed
+"Every two hours, a ferry leaves Froopaloop Island and heads due east to the mainland, taking exactly one hour. Then it leaves the mainland and heads due west back to the island, again taking exactly one hour. Then it repeats.
+Instead of taking the ferry to Froopaloop Island, Heather prefers to do something very risky: she dons her gorgeous white bikini and swims to the island. (The inhabitants of the island don't know what she looks like with clothes on.)
+One day, Heather left the mainland terminal at exactly the same time the ferry left the island terminal. Exactly 50 minutes later, the ferry passed her.
+Assuming both Heather and the ferry travel at a constant speed, and ignoring the time the ferry spends at the mainland terminal, how much time passed between the ferry passing Heather in the opposite direction and passing her in the same direction?","Let  
+
+ D  = distance between the island and the mainland  
+ F  = speed of the ferry (distance per hour)  
+ H  = speed of Heather (distance per hour)  
+
+Take the island as position 0 and the mainland as position D on an east–west line.
+
+1.  Motion from t = 0 to the first meeting  
+    • At t = 0 the ferry leaves the island heading east; its position is  
+      x_f = F t.  
+    • Heather leaves the mainland heading west; her position is  
+      x_h = D − H t.
+
+    They pass at t₁ = 50 min = 5⁄6 h, so
+
+  F t₁ = D − H t₁.    (1)
+
+    The ferry needs exactly one hour to cover the whole distance, so
+  F = D.              (2)
+
+    Substitute (2) in (1):
+
+  D·t₁ = D − H t₁  
+  H t₁ = D(1 − t₁)  
+  H = D(1 − t₁)/t₁.
+
+    With t₁ = 5⁄6,
+
+  H = D(1 − 5⁄6)/(5⁄6) = D(1⁄6)/(5⁄6) = D/5.
+
+    Thus Heather swims at one‑fifth the ferry’s speed.
+
+2.  Positions at t = 1 h  
+    • Ferry: has reached the mainland (x = D) and immediately turns around.  
+    • Heather: x_h(1) = D − H·1 = D − (D/5) = 4D/5, leaving 4D/5 still to swim.
+
+3.  Motion after t = 1 h  
+    For 1 h ≤ t ≤ 2 h the ferry is heading west:
+
+  x_f = D − F(t − 1) = D − D(t − 1) = D(2 − t).
+
+    Heather continues west at the same speed:
+
+  x_h = D − H t = D − (D/5)t.
+
+    They meet again (now moving in the same direction) when x_f = x_h:
+
+  D(2 − t₂) = D − (D/5)t₂  
+  2 − t₂ = 1 − (1/5)t₂  
+  1 = (4/5)t₂  
+  t₂ = 5/4 h = 1 h 15 min.
+
+4.  Time between the two meetings  
+    t₁ = 5⁄6 h = 50 min  
+    t₂ = 5⁄4 h = 75 min  
+
+ Δt = t₂ − t₁ = 5⁄4 − 5⁄6 = 5⁄12 h = 25 min.
+
+Answer: 25 minutes passed between the ferry’s first and second encounters with Heather.",,,completed
+"Some people believe that January 1, 2000 is the first day of the 21st century. Other people believe that the honor belongs to January 1, 2001. But everyone should agree that January 1, 2002 is the first ""sum-day"" of the new century- when you write out that date in standard notation, it becomes 01/01/02, and 1+1=2. More generally, a sum-day is a date in which the day and month add up to the year. With that in mind:
+A) What is the last sum-day of the 21st century?
+B) How many sum-days are there in the 21st century?","Write every calendar date of the century in the form  
+
+  month / day / year  → m / d / yy ,   1 ≤ m ≤ 12,   1 ≤ d ≤ the length of month m .
+
+A “sum‑day’’ satisfies m + d = yy.
+
+--------------------------------------------------------------------
+1.  Which years can contain a sum‑day?
+--------------------------------------------------------------------
+The largest possible value of m + d is obtained from 12 + 31 = 43.
+Hence yy can be at most 43.  
+(When yy = 00…01 there is nothing to add up to 0 or 1.)  
+Therefore all sum‑days must fall in the years
+
+  2002 (= 02) , 2003 (= 03) , … , 2043 (= 43).
+
+--------------------------------------------------------------------
+2.  The last sum‑day
+--------------------------------------------------------------------
+Look at the last of these years, 2043 (yy = 43).  
+For every month m we would need a day
+
+  d = 43 – m .
+
+The only month that leaves a legitimate calendar day is
+
+  m = 12 → d = 43 – 12 = 31,
+
+and 31 is indeed a valid day of December.  
+Hence the chronologically last sum‑day of the 21st century is
+
+  December 31, 2043  (12/31/43).
+
+--------------------------------------------------------------------
+3.  How many sum‑days are there?
+--------------------------------------------------------------------
+For a fixed year yy = N (2 ≤ N ≤ 43) each month gives the prospective
+date (m, N – m).  Two things can make such a date illegal:
+
+ a) the “day’’ N – m is ≤ 0, or  
+ b) that “day’’ exceeds the length of month m  
+  (31 for Jan, Mar, …; 30 for Apr, Jun, …; 28 for Feb – 29 can be ignored
+  because 2 + 29 = 31 and 2031 is not a leap‑year).
+
+Start with the number of possible months and subtract the illegal ones.
+
+•  For N ≤ 12  the only obstruction is N – m > 0, so exactly N – 1
+   months work.
+
+•  For 13 ≤ N ≤ 30  the “day’’ is at most 28, so every month works – 12
+   sum‑days per year.
+
+•  Beginning with N = 31 the “day’’ can be too large.  Counting the
+   months that fail gives the following table
+
+  N : 31  32  33  34  35  36  37  38  39  40  41  42  43  
+  # valid months :
+    11  11  10  10   8   8   6   6   5   3   3   1   1
+
+Putting everything together
+
+ Years 02–12  (11 years)  1+2+⋯+11 = 66  
+ Years 13–30  (18 years)  18 × 12   = 216  
+ Years 31–43  (13 years)  sum above  =  83  
+ -------------------------------------------------
+ Total number of sum‑days  66 + 216 + 83 = 365
+
+--------------------------------------------------------------------
+Answer
+--------------------------------------------------------------------
+A)  December 31, 2043  (12/31/43) is the last sum‑day of the century.  
+B)  There are exactly 365 sum‑days in the 21st century.",,,completed
+"Looking at the 3 ""equations"" below, what is the answer to the 4th one?
+8 + 2 = 16106
+5 + 4 = 2091
+9 + 6 = 54153
+7 + 3 = ?","Observe what each pair of numbers is producing.
+
+1) 8 and 2 give 16106  
+   • Product: 8 × 2 = 16  
+   • Sum:     8 + 2 = 10  
+   • Difference: 8 − 2 = 6  
+   Writing these three results one after another (16 10 6) yields 16106.
+
+2) 5 and 4 give 2091  
+   • Product: 5 × 4 = 20  
+   • Sum:     5 + 4 = 9  
+   • Difference: 5 − 4 = 1  
+   Concatenating 20 9 1 produces 2091.
+
+3) 9 and 6 give 54153  
+   • Product: 9 × 6 = 54  
+   • Sum:     9 + 6 = 15  
+   • Difference: 9 − 6 = 3  
+   Putting 54 15 3 together gives 54153.
+
+Thus the rule is:
+For two numbers a and b (with a ≥ b) write, in order,  
+product (a·b), sum (a+b) and difference (a−b).
+
+Now apply the same rule to 7 and 3.
+
+• Product: 7 × 3 = 21  
+• Sum:    7 + 3 = 10  
+• Difference: 7 − 3 = 4  
+
+Concatenate 21 10 4 → 21104.
+
+Answer: 21104",,,completed

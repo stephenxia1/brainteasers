@@ -1,7 +1,9 @@
 # brainteasers
-Please use python queryGPT.py --name [Name of your experiment] --dataset [Math/Logic] --rows [Default is 1] --samples [Default is 1]
-Name is just the name of your logic, it will search for a corresponding .txt file in prompting to give as instructions
+Please use python queryGPT.py --name [Name of your experiment] --dataset [Math/Logic] --prompt ["promptInstructions.txt"] --rows [Default is 1] --samples [Default is 1]
+
+Name is just the name of your experiment
 Dataset is Math or Logic
+Prompt is your instructions file
 Rows is the # of problems from the data to sample on
 Samples is the # of times to query each question
 Results will be saved in ./results

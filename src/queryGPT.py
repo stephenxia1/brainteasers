@@ -29,7 +29,8 @@ def main():
     outputs = pd.DataFrame(columns=['Question', 'Response', 'Correct', 'BruteForce'])
 
     instructions = readPrompt(f'../prompting/{args.prompt}.txt')
-    
+    print("Instructions:", instructions)
+
     client = OpenAI(
         api_key= os.getenv("OPENAI_API_KEY")
     )
@@ -45,7 +46,7 @@ def main():
 
             response = client.responses.create(
                 # model="gpt-o1-2024-12-17",
-                model="o1-2024-12-17",
+                model="o3-2025-04-16",
                 instructions=instructions,
                 input=question,
                 # text={
@@ -75,9 +76,11 @@ def main():
                 #         "strict": True
                 #     }
                 # }
-                max_output_tokens=100000,
+                max_output_tokens=25000,
             )
             print(response.output_text)
+
+            print("TOKENS USED:", response.usage.total_tokens)
 
             # modelResponse = response.output[0].content[0]
             modelResponse = response.output_text
