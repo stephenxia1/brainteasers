@@ -3,7 +3,6 @@ data
 **/bash/
 **/__pycache__
 **/.DS_Store
-**/results/
 
 # Models
 **/*.pt
@@ -14,3 +13,4 @@ data
 # Data
 **/*.npy
 **/*.npz
+src/test.py

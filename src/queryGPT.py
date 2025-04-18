@@ -18,7 +18,9 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", help="Experiment Name", default=f'TestExperiment-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")}', required=True)
     parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], default="Math", required=True)
-
+    parser.add_argument("--rows", help="Number of rows to sample", type=int, default=1, required=False)
+    parser.add_argument("--samples", help="Number of samples to run", type=int, default=1, required=False)
+    
     args = parser.parse_args()
     os.makedirs(f"../../results/{args.name}", exist_ok=True)
 
@@ -31,27 +33,61 @@ def main():
         api_key= os.getenv("OPENAI_API_KEY")
     )
     
-    for _, row in data.iterrows():
-        question = row['Question']
-        solution = row['Answer']
-        hint = row['Hint']
+    for index, row in data.iterrows():
+        if index >= args.rows:
+            break
 
-        response = client.completions.create(
-            model="gpt-4o",
-            prompt=[
-                {"role": "system", "content": instructions},
-                {"role": "user", "content": question}
-            ]
-        )
+        for _ in range(args.samples):
+            question = row['Question']
+            solution = row['Answer']
+            hint = row['Hint']
 
-        modelResponse = response.choices[0].message.content
+            response = client.responses.create(
+                model="gpt-4o",
+                input=[
+                    {"role": "system", "content": instructions},
+                    {"role": "user", "content": question}
+                ],
+                text={
+                    "format": {
+                        "type": "json_schema",
+                        "name": "math_reasoning",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "steps": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "explanation": { "type": "string" },
+                                            "output": { "type": "string" }
+                                        },
+                                        "required": ["explanation", "output"],
+                                        "additionalProperties": False
+                                    }
+                                },
+                                "final_answer": { "type": "string" }
+                            },
+                            "required": ["steps", "final_answer"],
+                            "additionalProperties": False
+                        },
+                        "strict": True
+                    }
+                }
+            )
+            print(response.output_text)
 
-        outputs = outputs.append({
-            'Question': question,
-            'Response': modelResponse,
-            'Correct': False,
-            'BruteForce': False
-        }, ignore_index=True)
+            # modelResponse = response.output[0].content[0]
+
+            outputs = pd.concat([outputs, pd.DataFrame({
+                'Question': [question],
+                'Response': [response.output_text],
+                'Correct': [solution],
+                'BruteForce': [hint]
+            })], ignore_index=True)
+
+    outputs.to_csv(f"../results/{args.name}-results.csv", index=False)
 
 if __name__ == "__main__":
     main()
