@@ -1,0 +1,3 @@
+Can you use formal logic to solve this problem, without actually writing down the symbolic/formal logic statements (i.e., only use natural language for any formal statements that you want to use)? Please spell out your entire reasoning steps.
+
+Output the final answer in the format of "[FINAL ANSWER]: " at the end of your answer. 
