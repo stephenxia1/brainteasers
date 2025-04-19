@@ -1,0 +1,216 @@
+Question,PromptType,Response,Status,Model
+"You are on your way to visit your Grandma, who lives at the end of the valley. It's her birthday, and you want to give her the cakes you've made.
+Between your house and her house, you have to cross 7 bridges, and as it goes in the land of make believe, there is a troll under every bridge! Each troll, quite rightly, insists that you pay a troll toll. Before you can cross their bridge, you have to give them half of the cakes you are carrying, but as they are kind trolls, they each give you back a single cake.
+How many cakes do you have to leave home with to make sure that you arrive at Grandma's with exactly 2 cakes?",basicprompt,"Let  
+n₀ = number of cakes you start with,  
+n₁ = cakes you have after crossing the 1st bridge,  
+n₂ = cakes after the 2nd bridge, … ,  
+n₇ = cakes after the 7th bridge (at Grandma’s).
+
+What a troll does  
+• You arrive with n cakes.  
+• You give the troll half of them → you have n/2 left.  
+• The troll gives you back 1 cake → you leave with n/2 + 1.
+
+So the forward rule is
+n_{k+1} = n_k / 2 + 1.
+
+To work out what you must have had before a bridge, invert this rule:
+
+If after a bridge you have c cakes, then just before that bridge you had
+n = 2(c – 1).
+
+We want n₇ = 2.  
+Work backwards:
+
+n₆ = 2(2 – 1) = 2  
+n₅ = 2(2 – 1) = 2  
+…  
+n₁ = 2(2 – 1) = 2  
+n₀ = 2(2 – 1) = 2.
+
+At every step the required number remains 2, and it is even, so the “give half” condition is always satisfied.
+
+Check going forward:
+
+Start with 2.  
+• Bridge 1: give 1 → 1 left, get 1 back → 2.  
+• Bridge 2: give 1 → 1 left, get 1 back → 2.  
+Repeat through Bridge 7: you still have 2 cakes.
+
+Therefore, leaving home with 2 cakes guarantees you arrive with exactly 2 cakes after seven bridges.
+
+[FINAL ANSWER]: 2",completed,GPT-o3
+"You are on your way to visit your Grandma, who lives at the end of the valley. It's her birthday, and you want to give her the cakes you've made.
+Between your house and her house, you have to cross 7 bridges, and as it goes in the land of make believe, there is a troll under every bridge! Each troll, quite rightly, insists that you pay a troll toll. Before you can cross their bridge, you have to give them half of the cakes you are carrying, but as they are kind trolls, they each give you back a single cake.
+How many cakes do you have to leave home with to make sure that you arrive at Grandma's with exactly 2 cakes?",mathPrompt,"Let C₀ be the number of cakes you leave home with.  
+After you reach the far side of one bridge the following happens:
+
+• You hand the troll half of what you are carrying (so you keep C/2).  
+• The troll then returns one cake, so you finish the crossing with
+
+  C′ = C/2 + 1.
+
+Because you must be able to give “half” an integer number of cakes, the amount you carry just before each bridge must be even.
+
+Denote by C₁, C₂, … , C₇ the numbers of cakes you have after crossing the 1st, 2nd, … , 7th bridge, with C₇ required to be 2 (the cakes for Grandma).
+
+Work backwards from Grandma:
+
+C₇ = 2  
+Before the 7‑th bridge you had to possess
+
+ C₆ = 2(C₇ – 1) = 2(2 – 1) = 2.
+
+Applying the same reverse step repeatedly,
+
+C₅ = 2(C₆ – 1) = 2,  
+C₄ = 2(C₅ – 1) = 2,  
+…  
+C₁ = 2(C₂ – 1) = 2,  
+C₀ = 2(C₁ – 1) = 2.
+
+Thus you must leave home with exactly two cakes, and you will in fact carry two cakes the entire journey:
+
+• Arrive at a bridge with 2, give 1, receive 1, leave with 2.  
+• Repeat this process at each of the 7 bridges.
+
+Therefore you reach Grandma’s house with the desired two cakes.
+
+[FINAL ANSWER]: 2",completed,GPT-o3
+"You are on your way to visit your Grandma, who lives at the end of the valley. It's her birthday, and you want to give her the cakes you've made.
+Between your house and her house, you have to cross 7 bridges, and as it goes in the land of make believe, there is a troll under every bridge! Each troll, quite rightly, insists that you pay a troll toll. Before you can cross their bridge, you have to give them half of the cakes you are carrying, but as they are kind trolls, they each give you back a single cake.
+How many cakes do you have to leave home with to make sure that you arrive at Grandma's with exactly 2 cakes?",explicit_symbol_reasoning_prompt,"Let  
+
+T(n)  =  the number of cakes you have ​after​ you cross a bridge if you arrive ​before​ the bridge with n cakes.  
+By the statement of the problem,
+
+1. You must hand over half of what you have: n/2 cakes.  
+2. The troll immediately gives 1 cake back.
+
+Hence  
+  T(n) = n – n/2 + 1 = n/2 + 1.                     (1)
+
+Because cakes are indivisible, n must be even whenever (1) is applied.  
+There are 7 bridges, so (1) is applied 7 consecutive times.  
+Let  
+
+n₀ = number of cakes you leave home with,  
+n₁ = cakes after the 1st bridge,  
+n₂ = cakes after the 2nd bridge, … ,  
+n₇ = cakes after the 7th (last) bridge.
+
+Then for every i = 0,…,6,
+
+  n_{i+1} = T(n_i) = n_i/2 + 1.                    (2)
+
+We want to arrive at Grandma’s with exactly 2 cakes:
+
+  n₇ = 2.                                           (3)
+
+Rather than compute (2) forward seven times, invert (2):
+
+If m = n/2 + 1, then n = 2(m – 1).  
+Define the inverse map  
+
+  S(m) = 2(m – 1).                                 (4)
+
+From (2)–(3),
+
+  n₆ = S(n₇) = 2(2 – 1) = 2  
+  n₅ = S(n₆) = 2(2 – 1) = 2  
+  ⋯  
+  n₀ = S(n₁) = 2(2 – 1) = 2.
+
+Thus every n_i equals 2, and in particular
+
+  n₀ = 2.
+
+Verification forward:
+
+Start with 2.  
+At each bridge: give half (1), receive 1 → back to 2.  
+After the 7th bridge you still have 2 cakes, exactly as desired.
+
+Therefore you need to leave home carrying 2 cakes.
+
+[FINAL ANSWER]: 2",completed,GPT-o3
+"You are on your way to visit your Grandma, who lives at the end of the valley. It's her birthday, and you want to give her the cakes you've made.
+Between your house and her house, you have to cross 7 bridges, and as it goes in the land of make believe, there is a troll under every bridge! Each troll, quite rightly, insists that you pay a troll toll. Before you can cross their bridge, you have to give them half of the cakes you are carrying, but as they are kind trolls, they each give you back a single cake.
+How many cakes do you have to leave home with to make sure that you arrive at Grandma's with exactly 2 cakes?",implicit_symbol_reasoning_prompt,"We want a whole‑number starting quantity of cakes that, after paying the toll at each of the seven bridges, leaves us with exactly 2 cakes at Grandma’s.
+
+What happens at one bridge  
+Suppose you reach a bridge carrying x cakes.
+
+1. You must give the troll half of them, i.e. x⁄2 cakes.  
+2. The troll then gives you 1 cake back.
+
+So after crossing the bridge you are carrying
+
+  x – (x⁄2) + 1 = x⁄2 + 1 cakes.
+
+Thus “crossing one bridge” transforms the number of cakes according to the rule
+
+  x ↦ x⁄2 + 1.
+
+Working backward instead  
+It is easier to start from the desired final number (2 cakes) and undo each bridge in reverse order.
+
+If you had y cakes just after crossing some bridge, how many cakes, x, must you have had just before that bridge?
+
+From the forward rule, y = x⁄2 + 1.  
+Solving for x gives x = 2(y – 1) = 2y – 2.
+
+Therefore the inverse rule is
+
+  y ↦ 2y – 2.
+
+Now start with the 2 cakes you want to have after the seventh (last) bridge and apply the inverse rule seven times:
+
+After 7th bridge: 2  
+Before 7th bridge: 2·2 – 2 = 2  
+Before 6th bridge: 2·2 – 2 = 2  
+⋯  
+Before 1st bridge: 2·2 – 2 = 2.
+
+The number never changes: it remains 2 at every step. This means that if you set out with 2 cakes, each bridge leaves you with exactly 2 cakes again, so you will arrive at Grandma’s with the required 2 cakes.
+
+Minimality  
+Because the toll at every bridge is “half of what you have”, you must always have an even number of cakes when you arrive at a bridge. Two is the smallest even positive integer. Since starting with 2 works, it is also the smallest possible solution.
+
+[FINAL ANSWER]: 2",completed,GPT-o3
+"You are on your way to visit your Grandma, who lives at the end of the valley. It's her birthday, and you want to give her the cakes you've made.
+Between your house and her house, you have to cross 7 bridges, and as it goes in the land of make believe, there is a troll under every bridge! Each troll, quite rightly, insists that you pay a troll toll. Before you can cross their bridge, you have to give them half of the cakes you are carrying, but as they are kind trolls, they each give you back a single cake.
+How many cakes do you have to leave home with to make sure that you arrive at Grandma's with exactly 2 cakes?",nl_to_symbol_prompt,"Let n be the number of cakes you have just ​before​ you cross a bridge.  
+After you pay the troll and he gives one cake back, you are left with
+
+  n/2 + 1 cakes.
+
+So the operation “cross one bridge” transforms the number of cakes like this:
+
+  n → n/2 + 1.
+
+To find how many cakes you must start with, work ​backwards​ from the desired final amount.  
+If you want to arrive at Grandma’s with exactly 2 cakes, then just after the last bridge you must have 2 cakes.
+
+Invert the operation:
+
+  n/2 + 1 = 2 ⇒ n/2 = 1 ⇒ n = 2.
+
+That means you had 2 cakes ​before​ the 7th bridge.  
+But notice that if you approach a bridge with 2 cakes, you also leave it with 2 cakes:
+
+  give half (1) → 1 cake left,  
+  troll returns 1 cake → 2 cakes again.
+
+Therefore the same calculation applies to each of the 7 bridges:
+
+After 7th bridge: 2 cakes  
+Before 7th bridge: 2 cakes  
+After 6th bridge: 2 cakes  
+Before 6th bridge: 2 cakes  
+… and so on back to the start.
+
+Hence you only need to leave home with 2 cakes, and you will still have exactly 2 cakes when you reach Grandma.
+
+Answer: 2 cakes.",completed,GPT-o3

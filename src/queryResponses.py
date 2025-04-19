@@ -1,0 +1,110 @@
+# pip install --upgrade openai
+import os
+import argparse
+import datetime
+import pandas as pd
+import numpy as np
+from openai import OpenAI
+# from google import genai
+# from google.genai import types
+
+
+def readPrompt(path):
+    try:
+        with open(path, "r", encoding="utf-8") as file:
+            return file.read()
+    except FileNotFoundError:
+        print("Instructions file not found.")
+        return ""
+    
+def read_txt_files(directory):
+    """Crawls through a directory and reads the content of each .txt file.
+
+    Args:
+        directory: The path to the directory to crawl.
+    """
+    instructionSet = {}
+
+    for root, _, files in os.walk(directory):
+        for file in files:
+            if file.endswith(".txt"):
+                file_path = os.path.join(root, file)
+                try:
+                    with open(file_path, 'r') as f:
+                        content = f.read()
+                        # print(f"Content of {file_path}:\n{content}\n{'='*20}")
+                        instructionSet[file[:-4]] = content
+                except Exception as e:
+                    print(f"Error reading {file_path}: {e}")
+
+    return instructionSet
+
+modelInfo = {
+    "GPT-o3" : {"key": "OPENAI_API_KEY", "modelName": "o3-2025-04-16", "url": "https://api.openai.com/v1"},
+    "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai/"},
+    "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-preview-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai/"},
+    "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com"},
+    "DSReason" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-reasoner", "url": "https://api.deepseek.com"},
+    "Qwen1" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "url": "https://api.together.xyz/v1"},
+    "Qwen14" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B", "url": "https://api.together.xyz/v1"},
+    "Qwen70" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-70B", "url": "https://api.together.xyz/v1"},
+}
+
+def query(question, instructions, model):
+    client = OpenAI(
+        api_key= os.getenv(modelInfo[model]["key"]),
+        base_url = modelInfo[model]["url"],
+    )
+    response = client.responses.create(
+                    model=modelInfo[model]["modelName"],
+                    instructions=instructions,
+                    input=question,
+                    max_output_tokens=10000,
+                )
+    return response.output_text, response.status
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--name", help="Experiment Name", required=True)
+    parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], required=True)
+    parser.add_argument("--rows", help="Number of rows to sample", type=int, default=1, required=False)
+    parser.add_argument("--samples", help="Number of samples to run", type=int, default=1, required=False)
+    
+    args = parser.parse_args()
+    os.makedirs(f"../responses/{args.dataset}/{args.name}", exist_ok=True)
+
+    data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
+    outputs = pd.DataFrame(columns=['Question', 'Model', 'PromptType', 'Response', 'Status'])
+
+    instructionSet = read_txt_files("../prompting/brainteaserPrompts")
+    # print("Instructions:", instructions)
+
+    for index, row in data.iterrows():
+        if index >= args.rows:
+            break
+
+        for _ in range(args.samples):
+
+            for prompt in instructionSet:
+                for model in modelInfo.keys():
+                    instructions = instructionSet[prompt]
+                    question = row['Question']
+                    solution = row['Answer']
+                    hint = row['Hint']
+
+                    response, status = query(question, instructions, model)
+
+                    outputs = pd.concat([outputs, pd.DataFrame({
+                        'Question': [question],
+                        'Model': [model],
+                        'PromptType': [prompt],
+                        'Response': [response],
+                        'Status': [status],
+                    })], ignore_index=True)
+
+                    print(response)
+
+    outputs.to_csv(f"../responses/{args.dataset}/{args.name}/results.csv", index=False)
+
+if __name__ == "__main__":
+    main()
