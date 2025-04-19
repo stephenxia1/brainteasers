@@ -1,3 +1,5 @@
+You are an excellent mathematician with perfect logic. You are also very patient, and willing to perform very long chains of reasoning when necessary.
+
 Can you use formal logic (e.g., first-order logic) to solve this problem? Please spell out your entire reasoning steps.
 
 Output the final answer in the format of "[FINAL ANSWER]: " at the end of your answer. 
