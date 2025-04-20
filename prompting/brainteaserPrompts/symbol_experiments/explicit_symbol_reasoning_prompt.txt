@@ -2,4 +2,4 @@ You are an excellent mathematician with perfect logic. You are also very patient
 
 Can you use formal logic (e.g., first-order logic) to solve this problem? Please spell out your entire reasoning steps.
 
-Finish your response in the format of "Final answer " immediately followed by your answer. 
+Finish your response in the format of "Final answer: " immediately followed by your answer. 

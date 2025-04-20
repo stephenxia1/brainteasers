@@ -2,4 +2,4 @@ You are an excellent mathematician with perfect logic. You are also very patient
 
 Can you use formal logic to solve this problem, without actually writing down the symbolic/formal logic statements (i.e., only use natural language for any formal statements that you want to use)? Please spell out your entire reasoning steps.
 
-Finish your response in the format of "Final answer " immediately followed by your answer. 
+Finish your response in the format of "Final answer: " immediately followed by your answer. 

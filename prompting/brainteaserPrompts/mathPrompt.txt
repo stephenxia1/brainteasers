@@ -8,4 +8,4 @@ An outline of a solution without a concrete final answer will also receive no cr
 
 The problem statement is correct, and a correct answer exists. If you solve a version of the problem or attempt to modify the problem statement to a version other than the one written exactly as-is, you will receive no credit.
 
-Finish your response in the format of "Final answer " immediately followed by your answer. 
+Finish your response in the format of "Final answer: " immediately followed by your answer. 
