@@ -124,7 +124,6 @@ def main():
     results = process_map(
         process_task,
         tasks,
-        max_workers=10,
         chunksize=1,
         desc="Processing pairs",
     )
