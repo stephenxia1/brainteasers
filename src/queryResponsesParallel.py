@@ -75,8 +75,12 @@ def query(question, instructions, model):
 def process_task(t):
     return process_pair(*t)
 
-def process_pair(index, prompt, question, instructions, model):
+def process_pair(index, prompt, question, hint, solution, instructions, model):
     status = True
+    if "hint" in instructions.lower():
+        question = f"Question: {question}\n Hint: {hint}"
+
+
     try:
         response = query(question, instructions, model)
     except Exception as e:
@@ -87,6 +91,8 @@ def process_pair(index, prompt, question, instructions, model):
     return {
         'ID'        : index,
         'Question'  : question,
+        'Hint'      : hint,
+        'Human Solution'  : solution,
         'Model'     : model,
         'PromptType': prompt,
         'Response'  : response,
@@ -106,11 +112,9 @@ def main():
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
-    # print("Instructions:", instructions)
-
 
     tasks = [
-        (index, prompt, row['Question'], instructionSet[prompt], model)
+        (index, prompt, row['Question'], row['Hint'], row['Answer'], instructionSet[prompt], model)
         for index, row in itertools.islice(data.iterrows(), min(args.rows, len(data)))
         for _ in range(args.samples)
         for prompt in instructionSet
@@ -124,14 +128,6 @@ def main():
         chunksize=1,
         desc="Processing pairs",
     )
-    # with ProcessPoolExecutor(max_workers=10) as exe:
-    #     futures = [exe.submit(process_pair, *t) for t in tasks]
-
-    #     for fut in as_completed(futures):
-    #         out = fut.result()
-    #         results.append(out)
-    #         print(out['Response'])
-        
 
     pd.DataFrame(results).to_csv(f"../responses/{args.dataset}/{args.name}/results.csv", index=False)
 
