@@ -53,13 +53,16 @@ modelInfo = {
     "Qwen70" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B", "url": "https://api.together.xyz/v1"},
 }
 
-def query(question, instructions, model):
+def query(question, instructions, hint, model):
     # print("TESTING", model)
 
     client = OpenAI(
         api_key= os.getenv(modelInfo[model]["key"]),
         base_url = modelInfo[model]["url"],
     )
+
+    if "hint" in instructions.lower():
+        question = f"Question: {question}\n Hint: {hint}"
 
     response = client.chat.completions.create(
         model=modelInfo[model]["modelName"],
@@ -109,7 +112,7 @@ def main():
                     hint = row['Hint']
 
                     try:
-                        response = query(question, instructions, model)
+                        response = query(question, instructions, hint, model)
                     except:
                         print(f"Error querying {model} for question {index} with prompt {prompt}.")
 
@@ -120,6 +123,8 @@ def main():
                         'PromptType': [prompt],
                         'Response': [response],
                         'Status': [None],
+                        'Human-written solution': solution,
+                        'Hint': hint
                     })], ignore_index=True)
 
                     print(response)
