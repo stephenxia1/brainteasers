@@ -41,10 +41,10 @@ def read_txt_files(directory):
 
 modelInfo = {
     "GPT-o3" : {"key": "OPENAI_API_KEY", "modelName": "o3-2025-04-16", "url": "https://api.openai.com/v1"},
-    "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai/"},
-    "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-preview-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai/"},
-    "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com"},
-    "DSReason" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-reasoner", "url": "https://api.deepseek.com"},
+    "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "models/gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "models/gemini-2.5-pro-preview-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com/responses"},
+    "DSReason" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-reasoner", "url": "https://api.deepseek.com/responses"},
     "Qwen1" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "url": "https://api.together.xyz/v1"},
     "Qwen14" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B", "url": "https://api.together.xyz/v1"},
     "Qwen70" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-70B", "url": "https://api.together.xyz/v1"},
