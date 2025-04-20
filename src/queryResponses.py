@@ -39,29 +39,45 @@ def read_txt_files(directory):
 
     return instructionSet
 
+'''
+Comment out models to skip evaluation on them.
+'''
 modelInfo = {
     "GPT-o3" : {"key": "OPENAI_API_KEY", "modelName": "o3-2025-04-16", "url": "https://api.openai.com/v1"},
-    "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "models/gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
-    "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "models/gemini-2.5-pro-preview-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
-    "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com/responses"},
-    "DSReason" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-reasoner", "url": "https://api.deepseek.com/responses"},
+    "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-exp-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com"},
+    "DSReason" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-reasoner", "url": "https://api.deepseek.com"},
     "Qwen1" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "url": "https://api.together.xyz/v1"},
     "Qwen14" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B", "url": "https://api.together.xyz/v1"},
-    "Qwen70" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-70B", "url": "https://api.together.xyz/v1"},
+    "Qwen70" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B", "url": "https://api.together.xyz/v1"},
 }
 
 def query(question, instructions, model):
+    # print("TESTING", model)
+
     client = OpenAI(
         api_key= os.getenv(modelInfo[model]["key"]),
         base_url = modelInfo[model]["url"],
     )
-    response = client.responses.create(
-                    model=modelInfo[model]["modelName"],
-                    instructions=instructions,
-                    input=question,
-                    max_output_tokens=10000,
-                )
-    return response.output_text, response.status
+
+    response = client.chat.completions.create(
+        model=modelInfo[model]["modelName"],
+        messages=[
+            {"role": "system", "content": instructions},
+            {"role": "user", "content": question},
+        ],
+        stream=False
+    )
+    return response.choices[0].message.content
+
+    # response = client.responses.create(
+    #                 model=modelInfo[model]["modelName"],
+    #                 instructions=instructions,
+    #                 input=question,
+    #                 max_output_tokens=10000,
+    #             )
+    # return response.output_text, response.status
 
 def main():
     parser = argparse.ArgumentParser()
@@ -74,7 +90,7 @@ def main():
     os.makedirs(f"../responses/{args.dataset}/{args.name}", exist_ok=True)
 
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
-    outputs = pd.DataFrame(columns=['Question', 'Model', 'PromptType', 'Response', 'Status'])
+    outputs = pd.DataFrame(columns=['ID', 'Question', 'Model', 'PromptType', 'Response', 'Status'])
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
     # print("Instructions:", instructions)
@@ -92,14 +108,18 @@ def main():
                     solution = row['Answer']
                     hint = row['Hint']
 
-                    response, status = query(question, instructions, model)
+                    try:
+                        response = query(question, instructions, model)
+                    except:
+                        print(f"Error querying {model} for question {index} with prompt {prompt}.")
 
                     outputs = pd.concat([outputs, pd.DataFrame({
+                        'ID': [index],
                         'Question': [question],
                         'Model': [model],
                         'PromptType': [prompt],
                         'Response': [response],
-                        'Status': [status],
+                        'Status': [None],
                     })], ignore_index=True)
 
                     print(response)
