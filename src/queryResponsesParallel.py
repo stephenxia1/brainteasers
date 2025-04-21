@@ -45,8 +45,8 @@ Comment out models to skip evaluation on them.
 '''
 modelInfo = {
     "GPT-o3" : {"key": "OPENAI_API_KEY", "modelName": "o3-2025-04-16", "url": "https://api.openai.com/v1"},
-    # "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
-    # "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-exp-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-exp-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
     "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com"},
     "DSReason" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-reasoner", "url": "https://api.deepseek.com"},
     "Qwen1" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "url": "https://api.together.xyz/v1"},
@@ -75,7 +75,7 @@ def query(question, instructions, model):
 def process_task(t):
     return process_pair(*t)
 
-def process_pair(index, prompt, question, hint, solution, instructions, model):
+def process_pair(index, prompt, question, hint, solution, instructions, model, dataset, name):
     status = True
     if "hint" in instructions.lower():
         question = f"Question: {question}\n Hint: {hint}"
@@ -84,11 +84,12 @@ def process_pair(index, prompt, question, hint, solution, instructions, model):
     try:
         response = query(question, instructions, model)
     except Exception as e:
-        print(f"Error querying {model} for question {question} on prompt {prompt}: {e}")
+        print(f"Error querying {model} for question {index} on prompt {prompt}: {e}")
         response = None
         status = False
 
-    return {
+    results = pd.read_csv(f"../responses/{dataset}/{name}/results.csv")
+    entry = {
         'ID'        : index,
         'Question'  : question,
         'Hint'      : hint,
@@ -98,6 +99,8 @@ def process_pair(index, prompt, question, hint, solution, instructions, model):
         'Response'  : response,
         'Status'    : status
     }
+    results = pd.concat([results, pd.DataFrame([entry])], ignore_index=True)
+    pd.DataFrame(results).to_csv(f"../responses/{dataset}/{name}/results.csv", index=False)
 
 def main():
     parser = argparse.ArgumentParser()
@@ -105,6 +108,7 @@ def main():
     parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], required=True)
     parser.add_argument("--rows", help="Number of rows to sample", type=int, default=1, required=False)
     parser.add_argument("--samples", help="Number of samples to run", type=int, default=1, required=False)
+    parser.add_argument("--model", help="Model to run on", choices=modelInfo.keys(), required=False, default="GPT-o3")
     
     args = parser.parse_args()
     os.makedirs(f"../responses/{args.dataset}/{args.name}", exist_ok=True)
@@ -114,21 +118,20 @@ def main():
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
 
     tasks = [
-        (index, prompt, row['Question'], row['Hint'], row['Answer'], instructionSet[prompt], model)
+        (index, prompt, row['Question'], row['Hint'], row['Answer'], instructionSet[prompt], args.model, args.dataset, args.name)
         for index, row in itertools.islice(data.iterrows(), min(args.rows, len(data)))
         for _ in range(args.samples)
         for prompt in instructionSet
-        for model in modelInfo.keys()
     ]
 
-    results = process_map(
+    process_map(
         process_task,
         tasks,
         chunksize=1,
         desc="Processing pairs",
     )
 
-    pd.DataFrame(results).to_csv(f"../responses/{args.dataset}/{args.name}/results.csv", index=False)
+    # pd.DataFrame(results).to_csv(f"../responses/{args.dataset}/{args.name}/results.csv", index=False)
 
 if __name__ == "__main__":
     main()
