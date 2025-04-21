@@ -1,0 +1,8 @@
+pandas
+numpy
+requests
+beautifulsoup4
+tqdm 
+openai
+matplotlib
+seaborn
