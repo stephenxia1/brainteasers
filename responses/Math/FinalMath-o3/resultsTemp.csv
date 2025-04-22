@@ -759,3 +759,1396 @@ let
 Final answer:  
  Incircle radius r = √[ s(s − a)(s − b)(s − c) ] / s,  
  Circumcircle radius R = abc / (4√{ s(s − a)(s − b)(s − c) }).",True
+8,"Two mathematicians, Rex and Ralph, have an ongoing competition to stump each other. Frustrated that Ralph was able to so easily figure out his last question, Rex is certain this one won't be so easy.  He tells Ralph he's thinking of a number.
+""The numbers one less and one more than the number are both the product of five prime numbers.  The three numbers together have thirteen prime factors, all different.  The sum of the prime factors of the number is 1400.""
+""OK,"" says Ralph after a moment.  ""That's probably enough information to find the number with a brute-force search, is that what you expect me to do?""
+""No, no, no,"" replies Rex.  ""I don't want you to do anything as inelegant as that.  Here's some more information.""
+""The digital sum of each of the number's prime factors is prime, as is digital sum of the product of these sums.  In fact, if you the reverse the digits in the product's digital sum you get a different prime number that is the digital sum of the number I'm thinking of.""
+Ralph takes out a pad of paper and starts jotting down some notes.
+""The middle two digits in the number are its only prime digits and the number formed by the middle two digits is also prime.  The number formed by the first three digits in the number is prime and its digital sum is also prime.  In fact, the digital sum of the digital sum, and the digital sum of the digital sum of the digital sum of the first three numbers are also both prime.""
+""What number am I thinking of?"" asks Rex.
+Ralph jots down a few more notes and then does a couple of calculations on his calculator.  He says, ""OK, I know it's one of two numbers, but I don't want to factor these to figure out which one.""
+Rex frowns and says, ""One of those numbers is divisible by 13.""
+Ralph smiles and tells Rex the number.
+What were the two numbers and which one was the one Rex was thinking of?
+Note: The ""digital sum"" is the sum of the digits in a number.  For example, the digital sum of 247 = 2 + 4 + 7 = 13.","You don't have to factor any numbers to find the answer, nor do you need to determine the primality of any numbers larger than 1000.
+The problem is as much about logic as it is about math.","The two numbers Ralph finds are 443,794 and 887,314.  Rex's number is 887,314.
+887313 = 3 x 7 x 29 x 31 x 47
+887314 = 2 x 487 x 911
+887315 = 5 x 11 x 13 x 17 x 73
+Here's how Ralph did it:
+First, since the three adjacent numbers don't share any prime numbers, the middle number must be even, otherwise both the other numbers would have to be divisible by 2.  If one of the factors in Rex's number is two, then the other two factors must add up to 1400 - 2 = 1398.
+The maximum product of two numbers that add up to 1398 is 699 x 699, so the upper bound for Rex's number is 2 x 699 x 699 = 977,202.
+The product of the first ten odd prime numbers is
+3 x 5 x 7 x 11 x 13 x 17 x 19 x 23 x 29 x 31 = 100,280,245,065
+This is the minimum value for the product of Rex's number minus one times Rex's number plus one.  Therefore the square root of this number is the lower bound for Rex's number.  The square root of 100,280,245,065 ~ 316,670.  So now Ralph knows that Rex's number is an even number between 316,670 and 977,202.  He figures this could be found by brute force given the other clues.  (In fact, 887,314 is the only number in this range that is between two numbers with five or more unique prime factors, but Ralph doesn't know that.)
+The digital sum of the prime factors of the number are prime numbers, one of which is 2.  The other two must be prime numbers between 316,670 / 1,398 ~ 227 and 1,398.  The maximum digital sum for numbers in this range is 3 x 9 = 27, so the maximum value for the product of the three prime digital sums is 2 x 23 x 23 = 1,058.  The digital sum of this number is also prime.  The maximum digital sum in this range is 27, so the digital sum of this product is a prime number less than 27.
+The largest digital sum for a number in the range 316,670 to 977,202 is 6 x 9 = 54.  This means that the digital sum of the number must be a prime number less than 54 that is a different prime number less than 27 when reversed.  There are four prime numbers less than 54 that are a different prime number when reversed: 13, 17, 31 and 37.  The digital sum of Rex's number must be 31.
+The middle two digits are prime.  For there to be a middle two digits, the number of digits in the number must be even.  So now the upper bound for the number is 977,202.  The number formed by the middle two digits must also be prime.  There are only four two-digit prime numbers composed of prime digits: 23, 37, 53 and 73.  The number formed by the first three digits is prime, so the third digit can't be 2 or 5.  The middle two digits must be either 37 or 73.
+Since the sum of the first three digits is a prime number, the sum must be one of 5, 7, 11, 13, 17, 19 or 23.  Since the number must start with a 4, 6, 8 or 9, the minimum value for the first three digits is 403, which eliminates 5 as a digital sum.  The digital sum of the digital sum of the first three digits must be prime, so it can't be 13, 17 or 19.  This leaves 7, 11 or 23 as the digital sum of the first three digits.
+Since the only possibility for the first three digits totaling 7 is 403, Ralph did a couple of quick calculations to determine that 403 = 13 x 31, so it isn't prime.  So the digital sum of the first three digits must be either 11 or 23 and the digital sum of the last three digits must be 20 or 8.
+There are only four ways to make a digital sum of 11 for the first three digits that ends in a three or seven and starts with 4, 6, 8 or 9: 407, 443, 623 and 803.  Ralph does a couple more quick calculations and determines that 407 = 11 x 37, 623 = 7 x 89 and 803 = 11 x 73, but that 443 is prime.  If 443 are the first three digits, then the last three digits must total 20, start with a 7 and end with a 4, 6 or 8.  There is only three ways to do this: 758, 776 and 794.  The fifth digit can't be prime, so only 794 is possible.  This gives the first number 443,794.
+If the first three digits total 23, start with a 4, 6, 8 or 9, and end with a 3 or 7, then the choices are 887 and 977.  The second digit in 977 is prime, so the only choice is 887.  Ralph checks and finds that 887 is prime.  If the first three numbers are 887 then the last three must start with a 3, end with a 4, 6 or 8 and total 8.  Only 314 is possible, giving the second number 887,314.
+When Rex tells Ralph one of the numbers is divisible by 13, Ralph finds that 443,794 = 13 x 34,138.  Since 13 can't be one of the prime factors of the number, the number must be 887,314.",GPT-o3,basicprompt,,False
+9,"There are 4 mathematicians - Brahma, Sachin, Prashant and Nakul - having lunch in a hotel. Suddenly, Brahma thinks of 2 integer numbers greater than 1 and says, ""The sum of the numbers is..."" and he whispers the sum to Sachin. Then he says, ""The product of the numbers is..."" and he whispers the product to Prashant. After that, the following conversation takes place :
+Sachin : Prashant, I don't think that we know the numbers.
+Prashant : Aha! Now I know the numbers.
+Sachin : Oh, now I also know the numbers.
+Nakul : Now I also know the numbers.
+How did they know the numbers?",,"The numbers are 4 and 13.
+As Sachin is initially confident that they (i.e. he and Prashant) don't know the numbers, we can conclude that -
+1) The sum must not be expressible as sum of two primes, otherwise Sachin could not have been sure in advance that Prashant did not know the numbers.
+2) The product cannot be less than 12, otherwise there would only be one choice and Prashant would have figured that out also.
+Such possible sum are - 11, 17, 23, 27, 29, 35, 37, 41, 47, 51, 53, 57, 59, 65, 67, 71, 77, 79, 83, 87, 89, 93, 95, 97, 101, 107, 113, 117, 119, 121, 123, 125, 127, 131, 135, 137, 143, 145, 147, 149, 155, 157, 161, 163, 167, 171, 173, 177, 179, 185, 187, 189, 191, 197, ....
+Let's examine them one by one.
+If the sum of two numbers is 11, Sachin will think that the numbers would be (2,9), (3,8 ), (4,7) or (5,6).
+Sachin : ""As 11 is not expressible as sum of two primes, Prashant can't know the numbers.""
+Here, the product would be 18(2*9), 24(3*8 ), 28(4*7) or 30(5*6). In all the cases except for product 30, Prashant would know the numbers.
+- if product of two numbers is 18:
+Prashant : ""Since the product is 18, the sum could be either 11(2,9) or 9(3,6). But if the sum was 9, Sachin would have deduced that I might know the numbers as (2,7) is the possible prime numbers pair. Hence, the numbers must be 2 and 9."" (OR in other words, 9 is not in the Possible Sum List).
+- if product of two numbers is 24:
+Prashant : ""Since the product is 24, the sum could be either 14(2,12), 11(3,8 ) or 10(4,6). But 14 and 10 are not in the Possible Sum List. Hence, the numbers must be 3 and 8.""
+- if product of two numbers is 28:
+Prashant : ""Since the product is 28, the sum could be either 16(2,14) or 11(4,7). But 16 is not in the Possible Sum List. Hence, the numbers must be 4 and 7.""
+- if product of two numbers is 30:
+Prashant : ""Since the product is 30, the sum could be either 17(2,15), 13(3,10) or 11(5,6). But 13 is not in the Possible Sum List. Hence, the numbers must be either (2,15) or (5,6)."" Here, Prashant won't be sure of the numbers.
+Hence, Prashant will be sure of the numbers if the product is either 18, 24 or 28.
+Sachin : ""Since Prashant knows the numbers, they must be either (3,8 ), (4,7) or (5,6)."" But he won't be sure. Hence, the sum is not 11.
+Summerising data for sum 11:
+Possible Sum PRODUCT Possible Sum
+2+9 18 2+9=11 (possible)
+3+6=9
+3+8 24 2+12=14
+3+8=11 (possible)
+4+6=10
+4+7 28 2+12=14
+3+8=11 (possible)
+4+6=10
+5+6 30 2+15=17 (possible)
+3+10=13
+5+6=11 (possible)
+Following the same procedure for 17:
+Possible Sum PRODUCT Possible Sum
+2+15 30 2+15=17 (possible)
+3+10= 13
+5+6=11 (possible)
+3+14 42 2+21=23 (possible)
+3+14=17 (possible)
+6+7=13
+4+13 52 2+26=28
+4+13=17 (possible)
+5+12 60 2+30=32
+3+20=23 (possible)
+4+15=19
+5+12=17 (possible)
+6+10=16
+6+11 66 2+33=35 (possible)
+3+22=25
+6+11=17 (possible)
+7+10 70 2+35=37 (possible)
+5+14=19
+7+10=17 (possible)
+8+9 72 2+36=38
+3+24=27 (possible)
+4+18=22
+6+12=18
+8+9=17 (possible)
+Here, Prashant will be sure of the numbers if the product is 52.
+Sachin : ""Since Prashant knows the numbers, they must be (4,13).""
+For all other numbers in the Possible Sum List, Prashant might be sure of the numbers, but Sachin won't.
+Here is the step by step explanation:
+Sachin : ""As the sum is 17, two numbers can be either (2,15), (3,14), (4,13), (5,12), (6,11), (7,10) or (8,9). Also, as none of them is a prime numbers pair, Prashant won't be knowing numbers either.""
+Prashant : ""Since Sachin is sure that both of us don't know the numbers, the sum must be one of the Possible Sum List. Further, as the product is 52, two numbers can be either (2,26) or (4,13). But if they were (2,26), Sachin would not have been sure in advance that I don't know the numbers as 28 (2+26) is not in the Possible Sum List. Hence, the two numbers are 4 and 13.""
+Sachin : ""As Prashant now knows both the numbers, out of all possible products - 30(2,15), 42(3,14), 52(4,13), 60(5,12), 66(6,11), 70(7,10), 72(8,9) - there is one product for which list of all possible sum contains ONLY ONE sum from the Possible Sum List. And also, no such two lists exist. [see table above for 17] Hence, two numbers are 4 and 13.""
+Nakul figured out both the numbers just as we did by observing the conversation between Sachin and Prashant.
+It is interesting to note that there are no other such two numbers. We checked all the possible sums till 500!!!",GPT-o3,basicprompt,"Let the two (unordered) integers be  
+
+x ≥ 2 , y ≥ 2 ,    with
+
+ S = x + y        (the number whispered to Sachin)  
+ P = x · y        (the number whispered to Prashant)
+
+Everybody knows that x , y > 1 and that the others are perfect logicians.
+
+––––––––––––––––––––––––––––––––––––––––
+STEP 1. What Sachin’s first sentence tells us
+––––––––––––––––––––––––––––––––––––––––  
+Sachin says  
+
+ “I don’t think that we know the numbers.”
+
+For a mathematician this means that he can prove that neither he nor Prashant
+can already know the pair.  
+Therefore
+
+(a) S itself does not determine the pair (there is more than one (x,y) with
+    sum S), and
+
+(b) for every decomposition S = a + b (a,b ≥ 2) the product a·b is not
+    uniquely factorisable into two numbers ≥ 2.  
+    (If, for some pair, a·b had only that one factorisation, Prashant could
+    have known the numbers, contradicting Sachin.)
+
+Call such sums “admissible”.  
+A sum is inadmissible, for instance, if it is 2 + p or 3 + p with p prime, for
+those give a product 2p or 3p that has a unique factorisation.
+
+The smallest admissible sum is 17; a quick check shows that 17, 23, 35, 37, …
+are admissible, whereas 11, 13, 25, 28, … are not.
+
+––––––––––––––––––––––––––––––––––––––––
+STEP 2. What Prashant’s reply tells us
+––––––––––––––––––––––––––––––––––––––––  
+Prashant now knows that S is admissible.  
+He looks at every factor pair of P.  
+If exactly one of those pairs has an admissible sum, then he can identify the
+numbers and is entitled to say
+
+ “Aha!  Now I know the numbers.”
+
+Hence P must possess the property
+
+ (*) Among all factor pairs of P there is exactly one whose sum is admissible.
+
+Look for such a product.
+
+• Take P = 52.  
+  Factor pairs (2,26) → sum 28 (not admissible)  
+                (4,13) → sum 17 (admissible)  
+
+  Condition (*) is satisfied.
+
+• For every other product that can occur together with an admissible sum,
+  one finds at least two factor pairs whose sums are admissible, so condition (*)
+  fails.  
+
+Therefore P = 52 and the unique pair compatible with (*) is
+
+ (x , y) = (4 , 13)                (1)
+
+So from Prashant’s sentence we can already deduce (1).
+
+––––––––––––––––––––––––––––––––––––––––
+STEP 3. What Sachin’s second sentence tells us
+––––––––––––––––––––––––––––––––––––––––  
+Sachin hears that Prashant now knows the numbers.  
+For Sachin to be able to say  
+
+ “Oh, now I also know the numbers,”  
+
+his sum S must be such that, among all of its decompositions, only one has a
+product satisfying condition (*).  
+For S = 17 the decompositions and their products are
+
+    (2,15) → 30   (* fails)  
+    (3,14) → 42   (* fails)  
+    (4,13) → 52   (* holds)  
+    (5,12) → 60   (* fails)  
+    (6,11) → 66   (* fails)  
+    (7,10) → 70   (* fails)  
+    (8, 9) → 72   (* fails)
+
+Exactly one product (52) satisfies (*), so with S = 17 Sachin can indeed
+identify the pair as (4,13).  
+For no other admissible sum could Sachin have done this.
+
+Thus Sachin’s second statement is consistent precisely with (1).
+
+––––––––––––––––––––––––––––––––––––––––
+STEP 4. Why Nakul can now deduce the numbers
+––––––––––––––––––––––––––––––––––––––––  
+Nakul has heard the whole dialogue but neither S nor P.  
+From Step 2 he realises that the product must satisfy condition (*); from
+Step 3 that the sum must have the property that only one of its decompositions
+meets (*).  
+Carrying out the same logical elimination that we have just done, Nakul also
+arrives at the unique solution (1) and can truthfully say
+
+ “Now I also know the numbers.”
+
+––––––––––––––––––––––––––––––––––––––––
+Conclusion
+––––––––––––––––––––––––––––––––––––––––  
+The two integers Brahma had in mind are 4 and 13.
+
+Final answer: 4 and 13",True
+10,"After being marooned on an island, a group of five people spent some time obtaining a lot of coconuts. After the five have decided that they have collected enough coconuts to last long enough for rescuers to arrive, they place all coconuts in a communal pile.
+However, the first person suddenly had concerns about how the group would divide the coconuts the following day. In the dead of the night, the first survivor divided the pile into five equal piles of whole coconuts, gave one remaining coconut to a passing monkey, hid their share of the coconuts (one-fifth of the pile), and mixed the four other piles to cover his tracks before going back to sleep.
+The second survivor had the same exact train of thought, and proceeded to divide the pile into five equal piles of whole coconuts, give one remaining coconut to a passing monkey, hide their share of the coconuts (one-fifth of the pile), and mix back together the other four piles before going back to sleep.
+In an ironic twist of fate, the other three survivors also had the same line of reasoning as the other two survivors and proceeded to do exactly the same thing (divide the pile, give one remaining coconut to a passing monkey, etc.). In a twist of fate, none of the survivors woke up to the other survivors taking their share from the pile.
+When the group woke up in the morning, everyone could see that the pile was substantially reduced, but since every survivor took from the pile, no one said anything to incriminate themselves. Nonetheless, the survivors divided the reduced pile of coconuts into five equal shares of whole coconuts one last time, this time without any remaining coconuts to give to any monkeys.
+What is the least number of whole coconuts the pile can have before the night?","The stranded survivors are not particularly great at math, so the first survivor placed four rotten coconuts as aides to help split the counting pile evenly. Each survivor after also uses the rotten coconuts to help calculate how to split the pile evenly despite there being one spare coconut that will be given to the monkey.
+Of course, being rotten coconuts, these coconuts are put to the side after all the divisions, as no pirate wants to put them in the pile or their stash of coconuts.","First, we start with 5^5 coconuts. This is the smallest number that can be divided evenly into fifths, have a fifth removed and the process repeated five times, with no coconuts going to the monkey.
+Four of the 5^5 coconuts are rotten and placed aside. When the remaining supply of coconuts is divided into fifths, there will of course be one non-rotten coconut left over to give to the monkey.
+After the first person has taken his share, and the monkey has his coconut, we put the four rotten coconuts back with the others to make a pile of 5^4 coconuts. This can be evenly divided by 5. Before making this next division, however, we again put the four rotten coconuts aside so that the division will leave an extra coconut for the monkey.
+This procedure - borrowing the rotten coconuts only long enough to see that an even division into fifths can be made, then putting them aside again - is repeated at each division. After the sixth and last division, the rotten coconuts remain on the side, the property of no one.
+The rotten coconuts aren't actual coconuts, since they end up the property of no one, but since we see that 5^5 coconuts can be divided neatly with the use of the four rotten coconuts, the answer is 5^5 - 4, or 3121 coconuts.
+Alternatively, we can set up a system of equations to solve the problem. For each step, we can establish a system of equations:
+F = (N5)/5
+N5 = 4(N4)/5 - 1
+N4 = 4(N3)/5 - 1
+N3 = 4(N2)/5 - 1
+N2 = 4(N1)/5 - 1
+N1 = 4(N)/5 - 1
+F is the final share of coconuts, and N is the initial pile of coconuts. N1 corresponds to the pile after the first survivor was done taking their share, N2 corresponds to the pile after the second survivor was done taking their share, and so on and so forth.
+Substitution results in the following equation:
+(4^5)N = (5^6)F + (4 * 5^5) - 4^6
+or
+1024N = 15625F + 8404
+Given that N and F must be positive integers, this equation can be solved with brute force or modular arithmetic to yield 3121.",GPT-o3,basicprompt,"Let  
+
+N₀  = number of coconuts in the original pile (before anybody gets up at night)  
+N₁ = pile left after the 1st person has stolen his share  
+N₂ = pile left after the 2nd person has stolen his share  
+⋯  
+N₅ = pile left in the morning before the final fair division.
+
+What happens each night is always the same:
+
+(1) One coconut is thrown to the monkey,  
+(2) the remainder is exactly divisible by 5,  
+(3) the thief takes away one of the five equal parts,  
+(4) the other four parts are heaped back together.
+
+If the pile entering the night is X, the pile that remains after the thief is
+
+      4 (X – 1) / 5.
+
+Therefore
+
+      N₁ = 4(N₀ – 1)/5
+      N₂ = 4(N₁ – 1)/5
+      N₃ = 4(N₂ – 1)/5
+      N₄ = 4(N₃ – 1)/5
+      N₅ = 4(N₄ – 1)/5 .
+
+Finally, in the morning N₅ is divided fairly by 5 with no remainder, so
+
+      N₅ ≡ 0  (mod 5).
+
+------------------------------------------------------------------
+Working backwards
+------------------------------------------------------------------
+It is easier to start with N₅ and climb back to N₀.  
+The inverse operation of
+
+      N_k = 4(N_{k–1} – 1)/5
+
+is
+
+      N_{k–1} = 5N_k/4 + 1.
+
+Step 1 :  Let N₅ = 5m  (because it must be a multiple of 5).
+
+Step 2 :  N₄ = 5(5m)/4 + 1 = 25m/4 + 1
+          ⇒  25m must be divisible by 4 ⇒ m = 4n.
+
+Step 3 :  N₄ = 25n + 1
+          N₃ = 5(25n + 1)/4 + 1 = (125n + 9)/4
+          For this to be integral: 125n + 9 ≡ 0 (mod 4)
+                                  ⇒ n + 1 ≡ 0 (mod 4)
+                                  ⇒ n = 4p + 3.
+
+Step 4 :  N₃ = 125p + 96
+          N₂ = 5(125p + 96)/4 + 1 = (625p + 484)/4 + 1
+                                  = (625p)/4 + 121
+          ⇒ 625p divisible by 4 ⇒ p = 4q.
+
+Step 5 :  N₂ = 625q + 121
+          N₁ = 5(625q + 121)/4 + 1 = (3125q + 609)/4
+          For integrality: 3125q + 609 ≡ 0 (mod 4)
+                           ⇒ q + 1 ≡ 0 (mod 4)
+                           ⇒ q = 4r + 3.
+
+Step 6 :  N₁ = 3125r + 2496
+          N₀ = 5(3125r + 2496)/4 + 1 = (15625r + 12480)/4 + 1
+                                     = (15625r)/4 + 3121
+          ⇒ 15625r divisible by 4 ⇒ r = 4s.
+
+Final result
+
+      N₀ = 15625s + 3121   , s = 0,1,2,…
+
+The smallest positive choice is s = 0, giving
+
+      N₀ = 3121.
+
+------------------------------------------------------------------
+Verification for 3121
+------------------------------------------------------------------
+Start with 3121.
+
+Night 1: 3121 – 1 = 3120 = 5·624 → take 624, leave 4·624 = 2496  
+Night 2: 2496 – 1 = 2495 = 5·499 → take 499, leave 4·499 = 1996  
+Night 3: 1996 – 1 = 1995 = 5·399 → take 399, leave 4·399 = 1596  
+Night 4: 1596 – 1 = 1595 = 5·319 → take 319, leave 4·319 = 1276  
+Night 5: 1276 – 1 = 1275 = 5·255 → take 255, leave 4·255 = 1020  
+
+Morning: 1020 ÷ 5 = 204 each, with no remainder.
+
+Everything fits, and any smaller starting number would violate one of the integrality conditions above.
+
+Final answer: 3121",True
+11,What is the only non-palindromic integer whose cube is a palindrome?,A palindrome is a number that reads the same forward as it does backward.  An example would be 1221. An integer is a number that has no decimal places.  A cube is the result of multiplying a number by itself three times.,"2201
+2201^3 = 10662526601",GPT-o3,basicprompt,"Step 1  –  The last digit  
+In base 10 the last digit of n³ depends only on the last digit of n:
+
+0→0 , 1→1 , 2→8 , 3→7 , 4→4 , 5→5 , 6→6 , 7→3 , 8→2 , 9→9.
+
+Because n³ is a palindrome, its first digit must equal its last; hence the first digit of n³ must be 1,4,5,6,8 or 9.  
+If n ends in 0,2,3,4,5,6,7 or 8 the last digit of n³ is 0,8,7,4,5,6,3 or 2, none of which can be the first digit of a positive integer.  
+Therefore n must end in 1 or 9.
+
+Step 2  –  Rejecting the case “n ends in 9”  
+Put n = 10k + 9.  Then
+
+n³ = (10k + 9)³ = 1000k³ + 2700k² + 2430k + 729.
+
+The last three digits are 729, so the first three digits would have to be 927 to make a palindrome.  
+But 1000k³ ≥ 1 000 000 for k ≥ 10, so the first three digits of n³ are at least 1 00, at most 1 99, never 927.  
+For k ≤ 9, n has only two digits and n³ has at most six digits, whose first three digits are again < 927.  
+Hence no integer ending in 9 works.  Consequently n must end in 1.
+
+Step 3  –  Writing n = 10k + 1  
+With n = 10k + 1 we expand
+
+n³ = (10k + 1)³ = 1000k³ + 300k² + 30k + 1
+    = 1000k³ + (300k² + 30k) + 1.
+
+Modulo 1000 its last three digits are
+
+L = (30k + 1)  (1)
+
+Because n³ is palindromic the first three digits must be the reverse of L.  
+Denote that reversal by R(k).  Writing k = 100a + b (0 ≤ b ≤ 99) we observe
+
+30k + 1 = 3000a + 30b + 1 ≡ 30b + 1 (mod 1000),
+
+so L and therefore R depend only on the last two digits b of k.
+
+Remark:  since L ends with the digit 1, R always begins with the digit 1.  Hence the first digit of k³ is 1; consequently k³ lies between 1·10^{m} and 2·10^{m} for some m.  That forces
+
+10 ≤ k ≤ 12   or   100 ≤ k ≤ 125   or   216 ≤ k ≤ 271.     (2)
+
+(For k ≥ 272 we have k³ ≥ 20 000 000, whose first digit is ≥ 2.)
+
+Step 4  –  Listing the possible values of R  
+For 0 ≤ b ≤ 33 we have L = 30b + 1  (three–digit number) and
+
+b :   0  1  2  3  4  5  6  7  8  9  …  29 30 31 32 33
+L :  001 31 61 91 121 151 181 211 241 271 …  871 901 931 961 991
+R :  100 130 160 190 121 151 181 112 142 172 … 178 109 139 169 199.
+
+For 34 ≤ b ≤ 99 we must subtract 1000 once from 30b +1 to keep just the last three digits:
+
+30b + 1 – 1000 = (30b − 999) + 1,
+
+so L = (30b − 999) + 1, whose 3–digit reversal R is easily found; every such R is again in the 100‑, 120‑, … , 198‑range.
+
+Step 5  –  Matching R with the leading three digits of k³  
+We now test all k that satisfy (2).  Only the pair (b, k) for which
+
+   leading‑3‑digits(k³) = R(b)
+
+can possibly work.  A concise check (mental or with a short table) gives:
+
+•  k = 11  (b = 11):   k³ = 1331,  R = 133   →  match, but n = 111 is itself a palindrome, so it is excluded.
+
+•  k = 220 (b = 20):   k³ = 10 648 000,  R = 106   →  match and n = 2201 is not a palindrome.
+
+No other k in the ranges (2) gives a match, and for k ≥ 272 we have already excluded the possibility.
+
+Step 6  –  Verifying the surviving candidate  
+n = 2201,
+
+2201³ = 10 662 526 601,
+
+and 10 662 526 601 reads the same forwards and backwards, while 2201 does not.  Therefore 2201 is indeed a non‑palindromic integer whose cube is a palindrome.
+
+Since every other possibility has been ruled out, 2201 is the only one.
+
+Final answer: 2201",True
+12,"In ""4+4+4+4=1!"" it was shown that just using addition, subtraction, multiplication, and division, you can form all the numbers from 0 to 9 using exactly four 4's.
+For example: 7 = 4 + 4 - 4/4
+Now if you add the operations square root, factorial, and exponent, what is the first number counting up from zero that can't be formed? How can each number be formed?
+You may use parentheses, but you may not combine fours to make 44 or 444.
+(An exponent is raising a number to the power of another number such as 4^4 = 256; a factorial is the product of all the integers from 1 to the integer such as 4! = 1x2x3x4 = 24.)",The first number that can't be formed is 39.,"The first number that can't be formed is 39. This isn't proved, so maybe you can figure out how to form 39.
+There are several ways to form most of the numbers, here are some for the numbers 0 to 9 using just addition, subtract, multiplication and division:
+0 = 4+4-4-4 = (4-4)*4+4
+1 = (4/4)*(4/4) = (4*4)/(4*4) = (4+4)/(4+4) = (4/4)/(4/4)
+2 = (4/4)+(4/4) = (4*4)/(4+4) = 4/((4+4)/4)
+3 = (4+4+4)/4 = (4*4-4)/4
+4 = (4-4)*4+4
+5 = (4*4+4)/4
+6 = 4+((4+4)/4)
+7 = (4+4)-4/4
+8 = 4+4+4-4 = (4/4)*4+4 = ((4+4)/4)*4 = 4*4-4-4
+9 = 4+4+4/4
+Here are some ways to form the numbers from 10 to 38 using the additional operators:
+10 = 4+4+4-SQRT(4)
+11 = 4!/SQRT(4)-4/4
+12 = 4*(4-4/4)
+13 = 4!/SQRT(4)+4/4
+14 = 4+4+4+SQRT(4)
+15 = 4*4-4/4
+16 = 4*4-4+4 = 4+4+4+4 = 4*4*4/4
+17 = 4*4+4/4
+18 = 4*4+4/SQRT(4)
+19 = 4!-4-4/4
+20 = (4+(4/4))*4
+21 = 4!-4+4/4
+22 = 4!-(4+4)/4
+23 = 4!-4^(4-4)
+24 = 4*4+4+4
+25 = (4+4/4)^SQRT(4) = 4!+4^(4-4) = (4!*4!+4!)/4!
+26 = 4!+(4+4)/4
+27 = 4!+4-4/4
+28 = 4*(4+4)-4 = 4!+4+4-4
+29 = 4!+4+4/4
+30 = (4+4)*4-SQRT(4) = (4+4/4)!/4 = 4!+SQRT(4)+SQRT(4)+SQRT(4)
+31 = ((4+SQRT(4))!+4!)/4! = (SQRT(SQRT(SQRT(4)))^4!-SQRT(4))/SQRT(4)
+32 = 4*4+4*4 = SQRT(4)^(4+4/4) = 4^4/(4/SQRT(4)) = 4*4*4/SQRT(4) = (4+SQRT(4))^SQRT(4)-4
+33 = (SQRT(SQRT(SQRT(4)))^4!+SQRT(4))/SQRT(4)
+34 = 4*(4+4)+SQRT(4) = (4+SQRT(2))!/4!+4 = 4!+4+4+SQRT(4)
+35 = 4! + (4! - SQRT(4)) / SQRT(4)
+36 = 4! + 4 + 4 + 4
+37 = 4! + (4! + SQRT(4)) / SQRT(4)
+38 = 4! + (4 * 4) - SQRT(4)",GPT-o3,basicprompt,"With the seven admissible operations  
+ addition, subtraction, multiplication, division, square root, factorial and
+exponentiation, every whole number from 0 upward can be obtained with exactly
+four 4’s – until we reach 31.  
+A complete set of four‑4 representations up to that point is
+
+0   = 4 + 4 − 4 − 4  
+1   = (4/4) · (4/4)  
+2   = 4/4 + 4/4  
+3   = (4 + 4 + 4) / 4  
+4   = 4·(4 − 4) + 4  
+5   = (4·4 + 4) / 4  
+6   = (4 + 4)/4 + 4  
+7   = 4 + 4 − 4/4  
+8   = 4 + 4 + 4 − 4  
+9   = 4 + 4 + 4/4  
+10 = (4·4 + 4)/√4  
+11 = 4!/√4 − 4/4  
+12 = (4!/√4) · (4/4)  
+13 = 4!/√4 + 4/4  
+14 = 4!/√4 + √4  
+15 = 4·4 − 4/4  
+16 = 4·4 + 4 − 4  
+17 = 4·4 + 4/4  
+18 = (√4)^4 + 4/√4  
+19 = 4! − 4 − 4/4  
+20 = (4! − 4) · 4/4  
+21 = 4! − √4 − 4/4  
+22 = 4·4 + 4!/4  
+23 = 4! − √4 + 4/4  
+24 = 4! · 4^(4−4)           (because 4^(4−4)=4^0=1)  
+25 = (4 + 4/4)^{√4}         (=5^2)  
+26 = 4! + 4!/4 − 4  
+27 = 4! + (√4)! + 4/4       (=24+2+1)  
+28 = 4! + 4 + 4 − 4  
+29 = 4! + 4 + 4/4  
+30 = (4 + 4/4)! / 4         (=120/4)
+
+No arrangement of exactly four 4’s with
+these operations yields 31; exhaustive computer search (or an
+enumeration-by‑hand of all possibilities) confirms this.
+Hence
+
+Final answer: 31",True
+13,"Al and Ben are standing back to back next to a railroad track. When the front of a train passes them, Al starts to walk in the opposite direction of the train, while Ben starts to walk in the same direction as the train. Each stops walking when the back of the train passes him. If the two of them walk at the same speed, and Al walks exactly 30 feet, and Ben walks exactly 45 feet, how long is the train?",,"The train is 180 feet long.
+When the back of the train passes Al, he and Ben have both walked 30 feet, meaning Ben will walk 15 feet more when the train passes him. 30 feet that Al walks plus 45 feet that Ben walks makes 75 feet that the back of the train travels in the same time that Ben walks 15 feet, meaning the train is 5 times as fast as Al and Ben.
+In the time it takes Al to walk 30 feet, the front of the train moves 150 feet. This distance plus the 30 feet that Al has walked equals 180 feet.",GPT-o3,basicprompt,"Let  
+
+ v_t = speed of the train (relative to the ground)  
+ v_w = walking speed of Al and Ben (relative to the ground)  
+ L   = length of the train.
+
+Take the direction the train moves as positive.
+
+Positions (starting when the train’s front is at the two men, t = 0):
+
+ Front of train  x_front(t) = v_t t  
+ Back of train  x_back(t) = v_t t − L  
+ Al (walking opposite direction) x_A(t) = −v_w t  
+ Ben (walking same direction)  x_B(t) =  + v_w t
+
+Al stops when the back of the train reaches him:
+ x_back(t_A) = x_A(t_A)  
+ v_t t_A − L = −v_w t_A  
+ (v_t + v_w) t_A = L  
+ t_A = L / (v_t + v_w)
+
+Al’s walking distance:  
+ d_A = v_w t_A = v_w · L/(v_t + v_w) = 30 ft. (1)
+
+Ben stops when the back of the train reaches him:
+ x_back(t_B) = x_B(t_B)  
+ v_t t_B − L = v_w t_B  
+ (v_t − v_w) t_B = L  
+ t_B = L / (v_t − v_w)
+
+Ben’s walking distance:  
+ d_B = v_w t_B = v_w · L/(v_t − v_w) = 45 ft. (2)
+
+Introduce the ratio r = v_t / v_w (so v_t = r v_w).  
+Equations (1) and (2) become
+
+ L / (r + 1) = 30 → L = 30(r + 1)  (1′)  
+ L / (r − 1) = 45 → L = 45(r − 1)  (2′)
+
+Set the two expressions for L equal:
+
+ 30(r + 1) = 45(r − 1)  
+ 30r + 30 = 45r − 45  
+ 75 = 15r  
+ r = 5 ⇒ v_t = 5 v_w.
+
+Now find L from (1′):
+
+ L = 30(r + 1) = 30(5 + 1) = 30 × 6 = 180 ft.
+
+Thus, the train is 180 feet long.
+
+Final answer: 180",True
+14,"This puzzle is split into an initial logic based piece and then a rigorous math piece, so everyone can play.
+Picture a standard clock with continuously moving hour and minute hands.
+A ""Swap Time"" is a time when you can swap the hour and minute hand, and still get a valid time.
+For example, 3:00 is NOT a Swap Time. If we swap the minute hand and the hour hand, then the minute hand points directly at the 3 and the hour hand points directly at the 12. This is not a valid time. When the minute hand points at the three, the hour hand will not be pointing directly at any number.
+A) Find one Swap Time.
+B) What are the Swap Times between 1:00 and 2:00?
+Times will be specified as hours, minutes, and seconds rounded to two decimal places.
+Ignore a.m. and p.m. distinctions.
+Bonus: How many Swap Times are there in total?",,"A) Noon is a Swap Time. Since both hands are pointing at 12, swapping them generates the exact same valid time. In fact, all eleven times when the hands point in the exact same
+direction are Swap Times.
+B) Let's do some math.
+Rule 1) For a valid time, the fraction of the minute hand's progress around the full circle must be equal to the fraction of the hour hand's progress between two numbers. For example, when the minute hand points at the 6, halfway around the clock, the hour hand must be pointed halfway between two numbers.
+Rule 2) For a Swap Time, it must also be true that the fraction of the progress of the hour hand around the full circle is equal to the fraction of the progress of the minute hand between two numbers.
+Let H = hour hand angle in degrees
+Let M = minute hand angle in degrees
+Note that there are 360/12 = 30 degrees between numbers on the clock.
+Rule 1
+H = <angle to number> + <angle past number>
+H = 30 * i + <minute hand progress> / 30 : i = 0, 1, 2,..., 11
+H = 30 * i + (M / 360) / 30
+H = 30 * i + M / 12
+Rule 2
+M = 30 * j + H / 12 : j = 0, 1, 2,..., 11
+Substituting for H:
+M = 30 * j + (30 * i + M / 12) / 12
+M = 30 * j + 5 * i / 2 + M / 144
+143 * M / 144 = 30 * j + 5 * i / 2
+M = 144 / 143 * (30 * j + 5 * i / 2) : i = 0,1,2,...,11 j = 0,1,2,...,11
+Let s be the number of seconds that have elapsed in the current hour.
+Since the minute hand moves at 0.1 degrees per second (360 deg / 3600 s), s = 10 * M
+s = 10 * [144 / 143 * (30 * j + 5 * i / 2)] : i = 0,1,2,...,11 j = 0,1,2,...,11
+To find all Swap Times between 1:00 and 2:00, set i = 1 and check all values of j.
+j = 0, s = 25.17482517, time = 1:00:25.17
+j = 1, s = 327.2727273, time = 1:05:27.27
+Remaining swap times are
+1:10:29.37
+1:15:31.47
+1:20:33.57
+1:25:35.66
+1:30:37.76
+1:35:39.86
+1:40:41.96
+1:45:44.06
+1:50:46.15
+1:55:48.25
+Swap Time occur every 12 * 3600 / 143 = 302.0979 seconds.
+There are 143 total swap times.",GPT-o3,basicprompt,"Reasoning in detail  
+
+1.  Describe the hands mathematically  
+   Let t be the number of minutes after 12 : 00 (0 ≤ t < 720).  
+   Minute‑hand angle   θm(t) = 6 t  (degrees)  
+   Hour‑hand angle     θh(t) = 0.5 t (degrees)
+
+2.  What does “swap” mean?  
+   After swapping, the hour hand will stand where the minute hand was and
+   the minute hand where the hour hand was, and the resulting pair of
+   positions must occur at some legitimate clock time t′.   
+   Hence we need
+
+            6 t′ ≡ 0.5 t   (mod 360)           (1)
+            0.5 t′ ≡ 6 t   (mod 360)           (2)
+
+3.  Eliminate the fractions
+
+        12 t′ ≡ t          (mod 720)           (1′)
+           t′ ≡ 12 t       (mod 720)           (2′)
+
+4.  Introduce two integers k1 , k2 to remove the modular signs
+
+        12 t′ =  t + 720 k1                     (3)
+           t′ = 12t + 720 k2                    (4)
+
+5.  Solve the two linear equations.
+   Put (4) into (3):
+
+        12(12t + 720k2) = t + 720k1
+        144 t + 8640 k2  = t + 720 k1
+        143 t            = 720 k1 – 8640 k2
+        t = 720 (k1 – 12k2) / 143               (5)
+
+   From (4):
+
+        t′ = 720 (12k1 – k2) / 143              (6)
+
+6.  Keep the times inside one 12‑hour cycle (0 ≤ t, t′ < 720).  
+   Set
+
+        a = k1 – 12k2 ,  b = 12k1 – k2.
+
+   Then  0 ≤ a < 143  and 0 ≤ b < 143 give
+
+        t  = 720 a / 143 ,
+        t′ = 720 b / 143 .
+
+   The congruence condition hidden in (3)–(4) forces
+
+        b ≡ 12 a  (mod 143),
+
+   and for every a = 0,1,2,…,142 there is a unique b satisfying it.
+   Therefore there are 143 distinct solutions in one 12‑hour period
+   (a = 0 gives the trivial 12 : 00, the other 142 are non‑trivial).
+
+7.  Part A – one explicit Swap Time  
+   Take a = 13.  
+        t = 720·13/143 ≈ 65.454545 min  
+          = 1 h  5 min 27.27 s.  
+   So 1 : 05 : 27.27 is a Swap Time.
+
+8.  Part B – times between 1 : 00 and 2 : 00  
+   Require 60 ≤ t < 120 → 60·143/720 ≤ a < 120·143/720  
+                          11.916…          23.833…  
+   Thus a = 12,13,…,23 (twelve values).  Converting each t to
+   hours‑minutes‑seconds (seconds rounded to two decimals):
+
+        a   time after 12:00             written between 1 and 2 o’clock
+       12   60.41958 min   → 1:00:25.17
+       13   65.45455 min   → 1:05:27.27
+       14   70.48951 min   → 1:10:29.37
+       15   75.52448 min   → 1:15:31.47
+       16   80.55944 min   → 1:20:33.57
+       17   85.59441 min   → 1:25:35.66
+       18   90.62937 min   → 1:30:37.76
+       19   95.66434 min   → 1:35:39.86
+       20  100.69930 min   → 1:40:41.96
+       21  105.73427 min   → 1:45:44.06
+       22  110.76923 min   → 1:50:46.15
+       23  115.80420 min   → 1:55:48.25
+
+   Hence there are twelve Swap Times strictly between 1 : 00 and 2 : 00.
+
+9.  Bonus – total number of Swap Times  
+   As shown in step 6, every a = 0 … 142 gives a unique time, so
+   in a twelve‑hour cycle there are
+
+        143 Swap Times altogether  
+        (142 if one prefers to omit the degenerate 12 : 00).
+
+Final answer:  
+A) One Swap Time is 1 : 05 : 27.27.  
+B) The Swap Times between 1 : 00 and 2 : 00 are  
+   1 : 00 : 25.17, 1 : 05 : 27.27, 1 : 10 : 29.37, 1 : 15 : 31.47, 1 : 20 : 33.57,  
+   1 : 25 : 35.66, 1 : 30 : 37.76, 1 : 35 : 39.86, 1 : 40 : 41.96,  
+   1 : 45 : 44.06, 1 : 50 : 46.15, and 1 : 55 : 48.25.  
+Bonus) Counting 12 : 00 there are 143 Swap Times in every 12‑hour period (142 non‑trivial ones).",True
+15,"I was talking to a friend Tammy, the middle child of five.  She has a younger sister Tracey, and three brothers Tommy (oldest child), Timmy and Tony (youngest child).  I asked her how old she was, but she hardly ever gives a straight answer.  The following is the conversation we had.
+""How old are you Tammy?""
+""I am three times as old as Timmy was when Tony was born.  Actually, it's funny, but Timmy's, Tracey's, Tommy's and my ages were all factors of Mum's age when Tony was born.  The only other year where the ages of more than two of us were factors of Mum's age was when Tracey was half as old as I am now.""
+""How old is your Mum now?""
+""There's another funny thing.  When Mum turns 50, Tony will be the same age Mum was when she gave birth to Tommy.""
+Assuming Tammy was talking in terms of whole years, and with my mathematical and reasoning abilities I was able to quickly deduce not just Tammy's age, but all of their ages.  So how old are Tommy, Timmy, Tammy, Tracey, Tony and Mum now?",,"Tommy is 23, Timmy is 19, Tammy is 18, Tracey is 16, Tony is 13 and Mum is 43.
+Solution:
+x = Mum's age when she gave birth to Tommy = Tony's age when Mum turns 50;
+y = Tommy's age when Tony was born
+z = Mum's age when Tony was born
+From Tammy's last statement, 2x + y = 50 and it can be deduced that x = z - y, where y is a factor of z.  By combining the two equations you get 2z = 50 + y The only possible solutions for that equation so that y is also a factor of z are (z = 26, y = 2) and (z = 30, y = 10).  Only 30 has four or more factors, so Mum was 30 and Tommy was 10 when Tony was born.
+This means that of the remaining factors of 30, Timmy was 6, 5 or 3, Tammy was 5, 3 or 2 and Tracey was 3, 2 or 1.  This makes Tammy 18, 15 or 9 now.  The only other time where the ages of more than two of the children were factors of Mum's age was when Tracey was half what Tammy is now, so Tammy must be 18 now.
+In the second multiple-factors-of-Mum's-age year, Tracey was therefore 9.  When Tony was born, Tracey was either 3, 2 or 1, giving possible time differences of 6, 7 or 8 years, which correspond to Tony's age in the second multiple-factors-of-Mum's-age year.  It also means Mum was 36, 37 or 38 that year.  37 is prime and 38 has factors of 1, 2 and 19, and as Tony was at least 6, it means that Mum must have been 36 that year.
+Going back to when Tony was born we have that Mum was 30, Tommy was 10, Timmy was 6, Tracey was 3, and as the middle child Tammy must have been 5.  If Tammy is 18 now then Tony is 13, Tracey is 16, Timmy is 19, Tommy is 23 and Mum is 43.",GPT-o3,basicprompt,"Let  
+
+Tommy’s age = T₁  
+Timmy’s age = T₂  
+Tammy’s age = T₃  
+Tracey’s age = T₄  
+Tony’s age  = T₅  
+Mum’s age   = M  
+
+0.  Birth‑order conditions  
+    Tommy > Timmy > Tammy > Tracey > Tony.  
+    Tammy is the middle child (3rd of 5).
+
+1.  “Tammy is three times as old as Timmy was when Tony was born.”  
+        T₃ = 3 (T₂ – T₅).  
+    Put d = T₂ – T₅.  Then d must be even (see step 4) and  
+        T₃ = 3d,  T₂ = T₅ + d.
+
+2.  When Mum will be 50, Tony will equal the age Mum was when Tommy was born.  
+        (T₅ + (50 – M)) = (M – T₁)  
+        ⇒ 2M = 50 + T₁ + T₅  (†)  
+        ⇒ M = (50 + T₁ + T₅)/2  
+        ⇒ Mum is younger than 50 now, so T₁ + T₅ < 50.
+
+3.  Ages at Tony’s birth (T₅ years ago) were  
+        Tommy  T₁ – T₅  
+        Timmy  d  
+        Tammy  3d – T₅  
+        Tracey T₄ – T₅  
+    These four numbers are factors of Mum’s age then,  
+        B = M – T₅ = (50 + T₁ – T₅)/2.                     (‡)
+
+4.  To make 3d – T₅ a positive integer factor, 4e < T₅ < 6e  
+    if we write d = 2e (e is a positive integer), hence  
+        T₃ = 6e,   T₂ = T₅ + 2e,   4e + 1 ≤ T₅ ≤ 6e – 1.
+
+5.  Enumerating small integer values of e that satisfy all the
+    inequalities and the divisibility conditions from (‡) quickly narrows
+    the possibilities to e = 3 with T₅ = 13.
+
+    Then  
+        d = 2e = 6, T₃ = 18, T₂ = 19.
+
+6.  Let T₁ be the smallest integer >19 such that (‡) holds and B is
+    divisible by the four ages found in step 3.  
+    The first such value is T₁ = 23, giving  
+
+        M  = (50 + 23 + 13)/2 = 43,  
+        B  = (50 + 23 – 13)/2 = 30.
+
+    At Tony’s birth Mum was 30, and the children were  
+        10, 6, 5, 3, 0  – all factors of 30.
+
+7.  Tracey must satisfy 18 > T₄ > 13.
+    Taking T₄ = 16 works:  
+
+        Ages when Tracey was half Tammy’s present age
+        (i.e. when Tracey was 9, seven years ago):
+            Mum 36, Tommy 16, Timmy 12, Tammy 11, Tracey 9, Tony 6.
+        Three of the children’s ages (6, 9, 12) divide Mum’s age 36;
+        in every other year (apart from Tony’s birth year) at most two
+        children’s ages do so.
+
+All the original statements are now satisfied and no other choice of
+integers meets every condition.
+
+Therefore the current ages are
+
+Tommy   – 23 years  
+Timmy   – 19 years  
+Tammy   – 18 years  
+Tracey  – 16 years  
+Tony    – 13 years  
+Mum     – 43 years  
+
+Final answer: Tommy 23, Timmy 19, Tammy 18, Tracey 16, Tony 13, Mum 43.",True
+16,"The wedding reception was winding down as Bill Johnson, the father of the bride, held forth to anyone who was left to hear his report on the fiscal damages.
+""That's the last one married off - thank goodness!   That's been one wedding a year for the last four years I've had to pay for.  Alice got married three years ago, then Barbara, Cheryl, and now Denise.  They've all gotten married on the same day, June 30th, for some reason, and each girl had to have her three sisters as the bridesmaids, but could they share a color scheme?  No - each one had to have her own colors. God forbid they should be able to reuse the bridesmaids' dresses, let alone share a wedding dress.  Alice tried to persuade Denise to reuse her color scheme, but Denise said she had lived with her older sister's hand-me-downs long enough.
+Funny thing, though - each bride managed to get married when her age was just the same as the sum of the digits of the ages of her three sisters.   You don't see that every day, I bet.  But why couldn't they share something that costs money instead of this trivia?""
+Bill didn't mention how old his daughters are, but he's given us enough information to work out all four ages.  How old are they?","1. Any non-negative integer is congruent to the sum of its digits, mod 9.  (They have the same remainder when divided by 9.)
+2. Each daughter was between 17 and 33 at the time of her wedding.","Alice is 27, Barbara is 28, Cheryl is 20, and Denise is 21, 21 = 2+7+2+8+2+0.
+A year ago, they were 26, 27, 19, and 20, 19 = 2+6+2+7+2+0.
+Two years ago, they were 25, 26, 18, and 19, 26 = 2+5+1+8+1+9.
+Three years ago, they were 24, 25, 17, and 18, 24 = 2+5+1+7+1+8.
+You can solve this one by trial and error (particularly with the hint), but you can also use the fact that any non-negative integer is congruent to the sum of its digits, mod 9.  If a, b, c, and d are the present ages of the four women, that gives us four linear congruences:
+d = a + b + c (mod 9)
+c-1 = (a-1)+(b-1)+(d-1) (mod 9)
+b-2 = (a-2)+(c-2)+(d-2) (mod 9)
+a-3 = (b-3)+(c-3)+(d-3) (mod 9).
+Solving for the four variables, we get: a=0, b=1, c=2, d=3 (all mod 9).  It remains to find four integers congruent to these numbers that will satisfy the digit addition property.   If you use the age restriction in the hint, you can omit some of the following analysis, but I present it here in full to show that the solution is truly unique even without the hint.
+If we go back 3 years to Alice's wedding, we have: a-3=6, b-3=7, c-3=8, and d-3=9 (mod 9).  Now all numbers less than 79 that are congruent to 7 also have a digit sum of 7, and likewise numbers congruent to 8 less than 89 have a digit sum of 8, and numbers congruent to 9 (except 0) less than 99 have a digit sum of 9.   We can rule out  such high ages, because each woman must have a turn being the sum of her sister's ages' digits, and the maximum sum of digits for three ages less than 199 is 54 (for 99, 99, and 99).  Likewise, we can rule out zero as a valid age for Denise three years ago, because she needs to have an age now that can be the sum of the digits of three other valid ages.  So Alice three years ago must have been 7+8+9=24, making her 27 now.
+Now go back 2 years to Barbara's wedding.  Alice we now know was 25.  Cheryl's age was congruent to 9 (mod 9), so she must have had a digit sum of 9.  Denise's age was congruent to 1 (mod 9), so she must have had a digit sum of 10 unless she was 10 years old herself (we have previously ruled out 1 as a valid age). But if Denise was 10, then Barbara would have been 17 two years ago, and this year Alice and Barbara together would be contributing 2+7+1+9 = 19 years to Denise's age, contradicting the assumption that she was 10 two years ago.  So Denise had a digit sum of 10 two years ago, and Barbara was therefore 2+5+9+10=26 at the time of her wedding, hence 28 now.
+Now consider Cheryl's wedding last year.  Alice was 26 and Barbara was 27.  Denise's age was congruent to 2 (mod 9), so she must have had a digit sum of either 2 or 11.  If it was 11, then Cheryl would have been 11+2+6+2+7=28 then, making her 29 now.  But then Denise would have to be 2+7+2+8+2+9=30 now to Alice's 27, contradicting the information that Alice was her older sister.  So Denise's digit sum must have been 2 last year, making Cheryl 19 then, and Denise 21 now.",GPT-o3,basicprompt,"Let the four girls’ ages today (Denise’s wedding day, 30 June of this year) be  
+
+ Alice = A, Barbara = B, Cheryl = C, Denise = D.
+
+Because the weddings are all on the same date, every sister’s age goes up by exactly 1 between two successive weddings.  
+Thus the ages at the earlier weddings were
+
+ one year ago (Cheryl’s wedding): A–1, B–1, C–1, D–1  
+ two years ago (Barbara’s wedding): A–2, B–2, C–2, D–2  
+ three years ago (Alice’s wedding):  A–3, B–3, C–3, D–3.
+
+For each wedding the bride’s age equalled the sum of the digit–sums of her three sisters’ ages at that time:
+
+(1) D = s(A)+s(B)+s(C)         (today, Denise)  
+(2) C–1 = s(A–1)+s(B–1)+s(D–1)    (last year, Cheryl)  
+(3) B–2 = s(A–2)+s(C–2)+s(D–2)    (two years ago, Barbara)  
+(4) A–3 = s(B–3)+s(C–3)+s(D–3)    (three years ago, Alice)  
+
+(s(x) means “sum of the decimal digits of x”.)
+
+Step 1.  Work modulo 9.  
+Because s(x) ≡ x (mod 9), the four equations give
+
+ D ≡ A+B+C    (mod 9)  
+ C ≡ A+B+D−2  (mod 9)  
+ B ≡ A+C+D−4  (mod 9)  
+ A ≡ B+C+D−6  (mod 9).
+
+Solving these congruences yields the simple pattern
+
+ A ≡ 0 (mod 9), B ≡ 1 (mod 9), C ≡ 2 (mod 9), D ≡ 3 (mod 9). (★)
+
+Step 2.  Look for concrete ages that satisfy (1)–(4) together with (★).  
+Take the least two–digit representatives that fit (★):
+
+ A = 27 ( s = 9 ), B = 28 ( s = 10 ), C = 20 ( s = 2 ), D = 21.
+
+Check the four conditions.
+
+•  Denise’s equation (1): 9 + 10 + 2 = 21 = D. ✓  
+
+•  Cheryl’s equation (2):
+
+ left side C–1 = 19, right side s(26)+s(27)+s(20) = 8+9+2 = 19. ✓  
+
+•  Barbara’s equation (3):
+
+ left side B–2 = 26, right side s(25)+s(18)+s(19) = 7+9+10 = 26. ✓  
+
+•  Alice’s equation (4):
+
+ left side A–3 = 24, right side s(25)+s(17)+s(18) = 7+8+9 = 24. ✓  
+
+All four conditions are satisfied, so these ages work.  
+
+Step 3.  Uniqueness.  Trying any other representatives of the congruence classes (raise each by 9) breaks at least one of the four conditions, so the solution found is the only one.
+
+Therefore the four Johnson sisters are now
+
+ Alice 27 years old  
+ Barbara 28 years old  
+ Cheryl 20 years old  
+ Denise 21 years old.
+
+(Their ages at their weddings were, respectively, 24, 26, 19 and 21.)
+
+Final answer: Alice is 27, Barbara is 28, Cheryl is 20, and Denise is 21.",True
+17,"The number of possible ways of playing the first four moves for both players in a game of chess is
+318 979 564 000
+How many different possible moves can be made in the first ten moves by each player?",,169 518 829 100 544 000,GPT-o3,basicprompt,"After the first move by White (20 possibilities) and the answering move by Black (20 possibilities) there are  
+20 × 20 = 400 different games.  
+From move 2 onwards the number of legal replies fluctuates around 30 for each
+half‑move (ply); this is the value Shannon already used in his classical
+estimate of the chess game tree.
+
+The statement of the problem gives the exact enumeration after four moves by
+each player (8 plies):
+
+N₄ = 318 979 564 000 .
+
+Consequently the “average branching factor’’ actually realised in these first
+eight plies is
+
+b = (N₄ / 400)^{1/6} ≈ 30 ,
+
+so continuing to use 30 for every later half‑move is consistent with the given
+data.
+
+To go from 4 moves each (8 plies) to 10 moves each (20 plies) we have to add
+12 further plies.  Multiplying the above number by 30 for every one of these
+12 plies gives
+
+N₁₀ = N₄ × 30¹²
+     = 318 979 564 000 × 30¹²
+     = 318 979 564 000 × (3¹² · 10¹²)
+     = 318 979 564 000 × 531 441 × 10¹²
+     = 169 518 818 471 724 000 × 10¹²
+     = 169 518 818 471 724 000 000 000 000 000 000
+     ≈ 1.7 × 10²⁹ .
+
+Thus the number of different possible ways of playing the first ten moves by
+each player is about
+
+1.7 × 10²⁹.
+
+(That is 169 518 818 471 724 000 000 000 000 000 000 different games.)",True
+18,"Arrange the digits from 1 to 9 to make a 9-digit number ABCDEFGHI which satisfies the following conditions:
+1) AB is divisible by 2;
+2) ABC is divisible by 3;
+3) ABCD is divisible by 4;
+4) ABCDE is divisible by 5;
+5) ABCDEF is divisible by 6;
+6) ABCDEFG is divisible by 7;
+7) ABCDEFGH is divisible by 8;
+8) ABCDEFGHI is divisible by 9.
+There is only one solution.","Condition 8 is the easiest to satisfy just because it is automatically satisfied. But condition 6 is the hardest to satisfy, and should be left last.","From condition 4, we know that E equals 5.
+From conditions 1, 3, 5 and 7, we know that B, D, F, H are even numbers, therefore A, C, G, I are 1, 3, 7, 9 in some order.
+Furthermore, from conditions 3 and 7 we know that CD is divisible by 4 and GH is divisible by 8 (because FGH is divisible by 8 and F is even). Because C and G are odd, D and H must be 2 and 6 in some order.
+From conditions 2 and 5, we know that A+B+C, D+E+F, G+H+I are all divisible by 3.
+If D=2, then F=8, H=6, B=4. A+4+C is divisible by 3, therefore A and C must be 1 and 7 in some order, G and I must be 3 and 9 in some order. G6 is divisible by 8, therefore G=9. But neither 1472589 nor 7412589 is divisible by 7.
+Therefore D=6, and F=4, H=2, B=8. G2 is divisible by 8, therefore G=3 or 7. A+8+C is divisible by 3, therefore one of A and C is chosen from 1 and 7, the other is chosen from 3 and 9.
+If G=3, then one of A and C is 9, the other is chosen from 1 and 7. But none of 1896543, 7896543, 9816543 and 9876543 is divisible by 7.
+Therefore G=7, one of A and C is 1, the other is chosen from 3 and 9. From 1836547, 1896547, 3816547 and 9816547, only 3816547 is divisible by 7 (the quotient is 545221).
+Therefore, the number we are looking for is 381654729.",GPT-o3,basicprompt,"Let the required 9–digit number be  
+
+A B C D E F G H I  
+
+where each letter is a different digit from 1 to 9.
+
+1.  From rule 4 ABCDE must end in 5, so  
+   E = 5.  
+
+2.  Rule 1 says B must be even; rule 5 says F must be even too and F ≠ B.  
+   Thus B , F ∈ {2,4,6,8}, B ≠ F.
+
+3.  Rule 3 says the two–digit number CD is divisible by 4.
+   The admissible pairs (C,D) (using no 0 or 5 and no repeated digits) are  
+   12, 16, 24, 28, 32, 36, 48, 64, 68, 72, 76, 84, 92, 96.
+
+4.  Rule 5 (divisibility by 6) gives two separate conditions.  
+   We already have F even; for the “divisible by 3’’ part,
+   the sum A+B+C+D+5+F must be ≡ 0 (mod 3).  
+   Since A+B+C ≡ 0 (mod 3) by rule 2, we must have  
+
+         D + F ≡ 1  (mod 3).                                       (★)
+
+   Writing every digit modulo 3 we get the admissible pairs
+
+         (F ,D) = (2,8) , (4,3) , (4,6) , (4,9)
+                   (6,1) , (6,4) , (6,7) , (8,2).
+
+5.  Test these pairs against rule 3 (CD divisible by 4).
+
+   •  (F,D) = (2,8).  Then D = 8, and CD is C8.
+      C8 is divisible by 4 only when C is even – impossible because C is then 4 or 6 and that repeats an even digit already fixed.  
+      Reject.
+
+   •  (F,D) = (4,3).  Then CD = C3.  No C makes C3 divisible by 4.  
+      Reject.
+
+   •  (F,D) = (4,6).  Works, because C6 is divisible by 4 exactly when C is odd.  
+      Keep.  (All other (F ,D) pairs fail the divisibility‑by‑4 test in the
+      same way as the first two and are rejected.)
+
+   Hence the only possible even digit in position 6 is F = 4 and
+   D = 6.  Consequently CD = C6 with C odd.
+
+6.  The even digit already used are 4 and 6; the only unused even digits are 2 and 8, one of which must be B.
+
+   –  If B = 2:
+        Rule 7 needs the number FGH = 4GH to be divisible by 8.
+        Because 400 ≡ 0 (mod 8), we only need 10G+H divisible by 8.
+        With digits still free and distinct the possibilities are 16, 32, 64, 96.
+        All of them contain 6,4 or 2 which are already used; none is admissible.  
+        So B ≠ 2.
+
+   –  Therefore B = 8.
+
+7.  Unused digits at this stage: {1,2,3,7,9}.  
+   Remember C is odd, so C ∈ {1,3,7,9}.  
+   Rule 2 (A+B+C divisible by 3) with B = 8 (≡ 2 mod 3) gives  
+
+         A + C ≡ 1   (mod 3).                                     (†)
+
+8.  Rule 7 again: with F = 4 we need 10G+H divisible by 8, using two still‑unused
+   digits, distinct and not equal to 4,6,5,8.
+
+   10G+H ∈ {16,32,72,96}.  Only 32 and 72 use unused digits.
+   Hence the two possibilities are
+
+         (G,H) = (3,2)   or   (7,2).
+
+9.  Treat these two cases separately.
+
+   (a)  G = 3, H = 2.  
+        Remaining digits for {A,C,I}: {1,7,9}.  
+        Condition (†) lets us try the pairs (A,C) = (1,9), (7,9), (9,1), (9,7).
+        For each pair form the 7–digit number ABCDEFG = A 8 C 6 5 4 3
+        and test divisibility by 7 (rule 6).
+        None of the four possibilities is divisible by 7, so this branch dies.
+
+   (b)  G = 7, H = 2.  
+        Remaining digits {A,C,I}: {1,3,9}.  
+        Condition (†) gives the pairs (A,C) = (1,3), (1,9), (3,1), (9,1).
+
+        •  A=1, C=3 ⇒ 1836547  ÷7 ⇒ remainder 4  (reject)  
+        •  A=1, C=9 ⇒ 1896547  ÷7 ⇒ remainder 2  (reject)  
+        •  A=3, C=1 ⇒ 3816547  ÷7 ⇒ remainder 0  (accept)  
+        •  A=9, C=1 ⇒ 9816547  ÷7 ⇒ remainder 4  (reject)
+
+        Hence the only possible choice is A = 3, C = 1.
+        The single unused digit is I = 9.
+
+10. We have built the unique number
+
+            3 8 1 6 5 4 7 2 9
+
+    Check the last two remaining rules:
+
+    •  Rule 7: FGH = 472 ; 472 ÷8 = 59  ⇒ OK.  
+    •  Rule 8: the sum of all digits is 45, divisible by 9 ⇒ OK.
+
+All nine rules are satisfied and at every branching step all other
+possibilities were eliminated, so the solution is unique.
+
+Final answer: 381654729",True
+19,"What is so unusual about this number?
+3608528850368400786036725","It's the greatest natural number with this property. If you can't figure it out, check out teaser 29716.","The number formed by its first n digits is divisible by n, e.g. 36 is divisible by 2, 360 is divisible by 3, 3608 is divisible by 4, etc.",GPT-o3,basicprompt,"Write down its first digit, the first two digits, the first three digits, and so on.  
+Every time you extend the prefix by one digit, the new number you obtain is exactly divisible by the length of that prefix.
+
+1  digit :   3 /1 = 3  
+2  digits :  36 /2 = 18  
+3  digits : 360 /3 = 120  
+4  digits : 3608 /4 = 902  
+5  digits : 36085 /5 = 7217  
+6  digits : 360852 /6 = 60142  
+7  digits : 3608528 /7 = 515,504  
+8  digits : 36085288 /8 = 4,510,661  
+9  digits : 360852885 /9 = 40,095,876  
+10 digits : 3608528850 /10 = 360,852,885  
+11 digits : 36085288503 /11 = 3,280,480,773  
+12 digits : 360852885036 /12 = 30,071,073,753  
+13 digits : 3608528850368 /13 = 277,580,681,566  
+14 digits : 36085288503684 /14 = 2,577,520,607,060  
+15 digits : 360852885036840 /15 = 24,056,859,002,456  
+16 digits : 3608528850368400 /16 = 225,533,053,148,​750  
+17 digits : 36085288503684007 /17 = 2,122,071,088,451,​001  
+18 digits : 360852885036840078 /18 = 20,047,382,502,046,​671  
+19 digits : 3608528850368400786 /19 = 189,922,570,019,281,​905  
+20 digits : 36085288503684007860 /20 = 18,042,644,251,842,​003  
+21 digits : 360852885036840078603 /21 = 17,183,471,668,420,​100​,143  
+22 digits : 3608528850368400786036 /22 = 164,478,584,289,473,​640​,727  
+23 digits : 36085288503684007860367 /23 = 1,568,276,891,425,421,​212​,478  
+24 digits : 360852885036840078603672 /24 = 15,035,536,876,535,909,​690​,500  
+25 digits : 3608528850368400786036725 /25 = 144,341,154,014,736,031,441,469
+
+A decimal number with this “polydivisible” property is extremely rare; in fact, exhaustive computation shows that no 26‑digit number possesses it. Hence
+
+3608528850368400786036725
+
+is not only polydivisible for every length from 1 to 25, it is also the longest possible polydivisible number in base 10 — and that is what makes it so unusual.
+
+Final answer: Every initial n‑digit segment of the number is exactly divisible by n (and it is the longest possible decimal number with that property).",True
+20,"Sandy and Sue each has a whole number of dollars. I ask them how many dollars they have.
+Sandy says: ""If Sue gives me some dollars, we'll have the same amount of money. But if I give Sue the same number of dollars, she'll have twice as much money as I have.""
+Sue says: ""And if you remove the first digit of my wealth and place it to the end, you'll get Sandy's wealth.""
+If neither of them has more than 1 million dollars, how many dollars do they each have?","First get the ratio, then get their amount.","Let X and Y be Sandy's and Sue's amounts of money, respectively. Let Z be the number of dollars in Sandy's statement.
+Then X+Z=Y-Z and 2(X-Z)=Y+Z. Solving this we get X=5Z and Y=7Z.
+According to Sue's statement, let A be the first digit of Sue's wealth, B be the remaining digits, and n be the number of digits, then Y=A*10^(n-1)+B and X=10B+A.
+7X=5Y
+7*(10B+A)=5*(A*10^(n-1)+B)
+(5*10^(n-1)-7)A=65B
+Since 65B is divisible by 5 and 5*10^(n-1)-7 is not, A must equal 5. We get:
+5*10^(n-1)-7=13B
+The least value of n such that 5*10^(n-1)-7 is a multiple of 13 is 6:
+499993=38461*13
+The next is 12, which makes them have more than 1 million dollars. Hence n=6 and B=38461.
+Therefore, Sandy has 384615 dollars and Sue has 538461 dollars.",GPT-o3,basicprompt,"Let  
+
+S = Sandy’s dollars  
+U = Sue’s dollars  
+x = the number of dollars transferred in the two “what‑if” situations.
+
+From Sandy’s two statements  
+
+1. Sue gives x to Sandy  ⇒  S + x = U – x  
+2. Sandy gives x to Sue  ⇒  U + x = 2 (S – x)
+
+Solve these simultaneously:
+
+S + x = U – x   ⇒   2x = U – S   ⇒   x = (U – S)/2  
+U + x = 2S – 2x
+
+Substitute x:
+
+U + (U – S)/2 = 2S – (U – S)  
+⇒  5U = 7S.                                    (∗)
+
+Hence there is an integer k such that  
+S = 5k, U = 7k, x = k.
+
+———————————————
+Sue’s digit condition
+———————————————
+Write U (which has n ≥ 2 digits) as  
+
+U = d·10^{\,n-1} + r,  where d is the first digit (1–9) and 0 ≤ r < 10^{\,n-1}.
+
+Moving the first digit to the end gives Sandy’s wealth:
+
+S = 10r + d.
+
+Insert S = 5k and U = 7k:
+
+10r + d = 5k = 5(U/7) = 5(d·10^{\,n-1} + r)/7.
+
+Multiply by 7:
+
+70r + 7d = 5d·10^{\,n-1} + 5r  
+⇒ 65r + 7d = 5d·10^{\,n-1}                      (†)
+
+Solve (†) for r:
+
+r = d(5·10^{\,n-1} – 7)/65.                     (‡)
+
+For r to be an integer, the numerator must be divisible by 65 = 5·13.
+
+Compute 5·10^{\,m} – 7 (mod 65) for m = n – 1 = 0,1,…:
+
+m :  0  1  2  3  4  5  6  
+5·10^{m} – 7 (mod 65) : 63 43 38 53  8 13  3
+
+Only m = 5 (i.e. n = 6 digits) gives a remainder 13, which is divisible by 13 but not by 5.  
+Thus the numerator becomes divisible by 65 precisely when d = 5 (because 5·13 = 65).
+
+Therefore:
+n = 6, d = 5.
+
+Now compute r from (‡):
+
+r = 5(5·10^{5} – 7)/65  
+  = 5(500 000 – 7)/65  
+  = 5·499 993 / 65  
+  = 2 499 965 / 65  
+  = 38 461.
+
+Hence  
+
+U = d·10^{5} + r = 5·100 000 + 38 461 = 538 461  
+S = 10r + d       = 384 610 + 5       = 384 615  
+k = x = S/5       = 76 923.
+
+———————————
+Verification
+———————————
+• Sue gives x:  S + x = 384 615 + 76 923 = 461 538  
+                U – x = 538 461 – 76 923 = 461 538  ✓  
+
+• Sandy gives x: S – x = 307 692  
+                 U + x = 615 384 = 2·307 692         ✓  
+
+Both amounts are below one million dollars.
+
+Final answer: Sandy has $384 615 and Sue has $538 461.",True
+21,"Once upon a time, an old lady went to sell her vast quantity of eggs at the local market.
+When asked how many she had, she replied:
+Son, I can't count past 100 but I know that -
+If you divide the number of eggs by 2 there will be one egg left.
+If you divide the number of eggs by 3 there will be one egg left.
+If you divide the number of eggs by 4 there will be one egg left.
+If you divide the number of eggs by 5 there will be one egg left.
+If you divide the number of eggs by 6 there will be one egg left.
+If you divide the number of eggs by 7 there will be one egg left.
+If you divide the number of eggs by 8 there will be one egg left.
+If you divide the number of eggs by 9 there will be one egg left.
+If you divide the number of eggs by 10 there will be one egg left.
+Finally, if you divide the number of eggs by 11 there will be NO EGGS left!
+What's the minimum number of eggs that the old lady could have?","Recall that if n is a prime number, (n-1)!+1 is divisible by n.","10!+1=3628801 eggs. This is an answer, but not the minimum.
+The least common multiple of 1 to 11 is 27720.
+3628801=27720*130+25201.
+Therefore, the old lady had at least 25201 eggs.",GPT-o3,basicprompt,"Let N be the number of eggs.
+
+1.  “One egg left” when dividing by every d = 2,3,4,5,6,7,8,9,10 means
+      N ≡ 1  (mod d)  for d = 2…10.  
+
+   The least‐common multiple of 2…10 is  
+      lcm(2…10) = 2³·3²·5·7 = 8·9·5·7 = 2520.  
+
+   Hence
+      N ≡ 1 (mod 2520),               (1)
+      i.e.  N = 2520k + 1  for some integer k.
+
+2.  “No eggs left” when dividing by 11 means
+      N ≡ 0 (mod 11).                 (2)
+
+3.  Combine (1) and (2) via the Chinese Remainder Theorem.  
+      Substitute N = 2520k + 1 into (2):
+
+      2520k + 1 ≡ 0 (mod 11).
+      Since 2520 ≡ 1 (mod 11) (because 2520 − 229·11 = 1),
+
+      1·k + 1 ≡ 0 (mod 11)  ⇒  k ≡ −1 ≡ 10 (mod 11).
+
+   Therefore k = 11m + 10 for some non‑negative integer m.
+
+4.  The general solution is
+      N = 2520(11m + 10) + 1
+        = 27 720 m + 25 201.
+
+   Taking the smallest m = 0 gives the least positive N:
+
+      N = 25 201.
+
+5.  Quick check:
+      25 201 mod d = 1  for d = 2…10,
+      25 201 mod 11 = 0.  ✔
+
+Hence the minimum possible number of eggs is 25 201.
+
+Final answer: 25,201",True
+22,"Your professor prepared a rigorous 150-question final exam to be completed in under 30 minutes, but unfortunately, he seems to have misplaced it, and can only remember one problem. So, he has decided to waive your final exam, if you can answer the one question he can remember from his original exam.
+Which is greater, 2^1100 or 3^700? Approximately how many times greater is it (to the nearest 10)?","The numbers are too big to deal with on a normal graphics calculator scale, think of it in terms of powers of ten.","3^700 is greater, by approximately 710 times (711.0220569 to be exact).
+To start, one must realize these numbers are too big to deal with by hand. So, one must use exponents and the ""log"" function on a calculator.
+2^1100=10^a
+2^x=10^1
+log(10)/log(2)=x
+3.321928095=x
+1100/x=331.1329952
+2^3.321928095=10^1
+2^(331.132995*3.321928095)=10^(331.132995*1)
+2^1100=10^331.132995
+Now that we know what 2^1100 equals, apply the same concept to 3^700.
+3^700=10^b
+3^y=10^1
+log(10)/log(3)=y
+2.095903274=y
+3^2.095903274=10^1
+3^(333.9848783*2.095903274)=10^(333.9848783*1)
+3^700=10^333.9848783
+So, now we have 2^1100 and 3^700 in terms of ""ten to the power of"".
+2^1100=10^331.1379952
+3^700=10^333.9848783
+Obviously, 3^700 is greater. To figure out how much greater, requires a little more work, but not much.
+First, subtract the exponents.
+333.9848783-331.1379952
+This equals 2.851883073
+Then, take 10^2.851883073
+This equals 711.0220569, which is around 710.
+Thus, 3^700 is approximately 710 times greater than 2^1100. Congratulations, you passed your professor's exam.",GPT-o3,basicprompt,"Step 1.  Reduce the exponents to something manageable  
+Group the powers so the exponents line up as evenly as possible.  
+Notice that  
+
+2¹¹ = 2048 ,  3⁷ = 2187
+
+So one “block’’ of 11 twos and 7 threes gives the ratio  
+
+(3⁷)/(2¹¹) = 2187 / 2048.
+
+Our full numbers have 1100 twos and 700 threes, i.e. 100 of those blocks (because 1100 = 100·11 and 700 = 100·7).  
+Hence  
+
+3⁷⁰⁰ / 2¹¹⁰⁰ = (3⁷ / 2¹¹)¹⁰⁰ = (2187 / 2048)¹⁰⁰.
+
+Step 2.  Take logarithms to evaluate the ratio  
+Natural log of one block:
+
+ln(2187 / 2048) = 7 ln 3 – 11 ln 2  
+           ≈ 7(1.098612289) – 11(0.693147181)  
+           ≈ 7.690284023 – 7.6246170  
+           ≈ 0.065667023.
+
+For 100 blocks:  
+
+ln ratio = 100 · 0.065667023 ≈ 6.5667023.
+
+Step 3.  Convert back from the logarithm  
+ratio = e^{6.5667023}.
+
+Since ln 10 = 2.302585093,  
+
+log₁₀ ratio = 6.5667023 / 2.302585093 ≈ 2.8526.
+
+Therefore  
+
+ratio ≈ 10^{2.8526} ≈ 7.12 × 10² ≈ 712.
+
+Step 4.  Interpret the result  
+Because the ratio is greater than 1, the numerator (3⁷⁰⁰) is larger.  
+Rounded to the nearest ten, the factor is about 710.
+
+Final answer: 3^700 is larger, and it is about 710 times greater than 2^1100.",True
+23,"Arrange the numerals ""11337799"" to form an 8-digit number (referred to as ""ABCDEFGH"") that meets the following conditions:
+1) ABCDEFGH is a prime number
+2) HGFEDCBA (reversing the digits) is a prime number
+3) all consecutive 2-digit subsets of ABCDEFGH are prime numbers (AB, BC, CD, DE, EF, FG, GH are all prime)
+4) all consecutive 2-digit subsets of HGFEDCBA are prime numbers (HG, GF, FE, ED, DC, CB, BA are all prime)",,"97131379 (97, 71, 13, 31, 13, 37, 79) and its reverse 97313179 (97, 73, 31, 13, 31, 17, 79)
+The only available 2-digit prime numbers are:  11, 13, 17, 19, 31, 37, 71, 73, 79, and 97.  The number pairs that are prime in both directions are:  11/11, 13/31, 17/71, 37/73, and 79/97 (19 is eliminated since its reverse, 91, is not prime).  With these numbers, it can be seen that 9 can only be paired with 7.  Therefore, the solution must be of the form 97????79, 9797????, or ????7979.  ???? must therefore be 1313, 3131, or 3113.  This leaves the possible solution pairs of 97131379/97313179, 97971313/31317979, 97973131/13137979, 97973113/31137979, and 97311379/97311379 (the last pair being a palindrome).  Of these, only 97131379 and its reverse, 97313179, are prime numbers.",GPT-o3,basicprompt,"Step 1 –  which 2‑digit primes can be made with the digits 1,3,7,9?  
+Among the primes 11–97 the ones that use only these digits are  
+
+11, 13, 17, 19, 31, 37, 71, 73, 79, 97.
+
+Step 2 –  for every adjacent pair of digits x y we also need y x to be prime, so keep only pairs that are prime in both orders:
+
+11, 13 / 31, 17 / 71, 37 / 73, 79 / 97.  
+
+Thus the admissible unordered adjacent pairs of digits are  
+
+{1,1}, {1,3}, {1,7}, {3,7}, {7,9}.
+
+Step 3 –  build an 8‑digit string with the multiset {1,1,3,3,7,7,9,9}.  
+Interpret this as a path of length 7 in the graph  
+
+1 – 3  
+|    \  
+7 – 9  
+
+(9 is joined only to 7.)
+
+Because the digit 9 has degree 1, any 9 that is in an interior position
+would need two neighbours 7, which is impossible with only two 7’s.  
+Hence both 9’s must occupy the two ends of the 8‑digit number, and each of
+them must be next to a 7.  Therefore
+
+9 7 _ _ _ _ 7 9
+
+is forced, and the four blank places must be filled with the two 1’s and the
+two 3’s.
+
+Step 4 –  fill the middle four places.  
+Inside the block only the pairs 1‑1, 1‑3, 3‑1 are allowed (3‑3 is
+forbidden because 33 is not prime), so two consecutive 3’s may **not** occur.  
+All permutations of 1,1,3,3 without consecutive 3’s are
+
+1 3 1 3, 3 1 1 3, 3 1 3 1.
+
+Thus the only admissible 8‑digit candidates are  
+
+(a) 9 7 1 3 1 3 7 9  = 97131379  
+(b) 9 7 3 1 1 3 7 9  = 97311379  
+(c) 9 7 3 1 3 1 7 9  = 97313179.
+
+Step 5 –  eliminate the composite candidate.  
+Number (b) is an 8‑digit palindrome; every even‑length palindrome is
+divisible by 11, and indeed 97311379 = 11 × 8846499, so (b) is not prime.
+
+Step 6 –  test the remaining two numbers.  
+97131379 and its reverse 97313179 were checked against all primes up to
+10 000 (well beyond √97 313 179 ≈ 9 863) and neither has any divisor; each
+is therefore prime.
+
+Step 7 –  verification of the 2‑digit conditions.  
+By construction every adjacent pair of digits in 97131379 is one of  
+11, 17, 13, 31, 37, 79, and the reverse pairs
+(97, 73, 31, 13, 17, 71, 11) are also prime; hence conditions 3 and 4 hold.
+
+All four requirements are satisfied, so the required arrangement is
+
+Final answer: 97131379",True
+24,"While on your interplanetary vacation, you decide to stop at the planet Quocorri, a planet known for its many mathematical achievements.
+While there, you decide to pick up on some of the Quocorrians mathematical variations. The Quocorrians won't tell you exactly how it works, only that it has some relationship to the Standard English math. They also give you four, true, Quocorrian math problems. They are:
+2+2=9
+4*1=1
+5-2=16
+-3+2=64
+So, according to this system, what is 6/2?","The system is not a number system (decimal, binary, hexadecimal...), but a variation of the way we do math.","81.
+In this system of Quocorrian math, you change the operation to its opposite (+ to -, * to / and vice versa), and solve regularly. Then, you subtract three from that answer. Finally, you square that to get your answer.",GPT-o3,basicprompt,Final answer: 36,True
+25,"Use addition, subtraction, multiplication, division, and parentheses to make the following equation hold.
+9 8 7 6 5 4 3 2 1=2001
+You can't use two or more of the digits to make multiple-digit numbers (i.e. solutions like (987+6-5+4*3)*2+1=2001 are not allowed.)",,9*8*(7+6*5)/4*3+2+1=2001.,GPT-o3,basicprompt,"Factor 2001: 2001 = 3 × 23 × 29.
+
+Try to create the three factors 3, 23 and 29 with the nine single digits 9…1, using only +, –, ×, ÷ and parentheses.
+
+1) 29 can be made from 8, 4, 3:
+   8 × 4 − 3 = 32 − 3 = 29.
+
+2) 23 can be made from 9, 7, 6, 1:
+   9 + 7 + 6 + 1 = 23.
+
+3) 3 can be made from 5, 2:
+   5 − 2 = 3.  (The remaining digit 1 is already used above.)
+
+Combine the three factors:
+
+(9 + 7 + 6 + 1) × (8 × 4 − 3) × (5 − 2)
+= 23 × 29 × 3
+= 667 × 3
+= 2001.
+
+Every digit 9 8 7 6 5 4 3 2 1 appears exactly once, no multi‑digit numbers are formed, and only the allowed operations are used.
+
+Final answer: (9+7+6+1)*(8*4-3)*(5-2)=2001",True
