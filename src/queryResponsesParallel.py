@@ -8,6 +8,7 @@ from openai import OpenAI
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import itertools
 from tqdm.contrib.concurrent import process_map
+import json
 
 
 def readPrompt(path):
@@ -77,6 +78,8 @@ def process_task(t):
 
 def process_pair(index, prompt, question, hint, solution, instructions, model, dataset, name):
     status = True
+    results = pd.read_csv(f"../responses/{dataset}/{name}/resultsTemp.csv")
+    print("LOOKING AT PROBLEM", index, "WITH PROMPT", prompt)
     if "hint" in instructions.lower():
         question = f"Question: {question}\n Hint: {hint}"
 
@@ -88,7 +91,6 @@ def process_pair(index, prompt, question, hint, solution, instructions, model, d
         response = None
         status = False
 
-    results = pd.read_csv(f"../responses/{dataset}/{name}/results.csv")
     entry = {
         'ID'        : index,
         'Question'  : question,
@@ -99,8 +101,14 @@ def process_pair(index, prompt, question, hint, solution, instructions, model, d
         'Response'  : response,
         'Status'    : status
     }
+    
     results = pd.concat([results, pd.DataFrame([entry])], ignore_index=True)
-    pd.DataFrame(results).to_csv(f"../responses/{dataset}/{name}/results.csv", index=False)
+    results.to_csv(f"../responses/{dataset}/{name}/resultsTemp.csv", index=False)
+
+
+    print("FINISHED!")
+
+    return entry
 
 def main():
     parser = argparse.ArgumentParser()
@@ -109,29 +117,38 @@ def main():
     parser.add_argument("--rows", help="Number of rows to sample", type=int, default=1, required=False)
     parser.add_argument("--samples", help="Number of samples to run", type=int, default=1, required=False)
     parser.add_argument("--model", help="Model to run on", choices=modelInfo.keys(), required=False, default="GPT-o3")
-    
     args = parser.parse_args()
+
     os.makedirs(f"../responses/{args.dataset}/{args.name}", exist_ok=True)
+    pd.DataFrame(columns=['ID', 'Question', 'Hint', 'Human Solution', 'Model', 'PromptType', 'Response', 'Status']).to_csv(f"../responses/{args.dataset}/{args.name}/resultsTemp.csv", index=False)
 
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
 
-    tasks = [
-        (index, prompt, row['Question'], row['Hint'], row['Answer'], instructionSet[prompt], args.model, args.dataset, args.name)
-        for index, row in itertools.islice(data.iterrows(), min(args.rows, len(data)))
-        for _ in range(args.samples)
-        for prompt in instructionSet
-    ]
+    results = []
+    for prompt in instructionSet:
+        
+        for _ in range(args.samples):
+            for index, row in itertools.islice(data.iterrows(), min(args.rows, len(data))):
+                task = (
+                    index,
+                    prompt,
+                    row['Question'],
+                    row['Hint'],
+                    row['Answer'],
+                    instructionSet[prompt],
+                    args.model,
+                    args.dataset,
+                    args.name,
+                )
 
-    process_map(
-        process_task,
-        tasks,
-        chunksize=1,
-        desc="Processing pairs",
-    )
+                entry = process_task(task)
+                results.append(entry)
+                with open(f'../responses/{args.dataset}/{args.name}/results.jsonl', 'a') as jsonfile:
+                    jsonfile.write(json.dumps(entry) + "\n")
 
-    # pd.DataFrame(results).to_csv(f"../responses/{args.dataset}/{args.name}/results.csv", index=False)
+        pd.DataFrame(results).to_csv(f"../responses/{args.dataset}/{args.name}/resultsAll.csv", index=False)
 
 if __name__ == "__main__":
     main()
