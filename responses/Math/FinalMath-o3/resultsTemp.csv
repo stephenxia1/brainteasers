@@ -4671,3 +4671,226 @@ Hence the fewest weights the chief must carry are
          1 stone, 3 stone, 9 stone, 27 stone, 81 stone.
 
 Final answer: 5 weights of 1 stone, 3 stone, 9 stone, 27 stone and 81 stone.",True
+75,What is the smallest number that is the sum of two different pairs of cubes?,Cubic inches in a cubic foot might help.,"1729.
+1 cubed + 12 cubed = 1 + 12x12x12 = 1+1728=1729
+10 cubed + 9 cubed = 10x10x10 +9x9x9 = 1000 + 729 = 1729",GPT-o3,basicprompt,"Let a and b be positive integers with a ≤ b.  
+We look for the smallest N that can be written in two distinct ways
+
+N = a³ + b³ = c³ + d³ with {a,b} ≠ {c,d}.
+
+List the cubes that are small enough to matter:
+
+1³ =   1 2³ =   8 3³ =  27 4³ =  64 5³ = 125  
+6³ = 216 7³ = 343 8³ = 512 9³ = 729 10³ = 1000  
+11³ = 1331 12³ = 1728 (anything bigger already gives sums beyond our range of interest).
+
+Now form every sum a³ + b³ (a ≤ b) that is < 2000 and look for a repeated value.
+
+2   = 1³+1³  
+9   = 1³+2³  
+16  = 2³+2³  
+28  = 1³+3³  
+35  = 2³+3³  
+54  = 3³+3³  
+65  = 1³+4³  
+72  = 2³+4³  
+91  = 3³+4³  
+… (continuing in this way, every value is unique) …  
+
+Carrying this out all the way up to the largest sum below 1729 shows no duplication.
+
+The next cube available is 12³ = 1728.  
+Adding 1³ gives
+
+1728 + 1 = 1729.
+
+But we already have another way to make 1729:
+
+9³ + 10³ = 729 + 1000 = 1729.
+
+Thus
+
+1729 = 1³ + 12³ = 9³ + 10³,
+
+and every smaller number has at most one representation as a sum of two positive cubes.
+
+Therefore the smallest number that is the sum of two different pairs of cubes is
+
+Final answer: 1729",True
+76,"There are three 8-digit natural numbers, each of them equals the sum of the eighth powers of its digits.
+Two of them are:
+24678050=256+65536+1679616+5764801+16777216+0+390625+0
+88593477=16777216+16777216+390625+43046721+6561+65536+5764801+5764801
+Do you know what the remaining one is? It does not begin with 0, otherwise it isn't an 8-digit number.",It is between 24678050 and 88593477.,24678051,GPT-o3,basicprompt,"Write an 8–digit candidate as  
+
+N = d₁d₂ … d₈  = 10⁷d₁ + … + d₈ ,        d₁ ≠ 0,
+
+and let  
+
+S = d₁⁸ + d₂⁸ + … + d₈⁸ .
+
+We need N = S.
+
+The eighth‑powers of the possible digits are
+
+0→0 , 1→1 , 2→256 , 3→6561 , 4→65536 ,  
+5→390 625 , 6→1 679 616 , 7→5 764 801 ,  
+8→16 777 216 , 9→43 046 721.
+
+The problem states that exactly three 8‑digit solutions exist and already shows
+
+24678050 = Σ d_i⁸ ,
+88593477 = Σ d_i⁸ .
+
+Observe what happens if we change only the last digit of the first number from 0 to 1.
+
+• On the left‑hand side the number 24678050 increases by 1 and becomes 24678051.
+
+• On the right‑hand side the only term that changes is the last one, replacing 0⁸ by 1⁸; this also increases the sum by exactly 1.
+
+Hence the equality is preserved:
+
+24678051 = 2⁸ + 4⁸ + 6⁸ + 7⁸ + 8⁸ + 0⁸ + 5⁸ + 1⁸
+         = 256 + 65 536 + 1 679 616 + 5 764 801
+           + 16 777 216 + 0 + 390 625 + 1
+         = 24 678 051.
+
+The result is still an 8‑digit number (the first digit is 2), so it is admissible.
+
+No other one‑digit change of 24678050 can work, because changing 0 to any digit other than 1 would add more than 1 to the right‑hand side while adding the same amount to the left would disrupt equality; altering any of the other seven digits would change S by at least 255 while changing N by a multiple of 10,000,000 down to 10 makes equality impossible.  
+Consequently this is the only further solution.
+
+Therefore the third and last 8‑digit number that equals the sum of the eighth powers of its digits is
+
+Final answer: 24678051",True
+77,"I always remember the days when I was at high school, whiling away my time with my friends. Those were the days when I'd spent the maximum time with my grandfather Rudolf the world-famous Romankachi. He'd come over to our house at one of the weekends leaving behind his Romankachi estate in the village in capable hands. One day when I returned home from school, he put this clock problem in front of me which I was required to solve in the alloted time frame.
+Considering time represented in twelve hour format H:M1M2 where H is a single-digit or a two-digit number indicating the hours and M1 and M2 the digits indicating the minutes (M1 representing the tens digit of the minutes and M2 the units digit of the minutes), he wanted me to find out that in a day how such instances would occur so that H is exactly divisible by M1 and gives M2 as quotient?
+He further added that if H:M1M2 was the time represented in 24-hour format instead of a 12-hour format, then how many instances were there in a day such that H is exactly divisible by M1 giving M2 as the quotient? In the 24 hour format, 12 o' clock midnight is represented as 00:00.",,"Clearing the scope of the problem, we have to divide H by M1 getting M2 as the quotient with remainder as 0.
+First let us consider the time format to be a 12-hour format.
+Here H can take values from 1 to 12.
+For M1 = 0, no value exists since divisor itself is 0.
+For M1 = 1, M2 takes values from 1 to 9 i.e., 9 values, for H = 1 to 9.
+For M1 = 2, M2 takes values from 1 to 6 i.e., 6 values, for H = 2, 4, 6, 8, 10 and 12.
+For M1 = 3, M2 takes values from 1 to 4 i.e., 4 values, for H = 3, 6, 9, and 12.
+For M1 = 4, M2 takes values from 1 to 3 i.e., 3 values, for H = 4, 8, and 12.
+For M1 = 5, M2 takes values from 1 to 2 i.e., 2 values, for H = 5 and 10.
+Any further values of M1 cannot be considered since M1M2 will then exceed 60 minutes which is not possible.
+Hence the total = 9+6+4+3+2 = 24
+This is for 12 hours.
+In a day the number of instances where H is exactly divisible by M1 giving M2 as quotient is =
+24 * 2 = 48 instances in a 12-hour format.
+Now let us consider the time format to be a 24-hour format.
+Here H can take values from 0 to 23.
+For M1 = 0, no value exists since divisor itself is 0.
+For M1 = 1, M2 takes values from 0 to 9 i.e., 10 values, for H = 0 to 9.
+For M1 = 2, M2 takes values from 0 to 9 i.e., 10 values, for H = 0, 2, 4, 6, 8, 10, 12, 14, 16, and 18.
+For M1 = 3, M2 takes values from 0 to 7 i.e., 8 values, for H = 0, 3, 6, 9, 12, 15, 18 and 21.
+For M1 = 4, M2 takes values from 0 to 5 i.e., 6 values, for H = 0, 4, 8, 12, 16, and 20.
+For M1 = 5, M2 takes values from 0 to 4 i.e., 5 values, for H = 0, 5, 10, 15 and 20.
+Any further values of M1 cannot be considered since M1M2 will then exceed 60 minutes which is not possible.
+Hence the total = 10+10+8+6+5 = 39
+This is for 24 hours.
+In a day the number of instances where H is exactly divisible by M1 giving M2 as quotient is =
+39 instances in a 24-hour format.",GPT-o3,basicprompt,"We have to examine every minute‑exact time that can occur in one day.
+
+Notation  
+H  – hour number  
+M₁ – tens digit of the minutes (1 ≤ M₁ ≤ 5, because minutes go only up to 59 and division by 0 is impossible)  
+M₂ – units digit of the minutes (0 ≤ M₂ ≤ 9)  
+
+Required condition  
+H is divisible by M₁ and the quotient is M₂, i.e.  
+  H = M₁ · M₂, with M₂ ≤ 9.
+
+--------------------------------------------------------------------
+1.  Twelve‑hour clock (hours 1 … 12)
+
+For each hour from 1 to 12 list the admissible divisors M₁ (≤5) and
+the corresponding quotient M₂ (≤9).
+
+1 : (1,1) → 1:11                                            1 time  
+2 : (1,2),(2,1) → 2:12 , 2:21                              2  
+3 : (1,3),(3,1) → 3:13 , 3:31                              2  
+4 : (1,4),(2,2),(4,1) → 4:14 , 4:22 , 4:41                 3  
+5 : (1,5),(5,1) → 5:15 , 5:51                              2  
+6 : (1,6),(2,3),(3,2) → 6:16 , 6:23 , 6:32                 3  
+7 : (1,7)            → 7:17                                1  
+8 : (1,8),(2,4),(4,2) → 8:18 , 8:24 , 8:42                 3  
+9 : (1,9),(3,3)      → 9:19 , 9:33                         2  
+10: (2,5),(5,2)      → 10:25 , 10:52                       2  
+11: none                                                    0  
+12: (2,6),(3,4),(4,3) → 12:26 , 12:34 , 12:43              3  
+--------------------------------------------------------------------
+Total in one 12‑hour cycle = 24.
+
+Because a day contains two identical 12‑hour cycles (AM and PM),
+the number of such times in a day is
+
+2 × 24 = 48.
+
+--------------------------------------------------------------------
+2.  Twenty‑four‑hour clock (hours 00 … 23)
+
+Now H ranges from 0 to 23 (00 counts as 0).
+
+Hour 0  
+0 = M₁·0  for any M₁ = 1 … 5  ⇒ 00:10, 00:20, 00:30, 00:40, 00:50  
+5 times
+
+For the remaining hours determine all factorisations H = M₁·M₂ with
+1 ≤ M₁ ≤ 5, 0 ≤ M₂ ≤ 9.
+
+ 1 : (1,1) → 01:11                         1
+ 2 : (1,2),(2,1) → 02:12 , 02:21           2
+ 3 : (1,3),(3,1) → 03:13 , 03:31           2
+ 4 : (1,4),(2,2),(4,1) → 04:14 , 04:22 , 04:41   3
+ 5 : (1,5),(5,1) → 05:15 , 05:51           2
+ 6 : (1,6),(2,3),(3,2) → 06:16 , 06:23 , 06:32   3
+ 7 : (1,7) → 07:17                         1
+ 8 : (1,8),(2,4),(4,2) → 08:18 , 08:24 , 08:42   3
+ 9 : (1,9),(3,3) → 09:19 , 09:33           2
+10 : (2,5),(5,2) → 10:25 , 10:52           2
+12 : (2,6),(3,4),(4,3) → 12:26 , 12:34 , 12:43   3
+14 : (2,7) → 14:27                         1
+15 : (3,5),(5,3) → 15:35 , 15:53           2
+16 : (2,8),(4,4) → 16:28 , 16:44           2
+18 : (2,9),(3,6) → 18:29 , 18:36           2
+20 : (4,5),(5,4) → 20:45 , 20:54           2
+21 : (3,7) → 21:37                         1
+11,13,17,19,22,23 give no admissible pair.
+
+Adding everything:
+
+5 +1+2+2+3+2+3+1+3+2+2+3+1+2+2+2+2+1 = 39.
+
+--------------------------------------------------------------------
+Final answer: 12‑hour clock – 48 instances; 24‑hour clock – 39 instances",True
+78,"You have $6.20 and are in a casino with a certain game with a 50-50 chance exactly of winning. In 5 bets, what are your chances of winning $.20?
+(P.S. Forget weighted value and losing all your money!)",,"Your chances of winning are 96.875%.
+This is possible by on your first bet, bet 20 cents. If you lose, bet 40 so you make up for the 20 you lost and get 20 more. Then go to 80, slowly doubling you inputs until you reach $3.20. You then have a 3.125% chance of losing.
+This is basically 50% * 50% * 50% * 50% * 50% = 3.125% chance of losing.
+Don't do this in a real casino, because with weighted-value, in the one situation you lose, you lose all your money!",GPT-o3,basicprompt,"Call a single bet a “coin‑flip’’: with probability ½ you win the amount you stake, with probability ½ you lose the same amount.
+
+A natural way to try to clear a 20‑cent profit is to stake 20 ¢ on each of the five bets.  
+(If you stake less you cannot reach a 20‑cent gain in only five bets; if you stake more you will overshoot the 20‑cent gain whenever you come out ahead.)
+
+Let W be the number of wins in the five bets (so 5–W are losses).  
+With a stake of 20 ¢, your net profit after the five bets is
+
+ profit = 0.20 × (W − (5 − W)) = 0.20 × (2W − 5).
+
+To have a profit of exactly 0.20 dollars you need
+
+ 0.20 × (2W − 5) = 0.20 ⟹ 2W − 5 = 1 ⟹ W = 3.
+
+Thus you must win precisely 3 of the 5 bets.
+
+The probability of getting exactly 3 wins in 5 independent 50‑50 trials is the binomial probability
+
+ P(W = 3) = C(5,3) / 2⁵ = 10 / 32 = 0.3125.
+
+So the chance of ending the five bets with a gain of 20 ¢ (no more, no less) is 31.25 %.
+
+(If instead the question were interpreted as “at least a 20‑cent gain”, then you would need W ≥ 3, whose probability is (10+5+1)/32 = 16/32 = 50 %.)
+
+Final answer: 31.25 %",True

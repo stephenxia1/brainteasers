@@ -1587,3 +1587,45 @@ For example, the prime factorization of 228 is (2^2)(3^1)(19^1). 228 has 12 fact
 First, you need to figure out the separate integers. If you have read the hint, you would know how to use prime factorization to your advantage. The only way to get 7 as the number of factors is 1 x 7. So the prime factorization of any number with 7 factors is n^6 times x^0, where n and x are both primes. But if you look, x^0, for all nonzero values of x, is 1! So, any number with exactly 7 factors must be a prime raised to the sixth power. This yields 2^6 +3^6+5^6 = 16418. Any prime 7 or greater to the sixth power is greater than 20,000.",DSReason,basicprompt,"The numbers with exactly 7 factors must be sixth powers of primes (since \(7 = 6+1\), implying \(p^6\) for prime \(p\)). The relevant primes are 2, 3, and 5, yielding \(2^6 = 64\), \(3^6 = 729\), and \(5^6 = 15,625\). Summing these distinct values gives \(64 + 729 + 15,625 = 16,418\). Other combinations either exceed 20,000 or are not unique, but the problem specifies only one solution. 
 
 **Final answer: 16418**",True
+43,"Mr. and Mrs. Crazy were just one step away from winning the $1,000,000 prize in the contest. In order for them to win, they must answer this question:
+What are the only ten 8-digit squimes?
+In case you don't know what a squime is, it is any number that:
+-has no zero
+-has all different digits
+-starts and ends with a single-digit prime or single-digit square number
+-each pair of consecutive digits is a square or prime
+Mr. and Mrs. Crazy solved it and won one million dollars. What were their answers?","A squime cannot contain the number 8 since no square or prime ends with 8.
+The largest squime has at most eight digits, since it cannot contain
+8 or 0. If we use 2, it must come first because no square or
+2-digit prime ends in 2. No 2-digit prime ends in 5 and only 25 is
+square. If, therefore, we use 5, it must come after 2. So we begin
+with 25.","The 8-digit squimes are:
+25316479
+25316497
+25364179
+25364197
+25364719
+25364971
+25371649
+25971643
+25973164
+25973641",DSReason,basicprompt,"Final answer: 25316479, 25316497, 25364179, 25364197, 25364719, 25364971, 25371649, 25971364, 25971643, 25973641",True
+44,"The formula discovered in ""Reverse Engineering I"" doesn't seem to apply exactly to many Braingle ratings once the number of voters gets larger.  What is your best guess at the number of votes cast for each attribute of the following teasers prior to my vote, and how many of those were positive (fun/hard)?  What do you think is the likely source of any ""experimental error"" between the formula and these reported ratings?  (Notation is the same as in ""Reverse Engineering I"").  Multiple answers may be possible, because of the difficulty of determining how much of the reported data constitutes ""experimental error.""
+Teaser M: (1.38, 1.20)[16] (+, -) -> (1.53, 1.13)
+Teaser N: (2.00, 2.22)[18] (+, -) -> (2.11, 2.11)
+Teaser O: (1.04, 2.82)[25] (-, +) -> (1.00, 2.87)
+Teaser P: (2.13, 1.72)[44] (+, -) -> (2.17, 1.68)",,"The formula from part I, for p positive votes out of v cast, was 4*p/v. I searched for fractions with denominators close to the reported number of voters and numerators that were multiples of 4 to try to find a good fit.  Here are some of the best possibilities, with the resulting decimals reported below.  Divide numerators by 4 to get the number of positive votes.
+Teaser M: (16/12, 16/13)[16] (+, -) -> (20/13, 16/14)
+(1.33, 1.23)[16] (+, -) -> (1.54, 1.14).  It's hard to find a good match for this one.  Another possibility is 20/15->24/16 (1.33->1.5) for the first rating, which is further off from the data, but doesn't require as many non-voters.
+Teaser N: (36/18, 40/18)[18] (+, -) -> (40/19, 40/19)
+(2.00, 2.22)[18] (+, -) -> (2.11, 2.11) An exact match to the data.
+Teaser O: (24/23, 68/24)[25] (-, +) -> (24/24, 72/25)
+(1.04, 2.83)[25] (-, +) -> (1.00, 2.88) Pretty close.
+Teaser P: (92/43, 72/42)[44] (+, -) -> (96/44, 72/43)
+(2.14, 1.71)[44] (+, -) -> (2.18, 1.67) Off by .01 in every figure.
+The above errors (particularly on Teaser M) would be hard to account for if the site were recomputing the ratings every time from p and v.  We know that the site keeps track of v for each category, in order to qualify entries for the various lists.  But the site may recalculate p every time from the previous (rounded) ranking, which could cause errors that could accumulate or cancel, depending on how unlucky/lucky you were about what order people voted in.  This could account for the errors in the above data.  If this is the problem, the best fix would be to keep a separate count of p for each ranking.  A temporary fix would be to at least round p off to the nearest integer when deriving it from the previous ranking, which works up to around 200 votes or so.",DSReason,basicprompt,"Final answer:  
+**Teaser M**: Fun votes: ~8 (5 positive), Hard votes: ~17 (14 positive).  
+**Teaser N**: Fun votes: ~18 (17 positive), Hard votes: ~19 (17 positive).  
+**Teaser O**: Fun votes: ~25 (1 positive), Hard votes: ~25 (24 positive).  
+**Teaser P**: Fun votes: ~44 (35 positive), Hard votes: ~44 (30 positive).  
+**Experimental Error**: The discrepancy arises because the original formula assumes a Bayesian prior (smoothing) that becomes negligible with more votes, leading to rounding differences or unaccounted scaling in large datasets.",True
