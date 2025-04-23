@@ -163,7 +163,7 @@ if __name__ == '__main__':
     for category in ['Math', 'Logic']:
         category_url = f'https://www.braingle.com/brainteasers/{category}.html'
 
-        output_csv_path = f'../../data/braingle/braingle_{category}.csv'
+        output_csv_path = f'../../data/braingle/braingle_{category}_all.csv'
         os.makedirs(os.path.dirname(output_csv_path), exist_ok=True)
 
         question_answer_and_metadata = scrape_braingle_math_QAs(base_url='https://www.braingle.com',
