@@ -100,7 +100,7 @@ if __name__ == '__main__':
             word_statistics = compute_word_statistics(df)
             sentence_statistics = compute_sentence_statistics(df)
 
-            print(f'\n\nCategory: {category}, topk={topk}')
+            print(f'\n\nCategory: {category}, topk={topk}, count={len(df)}')
             print(f'Hint Percentage: {hint_percentage}%')
             print(f'Difficulty Stats: {stats_difficulty}')
             print(f'Answer Word Stats: {word_statistics}')
