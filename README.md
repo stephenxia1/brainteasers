@@ -23,4 +23,5 @@ conda activate bt
 conda install scikit-learn scikit-image pandas matplotlib seaborn tqdm -c pytorch -c anaconda -c conda-forge -y
 
 python -m pip install beautifulsoup4 requests
+python -m pip install nltk
 ```
