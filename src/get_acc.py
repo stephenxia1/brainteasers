@@ -8,16 +8,24 @@ def main():
     
     args = parser.parse_args()
 
+    correct_count_dict = {
+        "basicprompt": 0,
+        "mathPrompt": 0,
+        "implicit_symbol_reasoning_prompt.txt": 0,
+        "explicit_symbol_reasoning_prompt.txt": 0,
+        "hint_prompt": 0,
+    }
+
     with open(f"../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations.jsonl") as f:
         total_len = 0
-        count = 0
         for line in f:
             data = json.loads(line)
             if data['correctness'] == "1":
-                count += 1
+                correct_count_dict[data["PromptType"]] += 1
             total_len += 1
-        acc = count / total_len
-        print(acc)
+
+        acc_dict = {k: v / 250 for k, v in correct_count_dict.items()} # still need to handle missing items
+        print(acc_dict)
     
 if __name__ == "__main__":
     main()
