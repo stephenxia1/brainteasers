@@ -57,7 +57,7 @@ def main():
 
     args = parser.parse_args()
 
-    data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
+    # data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
     responses = pd.read_csv(f'../responses/{args.dataset}/{args.name}/resultsAll.csv')
 
     evaluationPrompts = read_txt_files("../prompting/evaluationPrompts")
@@ -71,13 +71,17 @@ def main():
     # responses_iloc = responses.iloc[114:]
 
     for index, row in responses.iterrows():
-        question = row['Question']
-        dataEntry = data[data['Question'] == question].iloc[0]
-        solution = dataEntry['Answer']
+        # question = row['Question']
+        # dataEntry = data[data['Question'] == question].iloc[0]
+        # solution = dataEntry['Answer']
+        solution = row['Human Solution']
         modelResponse = row['Response']
 
-        if data['PromptType'] == "nl_to_symbol_prompt":
-            continue
+        print(row.to_dict().keys())
+        print(row)
+
+        # if row['PromptType'] == "nl_to_symbol_prompt":
+        #     continue
 
         if type(modelResponse) == type("string"):
             
