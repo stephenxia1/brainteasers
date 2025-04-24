@@ -54,6 +54,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", help="Experiment Name", required=True)
     parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], required=True)
+    parser.add_argument("--from_row", help="Continue evaluation from which row", type=int, default=0, required=True)
 
     args = parser.parse_args()
 
@@ -68,9 +69,9 @@ def main():
 
     responses['Correct'] = np.nan
 
-    # responses_iloc = responses.iloc[114:]
+    responses_iloc = responses.iloc[args.from_row:]
 
-    for index, row in responses.iterrows():
+    for index, row in responses_iloc.iterrows():
         # question = row['Question']
         # dataEntry = data[data['Question'] == question].iloc[0]
         # solution = dataEntry['Answer']
@@ -97,7 +98,7 @@ def main():
             with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations.jsonl', 'a') as jsonfile:
                 jsonfile.write(json.dumps(entry) + "\n")
         
-    responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation.csv", index=False)
+    responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation_from_row{args.from_row}.csv", index=False)
 
 if __name__ == "__main__":
     main()
