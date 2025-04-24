@@ -37148,3 +37148,1477 @@ The least positive integer satisfying these is the least common multiple
 Hence the largest wheel must make 1 760 complete revolutions before every wheel is again in its original orientation.
 
 Final answer: 1760",True
+125,"Question: Three people (A, B, and C) need to cross a bridge. A can cross the bridge in 10 minutes, B can cross in 5 minutes, and C can cross in 2 minutes. There is also a bicycle available and any person can cross the bridge in 1 minute with the bicycle. What is the shortest time that all men can get across the bridge? Each man travels at their own constant rate.
+ Hint: The bicycle may be left at any point along the bridge and may be ridden in either direction. Every man should finish at the same time.",The bicycle may be left at any point along the bridge and may be ridden in either direction. Every man should finish at the same time.,"A's speed is 1/10 (in bridges per minute), B's speed is 1/5, C's speed is 1/2, and the bicycle's speed is 1.
+The fastest way to get everyone across is for B and C to start out on foot and A to start out with the bicycle. At a point y, A will get off the bicycle and walk the rest of the way. Eventually C will get to the bicycle abandoned by A, then ride back to a point x, leaving the bicycle there, then turning around and walk until he reaches the end. Person B will walk until he reaches the bicycle left by C and then ride the rest of the way.
+Below are the times that each will take to cross, in terms of x and y:
+A: 1*y + 10*(1-y)
+B: 5*x + 1*(1-x)
+C: 2*y + (y-x) + 2*(1-x)
+Next equate these equations: 10 - 9y = -3x + 3y + 2 = 4x + 1.
+To solve set up two linear equations:
+10 - 9y = -3x + 3y + 2 -> 3x - 12y = -8
+10 - 9y = 4x + 1 -> 4x + 9y = 9
+Then solve for x and y:
+x = 12/25, y=59/75.
+Given these points it will take each person 73/25 = 2.92 minutes to cross. Since they all start and end at the same time, the total duration to cross the bridge is also 2.92 minutes.",GPT-o3,hint_prompt,"Let the length of the bridge be 1 unit.  
+Walking speeds (in bridge–lengths per minute) are  
+
+A : v₁ = 1 / 10 = 0.1 , B : v₂ = 1 / 5 = 0.2 , C : v₃ = 1 / 2 = 0.5.  
+The bicycle moves with speed 1 (it covers the whole bridge in one minute).
+
+A schedule with only three transfers of the bicycle turns out to be optimal.
+
+Notation  
+x₁ = place where A gets off the bicycle the first time  
+x₂ = place where C – after walking to x₁ – meets B and hands the bicycle to him  
+x₃ = place where B gets off the bicycle and leaves it for C
+
+(The moves are eastwards unless the word “back” is used.)
+
+Step 1   A rides from 0 to x₁, time = x₁.  
+         A then walks the rest of the way.
+
+Step 2   C walks from 0 to x₁, time = x₁ / 0.5 = 2x₁, picks up the bicycle,
+         rides back to x₂ (time = x₁ – x₂), and hands it to B.
+
+Step 3   B has been walking; at the moment of the meeting his position must be x₂,
+         so 0.2(3x₁ – x₂) = x₂    ⇒    x₂ = ½x₁.                                (1)
+
+Step 4   B now rides from x₂ to x₃ (time = x₃ – x₂) and walks the rest.
+
+Step 5   While B is riding, C walks from x₂ to x₃, picks up the bicycle there
+         and rides to the end.
+
+Times for the three men
+
+A : T_A = x₁ + 10(1 – x₁) = 10 – 9x₁.                                        (2)
+
+B : T_B = (2.5x₁) + (x₃ – x₂) + 5(1 – x₃)
+      = 2x₁ + 5 – 4x₃ (after using (1)).                                      (3)
+
+C : T_C = (2.5x₁) + 2(x₃ – x₂) + (1 – x₃)
+      = 1.5x₁ + x₃ + 1.                                                       (4)
+
+To have all men finish together we set T_A = T_B = T_C.
+
+From (2) = (3) ⇒ 10 – 9x₁ = 2x₁ + 5 – 4x₃ ⇒ 11x₁ = 5 + 4x₃.               (5)
+
+From (2) = (4) ⇒ 10 – 9x₁ = 1.5x₁ + x₃ + 1 ⇒ 10.5x₁ + x₃ = 9.              (6)
+
+Solving (5)–(6)
+
+ x₃ = 9 – 10.5x₁, insert in (5) ⇒ x₁ = (5 + 4(9 – 10.5x₁))/11  
+ → x₁ = 4961 / 6413 ≈ 0.77350, x₂ = ½x₁ = 4961 / 12826 ≈ 0.38675,  
+  x₃ = 1023 / 1166 ≈ 0.87702.
+
+Common finishing time
+
+T = T_A = 10 – 9x₁ = 10 – 9·4961/6413 = 19481 / 6413 minutes  
+   ≈ 3.037716 min ≈ 3 min 2.3 s.
+
+Concrete timetable (times rounded to the nearest 0.01 s)
+
+0.000 min  A starts riding, B and C start walking.  
+0.774 min  A leaves the bicycle at 77.35 % of the bridge and walks on.  
+1.548 min  C reaches that point, turns round on the bicycle and rides back.  
+1.934 min  C meets B at 38.68 %; B takes the bicycle, C continues walking.  
+2.425 min  B leaves the bicycle at 87.70 % and walks on.  
+2.915 min  C reaches 87.70 %, rides the bicycle to the end.  
+3.038 min  All three men step off the bridge together.
+
+No schedule can be faster (a formal proof follows from optimising the
+three–transfer pattern and showing that any extra backward ride only lengthens
+the total time), so the minimum time is 19481⁄6413 minutes.
+
+Final answer: 19481/6413 minutes ≈ 3 minutes 2.3 seconds",True
+126,"Question: The card game Snapoker is a very complex game for four players, requiring the use of two decks of cards with all odd spades, even hearts, prime diamonds (including aces) and non-prime clubs (including aces) removed.  Note that jacks are 11, queens are 12, kings are 13.  Two jokers are added to the deck and are each worth 15.  The cards are dealt among the four players.  A hand starts when the dealer shouts ""Let's Snapoker!""  Following a frenetic minute of randomly throwing all cards onto the table, and at the dealer's call of ""Heeeeeeere, piggy, piggy, piggy!"" players are required to grab as many cards as they can.  Once all cards have been grabbed, the total value of the cards in each player's hand is added up.  Points (4, 3, 2 and 1) are awarded to players on each hand, with the highest card total receiving maximum points.  In the event of a tie, the player who can drink a glass of milk through their nose the quickest will receive the greater points.  A running score is kept throughout the game.  The game is over when someone reaches a total of 518 points or when a fight breaks out, which is a common occurrence.
+In a game of Snapoker I was playing the other day, my good friend Kasy managed to grab 13 cards that formed an alternating-colours straight (ie. the odd cards were all red, the evens were all black).  How many different ways can a 13-card alternating-colour straight be formed from a Snapoker deck?  Note that jokers can not be used in forming a straight.
+ Hint: nan",,"There are 32,768 possible ways a 13-card alternating-colour straight can be formed in a Snapoker deck.
+To form a 13-card alternating-colour straight in Snapoker the following cards can be used:
+2 x red aces
+4 x black twos
+2 x red threes
+2 x black fours
+2 x red fives
+2 x black sixes
+2 x red sevens
+2 x black eights
+4 x red nines
+2 x black tens
+2 x red jacks
+2 x black queens
+2 x red kings
+Therefore, there are 2x4x2x2x2x2x2x2x4x2x2x2x2 = 32,768 possible 13-card alternating-colour straights that can be formed.",GPT-o3,hint_prompt,"Let us examine carefully what cards are actually in a Snapoker deck and which of those can be used in an alternating-colours straight.
+
+1. Composition of the deck  
+   • Two ordinary 52-card decks are used, so (before any removals) every rank–suit card occurs twice.  
+   • The following cards are removed from BOTH of the original decks  
+      – all odd spades  
+      – all even hearts  
+      – all prime diamonds (2,3,5,7,11,13) and the ace of diamonds  
+      – all non-prime clubs and the ace of clubs  
+   • Two jokers (value 15) are added, but jokers are not allowed in a straight, so we may ignore them.
+
+2. “Alternating-colours straight”  
+   A 13-card straight must contain every rank from ace (=1) through king (=13).  
+   According to the problem the colours must alternate beginning with a red ace, i.e.  
+
+      odd-numbered ranks (1,3,5,7,9,11,13)  →  red cards (♥ or ♦)  
+      even-numbered ranks (2,4,6,8,10,12)   →  black cards (♠ or ♣)
+
+3. Which suits are actually available for every required rank?
+
+  Odd ranks (must be red)  
+     ♥ : odd hearts are NOT removed  →  present (2 copies each)  
+     ♦ : prime diamonds (and ♦A) are removed.  
+           Hence ♦ is available only for rank 9.  
+
+  Even ranks (must be black)  
+     ♠ : only odd spades are removed, so every even spade remains (2 copies each).  
+     ♣ : non-prime clubs (and ♣A) are removed, so the only even club remaining is ♣2.
+
+  Summarising the possibilities for each rank
+
+     Ace     ♥ only                    (2 copies)  
+     2       ♠ or ♣                    (2+2 copies)  
+     3       ♥ only                    (2 copies)  
+     4       ♠ only                    (2 copies)  
+     5       ♥ only                    (2 copies)  
+     6       ♠ only                    (2 copies)  
+     7       ♥ only                    (2 copies)  
+     8       ♠ only                    (2 copies)  
+     9       ♥ or ♦                    (2+2 copies)  
+     10      ♠ only                    (2 copies)  
+     11      ♥ only                    (2 copies)  
+     12      ♠ only                    (2 copies)  
+     13      ♥ only                    (2 copies)
+
+4. Counting the possibilities  
+   For each rank we must choose ONE card of an allowed suit; the two copies of a given suit are distinguishable (they came from the two different decks), so each copy counts separately.
+
+         Ace   2 ways  
+         2     4 ways  
+         3     2 ways  
+         4     2 ways  
+         5     2 ways  
+         6     2 ways  
+         7     2 ways  
+         8     2 ways  
+         9     4 ways  
+         10    2 ways  
+         11    2 ways  
+         12    2 ways  
+         13    2 ways  
+
+   Multiply:  
+
+     2·4·2·2·2·2·2·2·4·2·2·2·2  
+     = 2¹⁵  
+     = 32 768.
+
+Therefore there are 32 768 different 13-card alternating-colour straights that can be formed from a Snapoker deck.
+
+Final answer: 32 768",True
+127,"Question: The following equations are currently incorrect. Using these rules, correct them.
+You can't write any other numbers.
+You cannot use any form of an ""equals"" sign, a ""greater than"" sign, or a ""less than"" sign. Good luck.
+1 1 1 =6
+2 2 2 =6
+3 3 3 =6
+4 4 4 =6
+5 5 5 =6
+6 6 6 =6
+7 7 7 =6
+8 8 8 =6
+9 9 9 =6
+0 0 0 =6
+There can be multiple answers for one equation. I shall be putting only one of each in the answer. Post more answers in the comments.
+ Hint: You can use factorials (!) and square roots.
+A factorial of a number is defined as:
+N*(N-1)*(N-2)*...3*2*1
+The factorial of three is:
+3!=3*2*1=6","You can use factorials (!) and square roots.
+A factorial of a number is defined as:
+N*(N-1)*(N-2)*...3*2*1
+The factorial of three is:
+3!=3*2*1=6","(1+1+1)!
+2+2+2
+3*3-3
+4+4- SqRt (4)    SqRt = Square Root
+5+5/5
+6-6+6
+7-7/7
+8- SqRt (SqRt (8+8))
+((SqRt (9)*SqRt(9))-SqRt (9)
+(0!+0!+0!)!",GPT-o3,hint_prompt,"Step–by–step construction of one  “value-6” expression for every triple of identical digits  
+(the only symbols that ever appear besides those three digits are the allowed operation signs, parentheses, the square–root sign and the factorial sign – never another numeral, and no “=” , “>” or “<” is used).
+
+1 1 1  
+Take the three 1’s, add them to get 3 and apply the factorial:  
+(1+1+1)!  →  3!  = 6
+
+2 2 2  
+Simply add them:  
+2+2+2  →  6
+
+3 3 3  
+Multiply two of them and subtract the third:  
+3*3-3  →  9-3 = 6
+
+4 4 4  
+Divide one 4 by another, subtract the result from the remaining 4, then factorial:  
+(4-4/4)!  →  (4-1)! = 3! = 6
+
+5 5 5  
+Divide one 5 by another to get 1 and add it to the remaining 5:  
+5+5/5  →  5+1 = 6
+
+6 6 6  
+Add two 6’s and subtract the third:  
+6+6-6  →  12-6 = 6
+
+7 7 7  
+Divide one 7 by another to get 1 and subtract from the remaining 7:  
+7-7/7  →  7-1 = 6
+
+8 8 8  
+Form 8/8 = 1, add it to 8 to get 9, take the square root (3) and factorial:  
+(√(8+8/8))!  →  (√9)! = 3! = 6
+
+9 9 9  
+Add two 9’s (18) and divide by √9 (which is 3):  
+(9+9)/√9  →  18/3 = 6
+
+0 0 0  
+Use the fact that 0! = 1, sum the three factorials to get 3 and factorial once more:  
+(0!+0!+0!)!  →  3! = 6
+
+
+Final answer:  
+(1+1+1)!  
+2+2+2  
+3*3-3  
+(4-4/4)!  
+5+5/5  
+6+6-6  
+7-7/7  
+(√(8+8/8))!  
+(9+9)/√9  
+(0!+0!+0!)!",True
+128,"Question: Arrange the digits 0, 1, 2, 2, 3, 4, 4, 5, 6, and 9, to form a single fraction that equals 1/2.  (Here is one example that, alas, turns out not to be true:  32145/24690=1/2)
+ Hint: nan",,One solution:  12345/24690=1/2,GPT-o3,hint_prompt,"We have to use each of the ten symbols  
+0, 1, 2, 2, 3, 4, 4, 5, 6, 9 exactly once to build
+
+ numerator / denominator  =  1 / 2 ,
+
+so that numerator = ½ · denominator (equivalently, denominator = 2 · numerator).
+
+Because the denominator is twice the numerator, it must be an even number.  
+Among the available even last–digits 0, 2, 4, 6, the easiest to work with is 0; doubling a number that ends in 5 produces a number ending in 0, so let us try to make the numerator end in 5.
+
+Start with the smallest set of the remaining digits in ascending order:
+
+ numerator  = 12345.
+
+Now double it:
+
+ 2 · 12345 = 24690.
+
+Check the digits used:
+
+numerator: 1, 2, 3, 4, 5  
+denominator: 2, 4, 6, 9, 0
+
+Together they are exactly the multiset  
+0, 1, 2, 2, 3, 4, 4, 5, 6, 9  
+(two 2’s, two 4’s, and the rest once each), satisfying the requirement.
+
+And indeed
+
+ 12345 / 24690  =  1 / 2.
+
+No digit is omitted or repeated more than allowed, so this fulfills all the conditions.
+
+Final answer: 12345/24690",True
+129,"Question: Xavier and Rex were playing a game that involved 5 dice. In each turn, they would roll the 5 dice. Each face of the die is worth a different amount of points. On their first 2 shots, they rolled this:
+Xavier 1: 1, 3, 3, 4, 6 = 177 points
+Rex 1: 2, 4, 4, 5, 6 = 268 points
+Xavier 2: 1, 1, 1, 4, 4 = 203 points
+Rex 2: 1, 2, 3, 4, 6 = 216 points
+Using this information, can you work out how many points Xavier and Rex each got on their third turn and how many points each face is worth?
+Xavier 3: 1, 2, 2, 3, 4 = ?
+Rex 3: 1, 3, 4, 6, 6 = ?
+ Hint: Xavier scored more than Rex and the difference between the two total scores is 26 points.",Xavier scored more than Rex and the difference between the two total scores is 26 points.,"Xavier: 281 (Total: 661)
+Rex: 151 (Total: 635)
+1 = 25 points
+2 = 77 points
+3 = 38 points
+4 = 64 points
+5 = 51 points
+6 = 12 points
+From Xavier's first shot and Rex's second shot, we can deduce that a 2 is worth more than a 3. From Xavier's second shot, we can deduce that a 1 is worth an odd number. By trial and error we can work out the value of each face.",GPT-o3,hint_prompt,"Let  
+
+ 1 → a , 2 → b , 3 → c , 4 → d , 5 → e , 6 → f  
+
+be the (unknown) points allotted to the six faces.
+
+Using the four given rolls we obtain four linear equations:
+
+(1) a + 2c + d + f = 177        (Xavier 1)  
+(2) b + 2d + e + f = 268        (Rex 1)  
+(3) 3a + 2d         = 203        (Xavier 2)  
+(4) a + b + c + d + f = 216        (Rex 2)
+
+--------------------------------------------------------------------
+Step 1 – eliminate b, find relations among the letters
+--------------------------------------------------------------------
+From (3): d = (203 – 3a)/2. Hence a must be odd.
+
+Subtract (1) from (4): (b + c + f) – (2c + f) = 39 ⇒ b = c + 39. (5)
+
+--------------------------------------------------------------------
+Step 2 – incorporate the hint for the third turn
+--------------------------------------------------------------------
+On the third turn
+
+ Xavier 3 score  = a + 2b + c + d  
+ Rex 3   score  = a +  c + d + 2f.
+
+The hint says Xavier beats Rex by 26 points, so
+
+ (a + 2b + c + d) – (a + c + d + 2f) = 26 ⇒ 2(b – f) = 26 ⇒ b – f = 13. (6)
+
+From (5) and (6): f = b – 13 = (c + 39) – 13 = c + 26. (7)
+
+Insert (7) in (1): a + 2c + d + (c + 26) = 177 ⇒ 3c = 151 – a – d. (8)
+
+Using d = (203 – 3a)/2 in (8) gives
+
+ 3c = 151 – a – (203 – 3a)/2  
+   = (2(151 – a) – 203 + 3a)/2  
+   = (302 – 2a – 203 + 3a)/2  
+   = (99 + a)/2 ⇒ c = (a + 99)/6. (9)
+
+Because c must be integral, a + 99 is divisible by 6.  
+99 ≡ 3 (mod 6), hence a ≡ 3 (mod 6).  
+Write a = 6k + 3 (k ≥ 0).
+
+The first values that keep every face positive are tried in succession:
+
+ k = 0 ⇒ a = 3  → e turns negative (discard)  
+ k = 1 ⇒ a = 9  → e turns negative (discard)  
+ k = 2 ⇒ a = 15 → all faces positive – the first admissible set.
+
+--------------------------------------------------------------------
+Step 3 – compute the whole set for a = 15
+--------------------------------------------------------------------
+a = 15
+
+ d = (203 – 3·15)/2 = 79  
+ c = (15 + 99)/6     = 19  
+ b = c + 39          = 58  
+ f = c + 26          = 45  
+ e = 52 + a – d + c  = 52 + 15 – 79 + 19 = 7
+
+All six point values are different and positive, so this set is valid:
+
+ 1 → 15 , 2 → 58 , 3 → 19 , 4 → 79 , 5 → 7 , 6 → 45.
+
+(Any larger value of a that is 3 (mod 6) also works algebraically, but a = 15 is the
+smallest positive choice and therefore the unique solution if one requires the
+lowest possible face-values.)
+
+--------------------------------------------------------------------
+Step 4 – scores of the third turn
+--------------------------------------------------------------------
+Xavier 3: a + 2b + c + d = 15 + 2·58 + 19 + 79 = 229  
+Rex 3:  a +  c + d + 2f = 15 + 19 + 79 + 2·45 = 203  
+
+The difference is indeed 26 and Xavier’s score is larger, exactly as stated.
+
+--------------------------------------------------------------------
+Answer
+--------------------------------------------------------------------
+Face-values of the die  
+ 1 → 15 points  
+ 2 → 58 points  
+ 3 → 19 points  
+ 4 → 79 points  
+ 5 → 7 points  
+ 6 → 45 points  
+
+Third-turn scores  
+ Xavier: 229 points  
+ Rex:    203 points  
+
+Final answer: Xavier scored 229, Rex scored 203, and the six faces are worth 15, 58, 19, 79, 7, 45 points respectively (faces 1 – 6 in that order).",True
+130,"Question: You land on an unknown planet which has a radius of 10km and is completely round and smooth. You start from your ship and walk straight for 17.345 kilometers. You turn left and walk straight for 47.124 kilometers. How far are you from your ship?
+ Hint: nan",,"14.142135623730950488016887242097
+Or square root of 200!
+If you imagine you are facing a globe head on, you have the north pole at the top of the globe and the south pole at the bottom. Imagine a ""west pole"" and ""east pole"" to the left and right of the globe.
+If you are at the north pole and turn left, you will walk through the ""west pole"" (right and you go through the ""east pole"")
+If you walk on an axis from the north pole towards the south pole and make a left or right turn you will always walk through these imaginary east and west poles. So in the question 17.345 kilometers is irrelevant, only the turn.
+(It also doesn't matter where you start on the planet, the distance at the end will still be the same.)
+47.124 is approximately 3/4 of the circumference of this planet, which will leave you directly on the imaginary east pole. The distance is now the hypotenuse of a right angle triangle of side 10km.
+Answer: root 200 or approximately 14km!
+(If you got the distance as 15.7km - the distance you would have to walk back, then that's ok too!)",GPT-o3,hint_prompt,"Let  
+
+R = 10 km  (the planet’s radius)  
+a = 17.345 km (first walk length)  
+b = 47.124 km (second walk length)
+
+On a sphere “walking straight” means following a great–circle arc, and “turning left” by 90° means the angle between the two great-circle directions is a right angle.
+
+1. Convert the walked lengths to central angles (in radians):
+
+ α = a / R = 17.345 km / 10 km = 1.7345 rad ≈ 99.43°  
+ β = b / R = 47.124 km / 10 km = 4.7124 rad ≈ 270.00°
+
+2. Form the spherical triangle whose sides are
+ side 1 = α (first leg), side 2 = β (second leg), side 3 = γ (unknown distance from the ship),
+with the included angle between sides 1 and 2 being 90° (because you turned left).
+
+3. For a right-angled spherical triangle the spherical law of cosines gives  
+
+ cos γ = cos α · cos β .
+
+4. Compute cos β.  
+ β ≈ 270° = 3π/2 rad ⇒ cos β = 0  (exactly zero in the ideal data; numerically ≈ −2 × 10⁻⁵).
+
+5. Hence  
+
+ cos γ = cos α · 0 = 0  ⇒ γ = π/2 rad = 90°.
+
+So the central angle between the starting point and the finishing point is always 90°, no matter what α was, because the second leg happened to be exactly 270°.
+
+6. Convert γ back to a surface distance:
+
+ distance = R · γ = 10 km × (π/2) = 5π km ≈ 15.708 km.
+
+Final answer: 15.708 km",True
+131,"Question: In the Art Gallery is a new conceptual art piece. The artist created a huge pile different paintings; periodically he picks up one of the paintings and hangs it on the wall, and adjusts it.
+At 11:00, the painting titled ""Number 30"" was hung.
+At 4:00, the painting titled ""Number 240"" was hung.
+At 7:30, the painting titled ""Number 315"" was hung.
+What painting will the artist hang on the wall at 9:20?
+ Hint: nan",,"The answer is ""Number 200"". It is the angle between the hour hand and the minute hand at those respective times.",GPT-o3,hint_prompt,"To find the rule, look at the clock‐hand geometry for each given time.
+
+1. 11:00  
+   • Hour hand = 11 × 30° = 330°  
+   • Minute hand = 0°  
+   • Angle between hands = |330° − 0°| = 330°  
+   • Painting number = 360° − 330° = 30
+
+2. 4:00  
+   • Hour hand = 4 × 30° = 120°  
+   • Minute hand = 0°  
+   • Angle between hands = 120°  
+   • Painting number = 360° − 120° = 240
+
+3. 7:30  
+   • Hour hand = (7 + 30⁄60) × 30° = 7.5 × 30° = 225°  
+   • Minute hand = 30 × 6° = 180°  
+   • Angle between hands = |225° − 180°| = 45°  
+   • Painting number = 360° − 45° = 315
+
+Thus the artist chooses “360° minus the angle between the hour and minute hands” at each moment.
+
+Now calculate for 9:20:
+
+• Minute hand = 20 × 6° = 120°  
+• Hour hand = (9 + 20⁄60) × 30° = 9⅓ × 30° = 280°  
+• Angle between hands = |280° − 120°| = 160°  
+• Painting number = 360° − 160° = 200
+
+Final answer: 200",True
+132,"Question: There is a rubber band that is looped around an immovable steel rod.  It is three inches long.  At the fixed end is a spider.  He starts walking along the rubber band at the rate of one inch per minute.
+A minute after he started, the rubber band is stretched by three inches.  The spider continues walking on it at the same rate.
+In another minute, the rubber band is stretched another three inches.
+This keeps going on until the spider reaches the end of the rubber band.  How long did it take the spider to reach the end?
+ Hint: The spider's position is not changed when the rubber band is stretched, but the total distance of travel does change.","The spider's position is not changed when the rubber band is stretched, but the total distance of travel does change.","10.781355 minutes.
+The following shows the lengths of the rubber band, the time in minutes, and the distance traveled by the spider.
+3, 0, 0
+6, 1, 2
+9, 2, 4.5
+12, 3, 7.333333
+15, 4, 10.41667
+18, 5, 13.7
+21, 6, 17.15
+24, 7, 20.74286
+27, 8, 24.46071
+30, 9, 28.28968
+33, 10, 32.21865
+36, 10.781355, 36",GPT-o3,hint_prompt,"Let  
+
+L0 = 3 in. = original length of the rubber band  
+After every whole minute the band is lengthened by 3 in. and the stretching is perfectly uniform.  
+
+During the m-th minute (m = 1,2,3, …) the length of the band is  
+
+Lm  = 3m  inches.  
+
+While the band has this constant length the spider walks 1 in. along the material, i.e. it advances a fraction  
+
+1/Lm = 1/(3m)  
+
+of the total length.  
+(The hint reminds us that stretching does not change the spider’s fractional position.)
+
+Cumulative fractional advance after n full minutes  
+
+f(n) = Σ_{k=1}^{n} 1/(3k) = (1/3)·Hn ,  
+
+where Hn = 1+½+…+1/n is the n-th harmonic number.
+
+The spider reaches the far end when f(n) ≥ 1, i.e. when Hn ≥ 3.  
+The smallest n with this property is
+
+H10 ≈ 2.928968   ( < 3 )  
+H11 ≈ 3.019877   ( > 3 ).
+
+Hence the spider arrives sometime during the 11-th minute.
+
+Exact moment within the 11-th minute  
+At the start of that minute the fractional position is
+
+f0 = (1/3)·H10 = (1/3)·81191/27720 = 81191/83160.
+
+Fraction still needed  
+
+Δf = 1 – f0 = 1969/83160.
+
+Throughout the 11-th minute the length is L11 = 3·11 = 33 in.,  
+so the spider must actually travel
+
+d = Δf · L11 = 33·1969/83160 = 1969/2520 in.
+
+Because it walks 1 in. per minute, the extra time required is
+
+t′ = 1969/2520 min = 1969/42 s = 46 37⁄42 s ≈ 46.9 s.
+
+Total time
+
+T = 10 min + t′ = 10 min 46 37⁄42 s ≈ 10.78 minutes.
+
+Final answer: 10 minutes 47 seconds (about 10.78 minutes).",True
+133,"Question: A postman delivered letters every day. On the first day he delivered one letter, on the second day he delivered three letters, on the third day he delivered five letters, and so on. Each day from the second on he delivered two letters more than the preceding day.
+The day he retired, he noticed that he had delivered a total of more than 100,000 letters.
+Something fun is that the total number of letters he had delivered has its digits arranged in ascending order.
+How many days had he worked, and how many letters had he delivered in total?
+ Hint: The number of days he had worked also has its digits arranged in ascending order.",The number of days he had worked also has its digits arranged in ascending order.,"It's easy to see that the number of letters he had delivered is the square of the number of days he had worked.
+Square numbers can't end in 7 or 8, and 123456 is not a square because it is divisible by 3 but not by 9. Hence the number of letters must end with 9.
+Since odd squares have remainder 1 upon division by 8, the number formed by its fourth and fifth digits must be divisible by 4, which can be 48, 56 or 68.
+Numbers that have remainder 2 upon division by 3, and those that are divisible by 3 but not by 9 are not squares. By trial and error, we know that the only square number satisfying these conditions is 134689=367^2.
+Hence, he had worked for 367 days, and had delivered 134689 letters.",GPT-o3,hint_prompt,"Let the postman work n days.  
+Because he delivers 1 letter the first day, 3 the second, 5 the third, …, he delivers the odd number  
+
+ d(n)=1+2(n−1)=2n−1  
+
+letters on the n-th day.  
+The total number of letters after n days is
+
+ S(n)=1+3+5+⋯+(2n−1)=n²   (sum of the first n odd numbers).
+
+So “total letters” = n² and “number of days” = n.
+
+Conditions given  
+1. n² > 100 000.  
+2. The digits of n² are in strictly ascending order.  
+3. Hint: the digits of n are also in strictly ascending order.
+
+Step 1 – possible shapes of n  
+If the digits of n are strictly ascending, n itself must be made of distinct increasing digits.  
+The smallest such n with n² > 100 000 is 317 (because √100 000 ≈ 316.23).  
+All 3–digit numbers whose digits are strictly increasing and ≥ 317 are
+
+ 345, 346, 347, 348, 349,  
+ 356, 357, 358, 359,  
+ 367, 368, 369,  
+ 378, 379,  
+ 389,  
+ 456, 457, 458, 459,  
+ 467, 468, 469,  
+ 478, 479,  
+ 489,  
+ 567, 568, 569,  
+ 578, 579,  
+ 589,  
+ 678, 679,  
+ 689,  
+ 789.
+
+Step 2 – test their squares  
+Compute n² for each of the candidates and check whether its digits are in strictly ascending order:
+
+• 345² = 119 025  digits 1 1 9 0 2 5  – fail  
+• 346² = 119 716  digits 1 1 9 7 1 6  – fail  
+   ⋯  
+• 367² = 134 689  digits 1 3 4 6 8 9  – succeed ✔  
+   ⋯ (all remaining candidates fail)
+
+Only n = 367 produces a square whose digits are in strictly increasing order, namely 134 689.
+
+Step 3 – verification  
+n = 367 itself has digits 3 6 7, already in ascending order.  
+Total letters = n² = 134 689 > 100 000 and its digits 1 3 4 6 8 9 are also strictly ascending.
+
+Therefore the conditions are satisfied uniquely by
+
+ Number of days worked n = 367  
+ Total letters delivered n² = 134 689
+
+Final answer: The postman worked 367 days and delivered a total of 134 689 letters.",True
+134,"Question: Bill, Bob, Frank, and Jim, who all drive cabs, work a particularly busy street that runs east and west. The street has no traffic lights. Oddly enough, an equal number of pedestrians walk in each direction at four kilometres per hour. The four cab drivers were discussing the best way to pick up a fare. Bill said he was going to sit beside the curb and wait until a fare came along. Bob said he was going to cruise west at four kilometres an hour; therefore, he would have twice the chance of picking up a fare as Bill. Frank said he was going to cruise east at eight kilometres an hour and his chances were twice as good as either Bill's or Bob's. Jim claimed that they were all wrong. He was going to drive west at 12kmh and his chances of picking up a fare were twice as good as Frank's. Of the claims that were made which were correct and which were wrong?
+ Hint: nan",,"Bill made no claim, Bob's claim was false, Frank's claim was true, and Jim's claim was false. Let's assume that 100 people passed Bill going east at four kph, and 100 people passed him going west at four kph. Bob, who was driving west at four kph, wouldn't pass anyone walking west, but would pass 200 people walking east. This would put him no further ahead than Bill. Frank, who was driving east and 300 people going west. Jim, who was going west at 12kph, would pass 200 people going west and 400 people going east. His statement about doubling his chances over Frank was false.",GPT-o3,hint_prompt,"Let  
+
+ λe = λw = λ/2  pedestrians per kilometre going east and west  
+ ve = +4 km/h                    (east–bound pedestrians)  
+ vw = –4 km/h                   (west–bound pedestrians)  
+ v                     (cab’s ground speed ; + = east)
+
+A cab meets pedestrians at a rate = pedestrian density × relative speed.  
+Hence, for any speed v,
+
+ Encounter-rate R(v)  =  λe |v – ve|  +  λw |v – vw|  
+          = (λ/2)( |v – 4| + |v + 4| ).
+
+We only need rates up to a common factor λ/2, so work with
+
+ r(v) = |v – 4| + |v + 4|.     (larger r ⇒ better chance)
+
+1. Bill : v = 0  
+ r(0) = |–4| + |+4| = 4 + 4 = 8.
+
+2. Bob : v = –4 km/h (4 km/h west)  
+ r(–4) = |–8| + |0| = 8 + 0 = 8.  
+ Same chance as Bill, not twice Bill’s.
+
+3. Frank : v = +8 km/h (8 km/h east)  
+ r(+8) = |+4| + |+12| = 4 + 12 = 16.  
+ 16 is twice 8, so Frank really does have twice the chance of Bill (and of Bob).
+
+4. Jim : v = –12 km/h (12 km/h west)  
+ r(–12) = |–16| + |–8| = 16 + 8 = 24.  
+ 24 is only 1½ times Frank’s 16, not twice.
+
+Summary of the claims
+
+• Bob: “twice the chance of Bill”        WRONG (actually equal)  
+• Frank: “twice the chance of either Bill or Bob” CORRECT  
+• Jim: “twice the chance of Frank”       WRONG (only 1.5×)
+
+Bill made no numerical claim, he merely stated his intention.
+
+Final answer: Bob’s and Jim’s claims are wrong; Frank’s claim is correct.",True
+135,"Question: Arnold and Carlos love math puzzles. They are constantly making them up for each other to solve. One day, Carlos presents his friend Arnold with a problem. This problem has six clues. Here is the problem Carlos gave:
+--------------------------------------------
+I am thinking of a mystery number.
+1. The mystery number is a 3-digit prime number with digits ABC.
+2. Two 2-digit prime numbers occur in the mystery number (AB and BC).
+3. A, B, and C are all distinct digits.
+4. The mystery number does not contain a 9.
+5. If A, B, and C are re-arranged from greatest to least, a 3-digit prime number is formed.
+6. If A, B, and C are re-arranged from least to greatest, a 3-digit prime number is formed.
+What is the mystery number?""
+----------------------------------------
+Can you help Arnold solve Carlos's problem?
+ Hint: Make a list and organize your possibilities. It will lead down to one answer.
+The 3-digit prime numbers are:
+101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, and 997.","Make a list and organize your possibilities. It will lead down to one answer.
+The 3-digit prime numbers are:
+101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, and 997.","Answer: 617.
+Clue #1- ""The mystery number is a 3-digit prime number with digits ABC."" The 3-digit prime numbers are: 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, and 997
+After Clue #1- we have 143 possibilities.
+Clue #2- ""Two 2-digit prime numbers occur in the mystery number (AB and BC)."" The two digit prime numbers are 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, and 97. Since the two prime numbers are AB and BC, they share one digit- B. The only combinations for ABC such that AB and BC are prime numbers is: 113, 117, 119, 131, 137, 171, 173, 179, 197, 231, 237, 297, 311, 313, 317, 319, 371, 373, 379, 411, 413, 417, 419, 431, 437, 471, 473, 479, 531, 537, 597, 611, 613, 617, 619, 671, 673, 679, 711, 713, 717, 719, 731, 737, 797, 831, 837, 897, 971, 973, and 979.Out of these 51 numbers, only 113, 131, 137, 173, 179, 197, 311, 313, 317, 373, 379, 419, 431, 479, 613, 617, 619, 673, 719, 797, and 971 are prime.
+After Clue #2 we have 21 possibilities: 113, 131, 137, 173, 179, 197, 311, 313, 317, 373, 379, 419, 431, 479, 613, 617, 619, 673, 719, 797, and 971.
+Clue #3- ""A, B, and C are all distinct digits."" Out of our 21 possibilities, 113, 131, 311, 313, 373, and 797 do not have distinct digits.
+After Clue #3, we have 15 possibilities: 137, 173, 179, 197, 317, 379, 419, 431, 479, 613, 617, 619, 673, 719, and 971.
+Clue #4- ""The mystery number does not contain a 9.""179, 197, 379, 419, 479, 619, 719, and 971 all contain a 9.
+After Clue #4, we have 7 possibilities: 137, 173, 317, 431, 613, 617, and 673.
+Clue #5- ""If A, B, and C are re-arranged from greatest to least, a 3-digit prime number is formed."" With our 7 possibilities (137, 173, 317, 431, 613, 617, and 673) we arrange their digits from greatest to least getting 731, 731, 731, 431, 631, 761, and 763 respectively. Of these new 7 numbers, only 431 (from 431), 631 (from 613), and 761 (from 617) are prime.
+After Clue #5, we have 3 possibilities: 431, 613, and 617.
+Clue #6- ""If A, B, and C are re-arranged from least to greatest, a 3-digit prime number is formed."" With our 3 possibilities (431, 613, and 617), we arrange their digits from least to greatest to get 134, 136, and 167 respectively. 134 (from 431) and 136 (from 631) are non-prime. 167 (from 617) is prime.
+After Clue #6, we have one possibility: 617.
+617 is the mystery number.",GPT-o3,hint_prompt,"Step 1 – eliminate impossible 3-digit primes  
+•  The last digit of any 3-digit prime can only be 1, 3, 7 or 9, but clue 4 forbids 9, so C ∈ {1,3,7}.  
+•  Because AB and BC have to be 2-digit primes (clue 2), neither A nor B can be 0.  
+•  Clue 3 demands distinct digits and clue 4 rules out 9.  
+Starting with the supplied list of 3-digit primes and deleting every number that contains 0 or 9 or repeated digits leaves
+
+127, 137, 157, 163, 167, 173, 241, 251, 257, 263, 271, 281, 283, 317, 347, 367, 421, 431, 457, 461, 463, 467, 487, 521, 523, 541, 547, 563, 571, 587, 613, 617, 631, 641, 643, 647, 653, 673, 683, 743, 751, 761, 821, 823, 827, 853, 857, 863.
+
+Step 2 – require AB and BC to be primes  
+Check each survivor:
+
+137 (AB=13, BC=37 ✔)  
+173 (17, 73 ✔)  
+317 (31, 17 ✔)  
+431 (43, 31 ✔)  
+613 (61, 13 ✔)  
+617 (61, 17 ✔)  
+673 (67, 73 ✔)
+
+All others fail because AB or BC is composite.  The field is down to
+
+137, 173, 317, 431, 613, 617, 673.
+
+Step 3 – require the ascending and descending rearrangements to be primes  
+For each candidate write the three digits in ascending (ASC) and descending (DESC) order.
+
+137 → ASC = 137 (prime); DESC = 731 = 17 × 43 (not prime) ✗  
+173 → ASC = 137 (prime); DESC = 731 (not prime) ✗  
+317 → ASC = 137 (prime); DESC = 731 (not prime) ✗  
+431 → ASC = 134 (even, not prime) ✗  
+613 → ASC = 136 (even, not prime) ✗  
+617 → ASC = 167 (prime); DESC = 761 (prime) ✔  
+673 → ASC = 367 (prime); DESC = 763 = 7 × 109 (not prime) ✗
+
+Only 617 passes every test.
+
+•  617 is prime (clue 1).  
+•  AB = 61 and BC = 17 are both prime (clue 2).  
+•  Digits 6, 1, 7 are distinct (clue 3).  
+•  No digit 9 appears (clue 4).  
+•  Descending order 761 is prime (clue 5).  
+•  Ascending order 167 is prime (clue 6).
+
+All six clues are met uniquely by 617.
+
+Final answer: 617",True
+136,"Question: Ranger Cadet Bu Star has just been given the task of moving the five cases of Park Pop soda at the Weiss Pavilion to the Wirth Pavilion, which is 5 miles away. For transportation, Bu must use a MoJoPed, a moped which runs on Park Pop. It can carry, at most, its rider and 25 bottles of soda, i.e., one case in its cargo carrier and one bottle in its fuel tank. It gets one mile to the bottle and is currently empty; it will only move under Pop power. How many unopened bottles can Bu deliver to the second pavilion?
+Comments to triflers:
+The bottles and cases are hi-tech, so there are no concerns about theft or littering. They can stay parked or be discarded anywhere. Yes, the constant rate of fuel use is unreal, and yes, of course, I am asking for the maximum number of bottles!
+ Hint: There are hints in the comments to triflers and in the title.",There are hints in the comments to triflers and in the title.,"80
+To achieve this surprising result, Bu must first take the five cases, one at a time, and park them at a point along the route 2 5/18 miles from the Weiss Pavilion. This takes 9 trips of 2 5/18 miles (5 advancing trips interspersed with 4 return trips) for a total of 20.5 miles traveled (9 * 2 5/18 = 20.5) and 20.5 bottles of soda used. Cadet Star now has 99.5 bottles of soda. (5 * 24 - 20.5 = 120 - 20.5 = 99.5) He puts 3.5 of these aside and redistributes the other 96 to completely fill four cases. With one less case to move, Bu will now make 2 fewer trips. The 3.5 bottles set aside are used to move the four cases the next 1/2 mile toward the Wirth Pavilion.   After this, the Wirth Pavilion is just 2 2/9 miles away ( 5 - 2 5/18 - 9/18 = 2 4/18 ). Next, he travels 15 5/9 miles (7 * 2 2/9) using 15 5/9 bottles of soda to complete his trip. The ranger cadet delivers 80 bottles to the pavilion and has 4/9 of a Park Pop to spare. (96 - 15 5/9 = 80 4/9)",GPT-o3,hint_prompt,"Let  
+
+C = 25   (maximum number of bottles the moped can carry, counting the one in the tank)  
+D = 5 mi (distance between the pavilions)  
+F₀ = 120 (the five cases of Park Pop, 5 × 24)
+
+The rider may cache bottles anywhere along the road and shuttle them forward, exactly as in the classic “desert-crossing jeep” puzzle.
+
+1.  General facts  
+   • If the total stock that has to be moved is at most C, only one trip is needed; one bottle a mile is burned, so the rate of loss is 1 bottle / mile.  
+   • If the stock exceeds C, several loads must be ferried.  Let  
+        n = ⌈stock / C⌉ – 1   (the number of “extra” loads)  
+     Then to advance all the bottles one mile you have to make n returns; the scooter traverses the mile (2 n + 1) times and burns  
+        2 n + 1 bottles per mile.  
+
+2.  From the Weiss Pavilion (mile 0) to the point where only 4 loads are left  
+   Initial stock 120 exceeds one load (25), two loads (50), three loads (75) and four loads (100);  five loads are necessary, so n = 4 and the loss rate is 2·4 + 1 = 9 bottles per mile.  
+   To reduce the stock to 100 bottles we must lose 20 bottles, which takes  
+        20 / 9 = 20⁄9 miles ≈ 2 2⁄9 mi.  
+   After covering 20⁄9 mi we are 20⁄9 miles from the start with exactly 100 bottles left.
+
+3.  From there until the destination  
+   With 100 bottles the job now needs only four loads (n = 3).  The loss rate falls to  
+        2·3 + 1 = 7 bottles per mile.  
+   Distance still to go: 5 – 20⁄9 = 25⁄9 miles.  
+   Bottles burned on this last stretch:  
+        7 · 25⁄9 = 175⁄9 ≈ 19 4⁄9 bottles.  
+
+4.  Bottles that arrive unopened  
+   Total bottles used as fuel: 20 + 175⁄9 = 195⁄9 = 21 2⁄3 bottles.  
+   Bottles that reach the Wirth Pavilion unopened:  
+        120 – 195⁄9 = 720⁄9 – 195⁄9 = 525⁄9 = 80 5⁄9 bottles.  
+
+Because bottles are indivisible, at most 80 of them can arrive still sealed.
+
+Final answer: 80",True
+137,"Question: Henry is a new civil engineer, and is charged with planning the laying of a new type of ultra-rigid rails that expand only one inch per mile of length in temperature extremes.  Henry's plan calls for the tracks (each of which is one mile in length) to be laid end-to-end with no gap between them, pinned to the ground at every other juncture, as shown below:
+v_______ _______vv_______ _______v
+Henry's boss sees the plan and says, ""You fool!  What about when the tracks expand?""
+Henry replies, ""The expansion will only be an inch over the whole mile length.  If the tracks buckle, it will only be by an inch or two at most.  The trains will certainly have no trouble bumping over these buckles.""
+Henry's boss says, ""You're fired.""  Why was the boss so critical?
+ Hint: Would Pythagoras have the same plan?",Would Pythagoras have the same plan?,"The rise in the middle of the tracks would have been much greater than Henry surmised.  Using the Pythagorean Theorem, you will have a triangle with a base of one mile (or 63,360 inches), and a hypotenuse of one mile plus one inch (or 63,361 inches). To find the height, take the square root of (the square of the base minus the square of the hypotenuse). SQRT((63,361)^2 - (63,360)^2) = 355.98 inches, or over 29 feet!",GPT-o3,hint_prompt,"Let us look at just the piece of track between two consecutive pins, the places marked “v”.  
+Because Henry pins only every other joint, one pin is placed every two rails, i.e. every two miles.
+
+1.  Geometrical picture when the rails expand  
+   • The two pins are fixed in the ground exactly two miles (= 2 × 5280 ft = 10 560 ft = 126 720 in) apart.  
+   • Between those pins lie two one–mile rails.  
+   • When the temperature rises each mile-long rail grows 1 inch, so the total length between the pins grows 2 inches; the steel can only take up that extra length by buckling upward or sideways.  
+   • The least-energy buckle is a single smooth hump that is perfectly symmetrical; to see how high that hump must be we may simplify it to two straight pieces that meet in the middle (an isosceles triangle).  Each straight piece is a half-rail.
+
+2.  Put numbers on the triangle  
+   Half-distance between pins (the base of the half-triangle):  
+        c = 1 mile = 5280 ft = 63 360 in.  
+
+   Length of one half-rail after expansion (the equal side of the triangle):  
+        s = (1 mile + 1 inch)/2 = (63 360 in + 1 in)/2 = 63 361 / 2 = 63 361 in / 2  
+        but we really only need the full value: s = 63 361 in.  
+
+   Height of the buckle h is found from Pythagoras:  
+        s² = c² + h²  
+        h² = s² – c²  
+            = (63 361)² − (63 360)²  
+            = (63 360 + 1)² − (63 360)²  
+            = 2·63 360 + 1 = 126 721.  
+
+        h = √126 721 ≈ 356 in ≈ 29.7 ft.  
+
+   So the hump that accommodates only 2 inches of extra rail is almost 30 feet high!
+
+3.  What if each mile were individually pinned?  
+   Even if Henry had placed a pin at every joint (one-mile span) the same calculation with δ = 1 in and L = 1 mile gives  
+        h ≈ √(L δ / 2) = √(63 360 in × 1 in /2) ≈ 178 in ≈ 15 ft.  
+   Still catastrophically large.
+
+4.  Why the boss was furious  
+Henry thought “an extra inch or two of length will make at most an inch or two of bump.”  
+Pythagoras shows the truth: a one- or two-inch growth in a mile of rigid rail, when the ends are fixed, produces a buckle many feet high—high enough to launch a locomotive into the air.  His design would make the track utterly impassable, so the boss quite rightly fired him.
+
+Final answer: The 1-inch-per-mile expansion, when the rails are pinned, forces each two-mile section to bulge nearly 30 feet high (≈ 15 feet even for a one-mile span); far from a “small bump,” the buckle would be a gigantic, disastrous hump, so Henry’s plan is hopelessly unsafe and his firing was justified.",True
+138,"Question: Jill is helping plan her family's new patio. It will be an irregular hexagon. They will use 1-foot-square stone tiles. Here are her notes.
+1. The perimeter of the deck is outlined by ABCDEF.
+2. Line AB is against the house. It is 16 feet long.
+3. AF is perpendicular to AB.
+4.AF and BC are parallel.
+5.BC and AF are each 6 feet long.
+6.Points F and C are connected by FC; FC is parallel to AB.
+7.Points G and H are on FC.
+8.FG and HC are each 4 feet long.
+9. ED is 8 feet long. It is parallel to AB.
+10. DH is perpendicular to HC. It is 4 feet long.
+11. EG is perpendicular to FG. It is 4 feet long.
+12. Angle BCD is 135 degrees.
+13. Angle AFE is 135 degrees.
+If they order 6 more tiles than they would ideally need (to allow for breakage), how many patio tiles should they order?
+Assume that tiles can be cut cleanly so that any leftover pieces can be used for other parts of the deck.
+ Hint: nan",,"The area of the deck is 144 square feet. They will need 150 tiles.
+Explanation
+The area of ABCF is 96 square feet.
+The area of DEGH is 32 square feet.
+The area of CDH and EFG combined is 16 square feet. You will be able to complete these sections with 8 tiles each after cutting four of the tiles in half diagonally.
+The total area is 144 square feet. Allowing 6 extra tiles for breakage brings the order to 150 tiles.",GPT-o3,hint_prompt,"Reasoning in detail  
+
+1.  Fix a coordinate system with the house wall AB on the x-axis.  
+   A = (0,0), B = (16,0)                 (AB = 16 ft)
+
+2.  AF ⟂ AB and AF = 6 ft ⇒ F = (0,6).  
+    BC ∥ AF and BC = 6 ft ⇒ C = (16,6).
+
+3.  FC ∥ AB ⇒ FC is horizontal from F to C, so FC = 16 ft.
+
+4.  Points G and H are on FC with FG = 4 ft and HC = 4 ft.  
+  F = (0,6) ──4──► G = (4,6) ───8──► H = (12,6) ──4──► C = (16,6)
+
+5.  EG ⟂ FG and EG = 4 ft ⇒ E lies 4 ft directly below G:  E = (4,10).  
+    DH ⟂ HC and DH = 4 ft ⇒ D lies 4 ft directly below H:  D = (12,10).
+
+6.  Check the given extra facts  
+   • ED is horizontal and ED = 8 ft (from x = 4 to x = 12).  
+   • ∠BCD and ∠AFE are both 135°, which the coordinates satisfy.  
+   Hence the hexagon is
+      A(0,0) → B(16,0) → C(16,6) → D(12,10) → E(4,10) → F(0,6) → back to A.
+
+7.  Compute the area with the shoelace formula.
+
+   List vertices in order:
+
+        x   y
+     A  0   0
+     B 16   0
+     C 16   6
+     D 12  10
+     E  4  10
+     F  0   6
+
+   Σ(x_i y_{i+1}) = 0·0 + 16·6 + 16·10 + 12·10 + 4·6 + 0·0 = 400  
+   Σ(y_i x_{i+1}) = 0·16 + 0·16 + 6·12 + 10·4 + 10·0 + 6·0 = 112  
+
+   Area = ½ |400 − 112| = ½·288 = 144 square feet.
+
+8.  Each tile covers 1 ft², so ideally 144 tiles are needed.  
+    With 6 extra for breakage: 144 + 6 = 150 tiles.
+
+Final answer: 150",True
+139,"Question: Kevin and Smith are in charge of counting people who get on and off the lift. They take turns riding to the top floor and back down, counting as they go. After three such trips each morning noon and evening, there is an average taken.
+The hotel manager wants to know the days average.
+1.On Smith's noon trip there were 32 fewer people than in his morning count.
+2.Kevin counted a total of 122 in the morning and noon counts, just one higher than his evening count, but 24 more than Smith's Evening count.
+3.Kevin's morning count is the same as Smith's average.
+4.Kevin's evening count was 37 more than Smith's morning count.
+ Hint: Clue 2 gives most of the information needed to get started.",Clue 2 gives most of the information needed to get started.,"Morning Noon Evening Total Ave
+Kevin  78       44      121     243   81
+Smith  84       52       98     234   78",GPT-o3,hint_prompt,"Let  
+
+KM = Kevin’s morning count  
+KN = Kevin’s noon   count  
+KE = Kevin’s evening count  
+
+SM = Smith’s morning count  
+SN = Smith’s noon    count  
+SE = Smith’s evening count  
+
+We have six unknowns and four clues.
+
+----------------------------------------------------------------
+Clue 1  
+“On Smith's noon trip there were 32 fewer people than in his morning count.”
+
+ SN = SM − 32                                (1)
+----------------------------------------------------------------
+Clue 2  
+“Kevin counted a total of 122 in the morning and noon counts,  
+ just one higher than his evening count, but 24 more than Smith's evening count.”
+
+ KM + KN = 122                              (2)  
+ 122 is one higher than KE  ⇒ KE = 121     (3)  
+ 122 is 24 more than SE     ⇒ SE = 122 − 24 = 98    (4)
+----------------------------------------------------------------
+Clue 3  
+“Kevin's morning count is the same as Smith's average.”
+
+Smith’s average = (SM + SN + SE)/3.  
+So KM = (SM + SN + SE)/3                    (5)
+----------------------------------------------------------------
+Clue 4  
+“Kevin's evening count was 37 more than Smith's morning count.”
+
+ KE = SM + 37                               (6)
+
+----------------------------------------------------------------
+Solve the system.
+
+From (3) and (6):  
+121 = SM + 37  ⇒ SM = 84.                               (7)
+
+Using (1):  
+SN = 84 − 32 = 52.                                       (8)
+
+Using (4):  
+SE = 98.                                                 (9)
+
+Now apply (5):  
+KM = (SM + SN + SE)/3  
+  = (84 + 52 + 98)/3  
+  = 234/3 = 78.                                         (10)
+
+Finally use (2) to get KN:  
+KN = 122 − KM = 122 − 78 = 44.                          (11)
+
+----------------------------------------------------------------
+All counts:
+
+Kevin  – Morning 78, Noon 44, Evening 121  
+Smith  – Morning 84, Noon 52, Evening 98
+
+----------------------------------------------------------------
+Day’s average (over the six trips):
+
+(78 + 44 + 121 + 84 + 52 + 98) / 6  
+= 477 / 6  
+= 79.5
+
+----------------------------------------------------------------
+Final answer: 79.5",True
+140,"Question: Take a five-digit number and reverse it. Subtract the original number from the reversed number and you are left with 33957.
+How many different possibilities does the original number have?
+ Hint: Work from the first and last digits.",Work from the first and last digits.,"Suppose that the original number is abcde. Then edcba-abcde=33957.
+Since e>a, we must have e=a+3 and therefore d=b+4, and c can be any digit.
+a can be 1 to 6 and e 4 to 9, b can be 0 to 5 and d 4 to 9, each pair has 6 possibilities, and c has 10 possibilities.
+Therefore, the original number has 6*6*10=360 different possibilities.",GPT-o3,hint_prompt,"Let the five–digit number be written with its digits:
+
+  original = ABCDE  (A is non–zero)  
+  reversed = EDCBA
+
+Interpreting the symbols as their place–value contributions,
+
+  EDCBA – ABCDE
+ = (10000E + 1000D + 100C + 10B + A)
+  –(10000A + 1000B + 100C + 10D + E)
+ = 33957.
+
+Collect the like terms:
+
+ (10000E – 10000A) + (1000D – 1000B) + (10B – 10D) + (A – E) = 33957  
+  ⇒ 9999E – 9999A + 990D – 990B = 33957.
+
+Divide throughout by 9 to simplify:
+
+ 1111E – 1111A + 110D – 110B = 3773.
+
+Put the differences of corresponding digits into two variables
+
+ x = E – A  (1 ≤ x ≤ 9 because E > A),  
+ y = D – B  (–9 ≤ y ≤ 9),
+
+and the equation becomes
+
+ 1111x + 110y = 3773.  (★)
+
+------------------------------------------------------------------------
+Solving (★)
+
+Try x = 1,2,…,9:
+
+x = 1 ⇒ 110y = 3773 – 1111 = 2662  → y = 24.2 (not integer)  
+x = 2 ⇒ 110y = 1551          → y = 14.1  
+x = 3 ⇒ 110y = 440          → y = 4  (integer!)  
+x = 4 ⇒ 110y = –671         → y = –6.1  
+larger x give still non-integer y.
+
+Hence the only admissible solution is
+
+ x = 3  and y = 4,
+
+i.e.
+
+ E – A = 3 and D – B = 4.  (†)
+------------------------------------------------------------------------
+Counting the digit choices
+
+From E – A = 3:
+
+ A can be 1,2,3,4,5,6 (A ≤ 6 so that E = A + 3 ≤ 9).  
+ For each A, E is fixed: E = A + 3.
+
+From D – B = 4:
+
+ B can be 0,1,2,3,4,5 (B ≤ 5 so that D = B + 4 ≤ 9).  
+ For each B, D is fixed: D = B + 4.
+
+The middle digit C is unrestricted: C = 0,…,9.
+
+Thus the number of possible originals is
+
+ 6 (choices for A) × 6 (choices for B) × 10 (choices for C) = 360.
+
+------------------------------------------------------------------------
+Therefore, there are 360 different five–digit numbers whose reverse differs from them by 33 957.
+
+Final answer: 360",True
+141,"Question: You have two identical ropes and three mice.  Each mouse bites off the rope at a different biting speed.  All three biting speeds are constant.
+Mouse(A) bites off one rope in 60 minutes.
+Mouse(B) bites off one rope in 90 minutes.
+Mouse(C) bites off one rope in 180 minutes.
+You do not have any time or distance measuring tools and the length of the rope is unknown.  How can you measure 75 minutes?
+ Hint: nan",,"Mark the two ropes as Rope(A) and Rope(B).
+1. Let Mouse(A) and Mouse(C) start biting off Rope(A) at the same time, starting each from  one end (moving in opposite directions).  At the same time, let Mouse(B) start biting off Rope(B).
+Finding relative speeds between Mouse(A) and Mouse(C):
+Distance = Speed * Time
+X = S(A) * 60, where S(A) is biting speed for Mouse(A) and X is Rope(A) length
+X = S(C) * 180, where S(C) is biting speed for Mouse(C) and X is Rope(A) length
+Solving the two above equations gives:
+S(A)/S(C) = 3:1, which means that for each 3 units Mouse(A) will move, Mouse (C) will move 1 unit.
+Moving in opposite directions (assume Mouse(A) from left to right and Mouse(C) from right to left), the two mice will meet after Mouse(A) bites off three times what Mouse(C) bit off, which divides Rope(A) length in to 4 units.
+Mouse(A) bitten off portion = 3/4 X (where X is Rope(A) length)
+Mouse(C) bitten off portion = 1/4 X
+Finding the time spent before Rope(A) is completely bitten off by the two mice:
+If Mouse(A) needs  60 minutes to bite off X, How many minutes are needed to bite off 3/4 X?
+Minutes needed = 3/4 * 60 = 45 minutes are needed to fully bite off Rope(A) by Mouse(A) and Mouse(C).  At that point in time, Mouse(B) would have bitten off exactly half the length of Rope(B) (needing 90 minutes to bite off the full rope), and needs an additional 45 minutes to bite off the remaining rope half.
+2. Let Mouse(B) continue biting off Rope(B) and make Mouse(C) start biting off the other end of Rope(B).
+Finding relative speeds between Mouse(B) and Mouse(C):
+Distance = Speed * Time
+X/2 = S(B) * 90, where S(B) is biting speed for Mouse(B) and X/2 is the remaining half of Rope(B) length
+X/2 = S(C) * 180, where S(C) is biting speed for Mouse(C) and X/2 is the remaining half of Rope(B) length
+Solving the two above equations gives:
+S(B)/S(C) = 2:1, which means that for each 2 units Mouse(B) will move, Mouse(C) will move 1 unit.
+Moving in opposite directions (assume Mouse(B) from left to right and Mouse(C) from right to left), the two mice will meet after Mouse(B) bites off two times what Mouse(C) bit off, which divides the remaining half of Rope(B) length to 3 units.
+Mouse(B) bitten off portion = 2/3 * X/2 = X/3
+Mouse(C) bitten off portion = 1/3 * X/2 = X/6
+Finding the time spent before the remaining half of Rope(B) is completely bitten off by the two mice:
+If Mouse(B) needs  90 minutes to bite off X, how many minutes are needed to bite off X/3?
+Minutes needed = 1/3 * 90 = 30 minutes are needed to fully bite off the remaining half of Rope(B) by Mouse(B) and Mouse(C).
+At that point in time, 75 minutes would have passed (45 minutes consumed from biting off Rope(A) and another 30 minutes consumed from biting off Rope(B)).",GPT-o3,hint_prompt,"Let L be the (unknown) length of each rope.
+
+Chewing speeds  
+• Mouse A : L / 60 per minute  
+• Mouse B : L / 90 per minute  
+• Mouse C : L / 180 per minute  
+
+Step 1 (start = 0 min)  
+  Rope 1 Put Mouse A at one end and Mouse C at the other end.  
+  Rope 2 Put Mouse B at one end (the other end is untouched).  
+ The two actions begin simultaneously.
+
+Step 2 (after 45 min)  
+On Rope 1 the two mice meet and the rope disappears.  
+Reason: A and C attack the rope from opposite ends, so the chewing rate is  
+ 1/60 + 1/180 = 1/45 rope-length per minute,  
+so Rope 1 is finished in 45 min = L ÷ (L/45).
+
+Exactly 45 minutes have now elapsed.
+
+Step 3 (immediately after Rope 1 is gone)  
+Pick up Mouse C and place it at the free end of Rope 2 (the end opposite Mouse B).  
+During the first 45 minutes Mouse B has been working alone on Rope 2, so it has eaten  
+ (L/90)·45 = L/2.  
+Half of Rope 2 therefore remains.
+
+Step 4 (Rope 2, second phase)  
+Rope 2 is now being chewed from both ends:  
+ Mouse B speed L/90 and Mouse C speed L/180.  
+Combined speed = 1/90 + 1/180 = 1/60 rope-length per minute.  
+With half the rope (L/2) left, the time required to finish Rope 2 is  
+ (L/2) ÷ (L/60) = 30 minutes.
+
+Step 5 (finish)  
+Those 30 minutes added to the initial 45 minutes give  
+ 45 min + 30 min = 75 minutes.
+
+When the second rope is finally bitten through you know that exactly 75 minutes have passed.
+
+Final answer: Start A and C on opposite ends of one rope and B on one end of the other; when the first rope is gone after 45 min, move C to the free end of the second rope; it will now take exactly 30 min more, so the second rope’s disappearance marks 75 minutes.",True
+142,"Question: Rob the robot went to the candy-store to buy some candies. He found his favorite gums in front of him, in packages of 225 gums in each.
+Though extremely intelligent, he is still a robot, thus capable of using only 1's and 0's.
+What is the minimum number of gums that Rob ate that day if he finished all of his packages, and the number of gums contained nothing but 1's and 0's?
+Oh yes, and you can't cheat and use binary notation.  The answer is in base 10, but still only uses 1's and 0's.
+ Hint: Think of the factors of 225, and kids, don't try this at home (or you would suffer from a severe stomach ache).","Think of the factors of 225, and kids, don't try this at home (or you would suffer from a severe stomach ache).","11,111,111,100
+This contains nine ones, so it is divisible by 9, and two 0's at the end, so it is divisible by 25.",GPT-o3,hint_prompt,"Let N be the total number of gums Rob eats.  
+Because every package has 225 gums, N must be a multiple of 225 = 9 · 25.
+
+1.  Divisibility by 25  
+    In base-10 a number is divisible by 25 iff its last two digits are 00, 25, 50 or 75.  
+    Since Rob can only write the digits 0 and 1, the only possible ending is 00.  
+    ⇒  N ends in the two digits 00.
+
+2.  Divisibility by 9  
+    A number is divisible by 9 iff the sum of its digits is a multiple of 9.  
+    Here every digit is 0 or 1, so the digit-sum is simply “the number of 1’s”.  
+    ⇒  The amount of 1’s in N must be 9, 18, 27, … .  
+    Taking the smallest admissible value gives 9 ones.
+
+3.  How many digits are needed?  
+    We already need two trailing zeros.  If there are k ones altogether, the shortest
+    possible length of the number is k + 2 (k ones plus the two obligatory zeros).  
+    For k = 9 this length is 11.  
+    Therefore a minimal solution must have exactly 11 digits: 9 ones and 2 zeros.
+
+4.  Where can the 1’s go?  
+    • The two least–significant digits are fixed as 00.  
+    • The most-significant digit cannot be 0 (no leading zeros), so it is 1.  
+    That leaves 8 interior positions and they must all be 1’s to reach the required
+    total of nine 1’s.
+
+    Hence the only 11-digit pattern that works is
+
+        1 1 1 1 1 1 1 1 1 0 0
+        ↑                     ↑
+      leading 1          two required 0’s
+
+    i.e. 11111111100.
+
+5.  Verification  
+    • It ends in 00  ⇒ divisible by 25.  
+    • It contains nine 1’s  ⇒ digit-sum = 9  ⇒ divisible by 9.  
+    Since gcd(9, 25)=1, it is divisible by 225.
+
+6.  Minimum argument  
+    Any number with fewer than 11 digits cannot contain 9 ones (there are only
+    8 possible non-zero positions once the ending 00 is fixed), so 11 digits is
+    the absolute minimum length, and within that length the pattern above is the
+    smallest lexicographically (and hence numerically).  
+
+Therefore the minimum possible total number of gums is
+
+11111111100.
+
+(For curiosity: this equals 49 382 716 packages of 225 gums each.)
+
+Final answer: 11111111100",True
+143,"Question: If 3**5 = 27 but 5**3 = 35
+4++8 = 20 but 8++4 = 16
+Then what is the result of (8**7)++9?
+ Hint: nan",,"The result is 106.
+For the operator **, you add 4 to the second number and then multiply, so a**b = a * (b + 4)
+and a++b = a + (b * 2)
+So therefore (8**7) ++9 = (8*(7 + 4)) ++ 9
+= 88++9
+= 88 + (9 *2)
+= 88 + 18
+= 106",GPT-o3,hint_prompt,"We have to discover what the two strange operators  
+“**” and “++” do, using only the four given facts  
+
+(1) 3 ** 5 = 27  (2) 5 ** 3 = 35  
+(3) 4 ++ 8 = 20  (4) 8 ++ 4 = 16  
+
+and then compute (8 ** 7) ++ 9.
+
+--------------------------------------------------------------------
+Step 1 – Find the rule for “++”.
+
+Compare (3) and (4).
+
+Take a general expression a ++ b and guess a very simple linear
+combination α a + β b that is not symmetric (because the
+results differ when we swap a and b).
+
+Use (3):            4 ++ 8 = 20  
+ ⇒ α·4 + β·8 = 20        (5)
+
+Use (4):            8 ++ 4 = 16  
+ ⇒ α·8 + β·4 = 16        (6)
+
+Solve (5)–(6):
+
+ From (5) 4α + 8β = 20  
+ From (6) 8α + 4β = 16  
+ Multiply the first by 2: 8α + 16β = 40  
+ Subtract the second:        12β = 24  →  β = 2  
+ Substituting back:          4α + 8·2 = 20 → α = 1  
+
+Hence
+
+  a ++ b = a + 2b.                                    (7)
+
+A quick check:
+4 + 2·8 = 4 + 16 = 20  ✓  
+8 + 2·4 = 8 + 8  = 16  ✓
+
+--------------------------------------------------------------------
+Step 2 – Find the rule for “**”.
+
+Again look for a simple rule that can produce different outputs when
+we swap a and b.  Two data points are not enough to nail down a
+unique formula, but one clean piece-wise rule fits perfectly and is
+consistent with the asymmetry we saw:
+
+Observation  
+• When the first number is smaller than the second (3 < 5) the result
+  27 happens to be the square of the larger number plus the difference
+  between them: 5² + (5-3) = 25 + 2 = 27.  
+• When the first number is larger than the second (5 > 3) the result
+  35 is simply the digits “3” followed by “5”, i.e. 10·3 + 5.
+
+Thus a compact two-case definition that satisfies both examples is
+
+  If a < b  a ** b = b² + (b – a)  
+  If a > b  a ** b = 10·b + a.                       (8)
+
+Check the given data:
+
+a = 3, b = 5 (a < b): 5² + (5-3) = 25 + 2 = 27 ✓  
+a = 5, b = 3 (a > b): 10·3 + 5 = 30 + 5 = 35 ✓
+
+--------------------------------------------------------------------
+Step 3 – Evaluate 8 ** 7.
+
+Now a = 8, b = 7 and a > b, so we must use the second branch of (8):
+
+ 8 ** 7 = 10·7 + 8 = 70 + 8 = 78.                     (9)
+
+--------------------------------------------------------------------
+Step 4 – Evaluate (8 ** 7) ++ 9.
+
+From (7): a ++ b = a + 2b.
+
+Let a = 78 (value computed above) and b = 9:
+
+ 78 ++ 9 = 78 + 2·9 = 78 + 18 = 96.                  (10)
+
+--------------------------------------------------------------------
+Answer.
+
+Final answer: 96",True
+144,"Question: Arrange the digits 1, 1, 2, 3, 3, 4, 4, 5, and 7 to form a single fraction that equals 1/11
+ Hint: nan",,One solutions is 4321/47531=1/11,GPT-o3,hint_prompt,"Let the required fraction be  
+
+          numerator / denominator  =  1 / 11.  
+
+Hence  denominator = 11 × numerator.
+
+We have to write the nine given digits  
+
+1, 1, 2, 3, 3, 4, 4, 5, 7  
+
+exactly once – some of them in the numerator and the rest in the denominator – so that this equality holds.
+
+Step 1 – How many digits can the two numbers have?  
+• A 3–digit numerator is at most 999, and 11 × 999 = 10 989 (five digits).  
+  Total digits ≤ 8 – not enough.  
+• A 4–digit numerator is at most 9 999, and 11 × 9 999 = 109 989 (five digits).  
+  That gives 4 + 5 = 9 digits – exactly what we need.  
+
+Therefore the numerator must have 4 digits and the denominator 5 digits.
+
+Step 2 – Structure of a 5–digit product by 11.  
+Write a 4–digit number as a b c d.  
+Multiplying by 11 is equivalent to adding the number to itself shifted one place:
+
+            a  b  c  d
+      +  a  b  c  d  0
+      -----------------
+         e  f  g  h  i
+
+Doing the column addition from right to left yields  
+i = d  
+h = c + d (carry to the left if ≥ 10)  
+g = b + c + (carry from h)  
+f = a + b + (carry from g)  
+e = a + (possible carry from f).  
+
+Thus
+• the last digit of the product equals the last digit of the original number,  
+• the first digit of the product is either the first digit of the original number or that plus one (if there is a final carry).
+
+Step 3 – Using the nine digits we own.  
+Because the last digits are equal, whichever digit is placed last in the numerator must also appear last in the denominator; our set contains only one 2, one 5, and one 7, so it is simplest to let d be one of the non-repeating digits 2, 5, or 7.
+
+Try d = 4 → i = 4, but there are two 4’s in the list, so another 4 would still be needed elsewhere; that soon uses up the 4’s and proves awkward.  
+Try d = 5 or d = 7 – tentative attempts quickly introduce a digit 6 or 8 in the product (because of carries), which are not available.  
+
+Try d = 4 again but choose simple consecutive digits in front: a b c d = 1 2 3 4.  
+Compute 11 × 1234:
+
+       1  2  3  4
+ +  1  2  3  4  0
+ ----------------
+    1  3  5  7  4
+
+So the denominator is 13 574.
+
+Step 4 – Check the digit multiset.  
+Numerator   1 2 3 4  
+Denominator 1 3 5 7 4  
+
+Together they contain  
+
+1 (twice), 2, 3 (twice), 4 (twice), 5, 7  
+
+which is exactly the required collection 1, 1, 2, 3, 3, 4, 4, 5, 7 – every digit used once, no extras, no omissions.
+
+Therefore
+
+          1234
+   ----------------  =  1/11.
+          13574
+
+Thus the desired arrangement is 1234/13574.
+
+Final answer: 1234/13574",True
+145,"Question: How many trailing zeros are in the number 1000!?
+ Hint: nan",,"The ! stands for factorial.  So, there are exactly 249 trailing zeros in 1000!
+The only way to get a trailing zero is by multiplying a factor of 1000! which is 2 by a factor of 1000! which is 5. The modified problem is thus: How many such pairs of factors are there?
+There are 500 = 1000/2 numbers between 1 and 1000 (inclusive) which are even, so there are at least 500 factors of 2 in 1000!. There are 200 = 1000/5 numbers which are multiples of 5. But in addition there are 40 = 1000/25 numbers which are multiples of 25, each of which gives one factor of five in addition to the one counted in the 200 and the one counted in the 40 above. Finally there is 1 = [1000/625] number which is a multiple of 625, this gives one further factor of 5. Thus there are exactly  200 + 40 + 8 + 1 = 249 factors of 5 in 1000! and since there are more than sufficient factors of 2, there are exactly 249 trailing zeros in 1000!",GPT-o3,hint_prompt,"To find the number of trailing zeros of 1000! we must determine how many times 10 divides 1000!.  
+A factor 10 = 2 × 5, and in any factorial the factors of 2 are far more plentiful than the factors of 5.  
+Hence the number of trailing zeros equals the exponent of 5 in the prime-factorization of 1000!.
+
+Legendre’s formula (or repeatedly dividing by 5) gives that exponent:
+
+v₅(1000!) = ⌊1000/5⌋ + ⌊1000/25⌋ + ⌊1000/125⌋ + ⌊1000/625⌋ + …  
+
+Compute each term:
+
+⌊1000/5⌋   = 200  
+⌊1000/25⌋  = 40  
+⌊1000/125⌋ =   8  
+⌊1000/625⌋ =   1  
+⌊1000/3125⌋=   0  (stop here)
+
+Add them: 200 + 40 + 8 + 1 = 249.
+
+Therefore 1000! contains 249 factors of 10, so it ends with 249 zeros.
+
+Final answer: 249",True
+146,"Question: In a 14-stage cycle race there were a 100 competitors, among them ""Crazy"" Charles
+In all 14 stages ""Crazy"" Charles finished in the same position: 93rd. However, at the end of the race, ""Crazy"" Charles was declared runner-up in the competition: his accumulated time was less than that of all the other competitors except one, the champion.
+Bearing in mind the fact that none of the 100 competitors withdrew from the race, how was it possible for ""Crazy"" Charles to finish second if he never even made it into the top 90 competitors?
+ Hint: nan",,"""Crazy"" Charles was runner-up in the race because in each of the 14 stages he beat 7 different competitors, and he beat them all by more time than the accumulated time that they beat him by in all the other stages of the tour. Since 7*14=98, there was only one cyclist that he never beat and that was the champion.",GPT-o3,hint_prompt,"Let the 100 riders be  
+  – P : the eventual champion  
+  – C : “Crazy” Charles  
+  – R1 , R2 , … , R98 : the remaining 98 riders  
+
+We will describe one completely possible distribution of stage placings and times that satisfies every condition in the statement.
+
+1.  The basic time pattern for every stage  
+
+    champion P         0 min  
+    the 91 fastest of the other riders 0.01 min , 0.02 min , … , 0.91 min  
+    Charles C           1.00 min  
+    the remaining 7 riders     31 min , 32 min , … , 37 min  
+
+    •  Charles is 93-rd, exactly as required (P + 91 riders ahead of him).  
+    •  He loses only 1 min to P and at most 0.99 min to every rider that beats him in
+       that stage, but he gains at least 30 min on every rider that finishes behind him.
+
+2.  How the names rotate  
+
+    •  Champion P is always first.  
+    •  For the other 98 riders we do the following rotation:  
+
+        – Each of them is placed among the first 91 in 13 of the 14 stages.  
+        – On exactly one stage he is put into the “slow” group of 7 riders that finish
+          after Charles.
+
+    Because there are 14 stages and each stage needs 7 “slow” riders, we need  
+    14 × 7 = 98 slow-rider places altogether, exactly one for every Rk.
+    So the assignment “every Rk is slow once, fast 13 times” is possible.
+
+3.  What the rotation does to total time
+
+    For any rider Rk :
+
+        time gained on C when he is fast: 13 stages × at most 0.99 min ≈ 12.9 min  
+        time lost to C when he is slow:  1 stage  × at least 30 min  = 30 min  
+        net loss to C after 14 stages:   about 17 min
+
+    Hence every Rk ends the race roughly 17 minutes behind Charles.
+
+4.  Charles versus the champion
+
+    Charles loses exactly 1 min to P every stage,
+    so after 14 stages he is 14 min behind P—good enough for second place.
+
+5.  Everything promised in the statement is now true
+
+    •  No rider abandoned the race.  
+    •  Charles finished 93-rd in each of the 14 stages.  
+    •  Yet his total time is better than everybody’s except the champion’s.
+
+So the apparently paradoxical result is possible because
+
+    – Charles was consistently just a little slower than the very best time
+      (hence always 93-rd),
+    – while all the other riders, although beating him often, each had one
+      disastrous stage that cost them far more time than they ever gained on him.
+
+Final answer: Charles could be second overall because the 92 riders that beat him in any given stage were not always the same riders; every one of the other 98 competitors had at least one stage in which he finished far behind Charles and lost much more time than he had gained in the stages where he had beaten him, so their accumulated times ended up worse than Charles’s consistent but slightly slower performances.",True
+147,"Question: The Boldavian navy has a rigorous training program.  In order to graduate from the naval academy, cadets must enter a pool and fight sharks.  Today, a group of cadets was tested.  Each cadet put on his mask, snorkel, and two flippers; and armed himself with a knife.  Then the cadets jumped into the pool.  The sharks were then released from their pens.  After 10 minutes of gruelling hand-to-fin combat, all of the sharks were killed.  Miraculously, none of the cadets were killed.  Exiting the pool, the cadets began to haul the shark bodies out of the water.  The dead sharks were soon lying in a row.  One of the cadets noted that during the fight, there were 4 times as many cadets in the water as there were sharks.  A second cadet then stated that the number of legs they now had was equal to the square of the number of sharks.  A third said that the number of cadet legs was 14 more than the total number of cadet and shark heads.  How many sharks were killed?
+ Hint: nan",,"7 sharks were killed.
+Since there were 4 times as many cadets, there were 28 cadets.  The number of cadet legs is equal to the square of the number of sharks, which would be 49 legs.  49 legs is 14 more than the number of cadet and shark heads: 7 sharks plus 28 cadets equals 35 heads.
+Note that although all of the cadets survived, nothing was said about possible injuries.  In fact, each shark had bitten off one leg from each of 7 cadets.  This explains the shortage of legs, since 28 cadets should have had 56 legs, not 49.  Also note the statement of the second cadet, who said 'the number of legs they NOW had ...'.",GPT-o3,hint_prompt,"Let  
+
+C  = number of cadets who took part in the test  
+S  = number of sharks that were in the pool  
+L  = number of cadet legs remaining after the fight  
+      (cadets are alive, but some may have lost legs)
+
+1.  During the fight there were “4 times as many cadets … as there were sharks”  
+
+  C = 4S.                                                       (1)
+
+2.  After the fight “the number of legs they now had was equal to the square of the number of sharks.”  
+  Only cadets have legs, so the present total of legs is L, and  
+
+  L = S².                                                       (2)
+
+3.  A cadet then said “the number of cadet legs was 14 more than the total number of cadet and shark heads.”  
+  Total heads = cadet heads + shark heads = C + S.  
+  Hence  
+
+  L = (C + S) + 14.                                             (3)
+
+Substitute C = 4S from (1) into (3):
+
+  L = (4S + S) + 14 = 5S + 14.                                 (4)
+
+But L = S² from (2), so
+
+  S² = 5S + 14  
+  S² – 5S – 14 = 0  
+  (S – 7)(S + 2) = 0.
+
+Since S > 0, we obtain
+
+  S = 7.
+
+Consequently
+
+  C = 4S = 28  
+  L = S² = 49  (so 7 cadet legs were lost, but no cadet died).
+
+Therefore the number of sharks killed was
+
+Final answer: 7",True
