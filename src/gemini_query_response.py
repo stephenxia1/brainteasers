@@ -64,36 +64,23 @@ modelInfo = {
 def query_with_retries(question, instructions, model):
     # print("TESTING", model)
 
-    client = OpenAI(
-        api_key= os.getenv(modelInfo[model]["key"]),
-        base_url = modelInfo[model]["url"],
-    )
+    # client = OpenAI(
+    #     api_key= os.getenv(modelInfo[model]["key"]),
+    #     base_url = modelInfo[model]["url"],
+    # )
+    # retries = 0
+    # print(model)
+    # print(instructions)
     retries = 0
-    print(model)
-    print(instructions)
-
     while retries < MAX_RETRIES:
         try:
-            response = client.chat.completions.create(
-                model=modelInfo[model]["modelName"],
-                messages=[
-                    {"role": "system", "content": instructions},
-                    {"role": "user", "content": question},
-                ],
-            stream=False
+            response = gemini_generate(
+                prompt=question,
+                instruction=instructions,
+                model_name=model
             )
-            # print(response.choices[0].message.content)
-            return response.choices[0].message.content
-
-        except openai.AuthenticationError:
-            print("Authentication failed: Invalid API key.")
-            break  # Don't retry on bad key
-
-        except (openai.RateLimitError, openai.InternalServerError, openai.APIConnectionError, openai.APITimeoutError) as e:
-            print(f"Retryable error occurred: {e}. Retrying in {RETRY_DELAY} seconds...")
-            retries += 1
-            time.sleep(RETRY_DELAY)
-
+            return response
+            
         except Exception as e:
             print(f"Unexpected error: {e}")
             break
@@ -130,6 +117,7 @@ def process_pair(index, prompt, question, hint, solution, instructions, model, d
 
     try:
         response = query_with_retries(question, instructions, model)
+        breakpoint()
     except Exception as e:
         print(f"Error querying {model} for question {index} on prompt {prompt}: {e}")
         response = None
@@ -163,7 +151,7 @@ def main():
     parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], required=True)
     parser.add_argument("--rows", help="Number of rows to sample", type=int, default=1, required=False)
     parser.add_argument("--samples", help="Number of samples to run", type=int, default=1, required=False)
-    parser.add_argument("--model", help="Model to run on", choices=modelInfo.keys(), required=False, default="GPT-o3")
+    parser.add_argument("--model", help="Model to run on", required=False, default="GPT-o3")
     args = parser.parse_args()
 
     os.makedirs(f"../responses/{args.dataset}/{args.name}", exist_ok=True)
