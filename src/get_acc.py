@@ -11,8 +11,8 @@ def main():
     correct_count_dict = {
         "basicprompt": [0, 0, 0, 0],
         "mathPrompt": [0, 0, 0, 0],
-        "implicit_symbol_reasoning_prompt.txt": [0, 0, 0, 0],
-        "explicit_symbol_reasoning_prompt.txt": [0, 0, 0, 0],
+        "implicit_symbol_reasoning_prompt": [0, 0, 0, 0],
+        # "explicit_symbol_reasoning_prompt": [0, 0, 0, 0],
         "hint_prompt": [0, 0, 0, 0],
     }
 
