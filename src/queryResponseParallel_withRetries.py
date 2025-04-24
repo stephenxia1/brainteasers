@@ -48,7 +48,7 @@ def read_txt_files(directory):
 Comment out models to skip evaluation on them.
 '''
 modelInfo = {
-    "GPT-4o-mini" : {"key": "OPENAI_API_KEY", "modelName": "gpt-4o-mini-2024-07-18", "url": "https://api.openai.com/v1"},
+    # "GPT-4o-mini" : {"key": "OPENAI_API_KEY", "modelName": "gpt-4o-mini-2024-07-18", "url": "https://api.openai.com/v1"},
     "GPT-o3" : {"key": "OPENAI_API_KEY", "modelName": "o3-2025-04-16", "url": "https://api.openai.com/v1"},
     "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
     "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-exp-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},

@@ -1,6 +1,6 @@
 import pandas as pd
 import argparse
-import os
+import os, json
 import numpy as np
 from openai import OpenAI
 
@@ -20,7 +20,7 @@ def read_txt_files(directory):
 
 def evaluateResponse(client, instructions, modelResponse, solution):
     response = client.responses.create(
-        model="o3-2025-04-16",
+        model="o3-2025-04-16", # 
         instructions=instructions,
         input="STUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution,
         max_output_tokens=10000,
@@ -35,7 +35,7 @@ def main():
     args = parser.parse_args()
 
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
-    responses = pd.read_csv(f'../responses/{args.dataset}/{args.name}/results.csv')
+    responses = pd.read_csv(f'../responses/{args.dataset}/{args.name}/resultsAll.csv')
 
     evaluationPrompts = read_txt_files("../prompting/evaluationPrompts")
 
@@ -51,9 +51,19 @@ def main():
         solution = dataEntry['Answer']
         modelResponse = row['Response']
 
-        correctness = evaluateResponse(client, evaluationPrompts['correctness'], modelResponse, solution)
+        if type(modelResponse) == type("string"):
+            
+            correctness = evaluateResponse(client, evaluationPrompts['correctness'], modelResponse, solution)
 
-        responses.at[index, 'Correct'] = correctness
+            responses.at[index, 'Correct'] = correctness
+
+            entry = row.to_dict()
+
+            entry["correctness"] = correctness
+            print(correctness)
+
+            with open(f'../responses/{args.dataset}/{args.name}/resultsEvaluations.jsonl', 'a') as jsonfile:
+                jsonfile.write(json.dumps(entry) + "\n")
         
     responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation.csv", index=False)
 
