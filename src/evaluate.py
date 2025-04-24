@@ -1,8 +1,12 @@
 import pandas as pd
 import argparse
-import os, json
+import os, json, time
 import numpy as np
 from openai import OpenAI
+import openai
+
+MAX_RETRIES = 5
+RETRY_DELAY = 5 
 
 def read_txt_files(directory):
     instructionSet = {}
@@ -19,13 +23,32 @@ def read_txt_files(directory):
     return instructionSet
 
 def evaluateResponse(client, instructions, modelResponse, solution):
-    response = client.responses.create(
-        model="o3-2025-04-16", # 
-        instructions=instructions,
-        input="STUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution,
-        max_output_tokens=10000,
-    )
-    return response.output_text
+    retries = 0
+    while retries < MAX_RETRIES:
+        try:
+            response = client.responses.create(
+                model="o3-2025-04-16", # 
+                instructions=instructions,
+                input="STUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution,
+                max_output_tokens=10000,
+            )
+            # print(response.choices[0].message.content)
+            return response.output_text
+
+        except openai.AuthenticationError:
+            print("Authentication failed: Invalid API key.")
+            break  # Don't retry on bad key
+
+        except (openai.RateLimitError, openai.InternalServerError, openai.APIConnectionError, openai.APITimeoutError) as e:
+            print(f"Retryable error occurred: {e}. Retrying in {RETRY_DELAY} seconds...")
+            retries += 1
+            time.sleep(RETRY_DELAY)
+
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+            break
+
+    return None
 
 def main():
     parser = argparse.ArgumentParser()
@@ -45,6 +68,8 @@ def main():
 
     responses['Correct'] = np.nan
 
+    # responses_iloc = responses.iloc[114:]
+
     for index, row in responses.iterrows():
         question = row['Question']
         dataEntry = data[data['Question'] == question].iloc[0]
@@ -62,7 +87,7 @@ def main():
             entry["correctness"] = correctness
             print(correctness)
 
-            with open(f'../responses/{args.dataset}/{args.name}/resultsEvaluations.jsonl', 'a') as jsonfile:
+            with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations.jsonl', 'a') as jsonfile:
                 jsonfile.write(json.dumps(entry) + "\n")
         
     responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation.csv", index=False)

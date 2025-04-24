@@ -1,5 +1,5 @@
 import pandas as pd
-import argparse
+import argparse, json
 
 def main():
     parser = argparse.ArgumentParser()
@@ -8,10 +8,15 @@ def main():
     
     args = parser.parse_args()
 
-    with open(f"../response_evaluation/{args.dataset}/{args.name}-evaluation.csv", index=False) as f:
-        df = pd.read_csv(f)
-        count = (df["correctness"] == 1).sum()
-        acc = count / len(df)
+    with open(f"../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations.jsonl") as f:
+        total_len = 0
+        count = 0
+        for line in f:
+            data = json.loads(line)
+            if data['correctness'] == "1":
+                count += 1
+            total_len += 1
+        acc = count / total_len
         print(acc)
     
 if __name__ == "__main__":

@@ -68,9 +68,7 @@ def query_with_retries(question, instructions, model):
         base_url = modelInfo[model]["url"],
     )
     retries = 0
-    print(model)
-    print(instructions)
-
+    
     while retries < MAX_RETRIES:
         try:
             response = client.chat.completions.create(
