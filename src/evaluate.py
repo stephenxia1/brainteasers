@@ -76,6 +76,9 @@ def main():
         solution = dataEntry['Answer']
         modelResponse = row['Response']
 
+        if data['PromptType'] == "nl_to_symbol_prompt":
+            continue
+
         if type(modelResponse) == type("string"):
             
             correctness = evaluateResponse(client, evaluationPrompts['correctness'], modelResponse, solution)
