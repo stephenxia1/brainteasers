@@ -77,11 +77,11 @@ def main():
         solution = row['Human Solution']
         modelResponse = row['Response']
 
-        print(row.to_dict().keys())
-        print(row)
+        # print(row.to_dict().keys())
+        # print(row)
 
-        # if row['PromptType'] == "nl_to_symbol_prompt":
-        #     continue
+        if row['PromptType'] == "nl_to_symbol_prompt":
+            continue
 
         if type(modelResponse) == type("string"):
             
