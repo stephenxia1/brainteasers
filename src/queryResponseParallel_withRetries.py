@@ -10,6 +10,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 import itertools
 from tqdm.contrib.concurrent import process_map
 import json
+from gemini_call import gemini_generate
 
 MAX_RETRIES = 5
 RETRY_DELAY = 5  # seconds
