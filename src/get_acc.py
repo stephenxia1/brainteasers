@@ -34,8 +34,11 @@ def get_acc(args):
         "hint_prompt": [0, 0, 0, 0, 0],
     }
 
+    ind = 0
     with open(f"../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations.jsonl") as f:
         for line in f:
+            ind += 1
+            # print(ind)
             data = json.loads(line)
 
             prompttype = data["PromptType"]

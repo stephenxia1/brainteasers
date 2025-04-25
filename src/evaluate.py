@@ -102,7 +102,7 @@ def main():
             entry["model_bruteforce"] = modelbruteforced
             entry["human_bruteforce"] = humanbruteforced
 
-            with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations.jsonl', 'a') as jsonfile:
+            with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations_evaluatedby{args.model}.jsonl', 'a') as jsonfile:
                 jsonfile.write(json.dumps(entry) + "\n")
         
     responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation_from_row{args.from_row}.csv", index=False)
