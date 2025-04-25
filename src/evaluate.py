@@ -22,18 +22,20 @@ def read_txt_files(directory):
                     print(f"Error reading {file_path}: {e}")
     return instructionSet
 
-def evaluateResponse(client, instructions, modelResponse, solution):
+def evaluateResponse(client, instructions, modelResponse, solution, evaluationModel):
     retries = 0
     while retries < MAX_RETRIES:
         try:
-            response = client.responses.create(
-                model="o3-2025-04-16", # 
-                instructions=instructions,
-                input="STUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution,
-                max_output_tokens=10000,
+            response = client.chat.completions.create(
+                model = evaluationModel, # 
+                messages=[
+                    {"role": "system", "content": instructions},
+                    {"role": "user", "content": "STUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution},
+                ],
+                stream = False
             )
             # print(response.choices[0].message.content)
-            return response.output_text
+            return response.choices[0].message.content
 
         except openai.AuthenticationError:
             print("Authentication failed: Invalid API key.")
@@ -53,8 +55,9 @@ def evaluateResponse(client, instructions, modelResponse, solution):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", help="Experiment Name", required=True)
+    parser.add_argument("--model", help="Evaluation Model", required=True)
     parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], required=True)
-    parser.add_argument("--from_row", help="Continue evaluation from which row", type=int, default=0, required=True)
+    parser.add_argument("--from_row", help="Continue evaluation from which row", type=int, default=0, required=False)
 
     args = parser.parse_args()
 
@@ -86,16 +89,20 @@ def main():
 
         if type(modelResponse) == type("string"):
             
-            correctness = evaluateResponse(client, evaluationPrompts['correctness'], modelResponse, solution)
-
+            correctness = evaluateResponse(client, evaluationPrompts['correctness'], modelResponse, solution, args.model)
+            modelbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], modelResponse, solution, args.model)
+            humanbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], solution, solution, args.model)
             responses.at[index, 'Correct'] = correctness
-
+            responses.at[index, 'ModelBruteForce'] = modelbruteforced
+            responses.at[index, 'HumanBruteForce'] = humanbruteforced
+            
             entry = row.to_dict()
 
             entry["correctness"] = correctness
-            print(correctness)
+            entry["model_bruteforce"] = modelbruteforced
+            entry["human_bruteforce"] = humanbruteforced
 
-            with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations.jsonl', 'a') as jsonfile:
+            with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations_evaluatedby{args.model}.jsonl', 'a') as jsonfile:
                 jsonfile.write(json.dumps(entry) + "\n")
         
     responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation_from_row{args.from_row}.csv", index=False)
