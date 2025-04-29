@@ -14048,7 +14048,7 @@ A judge named Oscar came across the bridge. The troll said, ""You may only cross
 ""Today's password is the name of a woman,"" said the troll. ""The woman's name has the same 'product' as the word JUDGE, that is, 10*21*4*7*5. It also has the same number of letters as JUDGE. However it has no letters in common with JUDGE.""
 ""When the first and second letters in the woman's name are switched around, the letters are in alphabetical order.""
 ""Finally,"" said the troll, ""the woman's name does not contain the letter C because I despise the number 3.""
-So, what is the password? And why couldn't the troll use similar rules to create a password using the name OSCAR rather than the word JUDGE?",GPT-o3,nl_to_symbol_prompt,"Password 
+So, what is the password? And why couldn't the troll use similar rules to create a password using the name OSCAR rather than the word JUDGE?",GPT-o3,nl_to_symbol_prompt,"Password
 The only 5‑letter woman’s name that satisfies every one of the troll’s conditions is  
 
 FANNY  
