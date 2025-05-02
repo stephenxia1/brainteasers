@@ -1,1 +1,58 @@
 You are grading a student's exam. You will first be presented with the student's response, then with the solution. Respond only with one character, 1 if the student utilized a brute-force or guess-and-check method and 0 if they did not.
+
+Brute-force means utilizing code or guess-and-check in order to find an answer.
+
+For example, take the following problem:
+
+"After being marooned on an island, a group of five people spent some time obtaining a lot of coconuts. After the five have decided that they have collected enough coconuts to last long enough for rescuers to arrive, they place all coconuts in a communal pile.
+However, the first person suddenly had concerns about how the group would divide the coconuts the following day. In the dead of the night, the first survivor divided the pile into five equal piles of whole coconuts, gave one remaining coconut to a passing monkey, hid their share of the coconuts (one-fifth of the pile), and mixed the four other piles to cover his tracks before going back to sleep.
+The second survivor had the same exact train of thought, and proceeded to divide the pile into five equal piles of whole coconuts, give one remaining coconut to a passing monkey, hide their share of the coconuts (one-fifth of the pile), and mix back together the other four piles before going back to sleep.
+In an ironic twist of fate, the other three survivors also had the same line of reasoning as the other two survivors and proceeded to do exactly the same thing (divide the pile, give one remaining coconut to a passing monkey, etc.). In a twist of fate, none of the survivors woke up to the other survivors taking their share from the pile.
+When the group woke up in the morning, everyone could see that the pile was substantially reduced, but since every survivor took from the pile, no one said anything to incriminate themselves. Nonetheless, the survivors divided the reduced pile of coconuts into five equal shares of whole coconuts one last time, this time without any remaining coconuts to give to any monkeys.
+What is the least number of whole coconuts the pile can have before the night?"
+
+Here is an example solution for the above example problem that use brute-force:
+
+EXAMPLE BRUTE-FORCE SOLUTION:
+
+Beginning from 1 and counting upwards, we check each number and simulate the number of coconuts that remain at the end, and check if it is an integer.
+After using code to simulate the distribution of coconuts, we see that 3121 is the smallest possible number of starting coconuts such that every condition is satisfied.
+
+Here are two example solutions that do not use brute-force:
+
+EXAMPLE NON-BRUTE FORCE SOLUTION 1:
+
+"First, we start with 5^5 coconuts. This is the smallest number that can be divided evenly into fifths, have a fifth removed and the process repeated five times, with no coconuts going to the monkey.
+Four of the 5^5 coconuts are rotten and placed aside. When the remaining supply of coconuts is divided into fifths, there will of course be one non-rotten coconut left over to give to the monkey.
+After the first person has taken his share, and the monkey has his coconut, we put the four rotten coconuts back with the others to make a pile of 5^4 coconuts. This can be evenly divided by 5. Before making this next division, however, we again put the four rotten coconuts aside so that the division will leave an extra coconut for the monkey.
+This procedure - borrowing the rotten coconuts only long enough to see that an even division into fifths can be made, then putting them aside again - is repeated at each division. After the sixth and last division, the rotten coconuts remain on the side, the property of no one.
+The rotten coconuts aren't actual coconuts, since they end up the property of no one, but since we see that 5^5 coconuts can be divided neatly with the use of the four rotten coconuts, the answer is 5^5 - 4, or 3121 coconuts."
+
+EXAMPLE NON-BRUTE FORCE SOLUTION 2:
+
+"Let
+ N₀ = original pile size
+ a, b, c, d, e = the shares each sailor hides
+ N₁,…,N₅ = pile sizes after the 1st,…,5th night splits
+Night‑by‑night equations
+First sailor: N₀ = 5a + 1, N₁ = 4a
+Second sailor: N₁ = 5b + 1, N₂ = 4b
+Third sailor: N₂ = 5c + 1, N₃ = 4c
+Fourth sailor: N₃ = 5d + 1, N₄ = 4d
+Fifth sailor: N₄ = 5e + 1, N₅ = 4e
+Morning division: N₅ must be divisible by 5, so 4e ≡ 0 (mod 5) ⇒ e = 5m.
+Work backward
+e = 5m
+4d = 5e + 1 = 25m + 1 ⇒ d = (25m + 1)/4 → m ≡ 3 (mod 4)
+ Let m = 4n + 3, so d = 25n + 19
+4c = 5d + 1 = 125n + 96 ⇒ c = (125n + 96)/4 → n ≡ 0 (mod 4)
+ Let n = 4p, so c = 125p + 24
+4b = 5c + 1 = 625p + 121 ⇒ b = (625p + 121)/4 → p ≡ 3 (mod 4)
+ Let p = 4q + 3, so b = 625q + 499
+4a = 5b + 1 = 3125q + 2496 ⇒ a = (3125q + 2496)/4 → q ≡ 0 (mod 4)
+ Let q = 4r, so a = 3125r + 624
+Initial pile
+N₀ = 5a + 1 = 5(3125r + 624) + 1 = 15625r + 3121
+Choosing the smallest non‑negative r (r = 0) gives the least possible pile:
+N₀ = 3121 coconuts.
+Final answer: 3121"
