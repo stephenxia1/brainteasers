@@ -1,0 +1,756 @@
+ID,Question,Hint,Human Solution,Model,PromptType,Response,Status
+0,"It was good to have the house full of people again; it had been far too quiet since the last of his seven daughters had left for college--seven daughters with seven different majors at seven different schools.  About the only thing they had in common was that they were each dating an athlete, although none of them played the same sport--one was even on his school's fencing team.  He was surprised all the boyfriends had come for Christmas dinner, but he supposed that since he was picking up the tab for the airfare, that a free trip to Hawaii in the winter had something to do with it.  Each of his first three daughters had gone to Ivy League schools--one even to his alma mater at Harvard; his next two ended up at the University of California, at Los Angeles and Berkeley; and his two youngest got accepted to schools abroad--the University of Tokyo had been a bit of a surprise.  Next year, after seven straight years--and for the first time this millennium--he wouldn't be attending a high-school graduation.
+""Honey, we're ready to eat.  Can you get Hank, Ian, James and Kyle?  They're in the backyard playing football.  The other boys wanted to test themselves against the star quarterback,"" his wife called from the dining room.
+The math major said, ""I'll get them Dad!""
+As everyone filed into the dining room, the oldest sister was rehashing the whose-school-and-major-is-better argument with her younger sister about whether Yale or Princeton was a better school and whether history or philosophy was a more useful major.  The argument was practically a Christmas tradition by now.
+The table was arranged with the parents at the two ends and each of the couples seated across from each other with boys seated next to girls along each side.  As usual, Angelina and Danica were sitting next to their parents.  Curiously, all the athletes that used a ball in their sport were sitting on the same side of the table.  Christie, Electra and Edward took their seats first.
+Once everyone was seated the youngest coyly observed, ""I see the biologist is sitting between the two fighters but I'm sitting between the two best passers at the table.""
+""You'd better not make any passes yourself!"" Farrah icily replied.  She hadn't forgiven her sister for stealing her boyfriend when they were in high school and was not happy to see her seated next to her boyfriend now.
+""Lighten up, Farrah"" the biology major joked.  ""He wasn't even that cute.""
+""He was adorable!"" the youngest interjected.
+""Everyone's entitled to their opinion,"" said Brooke.  ""Let's eat!""
+The daughter in the middle seat stood up and said, ""We have an announcement to make!"" After a dramatic pause she screamed ""we're getting married!"" and flashed the new diamond ring on her finger.  The youngest sister squealed with delight at the news.  Her fiance joked to his future mother-in-law, ""I think she said yes just so she can wear the monogrammed sweater you gave me for Christmas.""  The baseball player next to her asked her fiance, ""Wow, what'd that rock set you back?""
+""This calls for a toast!"" roared Dad.
+""Oh Honey, that's wonderful news!"" Mom gushed.  ""I just happen to have some champagne right here.  Lars, I know you don't drink alcohol, but would you mind pouring some champagne for Gabrielle next to you?"" the mother asked, handing the bottle to Lars on her left.  ""Gabrielle, please pass the bottle around,"" she asked and then quickly added, ""But no alcohol for my three babies, or anyone under 21 for that matter.  Honey, there's a store downtown that's having a sale on wedding dresses.  Will you have time to go look at some wedding dresses before you leave?""
+""Sure Mom,"" her daughter answered.  ""We have a late flight out, so I can do that on the day we leave.""
+""Michael and I are celebrating New Years Eve at the Sheraton, Waikiki,"" one of the girls announced.
+""What a coincidence,"" said the boy sitting next to her.  ""We're celebrating New Years at the Sheraton, Los Angeles.  It's within walking distance of our apartment so we won't have to worry if we drink too much.""
+""That sounds like a better plan than we have.  Somehow, just because my car holds a lot of people, I got roped into being the designated driver for the team"" Danica said, looking pointedly at her boyfriend, who gestured to the boy from Princeton saying, ""he gave me the idea!""
+""Girls, your grandmother will be here on Sunday,"" the father announced.  ""She'd really like to see you all.""
+""Sorry Dad,"" the business major replied, ""we have to leave tomorrow.  There's a huge storm predicted to hit the Eastern United States this weekend and we need to get home before they close the airports.  I noticed that each couple is leaving on a different day for six days after we leave.""
+""Sir, we're leaving before Sunday also, so we won't be able to make it either.  I'm just glad we don't have to deal with that storm"" said the wrestler.
+The swimmer and water polo player announced their travel plans.  One of them remarked that even though his girlfriend and he were departing for Oxford University two days earlier, both couples would get home on the same day.
+The physics major said ""I'll be here to see grandma, but unfortunately we're heading back to California before you go look at the wedding gowns.""
+""Well I'm glad you'll at least be here to see your grandma, but I wish you could stay longer"" the dad said.  ""You know you're my favorite since you were my first to major in a physical science like me,"" he joked.  ""I have a tee time at the club on Monday, it's too bad you won't be here,"" the father remarked to the golfer.  ""Kyle's got a game next week but you don't,"" he said to the history major's boyfriend.  ""How about you join me on the links?""
+""Sure!"" the boyfriend replied enthusiastically.
+""Since we're leaving the day after him, if you've got room for two more Dad, we just happened to bring our clubs"" the second oldest said, winking at her boyfriend.
+""It's a foursome then!"" her dad said happily.
+Ian grumbled, ""Hank you lucky dog, I've wanted to play that course for years!""
+The boyfriend of the political science major laughed, ""I'd like to play there also, but Ian, at least I won't have to travel as far as you to get another opportunity.""
+---------
+Identify the boyfriend and his sport, the school, and major for each daughter.  Name the order that the daughters were born in and the day of the week that they leave to go home.  What is the seating arrangement at the dinner table?
+Bonus question: what year is it?","Pay attention to the flow of the conversation, but don't assume more than can be firmly established.
+Also, some information relies on the following facts:
+Christmas is on December 25th.
+New Years Eve is celebrated (usually by drinking too much alcohol) on December 31st.
+Swimming, fencing and wrestling are not games.  Football, baseball, water polo and golf are games played with a ball.
+Fencing and wrestling are combat competitions.
+The game of American football is not a collegiate sport outside the United States; the player that passes the ball is the quarterback; there are more than forty players on a football team.
+Water polo is a game played in a pool with 7 players on each team; points are scored by throwing the ball into the opponents net, which is guarded by the goal keeper; the ball is moved across the pool either by swimming with it or passing it to another player.
+Ivy League schools are located on the East Coast of the United States.  Harvard, Yale and Princeton are all Ivy League schools.
+Oxford University is in Oxford, England.
+Tokyo University is in Tokyo, Japan.
+Los Angeles and Berkeley are cities in California.
+Waikiki is a city in Hawaii.
+Hawaii is in the Pacific Ocean.  The following are approximate distances from Hawaii:
+Berkeley and Los Angeles ~ 2500 miles
+Tokyo ~3900 miles
+Yale, Harvard and Princeton ~5000 miles
+England ~7000 miles
+Biology and physics are physical sciences; none of the other majors is a physical science.
+High school in America typically includes the last three or four years of school before college.
+A designated driver remains sober in order to drive people who've had too much alcohol home.
+A monogram is formed from the first letter of a person's first, last and (sometimes) middle names.","From oldest to youngest the sisters are:
+Who, Boyfriend, Sport, Major, School, Departure day
+----------------------------------------------------------
+Danica, Hank, Water Polo, History, Yale, Tue
+Electra, Edward, Fencing, Philosophy, Princeton, Wed
+Angelina, Lars, Golf, Business, Harvard, Fri
+Gabrielle, James, Wrestling, Poly Sci., UCLA, Sat
+Farrah, Kyle, Football, Physics, Berkeley, Mon.
+Brooke, Michael, Baseball, Biology, Tokyo, Thu
+Christie, Ian, Swimming, Math, Oxford, Sun
+The seating arrangement is:
+---------- Dad ----------
+Hank.............Danica
+Christie..........Ian
+Kyle..............Farrah
+Electra...........Edward
+Michael..........Brooke
+Gabrielle........James
+Lars..............Angelina
+---------- Mom ----------
+The year is 2003.  This is the only year from 2000 to 2007 where Christmas is on a Thursday.",GeminiFlash,basicprompt,,True
+1,"The warden meets with 23 new prisoners when they arrive. He tells them, ""You may meet today and plan a strategy. But after today, you will be in isolated cells and will have no communication with one another.
+""In the prison there is a switch room which contains two light switches labeled A and B, each of which can be in either the 'on' or the 'off' position. BOTH SWITCHES ARE IN THEIR OFF POSITIONS NOW.*  The switches are not connected to anything.
+""After today, from time to time whenever I feel so inclined, I will select one prisoner at random and escort him to the switch room. This prisoner will select one of the two switches and reverse its position. He must move one, but only one of the switches. He can't move both but he can't move none either. Then he'll be led back to his cell.""
+""No one else will enter the switch room until I lead the next prisoner there, and he'll be instructed to do the same thing. I'm going to choose prisoners at random. I may choose the same guy three times in a row, or I may jump around and come back.""
+""But, given enough time, everyone will eventually visit the switch room as many times as everyone else. At any time any one of you may declare to me, 'We have all visited the switch room.'
+""If it is true, then you will all be set free. If it is false, and somebody has not yet visited the switch room, you will be fed to the alligators.""
+*note - the only difference from Scenario B, the original position of the 2 switches are known.","Assuming that:
+A) There is no restriction on the amount of time the prisoners could take before sending the notice to the warden that everyone has been to the switch room at least once.
+B) There is no restriction on the number of time each prisoner can visit the switch room
+C) The warden will not attempt any foul moves, such as intentionally not bringing a certain prisoner to the switch room forever.","1.        Appoint a ""scorekeeper"" and the other 22 prisoners as ""transmitters"".
+2.        When a transmitter enter the switch room for the first time, he will flick switch B ON if he sees it in the OFF position.  Alternatively, he will flick switch A if he sees switch B is in the ON position and waits for his next visit.  The transmitter's mission is to find ONE opportunity to flick switch B to the ON position.  After he completes his mission, he will flick switch A for all subsequent visits.  In short, each transmitter's role is to send a signal to the scorekeeper that he has been to the switch room.
+3.        The scorekeeper's role is to flick off switch B whenever he sees it in the ON position.  Each time he flicks off switch B he adds 1 to his score.  When he sees switch B is already OFF, he flicks switch A instead and does not add to the score.  As soon as he accumulates 22, he reports to the Warden.",GeminiFlash,basicprompt,,True
+2,"There is a ten-digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) A + B + C + D + E is a multiple of 6.
+2) F + G + H + I + J is a multiple of 5.
+3) A + C + E + G + I is a multiple of 9.
+4) B + D + F + H + J is a multiple of 2.
+5) AB is a multiple of 3.
+6) CD is a multiple of 4.
+7) EF is a multiple of 7.
+8) GH is a multiple of 8.
+9) IJ is a multiple of 10.
+10) FE, HC, and JA are all prime numbers.","Notice that when combining clues 1 and 2, you have information about the sum of digits. You can do the same for clues 3 and 4. ","5736912480
+A = 5, B = 7, C = 3, D = 6, E = 9, F = 1, G = 2, H = 4, I = 8, J = 0
+1) 5 + 7 + 3 + 6 + 9 = 30, which is a multiple of 6.
+2) 1 + 2 + 4 + 8 + 0 = 15, which is a multiple of 5.
+3) 5 + 3 + 9 + 2 + 8 = 27, which is a multiple of 9.
+4) 7 + 6 + 1 + 4 + 0 = 18, which is a multiple of 2.
+5) 57 is a multiple of 3.
+6) 36 is a multiple of 4.
+7) 91 is a multiple of 7.
+8) 24 is a multiple of 8.
+9) 80 is a multiple of 10.
+10) 19, 43, and 05 are prime numbers.
+A) The sum of digits 0 through 9 is 45.  To satisfy Conditions 1 and 2, a pair of multiples must equal 45.  The only pair that satisfies those conditions are 30 (multiple of 6) and 15 (multiple of 5).  Likewise, to satisfy Conditions 3 and 4, the pair of multiples must be 27 (multiple of 9) and 18 (multiple of 2).
+B) Make lists of the multiples of 3, 4, 7, 8, and 10 (for Conditions 5 through 9).  Delete multiples whose digits are the same (33, 44, 66, 77, 88, 99).
+C) To satisfy Condition 9, J must be 0.  Delete multiples that require 0 in a different location.  For JA to be prime (Condition 10), A must be: 2, 3, 5, or 7.  Delete multiples of 3 that have another digit for A.
+D) For FE and HC to be prime (Condition 10), C and E can not be even or 5.  Delete multiples of 4 and 7 that have another digit for C and E.
+E) Per Condition 4, B + D + F + H + J = 18.  D, H, and J must be even (required to form multiples of even numbers).  To attain the sum of 18 (an even number), B and F must either be both odd or both even.  If both are even, then the sum of those five digits would be 20.  B and F must be odd.  Delete multiples of 3 and 7 that have an even digit for B and F.  The only remaining multiple of 7 is 91.  E is 9 and F is 1.  Delete multiples that require 1 or 9 in a different location.
+F) The only remaining options for AB contain 7.  Delete multiples that require 7 in a different location.  The only remaining options for CD contain 3.  Delete multiples that require 3 in a different location.
+G) To satisfy Condition 1, CD must be 36 and AB must be either 57 or 75.  C is 3 and D is 6.  Delete multiples that require 5, 6, or 7 in a different location.
+H) The only remaining options for GH contain 4.  Delete multiples that require 4 in a different location.
+I) Per Condition 3, A + C + E + G + I = 27.  Since C =3 and I = 9, the other three must total 15.  There is only one combination of remaining multiples (57, 24, and 80) that can satisfy this condition.  A is 5, G is 2, and I is 8.  B is 7 and H is 4.",GeminiFlash,basicprompt,,True
+3,"There is a ten-digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) Either A = B / 3 or A = G + 3.
+2) Either B = I - 4 or B = E + 4.
+3) Either C = J + 2 or C = F * 3.
+4) Either D = G * 4 or D = E / 3.
+5) Either E = J - 1 or E = D / 4.
+6) Either F = B * 2 or F = A - 4.
+7) Either G = F + 1 or G = I - 3.
+8) Either H = A / 2 or H = C * 3.
+9) Either I = H + 3 or I = D / 2.
+10) Either J = H - 2 or J = C * 2.","Check each letter for any value that it can not be on the left side of an equation.  For example, A can not be 0, as B would also have to be 0 or G would have to be negative.","5038612947
+A = 5, B = 0, C = 3, D = 8, E = 6, F = 1, G = 2, H = 9, I = 4, J = 7
+1) A = G + 3 = 2 + 3 = 5.
+2) B = I - 4 = 4 - 4 = 0.
+3) C = F * 3 = 1 * 3 = 3.
+4) D = G * 4 = 2 * 4 = 8.
+5) E = J - 1 = 7 - 1 = 6.
+6) F = A - 4 = 5 - 4 = 1.
+7) G = F + 1 = 1 + 1 = 2.
+8) H = C * 3 = 3 * 3 = 9.
+9) I = D / 2 = 8 / 2 = 4.
+10) J = H - 2 = 9 - 2 = 7.
+A) Check each letter for any value that it can not be on the left side of an equation.  For example, A can not be 0, as B would also have to be 0 or G would have to be negative.  On the first pass through the letters, the following can be determined: A not 0, C not 0, C not 1, D not 0, D not 5, D not 6, D not 7, D not 9, E not 9, F not 7, F not 9, G not 8 (because F not 7), H not 0, H not 5, H not 7, H not 8, I not 0, I not 3 (because H not 0 and D not 6), I not 8 (because H not 5), J not 3 (because H not 5), J not 5 (because H not 7), and J not 9.
+B) Make a second pass through the letters.  The following can be determined: C not 5, C not 7, D not 3, E not 4, E not 8, and G not 0.
+C) Make a third pass.  The following can be determined: B not 8.
+D) For D, only four numbers are still valid: 1, 2, 4, and 8.  Plug each of these numbers into D and check the resulting flow of equations.  If D = 1, then the resulting flow will lead to J having to be both 4 and 0.  If D = 2, then the resulting flow will lead to 2 also being assigned to G.  If D = 4, then the resulting flow will lead to 4 also being assigned to either A or I.  If D = 8, then G = 2, F = 1, and A = 5.
+E) For E, four numbers are still valid: 0, 3, 6, and 7.  Plug each number into E and check the resulting flow.  If E = 0, then the flow will lead to J being assigned 1, which has already been assigned to F.  If E = 3, then the flow will lead to C being assigned 2, which has already been assigned to G.  If E = 7, then the flow will lead to J being assigned 8, which has already been assigned to D.  If E = 6, then J = 7, H = 9, and C = 3.
+F) The only remaining value for I is 4, which leaves 0 being assigned to B.",GeminiFlash,basicprompt,,True
+4,"Typical ""stars"" are drawn in connected, but not repeated, line segments. For example, a 5-point star is drawn as such - line segments AC, CE, EB, BD, DA. The segments must always alternate a constant number of points (in the above case, skipping 1 point in between).
+Given the information that there is only 1 way to draw a 5-point star, and that there is NO way to draw a 6-point star (in continuous lines, that is), and there are 2 ways to draw a 7-point star, how many different ways are there to draw a 1000-point star?",It's not guess work. Think of factors and mirror images.  Try drawing out examples.,"199.
+First, let's examine the 5-point star and why there is only that one, described, way to draw it. Starting at A, you cannot go straight to point B, otherwise you will have a pentagon, not a star. Same with point E. AC and AD (and their progressions) yield identical pictures (notice that the last segment in the AC one is DA, literally reverse all the letters to get AD ending in CA).
+Now, for a 6-point star, there are points A, B, C, D, E, and F. Starting at A, we cannot go to B or F, because then we have a hexagon. If we go AC, then we must go CE, then CA... making a triangle, not a 6-point star. Going backwards, AE, EC, EA; mirror image. If we skip 2 points, we go AD, then DA, a straight line, hardly a 6-point star.
+For a 7-point star, A-G, AB and AG are not possible, as that's a heptagon. AC, CE, EG, GB, BD, DF, FA is one way to draw the star, skipping one point in between. Also, AD, DG, GC, CF, FB, BE, EA, skipping two points in between each, is the other way. The last two line possibilities, AF and AE are mirror images of the two working scenarios.
+Examining the above information a little more deeply, we see that we must divide all possible drawings by two, to get rid of the mirror images. Also, we cannot use the point immediately to the left, that is AB as a segment. This explains why there is only 1 way for a 5-point, and 2 for a 7-point, but does not explain the 6-point. Of those remaining points (dealing only with the first half, again, mirror images), those that are factors of the number of total points do not work, because you will end up back at the starting point before hitting every number. AC is a factor in six because it passes point B, so it's 2. AD is a factor of 3 (B, C and D). Not only factors, but multiples of factors, as well (for example, skipping 4 points in the 6-point still does not work).
+Using the knowledge of mirrors, first point impossibility (AB) and factors, we see that the number 1000 is made up of 10^3, or 2^3*5^3. Without going through every factor, it's quickly and easily discernible that of the numbers 1-1000, 2 or multiples of it encompass 500 numbers, all evens. Any multiple of 5 includes 200 numbers, half of which end in 0 and are already included with the 2's, so there are 600 unique factors and multiples between 1 and 1000. That leaves us with 400 that are *not*, which should explain how many unique stars we can make. Remember to cut it in half because of mirroring, leaving us with 200, and to discount the AB segment (factor of 1), leaving us with 199. (If you discount AB, and THEN halve it, remember you needed to remove A[Z], the mirror image of that point).",GeminiFlash,basicprompt,,True
+5,"I was playing a game of five card draw poker with a bunch of logicians.  By the time we had finished bidding and were just about to reveal our cards, I was pretty confident I would win of the four of us remaining.  I had three nines, some face card (I can't remember what suit or even whether it was a jack, queen, or king) and a four. (Or was it a five?  I can't remember.)
+I was even more sure when two of my opponents laid down their cards.  One had a pair of fours and a pair of sevens, the other had a pair of twos and a pair of eights.  My third opponent, however, laid down his five cards face down in a row.  He said, ""I have a straight, and the cards are, from lowest to highest: a ten, a jack, a queen, a king, and an ace.  I have at least one card of each of the four suits: clubs, spades, hearts, and diamonds.  I am fairly certain that this is the winning hand, but I'm feeling generous today, and I will give a third of the pot to whoever can determine which suit I have two cards of.
+Now I know you can't figure it out without some clues.  Here they are:
+1. The king is next to at least one diamond.
+2. The queen is next to exactly one heart.
+3. The jack is next to at least one spade, but is not next to any hearts.
+4. The ten is next to at least one club.
+5. The ace does not border any black cards, nor does it border any diamonds.
+6. My two cards of the same suit are not next to each other.
+7. Of the ten possible pairings of cards, only one pair, when removed, leaves three cards in ascending order from left to right.
+8. My ace is not the card on the far left.""
+There was a minute's silence.  One of the other logicians said, ""I give up!  There's no way to figure that out!""
+The other agreed.  But I didn't.  I had just figured out which suit he had two of.
+Which suit is it?","The first step is to determine where the ace goes.
+Also, consider this: How could I have figured it out when two expert logicians couldn't?","The two cards on the ends and the card in the middle border a combined number of two suits.  So at least one pair of them should be listed as bordering a card of the same suit in clues 1-5.  Of the five, only the ace and the queen meet this criterion, so they must be two cards apart.  One of them must be in the center, but it can't be the ace (the two cards on the ends would only border hearts - and one of them has to be bordering something else from clues 1-4), so it must be the queen.  The ace is not on the left end from clue 8, so it must be on the right end, and the card next to it must be a heart.  So far we have this(X represents unknown):
+X X Q X A
+X X X H X
+At least one of the two cards to the left of the queen is lower than the queen (two of the remaining cards are lower, and only one can be right of the queen), so the triplet that is in ascending order is the queen, the ace, and the single card to the left of the queen that is lower than the queen.  That means the king is left of the queen, and is also left of both the jack and the ten (otherwise, jack king ace or ten king ace would be a second triplet), so it must be on the far left.  The jack must be left of the ten (or else ten jack ace would be a second triplet), so it must be second from the left, and the ten must be second from the right.  The only card next to the king is the jack of diamonds (it's a diamond from clue 1).  So far we have(T is ten):
+K J Q T A
+X D X H X
+Now we seem to be stuck.  We don't have any more clues that can be used.  So how did I figure it out?
+I held a face card (I said so myself in the intro).  I must have known it cannot be that card and deduced the correct answer from there.
+But which card did I have?  We already know the suit of the jack, so my holding a jack would not help.  Could I have held a queen?  No, because I know the queen to either be a spade or club (clue 6), so one of the cards next to the queen would have its clue satisfied (see clues 3 and 4), and I could not determine the suit of the card on the other side of it.
+Therefore, I must have held a king.  But which king?  I know the king is not a diamond (clue 6) or a heart (clue 3).  If I held the king of clubs, then the king next to the jack would have satisfied the jack's clue, and I could not have determine the suit of either card next to the ten.
+Therefore, I held the king of spades.  The king of clubs must have been on the far left (only suit available), so the only card next to the jack that could be a spade is the queen, so the only card next to the ten that could be a club is the ace.  In summary:
+K J Q T A
+C D S H C
+Therefore there are two CLUBS.",GeminiFlash,basicprompt,,True
+6,"Five friends spend every Monday night eating Chinese food from the Golden Dragon. Howard has Mu Shu Pork, Leonard has Spicy Szechuan Tofu, Penny has Shrimp with Lobster Sauce, Raj has Beef with String Beans, and Sheldon has Chicken and Broccoli: diced, not shredded, with brown rice, not white, low-sodium soy sauce and the good hot mustard from the Korean grocery.
+After dinner, they play a role-playing game called World of Nerds.
+In this game, each player takes on a character belonging to a different race of creature, has a different occupation, uses a different sort of weapon, specializes in fighting a particular kind of monster, and has a different skill level.
+Can you determine the characteristics of each player's character from the following clues before someone sits in Sheldon's spot?
+Players: Howard, Leonard, Penny, Raj and Sheldon
+Races: elf, gremlin, halfling, hobbit and ogre
+Occupations: archbishop, merchant, paladin, sorcerer and thief
+Weapons: bolo, crossbow, dagger, fireballs and mace
+Monsters: chimeras, giants, harpies, kobolds and orcs
+Skill levels: range from 10-32
+Clues:
+1. The five characters in the game are Penny's, the 24th-level ogre, the thief, the fireball user, and the one skilled at fighting orcs.
+2. The paladin isn't an elf.
+3. The bolo user has a skill level twice that of the halfling.
+4. Raj's character has a skill level eight levels higher than the paladin, who in turn is eight levels higher than the crossbow user.
+5. The hobbit is no good at fighting giants.
+6. The elf (who doesn't care for crossbows) is ten levels higher than the one who fights kobolds.
+7. The one who is adept at fighting chimeras is four levels higher than Leonard's character (who isn't the archbishop).
+8. The character at the lowest level (who isn't Penny) is at level ten and uses a dagger.
+9. Neither the archbishop nor the merchant belongs to the race of gremlins.
+10. The giant fighter never uses a mace in battle.
+11. Raj's character isn't the elf.
+12. Penny's character doesn't use the crossbow.
+13. Howard's character is not particularly adept at fighting harpies.",Start by determining the 5 skill levels.,"Howard is the halfling and a level 10 thief who fights kobolds with a dagger.
+Leonard is the hobbit and a level 16 merchant who fights orcs with a crossbow.
+Penny is the elf and a level 20 archbishop who fights chimeras with a bolo.
+Raj is the gremlin and a level 32 sorcerer who fights giants with fireballs.
+Sheldon is the ogre and a level 24 paladin who fights harpies with a mace.
+Explanation:
+The first step is to determine the actual skill levels of the five players.
+The lowest level is 10, held by the character using a dagger (clue 8).
+From (4), the character using a crossbow has an unknown level, let's call it x; the paladin has x+8 and Raj has x+16. Note that x must be greater than 10 and less than or equal to 16, or else x+16 would be greater than 32.
+The elf is none of these four players (2, 11, 6), but has a skill level of 10 more than one of them (6). This could be 20, x+10 or x+18.
+One skill level has to be 24 (1), two skill levels must have a difference of 4 (7) and one skill level must be twice another (3).
+If x=11, then the skill levels are 10, 11, 19, 27 and the elf's is either 20, 21 or 29. None of these is 24; therefore, x isn't 11. Similarly x isn't 12, 13 or 15.
+If x=14, then the skill levels are 10, 14, 22, 30 and the elf's is either 20, 24 or 32. This provides a skill level of 24, but for the elf, instead of the ogre; therefore, x isn't 14.
+Therefore, x=16 and the skill levels are 10 [dagger], 16 [crossbow], 24 [paladin=ogre], and 32 [Raj]. The elf's skill level must be 20, not 26, in order to satisfy clue (7). This means the elf fights chimeras and Leonard's character uses the crossbow.
+Now that we know the skill levels, we can start building a list of the players, starting with the first clue:
+Player 1 = Penny
+Player 2 = ogre, level 24, paladin
+Player 3 = thief
+Player 4 = fireballs
+Player 5 = orcs
+Since the elf has a skill level of 20, the kobold fighter is level 10 (6), and uses the dagger (8). Penny's character doesn't use the dagger (8), and neither does the ogre, who is level 24. Therefore the thief does:
+Player 1 = Penny
+Player 2 = ogre, level 24, paladin
+Player 3 = level 10, thief, kobolds, dagger
+Player 4 = fireballs
+Player 5 = orcs
+Neither Penny's character (12) nor the ogre (4) uses the crossbow [Leonard], so the orc fighter must:
+Player 1 = Penny
+Player 2 = ogre, level 24, paladin
+Player 3 = level 10, thief, kobolds, dagger
+Player 4 = fireballs
+Player 5 = Leonard, level 16, orcs, crossbow
+The ogre can't use the bolo, as no one has level 12 (3), so Penny's character uses the bolo and the thief is the halfling. This leaves the ogre using the mace:
+Player 1 = Penny, bolo
+Player 2 = ogre, level 24, paladin, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = fireballs
+Player 5 = Leonard, level 16, orcs, crossbow
+This means that Raj's character, at level 32, must use fireballs, and Penny's character must be the level 20 elf who fights chimeras:
+Player 1 = Penny, elf, level 20, chimeras, bolo
+Player 2 = ogre, level 24, paladin, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, level 32, fireballs
+Player 5 = Leonard, level 16, orcs, crossbow
+The ogre, who uses a mace, doesn't fight giants (10); therefore the ogre fights harpies, leaving Raj's character as the giant fighter:
+Player 1 = Penny, elf, level 20, chimeras, bolo
+Player 2 = ogre, level 24, paladin, harpies, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, level 32, giants, fireballs
+Player 5 = Leonard, level 16, orcs, crossbow
+The hobbit doesn't fight giants (5), so the hobbit must fight orcs, leaving Raj as the gremlin. The gremlin isn't the archbishop or the merchant, and so the gremlin is the sorcerer:
+Player 1 = Penny, elf, level 20, chimeras, bolo
+Player 2 = ogre, level 24, paladin, harpies, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, gremlin, level 32, sorcerer, giants, fireballs
+Player 5 = Leonard, hobbit, level 16, orcs, crossbow
+Leonard's character must be the merchant, rather than the archbishop (7), leaving Penny's character as the archbishop:
+Player 1 = Penny, elf, level 20, archbishop, chimeras, bolo
+Player 2 = ogre, level 24, paladin, harpies, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, gremlin, level 32, sorcerer, giants, fireballs
+Player 5 = Leonard, hobbit, level 16, merchant, orcs, crossbow
+Howard's character doesn't fight harpies (13), so that falls to Sheldon's ogre, while Howard's halfling fights kobolds. And that completes the list:
+Player 1 = Penny, elf, level 20, archbishop, chimeras, bolo
+Player 2 = Sheldon, ogre, level 24, paladin, harpies, mace
+Player 3 = Howard, halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, gremlin, level 32, sorcerer, giants, fireballs
+Player 5 = Leonard, hobbit, level 16, merchant, orcs, crossbow",GeminiFlash,basicprompt,,True
+7,"Sailing through a thick fog, you come upon a mysterious island shrouded in mist. A towering volcano in the center of the island pierces the clouds, billowing smoke into the sky. You land your boat and set out to ascend the peak. After an arduous climb, you approach the volcano summit, where lava glows red within a vast crater.
+Here, you are approached by three gods and their herald.
+Problem
+On the summit of this remote volcano, the herald proclaims that you have been selected for a trial. He then lays out the rules for you.
+First, you know that one of the three gods always tells the truth, another always lies, and the third will respond to questions randomly. Therefore, let us call the gods True, False, and Random.
+Second, the gods speak a different language. They understand all languages perfectly well, but only answer questions with either ja or da, the words for yes and no. You do not know which god is which, and you do not know which word means yes and which word means no.
+Finally, you have an existential problem on your hands. You may ask three yes-or-no questions, each one directed to only one god, and only that god will answer with either ja or da. If you can determine the identities of the three gods, they will send you on your way with their blessing, and you can be assured of a prosperous and fulfilled life. If you fail to determine the identities of the gods, however, they will be less generous in their treatment. The volcano pit smokes and glows red beside you.
+With your three questions, how do you figure out which god is True, which is False, and which is Random?",Can you phrase a question so that both True and False have to say the same thing?,"First, ask the god standing in the middle, ""If I were to ask you if the god to your left is Random, would you say ja?""
+By phrasing questions as hypotheticals, you can ask the gods an embedded question. As long as you ask either True or False, the god will respond with the same word you use (""would you say ja?"") if the answer to the embedded question is affirmative, and the opposite word if the answer is negative.
+If the god says ja, then there are two possibilities: either the god to his left is Random, and the god speaking is either True or False; or the god speaking is Random. Either way, you know the god to his right is not Random.
+Similarly, if the god says da, then there are two possibilities: either the god to his right is Random, and the god speaking is True or False; or the god speaking is Random. In this case, you know the god to the left is not Random.
+The next step is to approach the god that you know is not Random, and figure out if he is True or False. Because you still do not know the meanings of ja and da, you need to do this by using the same hypothetical structure, asking, ""If I were to ask you if you are True, would you say ja?"" If the god is True, they will answer ja. If the god is False, they will answer da. (False's response in this case is essentially either: ""no I would not say yes,"" even though he would; or ""yes I would say no,"" even though he wouldn't.)
+Finally, now that you have identified a god as either True or False, you can use the same question structure one last time to identify the other gods (you need to stick to it because you still don't know the meanings of ja and da). Simply ask, ""If I were to ask you if the god in the middle is Random, would you say ja?"" If the answer is ja, then the god in the middle is Random, and the third god is either True or False (the opposite of the one you have already identified). If the answer is da, then the god in the middle is True or False, and the third god is Random.",GeminiFlash,basicprompt,,True
+8,"Mad Ade went on an eight day fly fishing trip around the purple ridged mountains of Madadia and got to fish seven days of it last May. On every day, from May 14 to the 21st, except the 16th, when a severe thunderstorm kept him in his tent, he fished around Madadia. Though he caught many fish--all of which he released--each day, one special fish stood out. Each special fish was of a different variety: Monkey Trout, Brookside Trout, Cut Throat, Dolly Varden, Humpback, Lake Trout, and Rainbow, and a different size: 8 inches, 16 inches, 17 inches, 19 inches, 22 inches, 24 inches, and 27 inches. Every day, Mad Ade tried a different secret fishing spot: Big Little Falls, Bottle Well, Deep Channel, Old Cutbank, Big Rock Isle, Dish Creek, and Little Curl. And each special fish was caught on a different fly that Mad Ade tied himself: a Parachute Adams, an Elk Hair Caddis, a Humpy, a MayFly, Mad Ade's Little Mouse, a Stonefly Nymph, and a Yuk Bug. Three of the flies, Mad Ade's little Mouse, the Yuk Bug, and Stonefly Nymph, were fished as wet flies, the rest were fished as dry flies.
+1) Mad Ade caught the smallest of his special fish, a little Brookside, after he caught the fish on his Elk Hair Caddis, but before he caught the fish in Deep Channel. His shiny Dolly Varden was not the fish lured from the depths of Bottle Well. Mad Ade caught either the smallest or his second to largest fish on his third fishing day.
+2) Mad Ade caught a fish off Big Rock Isle on the 19th. He fought either the Humpback or the 24 inch monster on the 21st. On the fourth day of his trip, Mad Ade landed a fish over twenty inches long by the Old Cutbank on a wet fly. The fish Mad Ade landed with a net at Little Curl was larger than the one he worked onto shore at Dish Creek, but it was not as large as the one he lifted from the water at Big Little Falls.
+3) Mad Ade caught the 24 inch fish on his Little Mouse after he caught the Dolly Varden, but before he hooked a real jumper with his Parachute Adams. Because he preferred dry flies, Mad Ade only used dry flies after using a wet fly on the 19th. Mad Ade used a Mayfly to fish Dish Creek. Mad Ade caught his fish on the Mayfly three calendar days (two fishing days) after he caught a fish with the Stonefly Nymph.
+4) Mad Ade's five mile hike, along a mountain trail to Big Little Falls, paid off on his last day with a prized Humpback trout. At least four fishing days passed between the time that Mad Ade used the Stonefly Nymph and his Humpy. The Monkey Trout Mad Ade caught on the 17th was longer than the Rainbow he caught, but smaller than his Lake Trout.
+5) The deep hole of Bottle Well yielded Mad Ade a 19 incher on the first or second day of his trip. With one exception, Mad Ade caught fish of even sizes on even number days and fish of odd sizes on odd days. Although they both jumped and splashed over the water the same way, the Rainbow Mad Ade caught was bigger than his Cut Throat.","Mad Ade caught a fish off Big Rock Isle on the 19th (2).
+The Monkey Trout Mad Ade caught on the 17th (4).
+Mad Ade caught either the smallest or his second to largest fish on his third fishing day. (1)
+17th is 8 or 24.","Mad Ade caught a fish off Big Rock Isle on the 19th (2).
+The Monkey Trout Mad Ade caught on the 17th (4).
+Mad Ade caught either the smallest or his second to largest fish on his third fishing day. (1)
+17th is 8 or 24.
+On the fourth day of his trip, Mad Ade landed a fish over twenty inches long by the Old Cutbank on a wet fly. (2)
+17th is 24 and Cutbank.
+Mad Ade caught the 24 inch fish on his Little Mouse (3).
+With one exception, Mad Ade caught fish of even sizes on even number days and fish of odd sizes on odd days. (5)
+He fought either the Humpback or the 24 inch monster on the 21st.
+Humpback is 21st. (2)
+Mad Ade's five mile hike, along a mountain trail to Big Little Falls, paid off on his last day with a prized Humpback trout. (5)
+Humpback is Big Little Falls.
+The deep hole of Bottle Well yielded Mad Ade a 19 incher on the first or second day of his trip. (5)
+First day is 14th, so 19 incher had to be second day, 15th.
+15th then is Bottle.
+Mad Ade caught the 24 inch fish on his Little Mouse after he caught the Dolly Varden (3).
+Mouse is 24 inch fish on 17th.
+Dolly is 14th or 15th.
+Mad Ade caught his fish on the Mayfly three calendar days (two fishing days) after he caught a fish with the Stonefly nymph. (3)
+Mayfly can only be 18th, as Mouse is 17th.
+Stonefly is 15th.
+Mad Ade used a Mayfly to fish Dish Creek.
+At least four fishing days passed between the time that Mad Ade used the Stonefly Nymph and his Humpy. (4)
+Stonefly is 15th, so Humpy is 21st.
+Mad Ade only used dry flies after using a wet fly on the 19th. (3)
+Only wet fly left is Yuk Bug, so Yuk Bug is 19th.
+Mad Ade caught the smallest of his special fish, a little Brookside, after he caught the fish on his Elk Hair Caddis, but before he caught the fish in Deep Channel. (1)
+Elk Hair Caddis can only be 14th.
+Parachute Adams, the only fly left, is 20th.
+His shiny Dolly Varden was not the fish lured from the depths of Bottle Well. Bottle is 15th, so Dolly is 14th. (1)
+Mad Ade caught the smallest of his special fish, a little Brookside, after he caught the fish on his Elk Hair Caddis, but before he caught the fish in Deep Channel. (1)
+Brookside, 8 inches, (even) can only be Mayfly or Adams.
+The fish Mad Ade landed with a net at Little Curl was larger than the one he worked onto shore at Dish Creek, but it was not as large as the one he lifted from the water at Big Little Falls. (2)
+Adams can only be Little Curl or Deep Channel. It's not Channel (1) and not Little Curl (2), so Brookside is Dish Creek.
+Mad Ade caught the smallest of his special fish, a little Brookside, after he caught the fish on his Elk Hair Caddis, but before he caught the fish in Deep Channel. (1)
+So, Deep Channel is 20th, and 14th is Little Curl (last one).
+The Monkey Trout Mad Ade caught on the 17th was longer than the Rainbow he caught, but smaller than his Lake Trout. (4) 17th is Monkey, 24 inches, so Lake can only be 27. Only odd without a named fish name is 19th.
+So 19th is Lake Trout and 27 inches.
+21st is 17 inches, only odd left.
+Deep Channel is 22 inches.
+The fish Mad Ade landed with a net at Little Curl was larger than the one he worked onto shore at Dish Creek, but it was not as large as the one he lifted from the water at Big Little Falls (2).
+Little Curl is less than 17 inches. 16 inches.
+Although they both jumped and splashed over the water the same way, the Rainbow Mad Ade caught was bigger than his Cut Throat. (5)
+So, Rainbow is 22 inches and Cut Throat 19 inches.
+Summary:
+14th, Elk Hair Caddis, Dolly Varden, 16, Little Curl
+15th, Stonefly Nymph, Cutthroat, 19, Bottle Well
+17th, Mad Ade's Little Mouse, Monkey Trout, 24, Old Cutbank
+18th, Mayfly, Brookside Trout, 8, Dish Creek
+19th, Yuk Bug, Lake Trout, 27, Big Rock Isle
+20th, Parachute Adams, Rainbow, 22, Deep Channel
+21st, Humpy, Humpback Trout, 17, Big Little Falls",GeminiFlash,basicprompt,,True
+9,"""What's the password?"" asked The Entity, with a weasel-like demeanor. Spy IQ was confused, until he realized he had received a strange postcard weeks before. The crafty spy still needed to enter the underground cellar leading to a new set of gadgets to be used on the next mission, but he was halted by The Entity's presence. What the postcard said might help Spy IQ find the password The Entity needs to allow the spy into the secret lair. The postcard says this:
+A relative of mine was expelled.
+It was my niece.
+Wouldn't you agree?
+It was because she joined a band of bikers.
+She's doing lots of things wrong.
+She always shows a lot of toughness.
+P.S.
+Isaac Newton:
+Near orange bags lying east.
+Gets as strange equally slowly.
+That P.S. looks like it could be the catalyst to solve for the encrypted password. But, what could it be?","Look closely at the P.S.
+A secret message lies within the P.S. that will assist you in searching for the password.
+Here, I'll change it up a bit:
+P.S.
+Isaac Newton:
+Near Orange Bags Lying East.
+Gets As Strange Equally Slowly.","The password is PIGEON.
+If you look carefully at the P.S., you will notice that the first letter of each word spells IN NOBLE GASES:
+P.S.
+[I]saac [N]ewton:
+[N]ear [O]range [B]ags [L]ying [E]ast.
+[G]ets [A]s [S]trange [E]qually [S]lowly.
+Now, look in the first six lines of the postcard. The symbols for noble gases can be found in the last word of each line, with a letter lying in between:
+a relative of mine was eXpElled.
+it was my NiEce.
+wouldn't you AgRee? etc.
+If you take each letter that is within the symbols of the noble gases, you will spell the word PIGEON:
+a relative of mine was eX[p]Elled.
+it was my N[i]Ece.
+wouldn't you A[g]Ree?
+it was because she joined a band of biK[e]Rs.
+she's doing lots of things wR[o]Ng.
+she always shows a lot of tougH[n]Ess.
+After saying the password, Spy IQ entered the secret lair and found useful gadgets, including Instant Tile Camouflage.",GeminiFlash,basicprompt,"Okay, let's break down this puzzle step by step.
+
+1.  **Identify the Core Problem:** Spy IQ needs a password to enter the cellar. The Entity knows the password. The password is hidden in a strange postcard.
+
+2.  **Analyze the Postcard Content:** The postcard has two parts:
+    *   A main body of text about an expelled niece who joined bikers, is doing wrong things, and shows toughness.
+    *   A P.S. attributed to Isaac Newton, containing two seemingly unrelated sentences: ""Near orange bags lying east."" and ""Gets as strange equally slowly.""
+
+3.  **Focus on the Hint:** The prompt specifically states, ""That P.S. looks like it could be the catalyst to solve for the encrypted password."" This strongly suggests the main body text is flavor or misdirection, and the key lies within the P.S.
+
+4.  **Examine the P.S. Closely:**
+    *   ""P.S."" - A standard postscript marker.
+    *   ""Isaac Newton:"" - The attribution. Newton is famous for physics, gravity, laws of motion, calculus, optics. Does this name directly point to the solution? Perhaps it hints at a scientific theme.
+    *   Sentence 1: ""Near orange bags lying east.""
+    *   Sentence 2: ""Gets as strange equally slowly.""
+
+5.  **Look for Patterns or Codes in the Sentences:** Cryptic clues often involve extracting information from the text itself. Common methods include:
+    *   Taking specific letters (first letters, last letters, letters at certain positions).
+    *   Counting things (words, letters).
+    *   Anagrams.
+    *   Substitution ciphers (less likely without a key).
+
+6.  **Try the Most Common Method for Such Sentences: Acrostics:** Let's try taking the first letter of each word in each sentence.
+    *   Sentence 1: **N**ear **o**range **b**ags **l**ying **e**ast.
+        The first letters are N, O, B, L, E. This spells **NOBLE**.
+    *   Sentence 2: **G**ets **a**s **s**trange **e**qually **s**lowly.
+        The first letters are G, A, S, E, S. This spells **GASES**.
+
+7.  **Combine the Results:** Putting the two words together, we get **NOBLE GASES**.
+
+8.  **Evaluate ""NOBLE GASES"" as a Potential Password:**
+    *   Is it a recognizable term? Yes, Noble Gases are a group of chemical elements (Helium, Neon, Argon, Krypton, Xenon, Radon, Oganesson).
+    *   Does it fit the context of a password derived from a cryptic clue? Yes, extracting terms this way is a classic puzzle mechanism.
+    *   Does the attribution to Isaac Newton make sense? While Noble Gases weren't discovered *as a group* and understood in Newton's time (they were mainly identified in the late 19th century), the P.S. *attributes* the message to him. This suggests the *message itself* contains the clue, and the Newton attribution might simply add a scientific theme or be a slight misdirection. The core discovery comes directly from the sentences provided.
+
+9.  **Conclusion:** The most direct and logical interpretation of the P.S., following common cryptic puzzle patterns, is to take the first letters of each word in the two sentences. This yields ""NOBLE GASES"". This is a plausible password phrase derived directly from the text.
+
+Final answer: NOBLE GASES",True
+10,"Professor Abacus is purchasing a ticket for the Deca Lotto.  The lotto number has ten digits, using the numerals 0 through 9, each numeral used once.  The clerk asked what number he wanted to pick.  Professor Abacus handed the clerk a piece of paper with nine statements, saying ""If you can correctly figure out the number, I will give you half of whatever I win.""   What is the number?
+1) The sum of the first five digits is a prime number.
+2) The sum of the last five digits is a triangle number*.
+3) The sum of the digits in the odd positions is an odd number.
+4) The sum of the middle two digits is a square number.
+5) The sum of the middle four digits is a cube number.
+6) The difference between the 1st and 10th digits is two.
+7) The difference between the 2nd and 9th digits is three.
+8) The difference between the 3rd and 8th digits is four.
+9) The numeral 4 is somewhere in the first five positions.
+* You can form a triangle arrangement by building it in the pattern row 1 = 1, row 2 = 2, row 3 = 3 etc. eg. 10 is a classic triangle number as per ten pin bowling. They are arranged in a triangle 1, 2, 3, 4.",The sum of all digits must be 45. Combine this with hints 1 and 2 to reduce to a few prime/triangle options,"7342105869
+7 + 3 + 4 + 2 + 1 = 17 (prime), 0 + 5 + 8 + 6 + 9 = 28 (triangle), 7 + 4 + 1 + 5 + 6 = 23 (odd), 1 + 0 = 1 (square), 2 + 1 + 0 + 5 = 8 (cube), the difference between 7 and 9 is 2, the difference between 3 and 6 is 3, the difference between 4 and 8 is 4, 4 is in the 3rd position.",GeminiFlash,basicprompt,,True
+11,"Mad Ade, Who had suddenly and unexpectedly after years of selfless dedication to Kebabs, decided to grow some vegetable for himself and subsequently planted his garden late in May. He planted five different vegetables: Tomatoes, Peppers, Radishes, Lettuce, and Broccoli. For each he planted a different number of rows from one to five. The hard work involved with each planting was accomplished on a separate day, from May 25th to May 30th (On Sunday May 26th he didn't work in the garden). Each vegetable was planted in a different part of the garden, the north end, the south side, the east side, the west side or the northwest corner. Can you tell which vegetable was planted in each part of the garden, the day planted and the number of rows?
+1. Mad Ade turned the soil for the peppers three days after he dug hand-size rocks out of the radish patch. Mad Ade's bright rows of radishes went deeper than the broccoli but were not as deep as the tomatoes. Mad Ade rolled his trusty wheelbarrow into the west end of the garden one day before he planted the broccoli.  Mad Ade believes the morning sun is bad for tomatoes and so kept those plants out of the eastern side of his garden.
+2. Mad Ade labored hard in the south side of the garden and was mighty proud of the three perfect rows there. On one week's last day, Mad Ade planted the east side of the garden. Mad Ade didn't put the peppers or the tomatoes in the northwest corner. Mad Ade planted an even number of rows in the Northwest corner of his garden.
+3. Mad Ade planted three rows before he planted two rows, but planted them after he planted four rows. Mad Ade figured the lettuce wouldn't last long so he planted fewer than three rows. Mad Ade planted the south garden one day before he planted the lettuce. Mad Ade planted more rows of peppers than he did broccoli (which was not planted in the west side of the garden and was not planted the 29th).
+Which vegetable was planted in how many rows, on which day of May and in which side of Mad Ade's garden?",Start by deducing which vegetables pair with which dates ,"Please Note that 1.1 refers to clue 1, sentence 1, and thus 2.3 would be clue 2 sentence 3.
+Explanation:
+1.1 Mad Ade turned the soil for the peppers three days after he dug hand-size rocks out of the radish patch.
+Radishes are 25th or 27th.
+Peppers are 28th or 30th.
+1.3 Mad Ade rolled his trusty wheelbarrow into the west end of the garden one day before he planted the broccoli
+Broccoli is 28, 29 30 (and West is 27, 28, 29)
+3.3 Mad Ade planted the south garden one day before he planted the lettuce.
+Lettuce 28, 29 30 (and South 27, 28, 29 )
+Tomatoes can only be 25th or 27th.
+2.2 On one week's last day, Mad Ade planted the east side of the garden.
+Saturday the 25th is East.
+1.4 Mad Ade believes the morning sun is bad for tomatoes and so kept those plants out of eastern side of his garden
+So East, 25th is not Tomatoes.
+So Radishes 25th and Tomatoes 27th.
+And 3 days later 28th = peppers.
+3.4 Mad Ade planted more rows of peppers than he did broccoli (which was not planted in the west side of the garden and was not planted the 29th).
+So Broccoli 30th and Lettuce 29th.
+1.3 Mad Ade rolled his trusty wheelbarrow into the west end of the garden one day before he planted the broccoli.
+West is 29th.
+3.2 Mad Ade figured the lettuce wouldn't last long so he planted fewer than three rows.
+So Lettuce is one or two rows.
+2.4 Mad Ade planted an even number of rows in the Northwest corner of his garden.
+Northwest is 2 or 4 rows.
+1.2 Mad Ade's bright rows of radishes went deeper than the broccoli but were not as deep as the tomatoes.
+Radishes are not one or five.
+Broccoli is not five or four.
+Tomatoes is not one or two.
+2.3 Mad Ade didn't put the peppers nor the tomatoes in the northwest corner.
+Northwest is broccoli.
+Lettuce has one row.
+2.1 Mad Ade labored hard in the south side of the garden and was mighty proud of the three perfect rows there.
+So South is three rows.
+Radishes are four.
+3.3 Mad Ade planted the south garden one day before he planted the lettuce.
+So planted 3 in south on 28.
+Five rows of tomatoes were planted in the North Garden.
+Summary:
+Tomatoes, Five, 27th, North
+Peppers, Three, 28th, South
+Radishes, Four, 25th, East
+Lettuce, one, 29th, West
+Broccoli, two, 30th, Northwest",GeminiFlash,basicprompt,,True
+12,"You are given a stack of bingo cards.  Your task is to find a specific card.  Given the following clues, what is the number arrangement of that card?
+Columns, left to right, are: B (contains numbers 1 through 15), I (contains numbers 16 through 30), N (contains numbers 31 through 45), G (contains numbers 46 through 60), O (contains numbers 61 through 75).  Rows, top to bottom, are: 1, 2, 3, 4, 5.  An example of coordinate nomenclature: B1 identifies column B row 1.  N3 is a free space (contains no number).  No number appears more than once.
+1) Each numeral (0 through 9) appears one time in Row 1.
+2) The sum of the numbers in Row 4 is a square number.
+3) There is only one two-digit prime number in each row.
+4) The range of the numbers in Column N is 8.
+5) Each number in Column G has a tens digit that is less than the units digit.
+6) Each number in Column O is odd.
+7) In only one column are the numbers in descending order from top to bottom.
+8) Each column has only one numeral that appears exactly two times.
+9) The smallest number in each column is located in Row 5.
+10) The sums of each column share a single common prime factor.
+11) The numeral 5 only appears one time on the card.
+12) The sum of the numbers in each diagonal is an odd number.
+13) The product of B3 and O3 has a units digit of 2.
+14) The product of I3 and G3 has a units digit of 4.",Start with clue 5!,"10 24 39 58 67
+9 28 40 49 71
+8 22 -- 47 69
+3 30 42 48 73
+1 20 34 46 61
+1) Per clue 5, eliminate the appropriate numbers in Column G.  Of the remaining numbers, at least one with a tens digit of 5 will have to be used.  Per clues 1 and 11, only one number can have the numeral 5, so that number must be at G1.  Eliminate all numbers that contain a 5 from all other locations.
+2) Per clue 6, eliminate all even numbers from Column O.
+3) Per clue 1, eliminate any number from Row 1 with only one digit or duplicate digits.  By analyzing combinations of numbers, the following can be determined: B1 contains a 1, delete 30, I1 contains a 2, delete 23, delete 63 and 73, O1 contains a 6.  In conjunction with clue 3, delete 29 and 59.
+4) Per clue 10, analyze the various possible sums of Columns G and O.  The only common prime factor is 31.  Each column must sum to a multiple of 31 (based on available numbers: B to 31, I to 124, N to 155, G to 248, and O to 341).  G1 must be 58.  All two-digit prime numbers (clue 3) must be in Columns G and O.  O1 must be 67.  Per clue 1, N1 must be 39.  Per clue 9, G5 must be 46 and O5 must be 61.
+5) For Column N, there is only set of numbers that sums to 155, and satisfies clues 4, 8, and 9 (34, 39, 40, 42).  N5 must be 34.
+6) For Column I, there are two sets of numbers that sum to 124, and satisfy clues 8 and 9 (16, 24, 26, 28, 30 and 20, 22, 24, 28, 30).  To satisfy clue 1, I1 must be 24.  B1 must be 10.  To satisfy clue 12, G4 must be 48 and B5 must be odd.
+7) The column that satisfies clue 7 is Column B.  To satisfy clue 8, B2 must be 9 and B5 must be 1.
+8) To satisfy clue 2, the only square number that can be achieved is 196.  B4 must be 3, I4 must be 30, N4 must be 42, and O4 must be 73.
+9) B3 must be 8.  N2 must be 40.
+10) To satisfy clue 13, O3 must be 69.  This leaves O2 being 71.  To satisfy clue 3, G3 must be 47.  This leaves G2 being 49.
+11) To satisfy clue 14, I3 must be 22.  Finally, to achieve a sum of 124 (multiple of 31), I2 must be 28 and I5 must be 20.",GeminiFlash,basicprompt,,True
+13,"There is a ten digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) If A > B, then C = 5 or 7, else C = 0 or 1.
+2) If B > C, then D = 1 or 2, else D = 4 or 9.
+3) If C > D, then E = 6 or 9, else E = 3 or 5.
+4) If D > E, then F = 2 or 4, else F = 1 or 6.
+5) If E > F, then G = 5 or 6, else G = 0 or 7.
+6) If F > G, then H = 1 or 4, else H = 8 or 9.
+7) If G > H, then I = 0 or 8, else I = 6 or 7.
+8) If H > I, then J = 3 or 8, else J = 2 or 5.
+9) If I > J, then A = 3 or 7, else A = 4 or 8.
+10) If J > A, then B = 0 or 9, else B = 2 or 3.","For example, assign 8 to H.  I can not exceed H, so J would have to be 3 (8 already assigned to H).","8274965103
+A = 8, B = 2, C = 7, D = 4, E = 9, F = 6, G = 5, H = 1, I = 0, J = 3
+1) A = 8 (I < J)
+2) B = 2 (J < A)
+3) C = 7 (A > B)
+4) D = 4 (B < C)
+5) E = 9 (C > D)
+6) F = 6 (D < E)
+7) G = 5 (E > F)
+8) H = 1 (F > G)
+9) I = 0 (G > H)
+10) J = 3 (H > I)
+Brute force methods can be used to arrive at a solution.  However, process of elimination does work.  For example, assign 8 to H.  I can not exceed H, so J would have to be 3 (8 already assigned to H).  G can not exceed H, so I would have to be either 6 or 7.  I would be greater than J, so A would have to be 7 (3 already assigned to J), meaning I would have to be 6.  J is less than A, so B would be 2 (3 already assigned to J).  A is greater than B, so C would be 5 (7 already assigned to A).  The only remaining numeral for G is 0, which means F would have to be greater than G, meaning H would have to be either 1 or 4.  H has already been assigned 8, rendering that assignment impossible.  Continue eliminating possibilities in the order shown below.
+A) H can not be 8.  C can not be 1.  C can not be 0.  B can not be 9.  D can not be 1.  D can not be 2.  F can not be 1.
+B) H must be 1.  H can not be 4.  H can not be 9.
+C) G can not be 0.  I can not be 6.  I can not be 7.  B can not be 0.
+D) I must be 0.  I can not be 8.
+E) J can not be 2.  J can not be 5.  J can not be 8.
+F) J must be 3.  A can not be 3.  B can not be 3.  E can not be 3.
+G) B must be 2.  F can not be 2.
+H) A must be 8.  A can not be 4.  A can not be 7.
+I) D can not be 9.
+J) E must be 9.  E can not be 5.  E can not be 6.
+K) D must be 4.  F can not be 4.
+L) F must be 6.  G can not be 6.
+M) G must be 5.  C can not be 5.  G can not be 5.
+N) C must be 7.",GeminiFlash,basicprompt,,True
+14,"There is a ten-digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) Digit A is either a square number or a triangle number, but not both.
+2) Digit B is either an even number or a cube number, but not both.
+3) Digit C is either a cube number or a triangle number, but not both.
+4) Digit D is either an odd number or a square number, but not both.
+5) Digit E is either an odd number or a cube number, but not both.
+6) Digit F is either an odd number or a triangle number, but not both.
+7) Digit G is either an odd number or a prime number, but not both.
+8) Digit H is either an even number or a square number, but not both.
+9) Digit I is either a square number or a cube number, but not both.
+10) Digit J is either a prime number or a triangle number, but not both.
+11) A < B, C < D, E < F, G < H, I < J
+12) A + B + C + D + E < F + G + H + I + J","A) First, determine what two subsets of numbers qualify for each digit.  However, each digit can only be in one of the subsets, not both.
+","3605891247
+A = 3, B = 6, C = 0, D = 5, E = 8, F = 9, G = 1, H = 2, I = 4, J = 7
+1) 3 is a triangle number, but not a square number.
+2) 6 is an even number, but not a cube number.
+3) 0 is a cube number, but not a triangle number.
+4) 5 is an odd number, but not a square number.
+5) 8 is a cube number, but not an odd number.
+6) 9 is an odd number, but not a triangle number.
+7) 1 is an odd number, but not a prime number.
+8) 2 is an even number, but not a square number.
+9) 4 is a square number, but not a cube number.
+10) 7 is a prime number, but not a triangle number.
+11) 3 < 6, 0 < 5, 8 < 9, 1 < 2, 4 < 7
+12) 3 + 6 + 0 + 5 + 8 = 22, 9 + 1 + 2 + 4 + 7 = 23, 22 < 23
+A) First, determine what two subsets of numbers qualify for each digit.  However, each digit can only be in one of the subsets, not both.
+B) Digit A can not be 0 (a leading zero is not allowed).
+C) Next, eliminate those numbers that do not satisfy Condition 11.  Digit I can only be 4.  Digit A can only be 3.  Digit B can only be 6.  Digit C can only be 0.
+D) Digit D and Digit J must be some combination of 5 and 7.  Digit E can only be 8.  Digit F can only be 9.  Digit G can only be 1.  Digit H can only be 2.
+E) To satisfy Condition 12, Digit D is 5 and Digit J is 7.",GeminiFlash,basicprompt,,True
+15,"Einstein's Riddle:
+Einstein wrote the following riddle. He said that 98% of the world could not solve it. But several NIEHS scientists were able to solve it, and they said it's not all that hard if you pay attention and are very patient. Give it a try:
+There are 5 houses in 5 different colors in a row. In each house lives a person with a different nationality. The 5 owners drink a certain type of beverage, smoke a certain brand of cigar, and keep a certain pet. No owners have the same pet, smoke the same brand of cigar, or drink the same beverage. Other facts:
+1.	The Brit lives in the red house.
+2.	The Swede keeps dogs as pets.
+3.	The Dane drinks tea.
+4.	The green house is on the immediate left of the white house.
+5.	The green house's owner drinks coffee.
+6.	The owner who smokes Pall Mall rears birds.
+7.	The owner of the yellow house smokes Dunhill.
+8.	The owner living in the center house drinks milk.
+9.	The Norwegian lives in the first house.
+10.	The owner who smokes Blends lives next to the one who keeps cats.
+11.	The owner who keeps the horse lives next to the one who smokes Dunhill.
+12.	The owner who smokes Bluemasters drinks beer.
+13.	The German smokes Prince.
+14.	The Norwegian lives next to the blue house.
+15.	The owner who smokes Blends lives next to the one who drinks water.
+The question is: WHO OWNS THE FISH?",Just take your time. This one should take you some time and is probably one of the harder riddles you see.,"The German sits in his Green House, smoking his Prince cigars, drinking coffee, and watching his FISH.
+The rest go like this-
+1st House: Yellow, Norwegian, Water, Cats, Dunhill
+2nd House: Blue, Dane, Tea, Horse, Blends
+3rd House: Red, Brit, Milk, Birds, Pall Malls
+4th House: Green, German, Coffee, FISH, Prince
+5th House: White, Swede, Beer, Dogs, Bluemasters",GeminiFlash,basicprompt,,True
+16,"The first round of the Children's Battleship Tournament has just been concluded.  Our ten contenders (including Roger and Lila) have just concluded their first five exciting matches.  Each match consisted of two players facing off against each other trying to guess the locations of the other player's ships. (The Carrier covers 5 squares, the Battleship covers 4 squares, the Destroyer and Submarine each cover 3 squares, and the Patrol Boat covers 2 squares.) In the end of each match, only one of the winner's ships remained - and it was a different one in each match!  From the information given, can you determine the full name of the winner and loser of each match, as well as the remaining ship of the winner?
+1. Alexis Chartel, although managing to sink her opponent's Carrier and Patrol Boat, still lost; her opponent was not surnamed Roon.
+2. The surviving ship of the kid whose last name is Azzuro (who is not Jason) is shorter than the surviving ship of the player that beat the kid surnamed Yeller.
+3. The kid who defeated Charlie won because of his or her surviving Submarine.
+4. Fred (who is not surnamed Blanc) lost to the kid who's last name is Black (who is not Bart).
+5. One of the matches was between the players surnamed Lavender and Tanger.
+6. Three - and only three - of the matches were between one boy and one girl.
+7. The five games were the one Stacie won (but the loser was not surnamed Chartel), the one Patty lost, the one won by the boy who's last name is Brown, the one lost by the kid who's last name is Blanc, and the one where the only surviving ship was a Patrol Boat (who's last name is not Black).
+8. Bart managed to have his Carrier survive the entire game, thus winning his game.
+9. The kids surnamed Peach and Lavender had the same result in their matches.
+10. Georgia Roon won her match, but not against Patty or Charlie.","In case you need all the kid's names:
+The boys are Bart, Charlie, Fred, Jason, and Roger.
+The girls are Alexis, Georgia, Lila, Patty, and Stacie.
+The last names are Azzuro, Black, Blanc, Brown, Chartrel, Lavender, Peach, Roon, Tanger, and Yeller.","From clue 1, Alexis' last name is Chartel, and she lost.  From clue 3. Charlie lost the game where the surviving ship was the Submarine.  From clue 4, Fred lost to Black.  From clue 8, Bart won the game where the surviving ship was the Carrier; from clue 4, he is not Black, and from clue 1, he did not defeat Alexis, so he was in a fourth game.  From clue 10, Georgia's last name is Roon, and she won, but not against Charlie, and from clue 1, not against Alexis, so she was in a fifth match.  So five matches are:
+_____ _____ beat Alexis Chartel by a _____.
+Bart   _____ beat _____ _____ by a Carrier.
+_____ _____ beat Charlie _____ by a Submarine.
+_____ Black beat Fred _____ by a _____.
+Georgia Roon beat _____ _____ by a _____.
+Patty did not lose to Georgia (clue 10); she lost to Bart.  Alexis Charlet was not defeated by Stacie (clue 7), nor was the surviving ship the Patrol Boat (clue 1); she was defeated by Brown (only one left in clue 7).  Fred is not Blanc (clue 4), nor was the surviving ship the Patrol Boat (clue 7); he was defeated by Stacie (only one left in clue 7).  Charlie is Blanc (only one left in clue 7), so Georgia Roon won with her Patrol Boat (only one left in clue 7).  Meaning:
+Stacie Black beat Fred _____ by a _____
+Bart _____ beat Patty _____ by a Carrier.
+_____ Brown beat Alexis Chartel by a _____.
+_____ _____ beat Charlie Blanc by a Submarine.
+Georgia Roon beat _____ _____ by a Patrol Boat.
+The only match in which Lavender and Tanger could face each other is the one where Bart beat Patty - but we don't know which last name goes with which kid.  The only remaining winner that Azzuro could be is the one that beat Charlie.  Yeller cannot have lost to Georgia (Patrol Boat is shorter than Submarine - clue 2); he is Fred, and his opponent won with a Battleship (only remaining ship longer than a Submarine - clue 2), so Brown beat Alexis with a Destroyer (only ship left).  Meaning:
+Stacie Black beat Fred Yeller by a Battleship.
+Bart _____ beat Patty _____ by a Carrier.
+_____ Brown beat Alexis Chartrel by a Destroyer.
+_____ Azzuro beat Charlie Blanc by a Submarine.
+Georgia Roon beat _____ _____ by a Patrol Boat.
+The only place for the last name Peach is as the kid who lost to Georgia.  Since Peach lost, Lavender must have lost (clue 9) and Tanger must have won.  Two of the matches are known to be between a boy and a girl.  The other three must be one between a boy and a girl (clue 6), one between two boys (two of the unplaced kids are boys, and only one of them could be in the third boy/girl match), and one between two girls (two of the placed kids with unplaced opponents are girls, and only one of them could be in the third boy/girl match).  Charlie must be facing a boy who's last name is Azzuro, but it's not Jason (clue 2); it's Roger.  Brown cannot be Lila (clue 7); he's Jason, so Lila is Peach (only possibility).
+In summary:
+Bart Tanger beat Patty Lavender by a Carrier.
+Stacie Black beat Fred Yeller by a Battleship.
+Jason Brown beat Alexis Chartel by a Destroyer.
+Roger Azzuro beat Charlie Blanc by a Submarine.
+Georgia Roon beat Lila Peach by a Patrol Boat.",GeminiFlash,basicprompt,,True
+17,"Johnny was given 16 coins by his older, somewhat meaner brother, Mark.  He told him that he could keep them all if he could place all 16 on the table in such a way that they formed 15 rows with 4 coins in each row.
+After 10 minutes, Johnny walked away with the coins and Mark, after complaining futilely to his mother, left with nothing.
+How did Johnny place the coins?",Stars and pentagons,"If you draw a 5-pointed star with all sides of equal length, you will create a pentagon in the middle with all 5 sides of equal length. Then draw another 5 pointed star, upside-down, using the 5 points of the interior pentagon as the points of the inner star,  This will give you another 5-sided pentagon in the interior of the second, smaller star.
+Now, take your 16 coins and place 5 on the outside points of the outside star.  Then place 5 more on the points of each of the two pentagons you have created.  Finally, place the last coin in the dead center of this drawing.
+The lines are as follows:
+5 lines for the actual drawing of the outside star
+5 lines for the actual drawing of the inside star
+5 lines that start from any outside point of the outside star and go to the opposite point of the inside star, passing through 1 point of the inner pentagon, the dead center coin on the way.
+Total lines: 15",GeminiFlash,basicprompt,,True
+18,"You are given a stack of bingo cards.  Your task is to find a specific card.  Given the following clues, what is the number arrangement of that card?
+Columns, left to right, are: B (contains numbers 1 through 15), I (contains numbers 16 through 30), N (contains numbers 31 through 45), G (contains numbers 46 through 60), O (contains numbers 61 through 75).  Rows, top to bottom, are: 1, 2, 3, 4, 5.  An example of coordinate nomenclature: B1 identifies column B row 1.  N3 is a free space (contains no number).  No number appears more than once.
+1) All numbers in row 2 are divisible by 2; all numbers in row 3 are divisible by 3; all numbers in row 4 are divisible by 4; all numbers in row 5 are divisible by 5.
+2) Row 2: the units digits are the same.
+3) Row 4: the units digits are all different.
+4) Row 5: the sum of the numbers is divisible by 7.
+5) Column B: contains five consecutive numbers (in any order).
+6) Column I: three of the numbers are odd.
+7) Column G: three numbers are divisible by 3; three numbers are divisible by 4; one number is divisible by 12.
+8) Column O: the sum of the five numbers is an odd number.
+9) The product of I3 and G3 is between 1300 and 1400.
+10) The sum of B1 and O1 is 82.
+11) The difference between N1 and N5 is 1.
+12) N2 is midway between B4 and O4.
+13) N4 is midway between I1 and G1.",Start with clue 1 to eliminate numbers in various rows,"7 23 44 57 75
+6 26 36 56 66
+9 27 -- 51 72
+8 16 40 52 64
+10 25 45 60 70
+1) Per clue 1, eliminate the appropriate numbers in the various rows.
+2) Per clue 6, since rows 2 and 4 must contain even numbers, the other three rows in column I must contain odd numbers.  I5 must be 25.
+3) Per clue 7, G5 must be 60.
+4) Per clue 9, I3 must be 27 and G3 must be 51.
+5) Per clue 13, since I1 is odd, then G1 must be odd.  G1 must be 57.  I1 must be 23.  N4 must be 40.
+6) Per clue 10, B1 can not be less than 7 and O1 can not be less than 67.
+7) Per clue 2, based on G2, no number in row 2 can end in 0 or 4 or 8.
+8) Per clue 5, eliminate impossible combinations in column B.
+9) Per clue 12, eliminate numbers that can not work.  N2 must be 36.  O4 must be either 64 or 68.
+10) Per clue 2, the units digits is 6.  B2 must be 6.  G2 must be 56.  O2 must be 66.  This leaves G4 as 52.
+11) Per clue 5, eliminate impossible combinations in column B.  B1 must be 7.
+12) Per clue 10, O1 must be 75.
+13) Per clue 3, I4 must be 16.  This leaves I2 as 26.
+14) Per clue 4, in order for the sum of row 5 to be divisible by 7, the sum must be either 175 or 210.  Since I5 must be 25 and G5 must be 60, then the sum must be 210.  B5 must be 10.  N5 must be 45.  O5 must be 70.
+15) Per clue 5, B3 must be 9 and B4 must be 8.
+16) Per clue 3, O4 must be 64.
+17) Per clue 8, O3 must be 72.
+18) Per clue 11, N1 must be 44.",GeminiFlash,basicprompt,,True
+19,"Zachary has a private zoo.  He has five groups of animals in his zoo:  snakes, birds, mammals, insects, and spiders.  Assume that, typically:  animals have 1 head, snakes have 0 legs, birds have 2 legs, mammals have 4 legs, insects have 6 legs, and spiders have 8 legs.  Zachary has some unusual animals in his zoo.  He has:  a snake with 3 heads, a bird with 2 heads, a mammal with 3 legs, an insect with 4 legs, and a spider with 7 legs.  From the following information, determine how many of each group of animals that Zachary has in his menagerie.
+1) There are a total of 100 heads and 376 legs.
+2) Each group has a different quantity of animals.
+3) The most populous group has 10 more members than the least populous group.
+4) There are twice as many insect legs as there are bird legs.
+5) There are as many snake heads as there are spider heads.","Since there are 3 extra heads (2 snake and 1 bird), there are only 97 animals (clue 1).  Find a set of five different numbers whose sum is 97 (clue 2) and whose size difference between the least populous and most populous group is 10 (clue 3).","A) Since there are 3 extra heads (2 snake and 1 bird), there are only 97 animals (clue 1).  Find a set of five different numbers whose sum is 97 (clue 2) and whose size difference between the least populous and most populous group is 10 (clue 3).  There are 17 sets that meet these requirements.
+13, 18, 21, 22, 23
+13, 19, 20, 22, 23
+14, 15, 21, 23, 24
+14, 16, 20, 23, 24
+14, 16, 21, 22, 24
+14, 17, 19, 23, 24
+14, 17, 20, 22, 24
+14, 18, 19, 22, 24
+14, 18, 20, 21, 24
+15, 16, 17, 24, 25
+15, 16, 18, 23, 25
+15, 16, 19, 22, 25
+15, 16, 20, 21, 25
+15, 17, 18, 22, 25
+15, 17, 19, 21, 25
+15, 18, 19, 20, 25
+16, 17, 18, 20, 26
+B) There are twice as many insect legs as there are bird legs (clue 4).  To find the possible bird and insect group sizes, multiply the quantity of insects by 6 (legs per insect).  Subtract 2 (an insect is missing 2 legs).  Divide by 2 (twice as many insect legs as bird legs).  Divide by 2 (legs per bird) to get the quantity of birds.  The formula is:  B = ((I * 6) - 2) / 4.  There are three combinations that work:  13 and 19, 15 and 22, 17 and 25.
+((13 insects * 6 legs/insect) - 2 missing legs) / 4 = 19 birds
+((15 insects * 6 legs/insect) - 2 missing legs) / 4 = 22 birds
+((17 insects * 6 legs/insect) - 2 missing legs) / 4 = 25 birds
+Of the 17 sets (from step A), only 5 contain these sizes.
+13, 19, 20, 22, 23 (13 insects & 19 birds)
+15, 16, 17, 24, 25 (17 insects & 25 birds)
+15, 16, 19, 22, 25 (15 insects & 22 birds)
+15, 17, 18, 22, 25 (15 insects & 22 birds or 17 insects & 25 birds)
+15, 17, 19, 21, 25 (17 insects & 25 birds)
+C) There are as many snake heads as spider heads (clue 5).  Since there is a snake with two extra heads, there are actually 2 fewer snakes compared to spiders.  Only 2 combinations (from step B) yield the required head count.
+13 insects, 19 birds, 20 snakes, 22 spiders, 23 mammals
+15 mammals, 17 insects, 19 snakes, 21 spiders, 25 birds
+D) The only group combination (from step C) that produces 376 legs (clue 1) is:  15, 17, 19, 21, 25.  The other combination yields 380 legs.
+(15 mammals * 4 legs/mammal) - 1 missing leg = 59 legs
+(17 insects * 6 legs/insect) - 2 missing legs = 100 legs
+19 snakes * 0 legs/snake = 0 legs
+(21 spiders * 8 legs/spider) - 1 missing leg = 167 legs
+25 birds * 2 legs/birds = 50 legs
+Thus, there are:  19 snakes (21 heads and 0 legs), 25 birds (26 heads and 50 legs), 15 mammals (15 heads and 59 legs), 17 insects (17 heads and 100 legs), and 21 spiders (21 heads and 167 legs).  This produces 97 animals with 100 heads and 376 legs.",GeminiFlash,basicprompt,,True
+20,"The ABC Express pulled out of the station late one night and began its winding journey up the coast to its destination under heavy darkness. Owing to the late hour, there were only a handful of passengers aboard the small train. At the stroke of midnight, the lights illuminating the interior of the two cars were suddenly extinguished. When they flicked back to life a few moments later, the passengers were alarmed to see one of their number lying on the ground motionless.
+The conductor phoned the local police department, and though it was very late, the dispatcher assured the worried conductor that they were sending their very best detective. A bit of an eccentric, Detective Y had an usual methodology when it came to solving crimes. Knowing witnesses to be often be mistaken and contradictory, Y made a habit of asking his witnesses to state to him only one fact they remembered clearly and with absolute certainty from the moment the crime took place.
+Y wasted no time upon arriving and, after taking a quick overview of the scene, asked each of the ten remaining passengers in turn to state one absolute fact from the moment right before lights went out in the two train cars. His interview notes are as follows:
+Ms. S:  I was dining with Mr. J.
+Mr. G:  There were the same number of men and women in my car.
+Mr. J:  Mr. K was not in the dining car.
+Ms. L:  Mr. Q had just entered my car.
+Mr. F:  Ms. W and Ms. P were talking to one another in hushed tones.
+Mr. R:  Mr. G was not in the passenger car.
+Mr. Q:  There were fewer women in my car than the other.
+Ms. P:  Ms. L was not in the same car as me.
+Mr. K:  Ms. P was in the passenger car.
+Ms. W:  Mr. F was avoiding Mr. R and hiding behind a newspaper in the opposite car.
+The bewildered conductor watched as Detective Y completed his interviews, scribbled a few more lines in his notes, and turned to announce he had solved the case.
+""But surely you can't have figured out the identity of a murderer simply from a list of seating arrangements?"" the conductor protested. ""You haven't even been told in which car the victim was seated!""
+""To the contrary, my good man,"" the detective answered placidly. ""It is the curse of a criminal that he must answer any question regarding the crime he has committed with a lie. The innocent tell only truths, but the lone murderer has been betrayed by his testimony.""
+Who did Detective Y arrest?","Like any good Detective, Y always assumes everyone he interviews is telling the truth until proven otherwise. He also knows the simplest explanation is always the best. He compares the witness statements until he discovers the scenario that is accurately described by nine truthful witnesses and arrests the liar.","Y began by assuming everyone was telling the truth about each other's location and came up with the following arrangement: S J L Q G R (4 men, 2 women) in the dining car and K P W F (2 men, 2 women) in the passenger car. (R and F are interchangeable in this scenario, but as both are men, the precise position of each is irrelevant to this point.) This contradicted both G's statement that there were an equal number of men and women in his (the dining) car and Mr. Q's claim that fewer women were in one car than the other.
+Thus, the detective concluded both G and Q were telling the truth and someone was lying about the occupancy. Y reasoned that only one possible configuration could make both men's testimonies true: G, 2 other men, and 3 women in one car and Q, 2 other men, and 1 woman in the other.
+Because G and Q had to have been in opposite cars, Y worked back up his witness list to find the lie that had placed Q in the wrong car. He first examined L's statement that she and Q shared the same car. If this alone was the lie, it would leave S J L G R (3 men, 2 women) in the dining car and put K P Q W F (3 men, 2 women) in the passenger car, meaning G and Q's statements still would be inaccurate.
+Ms. L must be telling the truth then, and Y instead turned to P's claim, which had placed L (and Q by extension) in the other car. If P was lying, it would mean only S J G R (3 men, 1 woman) were in the dining car and K P L Q W F (3 men, 3 women) were in the passenger car. Again, neither G or Q's statements are met.
+Detective Y, now certain Mr. G, Mr. Q, Ms. L, and Ms. P were all telling the truth, backtracked to Mr. K next, who had established P's position. Assuming K a liar, Y was able to place S J P G W R (3 men, 3 women) in the dining car and K L Q F (3 men, 1 woman) in the passenger car.
+A prudent man, Y double checked his work by running each remaining statement against his reasoning and stiffened his resolve upon finding K to be the only possible person whose lone lie could make every other witness statement truthful.
+Mr. K was arrested and led away to the relief (albeit, slight puzzlement) of the conductor and his passengers.",GeminiFlash,basicprompt,,True
+21,"Seven sportsmen are standing in a row. Each sportsman has a different 1-digit number. The product of the first three, the product of the middle three, and the product of the last three are all equal.
+What's the middle sportsman's number?","Figure out what the numbers are, and then eliminate the impossibilities.","Let their numbers be a through g, we have abc=cde=efg.
+5 or 7 cannot occur, because they are prime and no other 1-digit number contains them. Therefore, the numbers are 1, 2, 3, 4, 6, 8, 9.
+Since abc=efg, abcdefg/d is a perfect square. 1*2*3*4*6*8*9=2^7*3^4, and d can be only 2 or 8.
+If d=2, the numbers 1, 3, 4, 6, 8, 9 can be made into 1*8*9=3*4*6=72, and we can have c=9, e=4: 9*2*4=72.
+If d=8, the numbers 1, 2, 3, 4, 6, 9 can be made into 1*4*9=2*3*6=36, but 36 is not divisible by 8.
+Therefore, the middle sportsman's number is 2.",GeminiFlash,basicprompt,,True

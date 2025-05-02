@@ -58,6 +58,8 @@ modelInfo = {
 def query(question, instructions, model):
     # print("TESTING", model)
 
+    print("QUERYING", model)
+
     client = OpenAI(
         api_key= os.getenv(modelInfo[model]["key"]),
         base_url = modelInfo[model]["url"],
@@ -69,8 +71,11 @@ def query(question, instructions, model):
             {"role": "system", "content": instructions},
             {"role": "user", "content": question},
         ],
-        stream=False
+        stream=False,
+        timeout=360,
+        max_completion_tokens=10000,
     )
+    print("RESPONSE", response)
     return response.choices[0].message.content
 
 def process_task(t):
@@ -125,7 +130,7 @@ def main():
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
-    instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt']}
+    instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt'], 'hint_prompt': instructionSet['hint_prompt']}
 
     results = []
     for prompt in instructionSet:
@@ -144,6 +149,7 @@ def main():
                     args.name,
                 )
 
+                print("TASK:", task)
                 entry = process_task(task)
                 results.append(entry)
                 with open(f'../responses/{args.dataset}/{args.name}/results.jsonl', 'a') as jsonfile:
