@@ -125,6 +125,7 @@ def main():
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
+    instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt']}
 
     results = []
     for prompt in instructionSet:
