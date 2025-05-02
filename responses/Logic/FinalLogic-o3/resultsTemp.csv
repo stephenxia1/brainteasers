@@ -329,3 +329,554 @@ Therefore, I held the king of spades.  The king of clubs must have been on the f
 K J Q T A
 C D S H C
 Therefore there are two CLUBS.",GPT-o3,basicprompt,,True
+6,"Five friends spend every Monday night eating Chinese food from the Golden Dragon. Howard has Mu Shu Pork, Leonard has Spicy Szechuan Tofu, Penny has Shrimp with Lobster Sauce, Raj has Beef with String Beans, and Sheldon has Chicken and Broccoli: diced, not shredded, with brown rice, not white, low-sodium soy sauce and the good hot mustard from the Korean grocery.
+After dinner, they play a role-playing game called World of Nerds.
+In this game, each player takes on a character belonging to a different race of creature, has a different occupation, uses a different sort of weapon, specializes in fighting a particular kind of monster, and has a different skill level.
+Can you determine the characteristics of each player's character from the following clues before someone sits in Sheldon's spot?
+Players: Howard, Leonard, Penny, Raj and Sheldon
+Races: elf, gremlin, halfling, hobbit and ogre
+Occupations: archbishop, merchant, paladin, sorcerer and thief
+Weapons: bolo, crossbow, dagger, fireballs and mace
+Monsters: chimeras, giants, harpies, kobolds and orcs
+Skill levels: range from 10-32
+Clues:
+1. The five characters in the game are Penny's, the 24th-level ogre, the thief, the fireball user, and the one skilled at fighting orcs.
+2. The paladin isn't an elf.
+3. The bolo user has a skill level twice that of the halfling.
+4. Raj's character has a skill level eight levels higher than the paladin, who in turn is eight levels higher than the crossbow user.
+5. The hobbit is no good at fighting giants.
+6. The elf (who doesn't care for crossbows) is ten levels higher than the one who fights kobolds.
+7. The one who is adept at fighting chimeras is four levels higher than Leonard's character (who isn't the archbishop).
+8. The character at the lowest level (who isn't Penny) is at level ten and uses a dagger.
+9. Neither the archbishop nor the merchant belongs to the race of gremlins.
+10. The giant fighter never uses a mace in battle.
+11. Raj's character isn't the elf.
+12. Penny's character doesn't use the crossbow.
+13. Howard's character is not particularly adept at fighting harpies.",Start by determining the 5 skill levels.,"Howard is the halfling and a level 10 thief who fights kobolds with a dagger.
+Leonard is the hobbit and a level 16 merchant who fights orcs with a crossbow.
+Penny is the elf and a level 20 archbishop who fights chimeras with a bolo.
+Raj is the gremlin and a level 32 sorcerer who fights giants with fireballs.
+Sheldon is the ogre and a level 24 paladin who fights harpies with a mace.
+Explanation:
+The first step is to determine the actual skill levels of the five players.
+The lowest level is 10, held by the character using a dagger (clue 8).
+From (4), the character using a crossbow has an unknown level, let's call it x; the paladin has x+8 and Raj has x+16. Note that x must be greater than 10 and less than or equal to 16, or else x+16 would be greater than 32.
+The elf is none of these four players (2, 11, 6), but has a skill level of 10 more than one of them (6). This could be 20, x+10 or x+18.
+One skill level has to be 24 (1), two skill levels must have a difference of 4 (7) and one skill level must be twice another (3).
+If x=11, then the skill levels are 10, 11, 19, 27 and the elf's is either 20, 21 or 29. None of these is 24; therefore, x isn't 11. Similarly x isn't 12, 13 or 15.
+If x=14, then the skill levels are 10, 14, 22, 30 and the elf's is either 20, 24 or 32. This provides a skill level of 24, but for the elf, instead of the ogre; therefore, x isn't 14.
+Therefore, x=16 and the skill levels are 10 [dagger], 16 [crossbow], 24 [paladin=ogre], and 32 [Raj]. The elf's skill level must be 20, not 26, in order to satisfy clue (7). This means the elf fights chimeras and Leonard's character uses the crossbow.
+Now that we know the skill levels, we can start building a list of the players, starting with the first clue:
+Player 1 = Penny
+Player 2 = ogre, level 24, paladin
+Player 3 = thief
+Player 4 = fireballs
+Player 5 = orcs
+Since the elf has a skill level of 20, the kobold fighter is level 10 (6), and uses the dagger (8). Penny's character doesn't use the dagger (8), and neither does the ogre, who is level 24. Therefore the thief does:
+Player 1 = Penny
+Player 2 = ogre, level 24, paladin
+Player 3 = level 10, thief, kobolds, dagger
+Player 4 = fireballs
+Player 5 = orcs
+Neither Penny's character (12) nor the ogre (4) uses the crossbow [Leonard], so the orc fighter must:
+Player 1 = Penny
+Player 2 = ogre, level 24, paladin
+Player 3 = level 10, thief, kobolds, dagger
+Player 4 = fireballs
+Player 5 = Leonard, level 16, orcs, crossbow
+The ogre can't use the bolo, as no one has level 12 (3), so Penny's character uses the bolo and the thief is the halfling. This leaves the ogre using the mace:
+Player 1 = Penny, bolo
+Player 2 = ogre, level 24, paladin, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = fireballs
+Player 5 = Leonard, level 16, orcs, crossbow
+This means that Raj's character, at level 32, must use fireballs, and Penny's character must be the level 20 elf who fights chimeras:
+Player 1 = Penny, elf, level 20, chimeras, bolo
+Player 2 = ogre, level 24, paladin, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, level 32, fireballs
+Player 5 = Leonard, level 16, orcs, crossbow
+The ogre, who uses a mace, doesn't fight giants (10); therefore the ogre fights harpies, leaving Raj's character as the giant fighter:
+Player 1 = Penny, elf, level 20, chimeras, bolo
+Player 2 = ogre, level 24, paladin, harpies, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, level 32, giants, fireballs
+Player 5 = Leonard, level 16, orcs, crossbow
+The hobbit doesn't fight giants (5), so the hobbit must fight orcs, leaving Raj as the gremlin. The gremlin isn't the archbishop or the merchant, and so the gremlin is the sorcerer:
+Player 1 = Penny, elf, level 20, chimeras, bolo
+Player 2 = ogre, level 24, paladin, harpies, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, gremlin, level 32, sorcerer, giants, fireballs
+Player 5 = Leonard, hobbit, level 16, orcs, crossbow
+Leonard's character must be the merchant, rather than the archbishop (7), leaving Penny's character as the archbishop:
+Player 1 = Penny, elf, level 20, archbishop, chimeras, bolo
+Player 2 = ogre, level 24, paladin, harpies, mace
+Player 3 = halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, gremlin, level 32, sorcerer, giants, fireballs
+Player 5 = Leonard, hobbit, level 16, merchant, orcs, crossbow
+Howard's character doesn't fight harpies (13), so that falls to Sheldon's ogre, while Howard's halfling fights kobolds. And that completes the list:
+Player 1 = Penny, elf, level 20, archbishop, chimeras, bolo
+Player 2 = Sheldon, ogre, level 24, paladin, harpies, mace
+Player 3 = Howard, halfing, level 10, thief, kobolds, dagger
+Player 4 = Raj, gremlin, level 32, sorcerer, giants, fireballs
+Player 5 = Leonard, hobbit, level 16, merchant, orcs, crossbow",GPT-o3,basicprompt,,True
+7,"Sailing through a thick fog, you come upon a mysterious island shrouded in mist. A towering volcano in the center of the island pierces the clouds, billowing smoke into the sky. You land your boat and set out to ascend the peak. After an arduous climb, you approach the volcano summit, where lava glows red within a vast crater.
+Here, you are approached by three gods and their herald.
+Problem
+On the summit of this remote volcano, the herald proclaims that you have been selected for a trial. He then lays out the rules for you.
+First, you know that one of the three gods always tells the truth, another always lies, and the third will respond to questions randomly. Therefore, let us call the gods True, False, and Random.
+Second, the gods speak a different language. They understand all languages perfectly well, but only answer questions with either ja or da, the words for yes and no. You do not know which god is which, and you do not know which word means yes and which word means no.
+Finally, you have an existential problem on your hands. You may ask three yes-or-no questions, each one directed to only one god, and only that god will answer with either ja or da. If you can determine the identities of the three gods, they will send you on your way with their blessing, and you can be assured of a prosperous and fulfilled life. If you fail to determine the identities of the gods, however, they will be less generous in their treatment. The volcano pit smokes and glows red beside you.
+With your three questions, how do you figure out which god is True, which is False, and which is Random?",Can you phrase a question so that both True and False have to say the same thing?,"First, ask the god standing in the middle, ""If I were to ask you if the god to your left is Random, would you say ja?""
+By phrasing questions as hypotheticals, you can ask the gods an embedded question. As long as you ask either True or False, the god will respond with the same word you use (""would you say ja?"") if the answer to the embedded question is affirmative, and the opposite word if the answer is negative.
+If the god says ja, then there are two possibilities: either the god to his left is Random, and the god speaking is either True or False; or the god speaking is Random. Either way, you know the god to his right is not Random.
+Similarly, if the god says da, then there are two possibilities: either the god to his right is Random, and the god speaking is True or False; or the god speaking is Random. In this case, you know the god to the left is not Random.
+The next step is to approach the god that you know is not Random, and figure out if he is True or False. Because you still do not know the meanings of ja and da, you need to do this by using the same hypothetical structure, asking, ""If I were to ask you if you are True, would you say ja?"" If the god is True, they will answer ja. If the god is False, they will answer da. (False's response in this case is essentially either: ""no I would not say yes,"" even though he would; or ""yes I would say no,"" even though he wouldn't.)
+Finally, now that you have identified a god as either True or False, you can use the same question structure one last time to identify the other gods (you need to stick to it because you still don't know the meanings of ja and da). Simply ask, ""If I were to ask you if the god in the middle is Random, would you say ja?"" If the answer is ja, then the god in the middle is Random, and the third god is either True or False (the opposite of the one you have already identified). If the answer is da, then the god in the middle is True or False, and the third god is Random.",GPT-o3,basicprompt,,True
+8,"Mad Ade went on an eight day fly fishing trip around the purple ridged mountains of Madadia and got to fish seven days of it last May. On every day, from May 14 to the 21st, except the 16th, when a severe thunderstorm kept him in his tent, he fished around Madadia. Though he caught many fish--all of which he released--each day, one special fish stood out. Each special fish was of a different variety: Monkey Trout, Brookside Trout, Cut Throat, Dolly Varden, Humpback, Lake Trout, and Rainbow, and a different size: 8 inches, 16 inches, 17 inches, 19 inches, 22 inches, 24 inches, and 27 inches. Every day, Mad Ade tried a different secret fishing spot: Big Little Falls, Bottle Well, Deep Channel, Old Cutbank, Big Rock Isle, Dish Creek, and Little Curl. And each special fish was caught on a different fly that Mad Ade tied himself: a Parachute Adams, an Elk Hair Caddis, a Humpy, a MayFly, Mad Ade's Little Mouse, a Stonefly Nymph, and a Yuk Bug. Three of the flies, Mad Ade's little Mouse, the Yuk Bug, and Stonefly Nymph, were fished as wet flies, the rest were fished as dry flies.
+1) Mad Ade caught the smallest of his special fish, a little Brookside, after he caught the fish on his Elk Hair Caddis, but before he caught the fish in Deep Channel. His shiny Dolly Varden was not the fish lured from the depths of Bottle Well. Mad Ade caught either the smallest or his second to largest fish on his third fishing day.
+2) Mad Ade caught a fish off Big Rock Isle on the 19th. He fought either the Humpback or the 24 inch monster on the 21st. On the fourth day of his trip, Mad Ade landed a fish over twenty inches long by the Old Cutbank on a wet fly. The fish Mad Ade landed with a net at Little Curl was larger than the one he worked onto shore at Dish Creek, but it was not as large as the one he lifted from the water at Big Little Falls.
+3) Mad Ade caught the 24 inch fish on his Little Mouse after he caught the Dolly Varden, but before he hooked a real jumper with his Parachute Adams. Because he preferred dry flies, Mad Ade only used dry flies after using a wet fly on the 19th. Mad Ade used a Mayfly to fish Dish Creek. Mad Ade caught his fish on the Mayfly three calendar days (two fishing days) after he caught a fish with the Stonefly Nymph.
+4) Mad Ade's five mile hike, along a mountain trail to Big Little Falls, paid off on his last day with a prized Humpback trout. At least four fishing days passed between the time that Mad Ade used the Stonefly Nymph and his Humpy. The Monkey Trout Mad Ade caught on the 17th was longer than the Rainbow he caught, but smaller than his Lake Trout.
+5) The deep hole of Bottle Well yielded Mad Ade a 19 incher on the first or second day of his trip. With one exception, Mad Ade caught fish of even sizes on even number days and fish of odd sizes on odd days. Although they both jumped and splashed over the water the same way, the Rainbow Mad Ade caught was bigger than his Cut Throat.","Mad Ade caught a fish off Big Rock Isle on the 19th (2).
+The Monkey Trout Mad Ade caught on the 17th (4).
+Mad Ade caught either the smallest or his second to largest fish on his third fishing day. (1)
+17th is 8 or 24.","Mad Ade caught a fish off Big Rock Isle on the 19th (2).
+The Monkey Trout Mad Ade caught on the 17th (4).
+Mad Ade caught either the smallest or his second to largest fish on his third fishing day. (1)
+17th is 8 or 24.
+On the fourth day of his trip, Mad Ade landed a fish over twenty inches long by the Old Cutbank on a wet fly. (2)
+17th is 24 and Cutbank.
+Mad Ade caught the 24 inch fish on his Little Mouse (3).
+With one exception, Mad Ade caught fish of even sizes on even number days and fish of odd sizes on odd days. (5)
+He fought either the Humpback or the 24 inch monster on the 21st.
+Humpback is 21st. (2)
+Mad Ade's five mile hike, along a mountain trail to Big Little Falls, paid off on his last day with a prized Humpback trout. (5)
+Humpback is Big Little Falls.
+The deep hole of Bottle Well yielded Mad Ade a 19 incher on the first or second day of his trip. (5)
+First day is 14th, so 19 incher had to be second day, 15th.
+15th then is Bottle.
+Mad Ade caught the 24 inch fish on his Little Mouse after he caught the Dolly Varden (3).
+Mouse is 24 inch fish on 17th.
+Dolly is 14th or 15th.
+Mad Ade caught his fish on the Mayfly three calendar days (two fishing days) after he caught a fish with the Stonefly nymph. (3)
+Mayfly can only be 18th, as Mouse is 17th.
+Stonefly is 15th.
+Mad Ade used a Mayfly to fish Dish Creek.
+At least four fishing days passed between the time that Mad Ade used the Stonefly Nymph and his Humpy. (4)
+Stonefly is 15th, so Humpy is 21st.
+Mad Ade only used dry flies after using a wet fly on the 19th. (3)
+Only wet fly left is Yuk Bug, so Yuk Bug is 19th.
+Mad Ade caught the smallest of his special fish, a little Brookside, after he caught the fish on his Elk Hair Caddis, but before he caught the fish in Deep Channel. (1)
+Elk Hair Caddis can only be 14th.
+Parachute Adams, the only fly left, is 20th.
+His shiny Dolly Varden was not the fish lured from the depths of Bottle Well. Bottle is 15th, so Dolly is 14th. (1)
+Mad Ade caught the smallest of his special fish, a little Brookside, after he caught the fish on his Elk Hair Caddis, but before he caught the fish in Deep Channel. (1)
+Brookside, 8 inches, (even) can only be Mayfly or Adams.
+The fish Mad Ade landed with a net at Little Curl was larger than the one he worked onto shore at Dish Creek, but it was not as large as the one he lifted from the water at Big Little Falls. (2)
+Adams can only be Little Curl or Deep Channel. It's not Channel (1) and not Little Curl (2), so Brookside is Dish Creek.
+Mad Ade caught the smallest of his special fish, a little Brookside, after he caught the fish on his Elk Hair Caddis, but before he caught the fish in Deep Channel. (1)
+So, Deep Channel is 20th, and 14th is Little Curl (last one).
+The Monkey Trout Mad Ade caught on the 17th was longer than the Rainbow he caught, but smaller than his Lake Trout. (4) 17th is Monkey, 24 inches, so Lake can only be 27. Only odd without a named fish name is 19th.
+So 19th is Lake Trout and 27 inches.
+21st is 17 inches, only odd left.
+Deep Channel is 22 inches.
+The fish Mad Ade landed with a net at Little Curl was larger than the one he worked onto shore at Dish Creek, but it was not as large as the one he lifted from the water at Big Little Falls (2).
+Little Curl is less than 17 inches. 16 inches.
+Although they both jumped and splashed over the water the same way, the Rainbow Mad Ade caught was bigger than his Cut Throat. (5)
+So, Rainbow is 22 inches and Cut Throat 19 inches.
+Summary:
+14th, Elk Hair Caddis, Dolly Varden, 16, Little Curl
+15th, Stonefly Nymph, Cutthroat, 19, Bottle Well
+17th, Mad Ade's Little Mouse, Monkey Trout, 24, Old Cutbank
+18th, Mayfly, Brookside Trout, 8, Dish Creek
+19th, Yuk Bug, Lake Trout, 27, Big Rock Isle
+20th, Parachute Adams, Rainbow, 22, Deep Channel
+21st, Humpy, Humpback Trout, 17, Big Little Falls",GPT-o3,basicprompt,,True
+9,"""What's the password?"" asked The Entity, with a weasel-like demeanor. Spy IQ was confused, until he realized he had received a strange postcard weeks before. The crafty spy still needed to enter the underground cellar leading to a new set of gadgets to be used on the next mission, but he was halted by The Entity's presence. What the postcard said might help Spy IQ find the password The Entity needs to allow the spy into the secret lair. The postcard says this:
+A relative of mine was expelled.
+It was my niece.
+Wouldn't you agree?
+It was because she joined a band of bikers.
+She's doing lots of things wrong.
+She always shows a lot of toughness.
+P.S.
+Isaac Newton:
+Near orange bags lying east.
+Gets as strange equally slowly.
+That P.S. looks like it could be the catalyst to solve for the encrypted password. But, what could it be?","Look closely at the P.S.
+A secret message lies within the P.S. that will assist you in searching for the password.
+Here, I'll change it up a bit:
+P.S.
+Isaac Newton:
+Near Orange Bags Lying East.
+Gets As Strange Equally Slowly.","The password is PIGEON.
+If you look carefully at the P.S., you will notice that the first letter of each word spells IN NOBLE GASES:
+P.S.
+[I]saac [N]ewton:
+[N]ear [O]range [B]ags [L]ying [E]ast.
+[G]ets [A]s [S]trange [E]qually [S]lowly.
+Now, look in the first six lines of the postcard. The symbols for noble gases can be found in the last word of each line, with a letter lying in between:
+a relative of mine was eXpElled.
+it was my NiEce.
+wouldn't you AgRee? etc.
+If you take each letter that is within the symbols of the noble gases, you will spell the word PIGEON:
+a relative of mine was eX[p]Elled.
+it was my N[i]Ece.
+wouldn't you A[g]Ree?
+it was because she joined a band of biK[e]Rs.
+she's doing lots of things wR[o]Ng.
+she always shows a lot of tougH[n]Ess.
+After saying the password, Spy IQ entered the secret lair and found useful gadgets, including Instant Tile Camouflage.",GPT-o3,basicprompt,,True
+10,"Professor Abacus is purchasing a ticket for the Deca Lotto.  The lotto number has ten digits, using the numerals 0 through 9, each numeral used once.  The clerk asked what number he wanted to pick.  Professor Abacus handed the clerk a piece of paper with nine statements, saying ""If you can correctly figure out the number, I will give you half of whatever I win.""   What is the number?
+1) The sum of the first five digits is a prime number.
+2) The sum of the last five digits is a triangle number*.
+3) The sum of the digits in the odd positions is an odd number.
+4) The sum of the middle two digits is a square number.
+5) The sum of the middle four digits is a cube number.
+6) The difference between the 1st and 10th digits is two.
+7) The difference between the 2nd and 9th digits is three.
+8) The difference between the 3rd and 8th digits is four.
+9) The numeral 4 is somewhere in the first five positions.
+* You can form a triangle arrangement by building it in the pattern row 1 = 1, row 2 = 2, row 3 = 3 etc. eg. 10 is a classic triangle number as per ten pin bowling. They are arranged in a triangle 1, 2, 3, 4.",The sum of all digits must be 45. Combine this with hints 1 and 2 to reduce to a few prime/triangle options,"7342105869
+7 + 3 + 4 + 2 + 1 = 17 (prime), 0 + 5 + 8 + 6 + 9 = 28 (triangle), 7 + 4 + 1 + 5 + 6 = 23 (odd), 1 + 0 = 1 (square), 2 + 1 + 0 + 5 = 8 (cube), the difference between 7 and 9 is 2, the difference between 3 and 6 is 3, the difference between 4 and 8 is 4, 4 is in the 3rd position.",GPT-o3,basicprompt,,True
+11,"Mad Ade, Who had suddenly and unexpectedly after years of selfless dedication to Kebabs, decided to grow some vegetable for himself and subsequently planted his garden late in May. He planted five different vegetables: Tomatoes, Peppers, Radishes, Lettuce, and Broccoli. For each he planted a different number of rows from one to five. The hard work involved with each planting was accomplished on a separate day, from May 25th to May 30th (On Sunday May 26th he didn't work in the garden). Each vegetable was planted in a different part of the garden, the north end, the south side, the east side, the west side or the northwest corner. Can you tell which vegetable was planted in each part of the garden, the day planted and the number of rows?
+1. Mad Ade turned the soil for the peppers three days after he dug hand-size rocks out of the radish patch. Mad Ade's bright rows of radishes went deeper than the broccoli but were not as deep as the tomatoes. Mad Ade rolled his trusty wheelbarrow into the west end of the garden one day before he planted the broccoli.  Mad Ade believes the morning sun is bad for tomatoes and so kept those plants out of the eastern side of his garden.
+2. Mad Ade labored hard in the south side of the garden and was mighty proud of the three perfect rows there. On one week's last day, Mad Ade planted the east side of the garden. Mad Ade didn't put the peppers or the tomatoes in the northwest corner. Mad Ade planted an even number of rows in the Northwest corner of his garden.
+3. Mad Ade planted three rows before he planted two rows, but planted them after he planted four rows. Mad Ade figured the lettuce wouldn't last long so he planted fewer than three rows. Mad Ade planted the south garden one day before he planted the lettuce. Mad Ade planted more rows of peppers than he did broccoli (which was not planted in the west side of the garden and was not planted the 29th).
+Which vegetable was planted in how many rows, on which day of May and in which side of Mad Ade's garden?",Start by deducing which vegetables pair with which dates ,"Please Note that 1.1 refers to clue 1, sentence 1, and thus 2.3 would be clue 2 sentence 3.
+Explanation:
+1.1 Mad Ade turned the soil for the peppers three days after he dug hand-size rocks out of the radish patch.
+Radishes are 25th or 27th.
+Peppers are 28th or 30th.
+1.3 Mad Ade rolled his trusty wheelbarrow into the west end of the garden one day before he planted the broccoli
+Broccoli is 28, 29 30 (and West is 27, 28, 29)
+3.3 Mad Ade planted the south garden one day before he planted the lettuce.
+Lettuce 28, 29 30 (and South 27, 28, 29 )
+Tomatoes can only be 25th or 27th.
+2.2 On one week's last day, Mad Ade planted the east side of the garden.
+Saturday the 25th is East.
+1.4 Mad Ade believes the morning sun is bad for tomatoes and so kept those plants out of eastern side of his garden
+So East, 25th is not Tomatoes.
+So Radishes 25th and Tomatoes 27th.
+And 3 days later 28th = peppers.
+3.4 Mad Ade planted more rows of peppers than he did broccoli (which was not planted in the west side of the garden and was not planted the 29th).
+So Broccoli 30th and Lettuce 29th.
+1.3 Mad Ade rolled his trusty wheelbarrow into the west end of the garden one day before he planted the broccoli.
+West is 29th.
+3.2 Mad Ade figured the lettuce wouldn't last long so he planted fewer than three rows.
+So Lettuce is one or two rows.
+2.4 Mad Ade planted an even number of rows in the Northwest corner of his garden.
+Northwest is 2 or 4 rows.
+1.2 Mad Ade's bright rows of radishes went deeper than the broccoli but were not as deep as the tomatoes.
+Radishes are not one or five.
+Broccoli is not five or four.
+Tomatoes is not one or two.
+2.3 Mad Ade didn't put the peppers nor the tomatoes in the northwest corner.
+Northwest is broccoli.
+Lettuce has one row.
+2.1 Mad Ade labored hard in the south side of the garden and was mighty proud of the three perfect rows there.
+So South is three rows.
+Radishes are four.
+3.3 Mad Ade planted the south garden one day before he planted the lettuce.
+So planted 3 in south on 28.
+Five rows of tomatoes were planted in the North Garden.
+Summary:
+Tomatoes, Five, 27th, North
+Peppers, Three, 28th, South
+Radishes, Four, 25th, East
+Lettuce, one, 29th, West
+Broccoli, two, 30th, Northwest",GPT-o3,basicprompt,,True
+12,"You are given a stack of bingo cards.  Your task is to find a specific card.  Given the following clues, what is the number arrangement of that card?
+Columns, left to right, are: B (contains numbers 1 through 15), I (contains numbers 16 through 30), N (contains numbers 31 through 45), G (contains numbers 46 through 60), O (contains numbers 61 through 75).  Rows, top to bottom, are: 1, 2, 3, 4, 5.  An example of coordinate nomenclature: B1 identifies column B row 1.  N3 is a free space (contains no number).  No number appears more than once.
+1) Each numeral (0 through 9) appears one time in Row 1.
+2) The sum of the numbers in Row 4 is a square number.
+3) There is only one two-digit prime number in each row.
+4) The range of the numbers in Column N is 8.
+5) Each number in Column G has a tens digit that is less than the units digit.
+6) Each number in Column O is odd.
+7) In only one column are the numbers in descending order from top to bottom.
+8) Each column has only one numeral that appears exactly two times.
+9) The smallest number in each column is located in Row 5.
+10) The sums of each column share a single common prime factor.
+11) The numeral 5 only appears one time on the card.
+12) The sum of the numbers in each diagonal is an odd number.
+13) The product of B3 and O3 has a units digit of 2.
+14) The product of I3 and G3 has a units digit of 4.",Start with clue 5!,"10 24 39 58 67
+9 28 40 49 71
+8 22 -- 47 69
+3 30 42 48 73
+1 20 34 46 61
+1) Per clue 5, eliminate the appropriate numbers in Column G.  Of the remaining numbers, at least one with a tens digit of 5 will have to be used.  Per clues 1 and 11, only one number can have the numeral 5, so that number must be at G1.  Eliminate all numbers that contain a 5 from all other locations.
+2) Per clue 6, eliminate all even numbers from Column O.
+3) Per clue 1, eliminate any number from Row 1 with only one digit or duplicate digits.  By analyzing combinations of numbers, the following can be determined: B1 contains a 1, delete 30, I1 contains a 2, delete 23, delete 63 and 73, O1 contains a 6.  In conjunction with clue 3, delete 29 and 59.
+4) Per clue 10, analyze the various possible sums of Columns G and O.  The only common prime factor is 31.  Each column must sum to a multiple of 31 (based on available numbers: B to 31, I to 124, N to 155, G to 248, and O to 341).  G1 must be 58.  All two-digit prime numbers (clue 3) must be in Columns G and O.  O1 must be 67.  Per clue 1, N1 must be 39.  Per clue 9, G5 must be 46 and O5 must be 61.
+5) For Column N, there is only set of numbers that sums to 155, and satisfies clues 4, 8, and 9 (34, 39, 40, 42).  N5 must be 34.
+6) For Column I, there are two sets of numbers that sum to 124, and satisfy clues 8 and 9 (16, 24, 26, 28, 30 and 20, 22, 24, 28, 30).  To satisfy clue 1, I1 must be 24.  B1 must be 10.  To satisfy clue 12, G4 must be 48 and B5 must be odd.
+7) The column that satisfies clue 7 is Column B.  To satisfy clue 8, B2 must be 9 and B5 must be 1.
+8) To satisfy clue 2, the only square number that can be achieved is 196.  B4 must be 3, I4 must be 30, N4 must be 42, and O4 must be 73.
+9) B3 must be 8.  N2 must be 40.
+10) To satisfy clue 13, O3 must be 69.  This leaves O2 being 71.  To satisfy clue 3, G3 must be 47.  This leaves G2 being 49.
+11) To satisfy clue 14, I3 must be 22.  Finally, to achieve a sum of 124 (multiple of 31), I2 must be 28 and I5 must be 20.",GPT-o3,basicprompt,,True
+13,"There is a ten digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) If A > B, then C = 5 or 7, else C = 0 or 1.
+2) If B > C, then D = 1 or 2, else D = 4 or 9.
+3) If C > D, then E = 6 or 9, else E = 3 or 5.
+4) If D > E, then F = 2 or 4, else F = 1 or 6.
+5) If E > F, then G = 5 or 6, else G = 0 or 7.
+6) If F > G, then H = 1 or 4, else H = 8 or 9.
+7) If G > H, then I = 0 or 8, else I = 6 or 7.
+8) If H > I, then J = 3 or 8, else J = 2 or 5.
+9) If I > J, then A = 3 or 7, else A = 4 or 8.
+10) If J > A, then B = 0 or 9, else B = 2 or 3.","For example, assign 8 to H.  I can not exceed H, so J would have to be 3 (8 already assigned to H).","8274965103
+A = 8, B = 2, C = 7, D = 4, E = 9, F = 6, G = 5, H = 1, I = 0, J = 3
+1) A = 8 (I < J)
+2) B = 2 (J < A)
+3) C = 7 (A > B)
+4) D = 4 (B < C)
+5) E = 9 (C > D)
+6) F = 6 (D < E)
+7) G = 5 (E > F)
+8) H = 1 (F > G)
+9) I = 0 (G > H)
+10) J = 3 (H > I)
+Brute force methods can be used to arrive at a solution.  However, process of elimination does work.  For example, assign 8 to H.  I can not exceed H, so J would have to be 3 (8 already assigned to H).  G can not exceed H, so I would have to be either 6 or 7.  I would be greater than J, so A would have to be 7 (3 already assigned to J), meaning I would have to be 6.  J is less than A, so B would be 2 (3 already assigned to J).  A is greater than B, so C would be 5 (7 already assigned to A).  The only remaining numeral for G is 0, which means F would have to be greater than G, meaning H would have to be either 1 or 4.  H has already been assigned 8, rendering that assignment impossible.  Continue eliminating possibilities in the order shown below.
+A) H can not be 8.  C can not be 1.  C can not be 0.  B can not be 9.  D can not be 1.  D can not be 2.  F can not be 1.
+B) H must be 1.  H can not be 4.  H can not be 9.
+C) G can not be 0.  I can not be 6.  I can not be 7.  B can not be 0.
+D) I must be 0.  I can not be 8.
+E) J can not be 2.  J can not be 5.  J can not be 8.
+F) J must be 3.  A can not be 3.  B can not be 3.  E can not be 3.
+G) B must be 2.  F can not be 2.
+H) A must be 8.  A can not be 4.  A can not be 7.
+I) D can not be 9.
+J) E must be 9.  E can not be 5.  E can not be 6.
+K) D must be 4.  F can not be 4.
+L) F must be 6.  G can not be 6.
+M) G must be 5.  C can not be 5.  G can not be 5.
+N) C must be 7.",GPT-o3,basicprompt,,True
+14,"There is a ten-digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) Digit A is either a square number or a triangle number, but not both.
+2) Digit B is either an even number or a cube number, but not both.
+3) Digit C is either a cube number or a triangle number, but not both.
+4) Digit D is either an odd number or a square number, but not both.
+5) Digit E is either an odd number or a cube number, but not both.
+6) Digit F is either an odd number or a triangle number, but not both.
+7) Digit G is either an odd number or a prime number, but not both.
+8) Digit H is either an even number or a square number, but not both.
+9) Digit I is either a square number or a cube number, but not both.
+10) Digit J is either a prime number or a triangle number, but not both.
+11) A < B, C < D, E < F, G < H, I < J
+12) A + B + C + D + E < F + G + H + I + J","A) First, determine what two subsets of numbers qualify for each digit.  However, each digit can only be in one of the subsets, not both.
+","3605891247
+A = 3, B = 6, C = 0, D = 5, E = 8, F = 9, G = 1, H = 2, I = 4, J = 7
+1) 3 is a triangle number, but not a square number.
+2) 6 is an even number, but not a cube number.
+3) 0 is a cube number, but not a triangle number.
+4) 5 is an odd number, but not a square number.
+5) 8 is a cube number, but not an odd number.
+6) 9 is an odd number, but not a triangle number.
+7) 1 is an odd number, but not a prime number.
+8) 2 is an even number, but not a square number.
+9) 4 is a square number, but not a cube number.
+10) 7 is a prime number, but not a triangle number.
+11) 3 < 6, 0 < 5, 8 < 9, 1 < 2, 4 < 7
+12) 3 + 6 + 0 + 5 + 8 = 22, 9 + 1 + 2 + 4 + 7 = 23, 22 < 23
+A) First, determine what two subsets of numbers qualify for each digit.  However, each digit can only be in one of the subsets, not both.
+B) Digit A can not be 0 (a leading zero is not allowed).
+C) Next, eliminate those numbers that do not satisfy Condition 11.  Digit I can only be 4.  Digit A can only be 3.  Digit B can only be 6.  Digit C can only be 0.
+D) Digit D and Digit J must be some combination of 5 and 7.  Digit E can only be 8.  Digit F can only be 9.  Digit G can only be 1.  Digit H can only be 2.
+E) To satisfy Condition 12, Digit D is 5 and Digit J is 7.",GPT-o3,basicprompt,,True
+15,"Einstein's Riddle:
+Einstein wrote the following riddle. He said that 98% of the world could not solve it. But several NIEHS scientists were able to solve it, and they said it's not all that hard if you pay attention and are very patient. Give it a try:
+There are 5 houses in 5 different colors in a row. In each house lives a person with a different nationality. The 5 owners drink a certain type of beverage, smoke a certain brand of cigar, and keep a certain pet. No owners have the same pet, smoke the same brand of cigar, or drink the same beverage. Other facts:
+1.	The Brit lives in the red house.
+2.	The Swede keeps dogs as pets.
+3.	The Dane drinks tea.
+4.	The green house is on the immediate left of the white house.
+5.	The green house's owner drinks coffee.
+6.	The owner who smokes Pall Mall rears birds.
+7.	The owner of the yellow house smokes Dunhill.
+8.	The owner living in the center house drinks milk.
+9.	The Norwegian lives in the first house.
+10.	The owner who smokes Blends lives next to the one who keeps cats.
+11.	The owner who keeps the horse lives next to the one who smokes Dunhill.
+12.	The owner who smokes Bluemasters drinks beer.
+13.	The German smokes Prince.
+14.	The Norwegian lives next to the blue house.
+15.	The owner who smokes Blends lives next to the one who drinks water.
+The question is: WHO OWNS THE FISH?",Just take your time. This one should take you some time and is probably one of the harder riddles you see.,"The German sits in his Green House, smoking his Prince cigars, drinking coffee, and watching his FISH.
+The rest go like this-
+1st House: Yellow, Norwegian, Water, Cats, Dunhill
+2nd House: Blue, Dane, Tea, Horse, Blends
+3rd House: Red, Brit, Milk, Birds, Pall Malls
+4th House: Green, German, Coffee, FISH, Prince
+5th House: White, Swede, Beer, Dogs, Bluemasters",GPT-o3,basicprompt,"Let the five houses stand in a row, numbered 1 (leftmost) to 5 (rightmost).  
+For every house we have to determine  
+
+• colour • nationality • drink • cigar • pet  
+
+and each attribute must occur exactly once.
+
+─────────────────────────────────────────────
+1.  Set down the immediately fixed facts
+─────────────────────────────────────────────
+Rule 9: House 1 = Norwegian  
+Rule 8: House 3 drinks Milk  
+Rule 14: Norwegian lives next to the blue house  ⇒  House 2 = Blue
+
+─────────────────────────────────────────────
+2.  Locate the Green and White houses
+─────────────────────────────────────────────
+Rule 4: Green is immediately left of White.
+
+The pair (Green, White) cannot be (1,2) because 2 is already Blue;  
+not (2,3) because 2 is Blue;  
+not (3,4) because 3 already drinks Milk but rule 5 says Green drinks Coffee.
+
+Therefore (Green, White) = (4,5).  
+Rule 5 then gives: House 4 drinks Coffee.
+
+─────────────────────────────────────────────
+3.  Find the remaining colours
+─────────────────────────────────────────────
+Colours used so far: Blue(2), Green(4), White(5).  
+The two colours left are Red and Yellow, for houses 1 and 3.
+
+Rule 7: Yellow-house smokes Dunhill.  
+Two cases:
+
+A. House 1 = Yellow (⇒ Dunhill in 1)  
+B. House 3 = Yellow (⇒ Dunhill in 3)
+
+Case A quickly proves consistent; Case B sooner or later contradicts several rules.  
+We continue with Case A.
+
+So far
+House 1: Yellow, Norwegian, Dunhill  
+House 3: Red
+
+Rule 1: Brit lives in the Red house  ⇒  House 3 = Brit.
+
+─────────────────────────────────────────────
+4.  Use the Dunhill / horse neighbour rule
+─────────────────────────────────────────────
+Rule 11: Horse owner lives next to Dunhill.  
+Dunhill is in house 1, so the neighbour is house 2.  
+⇒ House 2 keeps a Horse.
+
+─────────────────────────────────────────────
+5.  Work with Blends, Water and Cats
+─────────────────────────────────────────────
+Rule 15: Blends smoker lives next to Water drinker.  
+Rule 10: Blends smoker lives next to Cat keeper.
+
+If Water were anywhere except house 1 we would run into a dead end,  
+so place Water in house 1.  
+Then Blends must be in its only neighbour, house 2, satisfying rule 15.  
+To satisfy rule 10 as well, put Cats in house 1.
+
+Now
+House 1: Yellow, Norwegian, Water, Dunhill, Cats  
+House 2: Blue, –, –, Blends, Horse
+
+─────────────────────────────────────────────
+6.  Identify the Dane and his drink
+─────────────────────────────────────────────
+The Dane drinks Tea (rule 3).  
+Tea is still unassigned and the only house that can take it so far is house 2.  
+⇒ House 2 = Dane, drinks Tea.
+
+─────────────────────────────────────────────
+7.  Place Beer and Bluemasters
+─────────────────────────────────────────────
+Drinks used: Water(1), Tea(2), Milk(3), Coffee(4).  
+The only drink left is Beer, so Beer is in house 5.  
+Rule 12: Bluemasters smoker drinks Beer  ⇒  house 5 smokes Bluemasters.
+
+─────────────────────────────────────────────
+8.  Locate Prince and the German
+─────────────────────────────────────────────
+Cigars left: Pall Mall, Prince.  
+Rule 13: German smokes Prince.
+
+If Prince were in house 3 (Brit) or house 5 (already Bluemasters) we'd clash,  
+so Prince must be in house 4, making house 4 the German.
+
+─────────────────────────────────────────────
+9.  Put Pall Mall and Birds
+─────────────────────────────────────────────
+The last unassigned cigar is Pall Mall, so it belongs to house 3.  
+Rule 6: Pall Mall smoker keeps Birds  ⇒  house 3 keeps Birds.
+
+─────────────────────────────────────────────
+10.  Finish the pets and nationalities
+─────────────────────────────────────────────
+Pets assigned so far: Cats(1), Horse(2), Birds(3).  
+Left: Dogs and Fish.
+
+Rule 2: Swede keeps Dogs  ⇒  house 5 is the Swede with Dogs.  
+The only pet still missing is Fish, therefore house 4 keeps Fish.
+
+─────────────────────────────────────────────
+11.  Check that every rule is met
+─────────────────────────────────────────────
+All fifteen statements are satisfied by the completed table:
+
+House 1: Norwegian Yellow Water Dunhill Cats  
+House 2: Dane    Blue  Tea  Blends  Horse  
+House 3: Brit    Red   Milk  Pall Mall Birds  
+House 4: German  Green  Coffee Prince  Fish  
+House 5: Swede   White  Beer  Bluemasters Dogs
+
+─────────────────────────────────────────────
+The only person who owns the fish is the German in house 4.
+
+Final answer: The German owns the fish.",True
+16,"The first round of the Children's Battleship Tournament has just been concluded.  Our ten contenders (including Roger and Lila) have just concluded their first five exciting matches.  Each match consisted of two players facing off against each other trying to guess the locations of the other player's ships. (The Carrier covers 5 squares, the Battleship covers 4 squares, the Destroyer and Submarine each cover 3 squares, and the Patrol Boat covers 2 squares.) In the end of each match, only one of the winner's ships remained - and it was a different one in each match!  From the information given, can you determine the full name of the winner and loser of each match, as well as the remaining ship of the winner?
+1. Alexis Chartel, although managing to sink her opponent's Carrier and Patrol Boat, still lost; her opponent was not surnamed Roon.
+2. The surviving ship of the kid whose last name is Azzuro (who is not Jason) is shorter than the surviving ship of the player that beat the kid surnamed Yeller.
+3. The kid who defeated Charlie won because of his or her surviving Submarine.
+4. Fred (who is not surnamed Blanc) lost to the kid who's last name is Black (who is not Bart).
+5. One of the matches was between the players surnamed Lavender and Tanger.
+6. Three - and only three - of the matches were between one boy and one girl.
+7. The five games were the one Stacie won (but the loser was not surnamed Chartel), the one Patty lost, the one won by the boy who's last name is Brown, the one lost by the kid who's last name is Blanc, and the one where the only surviving ship was a Patrol Boat (who's last name is not Black).
+8. Bart managed to have his Carrier survive the entire game, thus winning his game.
+9. The kids surnamed Peach and Lavender had the same result in their matches.
+10. Georgia Roon won her match, but not against Patty or Charlie.","In case you need all the kid's names:
+The boys are Bart, Charlie, Fred, Jason, and Roger.
+The girls are Alexis, Georgia, Lila, Patty, and Stacie.
+The last names are Azzuro, Black, Blanc, Brown, Chartrel, Lavender, Peach, Roon, Tanger, and Yeller.","From clue 1, Alexis' last name is Chartel, and she lost.  From clue 3. Charlie lost the game where the surviving ship was the Submarine.  From clue 4, Fred lost to Black.  From clue 8, Bart won the game where the surviving ship was the Carrier; from clue 4, he is not Black, and from clue 1, he did not defeat Alexis, so he was in a fourth game.  From clue 10, Georgia's last name is Roon, and she won, but not against Charlie, and from clue 1, not against Alexis, so she was in a fifth match.  So five matches are:
+_____ _____ beat Alexis Chartel by a _____.
+Bart   _____ beat _____ _____ by a Carrier.
+_____ _____ beat Charlie _____ by a Submarine.
+_____ Black beat Fred _____ by a _____.
+Georgia Roon beat _____ _____ by a _____.
+Patty did not lose to Georgia (clue 10); she lost to Bart.  Alexis Charlet was not defeated by Stacie (clue 7), nor was the surviving ship the Patrol Boat (clue 1); she was defeated by Brown (only one left in clue 7).  Fred is not Blanc (clue 4), nor was the surviving ship the Patrol Boat (clue 7); he was defeated by Stacie (only one left in clue 7).  Charlie is Blanc (only one left in clue 7), so Georgia Roon won with her Patrol Boat (only one left in clue 7).  Meaning:
+Stacie Black beat Fred _____ by a _____
+Bart _____ beat Patty _____ by a Carrier.
+_____ Brown beat Alexis Chartel by a _____.
+_____ _____ beat Charlie Blanc by a Submarine.
+Georgia Roon beat _____ _____ by a Patrol Boat.
+The only match in which Lavender and Tanger could face each other is the one where Bart beat Patty - but we don't know which last name goes with which kid.  The only remaining winner that Azzuro could be is the one that beat Charlie.  Yeller cannot have lost to Georgia (Patrol Boat is shorter than Submarine - clue 2); he is Fred, and his opponent won with a Battleship (only remaining ship longer than a Submarine - clue 2), so Brown beat Alexis with a Destroyer (only ship left).  Meaning:
+Stacie Black beat Fred Yeller by a Battleship.
+Bart _____ beat Patty _____ by a Carrier.
+_____ Brown beat Alexis Chartrel by a Destroyer.
+_____ Azzuro beat Charlie Blanc by a Submarine.
+Georgia Roon beat _____ _____ by a Patrol Boat.
+The only place for the last name Peach is as the kid who lost to Georgia.  Since Peach lost, Lavender must have lost (clue 9) and Tanger must have won.  Two of the matches are known to be between a boy and a girl.  The other three must be one between a boy and a girl (clue 6), one between two boys (two of the unplaced kids are boys, and only one of them could be in the third boy/girl match), and one between two girls (two of the placed kids with unplaced opponents are girls, and only one of them could be in the third boy/girl match).  Charlie must be facing a boy who's last name is Azzuro, but it's not Jason (clue 2); it's Roger.  Brown cannot be Lila (clue 7); he's Jason, so Lila is Peach (only possibility).
+In summary:
+Bart Tanger beat Patty Lavender by a Carrier.
+Stacie Black beat Fred Yeller by a Battleship.
+Jason Brown beat Alexis Chartel by a Destroyer.
+Roger Azzuro beat Charlie Blanc by a Submarine.
+Georgia Roon beat Lila Peach by a Patrol Boat.",GPT-o3,basicprompt,,True
+17,"Johnny was given 16 coins by his older, somewhat meaner brother, Mark.  He told him that he could keep them all if he could place all 16 on the table in such a way that they formed 15 rows with 4 coins in each row.
+After 10 minutes, Johnny walked away with the coins and Mark, after complaining futilely to his mother, left with nothing.
+How did Johnny place the coins?",Stars and pentagons,"If you draw a 5-pointed star with all sides of equal length, you will create a pentagon in the middle with all 5 sides of equal length. Then draw another 5 pointed star, upside-down, using the 5 points of the interior pentagon as the points of the inner star,  This will give you another 5-sided pentagon in the interior of the second, smaller star.
+Now, take your 16 coins and place 5 on the outside points of the outside star.  Then place 5 more on the points of each of the two pentagons you have created.  Finally, place the last coin in the dead center of this drawing.
+The lines are as follows:
+5 lines for the actual drawing of the outside star
+5 lines for the actual drawing of the inside star
+5 lines that start from any outside point of the outside star and go to the opposite point of the inside star, passing through 1 point of the inner pentagon, the dead center coin on the way.
+Total lines: 15",GPT-o3,basicprompt,,True

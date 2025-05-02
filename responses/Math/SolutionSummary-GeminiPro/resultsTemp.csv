@@ -827,3 +827,187 @@ Since the only possibility for the first three digits totaling 7 is 403, Ralph d
 There are only four ways to make a digital sum of 11 for the first three digits that ends in a three or seven and starts with 4, 6, 8 or 9: 407, 443, 623 and 803.  Ralph does a couple more quick calculations and determines that 407 = 11 x 37, 623 = 7 x 89 and 803 = 11 x 73, but that 443 is prime.  If 443 are the first three digits, then the last three digits must total 20, start with a 7 and end with a 4, 6 or 8.  There is only three ways to do this: 758, 776 and 794.  The fifth digit can't be prime, so only 794 is possible.  This gives the first number 443,794.
 If the first three digits total 23, start with a 4, 6, 8 or 9, and end with a 3 or 7, then the choices are 887 and 977.  The second digit in 977 is prime, so the only choice is 887.  Ralph checks and finds that 887 is prime.  If the first three numbers are 887 then the last three must start with a 3, end with a 4, 6 or 8 and total 8.  Only 314 is possible, giving the second number 887,314.
 When Rex tells Ralph one of the numbers is divisible by 13, Ralph finds that 443,794 = 13 x 34,138.  Since 13 can't be one of the prime factors of the number, the number must be 887,314.",GeminiPro,solutionSummary,,True
+9,"Question: There are 4 mathematicians - Brahma, Sachin, Prashant and Nakul - having lunch in a hotel. Suddenly, Brahma thinks of 2 integer numbers greater than 1 and says, ""The sum of the numbers is..."" and he whispers the sum to Sachin. Then he says, ""The product of the numbers is..."" and he whispers the product to Prashant. After that, the following conversation takes place :
+Sachin : Prashant, I don't think that we know the numbers.
+Prashant : Aha! Now I know the numbers.
+Sachin : Oh, now I also know the numbers.
+Nakul : Now I also know the numbers.
+How did they know the numbers?
+ Solution: The numbers are 4 and 13.
+As Sachin is initially confident that they (i.e. he and Prashant) don't know the numbers, we can conclude that -
+1) The sum must not be expressible as sum of two primes, otherwise Sachin could not have been sure in advance that Prashant did not know the numbers.
+2) The product cannot be less than 12, otherwise there would only be one choice and Prashant would have figured that out also.
+Such possible sum are - 11, 17, 23, 27, 29, 35, 37, 41, 47, 51, 53, 57, 59, 65, 67, 71, 77, 79, 83, 87, 89, 93, 95, 97, 101, 107, 113, 117, 119, 121, 123, 125, 127, 131, 135, 137, 143, 145, 147, 149, 155, 157, 161, 163, 167, 171, 173, 177, 179, 185, 187, 189, 191, 197, ....
+Let's examine them one by one.
+If the sum of two numbers is 11, Sachin will think that the numbers would be (2,9), (3,8 ), (4,7) or (5,6).
+Sachin : ""As 11 is not expressible as sum of two primes, Prashant can't know the numbers.""
+Here, the product would be 18(2*9), 24(3*8 ), 28(4*7) or 30(5*6). In all the cases except for product 30, Prashant would know the numbers.
+- if product of two numbers is 18:
+Prashant : ""Since the product is 18, the sum could be either 11(2,9) or 9(3,6). But if the sum was 9, Sachin would have deduced that I might know the numbers as (2,7) is the possible prime numbers pair. Hence, the numbers must be 2 and 9."" (OR in other words, 9 is not in the Possible Sum List).
+- if product of two numbers is 24:
+Prashant : ""Since the product is 24, the sum could be either 14(2,12), 11(3,8 ) or 10(4,6). But 14 and 10 are not in the Possible Sum List. Hence, the numbers must be 3 and 8.""
+- if product of two numbers is 28:
+Prashant : ""Since the product is 28, the sum could be either 16(2,14) or 11(4,7). But 16 is not in the Possible Sum List. Hence, the numbers must be 4 and 7.""
+- if product of two numbers is 30:
+Prashant : ""Since the product is 30, the sum could be either 17(2,15), 13(3,10) or 11(5,6). But 13 is not in the Possible Sum List. Hence, the numbers must be either (2,15) or (5,6)."" Here, Prashant won't be sure of the numbers.
+Hence, Prashant will be sure of the numbers if the product is either 18, 24 or 28.
+Sachin : ""Since Prashant knows the numbers, they must be either (3,8 ), (4,7) or (5,6)."" But he won't be sure. Hence, the sum is not 11.
+Summerising data for sum 11:
+Possible Sum PRODUCT Possible Sum
+2+9 18 2+9=11 (possible)
+3+6=9
+3+8 24 2+12=14
+3+8=11 (possible)
+4+6=10
+4+7 28 2+12=14
+3+8=11 (possible)
+4+6=10
+5+6 30 2+15=17 (possible)
+3+10=13
+5+6=11 (possible)
+Following the same procedure for 17:
+Possible Sum PRODUCT Possible Sum
+2+15 30 2+15=17 (possible)
+3+10= 13
+5+6=11 (possible)
+3+14 42 2+21=23 (possible)
+3+14=17 (possible)
+6+7=13
+4+13 52 2+26=28
+4+13=17 (possible)
+5+12 60 2+30=32
+3+20=23 (possible)
+4+15=19
+5+12=17 (possible)
+6+10=16
+6+11 66 2+33=35 (possible)
+3+22=25
+6+11=17 (possible)
+7+10 70 2+35=37 (possible)
+5+14=19
+7+10=17 (possible)
+8+9 72 2+36=38
+3+24=27 (possible)
+4+18=22
+6+12=18
+8+9=17 (possible)
+Here, Prashant will be sure of the numbers if the product is 52.
+Sachin : ""Since Prashant knows the numbers, they must be (4,13).""
+For all other numbers in the Possible Sum List, Prashant might be sure of the numbers, but Sachin won't.
+Here is the step by step explanation:
+Sachin : ""As the sum is 17, two numbers can be either (2,15), (3,14), (4,13), (5,12), (6,11), (7,10) or (8,9). Also, as none of them is a prime numbers pair, Prashant won't be knowing numbers either.""
+Prashant : ""Since Sachin is sure that both of us don't know the numbers, the sum must be one of the Possible Sum List. Further, as the product is 52, two numbers can be either (2,26) or (4,13). But if they were (2,26), Sachin would not have been sure in advance that I don't know the numbers as 28 (2+26) is not in the Possible Sum List. Hence, the two numbers are 4 and 13.""
+Sachin : ""As Prashant now knows both the numbers, out of all possible products - 30(2,15), 42(3,14), 52(4,13), 60(5,12), 66(6,11), 70(7,10), 72(8,9) - there is one product for which list of all possible sum contains ONLY ONE sum from the Possible Sum List. And also, no such two lists exist. [see table above for 17] Hence, two numbers are 4 and 13.""
+Nakul figured out both the numbers just as we did by observing the conversation between Sachin and Prashant.
+It is interesting to note that there are no other such two numbers. We checked all the possible sums till 500!!!",,"The numbers are 4 and 13.
+As Sachin is initially confident that they (i.e. he and Prashant) don't know the numbers, we can conclude that -
+1) The sum must not be expressible as sum of two primes, otherwise Sachin could not have been sure in advance that Prashant did not know the numbers.
+2) The product cannot be less than 12, otherwise there would only be one choice and Prashant would have figured that out also.
+Such possible sum are - 11, 17, 23, 27, 29, 35, 37, 41, 47, 51, 53, 57, 59, 65, 67, 71, 77, 79, 83, 87, 89, 93, 95, 97, 101, 107, 113, 117, 119, 121, 123, 125, 127, 131, 135, 137, 143, 145, 147, 149, 155, 157, 161, 163, 167, 171, 173, 177, 179, 185, 187, 189, 191, 197, ....
+Let's examine them one by one.
+If the sum of two numbers is 11, Sachin will think that the numbers would be (2,9), (3,8 ), (4,7) or (5,6).
+Sachin : ""As 11 is not expressible as sum of two primes, Prashant can't know the numbers.""
+Here, the product would be 18(2*9), 24(3*8 ), 28(4*7) or 30(5*6). In all the cases except for product 30, Prashant would know the numbers.
+- if product of two numbers is 18:
+Prashant : ""Since the product is 18, the sum could be either 11(2,9) or 9(3,6). But if the sum was 9, Sachin would have deduced that I might know the numbers as (2,7) is the possible prime numbers pair. Hence, the numbers must be 2 and 9."" (OR in other words, 9 is not in the Possible Sum List).
+- if product of two numbers is 24:
+Prashant : ""Since the product is 24, the sum could be either 14(2,12), 11(3,8 ) or 10(4,6). But 14 and 10 are not in the Possible Sum List. Hence, the numbers must be 3 and 8.""
+- if product of two numbers is 28:
+Prashant : ""Since the product is 28, the sum could be either 16(2,14) or 11(4,7). But 16 is not in the Possible Sum List. Hence, the numbers must be 4 and 7.""
+- if product of two numbers is 30:
+Prashant : ""Since the product is 30, the sum could be either 17(2,15), 13(3,10) or 11(5,6). But 13 is not in the Possible Sum List. Hence, the numbers must be either (2,15) or (5,6)."" Here, Prashant won't be sure of the numbers.
+Hence, Prashant will be sure of the numbers if the product is either 18, 24 or 28.
+Sachin : ""Since Prashant knows the numbers, they must be either (3,8 ), (4,7) or (5,6)."" But he won't be sure. Hence, the sum is not 11.
+Summerising data for sum 11:
+Possible Sum PRODUCT Possible Sum
+2+9 18 2+9=11 (possible)
+3+6=9
+3+8 24 2+12=14
+3+8=11 (possible)
+4+6=10
+4+7 28 2+12=14
+3+8=11 (possible)
+4+6=10
+5+6 30 2+15=17 (possible)
+3+10=13
+5+6=11 (possible)
+Following the same procedure for 17:
+Possible Sum PRODUCT Possible Sum
+2+15 30 2+15=17 (possible)
+3+10= 13
+5+6=11 (possible)
+3+14 42 2+21=23 (possible)
+3+14=17 (possible)
+6+7=13
+4+13 52 2+26=28
+4+13=17 (possible)
+5+12 60 2+30=32
+3+20=23 (possible)
+4+15=19
+5+12=17 (possible)
+6+10=16
+6+11 66 2+33=35 (possible)
+3+22=25
+6+11=17 (possible)
+7+10 70 2+35=37 (possible)
+5+14=19
+7+10=17 (possible)
+8+9 72 2+36=38
+3+24=27 (possible)
+4+18=22
+6+12=18
+8+9=17 (possible)
+Here, Prashant will be sure of the numbers if the product is 52.
+Sachin : ""Since Prashant knows the numbers, they must be (4,13).""
+For all other numbers in the Possible Sum List, Prashant might be sure of the numbers, but Sachin won't.
+Here is the step by step explanation:
+Sachin : ""As the sum is 17, two numbers can be either (2,15), (3,14), (4,13), (5,12), (6,11), (7,10) or (8,9). Also, as none of them is a prime numbers pair, Prashant won't be knowing numbers either.""
+Prashant : ""Since Sachin is sure that both of us don't know the numbers, the sum must be one of the Possible Sum List. Further, as the product is 52, two numbers can be either (2,26) or (4,13). But if they were (2,26), Sachin would not have been sure in advance that I don't know the numbers as 28 (2+26) is not in the Possible Sum List. Hence, the two numbers are 4 and 13.""
+Sachin : ""As Prashant now knows both the numbers, out of all possible products - 30(2,15), 42(3,14), 52(4,13), 60(5,12), 66(6,11), 70(7,10), 72(8,9) - there is one product for which list of all possible sum contains ONLY ONE sum from the Possible Sum List. And also, no such two lists exist. [see table above for 17] Hence, two numbers are 4 and 13.""
+Nakul figured out both the numbers just as we did by observing the conversation between Sachin and Prashant.
+It is interesting to note that there are no other such two numbers. We checked all the possible sums till 500!!!",GeminiPro,solutionSummary,"Okay, here is a summary and step-by-step breakdown of the reasoning used to solve the Sum and Product puzzle.
+
+**Summary:**
+
+The problem is solved by sequentially analyzing the statements made by Sachin and Prashant. Each statement reveals information that allows the participants (and us) to eliminate possibilities for the two unknown numbers. Sachin's first statement narrows down the possible sums. Prashant's statement, combined with the narrowed list of sums, allows him to identify the numbers based on the product he knows. Sachin's second statement confirms that only one initial pair (summing to the sum he knows) leads to a product that would allow Prashant to deduce the numbers. Nakul's statement confirms the uniqueness of the solution derived through this process. By simulating this deductive reasoning, the numbers are found to be 4 and 13.
+
+**Reasoning Steps:**
+
+1.  **Initial Setup:** Let the two unknown integers be `x` and `y`, both greater than 1. Brahma calculates `S = x + y` and tells Sachin, and `P = x * y` and tells Prashant.
+
+2.  **Analyze Sachin's First Statement:** ""Prashant, I don't think that we know the numbers.""
+    *   Sachin knows `S`. He considers all possible pairs `(a, b)` such that `a > 1`, `b > 1`, and `a + b = S`.
+    *   His statement means he is *certain* that Prashant cannot *already* know the numbers just from the product `P`.
+    *   This implies that for *every* pair `(a, b)` summing to `S`, the product `P = a * b` must have *more than one* possible factorization `(c, d)` (with `c, d > 1`) such that `c + d` *could* potentially be the sum `S`.
+    *   Crucially (as used in the solution), this eliminates sums `S` that can be expressed as the sum of two prime numbers. If `S = p1 + p2` (where p1, p2 are prime), Sachin couldn't be sure, because if the actual numbers *were* p1 and p2, Prashant (knowing `P = p1 * p2`) might potentially identify them if `p1 + p2` is the only plausible sum arising from the factors of `P`.
+    *   This step generates a list of ""Possible Sums"" that `S` could be (e.g., 11, 17, 23, 27...). Let's call this `List_S1`.
+
+3.  **Analyze Prashant's Statement:** ""Aha! Now I know the numbers.""
+    *   Prashant knows `P`. He considers all possible pairs `(c, d)` such that `c > 1`, `d > 1`, and `c * d = P`.
+    *   For each pair `(c, d)`, he calculates the potential sum `c + d`.
+    *   Prashant heard Sachin's first statement, so he knows the true sum `S` must be in `List_S1` (from Step 2).
+    *   Prashant can only deduce the numbers `(x, y)` if *exactly one* of the potential sums `(c + d)` calculated from the factors of `P` is present in `List_S1`.
+
+4.  **Analyze Sachin's Second Statement:** ""Oh, now I also know the numbers.""
+    *   Sachin knows `S`. He originally considered all pairs `(a, b)` summing to `S`.
+    *   He hears Prashant's statement and understands Prashant's logic (from Step 3).
+    *   Sachin simulates Prashant's reasoning for *each* of his initial candidate pairs `(a, b)` and their corresponding products `P = a * b`.
+    *   Sachin can only deduce the correct pair `(x, y)` if *exactly one* of his candidate pairs `(a, b)` results in a product `P` that would allow Prashant to uniquely determine the numbers (i.e., satisfies the condition in Step 3).
+
+5.  **Analyze Nakul's Statement:** ""Now I also know the numbers.""
+    *   Nakul heard the entire conversation but knew neither `S` nor `P` initially.
+    *   He performs the same deductions as outlined in Steps 1-4.
+    *   His ability to also find the numbers confirms that the entire deductive process leads to a *single, unique* pair `(x, y)`.
+
+6.  **Finding the Solution (Example Walkthrough for S=17):**
+    *   From Step 2, S=17 is a ""Possible Sum"" (17 cannot be written as the sum of two primes).
+    *   Sachin's candidate pairs for S=17 are: (2,15), (3,14), (4,13), (5,12), (6,11), (7,10), (8,9). Products: 30, 42, 52, 60, 66, 70, 72.
+    *   Prashant's logic (Step 3):
+        *   If P=30: Factors (2,15), (3,10), (5,6). Sums 17, 13, 11. Both 17 and 11 are in `List_S1`. Prashant is unsure.
+        *   If P=42: Factors (2,21), (3,14), (6,7). Sums 23, 17, 13. Both 23 and 17 are in `List_S1`. Prashant is unsure.
+        *   If P=52: Factors (2,26), (4,13). Sums 28, 17. Only 17 is in `List_S1` (28 = 5+23 = 11+17 etc, but the key is 28 is not in the initial `List_S1`). Prashant *knows* the numbers are (4,13).
+        *   (Checking other products for S=17 would show Prashant remains unsure).
+    *   Sachin's logic (Step 4): Knowing S=17, Sachin sees that only the pair (4,13) yields a product (P=52) for which Prashant can deduce the numbers. Therefore, Sachin concludes the numbers must be (4,13).
+    *   Since this works uniquely for S=17, Nakul can also deduce it.
+
+7.  **Conclusion:** The sequence of deductions logically constrains the possibilities until only the pair (4, 13) remains consistent with all statements. Therefore, the numbers are 4 and 13.",True

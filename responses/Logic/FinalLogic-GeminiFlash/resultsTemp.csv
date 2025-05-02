@@ -754,3 +754,1972 @@ Since abc=efg, abcdefg/d is a perfect square. 1*2*3*4*6*8*9=2^7*3^4, and d can b
 If d=2, the numbers 1, 3, 4, 6, 8, 9 can be made into 1*8*9=3*4*6=72, and we can have c=9, e=4: 9*2*4=72.
 If d=8, the numbers 1, 2, 3, 4, 6, 9 can be made into 1*4*9=2*3*6=36, but 36 is not divisible by 8.
 Therefore, the middle sportsman's number is 2.",GeminiFlash,basicprompt,,True
+22,"The Situation:
+There is an island with 10 inhabitants. One day a monster comes and says that he intends to eat every one of them but will give them a chance to survive in the following way:
+In the morning, the monster will line up all the people - single file so that the last person sees the remaining 9, the next person sees the remaining 8, and so on until the first person that obviously sees no one in front of himself. The monster will then place black or white hats on their heads randomly (they can be all white, all black or any combination thereof).
+The monster will offer each person starting with the last one (who sees everyone else's hats) to guess the color of his/her own hat. The answer can only be one word: ""white"" or ""black"". The monster will eat him on the spot if he guessed wrong, and will leave him alive if he guessed right. All the remaining people will hear both the guess and the outcome of the guess. The monster will then go on to the next to last person (who only sees 8 people), and so on until the end.
+The monster gives them the whole night to think.
+The Task:
+Devise the optimal strategy that these poor natives could use to maximize their survival rate.
+Assumptions:
+1) All the 10 people can easily understand your strategy, and will execute it with perfect precision.
+2) If the monster suspects that any of the people are giving away information to any of the remaining team members by intonation of words when answering, or any other signs, or by touch, he will eat everyone.
+3) The only allowed response is a short, unemotional ""white"" or ""black"".
+4) Having said that, I will add that you can put any value you like into each of these words. For example, ""white"" can mean ""my mother did my laundry"" and ""black"" can mean the guy in front of me is wearing a black hat.","1) First hint is an example. Here is a simple strategy that will guarantee safety to 50%. Guy #10 (when he guesses) says the color of the hat on guy #9. Thus #10 may die or may luck out, but #9 will save himself since he will know his hat color. Thus #8 helps #7, #6 helps number #5, and so on. You thus save numbers 9, 7, 5, 3, and 1, or half the people. But you can do a lot better than that.
+2) The best strategy will save a minimum of 90% of the people.","Here it is: The first guy to guess (guy #10) will be the only one to assume the following value for the words ""white"" and ""black"": The answer ""black"" will mean that there are an odd number of black hats that he sees. The answer ""white"" will mean that there are an odd number of white hats that he sees. This way one by one all the other 9 people will know the color of their hats.
+Let us say that guy #10 (first to speak, and sees the hats of the remaining 9) says ""white"". That should mean to everybody else that he sees an odd number of white hats. At this time guy #9 will either be wearing a white or a black hat. If he is wearing a white hat he will only see an even number of white hats, and since guy #10 said that there is and odd number of white hats, guy #9 will know that he is wearing white and will say it. But if guy #9 is wearing a black hat, he will see an odd number of white hats (just like #10 did), and thus will know that he is wearing a black hat and will say it. No matter what #9 answers, guy #8 (who heard guy #10 and guy #9) can now easily incorporate the color of hat on guy #9 into the original answer of guy #10. This will allow #8 to know if he should see an odd or even number of white hats in front of him to determine his own hat color. The same thing repeats with #7-1. And they all get it right except of course #10, though he may get lucky.",GeminiFlash,basicprompt,,True
+23,"""Congratulations, Great-Aunt Nora!""  The voice of Victor Summ, her eldest nephew, was tired, but exultant.  Her older sister was the first grandparent among the five Shekrie siblings.
+""Let me put you on speaker-phone, Vic.  Corman is here.""  Nora had little doubt that her romance with a math teacher was the reason Victor, a research statistician, called personally, instead of letting his mother handle the news.
+Nora beamed at Corman as she hit the button.  ""You're on, 'Daddy'.  Mother and children are doing fine?""
+""Cogita's doing great, although we had a bit of a shuffle in the maternity ward.  Hi, Professor diNoni -- you'll love this one.""
+""Hi, Victor.  I've heard more about you than ... no, you've known your aunt longer.  You probably know how much she's talked about you.""
+""It runs in the family,"" he smiled across two time zones.  ""Doc Matter, our OB, said it was the strangest coincidence she's seen in a decade.  The kids were born 10, 20, 30, minutes apart, up to an interval of an hour-fifty ..."" Vic's voice trailed off.
+""Except for one interval?""  Corman filled in.
+""Right.  She said it was really weird, watching the time.  She said Adele was born at six sharp, Brand at 6:10, and they just kept hitting 10-minute multiples, until Elana came out at 7:50.""
+Nora yelped.  ""You had *eleven*,"" then her left brain caught up, ""no, just the quintuplets.  Sorry.""
+""De nada, Aunt Nora.  But that's where the problems started: they had the birth order mixed up.  Someone had assumed we'd named them in order, with Brand, Caleb, and Derec in between.  I pointed out that they'd managed to get all five wrong, and then Cogita wanted me.""
+""So they got it sorted out?""
+""Not quite.  The OB saw to the post-delivery stuff while we beamed at each other.  Then a nurse came in and said they figured it out: we'd named them in alphabetical order, but by the last letter of their names.  They had all five wrong again!  Heck, even if we'd done it in reverse alphabetical order, either way, they would have had all five wrong!""
+""So what did they do?""
+""Doc Matter said she may be getting gray, but she wasn't going to sign the certificates until they were all correct.  She dictated the birth times and told them to match them with the weight and length stats to sort things out -- and if they couldn't, they shouldn't bother reporting for work after tonight.""
+He took a cleansing breath.  ""On a happier note, we'd like the blood aunts and uncles to serve as godparents, since there are five of you.  Would you stand for Caleb, Aunt Nora, since the two of you have the same birth position in the family?""
+""I'd love to.  And if anyone in this family declines, I'll have Corman make them figure out the birth order.  Do you have it yet, dear?""
+Vic broke in, ""He doesn't have enough information yet, and I can hear you smirking at him.""
+Corman held up a hand to keep her quiet.  ""Since I don't know much about Nora's birth order, I'll have to make this a bigger question.  How far apart were Brand and Elena born?""
+""Fifty minutes, on their cute little noses.""
+""Got it.""  Corman recited the birth order, complete with times.  Can you do the same?","There is only one way (plus a mirror-image reflection) to arrange ten different intervals in a span of 11 ten-minute units.  If you need help, search for ""Optimal Rulers"".","6:00        Derec
+6:10        Adele        0:10 later
+6:40        Brand        0:30 later, 0:40 after Derec
+7:30        Elena        0:50 later, 1:30 after Derec, 1:20 after Adele
+7:50        Caleb        0:20 later, 1:50 after Derek, 1:40 after Adele, 1:10 after Brand.
+The missing interval is one hour.
+Method:
+Number the ten time points from 0 to 11 (6:00 to 7:50).  The only ways to arrange them to get ten different intervals for the births are events at points 0, 1, 4, 9, and 11 and the reverse: 11, 10, 7, 2, and 0.  The clue gives three birth times at 6:00, 6:10, and 7:50, so we have the first arrangement.
+The clues about alphabetic and reverse-alphabetic order giving five wrong placements mean that Caleb and Derek were not born 2nd, 3rd, or 4th; Adele and Elena were not born first or last, and Brand was not born 2nd or 4th.
+The 50-minute interval given at the end means puts Brand and Elena into the 3rd & 4th spots, which leaves 2nd as the place for Adele.
+Finally, we have Caleb and Derec to fill the first and last spots.  Caleb and Nora share a birth position.  The first paragraph mentions that Cogita is Nora's older sister, so Caleb cannot be the firstborn.",GeminiFlash,basicprompt,,True
+24,"Seven horses in a farm in Kentucky,
+Of three blacks, the oldest is a daddy;
+Of two browns, the 3 year old male is called BILLY,
+And the horse SNOWY is white as a lily.
+Of two half-sister mares, the black won in the Derby,
+She's a shade lighter than her daughter, BEAUTY;
+BEAUTY and her cousin LUCKY, both half the age of their auntie,
+But faster than either ROCKY or SUNNY.
+Three of the horses are ready for the Derby,
+A horse must be three years to be an entry;
+Maybe this year the farm gets lucky,
+Their stallion's loss last year was a pity.
+CHALLENGE: Describe the horse that lost in last year's Derby.","For purposes of this riddle the following terms are defined as:
+Mare- female horse
+Stallion- mature male horse
+Derby- a race for three year old horses.","SNOWY, a 4 year old male white horse lost last year.
+The Derby is for three year old horses. Therefore only a current four year old horse could have lost last year.
+SNOWY is the only horse which could have been three last year (four this year).
+The farm is preparing three of the seven horses for this years Derby. There must therefore be at least three 3-year old horses among the seven. BILLY is 3-years old. Necessarily, BEAUTY and her cousin LUCKY must be 3 years old both. (They are of the same age).
+Beauty's mom could not be three because she won in the Derby before. The oldest black is even older than BEAUTY's mom.
+BEAUTY's aunt could not be three. If she were, then SNOWY must also be three to complete the three entries this year. This would mean that no horse would be four years old as BEAUTY and LUCKY would be one and a half years old. BEAUTY's mom won in the DERBY as a three year old, she could not win and lose at the same time. (The riddle suggests that the farm did not win last year so the mom must be over 5 years old).
+In sum, if BILLY, BEAUTY, and LUCKY are three years old, their aunt must be six. BEAUTY's mom must be five or more. The oldest black must be older than the black mom. Only SNOWY could be four this year.
+SNOWY is white (given), 4 years as deduced, and male from the fact that it was a stallion which lost last year.
+The names of BEAUTY's mom and aunt and that of the oldest black are immaterial. The same is true with the color of lucky.",GeminiFlash,basicprompt,,True
+25,"There is a 10-digit number, represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) A + D = a square number
+2) G + J = a triangle number
+3) B + I = an even number
+4) E * F = an odd number
+5) C * H = a prime number
+6) A / G = G / C
+7) E + I = B + H","A triangle number can be expressed as the sum of the numbers 1 to n, for any integer value of n.  Therefore the triangle numbers are 1, 3, 6, 10, 15, 21, 28, ...","4615972308
+For the product of two numbers to be a prime number (clue #5), one of those two numbers must be 1.  Therefore, either C or H must be 1.
+To achieve the required proportion (clue #6), the numerals [AGC] must be one of the following combinations:  931 or 421 or 842.
+If [AGC] = 842, then D would have to be 1 (clue #1).  Since either C or H must be 1, then D can not be 1.  Since D can not be 1, then A can not be 8.  Therefore, [AGC] can not be 842.  The only remaining possibilities for [AGC] are 931 and 421.  In either case, C = 1.
+If [AGC] = 931, then D must be either 0 or 7 (clue #1) and J must be either 0 or 7 (clue #2).  Therefore, between them, D and J must use 0 and 7.  E and F must both be odd (clue #4).  However, four of the odd numerals would already be assigned (A = 9, G = 3, C = 1, either D or J = 7).  Therefore, [AGC] can not be 931.  This means that [AGC] must be 421.  Therefore, A = 4 and G = 2.
+Since G = 2, then J = 8 (clue #2).  J can not be 1 or 4, since those two numerals are now assigned.
+The only remaining letters that can be assigned to 6 are B and I.  D can not be 6, as it would not produce a square number (clue #1).  Neither E nor F can be 6, since that would not produce an odd number (clue #4). H can not be 6, as it would not produce a prime number (clue #5).  Since either B or I must be 6, then 6 must be paired with 0 (clue #3), as the other even numerals have now been assigned.
+Since B and I share 0 and 6, then D = 5 (clue #1).
+Since B and I share 0 and 6, then E and H must also be separated by 6 (clue #7).  The only remaining numerals that satisfy this requirement are 3 and 9.  This means that F = 7.  This sets H = 3 and  E = 9, which then sets B = 6 and I = 0.",GeminiFlash,basicprompt,,True
+26,"Did you know that the mango is one of the world's most popular fruits? The mango is grown in North, South and Central America, the Caribbean, south and central Africa, as well as its native southern and south-east Asia.
+The mango is also packed with vitamins A, B and C.
+While eating a mango the other day, I started thinking about the ABC's. Then I remembered the set of 5-sided alphabet pyramids I had as a child.
+Here are some 5-letter words that can be spelled with just 5 of my pyramids:
+BELOW
+CANDY
+FORTY
+HELIX
+JABOT
+LEMON
+LIGHT
+MANGO
+OCHRE
+PEACH
+QUEST
+QUICK
+VIEUX
+Using these words, can you figure out which letters appear on each pyramid?","Start with MANGO and LEMON; because they share three letters, you can start off with a pretty strong reduction and only have to consider how the other two pairs must be arranged","Let's start with the word MANGO, and assign a number to each pyramid.
+1: M
+2: A
+3: N
+4: G
+5: O
+The word LEMON shares 3 letters with MANGO, so the L and E must go with the A and G, in some order. Because of the word PEACH, the E and A cannot be on the same pyramid, so the E must be on pyramid 4, while the L is on pyramid 2.
+Because of the word OCHRE, neither the C or H of PEACH can be on the same pyramid with the O, so the P must be on pyramid 5.
+Because of the word CANDY, the C cannot be on the same pyramid as the N, so it is with the M, leaving the H with the N. The Y cannot be with the O (FORTY), so it must be with the G, and the D is with the O. The R must then be on pyramid 2, to complete OCHRE.
+1: M, C
+2: A, L, R
+3: N, H
+4: G, E, Y
+5: O, P, D
+The F and T of FORTY must be on pyramids 1 and 3, but the H and T cannot be on the same pyramid (LIGHT), so the T is on pyramid 1 and the F is on pyramid 3. This means that the I must be on pyramid 5, in order to complete LIGHT.
+1: M, C, T
+2: A, L, R
+3: N, H, F
+4: G, E, Y
+5: O, P, D, I
+The J and B of JABOT must be on pyramids 3 and 4, but the B cannot be with the E, or else one cannot spell BELOW. Also, the W must be on pyramid 1.
+1: M, C, T, W
+2: A, L, R
+3: N, H, F, B
+4: G, E, Y, J
+5: O, P, D, I
+The X in HELIX must be on pyramid 1, so we now have all the letters on that pyramid. There is only one letter left on pyramid 3, and it must be in VIEUX, QUEST and QUICK, so it must be the U. The V from VIEUX must therefore be on pyramid 2.
+The Q cannot be on the same pyramid as the I, in order to spell QUICK, so it is also on pyramid 2. The S cannot be on the same pyramid as the E (QUEST), so is therefore on pyramid 5, and the K is the last letter on pyramid 4.
+1: M, C, T, W, X
+2: A, L, R, V, Q
+3: N, H, F, B, U
+4: G, E, Y, J, K
+5: O, P, D, I, S",GeminiFlash,basicprompt,,True
+27,"You roll five dice. The computer calculates the score. Your job is to find out what the computer based the score on.
+If you roll 5, 4, 6, 3, and 5, the score is 10.
+If you roll 1, 3, 3, 4, and 2, the score is 4.
+If you roll 1, 6, 2, 6, and 4,the score is 0.
+What is the method?",Think of the title. The score is never odd. Picture the dice in your head.,"Only the dice that have a centre dot are counted (3 and five). Count the number of dots around the centre dot. These ""petals"" are the score. A five on the die gets a score of 4, and a three on the die gets a score of 2.",GeminiFlash,basicprompt,,True
+28,"Carl, Draco, Emma, Ivy, June, & Xavior are playing a game with you in which you have to guess their roles in exactly 16 statements.
+The roles are:
+Normal - Has no abilities
+Liar - Knows all roles & has to lie
+Detective - Knows all roles
+Switcher - Switches 2 roles after the first statement (cannot switch themselves)
+Cupid - Pairs 2 players and lets them see each other's roles (cannot pair themselves)
+Spy - Knows who was switched
+The following 16 statements were made:
+Carl is not Cupid - June
+Ivy is the Liar - Carl
+I know someone's role - Draco
+I know the Switcher - Xavior
+Ivy is not Normal - Emma
+I wasn't switched - Ivy
+Emma knows Draco's role - June
+Xavior knows who was switched - Carl
+Emma & I are not the Spy - Draco
+Draco or June is Normal - Xavior
+I don't know the Spy - Emma
+I'm the Spy - Ivy
+The Cupid wasn't switched - June
+Xavior isn't Cupid - Carl
+I don't know the Detective - Draco
+I'm not the Spy - Xavior
+Who is who?
+*The Detective/Liar knows who was switched; if the Detective/Liar is switched then only the new Detective/Liar is updated","Step 1: Draco, Xavior, & Emma are telling the truth
+""Ivy is the Liar - Carl""
+If Carl is telling the truth then Ivy is lying, otherwise Carl is lying
+Since Carl or Ivy is lying & there is only 1 liar, the other are honest","Normal=Draco
+Liar=Ivy
+Detective=Xavior
+Switcher=Emma
+Cupid=June
+Spy=Carl
+Explanation:
+Step 1: Draco, Xavior, & Emma are telling the truth
+""Ivy is the Liar - Carl""
+If Carl is telling the truth then Ivy is lying, otherwise Carl is lying
+Since Carl or Ivy is lying & there is only 1 liar, the other are honest
+Step 2: June is telling the truth (can't prove the 1st statement yet)
+""Ivy is the Liar - Carl""
+If Carl is telling the truth then Ivy is lying, if Carl is lying then Carl is lying
+However, since June is the 1st one to talk, June could have been swapped and started as the liar
+Step 3: Emma is paired
+""Emma knows Draco's role - June""
+This leaves 5 scenarios:
+1. Emma is the Detective & is paired with June
+2. June is Cupid & paired Draco & Emma
+3. Emma is the Liar & is paired with June
+4. Emma is the Liar & June is the Detective
+5. June is lying
+Statements 3-5 can't be true since Emma & June are telling the truth; therefore Emma is paired with Draco or June
+Step 4: Emma isn't the Cupid or Normal
+""Cupid - Pairs 2 players and lets them see each other's roles (cannot pair themselves)""
+Cupid can't pair themselves
+""Draco or June is Normal - Xavior""
+Xavior is telling the truth; therefore Emma can't be Normal
+Step 5: Emma isn't the Detective or Spy:
+""I don't know the Spy - Emma""
+If Emma was the Detective or Spy, then Emma would know the Spy
+This leaves Emma with Switcher
+Step 6: June is Cupid & Draco is Paired
+""Emma knows Draco's role - June""
+We had 2 possible scenarios:
+1. Emma is the Detective & is paired with June
+2. June is Cupid & paired Draco & Emma
+However, Emma isn't the detective; therefore Draco & Emma are paired by June the Cupid
+Step 7: Draco = Normal
+""Draco or June is Normal - Xavior""
+June is Cupid & Xavior is telling the truth; therefore Draco is Normal
+Step 8: The final 3
+""I'm not the Spy - Xavior""
+This leaves the Detective.
+""Xavior knows who was switched - Carl""
+This is true, which means Ivy is the liar & Carl is the Spy.
+Ivy & Carl were swapped",GeminiFlash,basicprompt,,True
+29,"One day, an eccentric billionaire decided to give a destitute man a break. But not a total break, as we shall see. So, he invites him into a room in his mansion with seven doors. There is also a large-screen projector that projects the following five images, repeatedly, one at a time:
+A human brain, Earth, the incomplete phrase: 'Fair and ____,' the letters AZCONMUT and a cheese sandwich on plain white bread with the edges perfectly cut off.
+The poor man was allowed an entire day to study the images, after which he would have to choose the door that corresponded to the commonality of the images. The next day the man walked through the correct door, and the billionaire made him rich. What door did the man choose?","Take a snack break, have one of the images.","The man chose door number FOUR. Here's why:
+The image of the human brain made the man think of 'four corners of the mind.'
+He recognized the capital letters AZCONMUT to be the abbreviations of the 'Four corner states' Arizona, Colorado, New Mexico, and Utah. He completed the phrase
+'Fair and ____' with the word SQUARE, which also has also four corners. When he got hungry, he ordered the same sandwich in the last image. But instead of eating right away, he studied it, until he got the point that it too had four corners. Thus, the poor guy walked into a mansion poorer than poor, and walked out with a cheese sandwich, and enough dough to buy a small country. What he actually did with the money is anybody's guess.",GeminiFlash,basicprompt,,True
+30,"A car thief, who had managed to evade the authorities in the past, unknowingly took the automobile that belonged to Inspector Detweiler.  The sleuth wasted no time and spared no effort in discovering and carefully examining the available clues.  He was able to identify four suspects with certainty that one of them was the culprit.
+The four make the statements below.  In total, six statements are true and six false.
+Suspect A:
+1. C and I have met many times before today.
+2. B is guilty.
+3. The car thief did not know it was the Inspector's car.
+Suspect B:
+1. D did not do it.
+2. D's third statement is false.
+3. I am innocent.
+Suspect C:
+1. I have never met A before today.
+2. B is not guilty.
+3. D knows how to drive.
+Suspect D:
+1. B's first statement is false.
+2. I do not know how to drive.
+3. A did it.
+Which one is the car thief?","Consider that six statements are false. A's first statement and C's first statement contradict each other.  One of them is false.  C's and D's  contradict each other.  One of them is false.  Therefore, there are four additional false statements.","Consider that six statements are false. A's first statement and C's first statement contradict each other.  One of them is false.  C's and D's  contradict each other.  One of them is false.  Therefore, there are four additional false statements.
+Assume A is guilty.  If so, A's second statement, B's second statement, and D's first statement are the additional false statements.
+Assume D is guilty.  If so, A's second statement, B's first statement, and D's third statement are false.  This also only makes five false statements.  D did not do it.
+Assume C did it.  If so, A's second statement, D's first and third statements are false.  This again, makes only five false statements.
+After ruling out suspects A, C and D, B is the culprit.  B's third statement, C's second statement, and D's first and third statements are the additional false statements.  This adds up to six.",GeminiFlash,basicprompt,"Let the four suspects be A, B, C, and D. Let G_X denote the proposition that suspect X is guilty. We are given that exactly one of G_A, G_B, G_C, G_D is true.
+Let K be the proposition ""The car thief did not know it was the Inspector's car."" The problem states that the thief ""unknowingly took the automobile"", which means K is a true statement about the thief. Since there is only one thief, K is a universally true proposition in this scenario. So, T(K) = True.
+
+Let's write down the statements and their truth values:
+Suspect A:
+A1: C and I have met many times before today. Let this be M_CA. T(A1) = M_CA.
+A2: B is guilty. T(A2) = G_B.
+A3: The car thief did not know it was the Inspector's car. T(A3) = K.
+
+Suspect B:
+B1: D did not do it. T(B1) = ~G_D.
+B2: D's third statement is false. T(B2) = ~T(D3).
+B3: I am innocent. T(B3) = ~G_B.
+
+Suspect C:
+C1: I have never met A before today. T(C1) = ~M_CA.
+C2: B is not guilty. T(C2) = ~G_B.
+C3: D knows how to drive. Let this be H_D. T(C3) = H_D.
+
+Suspect D:
+D1: B's first statement is false. T(D1) = ~T(B1).
+D2: I do not know how to drive. T(D2) = ~H_D.
+D3: A did it. T(D3) = G_A.
+
+We are given that T(K) = True. Therefore, A3 is a True statement. T(A3) = T.
+
+Let's analyze the logical relationships between the statements:
+1. T(A2) = G_B, T(B3) = ~G_B, T(C2) = ~G_B. Note that B3 and C2 are the same statement.
+2. T(B1) = ~G_D, T(D1) = ~T(B1) = ~ (~G_D) = G_D. B1 and D1 are contradictory; one is True and one is False.
+3. T(D3) = G_A, T(B2) = ~T(D3) = ~G_A. B2 and D3 are contradictory; one is True and one is False.
+4. T(C3) = H_D, T(D2) = ~H_D. C3 and D2 are contradictory; one is True and one is False.
+5. T(A1) = M_CA, T(C1) = ~M_CA. A1 and C1 are contradictory; one is True and one is False.
+
+We have 12 statements in total. Six are True and six are False.
+Statements involved in pairs of contradictions are: B1, D1, B2, D3, C3, D2, A1, C1. These 8 statements form 4 pairs, each contributing one True and one False statement. So, these 8 statements account for 4 True and 4 False statements in total.
+
+The remaining 4 statements are A2, A3, B3, C2. These must account for the remaining 2 True and 2 False statements.
+A2: G_B
+A3: K (We know T(A3) = T)
+B3: ~G_B
+C2: ~G_B
+Note B3 and C2 are the same statement. Let's call the truth value V_B3C2.
+The statements are {A2, A3, B3/C2}. Their truth values are {T(A2), T(A3), V_B3C2}.
+T(A2) = G_B
+T(A3) = T
+V_B3C2 = ~G_B
+
+We need this set of statements to contain 2 True and 2 False values among A2, A3, B3, C2.
+Since B3 and C2 are the same statement, they have the same truth value (V_B3C2).
+If G_B is True: T(A2)=T, V_B3C2=F. The truth values are {T, T, F, F} for {A2, A3, B3, C2}. This is 2 True and 2 False, which is consistent.
+If G_B is False: T(A2)=F, V_B3C2=T. The truth values are {F, T, T, T} for {A2, A3, B3, C2}. This is 3 True and 1 False, which is NOT consistent with needing 2 True and 2 False from this group.
+
+Therefore, it must be that G_B is True.
+This means B is the car thief.
+
+Let's verify this solution by checking if the truth count works out with G_B = True and K = True.
+If G_B is True, then G_A, G_C, G_D must be False (since only one person is guilty).
+K is True.
+
+Truth values determined by guilt and K:
+A2 (G_B): T
+A3 (K): T
+B3 (~G_B): F
+C2 (~G_B): F
+B1 (~G_D): ~F = T
+D1 (G_D): F (Consistent with B1)
+B2 (~G_A): ~F = T
+D3 (G_A): F (Consistent with B2)
+
+Definite truth values so far:
+A2 (T), A3 (T), B1 (T), B2 (T), B3 (F), C2 (F), D1 (F), D3 (F).
+This gives 4 True and 4 False statements.
+
+The remaining statements are A1 (M_CA), C1 (~M_CA), C3 (H_D), D2 (~H_D).
+As noted before, A1 and C1 are contradictory, so one is True and one is False.
+C3 and D2 are contradictory, so one is True and one is False.
+These 4 statements contribute 2 True and 2 False statements.
+
+Total True statements = (T(A2)+T(A3)+T(B1)+T(B2)) + (one of A1/C1) + (one of C3/D2) = 4 + 1 + 1 = 6.
+Total False statements = (T(B3)+T(C2)+T(D1)+T(D3)) + (one of A1/C1) + (one of C3/D2) = 4",True
+31,"Stacey's class picture has 35 photos arranged in a 7 x 5 grid.  The photos in the top row are numbered 1 through 7 from left to right, with the photos in the remaining rows similarly numbered.  Given the following clues (bordering includes horizontal, vertical, and diagonal), where is Stacey's picture?
+X X X X X X X (1 - 7)
+X X X X X X X (8 - 14)
+X X X X X X X (15 - 21)
+X X X X X X X (22 - 28)
+X X X X X X X (29 - 35)
+1) Stacey and her two best friends, Rhonda and Teresa, are located along a straight line (horizontally, vertically, or diagonally).  However, Stacey does not border either Rhonda or Teresa.
+2) The sum of the three positions (Stacey, Rhonda, and Teresa) is a prime number.
+3) There are 18 boys and 17 girls.
+4) Boys are not located at positions that are square numbers or cube numbers.
+5) Girls are not located at positions that are prime numbers.
+6) The sum of the positions where boys are located is less than the sum of the positions where girls are located.
+7) There are no more than four girls in any row.
+8) There are at least two girls in each column.
+9) There are no more than three girls in any diagonal.","Boys are located at the following positions (clue 5): 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, and 31.  Girls are located at the following positions (clue 4): 1, 4, 8, 9, 16, 25, and 27.
+","A) Boys are located at the following positions (clue 5): 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, and 31.  Girls are located at the following positions (clue 4): 1, 4, 8, 9, 16, 25, and 27.
+B) A boy must be at position 33 (clue 9).  Girls must be at positions 10, 24, 12, and 26 (clue 8).
+C) Boys must be at positions 14, 22, and 28 (clue 7).  A boy must be at position 32 (clue 9).
+D) Two boys still need to be placed.  To satisfy clue 9, they must be among the following three positions: 6, 18, and 30.  The summation of all positions (1 through 35) is 630.  To satisfy clue 6, the sum of the positions for boys must be less than one-half of 630, or less than 315.  The 15 boys already placed have a position sum of 289.  To satisfy clue 6, the remaining two boys must add no more than 25.  This means that the last two boys must be placed at positions 6 and 18, producing a total of 313.  Girls occupy the remaining positions (15, 20, 21, 30, 34, and 35).
+Step A       Step B       Step C       Step D
+GBBGBxB      GBBGBxB      GBBGBxB      GBBGBBB
+GGxBxBx      GGGBGBx      GGGBGBB      GGGBGBB
+xGBxBxx      xGBxBxx      xGBxBxx      GGBBBGG
+xBxGxGx      xBGGGGx      BBGGGGB      BBGGGGB
+BxBxxxx      BxBxBxx      BxBBBxx      BGBBBGG
+Stacey, Rhonda, and Teresa occupy positions that sum to a prime number (clue 1).  The only sets of three positions that sum to a prime number are:
+8, 9, 12 (sum 29)
+9, 10, 12 (sum 31)
+Per clue 1, Stacey does not border either Rhonda or Teresa.  With either set, Stacey is at position 12.",GeminiFlash,basicprompt,,True
+32,"These five businessmen represented different companies at a recent trade fair. Unfortunately, the hotel they were all due to stay in had accidentally double booked their rooms. They tried other hotels in the area, but all were fully booked. Consequently, they all agreed to share the only two rooms available in the hotel - one twin and one triple.
+From the clues, can you work out each man's name, company and official title?
+1. When the five men realized their dilemma, they drew straws to see who would share with whom. The outcome for four of them was that the CEO shared with the businessman from ABM Inc. and Edgar shared with the Developer.
+2. Alan does not work for Reed Right and is not the Director. The Director does not work for Lantel or Blue Teeth.
+3. Neither Clarkson nor Grimaldi works for Reed Right. Grimaldi is either the IT Analyst or the CEO.
+4. The businessman from Reed Right did not share a room with Thomas.
+5. Clarkson, who does not work for Lantel, shared with either Thomas or Grimaldi but not both.
+6. Edgar's surname is either Casson or Graves. Edgar did not share with Carl.
+7. The businessman from Chiptech shared with the businessman from Lantel.
+8. The CEO shared with the IT Analyst.
+9. Casson works for either Blue Teeth or Chiptech.
+10. Neither Joshua nor Alan works for ABM Inc.
+11. Fielder shared with the Director.
+12. The Accountant from Blue Teeth shared with the Developer.
+First names: Alan, Carl, Edgar, Joshua, Thomas.
+Last names: Casson, Clarkson, Fielder, Graves, Grimaldi.
+Company: ABM Inc., Blue Teeth, Chiptech, Lantel, Reed","To solve this teaser, you first need to determine who shared which room with whom","First Name, Last Name, Company, Position:
+Carl Grimaldi, ABM Inc., IT Analyst
+Edgar Casson, Chiptech, Director
+Joshua Graves, Reed Right, CEO
+Alan Clarkson, Blue Teeth, Accountant
+Thomas Fielder, Lantel, Developer
+To solve this teaser, you first need to determine who shared which room with whom. Three delegates shared the triple and two shared the twin. The CEO shared with the businessman from ABM in one room and Edgar shared with the Developer in the other (1). Since Grimaldi is either the IT Analyst or the CEO (3) and the CEO shared with the IT Analyst, Grimaldi is in the same room as whoever is the CEO, IT Analyst and ABM delegate although Grimaldi could have been one of these people. Edgar did not share with Carl (6) so Carl is in the same bedroom as, and possibly is, the CEO, IT Analyst, Grimaldi and/or the ABM delegate. Grimaldi and Thomas were in different rooms so Thomas shared a room with Clarkson (5) and the Reed Right delegate was in a different room to Thomas. At this stage we know:
+Room 1
+CEO
+IT Analyst
+ABM delegate
+Grimaldi
+Carl
+Reed Right delegate
+Room 2
+Edgar
+Developer
+Thomas
+Clarkson
+Since the Chiptech delegate shared with the Lantel delegate (7), both of these must have been in room 2 otherwise there would be four delegates in room 1 which is not possible.
+Now this has been ascertained, the puzzle can be solved:
+The CEO shared with the IT Analyst so the IT Analyst must work for ABM (Clues 1 and 8) so the CEO must work for Reed Right. Since Grimaldi does not work for Reed Right, he must be the IT Analyst. Clarkson, Fielder and Casson are in room 2 so the CEO must be Graves. Graves is not Edgar (1), Thomas (4), Carl (IT Analyst) or Alan (2) so must be Joshua. Clarkson is not Thomas (5), Edgar (6), Carl or Joshua (in room 1) so must be Alan. The Director does not work for Lantel or Blue Teeth (2), Reed Right or ABM (room 1) so must work for Chiptech. This is not Graves or Grimaldi (room 1), Clarkson (2) or Fielder (11) so must be Casson. Since Graves; first name is Joshua, Casson must be Edgar (6). Alan Clarkson does not work for Reed Right or ABM (room 1); Lantel (5) or Chiptech so must work for Blue Teeth. Since he is not the Developer (12) he must be the Accountant. This leaves Thomas Fielder who is the Developer for Lantel.",GeminiFlash,basicprompt,,True
+33,"Here's what you have:
+-Two 8-liter jugs, filled with water
+-One 3-liter jug, empty
+-Four infinite size, empty pools
+Here's what your objective is:
+Fill each of the four pools with exactly 4 liters of water.
+Here are your constraints:
+-You have nothing else at your disposal.
+-There is no other water aside from the two 8-liter water filled jugs.
+-Once water is poured into any of the 4 pools it cannot be removed from there.
+-The jugs are not symmetric so you cannot measure amount by eye or judge based on shape.","I am not sure how to help you :). I solved this in 24 steps (you may have more or less). It helps to label the jugs and pools, and then draw. Oh, main key, try to work backwards, from filled pools, and see what final steps are even possible.","It's not short but it's right - use a piece of paper and follow the steps using A, B, C and pools. Change the quantities in each as you complete each step - it is worth it to see it come out right.
+Lets label the jugs.
+Jug A - first 8-liter
+Jug B - second 8-liter
+Jug C - 3-liter.
+The four infinites are pool 1, pool 2, pool 3, and pool 4.
+1. Jug A to Jug C
+2. Jug C to pool 1
+3. Jug A to Jug C
+4. Jug A to pool 2
+5. Jug C to Jug A
+6. Jug B to Jug C
+7. Jug C to Jug A
+8. Jug B to Jug C
+9. Jug C to Jug A
+At this point, we have:
+Jug A - 8
+Jug B - 2
+Jug C - 1
+Pool 1 - 3
+Pool 2 - 2
+Pools 3&4 - empty
+10. Jug C to pool 3
+11. Jug B to Jug C
+12. Jug A to Jug C
+13. Jug C to Jug B
+14. Jug A to Jug C
+15. Jug C to Jug B
+16. Jug A to Jug C
+17. Jug A to pool 4
+At this point, we have:
+Jug A - 0
+Jug B - 6
+Jug C - 3
+Pool 1 - 3
+Pool 2 - 2
+Pool 3 - 1
+Pool 4 - 1.
+18. Jug C to Jug B
+19. Jug C to pool 1
+20. Jug B to Jug C
+21. Jug C to pool 3
+22. Jug B to Jug C
+23. Jug C to pool 4
+24. Jug B to pool 2
+... And we end up with the desired result:
+Jug A - 0
+Jug B - 0
+Jug C - 0
+Pool 1 - 4
+Pool 2 - 4
+Pool 3 - 4
+Pool 4 - 4
+Tough, but workable.",GeminiFlash,basicprompt,,True
+34,"Patrice and seven of her friends organized the Ultimate Table Tennis Challenge to determine who the best Ping-Pong player among them was. The challenge consisted of three rounds of singles matches (two players competing per match). In each round, the first player to win FIVE games won the match and eliminated the opponent from the competition. The winners of the four first round matches advanced to the second round and the two second round winners advanced to the championship match. Each match was played at a different location, including the Beachcomber Swim Club. All first round matches were played on outdoor tables, both second round locations were indoor tables and the final round was played in the table tennis stadium at the New York Athletic Club. No two people won the same number of games, so players eliminated in the same round were ranked by the total number of games won. Identify each competitor's final ranking (first through eighth), full name (one last name is Chang), and the total number of games he or she won. In addition, figure out each location of each match, the competitors and their scores.
+1. The winner of the match at the Southville YMCA lost at least three games on the indoor table in Uncle Phil's basement before meeting McNeilly in the finals.
+2. The first round opponent of the eventual champion was neither Fitzroy (who lost in the first round) nor the person who lost at the Brooklyn Table Tennis Academy.
+3. The championship round took the maximum possible number of games in a match.
+4. The seven matches, in some order, were: Jamie's first round victory, the match in which White won exactly 2 games, the match at Eastlake Municipal Park, the match that Lottie lost, the only match Diaz played, the match Toskhaya lost and the match in which somebody won exactly one game.
+5. Bill never played Dave.
+6. Averson didn't play Jamie in the first round.
+7. A total of 55 games were played in the whole challenge, 30 of which were the first round matches.
+8. McNeilly, who isn't Lottie or Kristin, never played Samuel or Gianelli.
+9. The four who advanced to the second round were: White, Lottie, the person who played Regina in the first round and someone whose indoor match was at the Islip Town Hall.
+10. McNeilly's opponent in the first round won more games than Diaz.
+11. Kristin never played at the Southville YMCA.
+12. Regina won more games than the person eliminated at Eastlake Municipal Park.
+13. Kristin won more games than Bill, who won at least five.
+14. In the first round, Dave didn't play the eventual champion","Last names: Averson, Chang, Diaz, Fitzroy, Gianelli, McNeilly, Toskhaya and White","RANKING/ PLAYER/ GAMES
+1st - Jamie McNeilly, 15 games
+2nd - Lottie Averson, 14 games
+3rd - Kristin Toskhaya, 9 games
+4th - Bill White, 7 games
+5th - Patrice Chang, 4 games
+6th - Regina Diaz, 3 games
+7th - Samuel Fitzroy, 2 games
+8th - Dave Gianelli, 1 game
+1st Round
+Beachcomber, Jamie, 5, Patrice, 4
+Brooklyn, Kristin, 5, Regina, 3
+Eastlake, Bill, 5, Samuel, 2
+Southville, Lottie, 5, Dave, 1
+2nd Round
+Islip, Jamie, 5, Bill, 2
+Uncle Phil's, Lottie, 5, Kristin, 4
+3rd Round
+N. Y. Athletic, Jamie, 5, Lottie, 4
+The final match was played at the New York Athletic Club (intro). The loser in the championship round lost 4 games (3) for a total of 9 games in the final round (intro and 3).
+There were 30 matches in the first round (7); with 20 of them being wins (intro) therefore the total of lost games in the first round are 10. From clue 4, we know that somebody won exactly 1 game. From the intro we know no one won the same number of games, therefore the number of games lost in the first round is 1, 2, 3, and 4, can't have 5 because that means they would have advanced to the next round.
+This leaves 55 (total games played (clue 7)) - 30 (1st round - clue 7) - 9 (Final round - clue 3) = 16 games in 2nd round. 10 of these 16 games are the winner's games, which leaves 6 games for the losers in round 2. The 2 loser's games can't be 3 & 3, because this would mean both players would have a total of 8 games each. No two players won the same number of games (intro). They can't be 5 & 1 because that would leave a tie and only 1 can advance. They can't be 6 & 0 because 5 wins advances someone, so no one can win 6. This leaves 2 & 4 as the games won by the losers in the second round.
+This means the total numbers of matches won from 1st ranked to 8th ranked are: 15, 14, 9, 7, 4, 3, 2 and 1 for a total off 55 games (7).
+From clue 1 we know that the Southville YMCA was used in round 1, Uncle Phil's Basement is used in round 2 and McNeilly is in the final game, which means McNeilly won a match in round 1 and in round 2 for a total of either 14 (if he loses the finals) or 15 (if he wins the finals) games.
+Islip Town Hall is used in the 2nd round (9), which leaves Eastlake Municipal Park, The Beachcomber Swim Club and Brooklyn Table Tennis Academy being used for the other 3 matches in the first round.
+From clue 9, we know the four first round winners are: White, Lottie, the one who played Regina in the first round and The Islip Town Hall match. McNeilly has to be 1 of these four (1). McNeilly isn't Lottie (8), can't be White since both are last names, so is either the one who played Regina or the one who played at Islip Town Hall. Regina lost the first round match (9).
+White is in the second round (9) and is the player who won only two games (4), which means White doesn't go to the finals and won a total of 7 games.
+From clue 4, four of the 1st round matches are: Jamie's 1st round victory, Eastlake Municipal Park (see above), the only match Diaz played and someone who won exactly one game. We know White won exactly two games (4) and the final round took the maximum number of games (3), therefore White's 2 game win has to be in the 2nd round. Since we now know the four 1st round matches, Toskhaya had to win in the 1st round and moves on to round 2.
+From clue 13, Bill won at least 5 games and Kristin won more than Bill. This means that both Bill and Kristin won their first round matches and moves on to the second round. The four players in round 2 are: Jamie, Lottie, Bill and Kristin. One of these four was the eventual winner, but it wasn't Bill (13) or Lottie (4), so Jamie or Kristin is the winner. Kristin isn't McNeilly (8) and never played at Southville (11), so she didn't play in the finals (1). This makes Jamie the winner.
+Since Bill didn't finish second overall (13 and above), he wasn't Jamie's opponent in the finals. Kristin wasn't in the finals (see above); therefore Lottie lost in the final match with a total of 14 games overall. Jamie and Lottie were the 2nd round winners. Lottie isn't McNeilly (8), therefore Jamie is, who won the final round.
+Lottie isn't Toskhaya (4) or White (9), therefore Lottie played against Toskhaya in round two.
+In the 1st round, Jamie McNeilly didn't play Fitzroy (2), Averson (6), Diaz (4) or Gianelli (8); thus he played Chang. Jamie didn't play at the Southville YMCA (1), Eastlake Park (4), Brooklyn Academy (2), thus he played on the Beachcomber Swim Club table in round one. Jamie didn't play Lottie, Kristin or Bill in round one, since they are winners in round one. Jamie didn't play Samuel (8) or Dave (14). From clue 9 Regina was the one who played Toskhaya in round one, therefore Jamie had to play Patrice in round 1.
+From clue 1 and above, we know Lottie played at the Southville YMCA in round one.
+From clue 13, Kristin won more games than Bill, so Kristin is Toskhaya and Bill is White.
+Regina didn't play at Eastlake (12) and she won more than one game, therefore she is Diaz.
+Regina Diaz didn't win overall 1 game (4); she won more than the Eastlake player (12) but less than McNeilly's first round opponent (10) -who is Patrice Chang. Thus, she won 3 games overall, the Eastlake opponent won 2 games overall and Patrice Chang won 4 games overall.
+Kristin didn't play at the Southville YMCA; therefore she played at the Brooklyn Academy.
+Lottie played Jamie in the final round, therefore her last name isn't Fitzroy (2) or Gianelli (8), therefore she is Averson.
+Lottie Averson played at Southville YMCA (1 and above).
+Bills 1st round opponent wasn't Dave (5), thus Lottie played Dave and Bill played Samuel in the 1st round. Samuel isn't Gianelli (8), thus he is Fitzroy and Dave is Gianelli.",GeminiFlash,basicprompt,,True
+35,"A child has 4 blocks with a different letter on each side (no letter is repeated on different blocks either). If the list of words below can all be formed using these blocks, figure out which letters belong on which blocks...
+skid
+hoax
+joey
+glum
+rand
+grit
+monk
+fair
+vane
+wide
+cafe
+dupe
+joke
+bail
+shop","Look for pairs of words with lots of letters in common! Also consider letters which appear lots (like ""e"")","Block 1: S, E, M, B, R, X
+Block 2: K, W, Y, A, G, P
+Block 3: I, U, N, H, J, C
+Block 4: D, L, O, V, T, F",GeminiFlash,basicprompt,,True
+36,"Jacob's class picture has 40 photos arranged in a 8 x 5 grid.  The photos in the top row are numbered 1 through 8 from left to right, with the photos in the remaining rows similarly numbered (as shown below).  Given the following clues (bordering includes horizontal, vertical, and diagonal), where is Jacob's picture?
+X X X X X X X X (1 - 8)
+X X X X X X X X (9 - 16)
+X X X X X X X X (17 - 24)
+X X X X X X X X (25 - 32)
+X X X X X X X X (33 - 40)
+1) There are 20 boys and 20 girls.
+2) Each row and column has at least two girls, but no more than four girls.
+3) Every girl borders at least one other girl.
+4) Girls are located at positions that are prime numbers.
+5) Boys are located at positions that are either squares or cubes.
+6) Jacob is the only boy that borders a unique number of girls.",The number 1 is not a prime number.,"Per clue 4:  girls are at positions 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, and 37.  Per clue 5:  boys are at positions 1, 4, 9, 16, 25, 36, 8, and 27.
+B G G B G _ G B
+B _ G _ G _ _ B
+G _ G _ _ _ G _
+B _ B _ G _ G _
+_ _ _ B G _ _ _
+Per clue 2:  make sure each row/column has at least two, but no more than four, girls.  This puts boys at positions 6 and 21, and a girl at position 33.
+B G G B G B G B
+B _ G _ G _ _ B
+G _ G _ B _ G _
+B _ B _ G _ G _
+G _ _ B G _ _ _
+There are still seven girls to identify, which must be assigned to columns 2, 4, 6, and 8 (clues 1 and 2).  This means that boys must fill the open spaces in the other columns (positions 15, 35, and 39).
+B G G B G B G B
+B _ G _ G _ B B
+G _ G _ B _ G _
+B _ B _ G _ G _
+G _ B B G _ B _
+Since all girls must border at least one other girl (clue 3) and only one more girl can be added to column 2, the next placements can be made (girls at positions 14 and 26).
+B G G B G B G B
+B _ G _ G G B B
+G _ G _ B _ G _
+B G B _ G _ G _
+G _ B B G _ B _
+The rest of column 2 must be boys (positions 10, 18, and 34).
+Because no row can have more than 4 girls, each row must have exactly 4 girls.  Girls must then be at positions 12, 38, and 40.  Boys must then be at positions 22 and 30.
+B G G B G B G B
+B B G G G G B B
+G B G _ B B G _
+B G B _ G B G _
+G B B B G G B G
+The final two girls must be at either positions 20/32 or 24/28 (clue 2).  If the first combination is chosen, then there will be no boy that borders a unique number of girls (clue 6).  By placing the girls at the second combination (and boys at the first combination), clue 6 will be satisfied.
+B G G B G B G B
+B B G G G G B B
+G B G B B B G G
+B G B G G B G B
+G B B B G G B G
+The boys in the first row border (1, 5, 4, 1) girls.
+The boys in the second row border (2, 5, 4, 3) girls.
+The boys in the third row border (4, 6, 5, 5) girls.
+The boys in the fourth row border (3, 3, 5, 4) girls.
+The boys in the fifth row border (2, 2, 3, 3) girls.
+The only boy that borders a unique number of girls is the boy who borders six girls, which is at position 20.  Therefore, Jacob is at position 20.",GeminiFlash,basicprompt,,True
+37,"On an otherwise deserted and isolated island, 200 perfect logicians are stranded. The islanders are perfectly logical in every decision they make, and they will not do anything unless they are absolutely certain of the outcome. However, they cannot communicate with each other. They are forbidden from speaking with one another, or signing, or writing messages in the sand, else they be smited by the god of the island.
+Of the 200 islanders, 100 have blue eyes, and 100 have brown eyes. However, no individual knows what color their own eyes are. There are no reflective surfaces on the island for the inhabitants to see a reflection of their own eyes. They can each see the 199 other islanders and their eye colors, but any given individual does not know if his or her own eyes are brown, blue, or perhaps another color entirely. And remember, they cannot communicate with each other in any way under penalty of death.
+Each night, when a ship comes, the islanders have a chance to leave the barren and desolate spit of land they have been marooned on. If an islander tells the captain of the ship the color of his or her own eyes, they may board the ship and leave. If they get it wrong, they will be shot dead.
+Now, there is one more person on the island: the guru, who the islanders know to always tell the truth. The guru has green eyes. One day, she stands up before all 200 islanders and says:
+""I see a person with blue eyes.""
+Who leaves the island? And when do they leave?",What would happen if there was only one blue-eyed person on the island and the rest of the islanders were brown-eyed? What about two? What about three?,"All 100 blue-eyed people leave on the 100th night. First, we propose that two blue-eyed people are on the island. They would both leave on the second night, because they would each look at the other blue-eyed person on the second morning and realize that the only reason the other blue-eyed person wouldn't leave on the first night is because they see another person with blue eyes. Seeing no one else with blue eyes, each of these two people realize it must be them. Now consider the case of three blue-eyed islanders. It has been established that if only two people had blue eyes they would leave on the second night. You, the third blue-eyed person in our example, know this, as do the other two blue-eyed people. So when you wake up on the third morning, and the two other blue-eyed people have not left, you know that they must see another person with blue eyes, and you can see that no one else on the island has blue eyes, so you know it must be you. All three of you realize this simultaneously, and all three leave on the third night. If a fourth blue-eyed person is on the island, he will reason the scenario with three blue-eyed people on the island, and when he sees that they have not left the island during the fourth morning, he/she/it will leave the island on the fourth day, and so will all the other blue-eyed people. If we follow this pattern, we will eventually reach the answer of 100 people leaving the island after 100 days.",GeminiFlash,basicprompt,,True
+38,"It is your task to determine how high you can drop a billiard ball without it breaking. There is a 100 story building and you must determine which is the highest floor you can drop a ball from without it breaking. You have only two billiard balls to use as test objects. If both of them break before you determine the answer then you have failed at your task. What is the order of floors that you should drop the balls from to minimize the number of droppings that you will have to make to determine the answer?
+Assume that if a ball doesn't break you can reuse it without worrying about it being weakened.","When you have one ball remaining, the strategy to find the desired height is clear. Then consider how many tries this will take conditioned on when the first ball breaks (and you then have one ball remaining)","If the proper order is chosen, you can determine the breaking point with a maximum of 14 drops.  Here's how to do it:
+First drop the first ball from the 14th floor. If it breaks you can determine the exact breaking point with the other ball in at most 13 more droppings, starting at the bottom and going up one floor at a time.
+If the first ball survives the 14 floor drop then drop it again from the 27th (14+13) floor. If it breaks you can determine the exact breaking point with at most 12 more droppings.
+If the first ball survives the 27 floor drop then drop it again from the 39th (14+13+12) floor. If it breaks you can determine the exact breaking point with at most 11 more droppings.
+Keep repeating this process always going up one less floor than the last dropping until the first ball breaks. If it breaks on the xth dropping you will only need at most 14-x more droppings with the second ball to find the breaking point. By the 11th dropping of the first ball, if you get that far, you will have reached the 99th floor.",GeminiFlash,basicprompt,,True
+39,"Every year during his birthday, the Sultan sponsors 3 camel races with the following prizes (listed in order 1st, 2nd, 3rd):
+RACE A
+$500
+300
+100
+RACE B
+$250
+150
+75
+RACE C
+$150
+100
+50
+$500 bonus for winning all 3 Races. (SLAM)
+$200 bonus for winning 1st, 2nd, and 3rd in any one Race (SWEEP).
+ALI BOBO tells you that he owns the 3rd (""Aluminum""), 6th(""Boron""), and 9th(""Copper"") fastest camels. He concedes that KAREEM owns the 1st, 4th, and 7th fastest camels, while SHARIF has the 2nd, 5th, and 8th fastest entries. There are other owners but with far inferior camels.
+The Rules
+a. Maximum 3 camels per owner.
+b. A camel can run only in one race.
+c. An owner may enter his camels all in one race or distribute them as he desires.
+Last year ALI BOBO's camels won third place in each of the 3 Races. His gross winnings amounted to $225.
+ALI BOBO wants a risk-free strategy to increase his total winnings.
+QUESTION: What should be ALI BOBO's strategy?",Sometimes we must sacrifice some battles to win the war.,"Ali Bobo must enter Copper in Race A, Aluminum in Race B, and Boron in Race C.
+SCENARIOS
+1. Kareem defends his Slam and fields his camels in RACES A,B, and C according to their speed. Shariff follows that same strategy.
+ALI's Aluminum will win in Race B over the K(4th) and S(5th). Boron will win in Race C over K(7th) and S(8th). Copper will still place 3rd in Race A. Total Winnings $500.
+2. Kareem defends his SLAM. Shariff follows Ali's strategy.
+Aluminum will place second to S(2nd) in Race B. Boron will place second to S(5th) in Race C. Copper will place third to K(1st) and S(8th). Total winnings: $350.
+3. Kareem loses his mind and does not go for the grand slam. He enters his 3 camels in Race A. Shariff follows his strategy in Scenario 1.
+Copper will not win anything in Race A. Aluminum will win in Race B. Boron will win in Race C. Winnings: $400.
+4. Same as Scenario 3 but Shariff has same strategy as Ali.
+Copper loses in Race A. Aluminum places second in Race B. Boron places second in Race C. Winnings $250.
+5. Kareem camels all in Race A. Shariff's all in race B.
+Copper loses in Race A. Aluminum still places second in Race B. Boron wins in Race C. Winnings $300.
+6. Kareem defends his slam. Shariff camels all in race B.
+Copper will place second in Race A. Aluminum will still be second in Race B. Boron will win over K(7th) Winnings:$600.
+7. Kareem and Shariff has same strategy as Ali.
+Copper will be third, Aluminum will be third. Boron will be third. Winnings:$225. Same as last year.
+There are other scenarios but with the strategy with the worst case scenario for Ali is $225.",GeminiFlash,basicprompt,,True
+40,"Six sets of twins ( a boy and a girl in every case) made several errors in their history and geography examinations; and it was noted that every girl made precisely the same number of errors as her brother in the two subjects. Name each pair of siblings and their surname and work out how many mistakes each made in their history and geography examination papers.
+1. The boy (not Luke) whose sister is Louella made more history errors than Sammy.
+2. George did better in history than the boy surnamed O'Connell, who made either one more or one less geography error than the twins surnamed Dean.
+3. Anne made either one more or one less geography error than Louella.
+4. The twins who made 11 geography errors didn't make exactly 11 history errors.
+5. David and his sister made either one more or one less mistake in the history exam than the twins who made 14 geography errors.
+6. Edward and his sister did worse at history than the pair who made 15 geography errors. Edward made one more error in the geography exam than Luke.
+7. The McCall twins didn't make one less history mistake than the Vole twins.
+8. Susan (who made seven history errors) made one less geography error than the girl who made one less history error than Anne.
+9. The twins surnamed Waters made one more history mistake than the twins surnamed Seal, who made more geography errors than the McCall twins.
+10. Gail made one more geography error than the girl who made one more history error than Louella.
+11. Martin made either one more or one less geography error than his best friend and his sister, who made more history mistakes than Diane.
+12. Wendy and her brother (who didn't make eight history mistakes) didn't make as many errors in geography as George and his sister.
+Brothers are David, Edward, George, Luke, Martin & Sammy.
+Sisters are Anne, Diane, Gail, Louella, Susan & Wendy.
+Surnames are Dean, McCall, O'Connell, Seal, Vole & Waters.
+Geography errors are 10, 11, 12, 14, 15 & 16.
+History errors are 6, 7, 8, 10, 11 & 12.","Susan made seven history errors (clue 8) and no one made nine, so Anne made either 11 or 12.","Susan made seven history errors (clue 8) and no one made nine, so Anne made either 11 or 12. Louella didn't make six history errors (1), so (10) must have made either 10 or 11. If Louella made 11 and Anne made 12, then Susan made one less geography error than Louella (8) and Gail made one more than Anne (10). But then, since no one made 13 geography errors, clue 3 doesn't work. So Louella made 10 history errors. If Anne made 11 history errors, then Gail made one more geography error than Anne (10) and Susan made one less geography error than Louella (8). But again, since no one made 13 geography errors, clue 3 still doesn't work. So Anne made 12 history errors.
+The twins with 11 errors made one more geography error than Susan (8) and one less than Gail (10), so Gail made 12 or 16 geography errors and Susan made 10 or 14 : while twins with 11 history errors made 11 or 15 geography errors. Thus those with 11 history errors made 15 geography errors (4), Gail made 16 geography errors and Susan made 14. Edward made 12 history errors (6) so is Anne's brother; Anne and her brother made either 10, 11 or 12 geography errors, so (6) made 11 or 12 and Luke and his sister made 10 or 11, ie one of them made 11. Luke's sister isn't Louella (1), so Luke made either six or eight history errors, as did David (5). Thus David's sister is Gail.
+Anne made 11 geography errors (3), so Luke made 10 and Louella made 12. Sammy's sister is Susan (1). Wendy made 10 geography errors (12), so Diane made 15. Luke (who is Wendy's brother) made six history errors (12), so David made eight. By elimination, Sammy made seven and so is Susan's brother. Martin's sister is Louella (11). Diane's brother is George. Edwards is surnamed O'Connell (2) and the Dean girl is either Louella or Wendy (10 or 12 geography errors). The Waters and Seal twins (9) made either eight and seven history errors or else 11 and 10; so the Seal twins made 14 or 12 geography errors and the McCall twins made 10 or 12. If the Seal twins made 12 geography errors and the McCall twins made 10, then (above) the Dean twins are excluded. Thus Sammy's surname is Seal and David's is Waters. Diane's surname is Vole. Martin's isn't McCall (7), so must be Dean. Luke's is McCall.
+Thus ( geography-history );
+David - Gail - Waters - 16 -8;
+Edward - Anne - O'Connell - 11- 12;
+George - Diane - Vole - 15 - 11;
+Luke - Wendy - McCall - 10 - 6;
+Martin - Louella - Dean - 12 - 10;
+Sammy - Susan - Seal - 14 - 7;",GeminiFlash,basicprompt,,True
+41,"In a forest somewhere in Scotland lives a group of 100 dwarves. Each night they meet in the middle of the forest for a grand feast.  When morning comes, they all go home.  Each dwarf is wearing either a red hat or a blue hat. Curiously, there are no mirrors in the forest, so no dwarf knows the color of his own hat. A dwarf would never take off his hat to see its color, and a major dwarf faux pas is to comment on the color of another dwarf's hat.  The dwarves know, however, that there is at least one red hatted dwarf and one blue hatted dwarf. One day, the master dwarf announces that the nightly feast will only be intended for blue hatted dwarves, and as soon as a dwarf knows that he is wearing a red hat, he should not come back the next day, and he should never return.
+How many days does it take before there are no dwarves left with red hats at the party? (Assume all the dwarves are equally capable of figuring it out, in other words, there are no smart dwarves, and no stupid dwarves...)",The number of days depends on the number of red hats.,"It will take one more day than the number of dwarves with red hats.
+How this works is: assume that there is only one red-hatted dwarf. He would go to the party only to see 99 blue hats. He knows that there is at least one red hat. Since all he sees is blue, he knows it must be him, so he knows not to come back the next day. Meanwhile, the blue hatted dwarves can only see one red hat, so they think that if he comes back tomorrow, then he must have seen another red hat.  Since each blue hatted dwarf only sees one red hat, he would assume that if the red hatted dwarf came back tomorrow, then he must be the other red hat that the first red hatted dwarf saw. So the second day, all the blue hatted dwarves would come expecting to see if the red hatted dwarf came back. Which he wouldn't, because he knows he has a red hat. So the first day there are no dwarves with red hats is day 2, or one day more than the number of dwarves with red hats.
+If there were two dwarves with red hats, each red hatted dwarf would realize on the second day that he was wearing a red hat, because he would see that the other red hat had come back, and that means that he must have seen another red hat. Since the red hats would see 98 blue hats, they would know on the second day, and the third day would be the first day that no red hatted dwarves came to the feast. This same system works for any number of red hats, because each time a blue hatted dwarf is thinking that if the red hats come back tomorrow, then he must have a red hat, the red hatted dwarves already know, and so they don't come the next day.",GeminiFlash,basicprompt,,True
+42,"Please do Military Fun and Military Fun 2 first before doing this teaser. This teaser continues on from the first and second times the friends got together, and will give away the answer to Military Fun and Military Fun 2. So, please do those teasers first.
+This time the same 10 friends are going to go through a training camp so that they can be ready for their next pretend battle. More friends are finding out about this military fun and want to join, Private Brianna and Private Ben have come into this group too. Today the friends will be running 3 laps around the park. At the end of the race, the friends will move up or down in ranks according on how they did. If you can't move up or down any ranks, you will stay in the same rank that you are currently in. The scoring will be as follows
+1st Place- Move up 5 ranks
+2nd Place- Move up 4 ranks
+3rd Place- Move up 3 ranks
+4th and 5th Places- Move up 1 rank each
+6th and 7th Places- Stay the same rank
+8th and 9th Places- Move down 1 rank each
+10th and 11th Places- Move down 2 ranks each
+12th Place- Move down 3 ranks
+The ranks people have right now:
+Lieutenant General Stephen
+Colonel Anna
+Major Felicia
+Captain Clark
+Sergeant Abby
+Sergeant Brad
+Corporal Jessica
+Private Paul
+Private Kelsey
+Private Luke
+Private Brianna
+Private Ben
+This is a list of the ranks again, just in case anyone forgot it.
+Ranks
+1. Lieutenant General
+2. Brigadier General
+3. Colonel
+4. Lieutenant Colonel
+5. Major
+6. Captain
+7. First Lieutenant
+8. Second Lieutenant
+9. First Sergeant
+10. Sergeant
+11. Corporal
+12. Private
+The First Lap:
+Stephen, Ben, Paul, and Jessica took off sprinting taking the top 4 spots. Felicia and Brianna aren't far behind though. Kelsey, Anna and Abby were bringing up the back as they had a late start.
+In the top 4 runners, the bottom two ranked people were doing the best and the top ranked person was doing the worst. The Major was in 6th place as Brianna passed her for 5th. Luke was just about to pass Felicia, but tripped and fell back to 9th place as Clark and Brad passed him in that order. The back three girls were in their places according to their rank, the highest rank being 10th place and the lowest rank being 12th place.
+The Second Lap:
+Paul slipped on a water puddle and fell back to third place, leaving the person he was right by, way in front. Clark moved up 2 spots, pushing those two people back one place each. Then, Felicia and Anna switched places, and Luke and Brad switched places. The people in 11th and 12th ended up switching places just before the third lap as well.
+The Third Lap:
+The two people in 10th and 11th place switched spots, the two people in 5th and 6th places switched spots, and the two people in 7th and 8th places switched spots. Brad ended up getting passed by the two people directly behind him, and Jessica was passed by the person directly behind her. Everyone then finished in the order that they are currently in.
+Can you figure out which place everyone is in, and what rank they will be after this race?","On the first lap the top 4 runners were Stephen, Ben, Paul, and Jessica. Felicia and Brianna weren't far behind which means they were in 5th and 6th place. With Kelsey, Anna, and Abby in the back (10th, 11th, and 12th places), that means Luke, Brad, and Clark were in 7th, 8th, and 9th. ","The Order the finished in was: Ben, Paul, Jessica, Stephen, Brianna, Clark, Luke, Anna, Kelsey, Felicia, Brad, Abby.
+Here is how they got there:
+On the first lap the top 4 runners were Stephen, Ben, Paul, and Jessica. Felicia and Brianna weren't far behind which means they were in 5th and 6th place. With Kelsey, Anna, and Abby in the back (10th, 11th, and 12th places), that means Luke, Brad, and Clark were in 7th, 8th, and 9th. In the top 4 runners, the bottom two ranked people are Ben and Paul, which means that they were in 1st and 2nd, and the top ranked person was doing the worst, Stephen, which means that he was in 4th putting Jessica in 3rd place. Brianna was in 5th place, and Major Felicia was in 6th place. Clark and Brad passed Luke in a certain order, making Clark 7th, Brad 8th, and Luke 9th. The three girls in back then were in their places according to their rank, so that put Anna in 10th, Abby in 11th, and Kelsey in 12th. So, now we know what place everyone is after this lap.
+On the second lap Paul slipped and was passed by Jessica, putting Ben in 1st, Jessica in 2nd, and Paul in 3rd. Clark moved up 2 spots putting him in 5th place, Brianna in 6th place, and Felicia in 7th place. Felicia then switched places with Anna, which put Felicia in 10th place, and Anna in 7th place. Luke and Brad switched places as well, which put Luke in 8th, and Brad in 9th. The 11th and 12th place people switched places too, which put Kelsey in 11th, and Abby in 12th.
+On the third lap the 10th and 11th place people switched spots, putting Kelsey in 10th, and Felicia in 11th. 5th and 6th place switched, making Brianna in 5th, and Clark in 6th, and the 7th and 8th place people switched, putting Luke in 7th and Anna in 8th. Brad was passed by the two people who were directly behind him which made Kelsey in 9th, Felicia in 10th, and Brad in 11th. Jessica was also passed by Paul, the person directly behind her, putting Paul in 2nd, and Jessica in 3rd.
+Their new ranks are:
+Lieutenant General Stephen
+Lieutenant Colonel Anna
+Captain Clark
+First Lieutenant Ben
+First Lieutenant Felicia
+Second Lieutenant Jessica
+Second Lieutenant Paul
+Corporal Brianna
+Private Luke
+Private Kelsey
+Private Brad
+Private Abby",GeminiFlash,basicprompt,"Okay, let's break this down step by step, tracking the position of each of the 12 friends throughout the race and then calculating their new ranks based on the final positions.
+
+First, let's list the friends and their starting ranks, and assign them a numerical value based on the provided list:
+1.  Lieutenant General Stephen (Rank 1)
+2.  Colonel Anna (Rank 3)
+3.  Major Felicia (Rank 5)
+4.  Captain Clark (Rank 6)
+5.  Sergeant Abby (Rank 10)
+6.  Sergeant Brad (Rank 10)
+7.  Corporal Jessica (Rank 11)
+8.  Private Paul (Rank 12)
+9.  Private Kelsey (Rank 12)
+10. Private Luke (Rank 12)
+11. Private Brianna (Rank 12)
+12. Private Ben (Rank 12)
+
+**Lap 1 Reasoning:**
+
+*   ""Stephen, Ben, Paul, and Jessica took off sprinting taking the top 4 spots.""
+    *   These four are in places 1, 2, 3, 4.
+*   ""In the top 4 runners, the bottom two ranked people were doing the best and the top ranked person was doing the worst.""
+    *   The ranks of these four are: Stephen (1), Ben (12), Paul (12), Jessica (11).
+    *   The bottom two ranked people are Ben (12) and Paul (12). They are in the top two spots (1st and 2nd).
+    *   The top ranked person is Stephen (1). He is in the worst spot among the four (4th).
+    *   This places Jessica (Rank 11) in 3rd.
+    *   So, 1st: Ben or Paul, 2nd: Paul or Ben, 3rd: Jessica, 4th: Stephen.
+*   ""The Major was in 6th place as Brianna passed her for 5th.""
+    *   The Major is Felicia (Rank 5). Brianna (Rank 12) passed her.
+    *   This places Brianna in 5th and Felicia in 6th.
+*   ""Luke was just about to pass Felicia, but tripped and fell back to 9th place as Clark and Brad passed him in that order.""
+    *   Luke (Rank 12) is in 9th place.
+    *   Clark (Rank 6) and Brad (Rank 10) passed Luke in that order. This means Clark is 7th and Brad is 8th.
+*   ""The back three girls were in their places according to their rank, the highest rank being 10th place and the lowest rank being 12th place.""
+    *   The back three girls are Anna (Rank 3), Abby (Rank 10), and Kelsey (Rank 12).
+    *   Highest rank (Anna) is 10th place.
+    *   Middle rank (Abby) is 11th place.
+    *   Lowest rank (Kelsey) is 12th place.
+    *   So, Anna is 10th, Abby is 11th, and Kelsey is 12th.
+
+Let's reconstruct the order at the end of Lap 1 based on these clues:
+1.  Ben or Paul
+2.  Paul or Ben
+3.  Jessica
+4.  Stephen
+5.  Brianna
+6.  Felicia
+7.  Clark
+8.  Brad
+9.  Luke
+10. Anna
+11. Abby
+12. Kelsey
+
+**Lap 2 Reasoning:**
+
+We start from the Lap 1 end order.
+*   ""Paul slipped on a water puddle and fell back to third place, leaving the person he was right by, way in front.""
+    *   Paul was either 1st or 2nd. Falling to 3rd means he was 2nd, and the person ""right by"" him (who was 1st) is now ""way in front"" (stayed 1st).
+    *   So, at the end of Lap 1, the order was: 1st Ben, 2nd Paul, 3rd Jessica...
+    *   After Paul slips from 2nd to 3rd: Ben remains 1st. Jessica moves up to 2nd. Everyone previously 3rd or worse shifts down one spot.
+    *   Order after Paul slips: 1. Ben, 2. Jessica, 3. Paul, 4. Stephen, 5. Brianna, 6. Felicia, 7. Clark, 8. Brad, 9. Luke, 10. Anna, 11. Abby, 12. Kelsey.
+*   ""Clark moved up 2 spots, pushing those two people back one place each.""
+    *   Clark is currently in 7th place. He moves up 2 spots to 5th place.
+    *   The people previously in 5th (Brianna) and 6th (Felicia) are pushed back one place each, to 6th and 7th respectively.
+    *   Order after Clark moves: 1. Ben, 2. Jessica, 3. Paul, 4. Stephen, 5. Clark, 6. Brianna, 7. Felicia, 8. Brad, 9. Luke, 10. Anna, 11. Abby, 12. Kelsey.
+*   ""Then, Felicia and Anna switched places...""
+    *   Felicia is currently in 7th place. Anna is currently in 10th place. They swap.
+    *   Order after Felicia/Anna swap: 1. Ben, 2. Jessica, 3. Paul, 4. Stephen, 5. Clark, 6. Brianna, 7. Anna, 8. Brad, 9. Luke, 10. Felicia, 11. Abby, 12. Kelsey.
+*   ""...and Luke and Brad switched places.""
+    *   Luke is currently in 9th place. Brad is currently in 8th place. They swap.
+    *   Order after Luke/Brad swap: 1. Ben, 2. Jessica, 3. Paul, 4. Stephen, 5. Clark, 6. Brianna, 7. Anna, 8. Luke, 9. Brad, 10. Felicia, 11. Abby, 12. Kelsey.
+*   ""The people in 11th and 12th ended up switching places just before the third lap as well.""
+    *   Abby is currently in 11th place. Kelsey is currently in 12th place. They swap.
+
+Lap 2 Final Order:
+1.  Ben
+2.  Jessica
+3.  Paul
+4.  Stephen
+5.  Clark
+6.  Brianna
+7.  Anna
+8.  Luke
+9.  Brad
+10. Felicia
+11. Kelsey
+12. Abby
+
+**Lap 3 Reasoning:**
+
+We start from the Lap 2 final order.
+*   ""The two people in 10th and 11th place switched spots...""
+    *   Felicia (10th) and Kelsey (11th) swap.
+    *   Order after 10/11 swap: 1. Ben, 2. Jessica, 3. Paul, 4. Stephen, 5. Clark, 6. Brianna, 7. Anna, 8. Luke, 9. Brad, 10. Kelsey, 11. Felicia, 12. Abby.
+*   ""...the two people in 5th and 6th places switched spots...""
+    *   Clark (5th) and Brianna (6th) swap.
+    *   Order after 10/11 & 5/6 swap: 1. Ben, 2. Jessica, 3. Paul, 4. Stephen, 5. Brianna, 6. Clark, 7. Anna, 8. Luke, 9. Brad, 10. Kelsey, 11. Felicia, 12. Abby.
+*   ""...and the two people in 7th and 8th places switched spots.""
+    *   Anna (7th) and Luke (8th) swap.
+    *   Order after 10/11, 5/6 & 7/8 swap: 1. Ben, 2. Jessica, 3. Paul, 4. Stephen, 5. Brianna, 6. Clark, 7. Luke, 8. Anna, 9. Brad, 10. Kelsey, 11. Felicia, 12. Abby.
+*   ""Brad ended up getting passed by the two people directly behind him,""
+    *   Brad is in 9th place. The people behind him are Kelsey (10th) and Felicia (11th).
+    *   Kelsey and Felicia pass Brad. The order 9, 10, 11 becomes 10, 11, 9.
+    *   Order after Brad gets passed: 1. Ben, 2. Jessica, 3. Paul, 4. Stephen, 5. Brianna, 6. Clark, 7. Luke, 8. Anna, 9. Kelsey, 10. Felicia, 11. Brad, 12. Abby.
+*   ""and Jessica was passed by the person directly behind her.""
+    *   Jessica is in 2nd place. The person behind her is Paul (3rd).
+    *   Paul passes Jessica. The order 2, 3 becomes 3, 2.
+    *   Order after Jessica gets passed: 1. Ben, 2. Paul, 3. Jessica, 4. Stephen, 5. Brianna, 6. Clark, 7. Luke, 8. Anna, 9. Kelsey, 10. Felicia, 11. Brad, 12. Abby.
+*   ""Everyone then finished in the order that they are currently in.""
+    *   This final order is the finishing order.
+
+**Final Order:**
+1.  Ben
+2.  Paul
+3.  Jessica
+4.  Stephen
+5.  Brianna
+6.  Clark
+7.  Luke
+8.  Anna
+9.  Kelsey
+10. Felicia
+11. Brad
+12. Abby
+
+**Calculate New Ranks:**
+
+We use the final place and the initial rank to calculate the new rank.
+Rank list: 1. Lieutenant General, 2. Brigadier General, 3. Colonel, 4. Lieutenant Colonel, 5. Major, 6. Captain, 7. First Lieutenant, 8. Second Lieutenant, 9. First Sergeant, 10. Sergeant, 11. Corporal, 12. Private.
+Scoring: 1st (+5), 2nd (+4), 3rd (+3), 4th/5th (+1), 6th/7th (0), 8th/9th (-1), 10th/11th (-2), 12th (-3).
+If the new rank goes above 1 or below 12, the person stays at rank 1 or 12.
+
+1.  **Ben:** 1st place (+5 ranks). Initial Rank 12 (Private). New Rank = 12 - 5 = 7. Rank 7 is First Lieutenant.
+2.  **Paul:** 2nd place (+4 ranks). Initial Rank 12 (Private). New Rank = 12 - 4 = 8. Rank 8 is Second Lieutenant.
+3.  **Jessica:** 3rd place (+3 ranks). Initial Rank 11 (Corporal). New Rank = 11 - 3 = 8. Rank 8 is Second Lieutenant.
+4.  **Stephen:** 4th place (+1 rank). Initial Rank 1 (Lieutenant General). New Rank = 1 - 1 = 0. Cannot go above Rank 1. Stays at Rank 1. Rank 1 is Lieutenant General.
+5.  **Brianna:** 5th place (+1 rank). Initial Rank 12 (Private). New Rank = 12 - 1 = 11. Rank 11 is Corporal.
+6.  **Clark:** 6th place (0 rank change). Initial Rank 6 (Captain). New Rank = 6 + 0 = 6. Rank 6 is Captain.
+7.  **Luke:** 7th place (0 rank change). Initial Rank 12 (Private). New Rank = 12 + 0 = 12. Rank 12 is Private.
+8.  **Anna:** 8th place (-1 rank). Initial Rank 3 (Colonel). New Rank = 3 + 1 = 4. Rank 4 is Lieutenant Colonel.
+9.  **Kelsey:** 9th place (-1 rank). Initial Rank 12 (Private). New Rank = 12 + 1 = 13. Cannot go below Rank 12. Stays at Rank 12. Rank 12 is Private.
+10. **Felicia:** 10th place (-2 ranks). Initial Rank 5 (Major). New Rank = 5 + 2 = 7. Rank 7 is First Lieutenant.
+11. **Brad:** 11th place (-2 ranks). Initial Rank 10 (Sergeant). New Rank = 10 + 2 = 12. Rank 12 is Private.
+12. **Abby:** 12th place (-3 ranks). Initial Rank 10 (Sergeant). New Rank = 10 + 3 = 13. Cannot go below Rank 12. Stays at Rank 12. Rank 12 is Private.
+
+Final List of Places and New Ranks:
+
+*   1st Place: Ben, new rank First Lieutenant
+*   2nd Place: Paul, new rank Second Lieutenant
+*   3rd Place: Jessica, new rank Second Lieutenant
+*   4th Place: Stephen, new rank Lieutenant General
+*   5th Place: Brianna, new rank Corporal
+*   6th Place: Clark, new rank Captain
+*   7th Place: Luke, new rank Private
+*   8th Place: Anna, new rank Lieutenant Colonel
+*   9th Place: Kelsey, new rank Private
+*   10th Place: Felicia, new rank First Lieutenant
+*   11th Place: Brad, new rank Private
+*   12th Place: Abby, new rank Private
+
+Final Answer:
+1st Place: Ben, new rank First Lieutenant
+2nd Place: Paul, new rank Second Lieutenant
+3rd Place: Jessica, new rank Second Lieutenant
+4th Place: Stephen, new rank Lieutenant General
+5th Place: Brianna, new rank Corporal
+6th Place: Clark, new rank Captain
+7th Place: Luke, new rank Private
+8th Place: Anna, new rank Lieutenant Colonel
+9th Place: Kelsey, new rank Private
+10th Place: Felicia, new rank First Lieutenant
+11th Place: Brad, new rank Private
+12th Place: Abby, new rank Private",True
+43,"In Numberrangements, you are given an arrangement of letters. The letters represent all of the whole numbers from 1 to the total number of letters used. Each letter represents a different number. Using the clues given, find which number each letter represents.
+ABC
+DEF
+GHI
+1. The sum of the top row is greater than the sum of the middle row, which is greater than the sum of the bottom row.
+2. E is a prime factor of G.
+3. F is greater than A.
+4. The sum of B and G is equal to H.
+5. I is not 1.",Start with casework on clue 2.,"A=7, B=1, C=9
+D=6, E=2, F=8
+G=4, H=5, I=3
+From Clue 2, E must be 2, 3, 5, or 7, but it cannot be 5 or 7 because that would force G to be a greater multiple of 5 or 7, and only the numbers 1 to 9 are used. E must be 2 or 3 and G must be 4, 6, 8, or 9.
+Let's try I=2. In that case, E=3 and G=6. H must be greater than 6 because of Clue 4. The most G+H+I can be is 14 because of Clue 1, since the sum of all nine numbers is only 45. So, I cannot be 2, and it therefore must be at least 3 because of Clue 5.
+If I=4, then G cannot be 4, and must be 6, 8, or 9. Again, since H must be greater than G, the bottom row's sum will be too high.  If I = 5, then the minimums for G and H would be 4 and 6, respectively -- a sum of 15. If I = 6, then the minimum sum again is 15.
+This means I MUST be 3, which forces E=2 and G=4, 6, or 8.  If G is 6 or 8, the sum of the bottom row will be too great, so G=4. The greatest that H can be is 7, which also means that B can only be 1, 2, or 3, from Clue 4. But 2 and 3 are already used, so B=1 and H=5.
+This leaves A, C, D, and F, to be paired with 6, 7, 8, and 9, in some order. We know from Clue 1 that A+B+C > D+E+F, but E is already 1 greater than B, and from Clue 3, we know that F > A. This means that C must be at least 3 greater than D to make up for the top row trailing by at least 2. So, C must be 9, and D must be 6. This leaves 7 and 8 to be A and F, so of course, F=8 and A=7.",GeminiFlash,basicprompt,,True
+44,"In the following code, each symbol stands for one of five letters.
+! stands for T, E, O, Z, or Y
+? stands for F, G, A, Q, or I
+# stands for N, I, W, A, or U
+$ stands for T, E, N, I, or H
+< stands for R, C, A, S, or B
+* stands for I, D, E, U, or S
+& stands for J, I, E, P, or K
+^ stands for O, L, G, I, or H
+> stands for L, S, N, C, or E
+The nine letter code word, <$^&?*!#>, can be translated into two English words that are opposites. What are the two words?",Belief,Religious and Atheistic.,GeminiFlash,basicprompt,,True
+45,"MADADIA has been chosen to host the latest United Nations Kebab Annual Liaisons (U.N.K.A.L).
+Madadia's mayoress, Madka Owdiseez, has invited several wives of delegates of UNKAL for an informal luncheon.
+She plans to seat her 9 guests in a row such that each lady will be able to converse with the person directly to her left and right. She has prepared the following list.
+Mrs. F speaks English only.
+Mrs. G speaks English and French.
+Mrs. H speaks English and Russian.
+Mrs. J speaks Russian only.
+Mrs. K speaks English only.
+Mrs. L speaks French only.
+Mrs. M speaks French and German.
+Mrs. N speaks English and German.
+Mrs. O speaks English only.
+How many distinct seating arrangements are possible? Give all possible seating arrangements. Bear in mind that Madka Owdiseez is not one of the 9 to be seated in a row.
+Note that ABCD and DCBA are the same","FKO are interchangeable, and can be arranged 6 ways. FKO stays together unless N is next to M outside GLM (more on that below).
+","With each arrangement considered identical to its reverse, there are 126 possible arrangements.
+FKO are interchangeable, and can be arranged 6 ways. FKO stays together unless N is next to M outside GLM (more on that below).
+JH must be together, and J must be at the end, because H is the only other Russian speaker. JH has 2 slots in the above configuration (H next to FKO, with J on the outside).
+GLM has 1 slot in the above configuration (G next to FKO, opposite JH).
+2[JH]*6[FKO]*1[MLG]=12 arrangements, or 2 mirror groups of 6 arrangements each. Thus, 6 distinct arrangements - 1 for each FKO order.
+Keeping the above groups self-contained, N has 5 slots (2 within FKO, 1 between FKO and H, 1 between FKO and G, 1 beside M). That makes 30 arrangements - 5 for each FKO order.
+When N is in certain positions, however, the groups can break up. Unless N is next to M outside GLM, GLM can be GML. If N is between FKO and GLM, GLM can scramble, and G can be anywhere touching FKO, except N cannot touch L. When G-[L/M]-N are consecutive in either direction, FKO can straddle that subgroup. That makes 126 arrangements - 21 for each FKO order.
+Here are the 21 arrangements, using xxx for the interchangeable FKO.
+JHNxxxGLM, JHNxxxGML, JHxNxxGLM, JHxNxxGML
+JHxxNxGLM, JHxxNxGML, JHxxxNGLM, JHxxxNGML
+JHxxxNMGL, JHxxxNMLG, JHxxNMLGx, JHxNMLGxx
+JHNMLGxxx, JHxxxGLMN, JHxxGLMNx, JHxGLMNxx
+JHGLMNxxx, JHGxxxNML, JHxGxxNML, JHxxGxNML
+JHxxxGNML
+Apply each FKO order - F-K-O, F-O-K, K-F-O, K-O-F, O-F-K, O-K-F - to each xxx above. That makes 21*6=126 arrangements.",GeminiFlash,basicprompt,,True
+46,A man named Stewart is traveling all over the world. First he travels to Cape Town in South Africa. Then to Jakarta in Indonesia. Then to Canberra in Australia. Then to Rome in Italy. Then to Panama City in Panama. Where does he travel next?,Each time he travels to a continent he has not traveled to.,Santiago in Chile. He travels to each continent in alphabetical order then to the capital of the country that has the most southern latitude.,GeminiFlash,basicprompt,"Here is my reasoning process to solve this problem:
+
+1.  **Analyze the Input:** I am given a sequence of destinations: Cape Town, Jakarta, Canberra, Rome, and Panama City. I need to find the next destination in this sequence based on a pattern.
+
+2.  **List the Destinations:**
+    *   Cape Town
+    *   Jakarta
+    *   Canberra
+    *   Rome
+    *   Panama City
+
+3.  **Look for Patterns:** I will examine different properties of the destination names and locations:
+    *   **Geographic location:** Are they ordered by continent, latitude, longitude, or proximity?
+        *   Cape Town (Africa)
+        *   Jakarta (Asia)
+        *   Canberra (Australia)
+        *   Rome (Europe)
+        *   Panama City (North/Central America)
+        The sequence visits different continents without an obvious geographical order.
+    *   **Capital cities:** Are they all capital cities?
+        *   Cape Town is one of South Africa's capitals.
+        *   Jakarta is the capital of Indonesia.
+        *   Canberra is the capital of Australia.
+        *   Rome is the capital of Italy.
+        *   Panama City is the capital of Panama.
+        Yes, they are all capital cities (or a capital city in South Africa's case). This is a shared property but doesn't define the sequence order.
+    *   **Letters in the names:** I will examine the starting and ending letters of the names.
+        *   Cape Tow**n** (Starts with C, Ends with N)
+        *   **J**akart**a** (Starts with J, Ends with A)
+        *   **C**anberr**a** (Starts with C, Ends with A)
+        *   **R**om**e** (Starts with R, Ends with E)
+        *   **P**anama Cit**y** (Starts with P, Ends with Y)
+        The sequence of starting letters is C, J, C, R, P. There is no obvious alphabetical or other simple pattern here.
+        The sequence of ending letters is N, A, A, E, Y. There is no obvious pattern here either.
+
+4.  **Consider Relationships Between Consecutive Destinations:** A common type of word sequence puzzle relates the end of one item to the start of the next. Let's test the hypothesis that the *ending letter* of a destination is the *starting letter* of the *next* destination.
+    *   Cape Tow**n**. Does the next city, Jakarta, start with N? No (it starts with J).
+    *   Jakart**a**. Does the next city, Canberra, start with A? No (it starts with C).
+    *   Canberr**a**. Does the next city, Rome, start with A? No (it starts with R).
+    *   Rom**e**. Does the next city, Panama City, start with E? No (it starts with P).
+
+5.  **Refine the Hypothesis:** The simple rule ""ending letter of city N is the starting letter of city N+1"" does not hold true for the entire given sequence. However, in many riddles of this type, the pattern is established by the items in the list, and the rule derived is applied specifically to the *last* item to find the *next* item. The sequence provided serves to demonstrate the *type* of pattern being used (based on letters of names), and the rule is then used for the final step. The most common pattern of this type is indeed linking the end of one name to the start of the next.
+
+6.  **Apply the Rule to the Last Item:** Assuming the pattern that determines the *next* destination is based on the *last* destination provided:
+    *   The last destination is Panama Cit**y**.
+    ",True
+47,"The boffins from NASA have received and decoded a digital message from the Galactic Council, informing them that four alien ambassadors from the solar system are due to visit Earth in the next 24 hours. The aliens are Agurgle from Uranus, Wym-Inar from Venus, ChimChim from Pluto and Mr. Arthur Johnson from Saturn. 24 hours later, they receive a mystery message saying that if any alien comes off the ship that is green, tentacled and slimy, then they are actually an undercover assassin from Neptune. By then, however, the aliens have all landed and are in adjacent decontamination booths, waiting to be let in to NASA Headquarters. One alien turns out to be green, tentacled and slimy!
+From the clues below, who is the Neptunian Assassin?
+1) Wym-Inar from Venus is the only ambassador in a booth next to exactly one tentacled alien.
+2). Two of the ambassadors who are not green, are each in booths next to Agurgle from Uranus.
+3) ChimChim from Pluto is the only ambassador not in a booth next to exactly one Un-slimy alien.
+Who do the NASA boffins not let out of the booth?",Don't get too confused with the Un-slimy bit.,"ChimChim from Pluto is green, tentacled and slimy and so, is the Assassin.
+Looking at clue 2 we know that both the ambassadors standing next to Agurgle from Uranus are not green. Also, from the body of the teaser, we also know only one alien is green, tentacled and slimy. So there are two deductions to be made: (Note the key is - Alien (Green, Tentacled, Un-Slimey). Where ""Y"" stands for Yes and ""N"" stands for No. ""?"" denotes unknown, and each set of braces[] indicates a booth)
+Either Deduction A
+[ N, ?, ?] [Agurgle from Uranus Y, Y, N] [ N, ?, ?] [ ?, ?, ?]
+Or Deduction B
+[N, ?, ?] [Agurgle from Uranus ?, ?, ?][ N, ?, ?] [Y, Y, N]
+You can see that either Agurgle from Uranus or the alien at the extreme right hand booth is green, tentacled and slimy.
+Now taking clue 3, you can work out that ChimChim from Pluto's booth is next to a slimy alien AND each of the other aliens' booths are next to precisely one slimy alien.
+So, based on the first set of deductions, you can infer the following.
+Deduction A (ii):
+[ChimChim from Pluto N, ?, N] [Agurgle from Uranus Y, Y, N] [N, ?, Y] [?, ?, Y]
+Or Deduction B (ii):
+[N, ?, Y] [Agurgle from Uranus ?, ?, Y][ N, ?, N] [ChimChim from Pluto Y, Y, N]
+You can then use clue 1 to eliminate one of these deductions: Wym-Inar from Venus is the only alien in a booth next to exactly one tentacled alien. But in Deduction A(ii), ChimChim from Pluto's booth is next to exactly one tentacled alien.  Therefore, Deduction A (ii) is not possible and Deduction B (ii) is the correct one.
+Deduction B (ii):
+[N, ?, Y] [Agurgle from Uranus ?, ?, Y][ N, ?, N] [ChimChim from Pluto Y, Y, N]
+So, looking again at clues 2 and 3, there are a further 2 possible deductions to be made.
+Deduction A (iii)
+[Mr. Arthur Johnson from Saturn N, N, Y] [Agurgle from Uranus] [?, N, Y] [Wym-Inar from Venus N, N, N][ChimChim from Pluto Y, Y, N]
+Deduction B (iii)
+[Wym-Inar from Venus N, N, Y][Agurgle from Uranus ?, Y, Y][Mr. Arthur Johnson from Saturn N, N, N][ChimChim from Pluto Y, Y, N]
+So, ChimChim from Pluto is green, tentacled and slimy, and is therefore our Neptunian Assassin.",GeminiFlash,basicprompt,,True
+48,"Four men are in a line at the Madadian Police station, charged with unlicensed kebab breeding.
+The men are Mad Ade, Buster Artery, Cliff Hedge and Donny Moe - and they are standing in a straight line.
+One man is fair, handsome and unscarred.
+Two men who are not fair, are each standing next to Mad Ade
+Buster Artery is the only man standing next to exactly one handsome man.
+Cliff Hedge is the only man not standing next to exactly one scarred man.
+Who is fair, handsome and unscarred?","From (2), both the men standing next to Mad Ade are not fair. Also, exactly one man is fair, handsome and unscarred. Hence, there are two cases:
+","Cliff Hedge is fair, handsome and unscarred.
+From (2), both the men standing next to Mad Ade are not fair. Also, exactly one man is fair, handsome and unscarred. Hence, there are two cases:
+Case 1 :: ? (N, ?, ?) : Mad Ade (Y, Y, N) : ? (N, ?, ?) : ? (?, ?, ?)
+Case 2 :: ? (N, ?, ?) : Mad Ade (?, ?, ?) : ? (N, ?, ?) : ? (Y, Y, N)
+Note the representation - Name (Fair, Handsome, Scarred). ""Y"" stands for Yes and ""N"" stands for No. Mad Ade (Y, Y, N) means Mad Ade is Fair, Handsome and Unscarred.(oh, how true this is..NOT)
+It is clear that either Mad Ade or the man at the extreme right is fair, handsome and unscarred.
+From (4), it is deduced that Cliff Hedge is standing next to unscarred man and each of the other men standing next to exactly one scarred man.
+Case 1 :: Cliff Hedge (N, ?, N) : Mad Ade (Y, Y, N) : ? (N, ?, Y) : ? (?, ?, Y)
+Case 2 :: ? (N, ?, Y) : Mad Ade (?, ?, Y) : ? (N, ?, N) : Cliff Hedge (Y, Y, N)
+From (3), Buster Artery is the only man standing next to exactly one handsome man. But in Case 1, Cliff Hedge is standing next to exactly one handsome man. Hence, Case 1 is not possible and Case 2 is the correct one.
+Case 2 :: ? (N, ?, Y) : Mad Ade (?, ?, Y) : ? (N, ?, N) : Cliff Hedge (Y, Y, N)
+Again from (3) and (4), there are 2 possibilities as shown below.
+Case 2a :: Donny Moe (N, N, Y) : Mad Ade (?, N, Y) : Buster Artery (N, N, N) : Cliff Hedge (Y, Y, N)
+Case 2b :: Buster Artery (N, N, Y) : Mad Ade (?, Y, Y) : Donny Moe (N, N, N) : Cliff Hedge (Y, Y, N)
+Thus, Cliff Hedge is fair, handsome and unscarred. Also, Mad Ade may be either fair or not fair.",GeminiFlash,basicprompt,,True
+49,"Mad Ade's rich uncle ""Uncle Rich"" owned the famous Madadian Race horse breeding stables ""The Gluepot"".
+It has a private race track that has five lanes.
+Uncle Rich has 25 horses and wishes to know which are the three fastest.
+What is the least number of races needed to be run to find the answer?
+Note that it is only the ranking of the horses being found not the actual timings.",Subgroups!,"Answer: 7 races
+Race #1 to Race #5 - Divide the horses into 5 groups of 5. Race each group to rank the first 3 in each - that's 5 races.
+Race #6 - Race the winner from each group. The winner in this race is the fastest horse.
+Race #7 - Race the second and third horses from the race in which the fastest horse raced initially,
+the first and second horses from the group of the second horse in Race #6, and the third horse in Race #6 (that's a total of 5 horses).
+The first and second horses in Race #7 are the second and third horses of the entire stable.",GeminiFlash,basicprompt,,True
+50,"In a wood-cutting factory, five large sawing machines stand in a windowless room. Each machine has an on/off switch attached, there being no doubt as to which switch controls which machine. Outside the door to the room are five back-up on/off switches, one for each machine inside. The power for each machine must first pass through the back-up switch, and then the machine switch before reaching the saw. The problem is, the new manager cannot decide how these back-up switches match with the machines inside the room. One day, the manager's brother visits. The manager takes him inside the sawing room where all five machines are at work and explains the problem. The brother announces that he intends to leave the room and that when he returns he will be able to match correctly the five switches outside the room to the five machines inside. The brother works alone, cannot see the machines from outside the room and solves the problem purely by operating switches. How is it possible?","Aside from sight, use other senses.","1) Turn off two machines while inside. Let's call those two machines turned off with inside switch 'inactive', and call remaining three machines 'active'.
+2) Go outside.
+3) Find out which two outside switches correspond to inactive machines, and which correspond to active machines. To do that, try all of following ten combinations, where 'x' represents turned-off outside switch, while 'O' represent turned on switch: xxx00,xx0x0,x0xx0,0xxx0,xx00x,x0x0x,0xx0x,x00xx,0x0xx,00xxx . Only one of these combinations is a 'silent' combination that eliminates all sound, by turning off all three active machines.
+4) Label outside switches related to active machines (those marked with 'x' in the silent combination) with A, B, and C. Label outside switches related to inactive machines with D and E.
+5) For inactive machines, turn D off and E on.
+6) For active machines, turn A and B on, and turn C off.
+7) Wait enough time for machine connected to C switch to cool off, and then turn B off, too.
+8) Go inside.
+9) The only machine that is still working inside is connected to outside switch A.
+10) Check both machines that were active and are now turned off. The one that is warmer is connected to switch B (since it was on most recently), and the cooler one is connected to switch C (which was turned off first).
+11) Turn inside switches on for both 'inactive' machines. The one that starts working is connected to outside switch E. The one that is still not working is connected to outside switch D.",GeminiFlash,basicprompt,,True
+51,"There had been a break in at the ""Sweaty Chef"" Kebab shop, and the new owner, Mustapha Bettaname, had been robbed of his secret kebab recipe. The police had one eye witness, Al Kaholic, the local wino and world champion turps nudger.
+A Police line up of 11 suspects was made to stand in a straight line to have an Identity Parade. The main culprit was asked to stand in the center of the line-up.
+1) Barb Dwyre and Chris Mass stood to the right of the main culprit
+2) Two suspects stood between Ewan Watarmy and Lou Stooth
+3) Seven suspects stood between Mike Rhosopht and Phil Mypokits
+4) Gerry Atrick stood to the right of Hugo Phurst
+5) Robin Banks and Polly Ester-Phants stood either side of Ewan Watarmy
+6) Diddy Dewit and Polly Ester-Phants stood to the left of the main culprit
+7) Six suspects stood between Chris Mass and Ewan Watarmy
+8) Two suspects stood between Ewan Watarmy and Diddy Dewit
+Who is the main culprit?
+","Start with clues 7, 5, 2 and 8 together","Suspects from left to right: Diddy Dewit, (Mike Rhosopht/Phil Mypokits), (Robin Banks/Polly Ester-Phants), Ewan Watarmy, (Robin Banks/Polly Ester-Phants), HUGO PHURST, Lou Stooth, (Barb Dwyre/Gerry Atrick), (Barb Dwyre/Gerry Atrick), (Mike Rhosopht/Phil Mypokits), Chris Mass
+Let's number the positions 1 to 11 from left to right. Hence, the main culprit is at position 6. Now, looking at the clues 7, 5, 2 and 8 together:
+Position 1 - Diddy Dewit or Lou Stooth
+Position 3 - Polly Ester-Phants or Robin Banks
+Position 4 - Ewan Watarmy
+Position 5 - Polly Ester-Phants or Robin Banks
+Position 7 - Diddy Dewit or Lou Stooth
+Position 11 - Chris Mass
+From clue (3), the only possible positions for Mike Rhosopht and Phil Mypokits are Position 2 and Position 10.
+Now there are 3 positions remaining - 6, 8 and 9 and remaining 3 suspects are Hugo Phurst, Barb Dwyre and Gerry Atrick. But from clue (1), Barb Dwyre stood to the right of the main culprit i.e. Barb Dwyre must be on position 8 or 9 as position 6 is for the main culprit. So either Hugo Phurst or Gerry Atrick is the main culprit.
+From (4), Gerry Atrick stood to the right of Hugo Phurst. Hence, Hugo Phurst is the main culprit.
+Suspects from left to right are: Diddy Dewit, (Mike Rhosopht/Phil Mypokits), (Robin Banks/Polly Ester-Phants), Ewan Watarmy, (Robin Banks/Polly Ester-Phants), HUGO PHURST, Lou Stooth, (Barb Dwyre/Gerry Atrick), (Barb Dwyre/Gerry Atrick), (Mike Rhosopht/Phil Mypokits), Chris Mass.
+Thus,
+Diddy Dewit (1), Ewan Watarmy (4), Hugo Phurst (6), Lou Stooth (7) and Chris Mass (11) are the suspects whose positions are fixed.
+Mike Rhosopht and Phil Mypokits are at position 2 or 10.
+Robin Banks and Polly Ester-Phants are at position 3 or 5.
+Barb Dwyre and Gerry Atrick are at position 8 or 9.",GeminiFlash,basicprompt,,True
+52,"One of the most famous logic puzzles is the ""Eight Queens puzzle"".  The object of this puzzle is to place 8 chess queens on a standard 8x8 chessboard so that no queen can be captured by any of the other queens.
+Logically, no queen can share the same row, column, or diagonal with any other queen.
+Can you discover an arrangement that works?",,"There are actually 12 completely unique solutions to this puzzle (unique meaning not simply rotating or flipping the board).
+Using a standard system of numbering rows 1-8 moving away from the player and noting columns with letters a-h, here are the solutions:
+1) a1, g2, e3, h4, b5, d6, f7, c8
+2) a1, g2, d3, f4, h5, b6, e7, c8
+3) c1, a2, g3, e4, h5, b6, d7, f8
+4) d1, a2, e3, h4, b5, g6, c7, f8
+5) e1, a2, h3, d4, b5, g6, c7, f8
+6) e1, a2, d3, f4, h5, b6, g7, c8
+7) e1, a2, h3, f4, c5, g6, b7, d8
+8) e1, c2, a3, g4, b5, h6, f7, d8
+9) e1, g2, a3, d4, b5, h6, f7, c8
+10) f1, a2, e3, b4, h5, c6, g7, d8
+11) f1, c2, a3, h4, d5, b6, g7, e8
+12) g1, a2, c3, h4, f5, d6, b7, e8",GeminiFlash,basicprompt,,True
+53,"Three Paley brothers and three Thomson brothers operate a company that manufactures lie detectors.  Three of these six men always tell the truth, and three always tell lies; neither set of brothers consists exclusively of liars.  Some recent statements from the six men are recorded below.  Can you find the six men's full names, and tell which men tell the truth and which tell lies?
+1.  Alan:  ""Both my brothers tell lies.""
+2.  Boris:  ""Both my brothers tell the truth.""
+3:  Chuck:  ""Alan and Boris are both liars.""
+4.  Dalman:  ""Chuck and I are brothers.""
+5.  Edwin:  ""Boris and I are brothers.""
+6.  Finney:  ""Edwin tells the truth.""
+7.  Finney:  ""Boris is one of the Paleys.""",Can Boris' statement be true?,"Alan Thompson, Liar
+Boris Paley, liar
+Chuck Thomson, truthteller
+Dalman Paley, liar
+Edwin Paley, truthteller
+Finney Thomson, truthteller
+Neither set of brothers consists entirely of liars (introduction), so neither consists entirely of truthtellers, either.  Boris, then, can't be telling the truth (clue 2); Boris is a liar.  If Alan lies, then Chuck tells the truth (clue 3), and vice versa, so between Alan and Chuck, one is a liar and one a truthteller.  By elimination, Dalman, Edwin, and Finney are, in some order, one liar and two truthtellers.  If Finney is a liar, so is Edwin (clue 6), which is impossible; so Finney tells the truth and so does Edwin (Clue 6); Dalman, then, is a liar.  Boris is a Paley (clue 7).  Edwin is a Paley (clue 5).  Chuck and Dalman are not brothers (clue 4), so one is a Paley and the other a Thomson; by elimination, Alan and Finney are both Thomsons.  Finney Thomson tells the truth, so Alan Thomson is a liar (clue 1) and Chuck is a truthteller (clue 3).  Boris Paley lied when he said both of his brothers tell the truth (clue 2); one of his brothers is Edwin Paley, a truthteller, so the other must be a liar - and therefore the third Paley can't be Chuck, a truthteller, so must be Dalman, a liar.  By elimination, Chuck is a Thompson.
+...got it?",GeminiFlash,basicprompt,"Let the six men be Alan (A), Boris (B), Chuck (C), Dalman (D), Edwin (E), and Finney (F). There are three Paley brothers (P) and three Thomson brothers (T). Three men are truth-tellers (TT) and three are liars (LL). Neither set of brothers consists exclusively of liars, meaning each family has at least one truth-teller.
+
+Let's analyze the statements:
+1.  Alan: ""Both my brothers tell lies.""
+2.  Boris: ""Both my brothers tell the truth.""
+3.  Chuck: ""Alan and Boris are both liars.""
+4.  Dalman: ""Chuck and I are brothers.""
+5.  Edwin: ""Boris and I are brothers.""
+6.  Finney: ""Edwin tells the truth.""
+7.  Finney: ""Boris is one of the Paleys.""
+
+Let's use T for truth-teller and L for liar.
+Statement 6: Finney says ""Edwin tells the truth.""
+- If Finney is T, the statement is true, so Edwin is T.
+- If Finney is L, the statement is false, so Edwin is L.
+Thus, Finney and Edwin have the same status: Status(F) = Status(E).
+
+There are two possibilities for (Status(F), Status(E)): (T, T) or (L, L).
+
+Case 1: (F, E) = (T, T). Both Finney and Edwin are truth-tellers.
+Statement 7: Finney is T, so his statement ""Boris is one of the Paleys"" is true. Boris is a Paley.
+Statement 5: Edwin is T, so his statement ""Boris and I are brothers"" is true. Edwin and Boris are brothers. Since Boris is a Paley, Edwin must also be a Paley.
+So, Boris and Edwin are Paley brothers. The Paley family consists of Boris, Edwin, and one other person from {A, C, D, F}.
+Finney is T. If Finney were the third Paley brother, then P = {B, E, F}. Their statuses would be (B=?, E=T, F=T).
+Statement 2: Boris says ""Both my brothers tell the truth."" Boris's brothers would be Edwin and Finney. Both are T.
+- If Boris were T, $S_B$ (""Both E and F are T"") would be true, consistent with B being T. So {B, E, F} could be all TT.
+- If Boris were L, $S_B$ (""Both E and F are T"") would be true, inconsistent with B being L. So B cannot be L if P={B,E,F}.
+So if P = {B, E, F}, all three must be TT. This would mean $S_{TT}=\{B, E, F\}$, and $S_{LL}=\{A, C, D\}$. This implies that the Thomson family {A, C, D} are all liars. This contradicts the constraint that neither set of brothers consists exclusively of liars.
+Therefore, Finney is not the third Paley brother. Finney must be a Thomson.
+
+So, if (F, E) = (T, T), then Boris is Paley, Edwin is Paley, and Finney is Thomson.
+$P = \{B, E, X\}$ where X is one of {A, C, D}. $T = \{F, Y, Z\}$ where {Y, Z} = {A, C, D} \ {X}.
+Statuses so far: E(T), F(T). $S_{TT}$ contains {E, F}. We need one more TT. $S_{LL}$ contains 3 people.
+
+Statement 2: Boris says ""Both my brothers tell the truth."" His brothers are E and X. E is T.
+- If Boris is T: $S_B$ is true. So E is T and X is T. This means X must be T. $S_{TT} = \{B,",True
+54,"A canal in UK has 13 locks and no water supply at the top.
+Each lock loses 7000 L of water when used.
+A truck capable of carrying 22 tons of water is rented to bring water from the bottom to the top.
+Is the contract reasonable, and why?",Where are the water losses?,"At first thought:
+We could think that 13 x 7,000 litres = 91,000 litres that would be lost, against 22 tons.
+22 tons equal 22,000 Litres (1 ton of water = 1000 kg = 1000 litres = 1 m3).
+So we would lose 91,000 litres to gain 22,000 litres: contract is not worth it.
+On second thought:
+Certainly, each lock loses 7,000 litres, but it takes the water from the level above!
+Hence, by succession, we only lose 7,000 litres from the top level, no matter how many locks we have!
+The balance, then, is 22,000 litres - 7,000 litres = 15,000 litres: the contract is worth it!
+On third thought (the engineering approach):
+Unfortunately, waterways ""lose"" water in a continuous manner: by evaporation, by ""leaks"" to the underground water table, by ""leaks"" through the locks.
+Now come two more factors: the length of the canal (which determines the evaporation and leaks to underground), and the TIME it takes to bring the water upstream.
+If the whole of the canal loses 3,000 litres/hour and it takes the boat 5 hours to reach the top, the exercise is pointless (just maintaining the levels).  Less time, and it is worth it.  More time, and it is worthless.
+On fourth thought (the economics):
+If the engineering balance is ""close to equilibrium"", economics may make the exercise worthwhile, by careful planning of the traffic on the canal, i.e. making every lock crossing with TWO boats: one up, one down.",GeminiFlash,basicprompt,"Okay, let's break this down step by step.
+
+1.  **Understand the Goal:** The goal is to determine if a contract to use a truck carrying 22 tons of water to supply a canal with 13 locks, which loses 7000 L per lock use and has no top supply, is ""reasonable"". ""Reasonable"" in this context likely means whether the truck's capacity is sufficient or practical for the task of supplying the needed water.
+
+2.  **Identify the Water Need:**
+    *   There are 13 locks.
+    *   Each lock loses 7000 L of water when used.
+    *   There is no water supply at the top.
+
+3.  **Interpret ""Lock Use"" and ""Water Loss"":** In a flight of locks, when a boat goes *up*, water is drawn from the pound *above* each lock to fill the lock chamber. This water is then discharged to the pound *below* when the boat exits the lock at the higher level. Since there's no water supply at the top, this water that is moved downwards through the flight must be replaced at the top level to maintain sufficient depth for continued operation, especially for future upward passages. The 7000 L loss per lock is most likely referring to this volume of water that needs to be replenished at the higher level (ultimately the top pound) for every upward passage through that lock.
+
+4.  **Calculate Total Water Needed Per Upward Passage:**
+    *   To pass one boat *up* through the entire flight of 13 locks, water is effectively moved from higher levels to lower levels at each lock.
+    *   The total volume of water moved down through the entire flight for one boat going up is the sum of the water used from each pound above each lock.
+    *   Total water needing replenishment at the top = Number of locks * Water loss per lock
+    *   Total water needed = 13 locks * 7000 L/lock = 91000 L.
+    *   This 91000 L of water must be transported from the bottom (where the water ends up) back up to the top.
+
+5.  **Determine the Truck's Capacity in Liters:**
+    *   The truck capacity is 22 tons of water.
+    *   The density of fresh water is approximately 1 tonne per cubic meter (1000 kg/m³).
+    *   1 cubic meter (m³) = 1000 Liters (L).
+    *   So, 1 tonne of water ≈ 1000 kg ≈ 1000 L.
+    *   Truck capacity in Liters = 22 tons * 1000 L/ton = 22000 L.
+
+6.  **Compare Water Needed to Truck Capacity:**
+    *   Water needed at the top *per boat passage up the flight*: 91000 L.
+    *   Truck capacity *per trip*: 22000 L.
+
+7.  **Calculate Number of Truck Trips Needed Per Upward Passage:**
+    *   Number of trips = Total water needed / Truck capacity per trip
+    *   Number of trips = 91000 L / 22000 L/trip = 91 / 22 ≈ 4.136 trips.
+    *   Since the truck must complete full trips, it needs to make 5 trips to carry enough water (5 * 22000 L = 110000 L) to replenish the amount effectively lost from the top system when one boat goes up the entire flight.
+
+8.  **Evaluate Reasonableness of the Contract:**
+    *   The contract involves using a truck with a capacity of 22000 L per trip to supply water to a system where 91000 L is needed at the top for every boat that goes up the entire flight.
+    *   A single trip by this truck provides only 22000 L, which is less than one-quarter of the water needed for one boat to ascend the flight.
+    *   To support just *one* boat going up, the truck would need to make 5 round trips from the bottom to the top.
+    *   Canal locks are often used by multiple boats daily. If several boats use the canal, the required water transport quickly increases to many truckloads per day.
+    *   Given the large volume of water required per boat passage (91000 L) compared to the relatively small volume the truck can carry per trip (22000 L), relying solely on this truck to maintain the necessary water levels for typical canal usage appears highly inefficient and labour-intensive.
+    *   Therefore, the contract is likely not reasonable *as a primary solution* for supplying the necessary water to keep the canal operational for anything more than very infrequent use, due to the mismatch between the truck's capacity and the volume of water needed. If the contract is for a single delivery or very limited service, it might be ""reasonable"" for that specific task, but it doesn't address the underlying problem of supplying enough water for regular operation. The question implies the contract is intended to address the water supply problem.
+
+Final answer: No, the contract is likely not reasonable as a sufficient solution for supplying water to the canal for typical operation. A single boat going up the flight of 13 locks requires approximately 91000 L of water to be replenished at the top. The truck can only carry 22000 L per trip. This means the truck would need to make 5 trips just to supply enough water for one boat to ascend the entire flight. For regular canal usage with multiple boats, this would require a very large number of truck journeys, making it impractical and likely very expensive compared to other potential solutions like pumping or finding an alternative water source.",True
+55,"X statements below are true.
+1. X is 3.
+2. If X is 2, then the following statement is false.
+3. If X is 2, then the previous statement is true.
+4. X is less than 4.
+5. X is a square number.
+6. If X is less than 3, then the previous statement is false.
+7. If X is greater than 2, then the previous statement is false.
+Which statements are true?","All of the statements involve X in them, but some of the statements give direct information about whether they're true or not, and also potential hints for X.","If X is 2, then statements 2 and 3 create a paradox. Therefore, X is not 2, so statements 2 and 3 are both true because the ""if"" part is not satisfied.
+Therefore, statement 6 must be true, because if X is less than 3, we know X must be 2. In this case, statement 5 is false.
+However, because statement 6 is true, there are at least 3 true statements, meaning we can't conclude if statement 5 is false based on this statement alone.
+Statement 7 is false because X is definitely greater than 2, and the previous statement was true.
+Statement 1 and 4 must be false, because their truth will imply their falseness.
+For example, if statement 4 was true, then it won't be satisfied anymore (as there are at least 4 statements true), so it can't be true.
+But statement 5 must then be true, else statements 1 and 4 will become true.
+Conveniently, X is 4, and is a square number, as statement 5 implies.
+Therefore, statements 2, 3, 5, 6 are true.",GeminiFlash,basicprompt,,True
+56,"Your sister has jetted off to Europe on holiday and has left you to watch over her house and feed the cats. She is very protective over her precious cats and, hence, has a high-tech alarm system which requires a 10-digit code to deactivate it. Unfortunately, you have forgotten the code to disarm the alarm! Oddly however, you remember some mathematical facts about them...
+Can you figure it out in time to feed the hungry cats?!?
+* Each digit from 0 to 9 is used once only in the code.
+* The sum of the numbers in the 3rd and 4th positions is equal to the product of the numbers in the 6th and 9th positions.
+* The product of the numbers in the 5th and 10th positions is odd.
+* The 2nd number (i.e. the number in the 2nd position) is larger than the 5th, which is larger than the 7th.
+* The 8th number is larger than the 6th, which is larger than the 2nd.
+* The sum of the 2nd, 6th, and 9th numbers is a perfect square.
+* The sum of the 4th and 9th numbers is equal to the 10th number.
+* The sum of the 1st and 5th numbers is equal to the sum of the 7th and 10th numbers.
+* The number in the 9th position is even.",The number in the 9th position is 4.,8 2 7 5 1 3 0 6 4 9,GeminiFlash,basicprompt,,True
+57,"There was a new and very popular Emperor in a small country in the Pacific Ocean.  The country consisted of two small islands 3 miles apart.  The only way to get to the other island was an old, small ferry boat. The new Emperor was very progressive and wanted to shape up the community to attract tourists and hopefully new residents to stop the population from shrinking.
+He decided to connect the islands by a new bridge.  Everyone knew the job would be difficult and dangerous, and when he put out the word only two companies were even willing to attempt it.
+Company A was the first to offer and said they could do it for $800,000.  When the Emperor told the contractor of Company B what Company A offered, the contractor of Company B said they could not do it for less than $1,000,000. The Emperor took a while to think it over.  Contractor B, being very smart and confident, came back to the Emperor and said, ""Sir, I will give you an offer you cannot refuse.  The decision is completely up to you in the end, but you can pay me $200,000, $750,000, or $1,000,000 for the job.""  Contractor B proceeded with his details and the Emperor immediately accepted his offer.  Company B ended up being paid $1,000,000 for the job. Contractor B did not lie, cheat, or swindle the Emperor in any way.  He is a very honest businessman.
+Why did Company B's offer sound so good to the Emperor, and more importantly, how did Company B end up with the highest amount?","2 Hints:
+1. Company A is part of Company B's idea.
+2. Use your math and accounting skills","Contractor B was very confident in his company's excellent work. It was high quality work so could not lower the full price to under $1,000,000.  He suggested to the Emperor that each company start building from opposite ends and each complete a quarter of the bridge.  The emperor could then examine the 2 quarters and make his decision on which company would complete the job, based off of quality.
+Each company would be paid $200,000 for their quarter, that way if Company A won, the emperor would still only be paying $800,000 ($400,000 more to Company A for the rest of the bridge).  If Company B won, Contractor B argued, it would be because they were obviously superior in bridge building and thus worthy of the extra money.  The Emperor would still only be paying $950,000 that way anyway, which is still cheaper than Company B's full offer, while Company B would still get paid their full ¾ pay for ¾ of a bridge ($750,000).
+When Company A heard this offer, they knew they were beat because they knew their bridge-building skills were far inferior.  They figured it was not worth the $200,000 to start even building since it was so dangerous and immediately backed out, forcing the Emperor to pay Company B their full asking price of $1,000,000.",GeminiFlash,basicprompt,"Okay, let's break down this scenario step by step, applying careful logic to figure out Company B's clever and honest offer.
+
+1.  **Initial Situation:** The Emperor needs a bridge for a ""difficult and dangerous"" job.
+    *   Company A offers to do it for $800,000. We can assume this is the price for a successfully completed bridge. What happens if Company A fails? The story doesn't explicitly say, but in a standard contract for such a risky job, the payment structure is key. Let's consider possibilities later.
+    *   Company B states they cannot do it for less than $1,000,000. This is Company B's price for a successfully completed bridge, reflecting their assessment of the difficulty and cost involved.
+
+2.  **Company B's New Offer:** Contractor B returns with a seemingly strange offer: the Emperor *can pay* $200,000, $750,000, or $1,000,000 *for the job*. The crucial phrase here is ""for the job."" This doesn't sound like the Emperor gets to just pick a price for the exact same service. Instead, the different payment amounts must be tied to different *outcomes* of the job, especially given that it's described as ""difficult and dangerous.""
+
+3.  **Interpreting Company B's Offer Structure:** Given the high risk and the tiered payment options, the most logical interpretation is that these are not selectable prices for the same service, but rather pre-agreed payment amounts contingent on the *degree of success* achieved in building the bridge.
+    *   The highest amount, $1,000,000, aligns with Company B's initial stated minimum for the completed job. This is almost certainly the payment for *successful completion* of the bridge.
+    *   The lowest amount, $200,000, is much lower than the cost of building the bridge. This must represent the payment in the worst-case scenario for Company B – complete *failure* to build the bridge. This payment would likely cover some initial costs, planning, or effort, but not the full cost or profit for a successful build.
+    *   The middle amount, $750,000, likely represents an intermediate outcome – perhaps partial completion, completion with significant issues or delays, or reaching a major milestone short of full success.
+
+4.  **Hypothesizing the Contract Terms:** Based on this, Company B's offer was likely structured as follows:
+    *   ""We will attempt to build the bridge. We agree to the following payment terms based on the outcome of our work:
+        *   If we fail to complete the bridge: You will pay us $200,000.
+        *   If we partially complete the bridge, or complete it with significant issues: You will pay us $750,000.
+        *   If we successfully complete the bridge as agreed: You will pay us $1,000,000.""
+
+5.  **Why the Emperor Accepted (Why it Sounded So Good):** Now, compare this offer structure to Company A's offer of $800,000.
+    *   Company A's offer of $800,000 was likely either:
+        *   a) $800,000 upon successful completion (meaning the Emperor pays nothing if they fail).
+        *   b) A fixed price of $800,000 for undertaking the project, regardless of outcome (meaning the Emperor pays $800,000 even if they fail).
+
+    *   If Company A's offer was (a) – $800k for success, $0 for failure – then Company B's offer is worse in *both* success ($1M vs $800k) and failure ($200k vs $0) scenarios. This doesn't explain why the Emperor ""immediately accepted"" B's offer as one he ""cannot refuse.""
+
+    *   Therefore, Company A's offer must have been (b) – a fixed price of $800,000 paid to Company A *for the attempt*, meaning the Emperor would pay $800,000 even if Company A failed to build the bridge. Given the ""difficult and dangerous"" nature of the job, this kind of cost-plus or fixed-fee-for-effort contract might have been A's proposal to mitigate *their* risk of losing money on a failure.
+
+    *   Now compare Company B's offer (payments based on outcome) to Company A's likely offer (fixed price for the attempt):
+        *   **Worst Case (Failure):** With Company A, the Emperor pays $800,000 and gets no bridge. With Company B, the Emperor pays only $200,000 and gets no bridge. Company B's offer drastically limits the Emperor's financial risk if the project fails.
+        *   **Best Case (Success):** With Company A, the Emperor pays $800,000 and gets a bridge. With Company B, the Emperor pays $1,000,000 and gets a bridge. The Emperor pays more for success with B, but the *downside protection* offered by B in case of failure ($200k vs $800k) is immense.
+
+    *   The ""offer you cannot refuse"" was the significant reduction in the Emperor's risk. The Emperor was willing to pay a premium ($1M vs $800k) if the project succeeded, in exchange for only paying a minimal amount ($200k vs $800k) if the project failed. This shows the Emperor was confident in the likelihood of success (perhaps trusting B's higher initial price meant higher quality or capability) and prioritized limiting his losses in the worst-case scenario.
+
+6.  **How Company B Ended Up With $1,000,000:** The riddle states that Company B ""ended up being paid $1,000,000 for the job."" Under the terms of the contract they agreed upon, the $1,000,000 payment was for the *successful completion* of the bridge. This means Company B successfully built the bridge as agreed.
+
+7.  **Honesty:** Contractor B was completely honest. He laid out the potential costs based on the project's outcome. The Emperor understood the terms – higher payment for success, much lower payment for failure (and an intermediate payment for partial success) – and freely chose this structure because it significantly protected him financially in the event of a difficult and dangerous project failing. Company B simply delivered successfully and was paid the agreed-upon price for that success.
+
+In essence, Company B's offer wasn't about choosing a price for the service, but about agreeing to a payment structure that allocated the risk of failure primarily to themselves (by accepting a much lower payment in case of failure than A seemingly demanded). This risk mitigation for the Emperor made the offer incredibly attractive, despite the higher potential cost in the success scenario.
+
+Final answer: Company B's offer sounded so good to the Emperor because it significantly reduced the Emperor's financial risk in the event the difficult and dangerous bridge project failed. Company A's offer was likely a fixed price of $800,000 paid regardless of success, meaning the Emperor would pay $800,000 even if no bridge was built. Company B offered a tiered payment structure contingent on the outcome: $200,000 if they completely failed, $750,000 for partial success or issues, and $1,000,000 for successful completion. This meant the Emperor would only pay $200,000 (or $750,000) instead of $800,000 if the project didn't result in a complete bridge, making the potential downside much less severe. The Emperor accepted this offer because the benefit of reduced risk in the failure scenario outweighed the higher cost in the success scenario. Company B ended up being paid $1,000,000 because they successfully completed the bridge, triggering the highest payment amount as agreed upon in the contract. Contractor B did not lie or cheat; he offered a payment structure based on potential project outcomes, and Company B achieved the outcome corresponding to the highest payment.",True
+58,"A group of Mad-Ade's friends, although fewer than 10, found a number of Golden kebab tokens which they were able to divide equally among them.
+After this division had been done, Norha Bone - one of the friends, suggested that it would be more equitable to divide the Golden kebab tokens by families rather than by individuals. Among them, there were two groups with two sisters; of course Norha Bone was not in either group. The rest of the friends were unrelated to each other. A re-division by families would have meant that the Golden kebab tokens per family were 5 more than the Golden kebab tokens per friend.
+The friends argued among themselves over this way of dividing the Golden kebab tokens. Before a final decision is made, Wendy Boatkumsin - one of the friends, decided that she did not want any Golden kebab tokens. Her share was equally divided (without breaking/cutting any Kebab token) among the other friends.
+Finally, Norha Bone decided to withdraw her suggestion of dividing the Golden kebab tokens by families.
+How many friends were there and how many Golden kebab tokens did each friend end up with?","Let's assume that N is the number of Golden kebab tokens each friend received initially and G is the total number of friends.
+Then, total number of Golden kebab tokens = NG. Continue from there by writing everything else mathematically","There were a total of 6 friends. Each end up with 12 Golden kebab tokens.
+The number of Golden kebab tokens is evenly divisible by the number of friends as well as the number of families.
+Let's assume that N is the number of Golden kebab tokens each friend received initially and G is the total number of friends.
+Then, total number of Golden kebab tokens = NG
+If the Golden kebab tokens had been divided by families rather than by individuals, the number of recipients would be (G - 2) and each share would be (N + 5).
+Again, total number of Golden kebab tokens = (N + 5)(G - 2)
+But, the total number of the Golden kebab tokens is the same.
+NG = (N + 5)(G - 2)
+NG = NG -2N +5G -10
+2N = 5G -10
+N = (5/2)G - 5
+Now, N and G are the positive integers and also total number of Golden kebab tokens must be divisible by G, (G-1) and (G-2). This is because initially there were G friends; then since it was divided family wise, the total number of units, the coins were to be divided would be (G-2) (as two groups had two sisters, so two friends got combined as one group, one per group); and after Wendy Boatkumsin backed out, there were (G-1) friends.
+Now trying different EVEN values for G, starting with 2; there were total 6 friends and 60 Golden kebab tokens. The Golden kebab tokens are divided among 5 friends and hence each friend ends up with 12 Golden kebab tokens.",GeminiFlash,basicprompt,"Let $N$ be the number of friends in the group initially.
+Let $T$ be the total number of Golden kebab tokens.
+Initially, the tokens were divided equally among the $N$ friends. Let $t_f$ be the number of tokens each friend received.
+So, $T = N \cdot t_f$.
+We are given that $N < 10$. Since it's a group of friends, $N$ must be an integer greater than 1.
+
+Next, a division by families was suggested.
+The group of friends consists of:
+- Two groups of two sisters (4 friends). These form 2 families.
+- Norha Bone (NB), who is not in either group of sisters. She forms her own family. (1 friend, 1 family)
+- The rest of the friends, who are unrelated to each other and to the sisters and NB. Let $k$ be the number of these friends. Each of these friends forms their own family. ($k$ friends, $k$ families)
+
+The total number of friends is $N = 4 + 1 + k = 5 + k$. Since $k \ge 0$, $N \ge 5$.
+The total number of families is $F = 2 + 1 + k = 3 + k$.
+Substituting $k = N-5$, we get $F = 3 + (N-5) = N-2$.
+
+In the re-division by families, the total tokens $T$ would be divided equally among the $F$ families. Let $t_{fam}$ be the number of tokens per family.
+So, $T = F \cdot t_{fam}$.
+We are told that $t_{fam}$ would be 5 more than $t_f$.
+$t_{fam} = t_f + 5$.
+
+Substituting $T = N \cdot t_f$ and $F = N-2$ into $T = F \cdot t_{fam}$:
+$N \cdot t_f = (N-2) \cdot (t_f + 5)$
+$N t_f = N t_f + 5N - 2t_f - 10$
+$0 = 5N - 2t_f - 10$
+$2t_f = 5N - 10$
+$t_f = \frac{5N - 10}{2}$
+
+Since $t_f$ must be an integer (number of tokens), $5N - 10$ must be an even number. $5(N-2)$ must be even. Since 5 is odd, $N-2$ must be even. This means $N$ must be an even number.
+Given $N < 10$ and $N \ge 5$, the possible values for $",True
+59,"Professor Abacus has scrambled the numerals 0 through 9 to form a 10-digit security code.  Each numeral is used only once.  Given the following clues, what is the security code?
+1) The 4th and 5th digits form a triangle number.
+2) The 5th and 6th digits form a prime number.
+3) The 8th digit is three more than the 2nd digit.
+4) The 10th digit is less than the 1st digit.
+5) The sum of the 1st and 6th digits is twice the 9th digit.
+6) The sum of the 3rd, 6th, and 9th digits equals 14.
+7) There are three digits between the numerals 8 and 9.
+8) There are no more than four digits between the numerals 1 and 4.
+9) The numeral 5 is somewhere in the first five positions.",Start by combining hints 1 and 2,"9452831760
+28 is a triangle number, 83 is a prime number, 7 is three more than 4, 0 is less than 9, 9 + 3 is twice 6, 5 + 3 + 6 = 14, there are three digits between 8 and 9, there are four digits between 1 and 4, 5 is in the 3rd position.",GeminiFlash,basicprompt,,True
+60,"Hi. My name is mister Kvakk. I live in a very big house in the country. Outside my house I have a lot of big gardens. In one of them I have hundreds of beautiful, delicious, red flowers.
+At my house, my dog is waiting. I have told him about this flower-heaven-garden with hundreds of flowers, and it really wants to find that garden to eat the flowers (yes, my dog eats flowers).
+However, this flower-heaven is far away, and my dog wants to go there as soon as possible. It has to travel through some other gardens on its way, but it wants to travel between as few other gardens as possible.
+Your mission is to find the best route for my dog, from my house to the flower-heaven. The dog wants to go through as few gardens as possible on its way.
+Here are some facts about my gardens:
+1. There are two gardens between my (mister Kvakk's) house and the house of my neighbour Quack, if you take the shortest route.
+2. The only garden between The lawn and Soria is The field
+3. It's one garden between The field and flower-heaven
+4. One possible route (but not the shortest) from Kvakk to flower-heaven, is: The pool, Soria, Star, The mountain
+5. To go from Kvakk to Quack as fast as possible, you don't need to go through The field, The forest, The angels valley or Star
+6. You can go from The forest to The mountain by going through Longo
+7. Duck country and The forest are my only two gardens that lie against Quack's house
+8. From the garden The field, you can go directly to The lawn, Longo, The pool, Soria, Star and Kvakk's house
+9. There are two gardens between Quack and flower-heaven. These are not the same gardens that are between Kvakk and Quack
+10. Quack's house is to the east of Kvakk's house
+11. Flower-heaven is south-west of Quack's house
+12. Except for the two houses and flower-heaven, ten gardens of different size and shape are named in this teaser
+13. You can go into flower-heaven from three different gardens
+14. If you are at Star, you must go through one garden to come to flower-heaven
+15. Star, The lawn, The mountain, The pool, Soria, The forest, Duck Country and the two houses lie beside the sea. It is not possible for the dog to travel through the sea. Luckily, no other gardens lie beside the sea.
+16. The angel's valley is between flower-heaven and The forest
+Through which gardens should my dog travel?","It's easiest to solve this if you try to draw a kind of map. You should maybe start by using the information points in this order: 1, 10, 7, 9, 11, 4, 5, 6, 8","-You should start by drawing the two houses and the two gardens between them (1). The house to the west is my (mister Kvakk's) house (10).
+-From 7 we know that the garden to the left of Quack is either Duck country or The forest
+-Use 9 and 11 to draw flower-heaven to the south of Quack. The first garden to the south of Quack is either Duck country or The forest
+-Use 4 to draw the four gardens The pool, Soria, Star and The mountain between Kvakk and flower-heaven
+-From 5 you see that you don't need to go through The forest to go from Kvakk to Quack. Therefore, the garden to the left of Quack must be Duck country. And so on, the garden to the south must be The forest.
+-Use 6 to draw in the garden Longo
+-And finally, use 8 to draw the garden The field
+-By 3 and 13 we know se the solution. The three gardens that lie against flower-haven must be The angels valley, Longo and The mountain.
+The shortest route (measured in number of gardens) is: Kvakk's house / The field / Longo / Flower-heaven",GeminiFlash,basicprompt,,True
+61,"In a far away land, it was known that if you drank poison, the only way to save yourself is to drink a stronger poison, which neutralizes the weaker poison. The king that ruled the land wanted to make sure that he possessed the strongest poison in the kingdom, in order to ensure his survival, in any situation. So the king called the kingdom's pharmacist and the kingdom's treasurer, he gave each a week to make the strongest poison. Then, each would drink the other one's poison, then his own, and the one that will survive, will be the one that had the stronger poison.
+The pharmacist went straight to work, but the treasurer knew he had no chance, for the pharmacist was much more experienced in this field, so instead, he made up a plan to survive and make sure the pharmacist dies. On the last day the pharmacist suddenly realized that the treasurer would know he had no chance, so he must have a plan. After a little thought, the pharmacist realized what the treasurer's plan must be, and he concocted a counter plan, to make sure he survives and the treasurer dies. When the time came, the king summoned both of them. They drank the poisons as planned, and the treasurer died, the pharmacist survived, and the king didn't get what he wanted.
+What exactly happened there?",Focus on the fact that stronger poison neutralizes weak poison,"The treasurer's plan was to drink a weak poison prior to the meeting with the king, and then he would drink the pharmacist's strong poison, which would neutralize the weak poison. As his own poison he would bring water, which will have no effect on him, but the pharmacist who would drink the water, and then his poison would surely die. When the pharmacist figured out this plan, he decided to bring water as well. So the treasurer who drank poison earlier, drank the pharmacist's water, then his own water, and died of the poison he drank before. The pharmacist would drink only water, so nothing will happen to him. And because both of them brought the king water, he didn't get a strong poison like he wanted.",GeminiFlash,basicprompt,,True
+62,"Edgar, Frank, and George are regulars at a pub. All three of them have been regulars since before this month.
+1. One regular goes to the pub every two days, one goes every three days, and one goes every seven days.
+2. The first day of a certain month that Edgar went to the bar was a Monday. The first day of the same month that Frank went to the bar was a Wednesday. The first day of the same month that George went to the bar was a Friday.
+3. There was only one day in that month that all three men went to the pub.
+On which day of that month did all three men go to the bar?","From fact 1, the first day the two-day man went to the pub was either the 1st or the 2nd of the month, and the first day the three-day man went was either the 1st, 2nd, or 3rd.","All three men went on the 27th.
+From fact 1, the first day the two-day man went to the pub was either the 1st or the 2nd of the month, and the first day the three-day man went was either the 1st, 2nd, or 3rd. But from fact 2, they could not have gone on consecutive days, so from fact 3, the two-day man must have first gone on the 1st and the three-day man must have first gone on the 3rd. This gives us two possible scenarios:
+1. Edgar went to the pub on Monday the 1st and every two days thereafter, Frank went on Wednesday the 3rd and every three days thereafter, and George went on Friday the 5th and every seven days thereafter.
+2. Frank went on Wednesday the 1st and every two days thereafter, George went on Friday the 3rd and every three days thereafter, and Edgar went on Monday the 6th and every seven days thereafter.
+If scenario 1 is true, then Edgar went on the 1st, 3rd, 5th, 7th, 9th, 11th, 13th, 15th, 17th, 19th, 21st, 23rd, 25th, 27th, and, depending on the length of the month, the 29th and 31st, Frank went on the 3rd, 6th, 9th, 12th, 15th, 18th, 21st, 24th, 27th, and depending on the length of the month, the 30th, and George went on the 5th, 12th, 19th, and 26th. But now there was no day when all three men went to the pub. So this cannot work.
+This means that scenario 2 is true. Edgar went on the 6th, 13th, 20th, and 27th. Frank went on the 1st, 3rd, 5th, 7th, 9th, 11th, 13th, 15th, 17th, 19th, 21st, 23rd, 25th, 27th, and, depending on the length of the month, the 29th and 31st. George went on the 3rd, 6th, 9th, 12th, 15th, 18th, 21st, 24th, 27th, and depending on the length of the month, the 30th. So all three men went on the 27th.",GeminiFlash,basicprompt,,True
+63,"The Detroit Tigers played the Cincinnati Reds in the World Series (Major League Baseball).  In this particular series (which went the full seven games), there was only one shutout, and no team scored more than 12 runs in any game.  Following are some facts that apply to BOTH teams, individually, pertaining to the number of runs scored in each of the 7 games (no information is given about the order in which these games occured).  For each team, there were:
+[1] 4 games with a prime number of runs.
+[2] A multiple of 3 games with an even number of runs.
+[3] No two games, the product of whose runs was a prime number.
+[4] 2 games with a perfect square of runs.
+[5] No game with exactly 5 runs.
+The Tigers scored 30 runs in the entire series, and [6] scored 7 or 8 runs in at least one game.  The Reds scored 36 runs, and [7] of all seven games, there are exactly two pairs of games, the sum of whose runs was exactly 9 (a game can be used in multiple pairs).
+Based on this information, which of these statements is accurate?
+1. The Detroit Tigers won the World Series.
+2. The Cincinnati Reds won the World Series.
+3. The World Series winner is uncertain.
+The bracketed clue numbers [1]-[7] are used for reference in the answer explanation.",": In baseball, the points are called ""runs,"" and there are no tie games in Major League Baseball.  The World Series is a best-of-seven series of games.  A shutout is a game in which a team is held to 0 runs.  Of course, this entire scenario is hypothetical, and not based upon any actual World Series.","The Detroit Tigers won the World Series.
+[2]: Since there were seven games, this must be 0, 3, or 6 games. We know both teams scored an even number of runs in the whole series. This narrows it down from {0, 3, or 6} to 3. So each team had 3 even-run games, and 4 odd-run games.
+[3]: The only case in which two whole numbers may be multiplied together to produce a prime number is that one number is 1 and the other is prime. Since one clue mentions that both teams had some prime-number-run games, the statement is shown to be merely an obfuscated way of saying ""there were no games with exactly 1 run for either team.""
+[1] and [4]: These clues become very useful when combined, for no number exists that is both a perfect square and a prime number. So for each team, these make up 6 of the 7 games, leaving only one game for each team in which neither a prime number nor a perfect square of runs was scored. Here is the breakdown of the numbers 0 to 12, aside from the eliminated numbers 1 and 5:
+Prime - 2,3,7,11 [4 games for each team]
+Square - 0,4,9 [2 games each]
+Neither prime nor square - 6,8,10,12 [1 game each]
+Since all of the ""neither prime nor square"" numbers are even, this leaves 2 even and 4 odd games to make up the 6 ""prime or square"" games for each team. Since we know there was exactly one shutout, one team's square games were either {0,4} or {0,9}, and the other team's square games were either {4,4}, {4,9}, or {9,9}.
+[7]: It can be found that the Reds must have one of the following subsets: {3,6,0,9}, {3,3,6}, {2,2,7}, {2,7,7}, {3,6,2,7}, {2,7,0,9}. {2,7,0,9} is the only one that can be completed legally: {2,7,0,9,3,3,12}.
+We now know the Tigers' square games are either {4,4}, {4,9}, or {9,9}. {4,4} is the only one that can be continued legally, which forces their 4 primes to be odd. So Detroit did not score less than 3 in any game, which means the Reds could have won a maximum of just three games: those in which they scored 7, 9, 12.",GeminiFlash,basicprompt,,True
+64,"Choose true or false to these statements, and your choices must be consistent.
+1. You chose ""True"" at most once.
+2. You chose ""False"" at most once.
+3. You chose ""True"" at most twice.
+4. You chose ""False"" at most twice.
+5. You chose ""True"" at most three times.
+6. You chose ""False"" at most three times.
+7. You chose ""True"" at most four times.
+8. You chose ""False"" at most four times.
+9. You chose ""True"" at most five times.
+10. You chose ""False"" at most five times.","How many statements do you choose true, and how many statements do you choose false?","You can't choose true in both statements 1 and 2, at least one of them must be false. Similar logic exists in statements 3 and 4, and 5 and 6.
+Statements 7 and 10 are contradictory, you must choose one of them true and the other false. Similar logic exists in statements 8 and 9.
+Therefore, you choose ""false"" at least 5 times and ""true"" at least 2 times. By trial and error you see that statements 5, 7 and 9 are true, and the others are false.",GeminiFlash,basicprompt,"Let $N_T$ be the number of statements I choose to be ""True"", and $N_F$ be the number of statements I choose to be ""False"". Since there are 10 statements, $N_T + N_F = 10$.
+
+Let's analyze each statement:
+$S_1$: ""You chose 'True' at most once."" This means $N_T \le 1$.
+$S_2$: ""You chose 'False' at most once."" This means $N_F \le 1$.
+$S_3$: ""You chose 'True' at most twice."" This means $N_T \le 2$.
+$S_4$: ""You chose 'False' at most twice."" This means $N_F \le 2$.
+$S_5$: ""You chose 'True' at most three times."" This means $N_T \le 3$.
+$S_6$: ""You chose 'False' at most three times."" This means $N_F \le 3$.
+$S_7$: ""You chose 'True' at most four times."" This means $N_T \le 4$.
+$S_8$: ""You chose 'False' at most four times."" This means $N_F \le 4$.
+$S_9$: ""You chose 'True' at most five times."" This means $N_T \le 5$.
+$S_{10}$: ""You chose 'False' at most five times."" This means $N_F \le 5$.
+
+The choices must be consistent. This means that if I choose a statement to be ""True"", then the statement must be true given all my choices. If I choose a statement to be ""False"", then the statement must be false given all my choices.
+Let $C_i$ be my choice for statement $S_i$. $C_i$ is ""True"" if $S_i$ is true based on the values of $N_T$ and $N_F$ determined by all choices, and ""False"" if $S_i$ is false.
+
+So, the $i$-th statement is true if and only if I choose ""True"" for the $i$-th statement. This means $N_T$ must be equal to the number of statements that are true.
+
+Let's rephrase the conditions based on $N_T$ (since $N_F = 10 - N_T$):
+$S_1$ is true if $N_T \le 1$.
+$S_2$ is true if $10 - N_T \le 1 \iff N_T \ge 9$.
+$S_3$ is true if $N_T \le 2$.
+$S_4$ is true if $10 - N_T \le 2 \iff N_T \ge 8$.
+$S_5$ is true if $N_T \le 3$.
+$S_6$ is true if $10 - N_T \le 3 \iff N_T \ge 7$.
+$S_7$ is true if $N_T \le 4$.
+$S_8$ is true if $10 - N_T \le 4 \iff N_T \ge 6$.
+$S_9$ is true if $N_T \le 5$.
+$S_{10}$ is true if $10 - N_T \le 5 \iff N_T \ge 5$.
+
+Let $T(N_T)$ be the number of statements that are true for a given value of $N_T$. For the choices to be consistent, the number of true statements must equal $N_T$. So we need to find $N_T$ such that $T(N_T) = N_T$.
+
+Let's test values of $N_T$ from 0 to 10:
+- If $N_T=0$: $N_F=10$. True statements: $N_T \le 1$ ($S_1$), $N_T \le 2$ ($S_3$), $N_T \le 3$ ($S_5$), $N_T \le 4$ ($S_7$), $N_T \le 5$ ($S_9$). $T(0)=5$. $T(0) \ne 0$.
+- If $N_T=1$: $N_F=9$. True statements: $N_T \le 1$ ($S_1$), $N_T \le 2$ ($S_3$), $N_T \le 3$ ($S_5$), $N_T \le 4$ ($S_7$), $N_T \le 5$ ($S_9$). $T(1)=5$. $T(1) \ne 1$.
+- If $N_T=2$: $N_F=8$. True statements: $N_T \le 2$ ($S_3$), $N_T \le 3$ ($S_5$), $N_T \le 4$ ($S_7$), $N_T \le 5$ ($S_9$). $T(2)=4$. $T(2) \ne 2$.
+- If $N_T=3$: $N_F=7$. True statements: $N_T \le 3$ ($S_5$), $N_T \le 4$ ($S_7$), $N_T \le 5$ ($S_9$). $T(3)=3$. $T(3) = 3$. This is a potential solution.
+- If $N_T=4$: $N_F=6$. True statements: $N_T \le 4$ ($S_7$), $N_T \le 5$ ($S_9$). $T(4)=2$. $T(4) \ne 4$.
+- If $N_T=5$: $N_F=5$. True statements: $N_T \le 5$ ($S_9$), $N_F \le 5$ ($S_{10}$). $T(5)=2$. $T(5) \ne 5$.
+- If $N_T=6$: $N_F=4$. True statements: $N_F \le 4$ ($S_8$), $N_F \le 5$ ($S_{10}$). $T(6)=2$. $T(6) \ne 6$.
+- If $N_T=7$: $N_F=3$. True statements: $N_F \le 3$ ($S_6$), $N_F \le 4$ ($S_8$), $N_F \le 5$ ($S_{10}$). $T(7)=3$. $T(7) \ne 7$.
+- If $N_T=8$: $N_F=2$. True statements: $N_F \le 2$ ($S_4$), $N_F \le 3$ ($S_6$), $N_F \le 4$ ($S_8$), $N_F \le 5$ ($S_{10}$). $T(8)=4$. $T(8) \ne 8$.
+- If $N_T=9$: $N_F=1$. True statements: $N_F \le 1$ ($S_2$), $N_F \le 2$ ($S_4$), $N_F \le 3$ ($S_6$), $N_F \le 4$ ($S_8$), $N_F \le 5$ ($S_{10}$). $T(9)=5$. $T(9) \ne 9$.
+- If $N_T=10$: $N_F=0$. True statements: $N_F \le 1$ ($S_2$), $N",True
+65,"The Antisocial Club meets every week at Jim's Bar.  Since they are so antisocial, however, everyone always sits as far as possible from the other members, and no one ever sits right next to another member.  Because of this, the 25-stool bar is almost always less than half full and unfortunately for Jim the members that don't sit at the bar don't order any drinks.  Jim, however, is pretty smart and makes up a new rule:  The first person to sit at the bar has to sit at one of two particular stools.  If this happens, then the maximum number of members will sit at the bar.  Which stools must be chosen?  Assume the stools are numbered 1 to 25 and are arranged in a straight line.","Don't forget - the people sit as far away from each other as possible.  If stool #1 is chosen first, the next person will always sit in stool #25.","The first person must take either stool 9 or 17 (because of symmetry, it doesn't matter which).  Assume they pick seat 9.  The next person will pick seat 25, since it is the furthest from seat 9.  The next two people will take Seats one and 17.  The next three will occupy 5, 13, and 21.  The next six will occupy 3, 7, 11, 15, 19, and 23.  This seats the maximum of 13 people, and no one is sitting next to another person.  If a seat other than 9 or 17 is chosen first, the total bar patrons will be less than 13.",GeminiFlash,basicprompt,,True
+66,"The penthouse suite of Auckland's Victoria Residences  has become available. Seven married couples (including Mr. and Mrs. Officer) who are current tenants (on the 3rd, 4th, 6th, 7th, 8th, 10th, and 11th floors) are taking advantage of an open house to have a peek at what life is like at the top. Each of the men (including Frank) has recently scaled one of the ""Seven Summits"" - the highest peaks of each continent (including Puncak Jaya of Oceania). Meeting each other during this peek at the penthouse has piqued their interest in scaling all the peaks. The wives (including Linda) are not climbers, but are looking forward to travelling with their husbands to each continent.
+From the information given below, can you determine the first and last name of each mountaineer, the floor on which he lives, the peak that he climbed, as well as the name and hair color of his wife?
+1. Nora's husband is three floors below Mr. Simpson and four floors above the man who climbed Vinson Massif. These three men are Adam, Brian, and Charles. Their wives all have the same hair color.
+2. Mr. Riley is two floors below Edmund and two floors above the man who climbed Mont Blanc (who is not Mr. Peary). These three men's wives are Heidi, Iris, and Jane. Two of these women have red hair, while the other is blonde.
+3. Kate's husband is somewhere below David and somewhere above the Kilimanjaro climber (who isn't Charles). These three men are Mr. Simpson, Mr. Tailor, and Mr. Upton. Two of their wives are brunette, while the other is blonde.
+4. George lives somewhere below Mr. Tailor (who isn't Edmund) and three floors above Mona's husband. These three men are the ones who climbed Aconcagua, Denali, and Vinson Massif. Each of their wives has a different hair color.
+5. Mrs. Quarry is two floors below the wife of the Everest climber and two floors above Iris. None of these three is blonde.
+6. Heidi lives somewhere below Brian's wife and somewhere above the Aconcagua climber's wife.",You might start by determining on which floor the Simpsons live.,"David Tailor, who lives on the 11th floor, climbed Denali. His wife, Linda, is a blonde.
+Brian Simpson, who lives on the 10th floor, climbed Everest. His wife, Kate, is a brunette.
+Edmund Quarry, who lives on the 8th floor, climbed Puncak Jaya. His wife, Heidi, is a redhead.
+Adam Upton, who lives on the 7th floor, climbed Kilimanjaro. His wife, Nora, is a brunette.
+George Riley, who lives on the 6th floor, climbed Aconcagua. His wife, Iris, is a redhead.
+Frank Officer, who lives on the 4th floor, climbed Mont Blanc. His wife, Jane, is a blonde.
+Charles Peary, who lives on the 3rd floor, climbed Vinson Massif. His wife, Mona, is a brunette.",GeminiFlash,basicprompt,,True
+67,"A road leading to a secret military base is 20 feet wide. Private Roberts was ordered to plant 20 land mines on the road in a 20-foot by 20-foot area. He laid out the area in a grid, with 100 2-foot squares arranged in 10 columns (running parallel with the road) and 10 rows (running perpendicular with the road).  He planted each land mine within a square on the grid so that there were exactly two mines in each row and two in each column. When he was finished, he found himself on the wrong side of the minefield, and he couldn't get back to the base without crossing the minefield.
+He labeled the columns A-J from left to right, and numbered the rows 1-10 starting with the row closest to the base.
+-- A B C D E F G H I J
+01X X X X X X X X X X
+02X X X X X X X X X X
+03X X X X X X X X X X
+04X X X X X X X X X X
+05X X X X X X X X X X
+06X X X X X X X X X X
+07X X X X X X X X X X
+08X X X X X X X X X X
+09X X X X X X X X X X
+10X X X X X X X X X X
+He could remember the following facts about where the mines were planted:
+1. There was no mine in any of the four corners.
+2. Row 10 was the only row where the two mines were next to each other.
+3. The two mines in column C were in the same rows as the two mines in column H.
+4. One of the mines in column B was in row 7.
+5. In row 9, there were 3 empty squares between the two mines.
+6. Both mines in column E were in row 5 or higher.
+7. One of the mines in column I was in row 9 or 10.
+8. Both mines in column H were in odd number rows.
+9. The two mines in column D were in the same rows as the two mines in column J.
+10. One of the mines in column A was in row 5.
+Can you find a safe path to the other side of the mine field moving one square at a time (either horizontally, vertically, or diagonally), starting in row 10 and moving through row one?","Try to map the safe squares, not the mines. Diagonal movements are allowed.","The shortest safe path:  start at C:10 and walk straight to C:5, turn right to D:5, then move diagonal to E:4, and walk straight out through E:1. Following is a map of the safe squares.
+-- A B C D E F G H I J
+01S X X S S X X X X S
+02X X S X S X X S X X
+03X X X X S X X X X X
+04X X S X S X X S X X
+05X S S S X X X S X S
+06X X S X X X X S X X
+07S X S S X X X S X S
+08X X S X X X X S X X
+09S S S S X S S S X S
+10S X S X X X X S X S
+Row 10: A, C, H and J are safe (clue 1, 3, 8).
+Row 9: Clue 1, 2, 5, 7 place mines in I:9 and E:9.
+Row 8: C and H are safe (clue 3 and 8).
+Row 7: There is a mine in B (clue 4), which makes A,C,D, H, and J safe (clue 2,3, and 9).
+Row 6: C and H are safe (clue 3 and 8).
+Row 5: There is a mine in A (clue 10), which makes B,C,D, H, and J safe (clue 2,3, and 9).
+Row 1 through 4: E is safe (clue 6).",GeminiFlash,basicprompt,,True
+68,"There is a ten-digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) B + C + F + J = E + G + H + I = AD
+2) B - H = J - G = 3
+3) C - F = E - I = 5
+4) B * I = AJ","The sum of the ten digits is 45.  Two digits (A and D) form a two-digit number.  If A and D are 8 and 9, then the remaining eight digits sum to 28.  If A and D are 0 and 1, then the remaining digits sum to 44.  These sums must be split equally between two groups of four digits.","2951804637
+A = 2, B = 9, C = 5, D = 1, E = 8, F = 0, G = 4, H = 6, I = 3, J = 7
+1) 9 + 5 + 0 + 7 = 8 + 4 + 6 + 3 = 21
+2) 8 - 3 = 5 - 0 = 5
+3) 7 - 4 = 9 - 6 = 3
+4) 9 * 3 = 27
+A) The sum of the ten digits is 45.  Two digits (A and D) form a two-digit number.  If A and D are 8 and 9, then the remaining eight digits sum to 28.  If A and D are 0 and 1, then the remaining digits sum to 44.  These sums must be split equally between two groups of four digits.  Therefore, each group of four digits must sum to one of the following: 14, 15, 16, 17, 18, 19, 20, 21, 22.
+B) If the sum of each group is 14, then A and D must be a combination of 1 and 4, which sum to 5.  Subtract 5 from 45, leaving 40.  Divide 40 by 2, leaving 20.  20 does not equal 14, so the sum of each group can not be 14.  Repeating the preceding sequence for each of the possible sums leaves only two possible results: 18 (1 + 8 = 9, 45 - 9 = 36, 36 / 2 = 18) and 21 (2 + 1 = 3, 45 - 3 = 42, 42 / 2 = 21).  A must be: 1, 2.  D must be: 1, 8.
+C) To satisfy equation #2, B and J must be 3 greater than H and G, respectively.  B and J must each be one of the following: 3, 5, 6, 7, 8, 9.  H and G must each be one of the following: 0, 2, 3, 4, 5, 6.
+D) To satisfy equation #3, C and E must be 5 greater than F and I, respectively.  C and E must each be one of the following: 5, 7, 8, 9.  F and I must each be one of the following: 0, 2, 3, 4.
+E) For equation #4, there are six possibilities for B and four possibilities for I, creating 24 possible equations.  Eliminate any equation where A is not 1 or 2.  Eliminate any equation where J is not 3, 5, 6, 7, 8, or 9.  Eliminate any equation where any digit is duplicated.  B must be: 6, 7, 8, 9.  I must be: 2, 3, 4.  J must be: 6, 7, 8.
+F) Returning to equations #2 and #3, eliminate additional possibilities.  E must be: 7, 8, 9.  G must be: 3, 4, 5.  H must be: 3, 4, 5, 6.  This results in F = 0 and C = 5.
+G) Since H can not be 5, B can not be 8.  Since G can not be 5, J can not be 8.  Going back to equation #4, eliminate those equations where either B or J is 8.  B = 9, I = 3, A = 2, and J = 7.
+H) The last four letters can now be assigned values.  D = 1, E = 8, G = 4, and H = 6.",GeminiFlash,basicprompt,,True
+69,"A single letter is on each of the six sides of four toy blocks. No letter is repeated. Any side of a block can be face up, and the blocks can be in any order. The twelve words listed below can be spelled face up using the four blocks.
+What are the six letters on each block?
+1. Brim
+2. Clip
+3. Hank
+4. Hoax
+5. Home
+6. Puny
+7. Quit
+8. Rude
+9. Stow
+10. Vein
+11. Wife
+12. Zeal",First consider the words with lots of overlapping letters,"1. ACMUVW
+2. BEKPTX
+3. DHISYZ
+4. FLNOQR",GeminiFlash,basicprompt,,True
+70,"There are three men, Alex, Bob and Chuck.  One of the men always tells the truth and one always lies.  The third man always tells a lie after telling the truth and always tells the truth after telling a lie.  The third man can answer the first question truthfully or can lie.
+Can you tell who is the truth teller, the liar and the unreliable man by asking just three questions?  Each question is directed to a single person.",,"First ask Alex, ""Does Bob sometimes tell the truth and sometimes lie?""
+A ""yes"" answer means one of the following must be true:
+1) Alex is the truth teller and Bob is unreliable;
+2) Alex is the liar and Bob is the truth teller;
+3) Alex is unreliable and is lying and Bob is the truth teller; or
+4) Alex is unreliable and is lying and Bob is the liar.
+A ""no"" answer means one of these must be true:
+1) Alex is the truth teller and Bob is the liar;
+2) Alex is the liar and Bob is unreliable;
+3) Alex is unreliable and is telling the truth and Bob is the truth teller; or
+4) Alex is unreliable and is telling the truth and Bob is the liar.
+If the answer is ""yes"", you ask Alex ""Is Bob the liar?""; if the answer is ""no"", you ask Alex ""Is Bob the truth teller?""
+Depending on the answers to the first two questions, you know one of the following:
+A) If the answer to both questions was ""yes"" then either
+1) Alex is the liar and Bob is the truth teller; or
+2) Alex is unreliable and lied on the first question and Bob is the liar.
+B) If the answer to both questions is ""no"" then either
+1) Alex is the truth teller and Bob is the liar; or
+2) Alex is unreliable and Bob is the truth teller.
+C) If the answer to the first question was ""yes"" and the second question was ""no"" then either
+1) Alex is the truth teller and Bob is unreliable; or
+2) Alex is unreliable and lied on the first question and Bob is the truth teller.
+In either case, Chuck is the liar.
+D) If the answer to the first question was ""no"" and the second question was ""yes"" then either
+1) Alex is the liar and Bob is unreliable; or
+2) Alex is unreliable and Bob is the liar.
+In either case, Chuck is the truth teller.
+In cases A & B you've identified one person as either the liar or the truth teller and you've identified another person as either not the liar or not the truth teller.  In these cases you ask the person who is neither the liar or the truth teller a question you know the answer to.  In cases C & D you've identified Chuck as either the liar or truth teller.  At this point you simply ask Chuck a question to identify either Alex or Bob.
+So the final question and results for each case are:
+A) You ask Bob ""Is Alex the truth teller?""
+""yes"" means that
+Alex is unreliable, Bob is the liar and Chuck is the truth teller;
+""no"" means that
+Alex is the liar, Bob is the truth teller and Chuck is unreliable.
+B) You ask Bob ""Is Alex the liar?""
+""yes"" means that
+Alex is the truth teller, Bob is the liar and Chuck is unreliable;
+""no"" means that
+Alex is unreliable, Bob is the truth teller and Chuck is the liar.
+C) You ask Chuck ""Is Alex the truth teller?""
+""yes"" means that
+Alex is unreliable, Bob is the truth teller and Chuck is the liar;
+""no"" means that
+Alex is the truth teller, Bob is unreliable and Chuck is the liar.
+D) You ask Chuck ""Is Alex the liar?""
+""yes"" means that
+Alex is the liar, Bob is unreliable and Chuck is the truth teller;
+""no"" means that
+Alex is unreliable, Bob is the liar and Chuck is the truth teller.",GeminiFlash,basicprompt,,True
+71,"Mad Ade is once again babysitting for family. The devil's spawn...er...three year old nephew he is watching is playing with some painted wooden blocks that have letters on the side, much like they did in teaser #15201.
+Once again there are four blocks, each with a different letter on each side, making a total of 24 letters altogether.
+Mad Ade noticed that the devil's...er...his nephew managed to make the following words from the four blocks.
+BOXY,
+BUCK,
+CHAW,
+DIGS,
+EXAM,
+FLIT,
+GIRL,
+JUMP,
+OGRE,
+OKAY,
+PAWN,
+ZEST
+Now Mad Ade is relatively simple and once more missed the potential teaser in the situation, his mind firmly fixed on Kebabs.
+Can you figure out how the letters are arranged on the 4 blocks?","Start by deducing something about the vowels A, E, O","Block 1: A, B, F, J, R, and S.
+Block 2: D, E, L, U, W, and Y.
+Block 3: C, I, M, N, O, and Z.
+Block 4: G, H, K, P, T, and X.
+From the word EXAM, we conclude that E and A are not on the same block.
+From the word OGRE, we conclude that E and O are not on the same block.
+From the word OKAY, we conclude that A and O are not on the same block.
+Combining these, we conclude that A, E, and O are on different blocks. Assume that A is on block 1, E is on block 2, and O is on block 3.
+From the words BOXY and EXAM, we conclude that X is not on the same block as A (block 1), E (block 2), and O (block 3), so X is on block 4.
+From the words BOXY and OKAY, we conclude that Y is not on the same block as A (block 1), O (block 3), and X (block 4), so Y is on block 2.
+From the word EXAM, we conclude that M is not on the same block as A (block 1), E (block 2), and X (block 4), so M is on block 3.
+From the word OKAY, we conclude that K is not on the same block as A (block 1), Y (block 2), and O (block 3), so K is on block 4.
+From the word BOXY, we conclude that B is not on the same block as Y (block 2), O (block 3), and X (block 4), so B is on block 1.
+From the words BUCK and JUMP, we conclude that U is not on the same block as B (block 1), M (block 3), and K (block 4), so U is on block 2.
+From the words PAWN and JUMP, we conclude that P is not on the same block as A (block 1), U (block 2), and M (block 3), so P is on block 4.
+From the word JUMP, we conclude that J is not on the same block as U (block 2), M (block 3), and P (block 4), so J is on block 1.
+From the words CHAW and BUCK, we conclude that C is not on the same block as A (block 1), U (block 2), and K (block 4), so C is on block 3.
+From the words CHAW and PAWN, we conclude that W is not on the same block as A (block 1), C (block 3), and P (block 4), so W is on block 2.
+From the word CHAW, we conclude that H is not on the same block as A (block 1), W (block 2), and C (block 3), so H is on block 4.
+From the word PAWN, we conclude that N is not on the same block as A (block 1), W (block 2), and P (block 4), so N is on block 3.
+Now, we must still have three letters for block 1, and two letters for each of the blocks 2, 3, and 4. We have the following letters left:
+D, F, G, I, L, R, S, T, Z
+From the words DIGS, FLIT and GIRL, we conclude that I is not on the same block as D, F, G, L, R, S, and T, so I is on the same block as Z. Furthermore, I and Z are on block 2, 3, or 4.
+From the word ZEST, we conclude that Z is not on the same block as E (block 2), so Z is on block 3 or 4.
+From the word OGRE, we conclude that G and R are not on the same block as E (block 2), and O (block 3), so G and R are on block 1 or 4, but not on the same block.
+From the word GIRL, we conclude that I is not on the same block as G and R (block 1 or 4), so I is on block 2 or 3. Since Z is on block 3 or 4, I and Z must be on block 3. Now we have all six letters of block 3: C, I, M, N, O, and Z.
+From the word GIRL, we conclude that L is not on the same block as G and R (block 1 and 4), so L is on block 2.
+From the words FLIT and GIRL, we conclude that F, G, L, R, and T are not on the same block as L (block 2), and from the word ZEST, we conclude that S is not on the same block as E (block 2). So D must be on block 2.
+Now we have all six letters of block 2: D, E, L, U, W, and Y.
+From the words GIRL and DIGS, we conclude that G is not on the same block as R and S.
+From the words FLIT and ZEST, we conclude that T is not on the same block as F and S.
+Combining this, F, R, and S must be on the same block (block 1), and G and T must be on the same block (block 4).",GeminiFlash,basicprompt,,True
+72,"You have:
+- two 10-liter jugs, full of water
+- one 9-liter jug, empty
+- two large pools, empty
+Your objective is to end up having 4 liters of water in each pool, and one liter of water in the 9-liter jug.
+You have nothing else at your disposal and you can not measure using eye or shape of jugs. You can not pour water from pools, only into them.","This needs 29 steps to fill two pools with 4-liters, and an additional 4 steps to get 1 liter in the 9-liter jug, for a total of 33 steps.","Label the 10-liter jugs as A and B, the 9-liter jug as C, and the two pools as Pa and Pb. The problem can be solved in 33 steps, as shown below. Each step is shown in one row, starting with the step number, followed by the jug we poured water from, then the quantity of water, then the jug/pool we poured water into... i.e. A ->( 1)-> Pb means we poured 1 liter of water from jug A (being 1st 10-liter jug)  to pool Pb  (being 2nd pool). Finally in the row we show how much water we have in each jug/pool after performing this step.
+------------------------------------
+#:  From -> Qty -> To =  A  B  C Pa Pb
+------------------------------------
+0: _____________ =  10 10  0  0  0
+1:  A ->( 9)->  C =   1 10  9  0  0
+2:  A ->( 1)-> Pa =   0 10  9  1  0
+3:  C ->( 9)->  A =   9 10  0  1  0
+4:  B ->( 9)->  C =   9  1  9  1  0
+5:  B ->( 1)-> Pa =   9  0  9  2  0
+6:  C ->( 1)->  A =  10  0  8  2  0
+7:  C ->( 8)->  B =  10  8  0  2  0
+8:  A ->( 9)->  C =   1  8  9  2  0
+9:  A ->( 1)-> Pa =   0  8  9  3  0
+10:  C ->( 9)->  A =   9  8  0  3  0
+11:  A ->( 2)->  B =   7 10  0  3  0
+12:  B ->( 9)->  C =   7  1  9  3  0
+13:  B ->( 1)-> Pa =   7  0  9  4  0
+14:  C ->( 3)->  A =  10  0  6  4  0
+15:  C ->( 6)->  B =  10  6  0  4  0
+16:  A ->( 9)->  C =   1  6  9  4  0
+17:  A ->( 1)-> Pb =   0  6  9  4  1
+18:  C ->( 9)->  A =   9  6  0  4  1
+19:  A ->( 4)->  B =   5 10  0  4  1
+20:  B ->( 9)->  C =   5  1  9  4  1
+21:  B ->( 1)-> Pb =   5  0  9  4  2
+22:  C ->( 5)->  A =  10  0  4  4  2
+23:  C ->( 4)->  B =  10  4  0  4  2
+24:  A ->( 9)->  C =   1  4  9  4  2
+25:  A ->( 1)-> Pb =   0  4  9  4  3
+26:  C ->( 9)->  A =   9  4  0  4  3
+27:  A ->( 6)->  B =   3 10  0  4  3
+28:  B ->( 9)->  C =   3  1  9  4  3
+29:  B ->( 1)-> Pb =   3  0  9  4  4
+30:  C ->( 7)->  A =  10  0  2  4  4
+31:  C ->( 2)->  B =  10  2  0  4  4
+32:  A ->( 9)->  C =   1  2  9  4  4
+33:  C ->( 8)->  B =   1 10  1  4  4
+After the 33rd step we end up with 4 liters in each pool (Pa and Pb), and 1 liter in the 9-liter jug (C),  as requested in the problem.",GeminiFlash,basicprompt,,True
+73,"During the final round of a chess tournament, the eventual top 4 finishers in the tournament played their final game against 4 different opponents. The tournament boards were numbered from 1 to 50 to facilitate location and identification of games. Each of the top 4 finishers played a different opening in this last game. Use the clues below to determine the first and last names of the first through fourth place winners of the tournament, the chess opening each used in his last game, and the number of the chess board on which he played his final game.
+1. Mr. Hart played the King's Indian Defence.
+2. Steve placed ahead of the one who used the Ruy Lopez opening.
+3. The top 4 players were Larry, Mr. Korn, the contestant who opened with Queen's Gambit, and a player who played on an even-numbered board.
+4. Mr. Rose finished exactly 2 places ahead of the player on board 31.
+5. The number of the 3rd place winner's board is at least 10 higher or at least 10 lower than that of Mr. Baird.
+6. The number of the board of the contestant who placed immediately after Bert is exactly 15 higher than the number of the board played by the one who placed immediately before Tom.
+7. The lowest board number of the top 4 finishers was exactly half the number of the board played by the one who placed immediately after the one who played the Giuoco Piano opening.
+8. The highest board number was exactly 8 higher than the board number of the man who finished exactly two places after Bert.","All other information (First name, Surname, Moves, Positions) are given in the puzzle, apart from the board numbers. The key to this puzzle is figuring them out, and then everything falls into place. Try different combinations, there is only one that works.","Firstly, work out the board numbers. We know that Bert finished in the first 2 (Clue 8) and board 31 finished in the last 2 (Clue 4). Using all combinations of these, we can eliminate all but the correct numbers, ie 16, 31, 32 and 40.
+After we know the numbers, the rest falls into place.
+First: Steve Rose, Queen's Gambit, board 40
+Second: Bert Baird, Ruy Lopez, board 16
+Third: Tom Korn, Giuoco Piano, board 31
+Fourth: Larry Hart, King's Indian, board 32",GeminiFlash,basicprompt,,True
+74,"In the following code, each symbol stands for one of five letters.
+^ stands for N, F, D, R, or E
+{ stands for A, W, L, T, or O
+@ stands for M, E, C, A, or B
+] stands for L, P, O, A, or T
+The four letter code word, {@^], can be translated into two English words that are opposites. What are the two words?","The words start with ""W""",Warp and Weft.,GeminiFlash,basicprompt,,True
+75,"In the following code, each symbol stands for one of five letters.
+! stands for Y, E, G, P, or T
+@ stands for F, B, A, Q, or T
+# stands for R, E, A, N, or Z
+$ stands for F, E, N, S, or H
+% stands for S, T, Y, M, or W
+^ stands for P, D, E, H, or C
+& stands for U, K, H, T, or B
+* stands for O, J, G, I, or Z
+? stands for E, L, D, N, or C
+The nine letter code word, ^*$%@#&?!, can be translated into two English words that are opposites. What are the two words?",Building,Construct and Dismantle.,GeminiFlash,basicprompt,,True
+76,"With the death of Arthur Minit, the legendary country of MADADIA's only clock maker, no one else had much experience yet with making clocks. The new church of MADADIA had just been completed and a new clock was needed to fit into the bell tower. A clock was made by the locals, using the books of Arthur Minit as a guide.The newly made clock was officially put into use when it showed 6 o'clock. But soon it was noticed that the hour-hand and minute-hand had been interchanged and attached to the wrong spindles. The result was that the hour-hand moved with a speed twelve times higher than the minute-hand. When a clock maker arrived from another area, a remarkable thing happened: on the moment he inspected the clock, it showed exactly the right time.
+The Question: If the clock started in the 6 o'clock position, then what was the first moment that it showed the correct time again?","Suppose that a second pair of hands turns together with the wrong pair of hands, but then in the correct way. When the wrong pair is in the same position as the correct pair, this means that the time is shown in the right way.","Suppose that a second pair of hands turns together with the wrong pair of hands, but then in the correct way. When the wrong pair is in the same position as the correct pair, this means that the time is shown in the right way. First look at the hour-hands that are at the twelve. One turns with the correct speed, the other with a speed that is twelve times as small. These two hands are in the same position again when the 'slow' hand has progressed x minutes. The fast hand then has progressed 60+x minutes. For the time x that passed, then holds: (60+x)/12 = x. This means that x = 5 5/11 minutes.
+For the minutes-hands that start at six holds the same. The confused clock therefore shows the correct time again at 5 5/11 minutes past 7.",GeminiFlash,basicprompt,,True
+77,"You roll five dice.
+If you roll 5, 3, 2, 1, 6 you get 8 points.
+2, 2, 3, 5, 1 = 8 points
+6, 5, 4, 3, 2 = 8 points
+1, 2, 6, 6, 6 = 6 points
+2, 2, 5, 6, 6 = 6 points
+4, 3, 6, 2, 6 = ? points",Think about how you spell the numbers,7 points. You get one point per vowel.,GeminiFlash,basicprompt,"Here is my reasoning to solve the problem:
+
+1.  **Analyze the Input:** I am given five examples of rolling five dice and the points awarded for each roll. The goal is to find the points for a new roll based on the pattern in the examples.
+    *   Example 1: [5, 3, 2, 1, 6] -> 8 points
+    *   Example 2: [2, 2, 3, 5, 1] -> 8 points
+    *   Example 3: [6, 5, 4, 3, 2] -> 8 points
+    *   Example 4: [1, 2, 6, 6, 6] -> 6 points
+    *   Example 5: [2, 2, 5, 6, 6] -> 6 points
+    *   Target Roll: [4, 3, 6, 2, 6] -> ? points
+
+2.  **Look for Patterns:** The scores are either 8 or 6. I need to identify what property of the dice roll determines the score. The order of the dice likely doesn't matter, so I will consider the set of values. Sorting the dice can sometimes help reveal patterns related to pairs, straights, etc.
+
+    *   Example 1 (Sorted): [1, 2, 3, 5, 6] -> 8 points
+    *   Example 2 (Sorted): [1, 2, 2, 3, 5] -> 8 points
+    *   Example 3 (Sorted): [2, 3, 4, 5, 6] -> 8 points
+    *   Example 4 (Sorted): [1, 2, 6, 6, 6] -> 6 points
+    *   Example 5 (Sorted): [2, 2, 5, 6, 6] -> 6 points
+    *   Target Roll (Sorted): [2, 3, 4, 6, 6] -> ? points
+
+3.  **Consider Possible Rules:**
+    *   **Sum of Dice:**
+        *   Example 1: 1+2+3+5+6 = 17 (Score 8)
+        *   Example 2: 1+2+2+3+5 = 13 (Score 8)
+        *   Example 3: 2+3+4+5+6 = 20 (Score 8)
+        *   Example 4: 1+2+6+6+6 = 21 (Score 6)
+        *   Example 5: 2+2+5+6+6 = 21 (Score 6)
+        The sum doesn't uniquely determine the score (13, 17, 20 all give 8; 21 gives 6). This is likely not the rule",True
+78,"Five pirates are trying to split up 1000 gold pieces.  The rules are as follows:
+Pirate #1 must divide the gold up in such a way that a majority of the pirates (including himself) agree to.  If he does not get a majority vote, he will be killed, and pirate #2 will get to propose a solution to the remaining 3 pirates, and the same rules will follow.  This continues until someone comes up with a plan that earns a majority vote.
+What is the most amount of gold pieces that pirate #1 can keep to himself, and what would his proposal be?
+The pirates are infinitely greedy, infinitely ruthless (the more dead pirates the better), and infinitely intelligent.",Start backwards - what would pirate #4's options be if the first 3 pirates were killed?,"Like the hint says, start backwards:
+If there are two pirates left (#4 & #5), #4 has no options.  No matter what he proposes, pirate #5 will disagree, resulting in a 1-1 vote (no majority).  #5 will kill #4 and will keep all of the gold.
+Now say there are 3 pirates left.  #4 has to agree with whatever #3 decides, because if he doesn't #3 will be killed (because #5 won't vote for #3's proposal no matter what it is).  #3 will just propose that he keep all of the gold and will get a 2-1 vote in his favor.
+Now if there are 4 pirates left:
+#3 won't vote for #2's proposal because if #2's fails, #3 will get all of the gold. #4 and #5 know that they will get nothing if the decision goes to #3, so they will vote for #2's proposal if he gives them one gold piece each. Therefore, #2 would keep 998 gold, and #4 and #5 would each get one gold.
+So let's wrap this up:
+Pirate #1 needs 2 other votes.  He will not get a vote from #2 because #2 will get 998 gold if #1's plan fails.
+#1 offers #3 one gold piece to vote for him, which #3 will accept (if it gets to #2's plan, #3 will get nothing).
+#1 then offers #4 or #5 (doesn't matter which) two gold pieces, which is more than they would get with #2's plan.
+So #1 can end up with 997 gold pieces, with #3 getting one piece and #4 or #5 getting two pieces.
+...whew!",GeminiFlash,basicprompt,,True
+79,How is it possible that 3 + 4 = 5?,,"Using VECTORS
+i.e. 3 m North + 4 m East
+= 5 metres North East
+3^2 = 9
+4^2 = 16
+9 + 16 = 25
+SQ Root of 25 = 5",GeminiFlash,basicprompt,"That's a great question that highlights how mathematical notation can be used in different contexts beyond simple arithmetic!
+
+In standard arithmetic, 3 + 4 always equals 7. So, the statement ""3 + 4 = 5"" is impossible in that context.
+
+However, the equation becomes possible if the symbols ""3"", ""4"", ""+"", or ""5"" represent something different from standard integer values and addition. The most common way this equation makes sense is in the context of **geometry** or **vector addition**, specifically involving a **right triangle**.
+
+Here's the reasoning:
+
+1.  **Consider a Right Triangle:** Think about a right triangle, which has one angle that measures 90 degrees.
+2.  **Sides of a Right Triangle:** The two sides that form the right angle are called the legs, and the side opposite the right angle is called the hypotenuse.
+3.  **The Pythagorean Theorem:** For any right triangle, the square of the length of the hypotenuse (c) is equal to the sum of the squares of the lengths of the two legs (a and b). This is expressed by the formula: a² + b² = c².
+4.  **Applying to 3, 4, and 5:** The numbers 3, 4, and 5 form a well-known Pythagorean triple because they fit this theorem:
+    *   Let the lengths of the legs be a = 3 and b = 4.
+    *   Calculate the sum of the squares of the legs: 3² + 4² = 9 + 16 = 25.
+    *   Now, consider the number 5. The square of 5 is 5² = 25.
+    *   Since 3² + 4² = 5² (because 25 = 25), a right triangle with legs of length 3 and 4 will have a hypotenuse of length 5.
+
+5.  **Relating to ""3 + 4 = 5"":**
+    *   Imagine the '+' symbol in the equation ""3 + 4 = 5"" doesn't mean arithmetic sum, but rather the *combination* or *composition* of quantities that are oriented at a right angle.
+    *   Think of adding displacements: If you travel 3 units in one direction (say, East) and then 4 units in a direction perpendicular to the first (say, North), your final displacement from the starting point is not 3 + 4 = 7 units in a straight line. Instead, the path taken forms the two legs of a right triangle. The straight-line distance (magnitude of the total displacement) from your start to your end point is the length of the hypotenuse.
+    *   Using the Pythagorean theorem for this 3-unit leg and 4-unit leg, the hypotenuse has a length of √(3² + 4²) = √25 = 5.
+    *   In this context, where '+' represents the combination of orthogonal (perpendicular) vectors or displacements, the ""sum"" of a 3-unit displacement and a 4-unit displacement is a resultant displacement with a magnitude of 5 units.
+
+So, the equation 3 + 4 = 5 is possible when:
+
+*   '3' and '4' represent the lengths of the two legs of a right triangle.
+*   '+' represents the geometric combination of these legs (resulting in the hypotenuse).
+*   '5' represents the length of the hypotenuse.
+
+Or, more generally:
+
+*   '3' and '4' represent the magnitudes of two vectors.
+*   '+' represents vector addition.
+*   '5' represents the magnitude of the resultant vector, specifically when the two original vectors are perpendicular.
+
+Final answer: It is possible that 3 + 4 = 5 if the numbers 3, 4, and 5 represent the lengths of the sides of a right triangle (legs 3 and 4, hypotenuse 5), and the '+' symbol represents the geometric combination of the two legs to form the hypotenuse, as described by the Pythagorean theorem (3² + 4² = 5²). This is also equivalent to adding two perpendicular vectors of magnitudes 3 and 4, resulting in a vector with magnitude 5.",True
+80,"You are given a stack of bingo cards.  Your task is to find a specific card.  Given the following clues, what is the number arrangement of that card?
+Columns, left to right, are: B (contains numbers 1 through 15), I (contains numbers 16 through 30), N (contains numbers 31 through 45), G (contains numbers 46 through 60), O (contains numbers 61 through 75).  Rows, top to bottom, are: 1, 2, 3, 4, 5.  An example of coordinate nomenclature: B1 identifies column B row 1.  N3 is a free space (contains no number).  No number appears more than once.
+1) For each column, the numbers are in either ascending order or descending order.
+2) Row 1: the numbers are prime.
+3) Row 5: the numbers are composite.
+4) Column I: the numbers are spaced at equal intervals.
+5) Column O: the numbers are spaced at different intervals.
+6) The sum of the numbers in Row 1 equals the sum of the numbers in Row 5.
+7) The product of B4 and O5 equals the product of B5 and O4.
+8) The product of I2 and G2 equals the product of I3 and G3.
+9) N4 is midway between B4 and G4.
+10) Each column has one multiple of 6.
+11) There is only one square number on the card.","1) Per clue 2, eliminate non-prime numbers from Row 1.
+2) Per clue 3, eliminate non-composite numbers from Row 5.
+3) Per clue 1, eliminate numbers that do not fit any possible (ascending or descending) sequence from Rows 2 through 4.","11 17 41 59 61
+12 18 36 57 63
+13 19 -- 54 66
+14 20 33 52 70
+15 21 32 46 75
+1) Per clue 2, eliminate non-prime numbers from Row 1.
+2) Per clue 3, eliminate non-composite numbers from Row 5.
+3) Per clue 1, eliminate numbers that do not fit any possible (ascending or descending) sequence from Rows 2 through 4.
+4) Per clue 4, determine the possible sequences for Column I.  In conjunction with clue 8, eliminate numbers from Columns I and G.
+5) Per clue 10, I2 must be 18 or 24, and G3 must be 48 or 54.  Eliminate additional numbers from Column G.
+6) Per clue 7, determine what combinations of numbers work.  Eliminate those that to not work from B4, B5, O4, and O5.
+7) Per clue 5, in order to have four different intervals, the spread from top to bottom must be at least 10.  Eliminate from O1: 67 and 71.  Eliminate from O5: 64 and 70.  In conjunction with clue 7, only one combination of numbers works:  O4 must be 70, O5 must be 75, B4 must be 14, and B5 must be 15.  This leaves O1 as 61.
+8) Per clue 10, 66 must be in either O2 or O3.  66 can not be in O2, because that would create an interval of 5 (which already exists between O4 and O5) between O1 and O2.  O3 must be 66.  O2 must be either 63 or 64.
+9) Per clue 9, N4 must be 33 and G4 must be 52.  This leaves G1 as 59, G2 as 57, and G3 as 54.
+10) Per clues 4 and 8, Column I can be determined.  I1 must be 17, I2 must be 18, I3 must be 19, I4 must be 20, and I5 must be 21.
+11) Per clue 6, Column N must be in descending order.  N5 must be 32.
+12) Per clue 6, the only combination of numbers that works produces a sum of 189.  B1 must be 11, N1 must be 41, G5 must be 46.
+13) Per clue 1, B2 must be 12 and B3 must be 13.
+14) Per clue 10, N2 must be 36.  Per clue 11, O2 must be 63.",GeminiFlash,basicprompt,,True
+81,"One day, a college student named Tina walked into her logic class and waited for her fun day of logic once again.  Finally the professor, Professor C. D. Rock, walked in saying, ""I just went through some stuff and stumbled upon an old family tree, that belonged to my grandparents, that gave me an idea.  I have here a few clues, and you have to use them to figure out their family tree!""
+Tina then gets the clues, and tries to work them out. Unfortunately this puzzle is a little harder than the normal ones Professor C. D. Rock gives out.  Can you help her?
+The family tree consists of two grandparents, who had 3 children, each of whom get married and have 2 children.
+Males: Cole, Cristian, Jason, Neil, and Steve
+Females: Amanda, Ashley, Beth, Erin, Kaitlyn, Katherine, Makayla, Payton, and Tammy
+Clues:
+1. One of Makayla's cousins is Jason's son.
+2. One of Ashley's aunts is Tammy.
+3. Tammy's brother-in-law is Neil's son.
+4. Kaitlyn's sister is Ashley's cousin.
+5. Ashley's uncle, Steve, is Erin's brother-in-law.
+6. The three uncles are Payton's dad, Cristian, and Katherine's son.
+7. The three aunts are Kaitlyn's mom, Ashley's mom, and Cristian's sister-in-law.
+8. Jason's brother is Ashley's dad.
+9. Amanda's sister is Steve's niece.
+10. Beth is not Cole's aunt.","Use paper and pencil, it's almost impossible to do in your head.","The grandparents are Katherine and Neil, who had 3 sons: Cristian, Jason, and Steve.
+Cristian married Erin, and had Ashley and Amanda.
+Jason married Beth, and had Payton and Cole.
+Steve married Tammy, and had Makayla and Kaitlyn.",GeminiFlash,basicprompt,,True
+82,I am a word of five letters. Multiply my fifth by two and you have my first. Divide my first by twenty and you have my third. Divide my third by five and you have my second or fourth.,Roman numerals,"CIVIL.
+L (50) multiplied by 2 equal C (100).
+Divide C by 20 and you have V. Divide V by 5 and you have I.",GeminiFlash,basicprompt,,True
+83,"Use the numbers 1 to 4 in each column and row, and then add 0, 1, or 2 zeros after each number that needs it so that the numbers add up to the numbers listed below the grid.
+X A B C D
+1. _ _ _ _
+2. _ _ _ _
+3. _ _ _ _
+4. _ _ _ _
+Rows:
+1. 640
+2. 442
+3. 55
+4. 442
+Columns:
+A. 316
+B. 433
+C. 280
+D. 550",Think digit-by-digit. Consider the ones digit first (look at all the 0's!),"010 400 200 030
+300 002 040 100
+004 001 030 020
+002 030 010 400",GeminiFlash,basicprompt,,True
+84,"Mary Beem, who was a wife, mother of four and grandmother of nine, was shot to death by an angry relative. Find out the name of the relative it was by piecing together the relationships of each person with the clues below.
+The killer's sister was suspicious of her sibling and confirmed her distrust by talking to three people: her grandfather Bob, her cousin Bo, and her uncle (blood relative) Bill. She called the police, and the suspect was apprehended at the victim's funeral service. Only the direct descendants and their spouses were present. (Note: None of Mary's grandchildren were married or had kids, and no two people have the same first name.)
+1. Bill was talking with his brother-in-law Barry.
+2. Bart, Buck, and Bruce (who were all brothers) were by their grandmother's casket.
+3. Mary's daughter May, who was with her husband Ben, had their two children: Missy and Bernie.
+4. Mo, Bob's son-in-law, was comforting his wife Robin, and both were keeping an eye on their sons.
+5. Bo was by himself in a corner grieving, while his sister Molly was talking with their cousin Megan.
+6. Myra was consoling one of her two children, Brad, who had been very close to his grandmother.
+7. Bob was with his daughter Maria.
+NOTE: Each of the 4 couples has at least 2 kids.
+WHO IS THE KILLER?","Draw a family tree.
+Each of the 4 children of Mary Beem has a spouse, and each couple has children.  Since all must have at least two kids, only one couple has three kids (a total of 9 grandchildren).","From the killer's sister's conversation, Bob is Mary's husband, Bill is one of Mary's children, and Bo is a grandchild.
+From clue 1 and 2, Barry was a spouse, and since Bart, Buck and Bruce were all brothers, they were the set of three kids. Clue 3 is straightforward - Mary's daughter May is married to Ben and has two kids: Missy and Bernie.
+From 4, Robin is a daughter and Bob her spouse.  From 5, Bo and Molly are siblings and grandchildren (since they have a cousin present). Megan has to be from the last couple.  Mo and Robin could only have been parents to the three boys (Bart Bruce and Buck), since all other siblings were a boy and girl.
+Clue 6 gives the name of the remaining child, Brad, who must be a sibling of Megan. Both have a mother by the name of Myra. It is unknown at this point if Myra is a spouse or a direct relative.
+Since clue 7 says that Bob (Mary's husband) was with his daughter Maria, Myra becomes a spouse. Then, by default, Bo and Molly belong to Maria.
+So now, knowing that the killer's sister is COUSIN to Bo, Bill's NIECE, and Bob's GRANDDAUGHTER, the killer must be BERNIE.",GeminiFlash,basicprompt,,True
+85,"Edward, Howard, and John are three high school students each of whom is taking three of the four subjects, biology, chemistry, history, and mathematics. One day while talking about their programs they made the following statements.
+Edward: There is just one subject we're all taking. I'm the only one of us who is taking mathematics. No two of us are taking the same three subjects. John is wrong when he says that Howard and I are both taking chemistry.
+Howard: Ed is the only one of us who is taking history. John and I are taking the same subjects. We're all taking biology. Two of us are taking both chemistry and biology.
+John: We're all taking mathematics. Howard is taking history. Ed is taking one subject that I'm not. Both Howard and Ed are taking chemistry.
+If two and only two of each boy's statements are true, what subjects is each boy taking?",It is true that there is only one subject they are all taking.,"Edward: chemistry, biology, history
+Howard: chemistry, biology, mathematics
+John: biology, mathematics, history",GeminiFlash,basicprompt,,True
+86,"During one meeting with a clan of ninjas, it has been noticed that more ninjas have turned up to the meeting than usual. The ninjas realised that these infiltrators must be the enemy of the ninjas (the pirates). Each person dressed as a ninja at the meeting made a statement. The cunning ninjas lied about their fellow ninjas in order to remain secret and told the truth about the pirates. The pirates tried to mock the cunningness by lying about the pirates and telling the truth about the ninjas. From the following statements, can you identify the ninjas and pirates?
+Ninja A: Ninja B is a ninja
+Ninja B: Ninja C belongs to Ninja A's group
+Ninja C: Ninja C doesn't belong to Ninja F's group
+Ninja D: Ninja A belongs to Ninja B's group
+Ninja E: Ninja B belongs to Ninja C's group
+Ninja F: Ninja E belongs to Ninja A's group
+Remember, the ninjas and pirates will lie about individual ninjas or pirates, not groups of ninjas or pirates.","Think about what Ninja A said, first.","Ninja A is a pirate
+Ninja B is a ninja
+Ninja C is a ninja
+Ninja D is a pirate
+Ninja E is a pirate
+Ninja F is a ninja
+Ninja A said that Ninja B is a ninja. This is because Ninja A is a pirate and Ninja B is a ninja, so Ninja A told the truth.
+Ninja B said that Ninja C belongs to Ninja A's group. Ninja B is a ninja and Ninja C is a ninja, so Ninja B lied.
+Ninja C said that Ninja C doesn't belong to Ninja F's group. Ninja C is obviously from the same group as Ninja C, so Ninja C lied.
+Ninja D said that Ninja A belongs to Ninja B's group. Ninja D is a pirate and Ninja A is a pirate so Ninja D lied.
+Ninja E said that Ninja B belongs to Ninja C's group. Ninja E is a pirate and Ninja B is a ninja, so Ninja E told the truth.
+Ninja F said that Ninja E belongs to Ninja A's group. Ninja F is a ninja and Ninja E is a pirate, so Ninja F told the truth.",GeminiFlash,basicprompt,,True
+87,"T4 has a chart in his possession. On it says:
+1 stands for O, U, D, or B
+2 stands for S, K, Q, or T
+3 stands for I, H, E, or N
+4 stands for O, I, F, or W
+5 stands for Z, U, Y, or S
+6 stands for I, L, E, or C
+Below that, he wrote the number ""123456."" This number, using the decryption method above, can mean two words that are antonyms. What are the two words?","One is the word ""useful"".",Otiose and useful.,GeminiFlash,basicprompt,,True
+88,"In the following code, each symbol stands for one of five letters.
+) stands for T, E, S, A, or L
+< stands for F, E, C, R, or P
+> stands for E, R, L, K, or S
+[ stands for F, S, E, D, or R
+] stands for W, M, J, U, or Y
+( stands for N, A, H, O, or B
+The six letter code word, <([])>, can be translated into two English words that are opposites. What are the two words?",Attire,Casual and Formal,GeminiFlash,basicprompt,,True
