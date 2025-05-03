@@ -88,6 +88,8 @@ def process_pair(index, prompt, question, hint, solution, instructions, model, d
     if "hint" in instructions.lower():
         question = f"Question: {question}\n Hint: {hint}"
 
+    if "SolutionSummary" in name:
+        question = f"Question: {question}\n Solution: {solution}"
 
     try:
         response = query(question, instructions, model)
@@ -130,7 +132,8 @@ def main():
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
-    instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt'], 'hint_prompt': instructionSet['hint_prompt']}
+    # instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt'], 'hint_prompt': instructionSet['hint_prompt']}
+    instructionSet = {'solutionSummary': instructionSet['solutionSummary']}
 
     results = []
     for prompt in instructionSet:
