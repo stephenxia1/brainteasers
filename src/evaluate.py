@@ -63,8 +63,9 @@ def main():
 
     # data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
     responses = pd.read_csv(f'../responses/{args.dataset}/{args.name}/resultsAll.csv')
-
     evaluationPrompts = read_txt_files("../prompting/evaluationPrompts")
+
+    os.makedirs(f"../response_evaluation/{args.dataset}/{args.name}", exist_ok=True)
 
     client = OpenAI(
         api_key= os.getenv("OPENAI_API_KEY")

@@ -6465,3 +6465,2123 @@ All solutions strictly use the three identical numbers and standard mathematical
 
 **Final Answer:**  
 The fraction \( \frac{12345}{24690} = \frac{1}{2} \), formed using all the digits \( 0,1,2,2,3,4,4,5,6,9 \), is a valid solution.",True
+129,"Question: Xavier and Rex were playing a game that involved 5 dice. In each turn, they would roll the 5 dice. Each face of the die is worth a different amount of points. On their first 2 shots, they rolled this:
+Xavier 1: 1, 3, 3, 4, 6 = 177 points
+Rex 1: 2, 4, 4, 5, 6 = 268 points
+Xavier 2: 1, 1, 1, 4, 4 = 203 points
+Rex 2: 1, 2, 3, 4, 6 = 216 points
+Using this information, can you work out how many points Xavier and Rex each got on their third turn and how many points each face is worth?
+Xavier 3: 1, 2, 2, 3, 4 = ?
+Rex 3: 1, 3, 4, 6, 6 = ?
+ Solution: Xavier: 281 (Total: 661)
+Rex: 151 (Total: 635)
+1 = 25 points
+2 = 77 points
+3 = 38 points
+4 = 64 points
+5 = 51 points
+6 = 12 points
+From Xavier's first shot and Rex's second shot, we can deduce that a 2 is worth more than a 3. From Xavier's second shot, we can deduce that a 1 is worth an odd number. By trial and error we can work out the value of each face.",Xavier scored more than Rex and the difference between the two total scores is 26 points.,"Xavier: 281 (Total: 661)
+Rex: 151 (Total: 635)
+1 = 25 points
+2 = 77 points
+3 = 38 points
+4 = 64 points
+5 = 51 points
+6 = 12 points
+From Xavier's first shot and Rex's second shot, we can deduce that a 2 is worth more than a 3. From Xavier's second shot, we can deduce that a 1 is worth an odd number. By trial and error we can work out the value of each face.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:** Assign variables \( a, b, c, d, e, f \) to represent the points for faces 1 through 6, respectively.
+
+2. **Set Up Equations:** Use the given rolls and points to form equations:
+   - Xavier 1: \( a + 2c + d + f = 177 \)
+   - Xavier 2: \( 3a + 2d = 203 \)
+   - Rex 1: \( b + 2d + e + f = 268 \)
+   - Rex 2: \( a + b + c + d + f = 216 \)
+
+3. **Solve for \( a \) and \( d \):** From Xavier 2, \( 3a + 2d = 203 \). Since \( 203 \) is odd, \( a \) must be odd. Solve for \( d \):  
+   \( d = \frac{203 - 3a}{2} \).  
+   Trial shows \( a = 25 \), \( d = 64 \).
+
+4. **Substitute \( a = 25 \) and \( d = 64 \):** Plug into other equations:
+   - From Xavier 1: \( 2c + f = 88 \)
+   - From Rex 2: \( b + c + f = 127 \)
+   - From Rex 1: \( b + e + f = 140 \)
+
+5. **Express \( b, e, f \) in terms of \( c \):**  
+   - \( b = c + 39 \)
+   - \( e = c + 13 \)
+   - \( f = 88 - 2c \)
+
+6. **Ensure Distinct Values:** Test \( c = 38 \), leading to \( b = 77 \), \( e = 51 \), \( f = 12 \). All values \( 25, 77, 38, 64, 51, 12 \) are distinct.
+
+7. **Calculate Third Rolls:**  
+   - Xavier 3: \( a + 2b + c + d = 25 + 2(77) + 38 + 64 = 281 \)
+   - Rex 3: \( a + c + d + 2f = 25 + 38 + 64 + 2(12) = 151 \)
+
+**Final Answer:**  
+- Face Values: 1=25, 2=77, 3=38, 4=64, 5=51, 6=12  
+- Xavier 3: 281 points (Total: 661)  
+- Rex 3: 151 points (Total: 635)",True
+130,"Question: You land on an unknown planet which has a radius of 10km and is completely round and smooth. You start from your ship and walk straight for 17.345 kilometers. You turn left and walk straight for 47.124 kilometers. How far are you from your ship?
+ Solution: 14.142135623730950488016887242097
+Or square root of 200!
+If you imagine you are facing a globe head on, you have the north pole at the top of the globe and the south pole at the bottom. Imagine a ""west pole"" and ""east pole"" to the left and right of the globe.
+If you are at the north pole and turn left, you will walk through the ""west pole"" (right and you go through the ""east pole"")
+If you walk on an axis from the north pole towards the south pole and make a left or right turn you will always walk through these imaginary east and west poles. So in the question 17.345 kilometers is irrelevant, only the turn.
+(It also doesn't matter where you start on the planet, the distance at the end will still be the same.)
+47.124 is approximately 3/4 of the circumference of this planet, which will leave you directly on the imaginary east pole. The distance is now the hypotenuse of a right angle triangle of side 10km.
+Answer: root 200 or approximately 14km!
+(If you got the distance as 15.7km - the distance you would have to walk back, then that's ok too!)",,"14.142135623730950488016887242097
+Or square root of 200!
+If you imagine you are facing a globe head on, you have the north pole at the top of the globe and the south pole at the bottom. Imagine a ""west pole"" and ""east pole"" to the left and right of the globe.
+If you are at the north pole and turn left, you will walk through the ""west pole"" (right and you go through the ""east pole"")
+If you walk on an axis from the north pole towards the south pole and make a left or right turn you will always walk through these imaginary east and west poles. So in the question 17.345 kilometers is irrelevant, only the turn.
+(It also doesn't matter where you start on the planet, the distance at the end will still be the same.)
+47.124 is approximately 3/4 of the circumference of this planet, which will leave you directly on the imaginary east pole. The distance is now the hypotenuse of a right angle triangle of side 10km.
+Answer: root 200 or approximately 14km!
+(If you got the distance as 15.7km - the distance you would have to walk back, then that's ok too!)",DSReason,solutionSummary,"**PROBLEM:**  
+A person starts at their ship on a perfectly smooth, spherical planet (radius 10 km). They walk 17.345 km south, turn left, and walk 47.124 km east. Determine their final distance from the ship.
+
+**SOLUTION:**  
+1. **Key Observations About the Planet:**  
+   - The planet’s circumference is \(2\pi \times 10 \approx 62.8318\) km.  
+   - Walking 47.124 km east corresponds to \(\frac{3}{4}\) of the full circumference (\(47.124 \approx 0.75 \times 62.8318\)).  
+
+2. **Irrelevance of the First Walk:**  
+   - The initial southward distance (17.345 km) does not affect the final distance. Turning left (east) and walking \(\frac{3}{4}\) circumference positions the person at a specific point regardless of their starting latitude.  
+
+3. **Geometric Interpretation:**  
+   - After walking \(\frac{3}{4}\) circumference east, the person reaches the ""east pole,"" a hypothetical point 90° east of the starting longitude on the equator.  
+   - The starting point (ship) and the east pole form a right angle at the planet’s center, creating a right triangle with legs equal to the planet’s radius (10 km each).  
+
+4. **Distance Calculation:**  
+   - The straight-line distance through the planet (chord length) is the hypotenuse of this right triangle:  
+     \[
+     \text{Distance} = \sqrt{10^2 + 10^2} = \sqrt{200} \approx 14.142 \, \text{km}.
+     \]
+
+**ANSWER:**  
+\(\boxed{\sqrt{200}}\) or approximately **14.142 km**.",True
+131,"Question: In the Art Gallery is a new conceptual art piece. The artist created a huge pile different paintings; periodically he picks up one of the paintings and hangs it on the wall, and adjusts it.
+At 11:00, the painting titled ""Number 30"" was hung.
+At 4:00, the painting titled ""Number 240"" was hung.
+At 7:30, the painting titled ""Number 315"" was hung.
+What painting will the artist hang on the wall at 9:20?
+ Solution: The answer is ""Number 200"". It is the angle between the hour hand and the minute hand at those respective times.",,"The answer is ""Number 200"". It is the angle between the hour hand and the minute hand at those respective times.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify the Pattern**: The numbers on the paintings correspond to the angle between the hour and minute hands at the given times, measured clockwise from the hour hand to the minute hand. This angle may be the larger angle (greater than 180°) if the minute hand is behind the hour hand.
+
+2. **Calculate Positions**:
+   - **Hour Hand**: At 9:20, the hour hand is at \(9 \times 30 + 20 \times 0.5 = 280°\).
+   - **Minute Hand**: At 20 minutes, the minute hand is at \(20 \times 6 = 120°\).
+
+3. **Compute Clockwise Angle**:
+   - The clockwise angle from 280° (hour hand) to 120° (minute hand) is calculated as \(360° - (280° - 120°) = 200°\).
+
+4. **Conclusion**: The angle at 9:20 is 200°, so the painting is **""Number 200""**.",True
+132,"Question: There is a rubber band that is looped around an immovable steel rod.  It is three inches long.  At the fixed end is a spider.  He starts walking along the rubber band at the rate of one inch per minute.
+A minute after he started, the rubber band is stretched by three inches.  The spider continues walking on it at the same rate.
+In another minute, the rubber band is stretched another three inches.
+This keeps going on until the spider reaches the end of the rubber band.  How long did it take the spider to reach the end?
+ Solution: 10.781355 minutes.
+The following shows the lengths of the rubber band, the time in minutes, and the distance traveled by the spider.
+3, 0, 0
+6, 1, 2
+9, 2, 4.5
+12, 3, 7.333333
+15, 4, 10.41667
+18, 5, 13.7
+21, 6, 17.15
+24, 7, 20.74286
+27, 8, 24.46071
+30, 9, 28.28968
+33, 10, 32.21865
+36, 10.781355, 36","The spider's position is not changed when the rubber band is stretched, but the total distance of travel does change.","10.781355 minutes.
+The following shows the lengths of the rubber band, the time in minutes, and the distance traveled by the spider.
+3, 0, 0
+6, 1, 2
+9, 2, 4.5
+12, 3, 7.333333
+15, 4, 10.41667
+18, 5, 13.7
+21, 6, 17.15
+24, 7, 20.74286
+27, 8, 24.46071
+30, 9, 28.28968
+33, 10, 32.21865
+36, 10.781355, 36",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Initial Setup:**  
+   The rubber band starts at 3 inches. The spider begins at position 0 and walks at 1 inch per minute. After each minute, the band is stretched by 3 inches, proportionally scaling the spider's position.
+
+2. **Position Update Rule:**  
+   After each minute \( n \), the spider's position \( S(n) \) is computed as:  
+   \[
+   S(n) = \left(S(n-1) + 1\right) \times \frac{n+1}{n}
+   \]  
+   This accounts for the 1 inch walked during the minute and the subsequent stretching.
+
+3. **Harmonic Series Insight:**  
+   The recurrence relation simplifies to \( S(n) = (n+1) \times H(n) \), where \( H(n) = \sum_{k=1}^n \frac{1}{k} \) (the \( n \)-th harmonic number).
+
+4. **Termination Condition:**  
+   The spider reaches the end when \( S(n) + x \geq L(n) \), where \( L(n) = 3(n+1) \) (length after \( n \) stretchings) and \( x \) is the time within the interval \([n, n+1)\). Solve for \( x \):  
+   \[
+   x = 3(n+1) - S(n)
+   \]  
+   The smallest \( n \) where \( S(n) \geq 3(n+1) - 1 \) (to ensure \( x \leq 1 \)) is found.
+
+5. **Critical Calculation:**  
+   - Compute \( H(n) \geq 3 - \frac{1}{n+1} \).  
+   - For \( n=10 \), \( H(10) \approx 2.928 \geq 2.909 \), meeting the condition.  
+   - Compute \( x = 33 - 32.21865 \approx 0.781355 \).  
+
+**Final Answer:**  
+The spider reaches the end after **10.781355 minutes**.",True
+133,"Question: A postman delivered letters every day. On the first day he delivered one letter, on the second day he delivered three letters, on the third day he delivered five letters, and so on. Each day from the second on he delivered two letters more than the preceding day.
+The day he retired, he noticed that he had delivered a total of more than 100,000 letters.
+Something fun is that the total number of letters he had delivered has its digits arranged in ascending order.
+How many days had he worked, and how many letters had he delivered in total?
+ Solution: It's easy to see that the number of letters he had delivered is the square of the number of days he had worked.
+Square numbers can't end in 7 or 8, and 123456 is not a square because it is divisible by 3 but not by 9. Hence the number of letters must end with 9.
+Since odd squares have remainder 1 upon division by 8, the number formed by its fourth and fifth digits must be divisible by 4, which can be 48, 56 or 68.
+Numbers that have remainder 2 upon division by 3, and those that are divisible by 3 but not by 9 are not squares. By trial and error, we know that the only square number satisfying these conditions is 134689=367^2.
+Hence, he had worked for 367 days, and had delivered 134689 letters.",The number of days he had worked also has its digits arranged in ascending order.,"It's easy to see that the number of letters he had delivered is the square of the number of days he had worked.
+Square numbers can't end in 7 or 8, and 123456 is not a square because it is divisible by 3 but not by 9. Hence the number of letters must end with 9.
+Since odd squares have remainder 1 upon division by 8, the number formed by its fourth and fifth digits must be divisible by 4, which can be 48, 56 or 68.
+Numbers that have remainder 2 upon division by 3, and those that are divisible by 3 but not by 9 are not squares. By trial and error, we know that the only square number satisfying these conditions is 134689=367^2.
+Hence, he had worked for 367 days, and had delivered 134689 letters.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify the total letters as a square number:**  
+   The number of letters delivered each day forms an arithmetic sequence of odd numbers. The sum of the first \( n \) odd numbers is \( n^2 \). Thus, the total letters delivered after \( n \) days is \( n^2 \).
+
+2. **Establish the minimum value for \( n \):**  
+   Solve \( n^2 > 100,000 \). The smallest integer \( n \) is \( \lceil \sqrt{100,000} \rceil = 317 \).
+
+3. **Apply digit constraints (ascending order):**  
+   The total \( n^2 \) must have digits in strictly ascending order (e.g., 134689). Key observations:
+   - The last digit must be 9 (since squares ending in 7 or 8 are invalid, and ascending order requires the last digit to be the largest).
+   - \( n \) must end with 3 or 7 (as squares ending in 9 require roots ending in 3 or 7).
+
+4. **Check divisibility and modular constraints:**
+   - **Divisible by 4 (fourth and fifth digits):** The number formed by the fourth and fifth digits of \( n^2 \) must be divisible by 4 (e.g., 68 in 134689).
+   - **Odd squares modulo 8:** \( n^2 \equiv 1 \mod 8 \).
+   - **Divisibility by 3 and 9:** If the sum of digits is divisible by 3, it must also be divisible by 9 (to avoid disqualification as a square).
+
+5. **Trial and error with valid candidates:**
+   - Test numbers like 123456 (fails due to divisibility by 3 but not 9).
+   - Verify \( 134689 \):  
+     - Check ascending digits: \( 1 < 3 < 4 < 6 < 8 < 9 \).  
+     - Confirm \( 367^2 = 134,689 \).  
+     - Validate constraints:  
+       - \( 134,689 \equiv 1 \mod 8 \).  
+       - Fourth and fifth digits (68) are divisible by 4.  
+       - Digit sum \( 1+3+4+6+8+9 = 31 \), not divisible by 3.  
+
+**Final Answer:**  
+The postman worked for **367 days** and delivered **134,689 letters** in total.",True
+134,"Question: Bill, Bob, Frank, and Jim, who all drive cabs, work a particularly busy street that runs east and west. The street has no traffic lights. Oddly enough, an equal number of pedestrians walk in each direction at four kilometres per hour. The four cab drivers were discussing the best way to pick up a fare. Bill said he was going to sit beside the curb and wait until a fare came along. Bob said he was going to cruise west at four kilometres an hour; therefore, he would have twice the chance of picking up a fare as Bill. Frank said he was going to cruise east at eight kilometres an hour and his chances were twice as good as either Bill's or Bob's. Jim claimed that they were all wrong. He was going to drive west at 12kmh and his chances of picking up a fare were twice as good as Frank's. Of the claims that were made which were correct and which were wrong?
+ Solution: Bill made no claim, Bob's claim was false, Frank's claim was true, and Jim's claim was false. Let's assume that 100 people passed Bill going east at four kph, and 100 people passed him going west at four kph. Bob, who was driving west at four kph, wouldn't pass anyone walking west, but would pass 200 people walking east. This would put him no further ahead than Bill. Frank, who was driving east and 300 people going west. Jim, who was going west at 12kph, would pass 200 people going west and 400 people going east. His statement about doubling his chances over Frank was false.",,"Bill made no claim, Bob's claim was false, Frank's claim was true, and Jim's claim was false. Let's assume that 100 people passed Bill going east at four kph, and 100 people passed him going west at four kph. Bob, who was driving west at four kph, wouldn't pass anyone walking west, but would pass 200 people walking east. This would put him no further ahead than Bill. Frank, who was driving east and 300 people going west. Jim, who was going west at 12kph, would pass 200 people going west and 400 people going east. His statement about doubling his chances over Frank was false.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Understanding Relative Speeds:**
+   - Pedestrians walk east and west at 4 km/h each. Cab drivers' speeds affect their relative speed to pedestrians, determining how many they encounter.
+
+2. **Analyzing Each Driver's Strategy:**
+   - **Bill (Stationary):** Encounters 100 eastbound + 100 westbound = 200 pedestrians/hour.
+   - **Bob (West at 4 km/h):**
+     - Eastbound: Relative speed = 4 + 4 = 8 km/h → 200 pedestrians.
+     - Westbound: Relative speed = 4 - 4 = 0 km/h → 0 pedestrians.
+     - Total = 200 (same as Bill). **Claim (twice Bill’s chance) is false.**
+   - **Frank (East at 8 km/h):**
+     - Eastbound: Relative speed = 8 - 4 = 4 km/h → 100 pedestrians.
+     - Westbound: Relative speed = 8 + 4 = 12 km/h → 300 pedestrians.
+     - Total = 400 (twice Bill’s 200). **Claim is true.**
+   - **Jim (West at 12 km/h):**
+     - Eastbound: Relative speed = 12 + 4 = 16 km/h → 400 pedestrians.
+     - Westbound: Relative speed = 12 - 4 = 8 km/h → 200 pedestrians.
+     - Total = 600 (1.5× Frank’s 400, not double). **Claim is false.**
+
+3. **Conclusion:**
+   - **Correct Claim:** Frank (double Bill/Bob).
+   - **False Claims:** Bob (twice Bill), Jim (twice Frank).
+   - Bill made no claim.
+
+**ANSWER:**  
+Bob’s claim is **false**, Frank’s claim is **true**, and Jim’s claim is **false**. Bill did not make a claim.",True
+135,"Question: Arnold and Carlos love math puzzles. They are constantly making them up for each other to solve. One day, Carlos presents his friend Arnold with a problem. This problem has six clues. Here is the problem Carlos gave:
+--------------------------------------------
+I am thinking of a mystery number.
+1. The mystery number is a 3-digit prime number with digits ABC.
+2. Two 2-digit prime numbers occur in the mystery number (AB and BC).
+3. A, B, and C are all distinct digits.
+4. The mystery number does not contain a 9.
+5. If A, B, and C are re-arranged from greatest to least, a 3-digit prime number is formed.
+6. If A, B, and C are re-arranged from least to greatest, a 3-digit prime number is formed.
+What is the mystery number?""
+----------------------------------------
+Can you help Arnold solve Carlos's problem?
+ Solution: Answer: 617.
+Clue #1- ""The mystery number is a 3-digit prime number with digits ABC."" The 3-digit prime numbers are: 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, and 997
+After Clue #1- we have 143 possibilities.
+Clue #2- ""Two 2-digit prime numbers occur in the mystery number (AB and BC)."" The two digit prime numbers are 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, and 97. Since the two prime numbers are AB and BC, they share one digit- B. The only combinations for ABC such that AB and BC are prime numbers is: 113, 117, 119, 131, 137, 171, 173, 179, 197, 231, 237, 297, 311, 313, 317, 319, 371, 373, 379, 411, 413, 417, 419, 431, 437, 471, 473, 479, 531, 537, 597, 611, 613, 617, 619, 671, 673, 679, 711, 713, 717, 719, 731, 737, 797, 831, 837, 897, 971, 973, and 979.Out of these 51 numbers, only 113, 131, 137, 173, 179, 197, 311, 313, 317, 373, 379, 419, 431, 479, 613, 617, 619, 673, 719, 797, and 971 are prime.
+After Clue #2 we have 21 possibilities: 113, 131, 137, 173, 179, 197, 311, 313, 317, 373, 379, 419, 431, 479, 613, 617, 619, 673, 719, 797, and 971.
+Clue #3- ""A, B, and C are all distinct digits."" Out of our 21 possibilities, 113, 131, 311, 313, 373, and 797 do not have distinct digits.
+After Clue #3, we have 15 possibilities: 137, 173, 179, 197, 317, 379, 419, 431, 479, 613, 617, 619, 673, 719, and 971.
+Clue #4- ""The mystery number does not contain a 9.""179, 197, 379, 419, 479, 619, 719, and 971 all contain a 9.
+After Clue #4, we have 7 possibilities: 137, 173, 317, 431, 613, 617, and 673.
+Clue #5- ""If A, B, and C are re-arranged from greatest to least, a 3-digit prime number is formed."" With our 7 possibilities (137, 173, 317, 431, 613, 617, and 673) we arrange their digits from greatest to least getting 731, 731, 731, 431, 631, 761, and 763 respectively. Of these new 7 numbers, only 431 (from 431), 631 (from 613), and 761 (from 617) are prime.
+After Clue #5, we have 3 possibilities: 431, 613, and 617.
+Clue #6- ""If A, B, and C are re-arranged from least to greatest, a 3-digit prime number is formed."" With our 3 possibilities (431, 613, and 617), we arrange their digits from least to greatest to get 134, 136, and 167 respectively. 134 (from 431) and 136 (from 631) are non-prime. 167 (from 617) is prime.
+After Clue #6, we have one possibility: 617.
+617 is the mystery number.","Make a list and organize your possibilities. It will lead down to one answer.
+The 3-digit prime numbers are:
+101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, and 997.","Answer: 617.
+Clue #1- ""The mystery number is a 3-digit prime number with digits ABC."" The 3-digit prime numbers are: 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, and 997
+After Clue #1- we have 143 possibilities.
+Clue #2- ""Two 2-digit prime numbers occur in the mystery number (AB and BC)."" The two digit prime numbers are 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, and 97. Since the two prime numbers are AB and BC, they share one digit- B. The only combinations for ABC such that AB and BC are prime numbers is: 113, 117, 119, 131, 137, 171, 173, 179, 197, 231, 237, 297, 311, 313, 317, 319, 371, 373, 379, 411, 413, 417, 419, 431, 437, 471, 473, 479, 531, 537, 597, 611, 613, 617, 619, 671, 673, 679, 711, 713, 717, 719, 731, 737, 797, 831, 837, 897, 971, 973, and 979.Out of these 51 numbers, only 113, 131, 137, 173, 179, 197, 311, 313, 317, 373, 379, 419, 431, 479, 613, 617, 619, 673, 719, 797, and 971 are prime.
+After Clue #2 we have 21 possibilities: 113, 131, 137, 173, 179, 197, 311, 313, 317, 373, 379, 419, 431, 479, 613, 617, 619, 673, 719, 797, and 971.
+Clue #3- ""A, B, and C are all distinct digits."" Out of our 21 possibilities, 113, 131, 311, 313, 373, and 797 do not have distinct digits.
+After Clue #3, we have 15 possibilities: 137, 173, 179, 197, 317, 379, 419, 431, 479, 613, 617, 619, 673, 719, and 971.
+Clue #4- ""The mystery number does not contain a 9.""179, 197, 379, 419, 479, 619, 719, and 971 all contain a 9.
+After Clue #4, we have 7 possibilities: 137, 173, 317, 431, 613, 617, and 673.
+Clue #5- ""If A, B, and C are re-arranged from greatest to least, a 3-digit prime number is formed."" With our 7 possibilities (137, 173, 317, 431, 613, 617, and 673) we arrange their digits from greatest to least getting 731, 731, 731, 431, 631, 761, and 763 respectively. Of these new 7 numbers, only 431 (from 431), 631 (from 613), and 761 (from 617) are prime.
+After Clue #5, we have 3 possibilities: 431, 613, and 617.
+Clue #6- ""If A, B, and C are re-arranged from least to greatest, a 3-digit prime number is formed."" With our 3 possibilities (431, 613, and 617), we arrange their digits from least to greatest to get 134, 136, and 167 respectively. 134 (from 431) and 136 (from 631) are non-prime. 167 (from 617) is prime.
+After Clue #6, we have one possibility: 617.
+617 is the mystery number.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify 3-digit primes (Clue 1):**  
+   Start with all 3-digit prime numbers (143 candidates).
+
+2. **Filter numbers where AB and BC are primes (Clue 2):**  
+   Check if the first two digits (AB) and last two digits (BC) of each prime are 2-digit primes. This reduces the list to 21 candidates.
+
+3. **Remove numbers with repeating digits (Clue 3):**  
+   Ensure all digits A, B, C are distinct, leaving 15 candidates.
+
+4. **Exclude numbers containing the digit 9 (Clue 4):**  
+   Eliminate candidates with ""9,"" resulting in 7 possibilities:  
+   *137, 173, 317, 431, 613, 617, 673*.
+
+5. **Check descending rearrangement (Clue 5):**  
+   Rearrange digits from greatest to least and verify if the result is prime. Only three pass:  
+   - 431 → 431 (prime)  
+   - 613 → 631 (prime)  
+   - 617 → 761 (prime)  
+
+6. **Check ascending rearrangement (Clue 6):**  
+   Rearrange digits from least to greatest and verify if the result is prime:  
+   - 431 → 134 (not prime)  
+   - 613 → 136 (not prime)  
+   - 617 → 167 (prime)  
+
+**Answer:** **617** is the only number satisfying all six clues.",True
+136,"Question: Ranger Cadet Bu Star has just been given the task of moving the five cases of Park Pop soda at the Weiss Pavilion to the Wirth Pavilion, which is 5 miles away. For transportation, Bu must use a MoJoPed, a moped which runs on Park Pop. It can carry, at most, its rider and 25 bottles of soda, i.e., one case in its cargo carrier and one bottle in its fuel tank. It gets one mile to the bottle and is currently empty; it will only move under Pop power. How many unopened bottles can Bu deliver to the second pavilion?
+Comments to triflers:
+The bottles and cases are hi-tech, so there are no concerns about theft or littering. They can stay parked or be discarded anywhere. Yes, the constant rate of fuel use is unreal, and yes, of course, I am asking for the maximum number of bottles!
+ Solution: 80
+To achieve this surprising result, Bu must first take the five cases, one at a time, and park them at a point along the route 2 5/18 miles from the Weiss Pavilion. This takes 9 trips of 2 5/18 miles (5 advancing trips interspersed with 4 return trips) for a total of 20.5 miles traveled (9 * 2 5/18 = 20.5) and 20.5 bottles of soda used. Cadet Star now has 99.5 bottles of soda. (5 * 24 - 20.5 = 120 - 20.5 = 99.5) He puts 3.5 of these aside and redistributes the other 96 to completely fill four cases. With one less case to move, Bu will now make 2 fewer trips. The 3.5 bottles set aside are used to move the four cases the next 1/2 mile toward the Wirth Pavilion.   After this, the Wirth Pavilion is just 2 2/9 miles away ( 5 - 2 5/18 - 9/18 = 2 4/18 ). Next, he travels 15 5/9 miles (7 * 2 2/9) using 15 5/9 bottles of soda to complete his trip. The ranger cadet delivers 80 bottles to the pavilion and has 4/9 of a Park Pop to spare. (96 - 15 5/9 = 80 4/9)",There are hints in the comments to triflers and in the title.,"80
+To achieve this surprising result, Bu must first take the five cases, one at a time, and park them at a point along the route 2 5/18 miles from the Weiss Pavilion. This takes 9 trips of 2 5/18 miles (5 advancing trips interspersed with 4 return trips) for a total of 20.5 miles traveled (9 * 2 5/18 = 20.5) and 20.5 bottles of soda used. Cadet Star now has 99.5 bottles of soda. (5 * 24 - 20.5 = 120 - 20.5 = 99.5) He puts 3.5 of these aside and redistributes the other 96 to completely fill four cases. With one less case to move, Bu will now make 2 fewer trips. The 3.5 bottles set aside are used to move the four cases the next 1/2 mile toward the Wirth Pavilion.   After this, the Wirth Pavilion is just 2 2/9 miles away ( 5 - 2 5/18 - 9/18 = 2 4/18 ). Next, he travels 15 5/9 miles (7 * 2 2/9) using 15 5/9 bottles of soda to complete his trip. The ranger cadet delivers 80 bottles to the pavilion and has 4/9 of a Park Pop to spare. (96 - 15 5/9 = 80 4/9)",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Initial Setup and First Stage Transport:**
+   - Bu starts with 5 cases (120 bottles) at Weiss Pavilion.
+   - **Objective:** Transport all 5 cases to an intermediate point (2 5/18 miles away) to minimize fuel use.
+   - **Trips Required:** 5 forward trips (moving cases) + 4 return trips (to retrieve more cases) = 9 trips total.
+   - **Fuel Calculation:** Each trip covers 2 5/18 miles. Total miles traveled = 9 * 2 5/18 = 20.5 miles. Fuel used = 20.5 bottles.
+   - **Remaining Bottles:** 120 - 20.5 = 99.5 bottles.
+
+2. **Redistribute Cases and Second Stage Transport:**
+   - **Redistribution:** Set aside 3.5 bottles (used for later fuel). Remaining 96 bottles form 4 cases (24 bottles/case).
+   - **Move 4 Cases 0.5 Miles:** Use the 3.5 set-aside bottles to cover 7 trips (4 forward + 3 return) over 0.5 miles. Total fuel used = 3.5 bottles.
+   - **New Distance Covered:** 2 5/18 + 0.5 = 2 7/9 miles from Weiss. Remaining distance = 5 - 2 7/9 = 2 2/9 miles.
+
+3. **Final Stage Transport:**
+   - **Trips Required:** Move 4 cases the final 2 2/9 miles. Requires 7 trips (4 forward + 3 return).
+   - **Fuel Calculation:** Total miles = 7 * 2 2/9 = 15 5/9 miles. Fuel used = 15 5/9 bottles.
+   - **Delivered Bottles:** 96 - 15 5/9 = 80 4/9. Only whole bottles count, so **80 unopened bottles** delivered, with 4/9 bottle unused.
+
+**Key Insight:** By strategically splitting the transport into stages and reducing the number of cases (and thus trips) at each stage, Bu minimizes fuel consumption. The optimal intermediate distances balance trip frequency and fuel efficiency.",True
+137,"Question: Henry is a new civil engineer, and is charged with planning the laying of a new type of ultra-rigid rails that expand only one inch per mile of length in temperature extremes.  Henry's plan calls for the tracks (each of which is one mile in length) to be laid end-to-end with no gap between them, pinned to the ground at every other juncture, as shown below:
+v_______ _______vv_______ _______v
+Henry's boss sees the plan and says, ""You fool!  What about when the tracks expand?""
+Henry replies, ""The expansion will only be an inch over the whole mile length.  If the tracks buckle, it will only be by an inch or two at most.  The trains will certainly have no trouble bumping over these buckles.""
+Henry's boss says, ""You're fired.""  Why was the boss so critical?
+ Solution: The rise in the middle of the tracks would have been much greater than Henry surmised.  Using the Pythagorean Theorem, you will have a triangle with a base of one mile (or 63,360 inches), and a hypotenuse of one mile plus one inch (or 63,361 inches). To find the height, take the square root of (the square of the base minus the square of the hypotenuse). SQRT((63,361)^2 - (63,360)^2) = 355.98 inches, or over 29 feet!",Would Pythagoras have the same plan?,"The rise in the middle of the tracks would have been much greater than Henry surmised.  Using the Pythagorean Theorem, you will have a triangle with a base of one mile (or 63,360 inches), and a hypotenuse of one mile plus one inch (or 63,361 inches). To find the height, take the square root of (the square of the base minus the square of the hypotenuse). SQRT((63,361)^2 - (63,360)^2) = 355.98 inches, or over 29 feet!",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Understand the Problem:**  
+   Henry assumes a 1-inch expansion over a mile-long rail would cause only a 1-2 inch buckle. His boss disagrees, knowing the vertical displacement is much larger.
+
+2. **Model the Expansion:**  
+   When the rail expands by 1 inch (total length = 1 mile + 1 inch = 63,361 inches) and is pinned at both ends, it buckles upward. The system forms a triangle:
+   - **Base (original length):** 63,360 inches (1 mile).
+   - **Hypotenuse (expanded length):** 63,361 inches.
+
+3. **Apply the Pythagorean Theorem:**  
+   Calculate the height (\(h\)) of the buckle using the difference in squares:
+   \[
+   h = \sqrt{(63,361)^2 - (63,360)^2}
+   \]
+   Simplify using the difference of squares:
+   \[
+   h = \sqrt{(63,361 - 63,360)(63,361 + 63,360)} = \sqrt{1 \times 127,721} \approx 355.98 \text{ inches (≈29.66 feet)}.
+   \]
+
+4. **Conclusion:**  
+   The small linear expansion (1 inch) over a mile results in a vertical displacement of ~29.66 feet—not 1-2 inches. This massive buckle would derail trains, justifying the boss’s criticism. Henry failed to account for geometric scaling in constrained systems.",True
+138,"Question: Jill is helping plan her family's new patio. It will be an irregular hexagon. They will use 1-foot-square stone tiles. Here are her notes.
+1. The perimeter of the deck is outlined by ABCDEF.
+2. Line AB is against the house. It is 16 feet long.
+3. AF is perpendicular to AB.
+4.AF and BC are parallel.
+5.BC and AF are each 6 feet long.
+6.Points F and C are connected by FC; FC is parallel to AB.
+7.Points G and H are on FC.
+8.FG and HC are each 4 feet long.
+9. ED is 8 feet long. It is parallel to AB.
+10. DH is perpendicular to HC. It is 4 feet long.
+11. EG is perpendicular to FG. It is 4 feet long.
+12. Angle BCD is 135 degrees.
+13. Angle AFE is 135 degrees.
+If they order 6 more tiles than they would ideally need (to allow for breakage), how many patio tiles should they order?
+Assume that tiles can be cut cleanly so that any leftover pieces can be used for other parts of the deck.
+ Solution: The area of the deck is 144 square feet. They will need 150 tiles.
+Explanation
+The area of ABCF is 96 square feet.
+The area of DEGH is 32 square feet.
+The area of CDH and EFG combined is 16 square feet. You will be able to complete these sections with 8 tiles each after cutting four of the tiles in half diagonally.
+The total area is 144 square feet. Allowing 6 extra tiles for breakage brings the order to 150 tiles.",,"The area of the deck is 144 square feet. They will need 150 tiles.
+Explanation
+The area of ABCF is 96 square feet.
+The area of DEGH is 32 square feet.
+The area of CDH and EFG combined is 16 square feet. You will be able to complete these sections with 8 tiles each after cutting four of the tiles in half diagonally.
+The total area is 144 square feet. Allowing 6 extra tiles for breakage brings the order to 150 tiles.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify Coordinates:**  
+   - Assign coordinates based on given dimensions.  
+     - A(0,0), B(16,0), F(0,6), C(16,6), G(4,6), H(12,6), D(12,10), E(4,10).  
+   - Verify angles and parallel/perpendicular lines (e.g., BC and AF are vertical, FC and AB are horizontal).
+
+2. **Divide the Hexagon into Shapes:**  
+   - **Trapezoid ABCF:**  
+     - Bases AB (16 ft) and FC (16 ft), height 6 ft.  
+     - Area: \(\frac{(16 + 16)}{2} \times 6 = 96 \text{ sq ft}\).  
+   - **Rectangle DEGH:**  
+     - Length 8 ft (from D(12,10) to E(4,10)), height 4 ft (from y=6 to y=10).  
+     - Area: \(8 \times 4 = 32 \text{ sq ft}\).  
+   - **Triangles CDH and EFG:**  
+     - Each is a right triangle with legs 4 ft.  
+     - Area of each: \(\frac{4 \times 4}{2} = 8 \text{ sq ft}\).  
+     - Combined area: \(8 + 8 = 16 \text{ sq ft}\).  
+
+3. **Calculate Total Area:**  
+   - Sum all parts: \(96 + 32 + 16 = 144 \text{ sq ft}\).  
+
+4. **Account for Tile Cutting:**  
+   - Tiles can be cut diagonally to cover triangular areas (CDH and EFG).  
+   - Total tiles needed: \(144 \text{ tiles}\) (1 tile per sq ft, including cut pieces).  
+
+5. **Add Extra Tiles for Breakage:**  
+   - Order \(144 + 6 = 150 \text{ tiles}\).  
+
+**Answer:**  
+They should order **150 patio tiles**.",True
+139,"Question: Kevin and Smith are in charge of counting people who get on and off the lift. They take turns riding to the top floor and back down, counting as they go. After three such trips each morning noon and evening, there is an average taken.
+The hotel manager wants to know the days average.
+1.On Smith's noon trip there were 32 fewer people than in his morning count.
+2.Kevin counted a total of 122 in the morning and noon counts, just one higher than his evening count, but 24 more than Smith's Evening count.
+3.Kevin's morning count is the same as Smith's average.
+4.Kevin's evening count was 37 more than Smith's morning count.
+ Solution: Morning Noon Evening Total Ave
+Kevin  78       44      121     243   81
+Smith  84       52       98     234   78",Clue 2 gives most of the information needed to get started.,"Morning Noon Evening Total Ave
+Kevin  78       44      121     243   81
+Smith  84       52       98     234   78",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:**
+   - Assign variables for Kevin's and Smith's morning (K_m, S_m), noon (K_n, S_n), and evening (K_e, S_e) counts.
+
+2. **Apply Given Conditions:**
+   - **Condition 1:** Smith’s noon count is 32 fewer than his morning count:  
+     \( S_n = S_m - 32 \).
+   - **Condition 2:** Kevin’s morning + noon total = 122, which is 1 more than his evening count and 24 more than Smith’s evening count:  
+     \( K_m + K_n = 122 \), \( K_e = 122 - 1 = 121 \), \( S_e = 122 - 24 = 98 \).
+   - **Condition 4:** Kevin’s evening count is 37 more than Smith’s morning count:  
+     \( K_e = S_m + 37 \) ⇒ \( S_m = 121 - 37 = 84 \).
+   - **Condition 1 Revisited:** Calculate Smith’s noon count:  
+     \( S_n = 84 - 32 = 52 \).
+   - **Condition 3:** Kevin’s morning count equals Smith’s average:  
+     Smith’s total = \( 84 + 52 + 98 = 234 \), so \( K_m = 234 / 3 = 78 \).
+   - **Condition 2 Revisited:** Solve for Kevin’s noon count:  
+     \( K_n = 122 - 78 = 44 \).
+
+3. **Verify Totals and Averages:**
+   - Kevin’s total = \( 78 + 44 + 121 = 243 \), average = \( 81 \).
+   - Smith’s total = \( 84 + 52 + 98 = 234 \), average = \( 78 \).
+
+**Final Answer:**  
+Kevin’s daily average is **81**, and Smith’s daily average is **78**. The counts are consistent with all given conditions.",True
+140,"Question: Take a five-digit number and reverse it. Subtract the original number from the reversed number and you are left with 33957.
+How many different possibilities does the original number have?
+ Solution: Suppose that the original number is abcde. Then edcba-abcde=33957.
+Since e>a, we must have e=a+3 and therefore d=b+4, and c can be any digit.
+a can be 1 to 6 and e 4 to 9, b can be 0 to 5 and d 4 to 9, each pair has 6 possibilities, and c has 10 possibilities.
+Therefore, the original number has 6*6*10=360 different possibilities.",Work from the first and last digits.,"Suppose that the original number is abcde. Then edcba-abcde=33957.
+Since e>a, we must have e=a+3 and therefore d=b+4, and c can be any digit.
+a can be 1 to 6 and e 4 to 9, b can be 0 to 5 and d 4 to 9, each pair has 6 possibilities, and c has 10 possibilities.
+Therefore, the original number has 6*6*10=360 different possibilities.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables and Set Up Equation:**
+   - Let the original five-digit number be \( abcde \), and its reverse be \( edcba \).
+   - The equation from the problem is \( edcba - abcde = 33957 \).
+
+2. **Expand and Simplify:**
+   - Express both numbers in terms of their digits:
+     \[
+     10000e + 1000d + 100c + 10b + a - (10000a + 1000b + 100c + 10d + e) = 33957
+     \]
+   - Simplify to:
+     \[
+     9999(e - a) + 990(d - b) = 33957
+     \]
+
+3. **Factor and Solve for Integer Constraints:**
+   - Factor out 99:
+     \[
+     99 \left(101(e - a) + 10(d - b)\right) = 33957
+     \]
+   - Divide by 99:
+     \[
+     101(e - a) + 10(d - b) = 343
+     \]
+   - Let \( x = e - a \) and \( y = d - b \), leading to:
+     \[
+     101x + 10y = 343
+     \]
+
+4. **Solve for \( x \) and \( y \):**
+   - Modular arithmetic shows \( x \equiv 3 \mod 10 \), so \( x = 3 \).
+   - Substitute \( x = 3 \): \( 101(3) + 10y = 343 \Rightarrow y = 4 \).
+
+5. **Determine Digit Constraints:**
+   - \( e = a + 3 \) (with \( a \leq 6 \) to keep \( e \leq 9 \)).
+   - \( d = b + 4 \) (with \( b \leq 5 \) to keep \( d \leq 9 \)).
+   - \( c \) is unrestricted (0-9).
+
+6. **Calculate Total Possibilities:**
+   - \( a \): 6 choices (1-6).
+   - \( b \): 6 choices (0-5).
+   - \( c \): 10 choices (0-9).
+   - Total: \( 6 \times 6 \times 10 = 360 \).
+
+**ANSWER:** The original number has **360** different possibilities.",True
+141,"Question: You have two identical ropes and three mice.  Each mouse bites off the rope at a different biting speed.  All three biting speeds are constant.
+Mouse(A) bites off one rope in 60 minutes.
+Mouse(B) bites off one rope in 90 minutes.
+Mouse(C) bites off one rope in 180 minutes.
+You do not have any time or distance measuring tools and the length of the rope is unknown.  How can you measure 75 minutes?
+ Solution: Mark the two ropes as Rope(A) and Rope(B).
+1. Let Mouse(A) and Mouse(C) start biting off Rope(A) at the same time, starting each from  one end (moving in opposite directions).  At the same time, let Mouse(B) start biting off Rope(B).
+Finding relative speeds between Mouse(A) and Mouse(C):
+Distance = Speed * Time
+X = S(A) * 60, where S(A) is biting speed for Mouse(A) and X is Rope(A) length
+X = S(C) * 180, where S(C) is biting speed for Mouse(C) and X is Rope(A) length
+Solving the two above equations gives:
+S(A)/S(C) = 3:1, which means that for each 3 units Mouse(A) will move, Mouse (C) will move 1 unit.
+Moving in opposite directions (assume Mouse(A) from left to right and Mouse(C) from right to left), the two mice will meet after Mouse(A) bites off three times what Mouse(C) bit off, which divides Rope(A) length in to 4 units.
+Mouse(A) bitten off portion = 3/4 X (where X is Rope(A) length)
+Mouse(C) bitten off portion = 1/4 X
+Finding the time spent before Rope(A) is completely bitten off by the two mice:
+If Mouse(A) needs  60 minutes to bite off X, How many minutes are needed to bite off 3/4 X?
+Minutes needed = 3/4 * 60 = 45 minutes are needed to fully bite off Rope(A) by Mouse(A) and Mouse(C).  At that point in time, Mouse(B) would have bitten off exactly half the length of Rope(B) (needing 90 minutes to bite off the full rope), and needs an additional 45 minutes to bite off the remaining rope half.
+2. Let Mouse(B) continue biting off Rope(B) and make Mouse(C) start biting off the other end of Rope(B).
+Finding relative speeds between Mouse(B) and Mouse(C):
+Distance = Speed * Time
+X/2 = S(B) * 90, where S(B) is biting speed for Mouse(B) and X/2 is the remaining half of Rope(B) length
+X/2 = S(C) * 180, where S(C) is biting speed for Mouse(C) and X/2 is the remaining half of Rope(B) length
+Solving the two above equations gives:
+S(B)/S(C) = 2:1, which means that for each 2 units Mouse(B) will move, Mouse(C) will move 1 unit.
+Moving in opposite directions (assume Mouse(B) from left to right and Mouse(C) from right to left), the two mice will meet after Mouse(B) bites off two times what Mouse(C) bit off, which divides the remaining half of Rope(B) length to 3 units.
+Mouse(B) bitten off portion = 2/3 * X/2 = X/3
+Mouse(C) bitten off portion = 1/3 * X/2 = X/6
+Finding the time spent before the remaining half of Rope(B) is completely bitten off by the two mice:
+If Mouse(B) needs  90 minutes to bite off X, how many minutes are needed to bite off X/3?
+Minutes needed = 1/3 * 90 = 30 minutes are needed to fully bite off the remaining half of Rope(B) by Mouse(B) and Mouse(C).
+At that point in time, 75 minutes would have passed (45 minutes consumed from biting off Rope(A) and another 30 minutes consumed from biting off Rope(B)).",,"Mark the two ropes as Rope(A) and Rope(B).
+1. Let Mouse(A) and Mouse(C) start biting off Rope(A) at the same time, starting each from  one end (moving in opposite directions).  At the same time, let Mouse(B) start biting off Rope(B).
+Finding relative speeds between Mouse(A) and Mouse(C):
+Distance = Speed * Time
+X = S(A) * 60, where S(A) is biting speed for Mouse(A) and X is Rope(A) length
+X = S(C) * 180, where S(C) is biting speed for Mouse(C) and X is Rope(A) length
+Solving the two above equations gives:
+S(A)/S(C) = 3:1, which means that for each 3 units Mouse(A) will move, Mouse (C) will move 1 unit.
+Moving in opposite directions (assume Mouse(A) from left to right and Mouse(C) from right to left), the two mice will meet after Mouse(A) bites off three times what Mouse(C) bit off, which divides Rope(A) length in to 4 units.
+Mouse(A) bitten off portion = 3/4 X (where X is Rope(A) length)
+Mouse(C) bitten off portion = 1/4 X
+Finding the time spent before Rope(A) is completely bitten off by the two mice:
+If Mouse(A) needs  60 minutes to bite off X, How many minutes are needed to bite off 3/4 X?
+Minutes needed = 3/4 * 60 = 45 minutes are needed to fully bite off Rope(A) by Mouse(A) and Mouse(C).  At that point in time, Mouse(B) would have bitten off exactly half the length of Rope(B) (needing 90 minutes to bite off the full rope), and needs an additional 45 minutes to bite off the remaining rope half.
+2. Let Mouse(B) continue biting off Rope(B) and make Mouse(C) start biting off the other end of Rope(B).
+Finding relative speeds between Mouse(B) and Mouse(C):
+Distance = Speed * Time
+X/2 = S(B) * 90, where S(B) is biting speed for Mouse(B) and X/2 is the remaining half of Rope(B) length
+X/2 = S(C) * 180, where S(C) is biting speed for Mouse(C) and X/2 is the remaining half of Rope(B) length
+Solving the two above equations gives:
+S(B)/S(C) = 2:1, which means that for each 2 units Mouse(B) will move, Mouse(C) will move 1 unit.
+Moving in opposite directions (assume Mouse(B) from left to right and Mouse(C) from right to left), the two mice will meet after Mouse(B) bites off two times what Mouse(C) bit off, which divides the remaining half of Rope(B) length to 3 units.
+Mouse(B) bitten off portion = 2/3 * X/2 = X/3
+Mouse(C) bitten off portion = 1/3 * X/2 = X/6
+Finding the time spent before the remaining half of Rope(B) is completely bitten off by the two mice:
+If Mouse(B) needs  90 minutes to bite off X, how many minutes are needed to bite off X/3?
+Minutes needed = 1/3 * 90 = 30 minutes are needed to fully bite off the remaining half of Rope(B) by Mouse(B) and Mouse(C).
+At that point in time, 75 minutes would have passed (45 minutes consumed from biting off Rope(A) and another 30 minutes consumed from biting off Rope(B)).",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Assign Roles to Ropes and Mice:**
+   - **Rope A:** Simultaneously bitten by Mouse A (left end) and Mouse C (right end).
+   - **Rope B:** Bitten by Mouse B (left end).
+
+2. **Calculate Time to Consume Rope A:**
+   - Mouse A chews at **1/60 rope per minute**; Mouse C at **1/180 rope per minute**.
+   - Combined rate: \( \frac{1}{60} + \frac{1}{180} = \frac{1}{45} \) rope per minute.
+   - Time to finish Rope A: \( \frac{1}{\frac{1}{45}} = 45 \) minutes.
+   - After 45 minutes, Rope A is gone. Mouse B has chewed **half of Rope B** (45 minutes at \( \frac{1}{90} \) per minute).
+
+3. **Switch Mice to Rope B’s Remaining Half:**
+   - Now, **Mouse B** continues chewing the **left end** of Rope B’s remaining half, and **Mouse C** starts chewing the **right end**.
+   - Mouse B’s rate on the half rope: \( \frac{1}{45} \) per minute (full rope in 90 ⇒ half in 45).
+   - Mouse C’s rate on the half rope: \( \frac{1}{90} \) per minute (full rope in 180 ⇒ half in 90).
+   - Combined rate: \( \frac{1}{45} + \frac{1}{90} = \frac{1}{30} \) per minute.
+   - Time to finish the remaining half: \( \frac{1}{\frac{1}{30}} = 30 \) minutes.
+
+4. **Total Time:**
+   - **45 minutes** (Rope A) + **30 minutes** (Rope B’s remaining half) = **75 minutes**.
+
+**Logical Consistency:**
+- Rates are derived directly from given chewing times.
+- Combining mice on opposite ends leverages relative speeds to partition ropes into measurable intervals.
+- Final time sums independent intervals, ensuring accuracy.",True
+142,"Question: Rob the robot went to the candy-store to buy some candies. He found his favorite gums in front of him, in packages of 225 gums in each.
+Though extremely intelligent, he is still a robot, thus capable of using only 1's and 0's.
+What is the minimum number of gums that Rob ate that day if he finished all of his packages, and the number of gums contained nothing but 1's and 0's?
+Oh yes, and you can't cheat and use binary notation.  The answer is in base 10, but still only uses 1's and 0's.
+ Solution: 11,111,111,100
+This contains nine ones, so it is divisible by 9, and two 0's at the end, so it is divisible by 25.","Think of the factors of 225, and kids, don't try this at home (or you would suffer from a severe stomach ache).","11,111,111,100
+This contains nine ones, so it is divisible by 9, and two 0's at the end, so it is divisible by 25.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify Divisibility Requirements:**
+   - Rob's total candy count must be a multiple of 225 (since each package contains 225 gums).
+   - Factorize 225: \(225 = 25 \times 9 = 5^2 \times 3^2\).
+   - The number must be divisible by **25** (last two digits = 00) and **9** (sum of digits is a multiple of 9).
+
+2. **Divisibility by 25:**
+   - The number must end in **00** (the only valid ending with digits 0/1).
+
+3. **Divisibility by 9:**
+   - The sum of the digits (all 1’s and 0’s) must be a multiple of 9.
+   - The smallest valid sum is **9 ones** (since 9 is the smallest multiple of 9).
+
+4. **Construct the Minimal Number:**
+   - Place **nine 1’s** followed by **two 0’s** to satisfy both divisibility rules.
+   - The smallest such number is **11111111100** (11 digits), written as **11,111,111,100** with commas.
+
+**Answer:** The minimum number of gums Rob ate is **11,111,111,100**.",True
+143,"Question: If 3**5 = 27 but 5**3 = 35
+4++8 = 20 but 8++4 = 16
+Then what is the result of (8**7)++9?
+ Solution: The result is 106.
+For the operator **, you add 4 to the second number and then multiply, so a**b = a * (b + 4)
+and a++b = a + (b * 2)
+So therefore (8**7) ++9 = (8*(7 + 4)) ++ 9
+= 88++9
+= 88 + (9 *2)
+= 88 + 18
+= 106",,"The result is 106.
+For the operator **, you add 4 to the second number and then multiply, so a**b = a * (b + 4)
+and a++b = a + (b * 2)
+So therefore (8**7) ++9 = (8*(7 + 4)) ++ 9
+= 88++9
+= 88 + (9 *2)
+= 88 + 18
+= 106",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Understand the Custom Operators:**
+   - **Operator `**`:** Defined as `a ** b = a * (b + 4)`.
+   - **Operator `++`:** Defined as `a ++ b = a + (b * 2)`.
+
+2. **Compute `8 ** 7`:**
+   - Apply the `**` operator:  
+     \( 8 ** 7 = 8 \times (7 + 4) = 8 \times 11 = 88 \).
+
+3. **Compute `88 ++ 9`:**
+   - Apply the `++` operator:  
+     \( 88 ++ 9 = 88 + (9 \times 2) = 88 + 18 = 106 \).
+
+**Result:** The result of \((8 ** 7) ++ 9\) is \(\boxed{106}\).",True
+144,"Question: Arrange the digits 1, 1, 2, 3, 3, 4, 4, 5, and 7 to form a single fraction that equals 1/11
+ Solution: One solutions is 4321/47531=1/11",,One solutions is 4321/47531=1/11,DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Understand the Fraction Requirement**: The fraction \( \frac{N}{D} = \frac{1}{11} \), so \( D = 11N \).  
+   - \( N \) (numerator) must be a 4-digit number, and \( D \) (denominator) a 5-digit number.  
+   - Together, \( N \) and \( D \) must use all digits **1, 1, 2, 3, 3, 4, 4, 5, 7** exactly once.  
+
+2. **Digit Allocation**:  
+   - The numerator \( N \) uses 4 digits, and the denominator \( D = 11N \) uses 5 digits.  
+   - Ensure duplicates (two 1s, 3s, 4s) are split between \( N \) and \( D \).  
+
+3. **Construct Numerator Candidates**:  
+   - Create possible 4-digit numbers \( N \) using the allowed digits.  
+   - Example: \( N = 4321 \) uses **4, 3, 2, 1**.  
+
+4. **Compute Denominator**:  
+   - Multiply \( N \) by 11 to get \( D \). For \( N = 4321 \), \( D = 4321 \times 11 = 47531 \).  
+
+5. **Validate Digits**:  
+   - Check if \( D = 47531 \) uses the remaining digits: **4, 7, 5, 3, 1**.  
+   - Combined digits: **4,3,2,1** (numerator) + **4,7,5,3,1** (denominator) = **1,1,2,3,3,4,4,5,7** (all digits used correctly).  
+
+6. **Verify Uniqueness**:  
+   - Confirm no extra digits (like 0, 6, 8, 9) are introduced.  
+   - Ensure no digit exceeds its allowed frequency.  
+
+**Final Answer**:  
+One valid arrangement is \( \frac{4321}{47531} = \frac{1}{11} \), using all digits **1,1,2,3,3,4,4,5,7** exactly once.",True
+145,"Question: How many trailing zeros are in the number 1000!?
+ Solution: The ! stands for factorial.  So, there are exactly 249 trailing zeros in 1000!
+The only way to get a trailing zero is by multiplying a factor of 1000! which is 2 by a factor of 1000! which is 5. The modified problem is thus: How many such pairs of factors are there?
+There are 500 = 1000/2 numbers between 1 and 1000 (inclusive) which are even, so there are at least 500 factors of 2 in 1000!. There are 200 = 1000/5 numbers which are multiples of 5. But in addition there are 40 = 1000/25 numbers which are multiples of 25, each of which gives one factor of five in addition to the one counted in the 200 and the one counted in the 40 above. Finally there is 1 = [1000/625] number which is a multiple of 625, this gives one further factor of 5. Thus there are exactly  200 + 40 + 8 + 1 = 249 factors of 5 in 1000! and since there are more than sufficient factors of 2, there are exactly 249 trailing zeros in 1000!",,"The ! stands for factorial.  So, there are exactly 249 trailing zeros in 1000!
+The only way to get a trailing zero is by multiplying a factor of 1000! which is 2 by a factor of 1000! which is 5. The modified problem is thus: How many such pairs of factors are there?
+There are 500 = 1000/2 numbers between 1 and 1000 (inclusive) which are even, so there are at least 500 factors of 2 in 1000!. There are 200 = 1000/5 numbers which are multiples of 5. But in addition there are 40 = 1000/25 numbers which are multiples of 25, each of which gives one factor of five in addition to the one counted in the 200 and the one counted in the 40 above. Finally there is 1 = [1000/625] number which is a multiple of 625, this gives one further factor of 5. Thus there are exactly  200 + 40 + 8 + 1 = 249 factors of 5 in 1000! and since there are more than sufficient factors of 2, there are exactly 249 trailing zeros in 1000!",DSReason,solutionSummary,"SUMMARY:
+1. **Identify the source of trailing zeros**: Trailing zeros in a factorial result from factors of 10, which are composed of pairs of prime factors 2 and 5.  
+2. **Determine the limiting factor**: Since there are more factors of 2 than 5 in \(1000!\), the number of trailing zeros is dictated by the number of factors of 5.  
+3. **Count factors of 5 systematically**:  
+   - **Step 1**: Count multiples of 5 in \(1, 2, \dots, 1000\):  
+     \(\left\lfloor \frac{1000}{5} \right\rfloor = 200\).  
+   - **Step 2**: Count multiples of \(25 = 5^2\) (each contributes an extra 5):  
+     \(\left\lfloor \frac{1000}{25} \right\rfloor = 40\).  
+   - **Step 3**: Count multiples of \(125 = 5^3\) (additional 5s):  
+     \(\left\lfloor \frac{1000}{125} \right\rfloor = 8\).  
+   - **Step 4**: Count multiples of \(625 = 5^4\) (further 5s):  
+     \(\left\lfloor \frac{1000}{625} \right\rfloor = 1\).  
+   - Higher powers of 5 (e.g., \(3125 = 5^5\)) exceed 1000, so they contribute nothing.  
+4. **Sum the counts**: \(200 + 40 + 8 + 1 = 249\).  
+5. **Conclusion**: There are **249 trailing zeros** in \(1000!\), as the total factors of 5 (249) limit the number of trailing zeros.",True
+146,"Question: In a 14-stage cycle race there were a 100 competitors, among them ""Crazy"" Charles
+In all 14 stages ""Crazy"" Charles finished in the same position: 93rd. However, at the end of the race, ""Crazy"" Charles was declared runner-up in the competition: his accumulated time was less than that of all the other competitors except one, the champion.
+Bearing in mind the fact that none of the 100 competitors withdrew from the race, how was it possible for ""Crazy"" Charles to finish second if he never even made it into the top 90 competitors?
+ Solution: ""Crazy"" Charles was runner-up in the race because in each of the 14 stages he beat 7 different competitors, and he beat them all by more time than the accumulated time that they beat him by in all the other stages of the tour. Since 7*14=98, there was only one cyclist that he never beat and that was the champion.",,"""Crazy"" Charles was runner-up in the race because in each of the 14 stages he beat 7 different competitors, and he beat them all by more time than the accumulated time that they beat him by in all the other stages of the tour. Since 7*14=98, there was only one cyclist that he never beat and that was the champion.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Stage Positions vs. Total Time:** ""Crazy"" Charles finished 93rd in all 14 stages, meaning 7 cyclists finished behind him each time. However, final rankings are determined by **total accumulated time**, not stage positions.
+
+2. **Unique Competitors Beaten Per Stage:** Each stage, Charles beat **7 distinct cyclists** (7 × 14 stages = 98 cyclists total). The remaining **1 cyclist (the champion)** always finished ahead of Charles.
+
+3. **Time Margin Analysis:**
+   - In the **1 stage** where Charles beat a competitor, that competitor lost a **large time margin (X)**.
+   - In the **13 stages** where those 98 competitors beat Charles, they gained a **small time margin (Y)** per stage.
+
+4. **Cumulative Time Comparison:**
+   - For each of the 98 competitors:  
+     **Total Time = 13*(T - Y) + (T + X) = 14T - 13Y + X**  
+     Charles’ Total Time = **14T**.  
+     For Charles to have a better time:  
+     **14T < 14T - 13Y + X** → **X > 13Y**.
+   - The **large loss (X)** in one stage outweighed the **small gains (13Y)** across other stages.
+
+5. **Final Standings:**
+   - The **98 cyclists** had worse total times than Charles due to their single large loss.  
+   - The **champion** consistently finished ahead of Charles in all stages, securing the best total time.  
+   - Thus, Charles became **runner-up** despite never finishing in the top 90.  
+
+**Key Insight:** Strategic dominance in specific stages (beating 7 cyclists by a large margin) compensated for poor stage positions, ensuring Charles’ total time surpassed 98 competitors. Only the champion, unbeaten by Charles, had a better total time.",True
+147,"Question: The Boldavian navy has a rigorous training program.  In order to graduate from the naval academy, cadets must enter a pool and fight sharks.  Today, a group of cadets was tested.  Each cadet put on his mask, snorkel, and two flippers; and armed himself with a knife.  Then the cadets jumped into the pool.  The sharks were then released from their pens.  After 10 minutes of gruelling hand-to-fin combat, all of the sharks were killed.  Miraculously, none of the cadets were killed.  Exiting the pool, the cadets began to haul the shark bodies out of the water.  The dead sharks were soon lying in a row.  One of the cadets noted that during the fight, there were 4 times as many cadets in the water as there were sharks.  A second cadet then stated that the number of legs they now had was equal to the square of the number of sharks.  A third said that the number of cadet legs was 14 more than the total number of cadet and shark heads.  How many sharks were killed?
+ Solution: 7 sharks were killed.
+Since there were 4 times as many cadets, there were 28 cadets.  The number of cadet legs is equal to the square of the number of sharks, which would be 49 legs.  49 legs is 14 more than the number of cadet and shark heads: 7 sharks plus 28 cadets equals 35 heads.
+Note that although all of the cadets survived, nothing was said about possible injuries.  In fact, each shark had bitten off one leg from each of 7 cadets.  This explains the shortage of legs, since 28 cadets should have had 56 legs, not 49.  Also note the statement of the second cadet, who said 'the number of legs they NOW had ...'.",,"7 sharks were killed.
+Since there were 4 times as many cadets, there were 28 cadets.  The number of cadet legs is equal to the square of the number of sharks, which would be 49 legs.  49 legs is 14 more than the number of cadet and shark heads: 7 sharks plus 28 cadets equals 35 heads.
+Note that although all of the cadets survived, nothing was said about possible injuries.  In fact, each shark had bitten off one leg from each of 7 cadets.  This explains the shortage of legs, since 28 cadets should have had 56 legs, not 49.  Also note the statement of the second cadet, who said 'the number of legs they NOW had ...'.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:**
+   - Let \( S \) = number of sharks.
+   - Let \( C \) = number of cadets.
+
+2. **First Clue (Cadet-to-Shark Ratio):**
+   - ""4 times as many cadets as sharks"" implies \( C = 4S \).
+
+3. **Second Clue (Legs Equal to Sharks Squared):**
+   - ""Number of legs = \( S^2 \).""
+   - Normally, cadets have \( 2C \) legs. However, legs are reduced due to injuries. Thus:
+     \[
+     2C - \text{lost legs} = S^2
+     \]
+
+4. **Third Clue (Legs Exceed Heads by 14):**
+   - ""Cadet legs = (Cadet heads + Shark heads) + 14.""
+   - Total heads = \( C + S \), so:
+     \[
+     S^2 = (C + S) + 14
+     \]
+
+5. **Substitute \( C = 4S \) into the Third Clue:**
+   - Replace \( C \) with \( 4S \):
+     \[
+     S^2 = (4S + S) + 14 \implies S^2 = 5S + 14
+     \]
+   - Solve the quadratic equation:
+     \[
+     S^2 - 5S - 14 = 0 \implies S = \frac{5 \pm \sqrt{81}}{2} \implies S = 7 \, (\text{positive solution}).
+     \]
+
+6. **Verify Leg Deficit:**
+   - With \( S = 7 \), \( C = 28 \).
+   - Normal legs = \( 2 \times 28 = 56 \), but actual legs = \( 7^2 = 49 \).
+   - Deficit = \( 56 - 49 = 7 \) legs, explained by 7 cadets each losing one leg (bitten by 7 sharks).
+
+7. **Consistency Check:**
+   - Total heads = \( 28 + 7 = 35 \).
+   - \( 35 + 14 = 49 \), matching \( S^2 = 49 \).
+
+**Answer:**  
+7 sharks were killed.",True
+148,"Question: There is a five digit square number that is palindromic, and each digit is also a nonzero square number.
+What is it?
+ Solution: 44944=212^2.","Of course, it must be the square of a palindromic number. Therefore, when you multiply its square root by itself, there's no carrying, because carrying will break the palindrome. And therefore...",44944=212^2.,DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify Constraints:**
+   - The number is a 5-digit palindrome (form ABCBA).
+   - Each digit (A, B, C) must be 1, 4, or 9 (nonzero squares).
+   - The entire number must be a perfect square.
+
+2. **Determine Possible Roots:**
+   - The square root must be between 100 and 316 (since 100² = 10,000 and 316² ≈ 99,856).
+   - The last digit of the root determines the last digit of the square, which must align with A being 1, 4, or 9.
+
+3. **Check Candidates Systematically:**
+   - **For roots starting with 1 (100–141):** No valid palindromes with allowed digits.
+   - **For roots starting with 4 (200–223):** Check roots ending in 2 or 8 (to produce squares ending in 4). 
+     - **212² = 44,944**: Digits are 4, 4, 9, 4, 4. Valid palindrome with all digits as 1, 4, or 9.
+   - **For roots starting with 9 (300–316):** No valid palindromes with allowed digits.
+
+4. **Verify Uniqueness:**
+   - Confirm no smaller or alternative solutions exist within the constraints.
+
+**Answer:** The least number is **44944** (212²).",True
+149,"Question: The owner of a Romankachi flower boutique follows a particular pattern for his business. During a period of inflation, he raises his prices by Y% and during a slowdown he decreases his existing prices by Y%. After a year in which there was inflation first, followed by a slowdown, the cost of a Red Rose bouquet  decreases by 162 Roka (Roka being the native Romankachi currency). After another year in which there was inflation once more followed by a slowdown, the cost of this bouquet reduces by a further 147.42 Roka. What was the original price of the  Red Rose bouquet ?
+ Solution: The original price of the  Red Rose bouquet is 1800 Roka.
+Let the original price of the Red Rose bouquet  be 'B' Roka.
+It is given that during a period of inflation, he raises his prices by Y% and during a slowdown he decreases his existing prices by Y%.
+Hence after a year in which there was inflation first, followed by a slowdown, and the cost of a Red Rose bouquet decreased by 162 Roka, the price of the bouquet
+= B(1+Y)(1-Y)
+= B(1-Y^2)
+(since B(1+Y) is the price during inflation and  B(1-Y)(1+Y) the price during the slowdown)
+Therefore the decrease in price after one year
+= B - B(1-Y^2)
+= B - B + B*Y^2
+= B*Y^2 = 162      ... Equation 1
+Hence after another year in which there was inflation first, followed by a slowdown, and the cost of a Red Rose bouquet decreased by 147.42 Roka, the price of the bouquet
+= B(1-Y^2)(1+Y)(1-Y)
+= B(1-Y^2)(1-Y^2)
+= B(1-Y^2)^2
+(since B(1-Y^2) is the price at the end of the previous year and           B(1-Y^2)(1+Y)(1-Y) the price during the slowdown this year)
+Therefore the decrease in price this year
+= B(1-Y^2) - B(1-Y^2)^2
+= B(1-Y^2)[1 - (1-Y^2)]
+= B(1-Y^2)( Y^2) = 147.42    ... Equation 2
+Dividing Equation 2 by Equation 1, we get
+(1-Y^2) = 0.91 => Y^2 = 0.09
+Substituting the above value of Y^2 in equation 1, we get
+B*0.09 = 162
+Hence B = 162/0.09 = 1800 Roka.
+Therefore the original price of the  Red Rose bouquet is 1800 Roka.",,"The original price of the  Red Rose bouquet is 1800 Roka.
+Let the original price of the Red Rose bouquet  be 'B' Roka.
+It is given that during a period of inflation, he raises his prices by Y% and during a slowdown he decreases his existing prices by Y%.
+Hence after a year in which there was inflation first, followed by a slowdown, and the cost of a Red Rose bouquet decreased by 162 Roka, the price of the bouquet
+= B(1+Y)(1-Y)
+= B(1-Y^2)
+(since B(1+Y) is the price during inflation and  B(1-Y)(1+Y) the price during the slowdown)
+Therefore the decrease in price after one year
+= B - B(1-Y^2)
+= B - B + B*Y^2
+= B*Y^2 = 162      ... Equation 1
+Hence after another year in which there was inflation first, followed by a slowdown, and the cost of a Red Rose bouquet decreased by 147.42 Roka, the price of the bouquet
+= B(1-Y^2)(1+Y)(1-Y)
+= B(1-Y^2)(1-Y^2)
+= B(1-Y^2)^2
+(since B(1-Y^2) is the price at the end of the previous year and           B(1-Y^2)(1+Y)(1-Y) the price during the slowdown this year)
+Therefore the decrease in price this year
+= B(1-Y^2) - B(1-Y^2)^2
+= B(1-Y^2)[1 - (1-Y^2)]
+= B(1-Y^2)( Y^2) = 147.42    ... Equation 2
+Dividing Equation 2 by Equation 1, we get
+(1-Y^2) = 0.91 => Y^2 = 0.09
+Substituting the above value of Y^2 in equation 1, we get
+B*0.09 = 162
+Hence B = 162/0.09 = 1800 Roka.
+Therefore the original price of the  Red Rose bouquet is 1800 Roka.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables and Initial Equations:**
+   - Let the original price be \( B \) Roka and the percentage change be \( Y\% \).
+   - After the first year (inflation followed by slowdown), the price becomes \( B(1 + \frac{Y}{100})(1 - \frac{Y}{100}) = B(1 - (\frac{Y}{100})^2) \).
+   - The decrease in price after the first year: \( B - B(1 - (\frac{Y}{100})^2) = B(\frac{Y}{100})^2 = 162 \).  
+     **(Equation 1: \( B(\frac{Y}{100})^2 = 162 \))**
+
+2. **Second Year Price Change:**
+   - Starting price for the second year: \( B(1 - (\frac{Y}{100})^2) \).
+   - After the second year (inflation then slowdown), the price becomes \( B(1 - (\frac{Y}{100})^2)^2 \).
+   - The decrease in price after the second year: \( B(1 - (\frac{Y}{100})^2) - B(1 - (\frac{Y}{100})^2)^2 = B(1 - (\frac{Y}{100})^2)(\frac{Y}{100})^2 = 147.42 \).  
+     **(Equation 2: \( B(1 - (\frac{Y}{100})^2)(\frac{Y}{100})^2 = 147.42 \))**
+
+3. **Solve for \( Y \):**
+   - Divide Equation 2 by Equation 1 to eliminate \( B \):  
+     \( \frac{B(1 - (\frac{Y}{100})^2)(\frac{Y}{100})^2}{B(\frac{Y}{100})^2} = \frac{147.42}{162} \).  
+     Simplifies to \( 1 - (\frac{Y}{100})^2 = 0.91 \).
+   - Solve \( 1 - (\frac{Y}{100})^2 = 0.91 \):  
+     \( (\frac{Y}{100})^2 = 0.09 \) → \( Y = 30\% \).
+
+4. **Solve for \( B \):**
+   - Substitute \( (\frac{Y}{100})^2 = 0.09 \) into Equation 1:  
+     \( B \times 0.09 = 162 \) → \( B = \frac{162}{0.09} = 1800 \).
+
+**Final Answer:**  
+The original price of the Red Rose bouquet was **1800 Roka**.",True
+150,"Question: There is a 2x3 checkerboard with 6 unit squares that are labeled as 1 through 6. If we are going to divide it into at least two rectangles whose sides are all integers, how many different ways are there?
+ Solution: There are 33 different ways of dividing it.
+2 rectangles:
+4+2: 2 ways;
+3+3: 1 way, 3 ways accumulated;
+3 rectangles:
+4+1+1: 2 ways, 5 ways accumulated;
+3+2+1: 4 ways, 9 ways accumulated;
+2+2+2: 3 ways, 12 ways accumulated;
+4 rectangles:
+3+1+1+1: 2 ways, 14 ways accumulated;
+2+2+1+1: 11 ways, 25 ways accumulated;
+5 rectangles:
+2+1+1+1+1: 7 ways, 32 ways accumulated;
+6 rectangles:
+1+1+1+1+1+1: 1 way, 33 ways accumulated.","Since the cells are labeled, ways that are the same upon reflection or symmetry are considered different ways.","There are 33 different ways of dividing it.
+2 rectangles:
+4+2: 2 ways;
+3+3: 1 way, 3 ways accumulated;
+3 rectangles:
+4+1+1: 2 ways, 5 ways accumulated;
+3+2+1: 4 ways, 9 ways accumulated;
+2+2+2: 3 ways, 12 ways accumulated;
+4 rectangles:
+3+1+1+1: 2 ways, 14 ways accumulated;
+2+2+1+1: 11 ways, 25 ways accumulated;
+5 rectangles:
+2+1+1+1+1: 7 ways, 32 ways accumulated;
+6 rectangles:
+1+1+1+1+1+1: 1 way, 33 ways accumulated.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **2 Rectangles:**
+   - **4+2 Split:** Divide into a 2x2 block and a 2x1 strip. This can be done in 2 ways (left or right for the 2x2).
+   - **3+3 Split:** Divide horizontally into two 1x3 rows. Only 1 way.
+   - **Total:** \(2 + 1 = 3\).
+
+2. **3 Rectangles:**
+   - **4+1+1 Split:** 2x2 block with two single squares. Two configurations (left or right for the 2x2).
+   - **3+2+1 Split:** Three configurations based on row placement and splitting the remaining squares. Four ways.
+   - **2+2+2 Split:** Three vertical 2x1 columns or combinations of horizontal and vertical splits. Three ways.
+   - **Total:** \(3 + 4 + 3 = 10\) (accumulated total: \(3 + 10 = 13\)? Wait, no. Wait, original solution says 3 rectangles: 4+1+1 (2), 3+2+1 (4), 2+2+2 (3) → Total 9. Previous total was 3 (from 2 rectangles), adding 9 → 12. Then moving to 4 rectangles.)
+
+3. **4 Rectangles:**
+   - **3+1+1+1 Split:** 1x3 row with three single squares. Two ways (top or bottom row).
+   - **2+2+1+1 Split:** Various configurations of two 2x1 blocks and two singles. Eleven ways.
+   - **Total:** \(2 + 11 = 13\) (accumulated total: \(12 + 13 = 25\)).
+
+4. **5 Rectangles:**
+   - **2+1+1+1+1 Split:** One 2x1 block (vertical/horizontal) with four singles. Seven ways.
+   - **Total:** \(25 + 7 = 32\).
+
+5. **6 Rectangles:**
+   - **1+1+1+1+1+1 Split:** All six squares separated. One way.
+   - **Total:** \(32 + 1 = 33\).
+
+**Final Answer:** The least number of ways to divide the 2x3 checkerboard into at least two rectangles is **33**.",True
+151,"Question: In our business, my two partners and I usually cut a lot of cake. However, when we get a last minute cancellation, we sometimes look for new and unusual ways to cut small amounts of cake.
+On one such occasion, we tried to find a cake with an unusual set of attributes.
+First, it had to be a regular polygon, i.e. all sides equal in length and all angles equal in size.
+Second, using only standard cuts (straight and perpendicular to the plate) from some corner to another, we would be able to exactly divide that polygon into equal portions.
+Third, except for the last cut, each cut would create one, and only one, such portion.  The last cut would create two such portions.
+Fourth, there must be more than two portions. (Otherwise, a square or any regular polygon with an even number of sides would do. A cut from one corner to its opposing corner would carve out two pieces of 50% each.)
+For discussion purposes, we decided to label the points of our polygons alphabetically.  A pentagon can only produce three pieces. Triangles ABC and CDE are equals, but triangle ACE is larger. A hexagon yields three or four pieces, but they will be of two different sizes.  Triangles ABC = CDE = EFA <> ACE, or triangles ABC = DEF <> CDF = FAC.  Etc.
+About this time, Junior, our partner-in-waiting, said, ""Cousins, I can do this, and I'll get to take a share of the cake.""
+Knowing Junior, we asked, ""How big a headache is your math gonna give us?""
+She answered, ""I can prove it without using trig, powers, roots, or the Pythagorean Theorem.""
+Name the polygon she chose, tell how to divide it, and if you can, give proof the portions are equal.
+ Solution: Junior knew an octagon would sequentially yield four quarters.
+After labeling the points of a perfect octagon, Junior told us, ""Before I cut the cake, I'll give the proof. First, I mark a line from A to D.  This creates a trapezoid (trapezium in Britain) ABCD.  Next, I mark the lines EH, BG, and CF.  These four lines crosshatch the area dividing it into 1 square surrounded by 4 equal triangles and 4 equal rectangles.""
+The partners (me included) chimed in with the rest of these observations: The sides of the square are the same length as those of the octagon. Dividing the central square into isosceles right triangles (by marking both of its diagonals) would yield 4 triangles equivalent to the first 4. The total area of the octagon can be accounted for by 8 equal triangles and 4 equal rectangles.   Because it is made of 2 triangles and 1 rectangle, trapezoid ABCD is 1/4 of the octagon. A second trapezoid taken from the irregular hexagon ADEFGH will equal 1/4 of the octagon and leave 1/2 of the original octagon in the shape of a rectangle or a kite, either of which is easily split to provide the last two 1/4's. (The second and third cuts can be made in reverse order.)
+...
+The pieces from two arrangements follow:
+1) ABCD, DEFG, ADH, and DGH.
+2) ABCD, EFGH, ADH, and DEH.",Junior's proof uses fact that all dimensions of an isosceles right triangle are determined by its name and the length of its hypotenuse.,"Junior knew an octagon would sequentially yield four quarters.
+After labeling the points of a perfect octagon, Junior told us, ""Before I cut the cake, I'll give the proof. First, I mark a line from A to D.  This creates a trapezoid (trapezium in Britain) ABCD.  Next, I mark the lines EH, BG, and CF.  These four lines crosshatch the area dividing it into 1 square surrounded by 4 equal triangles and 4 equal rectangles.""
+The partners (me included) chimed in with the rest of these observations: The sides of the square are the same length as those of the octagon. Dividing the central square into isosceles right triangles (by marking both of its diagonals) would yield 4 triangles equivalent to the first 4. The total area of the octagon can be accounted for by 8 equal triangles and 4 equal rectangles.   Because it is made of 2 triangles and 1 rectangle, trapezoid ABCD is 1/4 of the octagon. A second trapezoid taken from the irregular hexagon ADEFGH will equal 1/4 of the octagon and leave 1/2 of the original octagon in the shape of a rectangle or a kite, either of which is easily split to provide the last two 1/4's. (The second and third cuts can be made in reverse order.)
+...
+The pieces from two arrangements follow:
+1) ABCD, DEFG, ADH, and DGH.
+2) ABCD, EFGH, ADH, and DEH.",DSReason,solutionSummary,"**Summary of the Solution:**
+
+1. **Identify the Polygon Requirements:**
+   - The polygon must be regular (equal sides and angles).
+   - Cuts are straight lines from corner to corner.
+   - Sequential cuts must divide the polygon into equal portions, with the last cut splitting the remainder into two equal parts.
+   - Total portions must exceed two.
+
+2. **Analyze Candidate Polygons:**
+   - A pentagon fails because it cannot produce equal portions.
+   - A hexagon fails due to unequal portion sizes.
+   - A square or even-sided polygon splits into two equal parts but cannot satisfy the requirement for more than two portions.
+
+3. **Select the Octagon:**
+   - A regular octagon has eight sides and high symmetry, enabling equal divisions.
+   - Key observation: Strategic cuts can divide the octagon into four equal parts without complex calculations.
+
+4. **Cutting Strategy:**
+   - **First Cut:** From vertex A to D (skipping three edges), creating trapezoid ABCD (1/4 of the octagon).
+   - **Subsequent Cuts:** Lines EH, BG, and CF divide the remaining area into three more equal trapezoids.
+   - **Final Cut:** Splits the last remaining section into two equal parts.
+
+5. **Proof of Equal Portions:**
+   - **Symmetry Argument:** The octagon’s regularity ensures all trapezoids and triangles formed by cuts are congruent.
+   - **Area Composition:** Each portion comprises two congruent isosceles triangles and one rectangle, matching in total area.
+   - **Central Square:** The octagon’s structure includes a central square (with side length equal to the octagon’s edge), surrounded by symmetrical triangles and rectangles. These components are equally partitioned by the cuts.
+
+**Answer:**  
+Junior chose a **regular octagon**.  
+**Method:**  
+1. Cut from vertex A to D, creating trapezoid ABCD (1/4 of the octagon).  
+2. Subsequent cuts from E to H, B to G, and C to F divide the rest into three equal trapezoids.  
+3. The final cut splits the remaining section into two equal parts.  
+
+**Proof of Equality:**  
+The octagon’s symmetry ensures all portions are congruent combinations of triangles and rectangles, validated by geometric equivalence without trigonometry or advanced math.",True
+152,"Question: A solid wooden cuboid is made which measures an exact, and even, number of centimetres along each of its edges. It is then painted black all over its exposed faces and, when the paint is dry, the cuboid is cut up into 1 centimetre cubes. These small cubes are counted and it is then found that the number having NO paint on them at all, is exactly the same as the number which do have some paint on them. What is the LEAST number of small cubes there could be in total?
+ Solution: Least is 960 (8 by 10 by 12)",,Least is 960 (8 by 10 by 12),DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:** Let the cuboid have even dimensions \( l = 2a \), \( w = 2b \), \( h = 2c \), where \( a, b, c \geq 2 \).
+
+2. **Inner Cubes Equation:** The number of unpainted inner cubes is \((l - 2)(w - 2)(h - 2)\). Substituting the even dimensions gives \((2a - 2)(2b - 2)(2c - 2) = 8(a - 1)(b - 1)(c - 1)\).
+
+3. **Total Cubes Equation:** The total number of cubes is \( lwh = 8abc \). The problem states unpainted cubes equal painted cubes:
+   \[
+   8(a - 1)(b - 1)(c - 1) = \frac{8abc}{2} = 4abc
+   \]
+   Simplifying gives:
+   \[
+   2(a - 1)(b - 1)(c - 1) = abc.
+   \]
+
+4. **Solve for Smallest Integers:** Find minimal \( a, b, c \geq 2 \) satisfying \( 2(a - 1)(b - 1)(c - 1) = abc \). Through algebraic manipulation and testing integer solutions:
+   - For \( a = 4 \), \( b = 5 \), \( c = 6 \), the equation holds.
+   - Corresponding dimensions: \( l = 8 \), \( w = 10 \), \( h = 12 \).
+
+5. **Verify Solution:** 
+   - Total cubes: \( 8 \times 10 \times 12 = 960 \).
+   - Inner cubes: \( (8 - 2)(10 - 2)(12 - 2) = 6 \times 8 \times 10 = 480 \).
+   - Painted cubes: \( 960 - 480 = 480 \), confirming equality.
+
+**ANSWER:** The least number of small cubes is **960** (dimensions 8 cm × 10 cm × 12 cm).",True
+153,"Question: Find three numbers, all under 500, where the sum of all three is a perfect square and the sums of any two of them are also perfect squares.
+ Solution: 41, 80, 320",,"41, 80, 320",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables and Conditions:**
+   - Let the three numbers be \(a\), \(b\), and \(c\).
+   - Conditions: \(a + b\), \(a + c\), \(b + c\), and \(a + b + c\) must all be perfect squares.
+   - All numbers must be under 500.
+
+2. **Express Variables via Pair Sums and Total Sum:**
+   - Let \(a + b = p^2\), \(a + c = q^2\), \(b + c = r^2\), and \(a + b + c = s^2\).
+   - From these, derive:
+     \[
+     2s^2 = p^2 + q^2 + r^2
+     \]
+     \[
+     a = \frac{p^2 + q^2 - r^2}{2}, \quad
+     b = \frac{p^2 + r^2 - q^2}{2}, \quad
+     c = \frac{q^2 + r^2 - p^2}{2}
+     \]
+
+3. **Identify Constraints:**
+   - \(a\), \(b\), \(c\) must be positive integers < 500.
+   - \(2s^2\) must equal the sum of three squares \(p^2 + q^2 + r^2\).
+
+4. **Solve for Valid \(s\), \(p\), \(q\), \(r\):**
+   - Search for \(s\) such that \(2s^2\) can be decomposed into three squares.
+   - For \(s = 21\), compute \(2s^2 = 882\).
+   - Decompose \(882\) into \(20^2 + 19^2 + 11^2 = 400 + 361 + 121 = 882\).
+
+5. **Compute \(a\), \(b\), \(c\):**
+   - \(a = 21^2 - 20^2 = 441 - 400 = 41\),
+   - \(b = 21^2 - 19^2 = 441 - 361 = 80\),
+   - \(c = 21^2 - 11^2 = 441 - 121 = 320\).
+
+6. **Verify All Conditions:**
+   - Pair sums: \(41 + 80 = 11^2\), \(41 + 320 = 19^2\), \(80 + 320 = 20^2\).
+   - Total sum: \(41 + 80 + 320 = 21^2\).
+   - All numbers are under 500.
+
+**Final Answer:**  
+The three numbers are **41, 80, 320**.",True
+154,"Question: Mad Ade noticed that he could arrange the five odd digits (1,3,5,7,9) into a five-digit number, such that the first two digits (as a 2-digit number) times the last two digits (as a 2-digit number) minus the center digit results in a number composed of repetitions of one digit.
+Mad Ade noted there were two possible answers.
+What are they?
+ Solution: Answers are 39157 and 57139
+39*57= 2223-1= 2222
+57*39= 2223-1= 2222",,"Answers are 39157 and 57139
+39*57= 2223-1= 2222
+57*39= 2223-1= 2222",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Understand the Structure**: The five-digit number ABCDE uses digits 1,3,5,7,9. Compute \( AB \times DE - C \), where \( AB \) (first two digits), \( DE \) (last two digits), and \( C \) (center digit) must satisfy the equation \( AB \times DE - C = \text{repdigit} \).
+
+2. **Identify the Repdigit**: The result must be a four-digit number with all identical digits (e.g., 1111, 2222). Through analysis, the only feasible repdigit is **2222**, as larger repdigits exceed the maximum possible product of two two-digit numbers (99×99=9801).
+
+3. **Solve for \( AB \times DE \)**:  
+   - Set \( AB \times DE - C = 2222 \).  
+   - Rearrange: \( AB \times DE = 2222 + C \).  
+   - Since \( C \) is an odd digit (1,3,5,7,9), test values of \( C \).  
+   - For \( C = 1 \), \( AB \times DE = 2223 \).  
+
+4. **Factor 2223**:  
+   - Factorize 2223: \( 2223 = 39 \times 57 \).  
+   - Both 39 and 57 are valid two-digit numbers using the allowed digits (3,9,5,7), leaving 1 as the center digit.
+
+5. **Construct Valid Numbers**:  
+   - Arrange the digits into ABCDE:  
+     - **39157**: \( AB = 39 \), \( DE = 57 \), \( C = 1 \).  
+     - **57139**: \( AB = 57 \), \( DE = 39 \), \( C = 1 \).  
+   - Verify:  
+     - \( 39 \times 57 = 2223 \), \( 2223 - 1 = 2222 \).  
+     - \( 57 \times 39 = 2223 \), \( 2223 - 1 = 2222 \).
+
+**Answers**: **39157** and **57139**.",True
+155,"Question: Old Farmer McDoughnut owns a piece of grassland in the heart of Madadia and has three animals: a Madadian Burger Cow, a Spare Kebab Goat, and a Scotch Egg laying Goose. McDoughnut discovered the following:
+When the cow and the goat graze on the field together, there is no more grass after 45 days.
+When the cow and the goose graze on the field together, there is no more grass after 60 days.
+When the cow grazes on the field alone, there is no more grass after 90 days.
+When the goat and the goose graze on the field together, there is no more grass after 90 days also.
+For how long can the three animals graze on the field together?
+ Solution: The cow, the goat, and the goose eat grass with a constant speed (amount per day): v1 for the cow, v2 for the goat, v3 for the goose.
+The grass grows with a constant amount per day (k).
+The amount of grass at the beginning is h.
+There is given:
+When the cow and the goat graze on the field together, there is no grass left after 45 days. Therefore, h-45x(v1+v2-k) = 0, so v1+v2-k = h/45 = 4xh/180.
+When the cow and the goose graze on the field together, there is no grass left after 60 days. Therefore, h-60x(v1+v3-k) = 0, so v1+v3-k = h/60 = 3xh/180.
+When the cow grazes on the field alone, there is no grass left after 90 days. Therefore, h-90x(v1-k) = 0, so v1-k = h/90 = 2xh/180.
+When the goat and the goose graze on the field together, there is also no grass left after 90 days. Therefore, h-90x(v2+v3-k) = 0, so v2+v3-k = h/90 = 2xh/180.
+From this follows:
+v1 = 3 x h/180,
+v2 = 2 x h/180,
+v3 = 1 x h/180,
+k = 1 x h/180.
+Then holds for the time t that the three animals can graze together: h-tx(v1+v2+v3-k) = 0, so t = h/(v1+v2+v3-k) = h/(3xh/180+2xh/180+1xh/180-1xh/180) = 36. The three animals can graze together for 36 days.",,"The cow, the goat, and the goose eat grass with a constant speed (amount per day): v1 for the cow, v2 for the goat, v3 for the goose.
+The grass grows with a constant amount per day (k).
+The amount of grass at the beginning is h.
+There is given:
+When the cow and the goat graze on the field together, there is no grass left after 45 days. Therefore, h-45x(v1+v2-k) = 0, so v1+v2-k = h/45 = 4xh/180.
+When the cow and the goose graze on the field together, there is no grass left after 60 days. Therefore, h-60x(v1+v3-k) = 0, so v1+v3-k = h/60 = 3xh/180.
+When the cow grazes on the field alone, there is no grass left after 90 days. Therefore, h-90x(v1-k) = 0, so v1-k = h/90 = 2xh/180.
+When the goat and the goose graze on the field together, there is also no grass left after 90 days. Therefore, h-90x(v2+v3-k) = 0, so v2+v3-k = h/90 = 2xh/180.
+From this follows:
+v1 = 3 x h/180,
+v2 = 2 x h/180,
+v3 = 1 x h/180,
+k = 1 x h/180.
+Then holds for the time t that the three animals can graze together: h-tx(v1+v2+v3-k) = 0, so t = h/(v1+v2+v3-k) = h/(3xh/180+2xh/180+1xh/180-1xh/180) = 36. The three animals can graze together for 36 days.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:**
+   - Let \( v_1 \), \( v_2 \), \( v_3 \) be the daily grass consumption rates of the cow, goat, and goose, respectively.
+   - Let \( k \) be the daily grass growth rate.
+   - Let \( h \) be the initial amount of grass.
+
+2. **Set Up Equations Based on Given Scenarios:**
+   - **Cow + Goat (45 days):** \( h = 45(v_1 + v_2 - k) \)  
+   - **Cow + Goose (60 days):** \( h = 60(v_1 + v_3 - k) \)  
+   - **Cow Alone (90 days):** \( h = 90(v_1 - k) \)  
+   - **Goat + Goose (90 days):** \( h = 90(v_2 + v_3 - k) \)  
+
+3. **Solve for \( v_1 \), \( v_2 \), \( v_3 \), and \( k \) in Terms of \( h \):**
+   - From **Cow Alone**: \( v_1 - k = \frac{h}{90} \)  
+   - Substitute into **Cow + Goat**: \( \frac{h}{90} + v_2 = \frac{h}{45} \implies v_2 = \frac{h}{90} \).  
+   - From **Goat + Goose**: \( \frac{h}{90} + v_3 - k = \frac{h}{90} \implies v_3 = k \).  
+   - Substitute \( v_3 = k \) into **Cow + Goose**: \( v_1 = \frac{h}{60} \).  
+   - Use \( v_1 = \frac{h}{60} \) in \( v_1 - k = \frac{h}{90} \implies k = \frac{h}{180} \).  
+   - Thus, \( v_3 = \frac{h}{180} \).  
+
+4. **Combine Rates for All Three Animals:**
+   - Total net consumption rate:  
+     \[
+     v_1 + v_2 + v_3 - k = \frac{h}{60} + \frac{h}{90} + \frac{h}{180} - \frac{h}{180} = \frac{h}{36}.
+     \]
+   - Time \( t \) to deplete grass:  
+     \[
+     t = \frac{h}{\frac{h}{36}} = 36 \text{ days}.
+     \]
+
+**Answer:** The three animals can graze together for **36 days**.",True
+156,"Question: n people each know a different piece of gossip. They can telephone each other and exchange all the information they know (so that after the call they both know anything that either of them knew before the call). What is the smallest number of calls needed so that everyone knows everything?
+ Solution: 1 for n=2
+3 for n=3
+2n-4 for n>=4
+This can be achieved as follows: choose four people (A, B, C, and D) as the ""core group"". Each person outside the core group phones a member of the core group (it doesn't matter which); this takes n-4 calls. Now the core group makes 4 calls: A-B, C-D, A-C, and B-D. At this point, each member of the core group knows everything. Now, each person outside the core group calls anybody who knows everything; this again requires n-4 calls, for a total of 2n-4.",,"1 for n=2
+3 for n=3
+2n-4 for n>=4
+This can be achieved as follows: choose four people (A, B, C, and D) as the ""core group"". Each person outside the core group phones a member of the core group (it doesn't matter which); this takes n-4 calls. Now the core group makes 4 calls: A-B, C-D, A-C, and B-D. At this point, each member of the core group knows everything. Now, each person outside the core group calls anybody who knows everything; this again requires n-4 calls, for a total of 2n-4.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Base Cases:**
+   - For **n=2**, one call suffices (each shares with the other).
+   - For **n=3**, three calls are needed: two calls to gather information into a central person and one final call to disseminate.
+
+2. **Core Group Strategy for n ≥4:**
+   - **Step 1: Gather Information into a Core Group (n−4 calls):**
+     - Select a core of 4 people. Each of the remaining \( n−4 \) individuals calls a core member, transferring their gossip. After this, core members hold all gossip but haven’t fully shared it among themselves.
+
+   - **Step 2: Share Information Within the Core (4 calls):**
+     - Core members make 4 structured calls (e.g., A-B, C-D, A-C, B-D). After these, all core members know everything.
+
+   - **Step 3: Disseminate Information Back to Outsiders (n−4 calls):**
+     - Each of the \( n−4 \) outsiders calls a core member to receive all gossip.
+
+3. **Total Calls:**
+   - \( (n−4) + 4 + (n−4) = 2n−4 \).
+
+4. **Lower Bound Justification:**
+   - Each outsider must send their gossip (1 call) and receive all gossip (1 call), totaling \( 2(n−4) \). The core’s 4 internal calls are necessary to consolidate information efficiently. No strategy avoids these steps without increasing total calls.
+
+**Final Answer:**  
+The minimal number of calls required is \( 2n−4 \) for \( n≥4 \).",True
+157,"Question: Use all the digits from 1 to 9 to complete the equation
+??? x 3? = ????
+ Solution: 186 x 39 = 7254",1?? x 3? = ?254,186 x 39 = 7254,DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify the structure**: The equation must be in the form `ABC × 3D = EFGH`, where `ABC` (3-digit), `3D` (2-digit, starting with 3), and `EFGH` (4-digit) use all digits 1-9 exactly once.
+
+2. **Eliminate invalid multipliers**: The multiplier `3D` must be between 31-39 (excluding 33, as digits cannot repeat). Digits 3 and D are already used in the multiplier, so they cannot appear in `ABC` or `EFGH`.
+
+3. **Check digit constraints**: For each possible `3D` (e.g., 39), ensure `ABC` and `EFGH` use the remaining digits (1-9 excluding 3 and D). For example, with `3D = 39`, digits 3 and 9 are used, leaving 1,2,4,5,6,7,8 for `ABC` and `EFGH`.
+
+4. **Test combinations systematically**:
+   - For `3D = 39`, calculate `ABC × 39` and check if the product `EFGH` uses the remaining digits without repetition.
+   - Example: `186 × 39 = 7254`. Digits in `ABC` (1,8,6), multiplier (3,9), and product (7,2,5,4) cover all digits 1-9 exactly once.
+
+5. **Verify uniqueness**: Confirm no digits repeat across `ABC`, `3D`, and `EFGH`. For the valid solution, all digits 1-9 are used once.
+
+**Answer**:  
+The unique solution is **186 × 39 = 7254**, as it satisfies all constraints and uses each digit 1-9 exactly once.",True
+158,"Question: Imagine a square that has each side consisting, half of length `a` and half length `b`. Inside the square there is a diamond, with each corner touching the midpoint of each side of the square. Each side of the diamond has length `c`. If one were to set the area of the square equal to the area of all the shapes inside the square, what would remain?
+ Solution: The Pythagorean Theorem.
+The area of a square is `length squared`. First find the area of the entire square. The length is (a+b). The area of the square is (a+b)^2. Inside the box there is a diamond with length `c`. The diamond is simply a square tilted 45 degrees. The area of the diamond is c^2. There are also 4 triangles with area 1/2ab. Set them equal:
+(a+b)^2=c^2 + 4(1/2ab) Expand...
+a^2 + 2ab + b^2= c^2 + 2ab
+Subtract `2ab` from both sides and you are left with the Pythagorean Theorem.
+a^2 + b^2 = c^2",,"The Pythagorean Theorem.
+The area of a square is `length squared`. First find the area of the entire square. The length is (a+b). The area of the square is (a+b)^2. Inside the box there is a diamond with length `c`. The diamond is simply a square tilted 45 degrees. The area of the diamond is c^2. There are also 4 triangles with area 1/2ab. Set them equal:
+(a+b)^2=c^2 + 4(1/2ab) Expand...
+a^2 + 2ab + b^2= c^2 + 2ab
+Subtract `2ab` from both sides and you are left with the Pythagorean Theorem.
+a^2 + b^2 = c^2",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Determine the total area of the square.**
+   - Each side of the square is composed of lengths `a` and `b`, so the total side length is \( a + b \).
+   - Area of the square: \( (a + b)^2 \).
+
+2. **Identify the shapes inside the square.**
+   - A diamond (rotated square) with side length \( c \). Its area is \( c^2 \).
+   - Four right-angled triangles, one at each corner of the square. Each triangle has legs \( a \) and \( b \), so each triangle’s area is \( \frac{1}{2}ab \).
+
+3. **Calculate the combined area of the diamond and triangles.**
+   - Total area of the four triangles: \( 4 \times \frac{1}{2}ab = 2ab \).
+   - Total area inside the square: \( c^2 + 2ab \).
+
+4. **Set the area of the square equal to the total area of the inner shapes.**
+   - Equation: \( (a + b)^2 = c^2 + 2ab \).
+
+5. **Simplify the equation to find the relationship between \( a \), \( b \), and \( c \).**
+   - Expand \( (a + b)^2 \): \( a^2 + 2ab + b^2 \).
+   - Subtract \( 2ab \) from both sides: \( a^2 + b^2 = c^2 \).
+
+**Conclusion:** The remaining relationship is the **Pythagorean Theorem**, \( a^2 + b^2 = c^2 \).",True
+159,"Question: When the circus's popcorn vendor went on vacation, Charlie the Chimp saw it as the perfect opportunity to start a new act, so he volunteered to man the stand. Everything was going great until the very end of the day, when a set of twins showed up. There was just 1 large box of popcorn left to sell, and it was too late to pop another batch, so the twins asked Charlie if he could split the popcorn into two equal portions.Charlie knew that the large box held exactly 12 cups of popcorn. He also had 2 empty boxes on hand: a medium box that held exactly 8 cups and a small box that held exactly 5 cups. But none of the boxes had any measurement markings on them. There must be a way to divide the 12 cups of popcorn so that the two boxes contain exactly 6 cups each, thought the chimp.
+How did he give out an equal amount of popcorn to the twins?
+ Solution: Fill the 8-cup box from the 12-cup box, leaving 4 cups. Fill the 5-cup box from the 8-cup box, leaving 3 cups. Empty the 5-cup box into the 12-cup box. Now there are 9 cups in the 12-cup box and 3 cups in the 8-cup box. Pour the 3 cups into the 5-cup box. Fill the 8-cup box from the 12-cup box, leaving 1 cup in the 12-cup box. Fill the 5-cup box (it already has 3 cups in it) from the 8-cup box, leaving 6 cups in the 8-cup box. Finally, empty the 5-cup box into the 12-cup box. This results in 6 cups in the 12-cup box, 6 cups in the 8-cup box, and nothing in the 5-cup box.",,"Fill the 8-cup box from the 12-cup box, leaving 4 cups. Fill the 5-cup box from the 8-cup box, leaving 3 cups. Empty the 5-cup box into the 12-cup box. Now there are 9 cups in the 12-cup box and 3 cups in the 8-cup box. Pour the 3 cups into the 5-cup box. Fill the 8-cup box from the 12-cup box, leaving 1 cup in the 12-cup box. Fill the 5-cup box (it already has 3 cups in it) from the 8-cup box, leaving 6 cups in the 8-cup box. Finally, empty the 5-cup box into the 12-cup box. This results in 6 cups in the 12-cup box, 6 cups in the 8-cup box, and nothing in the 5-cup box.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Initial Setup:**  
+   - **12-cup box:** 12 cups  
+   - **8-cup box:** 0 cups  
+   - **5-cup box:** 0 cups  
+
+2. **Fill the 8-cup box from the 12-cup box:**  
+   - **12-cup:** \(12 - 8 = 4\)  
+   - **8-cup:** 8  
+   - **5-cup:** 0  
+
+3. **Fill the 5-cup box from the 8-cup box:**  
+   - **8-cup:** \(8 - 5 = 3\)  
+   - **5-cup:** 5  
+
+4. **Empty the 5-cup box into the 12-cup box:**  
+   - **12-cup:** \(4 + 5 = 9\)  
+   - **8-cup:** 3  
+   - **5-cup:** 0  
+
+5. **Transfer remaining 3 cups from 8-cup to 5-cup box:**  
+   - **8-cup:** 0  
+   - **5-cup:** 3  
+
+6. **Fill the 8-cup box from the 12-cup box (now 9 cups):**  
+   - **12-cup:** \(9 - 8 = 1\)  
+   - **8-cup:** 8  
+
+7. **Pour from 8-cup to 5-cup box until full (5-cup needs 2 more):**  
+   - **8-cup:** \(8 - 2 = 6\)  
+   - **5-cup:** \(3 + 2 = 5\)  
+
+8. **Empty the 5-cup box into the 12-cup box (now 1 cup):**  
+   - **12-cup:** \(1 + 5 = 6\)  
+   - **8-cup:** 6  
+   - **5-cup:** 0  
+
+**Final Result:**  
+- **12-cup box:** 6 cups  
+- **8-cup box:** 6 cups  
+- **5-cup box:** 0 cups  
+
+Charlie successfully splits the popcorn into two equal portions of 6 cups each.",True
+160,"Question: Prove that at any party, there are two people who know the same number of people. Assume that if A knows B , then B knows A . Assume also that everyone knows himself or herself.
+ Solution: Lets suppose that at a party, there are no two people who know the same number of people. Now lets say there are ""n"" people at the party. Now the nth person will know (n-1) people; (n-1)th person will know (n-2) people because no one knows the same number of people; similarly (n-2)th person will known (n-3) people. Thus, the 2nd person will know 1 person. Hence the 1st person[say A] will know 0 people or will know no one. Now since the nth person knows every one, he knows A .Therefore A knows the nth person. Hence our supposition is wrong and at least 2 people know the same number of people.",Use indirect reasoning.,"Lets suppose that at a party, there are no two people who know the same number of people. Now lets say there are ""n"" people at the party. Now the nth person will know (n-1) people; (n-1)th person will know (n-2) people because no one knows the same number of people; similarly (n-2)th person will known (n-3) people. Thus, the 2nd person will know 1 person. Hence the 1st person[say A] will know 0 people or will know no one. Now since the nth person knows every one, he knows A .Therefore A knows the nth person. Hence our supposition is wrong and at least 2 people know the same number of people.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Assumption for Contradiction**: Suppose, for contradiction, that at the party with \( n \) people, every person knows a distinct number of others.  
+   - *Logical Basis*: If all counts are unique, they must cover all integers from \( 0 \) to \( n-1 \) (since the minimum number of people one can know is \( 0 \), and the maximum is \( n-1 \) others).
+
+2. **Assign Distinct Counts**: Label the people such that their known counts are \( 0, 1, 2, \dots, n-1 \).  
+   - *Implication*: One person knows \( 0 \) others (let’s call them Person A), and another knows \( n-1 \) others (Person B).
+
+3. **Contradiction via Mutual Knowledge**:  
+   - Person B (who knows \( n-1 \) people) must know everyone else, including Person A.  
+   - However, if Person A knows \( 0 \) people, they cannot know Person B.  
+   - This violates the mutual assumption: If B knows A, A must know B.  
+
+4. **Conclusion**: The assumption of all distinct counts fails because it leads to an impossible scenario.  
+   - Therefore, at least two people must share the same number of acquaintances.  
+
+**Key Logical Steps**:  
+- Use the pigeonhole principle and mutual knowledge to show the contradiction.  
+- Demonstrate that the existence of a person with \( 0 \) acquaintances and another with \( n-1 \) acquaintances cannot coexist under mutual relationships.  
+- Hence, the minimal number of coconuts is not directly calculated here, but the proof relies on combinatorial reasoning.",True
+161,"Question: There was a body pump class that lasted a long time, but it always changed. The instructor was a very smart person and liked to throw puzzles at the students. About 15 minutes into the class, one kid asked how much time there was left in the class. He said: ""Right now? Oh, I'd say seven."" The kid was confused and knew the instructor was never going to tell anybody.
+Another 5 minutes in, another kid asked how much time was left. The instructor said, ""About five now."" Confused, the kid went back and the class continued.
+Ten minutes later, a perplexed pupil in the front asked  how much time was left. The instructor said, ""I think it's about three.""
+Suddenly, the pupil clicked into what the puzzle was and how much time there was left of the class and how long the class was.
+How much time was left of the class?
+ Solution: 90 minutes.
+When the first student asked, 15 minutes in, the instructor said ""Seven"". 15 times 7 is 105, the amount of time left in the class.
+The second student asked 5 minutes later (20 minutes in) and the instructor said ""Five."" 20 times 5 is 100, the number of minutes left in the class.
+The last student got ""Three"" when he asked again, at the 30 minute mark. 30 times 3 is 90, the number of minutes left in the class and the answer to this brain teaser.
+The class was two hours long.",,"90 minutes.
+When the first student asked, 15 minutes in, the instructor said ""Seven"". 15 times 7 is 105, the amount of time left in the class.
+The second student asked 5 minutes later (20 minutes in) and the instructor said ""Five."" 20 times 5 is 100, the number of minutes left in the class.
+The last student got ""Three"" when he asked again, at the 30 minute mark. 30 times 3 is 90, the number of minutes left in the class and the answer to this brain teaser.
+The class was two hours long.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify Key Points:**
+   - The class has three inquiries about remaining time at 15, 20, and 30 minutes elapsed.
+   - Instructor’s responses: “7,” “5,” and “3” respectively.
+
+2. **Establish Pattern:**
+   - Each response is a multiplier. At time \( t \), remaining time = \( t \times \text{response} \).
+   - **First check:** At 15 minutes, \( 15 \times 7 = 105 \) minutes remaining. Total = \( 15 + 105 = 120 \) minutes.
+   - **Second check:** At 20 minutes, \( 20 \times 5 = 100 \) minutes remaining. Total = \( 20 + 100 = 120 \) minutes.
+   - **Third check:** At 30 minutes, \( 30 \times 3 = 90 \) minutes remaining. Total = \( 30 + 90 = 120 \) minutes.
+
+3. **Verify Consistency:**
+   - All calculations yield a total class duration of **120 minutes (2 hours)**.
+
+4. **Final Answer:**
+   - When the last question was asked at 30 minutes, **90 minutes remained** in the class.",True
+162,"Question: The sum of the four smallest coefficients in the expression
+(x+y)^123456789
+is a nine-digit number with each digit being a distinct number from the following set of numbers:
+1,2,3,4,5,6,7,8,9,0
+What number from the set does not appear as a digit in the sum?
+ Solution: 7
+According to the Pascal triangle, the two coefficients at either end of of the expression (x+y)^z will be 1,1,z, and z.  Therefore, the sum of the four smallest coefficients is
+1+1+123456789+123456789=246913580
+The digit 7 is absent from this sum.",,"7
+According to the Pascal triangle, the two coefficients at either end of of the expression (x+y)^z will be 1,1,z, and z.  Therefore, the sum of the four smallest coefficients is
+1+1+123456789+123456789=246913580
+The digit 7 is absent from this sum.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify the four smallest coefficients in the binomial expansion.**
+   - In the expansion of \((x + y)^n\), the coefficients are symmetric.
+   - The smallest coefficients are the first and last (both \(1\)) and the second and second-to-last (both \(n\)).
+
+2. **Compute the sum of these coefficients.**
+   - Sum = \(1 + 1 + n + n = 2 + 2n\).
+   - For \(n = 123456789\):
+     \[
+     2 + 2 \times 123456789 = 2 + 246913578 = 246913580.
+     \]
+
+3. **Analyze the digits of the resulting sum.**
+   - The sum \(246913580\) contains the digits: \(0, 1, 2, 3, 4, 5, 6, 8, 9\).
+   - Missing digit: \(7\).
+
+**Answer:** The digit \(7\) does not appear in the sum.",True
+163,"Question: Find the smallest number such that if its rightmost digit is placed at its left end, the new number so formed is precisely 50% larger than the original number.
+ Solution: The answer is 285714.
+If its rightmost digit is placed at its left end, the new number is 428571 which is 50% larger than the original number 285714.",,"The answer is 285714.
+If its rightmost digit is placed at its left end, the new number is 428571 which is 50% larger than the original number 285714.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:** Let the original number be \( N \) with \( k \) digits. Let the last digit be \( d \), and the remaining \( k-1 \) digits form the number \( a \). Thus, \( N = 10a + d \).
+
+2. **Formulate the Equation:** When \( d \) is moved to the front, the new number \( M = d \cdot 10^{k-1} + a \). The problem states \( M = 1.5N \), leading to:
+   \[
+   d \cdot 10^{k-1} + a = \frac{3}{2}(10a + d).
+   \]
+
+3. **Simplify the Equation:** Multiply through by 2 to eliminate fractions:
+   \[
+   2d \cdot 10^{k-1} + 2a = 30a + 3d.
+   \]
+   Rearrange terms:
+   \[
+   d(2 \cdot 10^{k-1} - 3) = 28a.
+   \]
+   This implies \( d(2 \cdot 10^{k-1} - 3) \) must be divisible by 28.
+
+4. **Analyze Divisibility:**  
+   - \( d \) must be even (since \( N \) is even to ensure \( M \) is an integer). Thus, \( d \in \{2, 4, 6, 8\} \).  
+   - For \( d = 4 \), solve \( 2 \cdot 10^{k-1} \equiv 3 \mod 7 \).  
+   - Since \( 10 \equiv 3 \mod 7 \), compute \( 3^{k-1} \equiv 5 \mod 7 \). The smallest \( k-1 = 5 \), so \( k = 6 \).
+
+5. **Compute \( N \):**  
+   - Substitute \( k = 6 \) and \( d = 4 \):  
+     \[
+     2 \cdot 10^5 - 3 = 199997 \implies a = \frac{4 \cdot 199997}{28} = 28571.
+     \]
+   - Thus, \( N = 10a + d = 285714 \).
+
+6. **Verify the Solution:**  
+   - Moving the last digit (4) to the front gives \( 428571 \).  
+   - Confirm \( 428571 = 1.5 \times 285714 \), which holds true.
+
+**Answer:** The smallest number is **285714**.",True
+164,"Question: On the great ""Chilli"" lake of Madadia are two ferry boats that transport tourists from one side to the other.
+One boat is the ""Lead Balloon"", the other is the ""Iceberg Magnet"".  They travel from the Kebab Fountains on the east side of the lake and the Lard Sculpture on the west side of the lake.
+Each ferry travels at a constant speed, although the ""Lead Balloon"" is faster than the ""Iceberg Magnet"".
+The two boats leave from opposite shores at the same time.  They pass at a point of 720 yards from Lard Sculptures.  Upon arriving at the opposite shore, each boat stays in its slip for 5 minutes, and then starts back. They pass again 400 yards from Kebab Fountains. Assume both boats travel along a straight line.  How far is it from Kebab Fountains to Lard Sculptures by water?
+ Solution: Let X = the distance between the two ports.  Note that the 5 minutes spent in their slips is irrelevant to solving the problem.
+The ratio of the distance traveled by the two boats when they pass each other for the first time is:  (X - 720) / 720.
+The ratio of the total distance traveled by the two boats when they pass each other for the second time is:  (2x - 400) / (X + 400).
+Since the boats travel at a constant speed, the ratios are equal.
+(X - 720) / 720 = (2X - 400) / (X + 400)
+(X - 720) * (X + 400) = (2X - 400) * 720
+X^2 - 320X - 288000 = 1440X - 288000
+X^2 - 320X = 1440X
+X^2 = 1760X
+X = 1760
+Kebab Fountains and Lard Sculpture are 1760 yards apart.",,"Let X = the distance between the two ports.  Note that the 5 minutes spent in their slips is irrelevant to solving the problem.
+The ratio of the distance traveled by the two boats when they pass each other for the first time is:  (X - 720) / 720.
+The ratio of the total distance traveled by the two boats when they pass each other for the second time is:  (2x - 400) / (X + 400).
+Since the boats travel at a constant speed, the ratios are equal.
+(X - 720) / 720 = (2X - 400) / (X + 400)
+(X - 720) * (X + 400) = (2X - 400) * 720
+X^2 - 320X - 288000 = 1440X - 288000
+X^2 - 320X = 1440X
+X^2 = 1760X
+X = 1760
+Kebab Fountains and Lard Sculpture are 1760 yards apart.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:** Let \( X \) be the distance in yards between Kebab Fountains (east) and Lard Sculptures (west).  
+
+2. **First Meeting Analysis:**  
+   - The first meeting occurs 720 yards from Lard Sculptures.  
+   - **Lead Balloon** (east to west) travels \( X - 720 \) yards.  
+   - **Iceberg Magnet** (west to east) travels \( 720 \) yards.  
+   - Speed ratio: \( \frac{V_{\text{Lead}}}{V_{\text{Iceberg}}} = \frac{X - 720}{720} \).  
+
+3. **Second Meeting Analysis:**  
+   - After reaching opposite shores and waiting (ignored due to equal delay), they meet again 400 yards from Kebab Fountains.  
+   - **Lead Balloon**’s total distance: \( (X - 720) + 720 + (X - 400) = 2X - 400 \).  
+   - **Iceberg Magnet**’s total distance: \( 720 + (X - 720) + 400 = X + 400 \).  
+   - Speed ratio: \( \frac{V_{\text{Lead}}}{V_{\text{Iceberg}}} = \frac{2X - 400}{X + 400} \).  
+
+4. **Equate Speed Ratios:**  
+   Set ratios from first and second meetings equal:  
+   \[
+   \frac{X - 720}{720} = \frac{2X - 400}{X + 400}.
+   \]  
+
+5. **Solve the Equation:**  
+   Cross-multiply and simplify:  
+   \[
+   (X - 720)(X + 400) = 720(2X - 400)
+   \]  
+   \[
+   X^2 - 320X - 288000 = 1440X - 288000
+   \]  
+   \[
+   X^2 - 1760X = 0
+   \]  
+   \[
+   X(X - 1760) = 0 \implies X = 1760 \text{ yards}.
+   \]  
+
+**Answer:** The distance between Kebab Fountains and Lard Sculptures is **1760 yards**.",True
+165,"Question: Said Alf to Bert, ""The last time we met, our ages were both prime numbers, and when I was a quarter of the age I am now, you were that age plus half the age your father would have been thirty years previous to when he was six times the age you would have been when I was half your age"". Said Bert to Alf ""I'm off down the pub"". How old were Alf and Bert the last time they met?
+ Solution: Alf and Bert were 2 and 5 years old respectively the last time they met. If A and B are Alf and Bert's present ages and a and b are their ages when Alf was half Bert's age then
+B - 3A/4 = (A/4) + (6b - 30)/2
+Since their ages have always had the same difference we have
+B - A = 3b - 15 = b - a
+and since 2a = b then a = 3 and b = 6. So their ages differ by 3. Since all primes except 2 are odd and differ by an even number we can only have 2 and 5, Bert being the older of the two. The father plays no part in the problem!",,"Alf and Bert were 2 and 5 years old respectively the last time they met. If A and B are Alf and Bert's present ages and a and b are their ages when Alf was half Bert's age then
+B - 3A/4 = (A/4) + (6b - 30)/2
+Since their ages have always had the same difference we have
+B - A = 3b - 15 = b - a
+and since 2a = b then a = 3 and b = 6. So their ages differ by 3. Since all primes except 2 are odd and differ by an even number we can only have 2 and 5, Bert being the older of the two. The father plays no part in the problem!",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:**
+   - Let Alf's current age be \( A \) and Bert's be \( B \).
+   - Let \( p \) and \( q \) be their prime ages when they last met, with \( q = p + 3 \) (since their age difference is constant).
+
+2. **Age Difference Constraint:**
+   - From the problem's complex time references, derive that \( B - A = 3 \). This comes from simplifying the equation involving their ages when Alf was half Bert's age and substituting into the father-related terms, which ultimately cancel out.
+
+3. **Prime Age Condition:**
+   - The primes \( p \) and \( q = p + 3 \) must differ by 3. The only such pair is \( (2, 5) \) (since all other primes are odd, and adding 3 to an odd number gives an even number >2, which isn’t prime).
+
+4. **Validation:**
+   - Confirm that with \( p = 2 \) (Alf) and \( q = 5 \) (Bert), their current ages satisfy \( B = A + 3 \), and the convoluted age statements resolve correctly (e.g., when Alf was half Bert’s age, Bert was 6, leading to consistent equations).
+
+**ANSWER:**  
+Alf and Bert were **2** and **5** years old, respectively, the last time they met.",True
+166,"Question: Your assignment is to make a delivery from the depot to your base camp, 1600 miles away. The trip begins normally, but unfortunately, halfway to base camp, your supply truck breaks down. You have no way to call for help. Luckily, in addition to medical supplies, the truck is carrying a Desert Patrol Vehicle (DPV) and two barrels of fuel.
+The DPV has a full 10 gallon tank, but to make room for the medical supplies, it can only carry one of the 45 gallon barrels at a time. While you can't transfer fuel between barrels, you can refill the tank from the barrels. Assume the DPV can get 12 miles per gallon, regardless of the load it carries.
+How far can you go? Is it far enough to deliver the medical supplies and the DPV to your base camp?
+ Solution: You can travel 840 miles from the broken supply truck. Since your base camp is 800 miles away (half of 1600 miles), you can easily complete the delivery. Here's how:
+Although you can only carry one barrel at a time, you need to transport both of them until one barrel is empty. F is the barrel used first, and L is the barrel used last.
+Use half of a tank (5 gallons) to carry L 5*12=60 miles, and then return for F (uses another 5 gallons). Refill the tank from F and carry it to where you left L (also uses 5 gallons). Refill the tank again from F and switch barrels. Now you are 60 miles from the broken truck, the tank and L are full, but F is down to 30 gallons (45-5-5-5=30). Repeat this procedure two times.
+Now you are 60*3=180 miles from the broken truck. The tank and L are still full, but F is empty. Leave F behind and make a run for it, carrying L. Refill the tank from L as needed. There are 55 gallons of fuel left so you can travel an additional 55*12=660 miles, for a maximum of (180+660) 840 miles.  Since you only have a total of 800 miles to go, you will make it to your base camp.","Use half of a tank to carry one barrel, then return for the other.","You can travel 840 miles from the broken supply truck. Since your base camp is 800 miles away (half of 1600 miles), you can easily complete the delivery. Here's how:
+Although you can only carry one barrel at a time, you need to transport both of them until one barrel is empty. F is the barrel used first, and L is the barrel used last.
+Use half of a tank (5 gallons) to carry L 5*12=60 miles, and then return for F (uses another 5 gallons). Refill the tank from F and carry it to where you left L (also uses 5 gallons). Refill the tank again from F and switch barrels. Now you are 60 miles from the broken truck, the tank and L are full, but F is down to 30 gallons (45-5-5-5=30). Repeat this procedure two times.
+Now you are 60*3=180 miles from the broken truck. The tank and L are still full, but F is empty. Leave F behind and make a run for it, carrying L. Refill the tank from L as needed. There are 55 gallons of fuel left so you can travel an additional 55*12=660 miles, for a maximum of (180+660) 840 miles.  Since you only have a total of 800 miles to go, you will make it to your base camp.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Understand the Problem Constraints:**
+   - You must transport two 45-gallon fuel barrels 800 miles using a DPV with a 10-gallon tank (12 mpg). 
+   - The DPV can only carry one barrel at a time, and fuel cannot be transferred between barrels.
+
+2. **Establish a Shuttle Process to Move Both Barrels Forward:**
+   - **Barrel F (used for shuttling)** and **Barrel L (reserved for final trip)**.
+   - Each 60-mile segment involves:
+     - Taking L forward 60 miles (5 gallons used from the tank).
+     - Returning to the starting point (5 gallons from F).
+     - Taking F forward 60 miles (10 gallons from F to refill the tank + 5 gallons used for the trip).
+     - Refilling the tank from F (5 gallons), leaving F with 30 gallons after the first iteration.
+
+3. **Repeat the Shuttle Process Three Times:**
+   - Each iteration consumes 15 gallons from F (5 for return trip, 10 for forward trip).
+   - After three iterations:
+     - Distance covered: \( 60 \text{ miles/iteration} \times 3 = 180 \text{ miles} \).
+     - Barrel F is empty (\( 45 - 15 \times 3 = 0 \)).
+     - Barrel L remains full (45 gallons) since its fuel was only used for forward trips.
+
+4. **Final Stretch Using Barrel L:**
+   - At 180 miles, discard empty Barrel F.
+   - Use Barrel L (45 gallons) and the DPV’s 10-gallon tank (total fuel: \( 45 + 10 = 55 \text{ gallons} \)).
+   - Maximum additional distance: \( 55 \text{ gallons} \times 12 \text{ mpg} = 660 \text{ miles} \).
+
+5. **Total Distance and Feasibility:**
+   - Total distance: \( 180 + 660 = 840 \text{ miles} \).
+   - Since the base camp is 800 miles away, the delivery is achievable with 40 miles to spare.
+
+**ANSWER:**  
+You can travel 840 miles, which exceeds the required 800 miles. The medical supplies and DPV can be successfully delivered to the base camp.",True
+167,"Question: Between 1000 and 2000 you can get each integer as the sum of nonnegative consecutive integers.  For example,
+147+148+149+150+151+152+153 = 1050
+There is only one number that you cannot get.
+What is this number?
+ Solution: 1024
+Only powers of 2 are not reachable, and the next number is 2048.",I hope you got the power!,"1024
+Only powers of 2 are not reachable, and the next number is 2048.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Understand the Representation Requirement**: A number can be expressed as a sum of **two or more** consecutive nonnegative integers if and only if it has an **odd factor greater than 1**. This is derived from the formula for such sums, which involves a product of two integers with opposite parity (one even, one odd).
+
+2. **Identify the Exception (Powers of 2)**: Numbers that are **powers of 2** (e.g., \(2^n\)) lack odd factors. Their only prime factor is 2, making it impossible to split them into the required product of even and odd terms. Thus, they cannot be written as sums of two or more consecutive nonnegative integers.
+
+3. **Locate the Power of 2 in the Range**: Within 1000 to 2000, the only power of 2 is \(2^{10} = 1024\). The next power (\(2^{11} = 2048\)) exceeds 2000.
+
+**Final Answer**: The number that cannot be expressed as the sum of nonnegative consecutive integers between 1000 and 2000 is **1024**.",True
+168,"Question: Question Mark cannot get enough of changing the formula to his function machine. This time, one number goes in, but TWO numbers come out. If:
+9 -> 576 & 72
+10 -> 810 & 90
+11 -> 1100 & 110
+12 -> 1452 & 132
+13 -> 1872 & 156
+What will come out if 25 goes in?
+ Solution: 14400 & 600. The formula is n^3 - n^2. The numbers are then split by the formula of (n-1)/n & 1/n. In other words:
+9^3 (729) - 9^2 (81) = 648
+>8/9*648 = 576, 1/9*648 = 72
+10^3 (1000) - 10^2 (100) = 900
+>9/10*900 = 810, 1/10*900 = 90
+11^3 (1331) - 11^2 (121) = 1210
+>10/11*1210 = 1100, 1/11*1210 = 110
+12^3 (1728) - 12^2 (144) = 1584
+>11/12*1584 = 1452, 1/12*1584 = 132
+13^3 (2197) - 13^2 (169) = 2028
+>12/13*2028 = 1872, 1/13*2028 = 156
+And therefore:
+25^3 (15625) - 25^2 (625) = 15000
+>24/25*15000 = 14400, 1/25*15000 = 600",,"14400 & 600. The formula is n^3 - n^2. The numbers are then split by the formula of (n-1)/n & 1/n. In other words:
+9^3 (729) - 9^2 (81) = 648
+>8/9*648 = 576, 1/9*648 = 72
+10^3 (1000) - 10^2 (100) = 900
+>9/10*900 = 810, 1/10*900 = 90
+11^3 (1331) - 11^2 (121) = 1210
+>10/11*1210 = 1100, 1/11*1210 = 110
+12^3 (1728) - 12^2 (144) = 1584
+>11/12*1584 = 1452, 1/12*1584 = 132
+13^3 (2197) - 13^2 (169) = 2028
+>12/13*2028 = 1872, 1/13*2028 = 156
+And therefore:
+25^3 (15625) - 25^2 (625) = 15000
+>24/25*15000 = 14400, 1/25*15000 = 600",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify the Pattern:** Observe that each input number \( n \) generates two outputs. Analyze the given examples to detect a mathematical relationship.
+
+2. **Determine the Common Formula:** Notice that for each \( n \), the two outputs can be derived from \( n^3 - n^2 \). This intermediate value is split into two parts using ratios of \( \frac{n-1}{n} \) and \( \frac{1}{n} \).
+
+3. **Express the Outputs Algebraically:**
+   - Compute \( X = n^3 - n^2 \).
+   - First output: \( \frac{n-1}{n} \times X = (n-1)^2 \times n \).
+   - Second output: \( \frac{1}{n} \times X = (n-1) \times n \).
+
+4. **Apply the Formula to \( n = 25 \):**
+   - Calculate \( X = 25^3 - 25^2 = 15,625 - 625 = 15,000 \).
+   - Split \( 15,000 \): 
+     - First output: \( \frac{24}{25} \times 15,000 = 14,400 \).
+     - Second output: \( \frac{1}{25} \times 15,000 = 600 \).
+
+**Final Answer:**  
+When 25 is input, the outputs are **14,400** and **600**.",True
+169,"Question: Two years ago, a problem surfaced at the Romankachi Pharmaceuticals Ltd. - one of the many companies belonging to the huge Romankachi conglomerate.
+We were devising a three digit id (nonzero first digit) for the employees such that no two employees can have id's that are identical when written in the reverse order. For example, 123 and 321 are identical and hence only one of them can exist. Also a 3 digit id starting with a 0 was invalid since the machine used for swiping does not recognize a 3 digit id starting with a 0.
+After a lot of careful analysis and discussion, we were able to figure out the maximum number of employees that could use this system. Can you repeat the feat?
+ Solution: It has been mentioned that a 3 digit code starting with a 0 is invalid. Hence we cannot use codes from 001 to 099.
+Hence the total number of valid 3 digit id's is 900.
+Out of these, three digit numbers that are symmetrical will have the same first and the last digit. The first and the last digit in this case can be selected in 9 ways(any number from 1 to 9). The second digit can be selected in 10 ways(any number from 0 to 9). Therefore number of symmetrical three digit numbers = 9*10 = 90. These 90 id's will not have a corresponding number when written in reverse order.
+Secondly numbers ending with a zero will also not have a corresponding 3 digit number when written in reverse order. For example, reverse of 910 is 019 which is not a valid three digit code due to the condition given that 3 digit codes starting with 0 are invalid. Number of such three digit numbers = 9*10 = 90.
+Rest of the (900-180) = 720 numbers can be classified into two groups of 360 numbers each, where corresponding pairs of numbers will be identical when written in reverse order. Hence consider only 360 of these numbers.
+Therefore total number of valid employee id's possible = 90 + 90 + 360 = 540.",,"It has been mentioned that a 3 digit code starting with a 0 is invalid. Hence we cannot use codes from 001 to 099.
+Hence the total number of valid 3 digit id's is 900.
+Out of these, three digit numbers that are symmetrical will have the same first and the last digit. The first and the last digit in this case can be selected in 9 ways(any number from 1 to 9). The second digit can be selected in 10 ways(any number from 0 to 9). Therefore number of symmetrical three digit numbers = 9*10 = 90. These 90 id's will not have a corresponding number when written in reverse order.
+Secondly numbers ending with a zero will also not have a corresponding 3 digit number when written in reverse order. For example, reverse of 910 is 019 which is not a valid three digit code due to the condition given that 3 digit codes starting with 0 are invalid. Number of such three digit numbers = 9*10 = 90.
+Rest of the (900-180) = 720 numbers can be classified into two groups of 360 numbers each, where corresponding pairs of numbers will be identical when written in reverse order. Hence consider only 360 of these numbers.
+Therefore total number of valid employee id's possible = 90 + 90 + 360 = 540.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Total Valid IDs**: Calculate the total number of valid 3-digit IDs (100 to 999).  
+   - First digit: 9 options (1-9), others: 10 options each.  
+   - Total: \(9 \times 10 \times 10 = 900\).
+
+2. **Symmetrical (Palindromic) IDs**: These are identical when reversed (e.g., 121).  
+   - First and third digits must match (9 options for the digit, 1-9).  
+   - Second digit: 10 options (0-9).  
+   - Total: \(9 \times 10 = 90\).
+
+3. **IDs Ending with Zero**: Their reverses are invalid (e.g., 910 reversed is 019, which is invalid).  
+   - First digit: 9 options (1-9).  
+   - Second digit: 10 options (0-9).  
+   - Third digit fixed as 0.  
+   - Total: \(9 \times 10 = 90\).
+
+4. **Remaining IDs**: Subtract palindromes and zero-ending IDs from the total.  
+   - \(900 - 90 - 90 = 720\).  
+   - These 720 IDs form pairs that are reverses of each other (e.g., 123 and 321).  
+   - Only one ID from each pair can be used: \(720 \div 2 = 360\).
+
+5. **Final Total**: Sum all valid unique IDs.  
+   - Palindromes: 90 + Zero-ending IDs: 90 + Paired IDs: 360 = **540**.
+
+**Answer**: The maximum number of unique employee IDs is **540**.",True
+170,"Question: Mad Ade lives on a long street In Sunny Madadia and he has noticed that the sum of the house numbers up to his own house, ""The Kebabers rest"", but excluding it, equals the sum of the numbers of his house to the end of the road. If the houses are numbered consecutively, starting from 1, what are the possible numbers of Mad Ade's house?
+There are less than 1000 houses on the road.
+ Solution: There are four possible answers if the total number of Houses is no more than 1000.
+Mad Ade's house could be #3 out of 3, #15 out of 20, #85 out of 119, or #493 out of 696.",,"There are four possible answers if the total number of Houses is no more than 1000.
+Mad Ade's house could be #3 out of 3, #15 out of 20, #85 out of 119, or #493 out of 696.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:**
+   - Let \( k \) be Mad Ade's house number.
+   - Let \( n \) be the total number of houses (\( n < 1000 \)).
+
+2. **Set Up the Equation:**
+   - The sum of house numbers before \( k \) (excluding \( k \)) equals the sum from \( k \) to \( n \):
+     \[
+     \frac{(k-1)k}{2} = \frac{n(n+1)}{2} - \frac{(k-1)k}{2}
+     \]
+   - Simplify to:
+     \[
+     2k(k-1) = n(n+1)
+     \]
+
+3. **Solve for \( n \):**
+   - Rearrange the equation as a quadratic in \( n \):
+     \[
+     n^2 + n - 2k^2 + 2k = 0
+     \]
+   - Use the quadratic formula:
+     \[
+     n = \frac{-1 + \sqrt{1 + 8k^2 - 8k}}{2}
+     \]
+   - For \( n \) to be an integer, the discriminant \( 8k^2 - 8k + 1 \) must be a perfect square.
+
+4. **Relate to Pell’s Equation:**
+   - Let \( m^2 = 8k^2 - 8k + 1 \). This transforms into:
+     \[
+     m^2 - 2(2k - 1)^2 = -1
+     \]
+   - This is a Pell-type equation with solutions generated recursively.
+
+5. **Generate Solutions:**
+   - Fundamental solutions to the Pell equation yield \( k \) values:
+     - \( k = \frac{x + 1}{2} \), where \( x \) is from the Pell sequence \( 1, 5, 29, 169, 985, ... \).
+   - Corresponding \( n \) values are:
+     - \( n = \frac{m - 1}{2} \), where \( m \) is from the sequence \( 7, 41, 239, 1393, ... \).
+
+6. **List Valid Solutions Under 1000:**
+   - For \( x = 5, 29, 169, 985 \):
+     - \( k = 3, 15, 85, 493 \)
+     - Corresponding \( n = 3, 20, 119, 696 \)
+
+**Final Answer:**  
+Mad Ade's house number could be **3** (out of 3), **15** (out of 20), **85** (out of 119), or **493** (out of 696).",True
+171,"Question: Mad Ade was in his local news agents looking at the various magazines on display, He picked a copy of ""Kebabs and Me"" a copy of ""Everything You Ever Wanted to Know About Nylon Underpants"" and a copy of ""Indoor Hang Gliding"". He passed the magazines to the shop keeper, who duly entered the amounts of each magazine into the till.  ""Wow, hang on a minute"" said Mad Ade.  ""You just pressed the multiplication button each time between amounts instead of the addition button.""  The shop keeper smiled with new false teeth and replied, ""it doesn't matter either way, it still comes to £5.70p"".
+What were the prices of the magazines, that could either be multiplied or added to make £5.70
+ Solution: £2.85*£1.60*£1.25= £5.70
+£2.85+£1.60+£1.25=£5.70",,"£2.85*£1.60*£1.25= £5.70
+£2.85+£1.60+£1.25=£5.70",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables and Equations:**
+   - Let the prices of the three magazines be \( a \), \( b \), and \( c \).
+   - The equations are:
+     - \( a + b + c = 5.70 \) (sum equals £5.70)
+     - \( a \times b \times c = 5.70 \) (product equals £5.70).
+
+2. **Assume One Price is Half the Total:**
+   - Set \( a = \frac{5.70}{2} = 2.85 \).
+   - This leaves \( b + c = 2.85 \) and \( b \times c = \frac{5.70}{2.85} = 2 \).
+
+3. **Solve the Quadratic for Remaining Prices:**
+   - Substitute \( c = 2.85 - b \) into \( b \times c = 2 \):
+     - \( b \times (2.85 - b) = 2 \).
+     - Simplify to \( b^2 - 2.85b + 2 = 0 \).
+   - Solve using the quadratic formula:
+     - Discriminant: \( (2.85)^2 - 4(1)(2) = 0.1225 \).
+     - Roots: \( b = \frac{2.85 \pm \sqrt{0.1225}}{2} = \frac{2.85 \pm 0.35}{2} \).
+     - Solutions: \( b = 1.60 \) or \( b = 1.25 \).
+
+4. **Confirm Validity:**
+   - Prices \( 2.85 \), \( 1.60 \), and \( 1.25 \) satisfy both equations:
+     - Sum: \( 2.85 + 1.60 + 1.25 = 5.70 \).
+     - Product: \( 2.85 \times 1.60 \times 1.25 = 5.70 \).
+
+**Answer:**  
+The prices of the magazines are £2.85, £1.60, and £1.25.",True
+172,"Question: Mad Ade has drawn another grid, this time it is 20 squares by 10 squares.
+How many different squares and rectangles(combined figure not individual) can be found in that grid?
+ Solution: 11550
+Total number of Squares/rectangles = (Summation of row numbers) * (Summation of column numbers)
+Here there are 20 rows and 10 columns or vice versa. Hence, total possible squares/rectangles
+= ( 20 + 19 + 18 + 17 + 16 + .... + 3 + 2 + 1 ) * ( 10 + 9 +8 + 7 + .... + 3 + 2 + 1)
+= ( 210 ) * (55)
+= 11550
+Hence, total 11,550 different rectangles are possible.",,"11550
+Total number of Squares/rectangles = (Summation of row numbers) * (Summation of column numbers)
+Here there are 20 rows and 10 columns or vice versa. Hence, total possible squares/rectangles
+= ( 20 + 19 + 18 + 17 + 16 + .... + 3 + 2 + 1 ) * ( 10 + 9 +8 + 7 + .... + 3 + 2 + 1)
+= ( 210 ) * (55)
+= 11550
+Hence, total 11,550 different rectangles are possible.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Understand the Grid Dimensions:**  
+   The grid is 20 squares by 10 squares. This means there are:
+   - **21 vertical lines** (to form 20 columns) and  
+   - **11 horizontal lines** (to form 10 rows).  
+
+2. **Formula for Rectangles and Squares:**  
+   Any rectangle/square is defined by choosing 2 distinct vertical lines and 2 distinct horizontal lines.  
+   - Number of ways to choose 2 vertical lines: \( \binom{21}{2} = \frac{21 \times 20}{2} = 210 \).  
+   - Number of ways to choose 2 horizontal lines: \( \binom{11}{2} = \frac{11 \times 10}{2} = 55 \).  
+
+3. **Multiply for Total Combinations:**  
+   Total rectangles/squares = \( 210 \times 55 = 11,\!550 \).  
+
+4. **Alternative Summation Approach:**  
+   - Sum of all possible widths (1 to 20 squares): \( \sum_{k=1}^{20} k = \frac{20 \times 21}{2} = 210 \).  
+   - Sum of all possible heights (1 to 10 squares): \( \sum_{k=1}^{10} k = \frac{10 \times 11}{2} = 55 \).  
+   - Multiply sums: \( 210 \times 55 = 11,\!550 \).  
+
+**Final Answer:** 11,550 rectangles/squares.",True
+173,"Question: How many different ways can 150 be scored with a set of 3 darts on a standard dartboard?
+ Solution: 16
+(60 60 30,60 57 33,60 54 36,60 51 39,60 48 42,60 45 45,57 57 36,57 54 39,57 51 42,57 48 45,54 54 42,54 51 45,54 48 48,51 51 48,60 40 50,50 50 50)","Concern yourself with number combinations only, not specific doubles or triples ie:D18 & T12 are both 36","16
+(60 60 30,60 57 33,60 54 36,60 51 39,60 48 42,60 45 45,57 57 36,57 54 39,57 51 42,57 48 45,54 54 42,54 51 45,54 48 48,51 51 48,60 40 50,50 50 50)",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify Valid Dart Scores:**  
+   Each dart can score:  
+   - Singles: 1–20, 25 (outer bull).  
+   - Doubles: 2–40 (even numbers), 50 (inner bull).  
+   - Triples: 3–60 (multiples of 3).  
+
+2. **Categorize Combinations by Highest Score:**  
+   Start with the highest possible score (60) and work downward, ensuring the remaining two scores sum to the required value and are valid.  
+
+3. **Case 1: Highest Score = 60**  
+   - **Two 60s:** Third dart = 30 → (60, 60, 30).  
+   - **One 60:**  
+     - Pairs summing to 90:  
+       - Triples: (57, 33), (54, 36), (51, 39), (48, 42), (45, 45).  
+       - Mixed: (50, 40).  
+     → **6 combinations:** (60, 57, 33), (60, 54, 36), (60, 51, 39), (60, 48, 42), (60, 45, 45), (60, 40, 50).  
+
+4. **Case 2: Highest Score = 57**  
+   - Pairs summing to 93: (57, 36), (54, 39), (51, 42), (48, 45).  
+   → **4 combinations:** (57, 57, 36), (57, 54, 39), (57, 51, 42), (57, 48, 45).  
+
+5. **Case 3: Highest Score = 54**  
+   - Pairs summing to 96: (54, 42), (51, 45), (48, 48).  
+   → **3 combinations:** (54, 54, 42), (54, 51, 45), (54, 48, 48).  
+
+6. **Case 4: Highest Score = 51**  
+   - Pair summing to 99: (51, 48).  
+   → **1 combination:** (51, 51, 48).  
+
+7. **Case 5: Highest Score = 50**  
+   - Pair summing to 100: (50, 50).  
+   → **1 combination:** (50, 50, 50).  
+
+**Total Combinations:** 7 (60) + 4 (57) + 3 (54) + 1 (51) + 1 (50) = **16 unique ways.**",True
+174,"Question: Arrange the numbers from 1 to 25 in a 5x5 grid so that each row, column, and diagonal adds up to the same number.
+ Solution: 17 24 01 08 15
+23 05 07 14 16
+04 06 13 20 22
+10 12 19 21 03
+11 18 25 02 09","All of the rows, columns, and diagonals add up to 65.","17 24 01 08 15
+23 05 07 14 16
+04 06 13 20 22
+10 12 19 21 03
+11 18 25 02 09",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Determine the magic constant**: The required sum for each row, column, and diagonal is calculated using the formula for an \( n \times n \) magic square:  
+   \[
+   \text{Magic constant} = \frac{n(n^2 + 1)}{2} = \frac{5(25 + 1)}{2} = 65.
+   \]
+
+2. **Identify the structure of an associative magic square**: Each pair of numbers symmetrically opposite the center (position 3,3) must sum to \( n^2 + 1 = 26 \). For example, 1 pairs with 25, 2 pairs with 24, etc.
+
+3. **Place the center number**: The middle cell (3,3) is assigned the median number \( 13 \), as \( 1 + 25 = 26 \) and the center of 1–25 is 13.
+
+4. **Construct the grid using symmetry**:
+   - Place pairs of numbers summing to 26 symmetrically around the center. For instance:
+     - 17 (top-left) pairs with 9 (bottom-right).
+     - 24 (top-middle) pairs with 2 (bottom-middle).
+   - Ensure every row, column, and diagonal contains one number from each pair.
+
+5. **Verify the Siamese method adjustments**:
+   - Start at the middle of the first row (1,3) with 1.
+   - Move diagonally up-right for subsequent numbers, wrapping edges when necessary.
+   - If a cell is occupied, move down one cell instead. This method systematically fills the grid while maintaining the magic constant.
+
+6. **Final validation**:
+   - Confirm all rows, columns, and diagonals sum to 65.
+   - Check the associative property (symmetric pairs sum to 26).
+
+**Result**: The minimal configuration arranges numbers as shown, leveraging symmetry and systematic placement to satisfy all constraints. The final grid is:  
+```
+17 24 01 08 15  
+23 05 07 14 16  
+04 06 13 20 22  
+10 12 19 21 03  
+11 18 25 02 09  
+```  
+Each row, column, diagonal, and symmetric pair adheres to the required properties.",True
+175,"Question: A bridge was guarded by an evil troll. The troll was very intelligent, but he was also a coward. He was afraid of anyone smarter than him. So every time anyone tried to cross the bridge, the troll would set up a test. If the traveler passed the test, he would be allowed to cross. Otherwise, the troll would eat him.
+A traveler came across the bridge. The troll said, ""You may only cross my bridge if you know the password."" He then wrote an equation on a rock:
+NOSIER
++ASTRAL
+________
+725613
+""Each letter in the equation represents a different digit, and no letter represents zero,"" said the troll. ""The letters in the password represent 725613.""
+So, what is the password?
+ Solution: The password is INLETS.
+If N+A=7, then either O+S=2, or 1+O+S=2, meaning that O+S=1. But the two lowest digits used are 1 and 2, so the lowest possible sum of two letters is 3. Therefore, 1+N+A=7, which means that N+A=6 and O+S equals 11 or 12. Either one of N and A is 1 and the other is 5, or one is 2 and the other is 4.
+If R+L=3, then one of R and L is 1 and the other is 2. But since one of 1 and 2 must be either N or A, this cannot work, so R+L must equal 13. Therefore, 1+E+A equals 11, and E+A equals 10.
+Since R+L=13, then R and L must be, in some order, 4 and 9, 5 and 8, or 6 and 7.
+If N=1 and A=5, then E must equal 5. But since A and E need to have different values, this cannot work.
+If N=5 and A=1, then E=9. R and L must be 6 and 7 in some order.
+If N=2 and A=4, then E=6. R and L must be 5 and 8 in some order.
+If N=4 and A=2, then E=8. R and L must be 6 and 7 in some order.
+Since 1+I+R equals 6 or 16, I+R equals 5 or 15. Since R can only equal 5, 6, 7, or 8, I+R+15, so R cannot equal 5. Therefore:
+If N=5, then R cannot be 6 because I would equal 9, and E=9. So R=7, L=6, and I=8.
+If N=2, then since R cannot be 5, R=8, L=5, and I=7.
+If N=4, then R cannot be 7 because I would equal 8, and E=8. So R=6, L=7, and I=9.
+Since 1+S+T equals 5 or 15, S+T equals 4 or 14. If S+T=14, then S and T must be 5 and 9, or 6 and 8, in some order. But each of our three scenarios has a letter for at least one of 5 and 9, as well as one for 8. So S+T=4, S and T are 1 and 3 in some order, and O+S=12.
+If S=1, then O=11. But since each letter represents only one digit, S=3, T=1, and O=9.
+If N=5, then A=1. But since T=1, this cannot work.
+If N=4, then I=9. But since O=9, this cannot work.
+We are left with one possible scenario:
+T=1, N=2, S=3, A=4, L=5, E=6, I=7, R=8, and O=9.
+Therefore, 725613=INLETS.","1. There are nine different letters in the troll's equation, so nine digits in total are used. Since no letter represent zero, the nine digits used are obvious - just not the letter each one represents.
+2. This teaser requires some trial and error, but it can be minimized by looking at the two leftmost columns of the troll's equation.","The password is INLETS.
+If N+A=7, then either O+S=2, or 1+O+S=2, meaning that O+S=1. But the two lowest digits used are 1 and 2, so the lowest possible sum of two letters is 3. Therefore, 1+N+A=7, which means that N+A=6 and O+S equals 11 or 12. Either one of N and A is 1 and the other is 5, or one is 2 and the other is 4.
+If R+L=3, then one of R and L is 1 and the other is 2. But since one of 1 and 2 must be either N or A, this cannot work, so R+L must equal 13. Therefore, 1+E+A equals 11, and E+A equals 10.
+Since R+L=13, then R and L must be, in some order, 4 and 9, 5 and 8, or 6 and 7.
+If N=1 and A=5, then E must equal 5. But since A and E need to have different values, this cannot work.
+If N=5 and A=1, then E=9. R and L must be 6 and 7 in some order.
+If N=2 and A=4, then E=6. R and L must be 5 and 8 in some order.
+If N=4 and A=2, then E=8. R and L must be 6 and 7 in some order.
+Since 1+I+R equals 6 or 16, I+R equals 5 or 15. Since R can only equal 5, 6, 7, or 8, I+R+15, so R cannot equal 5. Therefore:
+If N=5, then R cannot be 6 because I would equal 9, and E=9. So R=7, L=6, and I=8.
+If N=2, then since R cannot be 5, R=8, L=5, and I=7.
+If N=4, then R cannot be 7 because I would equal 8, and E=8. So R=6, L=7, and I=9.
+Since 1+S+T equals 5 or 15, S+T equals 4 or 14. If S+T=14, then S and T must be 5 and 9, or 6 and 8, in some order. But each of our three scenarios has a letter for at least one of 5 and 9, as well as one for 8. So S+T=4, S and T are 1 and 3 in some order, and O+S=12.
+If S=1, then O=11. But since each letter represents only one digit, S=3, T=1, and O=9.
+If N=5, then A=1. But since T=1, this cannot work.
+If N=4, then I=9. But since O=9, this cannot work.
+We are left with one possible scenario:
+T=1, N=2, S=3, A=4, L=5, E=6, I=7, R=8, and O=9.
+Therefore, 725613=INLETS.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Analyze Column Addition with Carries:**
+   - **Units Place (R + L):** Must sum to 13 (since 3 is the result and no zero allowed), giving a carry of 1.
+   - **Tens Place (E + A + 1):** Must sum to 11 (to result in 1 with a carry of 1), so \( E + A = 10 \).
+   - **Hundreds Place (S + T + 1):** Must sum to 5 (resulting in 6 with a carry of 0) or 15 (resulting in 6 with a carry of 1). Here, \( S + T = 15 \), producing a carry of 1.
+   - **Thousands Place (I + R + 1):** Must sum to 15 (resulting in 5 with a carry of 1), so \( I + R = 14 \).
+   - **Ten-Thousands Place (O + S + 1):** Must sum to 12 (resulting in 2 with a carry of 1), so \( O + S = 11 \).
+   - **Hundred-Thousands Place (N + A + 1):** Must sum to 7, so \( N + A = 6 \).
+
+2. **Assign Digits Stepwise:**
+   - From \( N + A = 6 \) and \( E = 10 - A \), valid pairs are \( (N, A) = (2, 4) \) leading to \( E = 6 \).
+   - \( S + T = 15 \) requires \( S = 3 \), \( T = 1 \), \( O = 9 \) (since \( O + S = 11 \)).
+   - \( R + L = 13 \) assigns \( R = 8 \), \( L = 5 \) (no conflicts).
+   - \( I + R = 14 \) assigns \( I = 7 \).
+
+3. **Verify Unique Digits:**
+   - Assignments: \( I = 7 \), \( N = 2 \), \( L = 5 \), \( E = 6 \), \( T = 1 \), \( S = 3 \), \( A = 4 \), \( R = 8 \), \( O = 9 \).
+   - Check all letters represent distinct digits (no duplicates).
+
+4. **Construct the Password:**
+   - The sum \( 725613 \) corresponds to the letters \( I, N, L, E, T, S \), forming the password **INLETS**.
+
+**ANSWER:**  
+The password is **INLETS**.",True
+176,"Question: What are the largest and smallest 5-digit numbers that satisfy the following conditions?
+1. Each digit of the number is a prime digit.
+2. Each successive pair of digits forms a 2-digit number that is NOT a prime number.
+3. Each of the prime digits must appear at least once in the 5-digit number.
+ Solution: Largest - 35772
+Smallest - 32257
+Prime digits are 2, 3, 5 and 7.  Taken as pairs, the only combinations that fit criterion 2 are:
+22, 25, 27, 32, 33, 35, 52, 55, 57, 72, 75 and 77.
+Of that list, 33 is the only number that contains a 3 as the second digit and so for criterion 3 to be satisfied, 3 can only appear at the start of the 5-digit numbers.  From there it is simply a matter of choosing the next digits using the list above so that criterion 2 is satisfied, making sure that criterion 3 is also satisfied.",,"Largest - 35772
+Smallest - 32257
+Prime digits are 2, 3, 5 and 7.  Taken as pairs, the only combinations that fit criterion 2 are:
+22, 25, 27, 32, 33, 35, 52, 55, 57, 72, 75 and 77.
+Of that list, 33 is the only number that contains a 3 as the second digit and so for criterion 3 to be satisfied, 3 can only appear at the start of the 5-digit numbers.  From there it is simply a matter of choosing the next digits using the list above so that criterion 2 is satisfied, making sure that criterion 3 is also satisfied.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify Prime Digits and Valid Pairs:**
+   - Prime digits: 2, 3, 5, 7.
+   - Generate all two-digit combinations of these digits and eliminate primes. Valid non-prime pairs: 22, 25, 27, 32, 33, 35, 52, 55, 57, 72, 75, 77.
+
+2. **Determine Position of Digit 3:**
+   - To include 3 without forming a prime pair (e.g., 23, 53, 73), 3 must be the first digit. All other positions for 3 would require a preceding non-3 digit, creating a forbidden prime pair.
+
+3. **Construct Largest Number:**
+   - Start with 3. For each subsequent digit, choose the largest valid option while ensuring all digits (2, 3, 5, 7) appear.
+   - Path: 3 → 5 (largest valid), 5 → 7 (largest valid), 7 → 7 (largest valid), 7 → 2 (to include 2). Result: **35772**.
+
+4. **Construct Smallest Number:**
+   - Start with 3. Choose the smallest valid digits first, but strategically insert 5 and 7 to ensure all digits are included.
+   - Path: 3 → 2 (smallest valid), 2 → 2, 2 → 5 (to include 5), 5 → 7 (to include 7). Result: **32257**.
+
+5. **Verify All Conditions:**
+   - Ensure every pair of adjacent digits forms a non-prime number.
+   - Confirm all prime digits (2, 3, 5, 7) appear at least once.
+
+**Final Answer:**  
+Largest: **35772**  
+Smallest: **32257**",True
+177,"Question: Once an old man died, and in his Will he stated that all the pearls he kept in a little bag were to be distributed among his daughters. To make things fair, the distribution must be done in the following way:
+The older girl should receive one pearl, and a seventh of the remaining pearls in the bag.
+The second girl should receive two pearls, and a seventh of the remaining pearls in the bag.
+The third girl should receive three pearls, and a seventh of the remaining pearls in the bag.
+And so on until all the pearls are exhausted.
+Needless to say, the younger girl grew angry, and went to talk to the Judge because, if distributed that way, she probably would not get a pearl at all.
+The wise Judge looked at her and said: ""Don't worry, my child. Your father was a wise man.  He made everything quite right so that, after all the pearls are given, each one of you will have the same quantity of pearls and there will be no pearls left.""
+And so it was.
+How many pearls were there in the bag?
+How many daughters did the old man have?
+How many pearls did each girl get?
+ Solution: There were 36 pearls.
+There were 6 daughters.
+Each daughter got 6 pearls.
+The girl number x will have x pearls and a seventh of the rest. Since the last girl leaves no pearls in the bag, then when she takes her pearls the rest in the bag is zero (a seventh of nothing is nothing).
+Now, let's say the last girl was number k. Then she took k pearls and left the bag empty. But as all the girls end up with the same number of pearls, then each girl has k pearls in her hands. That is, the total number of pearls is: k pearls * k girls = square of k.
+Let's look at the girl number k-1. She takes k-1 pearls and a seventh of the rest, and leaves exactly k pearls for the last girl (remember the last girl found k pearls in the bag and takes them all). But, since each girl ends up with k pearls, then the ""seventh of the rest"" for the k-1 girl should be 1 pearl (to sum up k pearls at last: k-1+1=k). That means that k pearls of the last girl plus 1 pearl of the k-1 girl divided by 7 results in 1 (a seventh of the rest is 1, (k+1)/7=1 ).
+That is, k+1 = 7 and then k = 6.
+So, the number of pearls is 6*6 = 36, and there were 6 girls.","If there are no pearls left, how many pearls are in the bag for the last girl? How many pearls did the second-to-last girl get?","There were 36 pearls.
+There were 6 daughters.
+Each daughter got 6 pearls.
+The girl number x will have x pearls and a seventh of the rest. Since the last girl leaves no pearls in the bag, then when she takes her pearls the rest in the bag is zero (a seventh of nothing is nothing).
+Now, let's say the last girl was number k. Then she took k pearls and left the bag empty. But as all the girls end up with the same number of pearls, then each girl has k pearls in her hands. That is, the total number of pearls is: k pearls * k girls = square of k.
+Let's look at the girl number k-1. She takes k-1 pearls and a seventh of the rest, and leaves exactly k pearls for the last girl (remember the last girl found k pearls in the bag and takes them all). But, since each girl ends up with k pearls, then the ""seventh of the rest"" for the k-1 girl should be 1 pearl (to sum up k pearls at last: k-1+1=k). That means that k pearls of the last girl plus 1 pearl of the k-1 girl divided by 7 results in 1 (a seventh of the rest is 1, (k+1)/7=1 ).
+That is, k+1 = 7 and then k = 6.
+So, the number of pearls is 6*6 = 36, and there were 6 girls.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Determine the relationship between the number of daughters (k) and pearls each receives (N):**
+   - Each daughter receives the same number of pearls, so if there are \( k \) daughters, each gets \( N = k \) pearls. Total pearls = \( k \times k = k^2 \).
+
+2. **Work backward from the last daughter:**
+   - The \( k \)-th daughter takes \( k \) pearls, leaving none. Thus, before her turn, there were \( k \) pearls.
+
+3. **Establish equations for each prior daughter using the distribution rule:**
+   - For the \( (k-1) \)-th daughter: She takes \( (k-1) \) pearls, then \( \frac{1}{7} \) of the remainder. The remaining pearls after her must equal \( k \). Solve for the pearls before her turn:
+     \[
+     \frac{6}{7} \times (\text{pearls before} - (k-1)) = k \implies \text{pearls before} = \frac{7k}{6} + (k-1).
+     \]
+   - Repeat this logic recursively for all previous daughters.
+
+4. **Verify with \( k = 6 \):**
+   - Total pearls = \( 6^2 = 36 \).
+   - For the 5th daughter: Before her turn, there were \( 12 \) pearls. She takes \( 5 + \frac{12-5}{7} = 6 \), leaving \( 6 \).
+   - Continue backward for all daughters, confirming each step leaves the correct remainder. Initial pile = \( 36 \).
+
+**Final Answers:**
+- **Total pearls:** \( 36 \).
+- **Number of daughters:** \( 6 \).
+- **Pearls per daughter:** \( 6 \).",True
+178,"Question: At a certain fast food restaurant, Brain can buy 3 burgers, 7 shakes and one order of Fries for $120 exactly. At the same place it would cost $164.50 for 4 burgers, 10 shakes, and one order of fries. How much would it cost for an ordinary meal of one  burger, one shake, and one order of fries?
+ Solution: If b stands for burgers, S for shakes and f for fries
+3b + 7s + f = 120
+4b + 10s + f = 164.50
+solving these two we get
+b + 3s = 44.50
+rewriting 3b +7s + f as
+2b + b + 7s + f = 120
+2(44.50 - 3s)+ b + 7s + f = 120
+89 -6s + b + 7s + f = 120
+b + s + f = 120 - 89 = 31",,"If b stands for burgers, S for shakes and f for fries
+3b + 7s + f = 120
+4b + 10s + f = 164.50
+solving these two we get
+b + 3s = 44.50
+rewriting 3b +7s + f as
+2b + b + 7s + f = 120
+2(44.50 - 3s)+ b + 7s + f = 120
+89 -6s + b + 7s + f = 120
+b + s + f = 120 - 89 = 31",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables:** Let \( b \) = cost of one burger, \( s \) = cost of one shake, and \( f \) = cost of one order of fries.
+
+2. **Set Up Equations:**
+   - From the problem:  
+     \( 3b + 7s + f = 120 \)  (Equation 1)  
+     \( 4b + 10s + f = 164.50 \) (Equation 2)
+
+3. **Eliminate \( f \):** Subtract Equation 1 from Equation 2 to eliminate \( f \):  
+   \( (4b - 3b) + (10s - 7s) + (f - f) = 164.50 - 120 \)  
+   Simplifies to:  
+   \( b + 3s = 44.50 \)  (Equation 3)
+
+4. **Express \( b \) in Terms of \( s \):** From Equation 3:  
+   \( b = 44.50 - 3s \)
+
+5. **Reconstruct the First Equation:** Substitute \( b = 44.50 - 3s \) into Equation 1:  
+   \( 3(44.50 - 3s) + 7s + f = 120 \)  
+   Simplify:  
+   \( 133.50 - 9s + 7s + f = 120 \)  
+   Combine like terms:  
+   \( -2s + f = -13.50 \)  
+   Solve for \( f \):  
+   \( f = 2s - 13.50 \)
+
+6. **Compute \( b + s + f \):** Substitute \( b = 44.50 - 3s \) and \( f = 2s - 13.50 \):  
+   \( b + s + f = (44.50 - 3s) + s + (2s - 13.50) \)  
+   Combine terms:  
+   \( 44.50 - 13.50 + (-3s + s + 2s) = 31 + 0s = 31 \)
+
+**Answer:** The cost for one burger, one shake, and one order of fries is $\boxed{31}$.",True
+179,"Question: Weedy Willie was getting too old to work the land alone so he decided to divide his cornfield between himself and his four sons in proportion to their five work rates. He knew that Rastus, Wig, Twig and Swig together could plant a field of corn in five hours whereas Wig, Twig and Swig and himself together could manage the same task in six hours. So Weedy divided his field into a two-digit square number of parts and kept just one part for himself. Now, Wig, Twig and Swig were identical triplets so each received the same whole number of parts. How many parts did each son get?
+ Solution: Rastus received 9 parts and the triplets each got 13 parts.","Let the work rates of the triplets combined (Wig, Twig and Swig), Rastus and Willie be x, y, z, respectively. Then
+5(x + y) = 6(x + z)",Rastus received 9 parts and the triplets each got 13 parts.,DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Define Variables and Work Rates:**
+   - Let \( R \) be Rastus's work rate, \( W \) be Weedy Willie's, and \( T \) be each triplet's (Wig, Twig, Swig) work rate.  
+   - From the problem:  
+     \( R + 3T = \frac{1}{5} \) (work rate of Rastus + triplets)  
+     \( W + 3T = \frac{1}{6} \) (work rate of Willie + triplets).  
+
+2. **Relate \( R \) and \( W \):**
+   - Subtract the equations: \( R - W = \frac{1}{30} \), so \( R = W + \frac{1}{30} \).  
+
+3. **Express Shares Proportional to Work Rates:**
+   - The field is divided into \( N \) parts (a two-digit square: 16, 25, 36, 49, 64, 81). Willie takes 1 part, leaving \( N - 1 \) parts for Rastus and the triplets.  
+   - Shares \( y \) (Rastus) and \( x \) (each triplet) must satisfy \( y + 3x = N - 1 \).  
+   - Proportionality: \( \frac{y}{R} = \frac{x}{T} = \frac{1}{W} \).  
+
+4. **Solve for \( W \):**
+   - From \( N - 1 = \frac{1}{5W} \), \( W = \frac{1}{5(N - 1)} \).  
+
+5. **Derive \( x \) in Terms of \( N \):**
+   - Substitute \( W \) into \( x = \frac{T}{W} \):  
+     \( x = \frac{5N - 11}{18} \).  
+   - \( 5N - 11 \) must be divisible by 18.  
+
+6. **Find \( N \):**
+   - Solve \( 5N \equiv 11 \mod 18 \):  
+     \( N \equiv 13 \mod 18 \).  
+   - The only two-digit square satisfying this is \( N = 49 \).  
+
+7. **Calculate Shares:**
+   - \( x = \frac{5 \times 49 - 11}{18} = 13 \) (each triplet).  
+   - \( y = 49 - 1 - 3 \times 13 = 9 \) (Rastus).  
+
+**Answer:**  
+Rastus received **9 parts**, and each triplet received **13 parts**.",True
+180,"Question: The food fight is breaking out, and you are a prisoner. To determine if you really are the brain you claim you are, the other boss asks you the following with a 30-second time limit:
+He writes down the following numbers:
+1, 2, 3, 4, 5, 6, 7, 9, 2, 4, 3, 9, 1, 5.
+The following numbers are used to create 7 distinct 2-digit prime numbers. Note that 1, 2, 3, 4, 5, and 9 must be used exactly twice while 6 and 7 must be used exactly once. What is the sum of those prime numbers?
+ Solution: 313
+2, 4, and 6 cannot be in the one's place because that would make the number divisible by 2. 5 cannot also be in the ones place because that would make it divisible by 5. Thus, the sum of the primes is 10(2+4+5+6+2+4+5) + 1+3+7+9+1+3+9 = 313
+It is also possible to figure out the prime numbers, although that will probably take longer than 30 seconds.","Note that any 2 digit number can be written as 10t+u, where t is the ten's digit, and u is the one's digit.","313
+2, 4, and 6 cannot be in the one's place because that would make the number divisible by 2. 5 cannot also be in the ones place because that would make it divisible by 5. Thus, the sum of the primes is 10(2+4+5+6+2+4+5) + 1+3+7+9+1+3+9 = 313
+It is also possible to figure out the prime numbers, although that will probably take longer than 30 seconds.",DSReason,solutionSummary,"**SUMMARY:**
+
+1. **Identify Constraints:**
+   - **Digits Available:** 1,2,3,4,5,6,7,9 (with counts: 1,2,3,4,5,9 used twice; 6,7 used once).
+   - **Prime Rules:** Units digit must be 1,3,7,9 (to avoid divisibility by 2/5). Tens digit must use remaining digits (2,4,5,6 with specified counts).
+
+2. **Assign Units Digits:**
+   - Units digits required: 1 (twice), 3 (twice), 7 (once), 9 (twice).
+   - Tens digits available: 2 (twice), 4 (twice), 5 (twice), 6 (once).
+
+3. **List Valid Primes:**
+   - Tens digit 2: 23, 29.
+   - Tens digit 4: 41, 43, 47.
+   - Tens digit 5: 53, 59.
+   - Tens digit 6: 61, 67.
+
+4. **Resolve Conflicts:**
+   - Use 6 once in tens digit. Choose 61 (to satisfy units digit 1) and pair with 41 for the second 1.
+   - Assign 47 for the units digit 7 (using remaining tens digit 4).
+
+5. **Fill Remaining Primes:**
+   - For units digits 3 and 9, use 23, 29 (tens 2) and 53, 59 (tens 5).
+
+6. **Verify Primes and Counts:**
+   - Selected primes: 61, 41, 47, 23, 29, 53, 59.
+   - Check digit usage matches constraints (all counts satisfied).
+
+7. **Calculate Sum:**
+   - Sum primes: \(61 + 41 + 47 + 23 + 29 + 53 + 59 = 313\).
+
+**Answer:** 313",True

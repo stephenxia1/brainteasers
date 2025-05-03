@@ -66,7 +66,7 @@ The path A-B is then 5/Pi miles.  The path B-D bisects the path C-M, so both C-C
 The paths B-ABi, ABi-BCi, and BCi-C are all sides of equilateral triangles with a height of one half of the radius.  The paths Ci-CDi and CDi-Di are each half of the side of one of these same triangles.  The side of one of these equilateral triangles is
 5/(sqrt(3)*Pi)
 So the total distance traveled is
-10/Pi + 4*(5/(sqrt(3)*Pi)) = 10/Pi + 20/(sqrt(3)*Pi) ~ 6.86 miles",DSReason,basicprompt,"Final answer: The three wedding dates are April 2, April 4, and April 10. Bonus: \(\boxed{\frac{5(2 + \sqrt{3})}{\pi}}\) miles.",True,0,1,0
+10/Pi + 4*(5/(sqrt(3)*Pi)) = 10/Pi + 20/(sqrt(3)*Pi) ~ 6.86 miles",DSReason,basicprompt,"Final answer: The three wedding dates are April 2, April 4, and April 10. Bonus: \(\boxed{\frac{5(2 + \sqrt{3})}{\pi}}\) miles.",True,0,0,0
 1,"What is the smallest integer such that if you rotate the number to the left you get a number that is exactly one and a half times the original number?
 (To rotate the number left, take the first digit off the front and append it to the end of the number.  2591 rotated to the left is 5912.)","The number has 16 digits.  I repeat, the number has 16 digits.","1,176,470,588,235,294
 x 1.5 =
@@ -132,7 +132,7 @@ x = \frac{2 \cdot 1 \cdot (10^{16} - 1)}{17} = 1176470588235294
 
 Verification shows rotating \( 1176470588235294 \) left gives \( 1764705882352941 \), which is \( 1.5 \times 1176470588235294 \).
 
-Final answer: 1176470588235294",True,1,1,0
+Final answer: 1176470588235294",True,1,0,0
 2,"If you use a certain formula on 13, you end up with 7.
 Under the same formula, 2352 becomes 16, 246 becomes 14, 700 turns into 16, and 1030 becomes 14.
 What would 9304 become?",,"19. Convert the number to binary, add one for every zero, and add two for every 1.
@@ -312,7 +312,7 @@ and the area of the two floors in Ralph's house is
 5. **Simplification by Rex:**
    - Recognizing the problem's symmetry and approximations, Rex likely rounded to a clean answer based on the given constraints.
 
-Final Answer: **2000 square feet** (rounded for simplicity and problem context).",True,0,1,0
+Final Answer: **2000 square feet** (rounded for simplicity and problem context).",True,0,0,0
 7,Find the radius of the inscribed and circumscribed circles for a triangle.,,"Let a, b, and c be the sides of the triangle. Let s be the semiperimeter, i.e. s = (a + b + c) / 2. Let A be the area of the triangle, and let x be the radius of the incircle.
 Divide the triangle into three smaller triangles by drawing a line segment from each vertex to the incenter. The areas of the smaller triangles are ax/2, bx/2, and cx/2. Thus, A = ax/2 + bx/2 + cx/2, or A = sx.
 We use Heron`s formula, which is A = sqrt(s(s-a)(s-b)(s-c)). This gives us x = sqrt((s-a)(s-b)(s-c)/s).
@@ -371,7 +371,7 @@ Since the sum of the first three digits is a prime number, the sum must be one o
 Since the only possibility for the first three digits totaling 7 is 403, Ralph did a couple of quick calculations to determine that 403 = 13 x 31, so it isn't prime.  So the digital sum of the first three digits must be either 11 or 23 and the digital sum of the last three digits must be 20 or 8.
 There are only four ways to make a digital sum of 11 for the first three digits that ends in a three or seven and starts with 4, 6, 8 or 9: 407, 443, 623 and 803.  Ralph does a couple more quick calculations and determines that 407 = 11 x 37, 623 = 7 x 89 and 803 = 11 x 73, but that 443 is prime.  If 443 are the first three digits, then the last three digits must total 20, start with a 7 and end with a 4, 6 or 8.  There is only three ways to do this: 758, 776 and 794.  The fifth digit can't be prime, so only 794 is possible.  This gives the first number 443,794.
 If the first three digits total 23, start with a 4, 6, 8 or 9, and end with a 3 or 7, then the choices are 887 and 977.  The second digit in 977 is prime, so the only choice is 887.  Ralph checks and finds that 887 is prime.  If the first three numbers are 887 then the last three must start with a 3, end with a 4, 6 or 8 and total 8.  Only 314 is possible, giving the second number 887,314.
-When Rex tells Ralph one of the numbers is divisible by 13, Ralph finds that 443,794 = 13 x 34,138.  Since 13 can't be one of the prime factors of the number, the number must be 887,314.",DSReason,basicprompt,"Final answer: The two numbers were 887314 and 986754. Rex was thinking of 986754, as it is divisible by 13.",True,0,1,1
+When Rex tells Ralph one of the numbers is divisible by 13, Ralph finds that 443,794 = 13 x 34,138.  Since 13 can't be one of the prime factors of the number, the number must be 887,314.",DSReason,basicprompt,"Final answer: The two numbers were 887314 and 986754. Rex was thinking of 986754, as it is divisible by 13.",True,0,0,0
 9,"There are 4 mathematicians - Brahma, Sachin, Prashant and Nakul - having lunch in a hotel. Suddenly, Brahma thinks of 2 integer numbers greater than 1 and says, ""The sum of the numbers is..."" and he whispers the sum to Sachin. Then he says, ""The product of the numbers is..."" and he whispers the product to Prashant. After that, the following conversation takes place :
 Sachin : Prashant, I don't think that we know the numbers.
 Prashant : Aha! Now I know the numbers.
@@ -503,7 +503,7 @@ Verification:
 - After each survivor, the pile reduces as \( 3121 \rightarrow 2496 \rightarrow 1996 \rightarrow 1596 \rightarrow 1276 \rightarrow 1020 \).
 - Morning division: \( 1020 \div 5 = 204 \), no remainder.
 
-**Final answer:** 3121",True,1,1,1
+**Final answer:** 3121",True,1,0,0
 11,What is the only non-palindromic integer whose cube is a palindrome?,A palindrome is a number that reads the same forward as it does backward.  An example would be 1221. An integer is a number that has no decimal places.  A cube is the result of multiplying a number by itself three times.,"2201
 2201^3 = 10662526601",DSReason,basicprompt,"The task is to find the only non-palindromic integer whose cube is a palindrome. A palindromic number reads the same forwards and backwards. After testing small numbers and analyzing properties of cubes, the number **2201** emerges as the candidate. 
 
@@ -562,7 +562,7 @@ Here are some ways to form the numbers from 10 to 38 using the additional operat
 35 = 4! + (4! - SQRT(4)) / SQRT(4)
 36 = 4! + 4 + 4 + 4
 37 = 4! + (4! + SQRT(4)) / SQRT(4)
-38 = 4! + (4 * 4) - SQRT(4)",DSReason,basicprompt,"Final answer: 41. The numbers from 0 to 40 can be formed using four 4s with the allowed operations. For example, 35 = 4! + (4! - √4)/√4, 36 = 4*(4+4) +4, 37 = 4! + (4! +√4)/√4, 38 = 4! +4*4 -√4, 39 = 4! +4*4 -4/4, and 40 = 4! +4*4 +4 -4. However, no valid combination of four 4s yields 41 using the allowed operations.",True,1,1,0
+38 = 4! + (4 * 4) - SQRT(4)",DSReason,basicprompt,"Final answer: 41. The numbers from 0 to 40 can be formed using four 4s with the allowed operations. For example, 35 = 4! + (4! - √4)/√4, 36 = 4*(4+4) +4, 37 = 4! + (4! +√4)/√4, 38 = 4! +4*4 -√4, 39 = 4! +4*4 -4/4, and 40 = 4! +4*4 +4 -4. However, no valid combination of four 4s yields 41 using the allowed operations.",True,0,1,1
 13,"Al and Ben are standing back to back next to a railroad track. When the front of a train passes them, Al starts to walk in the opposite direction of the train, while Ben starts to walk in the same direction as the train. Each stops walking when the back of the train passes him. If the two of them walk at the same speed, and Al walks exactly 30 feet, and Ben walks exactly 45 feet, how long is the train?",,"The train is 180 feet long.
 When the back of the train passes Al, he and Ben have both walked 30 feet, meaning Ben will walk 15 feet more when the train passes him. 30 feet that Al walks plus 45 feet that Ben walks makes 75 feet that the back of the train travels in the same time that Ben walks 15 feet, meaning the train is 5 times as fast as Al and Ben.
 In the time it takes Al to walk 30 feet, the front of the train moves 150 feet. This distance plus the 30 feet that Al has walked equals 180 feet.",DSReason,basicprompt,Final answer: 180 feet,True,1,0,0
@@ -622,7 +622,7 @@ B) Between 1:00 and 2:00, the Swap Times are:
 Final answer:  
 A) 12:00:00.00  
 B) 1:00:25.18, 1:05:27.27, 1:10:29.37, 1:15:31.47, 1:20:33.56, 1:25:35.66, 1:30:37.76, 1:35:39.86, 1:40:41.96, 1:45:44.06, 1:50:46.15, 1:55:48.25.  
-Bonus: 132",True,0,1,0
+Bonus: 132",True,0,0,0
 15,"I was talking to a friend Tammy, the middle child of five.  She has a younger sister Tracey, and three brothers Tommy (oldest child), Timmy and Tony (youngest child).  I asked her how old she was, but she hardly ever gives a straight answer.  The following is the conversation we had.
 ""How old are you Tammy?""
 ""I am three times as old as Timmy was when Tony was born.  Actually, it's funny, but Timmy's, Tracey's, Tommy's and my ages were all factors of Mum's age when Tony was born.  The only other year where the ages of more than two of us were factors of Mum's age was when Tracey was half as old as I am now.""
@@ -681,7 +681,7 @@ Going back to when Tony was born we have that Mum was 30, Tommy was 10, Timmy wa
 7. **Final Ages:**  
    - \( A_n = 13 \), \( T_o = 23 \), \( T_i = 19 \), \( T_a = 18 \), \( T_r = 16 \), \( M = 43 \).  
 
-All clues are satisfied with these ages.",True,1,1,0
+All clues are satisfied with these ages.",True,1,0,0
 16,"The wedding reception was winding down as Bill Johnson, the father of the bride, held forth to anyone who was left to hear his report on the fiscal damages.
 ""That's the last one married off - thank goodness!   That's been one wedding a year for the last four years I've had to pay for.  Alice got married three years ago, then Barbara, Cheryl, and now Denise.  They've all gotten married on the same day, June 30th, for some reason, and each girl had to have her three sisters as the bridesmaids, but could they share a color scheme?  No - each one had to have her own colors. God forbid they should be able to reuse the bridesmaids' dresses, let alone share a wedding dress.  Alice tried to persuade Denise to reuse her color scheme, but Denise said she had lived with her older sister's hand-me-downs long enough.
 Funny thing, though - each bride managed to get married when her age was just the same as the sum of the digits of the ages of her three sisters.   You don't see that every day, I bet.  But why couldn't they share something that costs money instead of this trivia?""
@@ -698,7 +698,7 @@ a-3 = (b-3)+(c-3)+(d-3) (mod 9).
 Solving for the four variables, we get: a=0, b=1, c=2, d=3 (all mod 9).  It remains to find four integers congruent to these numbers that will satisfy the digit addition property.   If you use the age restriction in the hint, you can omit some of the following analysis, but I present it here in full to show that the solution is truly unique even without the hint.
 If we go back 3 years to Alice's wedding, we have: a-3=6, b-3=7, c-3=8, and d-3=9 (mod 9).  Now all numbers less than 79 that are congruent to 7 also have a digit sum of 7, and likewise numbers congruent to 8 less than 89 have a digit sum of 8, and numbers congruent to 9 (except 0) less than 99 have a digit sum of 9.   We can rule out  such high ages, because each woman must have a turn being the sum of her sister's ages' digits, and the maximum sum of digits for three ages less than 199 is 54 (for 99, 99, and 99).  Likewise, we can rule out zero as a valid age for Denise three years ago, because she needs to have an age now that can be the sum of the digits of three other valid ages.  So Alice three years ago must have been 7+8+9=24, making her 27 now.
 Now go back 2 years to Barbara's wedding.  Alice we now know was 25.  Cheryl's age was congruent to 9 (mod 9), so she must have had a digit sum of 9.  Denise's age was congruent to 1 (mod 9), so she must have had a digit sum of 10 unless she was 10 years old herself (we have previously ruled out 1 as a valid age). But if Denise was 10, then Barbara would have been 17 two years ago, and this year Alice and Barbara together would be contributing 2+7+1+9 = 19 years to Denise's age, contradicting the assumption that she was 10 two years ago.  So Denise had a digit sum of 10 two years ago, and Barbara was therefore 2+5+9+10=26 at the time of her wedding, hence 28 now.
-Now consider Cheryl's wedding last year.  Alice was 26 and Barbara was 27.  Denise's age was congruent to 2 (mod 9), so she must have had a digit sum of either 2 or 11.  If it was 11, then Cheryl would have been 11+2+6+2+7=28 then, making her 29 now.  But then Denise would have to be 2+7+2+8+2+9=30 now to Alice's 27, contradicting the information that Alice was her older sister.  So Denise's digit sum must have been 2 last year, making Cheryl 19 then, and Denise 21 now.",DSReason,basicprompt,"Final answer: Alice is 27, Barbara is 24, Cheryl is 22, and Denise is 18.",True,0,1,1
+Now consider Cheryl's wedding last year.  Alice was 26 and Barbara was 27.  Denise's age was congruent to 2 (mod 9), so she must have had a digit sum of either 2 or 11.  If it was 11, then Cheryl would have been 11+2+6+2+7=28 then, making her 29 now.  But then Denise would have to be 2+7+2+8+2+9=30 now to Alice's 27, contradicting the information that Alice was her older sister.  So Denise's digit sum must have been 2 last year, making Cheryl 19 then, and Denise 21 now.",DSReason,basicprompt,"Final answer: Alice is 27, Barbara is 24, Cheryl is 22, and Denise is 18.",True,0,0,0
 17,"The number of possible ways of playing the first four moves for both players in a game of chess is
 318 979 564 000
 How many different possible moves can be made in the first ten moves by each player?",,169 518 829 100 544 000,DSReason,basicprompt,"The number of possible ways for the first four moves (two per player) is given as \(318,\!979,\!564,\!000\). To extrapolate to the first ten moves (five per player), assume the number grows exponentially. If each pair of moves (white and black) multiplies the total by a factor \(k\), then \(k^2 = 318,\!979,\!564,\!000 / 400 \approx 797,\!448,\!910\). For ten moves (five pairs), the total is \(400 \times (797,\!448,\!910)^{4}\). However, this results in an astronomically large number. Given the problem's structure, the answer likely follows a pattern of exponentiating the given value by \(10/4 = 2.5\). 
@@ -707,7 +707,7 @@ Final answer: \(318,\!979,\!564,\!000^{5/2}\) or approximately \(1.78 \times 10^
 
 However, due to the problem's ambiguity and unrealistic given number, the exact answer cannot be precisely determined without additional context. 
 
-Final answer: 318979564000^(5/2)",True,0,1,0
+Final answer: 318979564000^(5/2)",True,0,0,0
 18,"Arrange the digits from 1 to 9 to make a 9-digit number ABCDEFGHI which satisfies the following conditions:
 1) AB is divisible by 2;
 2) ABC is divisible by 3;
@@ -725,7 +725,7 @@ If D=2, then F=8, H=6, B=4. A+4+C is divisible by 3, therefore A and C must be 1
 Therefore D=6, and F=4, H=2, B=8. G2 is divisible by 8, therefore G=3 or 7. A+8+C is divisible by 3, therefore one of A and C is chosen from 1 and 7, the other is chosen from 3 and 9.
 If G=3, then one of A and C is 9, the other is chosen from 1 and 7. But none of 1896543, 7896543, 9816543 and 9876543 is divisible by 7.
 Therefore G=7, one of A and C is 1, the other is chosen from 3 and 9. From 1836547, 1896547, 3816547 and 9816547, only 3816547 is divisible by 7 (the quotient is 545221).
-Therefore, the number we are looking for is 381654729.",DSReason,basicprompt,Final answer: 381654729,True,1,0,1
+Therefore, the number we are looking for is 381654729.",DSReason,basicprompt,Final answer: 381654729,True,1,0,0
 19,"What is so unusual about this number?
 3608528850368400786036725","It's the greatest natural number with this property. If you can't figure it out, check out teaser 29716.","The number formed by its first n digits is divisible by n, e.g. 36 is divisible by 2, 360 is divisible by 3, 3608 is divisible by 4, etc.",DSReason,basicprompt,"The number 3608528850368400786036725 is unusual because it is a polydivisible number. Each of its prefixes (the first n digits) is divisible by n for values of n from 1 up to 18. This means:
 
@@ -829,7 +829,7 @@ Final answer: 3^700, 710",True,1,0,0
 2) HGFEDCBA (reversing the digits) is a prime number
 3) all consecutive 2-digit subsets of ABCDEFGH are prime numbers (AB, BC, CD, DE, EF, FG, GH are all prime)
 4) all consecutive 2-digit subsets of HGFEDCBA are prime numbers (HG, GF, FE, ED, DC, CB, BA are all prime)",,"97131379 (97, 71, 13, 31, 13, 37, 79) and its reverse 97313179 (97, 73, 31, 13, 31, 17, 79)
-The only available 2-digit prime numbers are:  11, 13, 17, 19, 31, 37, 71, 73, 79, and 97.  The number pairs that are prime in both directions are:  11/11, 13/31, 17/71, 37/73, and 79/97 (19 is eliminated since its reverse, 91, is not prime).  With these numbers, it can be seen that 9 can only be paired with 7.  Therefore, the solution must be of the form 97????79, 9797????, or ????7979.  ???? must therefore be 1313, 3131, or 3113.  This leaves the possible solution pairs of 97131379/97313179, 97971313/31317979, 97973131/13137979, 97973113/31137979, and 97311379/97311379 (the last pair being a palindrome).  Of these, only 97131379 and its reverse, 97313179, are prime numbers.",DSReason,basicprompt,Final answer: 19739937,True,0,1,0
+The only available 2-digit prime numbers are:  11, 13, 17, 19, 31, 37, 71, 73, 79, and 97.  The number pairs that are prime in both directions are:  11/11, 13/31, 17/71, 37/73, and 79/97 (19 is eliminated since its reverse, 91, is not prime).  With these numbers, it can be seen that 9 can only be paired with 7.  Therefore, the solution must be of the form 97????79, 9797????, or ????7979.  ???? must therefore be 1313, 3131, or 3113.  This leaves the possible solution pairs of 97131379/97313179, 97971313/31317979, 97973131/13137979, 97973113/31137979, and 97311379/97311379 (the last pair being a palindrome).  Of these, only 97131379 and its reverse, 97313179, are prime numbers.",DSReason,basicprompt,Final answer: 19739937,True,0,0,1
 24,"While on your interplanetary vacation, you decide to stop at the planet Quocorri, a planet known for its many mathematical achievements.
 While there, you decide to pick up on some of the Quocorrians mathematical variations. The Quocorrians won't tell you exactly how it works, only that it has some relationship to the Standard English math. They also give you four, true, Quocorrian math problems. They are:
 2+2=9
@@ -851,7 +851,7 @@ Key patterns emerge:
 
 For **division**, extrapolating from multiplication’s scaling: If multiplication by \(1\) scales to \(1/4\), division would invert this, scaling by 4. Thus, \(6/2\) in standard math (3) becomes \(3 \times 4 = 12\).
 
-Final answer: 12",True,0,1,0
+Final answer: 12",True,0,0,0
 25,"Use addition, subtraction, multiplication, division, and parentheses to make the following equation hold.
 9 8 7 6 5 4 3 2 1=2001
 You can't use two or more of the digits to make multiple-digit numbers (i.e. solutions like (987+6-5+4*3)*2+1=2001 are not allowed.)",,9*8*(7+6*5)/4*3+2+1=2001.,DSReason,basicprompt,"To solve the equation \(9 \, 8 \, 7 \, 6 \, 5 \, 4 \, 3 \, 2 \, 1 = 2001\) using only single-digit operations, extensive trial and error was conducted. The key steps involved leveraging multiplication and division to approach the target, followed by adjustments using subtraction and addition. One viable solution involves strategic grouping and operations:
@@ -1179,8 +1179,8 @@ Final answer: The correct equation is \( (9 \times 8 \times 7) + (6 \times 5 \ti
 
 Final answer: The correct solution is:
 
-Final answer: \((9 + 8 \times 7) \times 6 \times 5 - 4 \times 3 \times 2 + 1 =",True,0,1,1
-26,"A four digit number (not beginning with 0) can be represented by ABCD. There is one number such that ABCD=A^B*C^D, where A^B means A raised to the B power. Can you find it?",,The only number is 2592. 2^5 is 32 and 9^2 is 81. 32*81 is 2592.,DSReason,basicprompt,Final answer: 2592,True,1,1,0
+Final answer: \((9 + 8 \times 7) \times 6 \times 5 - 4 \times 3 \times 2 + 1 =",True,0,1,0
+26,"A four digit number (not beginning with 0) can be represented by ABCD. There is one number such that ABCD=A^B*C^D, where A^B means A raised to the B power. Can you find it?",,The only number is 2592. 2^5 is 32 and 9^2 is 81. 32*81 is 2592.,DSReason,basicprompt,Final answer: 2592,True,1,0,0
 27,"Can you find the largest number possible containing any of 9 of 10 digits, considering 0 also a number, that is divisible by 11 without a remainder?
 (Note: each number may appear only one time.)",,"987652413, is the highest number possible containing any of 9 of 10 digits and is divisible by 11 without a remainder.",DSReason,basicprompt,"To solve the problem of finding the largest 9-digit number using each digit 0-9 exactly once (excluding one) that is divisible by 11, we apply the divisibility rule for 11: the difference between the sum of digits in odd positions and even positions must be a multiple of 11 (including zero). 
 
@@ -1204,7 +1204,7 @@ Final answer: \((9 + 8 \times 7) \times 6 \times 5 - 4 \times 3 \times 2 + 1 =",
    - Difference \( 21 - 21 = 0 \), divisible by 11.
    - All digits are unique, excluding 3.
 
-Final answer: **987645120**",True,0,1,0
+Final answer: **987645120**",True,0,0,1
 28,"After being intrigued by Quocorria's mathematical systems, you decide to extend your stay on this mathematically advanced planet.
 While talking to a Quocorrian professor, he mentions Quocorria's other numbering systems. Your curiosity gets the best of you, so you decide you won't leave Quocorria until you master all of their systems.
 The professor gives you a piece of paper with four true math problems on it. Like before, you must discover the system.
@@ -1250,7 +1250,7 @@ With the * being the indicated operation.",DSReason,basicprompt,"To solve the Qu
     - First digit = \(4 - 2 = 2\).  
     - Second digit = result (2).  
 
-Final answer: 22",True,0,1,0
+Final answer: 22",True,0,0,0
 29,"Using only two 2's and any combination of mathematical signs, symbols and functions can you make 5?",,"SQRT(.2 ^ -2)
 Take .2 and raise it to the power of -2 and then take the square root.",DSReason,basicprompt,"To solve the problem of creating the number 5 using exactly two 2's and any combination of mathematical operations, extensive exploration of arithmetic, exponents, factorials, square roots, decimals, and other operations was conducted. Here are the key steps and reasoning:
 
@@ -1274,7 +1274,7 @@ Here, \(0.4\) is derived from \(0.2 + 0.2\), but this uses three 2's. The valid 
 (Acknowledging it uses three 2's, indicating a potential error in the problem's constraints or a missing mathematical operation.)",True,0,1,0
 30,You have two very hungry termites and two sticks of wood.  One stick of wood is 12 inches long and the other is 16 inches long.  One termite can eat sticks at the rate of 1 inch every 3 minutes.  The other termite can eat 1 inch in 4 minutes.  How would you use the termites and sticks to measure 61 minutes?,,"Start the slow termite eating the longer stick.  It will take the slow termite 16 minutes to eat the 4 inches that will make the sticks the same size.  When the sticks are the same size, start the fast termite on the other stick.  This termite will finish his 12 inch stick in 36 minutes.  That's 52 minutes elapsed so far and the slow termite still has 3 inches left on his stick.  Remove the slow termite and let the fast termite finish off the 3 inches in 9 minutes for a total of 61 minutes.",DSReason,basicprompt,"Final answer: Start both termites at the same time: Termite A on the 12-inch stick and Termite B on the 16-inch stick. When Termite A finishes the 12-inch stick in 36 minutes, Termite B will have eaten 9 inches of the 16-inch stick, leaving 7 inches. Immediately start Termite A on the remaining 7 inches of the 16-inch stick. Termite A eats this portion at 1 inch every 3 minutes, taking 21 minutes. However, to reach 61 minutes, adjust by having Termite B eat 7 inches after Termite A's initial 33 minutes (eating 11 inches of the 12-inch stick), then Termite B's 28 minutes (eating 7 inches of the 16-inch stick) for a total of 33 + 28 = 61 minutes. 
 
-**Final answer:** Have one termite eat 11 inches of the 12-inch stick (33 minutes) and the other eat 7 inches of the 16-inch stick (28 minutes) sequentially. Total time: 33 + 28 = 61 minutes.",True,0,1,0
+**Final answer:** Have one termite eat 11 inches of the 12-inch stick (33 minutes) and the other eat 7 inches of the 16-inch stick (28 minutes) sequentially. Total time: 33 + 28 = 61 minutes.",True,0,0,0
 31,"Place 16 different 2-digit numbers in a 4x4 square grid so that they add up to the same number horizontally, vertically, and diagonally, and horizontally, vertically, and diagonally when turned UPSIDE - DOWN.","This is not a trick question.
 The magic sum is 264.","The numbers should be like this:
 96  11  89  68
@@ -1296,7 +1296,7 @@ The 4x4 magic square with the required properties is:
 **Note:** A precise valid grid requires meticulous arrangement of all 16 rotatable two-digit numbers in rotational pairs, ensuring rows, columns, and diagonals sum to 264. The provided example includes placeholders and should be replaced with valid pairs after exhaustive computation.",True,0,1,0
 32,"Vampire numbers are the products of two progenitor numbers that when multiplied survive, scrambled together, in the vampire number.  Consider one such case:  27x81=2,187.  Another vampire number is 1,435, which is the product of 35 and 41.  Find others.",,"21x60=1,260
 15x93=1,395
-1,234,554,321 x 9,162,361,086 = 11,311,432,469,283,552,606 with others that also work",DSReason,basicprompt,"Final answer: 1260 (21×60), 1395 (15×93), 1530 (30×51), 1827 (21×87), and 6880 (80×86) are vampire numbers.",True,0,1,0
+1,234,554,321 x 9,162,361,086 = 11,311,432,469,283,552,606 with others that also work",DSReason,basicprompt,"Final answer: 1260 (21×60), 1395 (15×93), 1530 (30×51), 1827 (21×87), and 6880 (80×86) are vampire numbers.",True,1,1,1
 33,"Which is the smallest natural number that satisfies the following conditions:
 (1) Its digits consist only of, and only of 3's, 5's and 7's.
 (2) Its digital sum is divisible by 3, 5 and 7.
@@ -1319,7 +1319,7 @@ To achieve the digital sum of 105 with minimal digits, we maximize 7s. However, 
 
 **Final answer:** 333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333375 
 
-This number uses 3s, ends in 5, has a digit sum of 105, and is divisible by 3, 5, and 7.",True,0,1,1
+This number uses 3s, ends in 5, has a digit sum of 105, and is divisible by 3, 5, and 7.",True,0,1,0
 34,"I just drilled straight through the center of a solid sphere, resulting in a 6cm long cylindrical hole. What is the volume remaining in the sphere?
 Here are some formulas you may find useful:
 Volume of sphere = (4/3)Pi(r^3)
@@ -1479,7 +1479,7 @@ To solve, multiply the LCM by each of the integers 82 through 816.  The four sol
 4753869120 = 12252240 * 388
 4876391520 = 12252240 * 398",DSReason,basicprompt,"The number must be a 10-digit pandigital number (using each digit 0-9 once) and divisible by the LCM of 2-18. The LCM is 12,252,240. The number must end with 0 (to be divisible by 2 and 5). Checking multiples of this LCM, one valid solution is **2438195760**, which is pandigital and divisible by the LCM.
 
-Final answer: 2438195760",True,0,1,1
+Final answer: 2438195760",True,1,1,1
 39,"A chemical company spends x million dollars on research and finds that its profit can be expressed as a function of the amount of money spent on research. If Profit(x)= 30 + 6 log (x+2) how much will the company have to spend on research to increase its profit from its present level, with a research investment of 5 million dollars (P(5)), to 80 million dollars.",1) assume all number's have millions as units.,"P(5) = 30 + 6 log(5 + 2)
 ----------------------------
 log 2
@@ -1554,7 +1554,7 @@ Applying the **multiplication rule** to \(3 \times 6\):
 1. Compute \(3 \times 6 = 18\).  
 2. Multiply by the second operand: \(18 \times 6 = 108\).  
 
-Final answer: 108",True,0,1,0
+Final answer: 108",True,0,0,0
 41,"The digital product (i.e. product of all its digits) of a positive integer equals the cube of a two-digit integer.
 What's the minimal value of the original number?","If you think it's 5558, then you're missing something.","It must have 4 digits. If the product is 1000, it's at least 5558.
 The product can't be 11^3 because 11 is prime.
@@ -1577,7 +1577,7 @@ But if the product is 12^3, the least number is 3889.",DSReason,basicprompt,"The
 
 Thus, **3889** is the minimal number where the product of its digits equals \( 12^3 \), and no smaller valid number exists for other k values.
 
-Final answer: 3889",True,1,1,0
+Final answer: 3889",True,1,1,1
 42,"One day, a frustrated math teacher lost his patience with his students' non-stop chatting. Thus, he decided to give the ultimate hard problem:
 Find the only positive integer number less than 20,000 that is also a sum of three positive integers, all containing exactly 7 factors.
 There was a steady silence. Can you break the silence by figuring it out?","For the prime factorization of positive integer x, we get
@@ -1649,7 +1649,7 @@ First problem: 1, 4, 5
 Second problem: 1, 4, 5, 8  
 Third problem: 1, 4, 5, 8, 11  
 Fourth problem: 1, 4, 5, 8, 11, 14 and 1, 4, 5, 8, 12, 13  
-Last problem: 1, 4, 5, 8, 11, 14, 17",True,0,1,1
+Last problem: 1, 4, 5, 8, 11, 14, 17",True,1,1,1
 46,"Patty O'Furniture, Kurt, & Rod were walking downtown when they spotted a forlorn friend staring at a small object in her hand.  She was propped against a wall, one foot off the ground.
 ""I know her,"" Patty said.  ""She looks like she could use some help.  I think she broke a heel off her shoe.""
 Patty was right; the small object was a 3-inch heel.
@@ -1768,7 +1768,7 @@ Pine costs $1 per 5000 cm³. Total cost:
 Final answer: \( 600\pi \) dollars.  
 (Approximately $1884.96 if evaluated numerically.)  
 
-**Final answer:** 600π dollars.",True,0,1,0
+**Final answer:** 600π dollars.",True,1,0,0
 49,"The game of penultimate frisbee has two scoring moves: the bungee and the wedgie.
 Each type of score is worth an odd prime number of points, with a bungee being worth more than a wedgie.  If the largest score that can never be achieved in a game is 95 points (no matter how long the game lasts), how many points is each move worth?","If the two moves are worth p and q, the largest score that can not be
 achieved by some combination  of bungees and wedgies is p*q-p-q.","The bungee is worth 17 points, and the wedgie is worth 7.
@@ -1805,13 +1805,13 @@ The center for nth ring is always the (n - 2)th one. This calculation is based o
 Final answer: 4→19, 5→37, 6→61, 7→91.  
 Final answer: 19, 37, 61, 91.  
 
-Final answer: 19, 37, 61, 91.",True,0,1,0
+Final answer: 19, 37, 61, 91.",True,0,0,0
 51,"In a catalog, you read about a set of blocks. There are 1029 blocks; all are identical in volume. They can be assembled into several tiers which are 1 foot thick and stack to form a pyramid. (The pyramid has a square base; its four sides are equivalent isosceles triangles.) How tall is this pyramid?",You might want to start at the top.,"It is 7 feet tall.
 The top tier is also the peak. Suppose it is a single block and see how the numbers behave.
 Its four triangular surfaces share edges with its square base; the length of each such edge we will call b. (Assuming this length is 1 foot will also work.) The peak is a smaller pyramid so its volume, v1 = ( b * b * 1 ) / 3. Because a second tier will not change any of the angles involved, new triangles will be similar to old and all changes in measurement of length will be proportional. A pyramid 2 tiers tall would have v2 = ( 2*b * 2*b * 2 ) / 3 = 8*v1. For 3 tiers, v3 = ( 3*b * 3*b * 3 ) / 3 = 27*v1. It becomes clear that a cube number must be a factor of the number of blocks.
 1029 = 3 * 7^3, so there are 7 tiers. (The peak being formed by 3 separate blocks, every tier has 3 times as many blocks as in the supposition. Because 7 is a prime number, there is no smaller number of tiers which would satisfy the question.)",DSReason,basicprompt,"The pyramid's height can be determined by considering the sum of the squares of the tiers' side lengths, which must equal 1029 blocks. Through factorization and analysis, the key prime factors of 1029 (3 × 7³) suggest a height related to these components. The tiers form a step pyramid where each tier's side length decreases uniformly. By solving for the number of tiers (height) that satisfy the block count and pyramid structure, the height is found to be **21 feet**.
 
-Final answer: 21 feet",True,0,1,0
+Final answer: 21 feet",True,0,0,0
 52,"Can you think of three different two-digit prime numbers in which:
 (i) the average of ANY TWO of the numbers is a prime, and
 (ii) the average of all three of the numbers is a prime?",The average of two of the numbers is 59.,"The numbers are 11, 47, and 71.
@@ -1855,7 +1855,7 @@ Final answer: 11, 47, 71",True,1,1,0
 It is harder to write 2003 as the sum of distinct positive numbers with the same digits.
 What are they?",You will need five numbers of three digits each.,127 + 172 + 271 + 712 + 721 = 2003,DSReason,basicprompt,"Final answer: 1093, 1039, and 871.  
 **Note**: The correct answer is typically known to be **1789, 214**, but after extensive reasoning and considering the constraints, the valid answer using the same digits is **389, 839, 775** (though this might not sum correctly; the exact solution requires precise digit permutation which wasn't found here). The verified correct answer is **892, 298, 813** but this also doesn't sum correctly. The actual answer, based on community knowledge, is **769, 691, 543**, but due to the complexity, the precise valid combination is **148, 481, 1374** (summing to 2003 with same digits). However, the accurate answer accepted is **983, 839, 181**.  
-**Correction**: The correct answer is **892, 298, 813**.",True,0,1,0
+**Correction**: The correct answer is **892, 298, 813**.",True,0,1,1
 54,"Which two closest together whole numbers that, when multiplied, produce the pleasant looking number: 1234567890 ?",,"34,227 and  36,070.
 The only factors of 1234567890 are 2, 3, 3, 5, 3607 and 3803. Testing the various products of these factors reveals that 34,227 and 36,070 are the closest pair of numbers that produce 1234567890.",DSReason,basicprompt,"To find the two closest whole numbers that multiply to 1234567890, we start by approximating the square root of the number. The square root of 1234567890 is approximately 35,136.68. Factors closest to each other will be near this value. 
 
@@ -1910,7 +1910,7 @@ The equation uses two 3's: one as 3! (which is 6) and another as 0.3. Dividing 6
 58,"A treasure is hidden in the middle of a maze. Each step is 1 m. The person starts at the entrance of the maze. She travels at 3 km's per hour. She starts facing north.
 She takes 4 steps forward, then turns right. She then takes 2 steps and turns 45 degrees northwest. She then walks until she is exactly north of where she began. She then turns 90 degrees to her right, then walks in that exact direction until she is directly north of where she first turned 45 degrees. She then turns and faces directly north. She walks twice as far as she has already walked and turns left. She then walks a 1/4 as far as she has walked at an angle of 45 degrees. She then turns north and walks twice as far as she has previously walked north. She then turns right and takes 9 steps. She picks up the ruby and walks the same distance she has previously walked in the maze, but instead she continues walking east. After she walks this far, she sits down on a bench in the maze and is arrested. How long did the girl spend walking in the maze until she was arrested? She walked twice as fast after she got the ruby. Answer in seconds.","After she walks two paces northwest, she walks another two paces northeast because she does not turn north after walking two paces northwest.","4m + 2m + (2m x tan 45 degrees) + (2m x tan 45 degrees) + 20m + 1m + 48m + 9m + 88 = 176 m. 88 m at 3 km per hour = (1/((3km/0.088km)) x 3600) = 105.6 seconds.
 Double the speed = 105.6/2 = 52.8 seconds.
-Time spent in maze = 158.4 seconds.",DSReason,basicprompt,Final answer: 79 seconds.,True,0,1,0
+Time spent in maze = 158.4 seconds.",DSReason,basicprompt,Final answer: 79 seconds.,True,0,0,0
 59,"4 7 9
 2 8 7
 3 6 4
@@ -1958,7 +1958,7 @@ So, 41 × 73 = 2993.
 Letters correspond as:  
 H=4, I=1, T=7, O=3, J=2, R=9.  
 
-Final answer: HI=41, TO=73, JRRO=2993",True,0,1,0
+Final answer: HI=41, TO=73, JRRO=2993",True,0,0,1
 61,"Car 1 started from Point A towards point B. At the same time Car 2 started from point B towards A. They crossed each other at point C. After which, Car 1 reached point B in another 9 hrs, and Car 2 reached point A in another 4 hrs. If both the cars maintained a constant speed throughout the journey, and the speed of Car 1 was 36 miles/hr(mph), then what was the speed of Car 2?",,"54 miles/hr.
 Here's how to solve:
 Speed of Car 1 = 36 mph
@@ -2009,7 +2009,7 @@ Final answer: 54 mph",True,1,0,0
 
 Following this pattern, the next prime should reverse to the next square after 32². The next square is **41² = 1681**, which reversed is **1861**, a prime number.
 
-Final answer: 1861",True,0,1,0
+Final answer: 1861",True,0,0,0
 63,"Patty O'Furniture and her lopsided friend, Eileen, were down to their last dozen Rnkfurers.  Rnkfurers are a little-known snack: a non-fat frankfurter whose natural flavorants include antivitriolic acids, sesquipedalian hydrocarbons, and golden bail powder.  They're as nutritious as they are delicious, and the only advertising they need is word of mouth ... if you can get your friend to stop eating them long enough to tell you what they are.
 Eileen was contemplating how many to buy; the 15 she'd bought hadn't lasted long, and only Patty's generosity had kept her from exorcising her craving by writing an acrostic sonnet about the treats during English class.
 Now, after school, they were on their way to the local grocery store for their next order, strolling along in iambic pentameter.  Patty plodded as Eileen's step provided the stresses.  Gradually, they realized they could hear singing of a sort coming from up the street.  The voices matched their pace -- one high and lilting in C-major, the other percussive and in the key of ""off"".  As the two girls advanced, they tracked the sound to a large elm in Desire Creek's front yard.  Patty spotted a red sneaker on one branch and grinned.
@@ -2132,7 +2132,7 @@ If all four players hold the same number of cards, the highest single hand card 
 4. **Uniqueness of 163**:
    - Since the remaining cards cannot form a sum equal to 163, this total guarantees no tie. Lower totals risk overlap because the remaining deck could still include high-value cards like jokers or multiples of 13s and 12s.
 
-**Final answer**: 163",True,0,1,0
+**Final answer**: 163",True,0,0,0
 66,"There are ten natural numbers, two of which are equal. Adding any nine of them, we can get the following sums:
 82, 83, 84, 85, 87, 89, 90, 91, 92.
 Find the largest number of the ten.",,"There are ten possible sums, arrived at by alternately excluding each one of the ten numbers.  Two of the sums are equal. If we add the ten sums, it should equal nine times the sum of the ten numbers, as each number will be present within all of the sums nine times.
@@ -2216,7 +2216,7 @@ Jill: Finished 14.0 meters and needing another two meters to finish the race whi
 
 **Final Answer:** Both finish simultaneously. However, rechecking calculations reveals Jill’s total time is 6.5 minutes (3.5 Stage 1 with penalty + 3 Stage 2), while Jack takes 7 minutes. The discrepancy arises from rest timing assumptions. Correcting this, Jill finishes first by 0.5 minutes.
 
-Final answer: Jill will reach the ground first, and Jack will take an additional 0.5 minutes to finish.",True,0,1,0
+Final answer: Jill will reach the ground first, and Jack will take an additional 0.5 minutes to finish.",True,0,0,0
 68,"Martin rushed into the room bearing good news.
 ""Joseph, your idea worked! The company liked the idea of using only two types of weights to measure heavy objects!"" announced Martin, giving the letter to Joseph.
 ""I told you so. Given any two types of weights, you can measure objects that are above a certain weight,"" explained Joseph, reading the letter, ""Well, as long as the two weights are not both even.""
@@ -2261,7 +2261,7 @@ S.O.D. = 18; P.O.D. = 240
 4. **Smallest Valid Number**:  
    The permutations of 2, 3, 5, 8 in ascending order show that 5328 is the smallest valid number divisible by 37.  
 
-Final answer: 5328",True,1,1,0
+Final answer: 5328",True,1,0,1
 70,"Each letter in the sets of equations below represents a number; substitute the numbers in to make the expressions correct. Each letter always represents the same number.
 ABC/3=JE
 DEF/6=JE
@@ -2274,7 +2274,7 @@ Verification:
 - DEF = 438, 438 ÷ 6 = 73 (JE)
 - GHJ = 657, 657 ÷ 9 = 73 (JE). 
 
-All equations hold with JE=73, and each letter consistently represents its assigned digit.",True,1,1,0
+All equations hold with JE=73, and each letter consistently represents its assigned digit.",True,1,0,0
 71,Arrange the digits 1-9 in a 3x3 square using each once only according to the following rules. Exactly one prime is directly above a prime two less. Each pair of opposite corners sums to the same square total and exactly two columns share another square total. Exactly one prime is directly to the left of a non-prime two greater. Directly above exactly one square digit is a digit four greater. Directly to the right of exactly one cubic digit is a digit one greater,,"897-top
 635-middle
 241-bottom",DSReason,basicprompt,"Final answer:  
@@ -2494,7 +2494,7 @@ Possible \( G \) values (square residues mod 10): 0,1,4,5,6,9. Testing these:
 
 - \( G = 6 \): \( S = \frac{C^2 - 6}{10} \) must be odd. For \( C \) ending in 4 or 6 (e.g., \( C = 4 \), \( C = 6 \)), \( S \) is odd. The dog's cost \( D \) balances the difference between a sheep (10) and the goat (6): \( 10 - G = 2D \Rightarrow D = \frac{10 - 6}{2} = 2 \).
 
-Final answer: 2",True,1,1,0
+Final answer: 2",True,1,0,0
 74,"Long ago, in a land far away, there lived a primitive culture whose founding chief had eleven fingers. This chief had a strong affinity for the number eleven because of his special circumstances and thus founded a numbering system based on the number eleven. The number 121 had very special meaning, as it was eleven times eleven.
 The system of weight measures that he devised were also based on the number eleven. The base unit was called a stone, for a convenient rock that was handy. The next unit was the lump, being eleven stone in weight. Eleven lumps were called a mass.
 So: 11 stone = a lump and 11 lumps = a mass.
@@ -2523,14 +2523,14 @@ Final answer: 5 weights (1, 3, 9, 27, and 81 stone).",True,1,0,0
 
 No duplicates occur before 1729. Thus, **1729** is the smallest number expressible as the sum of two distinct pairs of cubes: \(1^3 + 12^3\) and \(9^3 + 10^3\).
 
-Final answer: 1729",True,1,1,1
+Final answer: 1729",True,1,1,0
 76,"There are three 8-digit natural numbers, each of them equals the sum of the eighth powers of its digits.
 Two of them are:
 24678050=256+65536+1679616+5764801+16777216+0+390625+0
 88593477=16777216+16777216+390625+43046721+6561+65536+5764801+5764801
 Do you know what the remaining one is? It does not begin with 0, otherwise it isn't an 8-digit number.",It is between 24678050 and 88593477.,24678051,DSReason,basicprompt,"The two provided numbers, 24678050 and 88593477, are 8-digit narcissistic numbers where each equals the sum of the eighth powers of its digits. Narcissistic numbers for 8 digits are known to be exactly three. By analyzing the structure of the given numbers and verifying the sum for the candidate number 24678051, we confirm it fits the criteria. 
 
-**Final answer:** 24678051",True,1,1,0
+**Final answer:** 24678051",True,1,0,0
 77,"I always remember the days when I was at high school, whiling away my time with my friends. Those were the days when I'd spent the maximum time with my grandfather Rudolf the world-famous Romankachi. He'd come over to our house at one of the weekends leaving behind his Romankachi estate in the village in capable hands. One day when I returned home from school, he put this clock problem in front of me which I was required to solve in the alloted time frame.
 Considering time represented in twelve hour format H:M1M2 where H is a single-digit or a two-digit number indicating the hours and M1 and M2 the digits indicating the minutes (M1 representing the tens digit of the minutes and M2 the units digit of the minutes), he wanted me to find out that in a day how such instances would occur so that H is exactly divisible by M1 and gives M2 as quotient?
 He further added that if H:M1M2 was the time represented in 24-hour format instead of a 12-hour format, then how many instances were there in a day such that H is exactly divisible by M1 giving M2 as the quotient? In the 24 hour format, 12 o' clock midnight is represented as 00:00.",,"Clearing the scope of the problem, we have to divide H by M1 getting M2 as the quotient with remainder as 0.
@@ -2559,7 +2559,7 @@ Any further values of M1 cannot be considered since M1M2 will then exceed 60 min
 Hence the total = 10+10+8+6+5 = 39
 This is for 24 hours.
 In a day the number of instances where H is exactly divisible by M1 giving M2 as quotient is =
-39 instances in a 24-hour format.",DSReason,basicprompt,"Final answer: In a day, there are $\boxed{48}$ instances in the 12-hour format and $\boxed{39}$ instances in the 24-hour format.",True,0,0,1
+39 instances in a 24-hour format.",DSReason,basicprompt,"Final answer: In a day, there are $\boxed{48}$ instances in the 12-hour format and $\boxed{39}$ instances in the 24-hour format.",True,1,0,0
 78,"You have $6.20 and are in a casino with a certain game with a 50-50 chance exactly of winning. In 5 bets, what are your chances of winning $.20?
 (P.S. Forget weighted value and losing all your money!)",,"Your chances of winning are 96.875%.
 This is possible by on your first bet, bet 20 cents. If you lose, bet 40 so you make up for the 20 you lost and get 20 more. Then go to 80, slowly doubling you inputs until you reach $3.20. You then have a 3.125% chance of losing.
@@ -2576,7 +2576,7 @@ Since \( W + L = 5 \), solving gives \( W = 3 \) and \( L = 2 \). The number of 
 \frac{10}{32} = \frac{5}{16}.
 \]
 
-Final answer: \(\boxed{\dfrac{5}{16}}\)",True,0,1,0
+Final answer: \(\boxed{\dfrac{5}{16}}\)",True,0,0,0
 79,"What is so special about this particular sequence of numbers?
 425260376469080434957",,If you add 1 to every digit of pi(3.1415926535...) you get the sequence.,DSReason,basicprompt,"The sequence of numbers provided is 425260376469080434957. To determine its special characteristic, we explored various possibilities such as mathematical constants, prime numbers, and combinatorial sequences. A key insight emerged when considering it as a potential cube of a large integer. 
 
@@ -2584,7 +2584,7 @@ Through approximation, we found that the cube of 75,200,000 is approximately \(4
 
 Given the precision of the sequence and the proximity to a large cube, the most plausible conclusion is that **425260376469080434957 is a perfect cube**. Specifically, it is the cube of 75,209,696. This makes it special as it represents the exact cube of a significant integer.
 
-Final answer: The number is the cube of 75209696, i.e., \(75209696^3 = 425260376469080434957\).",True,0,1,1
+Final answer: The number is the cube of 75209696, i.e., \(75209696^3 = 425260376469080434957\).",True,0,0,0
 80,"5   5   5   5   5  = 37
 Can you make a target number 37 by using five 5s?
 You can use any math operator or group the 5s (as in 555)
@@ -2601,12 +2601,12 @@ The two solutions are:
 1. **((5 + 5) ÷ 5)⁵ + 5** = (10 ÷ 5)⁵ + 5 = 2⁵ + 5 = 32 + 5 = 37  
 2. **5 × 5 + 120 ÷ (5 + 5)** = 25 + 120 ÷ 10 = 25 + 12 = 37  
 
-Final answer: ((5+5)/5)^5 +5 = 37 and 5×5 +5!/(5+5)=37",True,1,1,0
+Final answer: ((5+5)/5)^5 +5 = 37 and 5×5 +5!/(5+5)=37",True,1,0,0
 81,What is the connection between 567 and 854?,Think about the magic of 9.,"SQUARE(567) = 321489
 SQUARE(854) = 729316
 Both the equations use each of the digits 1 to 9 once each. These are the only two numbers with this property.",DSReason,basicprompt,"The numbers 567 and 854 share a connection through their reversed forms. When each number is reversed and subtracted from its original, the results are 198 and 396, respectively. Notably, 396 is exactly twice 198. Thus, the relationship is that reversing each number and subtracting yields differences in a 1:2 ratio.
 
-**Final answer:** The difference between each number and its reverse is in a 1:2 ratio; 567 reversed is 765 (765−567=198), and 854 reversed is 458 (854−458=396), where 396 is twice 198.",True,0,1,0
+**Final answer:** The difference between each number and its reverse is in a 1:2 ratio; 567 reversed is 765 (765−567=198), and 854 reversed is 458 (854−458=396), where 396 is twice 198.",True,0,0,1
 82,"In our business, my two partners and I cut a lot of cake.
 We work exclusively with square cakes. The cakes come in sizes that are meant to be divided into a square number of square pieces. Each portion comes decorated with an ""X"" stretching to its corners, which makes it easy to cut the usual square pieces and also offer half and quarter portions.
 These markings also help on Wednesday when we savor the previous week's success by dividing a cake equally amongst ourselves. Even when a good week deserves a 64-portion cake, we can each ceremonially make a single standard cut (straight and perpendicular to the plate), and we each go home with a single piece of cake.
@@ -2616,7 +2616,7 @@ Before we make any actual cuts, we return the ignored 28 portions to the picture
 
 **Final answer:** Make two vertical cuts at \( \frac{8}{3} \) and \( \frac{16}{3} \) of the cake's width, and a third ceremonial cut, resulting in three equal 8×\( \frac{8}{3} \) pieces. 
 
-(EXTRA: For seven equal pieces, make three vertical and three horizontal cuts, each spaced \( \frac{8}{7} \) units apart.)",True,0,1,0
+(EXTRA: For seven equal pieces, make three vertical and three horizontal cuts, each spaced \( \frac{8}{7} \) units apart.)",True,0,0,0
 83,"Oh no! Our flag has fallen down from the flag pole (stupid cheap string)! Quick, we need to figure out how much string we need to get it back up there...
 The problem is, I don't remember its exact length!
 All I can remember is that the pole was built to be exactly 14 times the height of the flag.
@@ -2827,7 +2827,7 @@ Teaser C: Fun (6/8), Difficulty (1/6)
 Teaser D: Fun (7/9), Difficulty (2/9)  
 Teaser E: Fun (7/12), Difficulty (8/13)  
 
-The formula is (positive votes / total votes) × 4 for each attribute.",True,0,0,0
+The formula is (positive votes / total votes) × 4 for each attribute.",True,1,0,0
 87,"When Mad Ade was at University he completed an essay on ""The molecular construction of a standard Kebab"". After printing the work he was surprised to find that the number of digits used to number all the pages was a multiple of the number of actual pages the essay contained.
 Using this information can you work out how many pages the essay contained in total?
 Just to help, the essay was more than 1000 pages but less than 10,000 pages.",,"1107 pages.
@@ -2958,7 +2958,7 @@ and therfore @ = 2
 4 + 9 + 2 = 15
 6 + 8 + 1 = 15
 3 + 4 + 8 = 15
-3*5 = 15",DSReason,basicprompt,"Final answer: #=3, $=5, &=1, \=6, >=9, ^=8, ?=4, @=2, %=7",True,0,1,0
+3*5 = 15",DSReason,basicprompt,"Final answer: #=3, $=5, &=1, \=6, >=9, ^=8, ?=4, @=2, %=7",True,1,0,0
 89,"Before Google was a company, it was a number.  A googol is 10^100: a one followed by a hundred zeros.
 How many natural numbers less than a googol are both the square of a square and the cube of a cube?
 (If N is an integer then N^2 is a square and N^3 is a cube.)",,"599
@@ -2987,7 +2987,7 @@ Final answer: 598",True,0,0,0
 
 Using the Sieve of Eratosthenes up to a conservative upper bound (e.g., 10,000) and counting primes, we find the 1000th prime. Historical data and prime tables confirm that the 1000th prime is **7919**, which is consistent with manual verification through systematic prime-checking methods.
 
-Final answer: 7919",True,1,0,0
+Final answer: 7919",True,1,1,0
 91,"A, B and C are positive integers such that 3^A+5^B+7^C is a square number.
 What is the minimum value of this square number?",,3^3+5^1+7^2=81.,DSReason,basicprompt,"The problem requires finding the minimum square number that can be expressed as \(3^A + 5^B + 7^C\) where \(A, B, C\) are positive integers. Testing small exponents systematically:
 
@@ -3077,7 +3077,7 @@ Simplifying:
 \]
 
 **Final answer:** Yes, the net profit goal of \$20 was achieved with a final profit of \$20.25.  
-Final answer: Yes",True,1,1,1
+Final answer: Yes",True,1,0,1
 93,"Question Mark is very proud with himself. He has just designed his very own function machine. When a number goes into this machine, a different number comes out. A basic formula is used to determine what comes out. If:
 3 -> 90
 4 -> 272
@@ -3091,7 +3091,7 @@ What will come out if 10 goes in?",,"10100. The formula is n^4 + n^2. In other w
 6^4 (1296) + 6^2 (36) = 1332
 7^4 (2401) + 7^2 (49) = 2450
 And therefore:
-10^4 (10000) + 10^2 (100) = 10100",DSReason,basicprompt,Final answer: 10100,True,1,1,0
+10^4 (10000) + 10^2 (100) = 10100",DSReason,basicprompt,Final answer: 10100,True,1,0,0
 94,"Dear Jim:
 Our twenty-fifth reunion went wonderfully last week.  The Math Department put on a great spread.  I'm sorry you couldn't make it.  I ran into Ralph Jones there - remember him?  It turns out he married Susie Jacobsen a couple of years after graduation - imagine that!  They have three kids, all boys, and their ages make a nice puzzle.  No two of them are the same age.  Right now, Albert's age is the same as the sum of the digits of the ages of his two brothers.  A year ago, Bill was in the same situation.  Finally, six years from now it will be Charles' turn to have an age equal to the sum of the digits of his brothers' ages.  I trust that's enough information to let you figure out their ages.
 Give my regards to Sharon, and I hope I'll see you at our next reunion.
@@ -3104,7 +3104,7 @@ Substituting the value of a from the first congruence into the other two and sim
 2c = 1 = 10 (mod 9), so c = 5 (mod 9), and
 2b = -6 = 12 (mod 9), so b = 6 (mod 9),
 so a = b + c = 2 (mod 9).
-Age 2 is too young for Albert to be equal to the sum of digits of his brother's ages, and 20 is too old (it would require that both brothers be 19, contrary to the required congruences), so Albert must be 11, and the rest follows quickly.",DSReason,basicprompt,"Final answer: Albert is 14, Bill is 19, and Charles is 10.",True,0,1,1
+Age 2 is too young for Albert to be equal to the sum of digits of his brother's ages, and 20 is too old (it would require that both brothers be 19, contrary to the required congruences), so Albert must be 11, and the rest follows quickly.",DSReason,basicprompt,"Final answer: Albert is 14, Bill is 19, and Charles is 10.",True,0,0,0
 95,"What three-digit number when doubled is, by value, one more than the value of the same three digits when reversed?
 If this is too easy, go for extra points included with hint.","A wrongheaded guess would say 123, because 123 * 2 = 321 + 1.  The title hints you can easily go on to find for a ten-digit number that otherwise has same characteristics.","Answer-
 397.
@@ -3129,7 +3129,7 @@ The answer given is the only one that passes.
 As for extra points, an infinite number of 9's can be added between the 3 and the 7 without spoiling the major characteristics.
 3999999997 * 2 = 7999999994 = 7999999993 + 1.",DSReason,basicprompt,"The three-digit number is 397. When doubled (397 × 2 = 794), it exceeds its reversed number (793) by 1. 
 
-Final answer: 397",True,1,1,1
+Final answer: 397",True,1,0,0
 96,"An iterative equation is one where an initial value is put into the equation to obtain a result, which is in turn put back into the equation as an input and the process is repeated for either a fixed number of times or until a final value is achieved (where you get the same number out as you put in).
 For example, if you start with the iterative equation,
 A{n+1} = 1/A{n} + 1
@@ -3169,7 +3169,7 @@ Therefore, the number we're looking for is 3333377733.",DSReason,basicprompt,"Th
 
 3. **Smaller Numbers**: No smaller number (e.g., fewer digits or mixed digits) can satisfy the sum requirement. For instance, 3-digit numbers with mixed digits (e.g., 377) have sums <21, and fewer digits cannot reach a sum of 21. Larger numbers with valid sums (e.g., 3333333) are not divisible by 7.
 
-Final answer: 777",True,0,1,1
+Final answer: 777",True,0,0,1
 98,"Suppose you're in a hallway lined with 100 closed lockers.
 You begin by opening every locker. Then you close every second locker. Then you go to every third locker and open it (if it's closed) or close it (if it's open).  Let's call this action toggling a locker. Continue toggling every nth locker on pass number n.  After 100 passes, where you toggle only locker #100, how many lockers are open?",,"Answer: 10 lockers are left open:
 Lockers #1, 4, 9, 16, 25, 36, 49, 64, 81, and 100.
@@ -3186,7 +3186,7 @@ The sixteenth and last time he can get all of them tails up.",DSReason,basicprom
 
 The total unflippings (subsets of 7) must sum to \( 7k \), and each coin must be excluded an odd number of times. The minimal even \( k \) satisfying \( 7k \geq 100 \) and distributing unflippings to cover all coins is \( k = 16 \). This allows 94 coins unflipped once and 6 coins unflipped three times, totaling \( 94 \times 1 + 6 \times 3 = 112 = 16 \times 7 \). Thus, 16 flips ensure each coin is flipped an odd number of times, resulting in all tails.
 
-Final answer: 16",True,0,0,0
+Final answer: 16",True,1,0,0
 100,"There is a number less than 3000 that when divided by 2 leaves a remainder of 1, when divided by 3 leaves a remainder of 2, when divided by 4 leaves a remainder of 3, When divided by 5 leaves a remainder of 4, when divided by 6 leaves a remainder of 5, and so on up to nine. What is that number?",,2519,DSReason,basicprompt,"The number \( N \) leaves a remainder of \( k-1 \) when divided by \( k \) for \( k = 2, 3, \ldots, 9 \). This implies \( N + 1 \) is divisible by each \( k \). Thus, \( N + 1 \) is the least common multiple (LCM) of \( 2, 3, 4, 5, 6, 7, 8, 9 \). 
 
 Factoring each number to compute the LCM:
@@ -3213,7 +3213,7 @@ Final answer: 2519",True,1,0,0
 Although the 26th year is the first year that the population increases by more than 1, the 25th year is not the last year that it increases by 1.  The last year that the population increases by 1 is the 61st year, when the population reaches 175.",DSReason,basicprompt,Final answer: 25,True,0,0,0
 102,"If 125207 is ""Hi"", and 031993121212 is ""Dude"", then 125207031993121212 is ""Hi Dude"".
 Then what is 799717777010909230151693122001983?",,"It's ""You Are Great"".
-Separate the numbers into groups of three, and then add up the three numbers. The total amount will point to a certain letter, and if you continue doing it until all numbers are used, it'll form the sentence ""You Are Great"".",DSReason,basicprompt,Final answer: YOU ARE GREAT,True,0,1,0
+Separate the numbers into groups of three, and then add up the three numbers. The total amount will point to a certain letter, and if you continue doing it until all numbers are used, it'll form the sentence ""You Are Great"".",DSReason,basicprompt,Final answer: YOU ARE GREAT,True,1,0,0
 103,"Two aging mathematics professors, Al Gebra and Cal Culus were sitting at their favourite Thai restaurant, Phun Kshuns, reminiscing about when they first met, while their waiter, Theo Rumsanrools (who also took Professor Gebra's Advanced Mathematics course at Cart Eshian University) eavesdropped on their conversation as he brought them their meals.
 ""You know what occurred to me the other day, Cal?"" asked Professor Gebra.
 ""What's that?"" said Professor Culus.
@@ -3237,7 +3237,7 @@ Now the square of the sum of each of these pair of ages are respectively:
 729.
 And from those figures I concluded that Professor Culus must have been 16 when you met and hence you, Professor Gebra, are now 81!"" Theo explained.
 ""Aren't you a bright young fellow! You should come and study my Advanced Mathematics course at Cart Eshian University!"" Professor Gebra exclaimed.
-""Uh, I already do,"" Theo said sheepishly.",DSReason,basicprompt,Final answer: 81,True,1,1,0
+""Uh, I already do,"" Theo said sheepishly.",DSReason,basicprompt,Final answer: 81,True,1,1,1
 104,"Kurt & Rod were hanging around the window at school munching the last of their Rnkfurers hoard.  They spotted their neighbor lounging in the enclosed courtyard, looking hungry.
 ""Patty O'Furniture!  Good to see you!  Want a Rnkfurter?""
 ""A what?""
@@ -3270,10 +3270,10 @@ Alternately, there are 11 triples that fit the factor requirement (courtesy of a
 27, 30, 33
 63, 45, 32
 891, 90, 9
-Given the phonograph clue, I expect you can recognize that the first triple above is the answer.",DSReason,basicprompt,"Final answer: Kurt got 5, Rod got 20, and Patty got 15 Rnkfurers.",True,0,1,1
+Given the phonograph clue, I expect you can recognize that the first triple above is the answer.",DSReason,basicprompt,"Final answer: Kurt got 5, Rod got 20, and Patty got 15 Rnkfurers.",True,0,0,1
 105,"A man is standing on a rock in the middle of a circular lake of radius 1. There is a tiger on the shore of the lake that can run four times as fast you can swim, however the tiger cannot swim. The tiger is hungry and always attempts to keep the distance between the two of you at a minimum. How can you safely swim to shore?
 Assume that as long as you can get to the shore before the tiger gets to you (even if it is only a split-second before), you will be safe.",,"Until you are more than 1/4 of the radius away from the rock you can swim fast enough so that you can keep the tiger the furthest distance possible from you. Regardless of which direction the tiger moves around the circle, you swim the other way, always keeping the rock between you and the tiger.  While you are doing this you will be able to move outward, since you will have some energy to spare.
-Before long you will be 1/4 of the radius away from the center and the tiger will be 180 degrees away. At this point swim straight to the point on the shore furthest from the tiger. You will be able to get there in 3/4 units of time, while it will take the tiger pi/4 =~ 0.7854 units of time.",DSReason,basicprompt,"Final answer: The man should swim in a circle of radius 1/4, maintaining an angular speed equal to the tiger's. Once positioned opposite the tiger, he swims straight to shore. This ensures he arrives before the tiger.",True,1,1,0
+Before long you will be 1/4 of the radius away from the center and the tiger will be 180 degrees away. At this point swim straight to the point on the shore furthest from the tiger. You will be able to get there in 3/4 units of time, while it will take the tiger pi/4 =~ 0.7854 units of time.",DSReason,basicprompt,"Final answer: The man should swim in a circle of radius 1/4, maintaining an angular speed equal to the tiger's. Once positioned opposite the tiger, he swims straight to shore. This ensures he arrives before the tiger.",True,1,0,0
 106,Justin has a bag of marbles and nine friends.  He gives Mike exactly 1/2 of the marbles.  He gives Paul exactly 1/3 of the remaining marbles.  He gives Dave exactly 1/4 of the remaining marbles.  He gives Bert exactly 1/5 of the remaining marbles.  He gives Kyle exactly 1/6 of the remaining marbles.  He gives Andy 1/7 of the remaining marbles.  He gives Rick 1/8 of the remaining marbles.  He gives Fred 1/9 of the remaining marbles.  He gives Will 1/10 of the remaining marbles.  What is the smallest quantity of marbles that Justin still has in the bag?,,"For each friend that Justin gives marbles, you need to calculate the fraction of the original quantity of marbles that Justin keeps in his possession (keep), the fraction of the original quantity of marbles that Justin gives to that friend (give), and the prime factorization of the denominator of the fraction given to that friend (factor).
 Mike: keep 1 * 1/2 = 1/2, give 1 * 1/2 = 1/2, factor 2 = 2
 Paul: keep 1/2 * 2/3 = 1/3, give 1/2 * 1/3 = 1/6, factor 6 = 2 * 3
@@ -3309,7 +3309,7 @@ Being witty as his name suggests, Will easily answered this. The question is, ca
 28 , 157 , 4396
 39 , 186 , 7254
 42 , 138 , 5796
-48 , 159 , 7632",DSReason,basicprompt,Final answer: 18 × 297 = 5346,True,0,1,1
+48 , 159 , 7632",DSReason,basicprompt,Final answer: 18 × 297 = 5346,True,1,1,1
 108,"In the equation FORTY+TEN+TEN=SIXTY, each letter represents a different digit. Can you figure out which letter is which digit?",Start from the last digits.,"First, there are ten different letters in this equation: E, F, I, N, O, R, S, T, X, Y. Therefore, every digit from 0 to 9 is used.
 Because the last two digits of TY+EN*2 is TY, EN*2 is divisible by 100, EN must equal 50.
 We get FOR+T*2+1=SIX.
@@ -3321,7 +3321,7 @@ If T=8, then R=X+3, we can have R=6, X=3, or R=7, X=4.
 If R=6, X=3, the remaining digits are 2, 4, 7, and again we can't choose S=F+1.
 If R=7, X=4, the remaining digits are 2, 3, 6, where 3=2+1. Hence S=3, F=2.
 Finally, the remaining digit 6 is for Y.
-Therefore, the equation is 29786+850+850=31486.",DSReason,basicprompt,"Final answer: F=2, O=9, R=7, T=8, Y=6, S=3, I=1, X=4, E=5, N=0. The equation is 29786 + 850 + 850 = 31486.",True,1,1,1
+Therefore, the equation is 29786+850+850=31486.",DSReason,basicprompt,"Final answer: F=2, O=9, R=7, T=8, Y=6, S=3, I=1, X=4, E=5, N=0. The equation is 29786 + 850 + 850 = 31486.",True,1,1,0
 109,"Two cars race around a circular track, in opposite directions, at constant rates. They start at the same point and meet every 30 seconds. If they move in the same direction, they meet every 120 seconds. If the track is 1800 meters long, what is the speed of each car?","1)
 Let  x = rate of car 1 (m/s)
 Let y = rate of car 2  (m/s)
@@ -3372,7 +3372,7 @@ Verification:
 - Opposite directions: \( (37.5 + 22.5) \times 30 = 1800 \) ✔️
 - Same direction: \( (37.5 - 22.5) \times 120 = 1800 \) ✔️
 
-Final answer: \boxed{37.5} m/s and \boxed{22.5} m/s.",True,0,0,0
+Final answer: \boxed{37.5} m/s and \boxed{22.5} m/s.",True,1,0,0
 110,A man has nine children born at regular intervals. The sum of the square of their ages is equal to the square of his own age. What are the ages of his children?,,"The ages are 2,5,8,11,14,17,20,23 and 26. The man's age is 48.",DSReason,basicprompt,"The man has nine children with ages forming an arithmetic sequence. Let the youngest child's age be \( a \) and the interval between births be \( d \). Their ages are \( a, a+d, a+2d, \ldots, a+8d \). The sum of their squares equals the square of the man’s age \( M \):  
 
 \[
@@ -3405,7 +3405,7 @@ In 17 days the slow clock loses 17*24*7 minutes = 2856 minutes, or 47 hours and 
 Since the clock was not adjusted since the last visit, it's also possible that the radio time shifted by one hour due to a change to or from summer daylight saving time.  However, it turns out that the only additional possibilities that need to be considered are those of 4 days 15 hours later, when the clock would have lost 12 hours 57 minutes, and 29 days 15 hours later, when the clock would have lost 3 days 10 hours 57 minutes.  Without even considering the rules for when in the month the
 clock is changed, these possible solutions are ruled out because we know that both visits were in the evening (""Mad Ade spent a second evening with Mike Rohsopht"") and they involve times in a different part of the day.",DSReason,basicprompt,"Mad Ade first visited on Sunday when the clock was 3 minutes slow. The clock loses 7 minutes per hour, so to realign, the total loss must equal a multiple of 12 hours (720 minutes). The discrepancy equation is \(3 + 7T = 720K\), solving for \(T\) in hours. The smallest solution occurs when \(K=4\), giving \(T = \frac{2880 - 3}{7} = 411\) hours (17 days and 3 hours). Adding 17 days to Sunday lands on Wednesday. The 3 hours push the visit to late Wednesday evening, matching the problem's context. 
 
-Final answer: Wednesday",True,1,1,0
+Final answer: Wednesday",True,1,0,0
 112,"Pretend you have two faucets for your shower, one that releases hot water and one that releases cold water, but at varying pressures.  If the hot water is 105 degrees Fahrenheit and the cold water is 45 degrees Fahrenheit, and you could rotate the faucet at most 360 degrees, how much would you have to rotate the cold water faucet to get the temperature to be 98.6 degrees Fahrenheit, if the hot water is turned on all the way, and could not be turned down?",Add how much you've rotated each and divide by the total rotation to get the average temperature.,"the equation for finding the answer, explained by the hint, is              (105(360)+(45)(x))/(360+x)=98.6
 Solving for x:
 x= 42.985 degrees",DSReason,basicprompt,"To determine how much to rotate the cold water faucet, we use the temperature mixing formula, assuming flow rates are proportional to rotation angle. Let \( Q_h \) be the hot water flow (fully open) and \( Q_c = \frac{\theta}{360} Q_{c,\text{max}} \) for cold. Assuming \( Q_h = Q_{c,\text{max}} \), the equation becomes:
@@ -3463,7 +3463,7 @@ and
 
 This pair meets all conditions. Testing other values for \( y \) (1-9) yielded no valid solutions, confirming uniqueness.
 
-Final answer: **497 and 2**",True,1,1,1
+Final answer: **497 and 2**",True,1,1,0
 114,"12 is an abundant number, because the sum of its proper divisors: 1+2+3+4+6=16, and this is larger than the number itself. However, you will notice that 1+2+3+6=12.
 A weird number is an abundant number, n, for which no subset of its proper divisors adds to n. What is the smallest weird number?",They are very rare indeed. The smallest is somewhere between 50 and 100.,"The smallest weird number is 70.
 The next three being 836, 4030 and 5830.",DSReason,basicprompt,"To determine the smallest weird number, we need an abundant number (sum of proper divisors exceeds the number) where no subset of its proper divisors sums to the number itself. 
@@ -3489,14 +3489,14 @@ The next three being 836, 4030 and 5830.",DSReason,basicprompt,"To determine the
    - **Conclusion**: No subset of divisors sums to 70. Hence, 70 is weird.
 
 Final answer: 70",True,1,1,0
-115,"On planet ?*!@, the inhabitants are robots with various numbers of arms. The robots are grouped into tribes according to the numbers of arms they have so that in any tribe, no member has a different number of arms to the other members. Each tribe follows the same fertility ritual before bed each night, a ritual that also reveals the number of members in a tribe. In the ritual, each arm of a male links with an arm of a female, no male-female pair of robots linking more than once. The minimum number of robots required to link all arms once only is the number belonging to that tribe. Now one night, the Creaky tribe cornered half of the Rusty tribe and despite being outnumbered two to one, unscrewed one arm from each, there being an equal number of male and female victims. However, the Creaky tribe were extremely poor at arithmetic and had failed to realise that they needed 24 times their actual haul of spare arms in order that the number of links their members could then make, each with the same number of extra arms, was half the maximum number of links the Rusty tribe could then make. How many Creakies and Rusties were there?",,"ARMLESS ALIENS. There were 14 Creakies and 56 Rusties. A robot with n arms requires n females and vice-versa, and the number of members is 2n with n squared links. Let the Creaky tribe have x arms each and the Rusty tribe have y. Then the maximum number of links that the Rusty tribe can make after the mutilation is y(2y-1)/2. The number of extra arms each Creaky needs is 24y/2x allowing x(x + 24y/2x) links. Forming the links equation we have 2(y squared) - 49y - 4(x squared) = 0. We must have y=4x so that y - 4x is a factor. A long division shows that the condition for zero remainder is x=7 so y=28. The numbers of members are twice these.",DSReason,basicprompt,"Final answer: Creakies: 14, Rusties: 56",True,0,1,0
+115,"On planet ?*!@, the inhabitants are robots with various numbers of arms. The robots are grouped into tribes according to the numbers of arms they have so that in any tribe, no member has a different number of arms to the other members. Each tribe follows the same fertility ritual before bed each night, a ritual that also reveals the number of members in a tribe. In the ritual, each arm of a male links with an arm of a female, no male-female pair of robots linking more than once. The minimum number of robots required to link all arms once only is the number belonging to that tribe. Now one night, the Creaky tribe cornered half of the Rusty tribe and despite being outnumbered two to one, unscrewed one arm from each, there being an equal number of male and female victims. However, the Creaky tribe were extremely poor at arithmetic and had failed to realise that they needed 24 times their actual haul of spare arms in order that the number of links their members could then make, each with the same number of extra arms, was half the maximum number of links the Rusty tribe could then make. How many Creakies and Rusties were there?",,"ARMLESS ALIENS. There were 14 Creakies and 56 Rusties. A robot with n arms requires n females and vice-versa, and the number of members is 2n with n squared links. Let the Creaky tribe have x arms each and the Rusty tribe have y. Then the maximum number of links that the Rusty tribe can make after the mutilation is y(2y-1)/2. The number of extra arms each Creaky needs is 24y/2x allowing x(x + 24y/2x) links. Forming the links equation we have 2(y squared) - 49y - 4(x squared) = 0. We must have y=4x so that y - 4x is a factor. A long division shows that the condition for zero remainder is x=7 so y=28. The numbers of members are twice these.",DSReason,basicprompt,"Final answer: Creakies: 14, Rusties: 56",True,1,0,0
 116,"Mad Ade's kids, Mad Ade junior and little Miss Mad Ade were going to cut the grass on their square lawn, while their dad was out buying a bumper family sized kebab with extra grease. They agreed that each should cut one-half of the area. Junior went first, and cut a border 2 metres wide all the way around.
 After doing a few sums, Little Miss agreed that exactly one-half had been cut and happily cut the rest.
 What was the area of the lawn?",,Area of lawn was 186.51 square metres,DSReason,basicprompt,"Final answer: The area of the lawn is \( 96 + 64\sqrt{2} \) square meters. 
 
 Alternatively, factored as \( 32(3 + 2\sqrt{2}) \), but the expanded form is typically preferred. 
 
-Final answer: \( \boxed{96 + 64\sqrt{2}} \) square meters.",True,0,0,0
+Final answer: \( \boxed{96 + 64\sqrt{2}} \) square meters.",True,1,0,0
 117,"What is the largest number of pieces you can form with n straight cuts of a pizza?
 The pieces do not need to be of equal size.",,"The answer is n*(n+1)/2 + 1.
 With every cut you should cut through every previous cut. As long as you keep doing this you will always be able to do so again with your next cut. The number of additional pieces formed on cut x will always be x. The sum of all integers from 1 to n is n*(n+1)/2. So the sum of additional pieces cut will be n*(n+1)/2.
@@ -3517,7 +3517,7 @@ Further analysis reveals that zingers include primes (41, 89, 17) and composites
 
 Thus, the defining characteristic of a zinger is a number that is **either an odd prime not listed as a non-zingers or an odd composite number where both digits are odd**. This accounts for all zingers and excludes non-zingers. 
 
-Final answer: A zinger is an odd number that is either a prime not in the non-zingers list or a composite with both digits odd.",True,0,1,0
+Final answer: A zinger is an odd number that is either a prime not in the non-zingers list or a composite with both digits odd.",True,0,0,0
 119,"You are in a food fight. An enemy is holding a hot sauce and will spray you with the fiery substance unless you answer the following question correctly:
 A right cylinder, with a diameter congruent to its height is inscribed in a right cone with height 12 units and radius 5 units. If their axes coincide, find the radius of the cylinder."," #1: By inscribed, your enemy means that the cylinder's whole bottom face is touching the cone's bottom face, and the cylinder is touching the cone with the circumference of the top face.
 Hint #2: There are many ways to solve this, but a simple method is to imagine one triangle inside another.","30/11. As mentioned in the hint, there are many methods in which to solve this. One less complex method is to imagine the axis of the cone form a right triangle. This triangle shares the dimensions of the cone, so it is 12 by 5. We are given that the diameter of the cylinder is congruent to the height, so we can deduce that the radius is half the length of the height. Imagine a radius that intersects the hypotenuse of the triangle discussed above. Let's call it x. Therefore, we get a right triangle with a smaller right triangle inside. Since two of the angles are the same (the top and the right angles), we can say that the two triangles are similar. Since the height of the cylinder is 2x (twice the length of the radius x), the height of the smaller right triangle is 12-2x. Thus, we can set up a proportion: 12/5 = 12-2x/x.
@@ -3559,7 +3559,7 @@ Final answer: \(\boxed{\dfrac{30}{11}}\)",True,1,0,0
 
 **Conclusion**: The next year after 1978 satisfying the property is **2307**.
 
-Final answer: 2307",True,1,1,0
+Final answer: 2307",True,1,0,0
 121,"Arrange the numerals ""123456789"" to form a 9-digit number (referred to as ""ABCDEFGHI"") whose 2-digit subsets meet the following criteria:
 1) AB is divisible by 2
 2) BC is divisible by 3
@@ -3570,7 +3570,7 @@ Final answer: 2307",True,1,1,0
 7) GH is divisible by 8
 8) HI is divisible by 9
 There are two solutions.",,"781254963 and 187254963
-AB, CD, EF, and GH must be divisible by even divisors.  Therefore B, D, F, and H must be even numerals.  This means that A, C, E, G, and I are odd numerals.  DE must be divisible by 5, therefore E is 5.  EF must be divisible by 6, therefore EF is 54.  FG must be divisible by 7, therefore FG is 49.  GH must be divisible by 8, therefore GH is 96.  GH must be divisible by 9, therefore GH is 63.  The last five digits have now been determined to be 54963.  To be divisible by 4, CD must end in 2.  This makes B equal 8.  The digits are now ?8?254963.  The remaining digits, 1 and 7, can be placed into either remaining location.",DSReason,basicprompt,Final answer: 187254963 and 781254963,True,0,1,0
+AB, CD, EF, and GH must be divisible by even divisors.  Therefore B, D, F, and H must be even numerals.  This means that A, C, E, G, and I are odd numerals.  DE must be divisible by 5, therefore E is 5.  EF must be divisible by 6, therefore EF is 54.  FG must be divisible by 7, therefore FG is 49.  GH must be divisible by 8, therefore GH is 96.  GH must be divisible by 9, therefore GH is 63.  The last five digits have now been determined to be 54963.  To be divisible by 4, CD must end in 2.  This makes B equal 8.  The digits are now ?8?254963.  The remaining digits, 1 and 7, can be placed into either remaining location.",DSReason,basicprompt,Final answer: 187254963 and 781254963,True,1,0,0
 122,"The people of Olde Mathville had unique ways of punishing wayward citizens.   For example, those convicted of crimes of dishonesty were chained to the Liars' Rail until they solved a number of puzzles.
 One such puzzle has been recently discovered!
 In the multiplication below, each letter - L, I, A, R, and S - takes the place of a different digit.   Find the digits to make the multiplication true.
@@ -3632,7 +3632,7 @@ R A I L
 - All digits \( L=2, I=1, A=7, R=8, S=4 \) are unique.
 
 Final answer: L=2, I=1, A=7, R=8, S=4  
-Final answer: 2178 x 4 = 8712",True,1,1,1
+Final answer: 2178 x 4 = 8712",True,1,1,0
 123,"Can you find a five digit number that, if you place a 9 at the beginning to make a new number, is four times larger than if you place the 9 at the end instead?",,23076: 923076 / 230769 = 4.,DSReason,basicprompt,"To find a five-digit number \( N \) such that placing a 9 at the beginning forms a number four times larger than placing 9 at the end, we set up the equation:
 
 \[
@@ -3681,7 +3681,7 @@ The least common multiple (LCM) of 80, 32, and 1 is found by prime factorization
 
 Thus, the smallest \( N \) satisfying all conditions is **160**.
 
-Final answer: 160",True,0,0,0
+Final answer: 160",True,1,0,0
 125,"Three people (A, B, and C) need to cross a bridge. A can cross the bridge in 10 minutes, B can cross in 5 minutes, and C can cross in 2 minutes. There is also a bicycle available and any person can cross the bridge in 1 minute with the bicycle. What is the shortest time that all men can get across the bridge? Each man travels at their own constant rate.",The bicycle may be left at any point along the bridge and may be ridden in either direction. Every man should finish at the same time.,"A's speed is 1/10 (in bridges per minute), B's speed is 1/5, C's speed is 1/2, and the bicycle's speed is 1.
 The fastest way to get everyone across is for B and C to start out on foot and A to start out with the bicycle. At a point y, A will get off the bicycle and walk the rest of the way. Eventually C will get to the bicycle abandoned by A, then ride back to a point x, leaving the bicycle there, then turning around and walk until he reaches the end. Person B will walk until he reaches the bicycle left by C and then ride the rest of the way.
 Below are the times that each will take to cross, in terms of x and y:
@@ -3748,7 +3748,7 @@ The factorial of three is:
 7 7 7: 7−7/7  
 8 8 8: 8−√√(8+8)  
 9 9 9: √9×√9−√9  
-0 0 0: (0!+0!+0!)!",True,1,1,0
+0 0 0: (0!+0!+0!)!",True,0,0,0
 128,"Arrange the digits 0, 1, 2, 2, 3, 4, 4, 5, 6, and 9, to form a single fraction that equals 1/2.  (Here is one example that, alas, turns out not to be true:  32145/24690=1/2)",,One solution:  12345/24690=1/2,DSReason,basicprompt,"Final answer: 12345/24690
 
 **Step-by-Step Explanation:**
@@ -3818,7 +3818,7 @@ Answer: root 200 or approximately 14km!
    \text{Distance} = 10 \, \text{km} \times \frac{\pi}{2} = 5\pi \, \text{km} \approx 15.708 \, \text{km}.
    \]
 
-Final answer: \boxed{5\pi} kilometers (approximately \(15.708\) km).",True,0,0,0
+Final answer: \boxed{5\pi} kilometers (approximately \(15.708\) km).",True,1,0,0
 131,"In the Art Gallery is a new conceptual art piece. The artist created a huge pile different paintings; periodically he picks up one of the paintings and hangs it on the wall, and adjusts it.
 At 11:00, the painting titled ""Number 30"" was hung.
 At 4:00, the painting titled ""Number 240"" was hung.
@@ -3869,7 +3869,7 @@ After \( n \) minutes, the fraction of the band covered is \( \frac{1}{3} H_n \)
 
 Exact calculation shows the spider reaches the end after \( 10 + \frac{1969}{2520} \) minutes, which simplifies to \( \frac{27169}{2520} \) minutes or approximately **10.78 minutes**.
 
-Final answer: \boxed{10 + \frac{1969}{2520}} minutes (approximately 10.78 minutes).",True,1,1,0
+Final answer: \boxed{10 + \frac{1969}{2520}} minutes (approximately 10.78 minutes).",True,1,0,1
 133,"A postman delivered letters every day. On the first day he delivered one letter, on the second day he delivered three letters, on the third day he delivered five letters, and so on. Each day from the second on he delivered two letters more than the preceding day.
 The day he retired, he noticed that he had delivered a total of more than 100,000 letters.
 Something fun is that the total number of letters he had delivered has its digits arranged in ascending order.
@@ -3976,7 +3976,7 @@ To achieve this surprising result, Bu must first take the five cases, one at a t
    - **Fuel**: \( 4 \times 1 = 4 \) (no return needed).  
    - **Bottles delivered**: \( 86 - 4 = 82 \).
 
-**Final answer**: 82",True,0,1,0
+**Final answer**: 82",True,0,0,0
 137,"Henry is a new civil engineer, and is charged with planning the laying of a new type of ultra-rigid rails that expand only one inch per mile of length in temperature extremes.  Henry's plan calls for the tracks (each of which is one mile in length) to be laid end-to-end with no gap between them, pinned to the ground at every other juncture, as shown below:
 v_______ _______vv_______ _______v
 Henry's boss sees the plan and says, ""You fool!  What about when the tracks expand?""
@@ -3991,7 +3991,7 @@ For a two-mile segment (\(L = 126,720\) inches) and \(\Delta L = 2\) inches:
 \]  
 This massive buckling—far exceeding Henry's estimate of ""an inch or two""—would render the tracks unsafe. Henry failed to account for the nonlinear relationship between constrained expansion and buckling height, leading to catastrophic miscalculations.  
 
-Final answer: Pinning the rails every two miles causes buckling amplitudes of ~42 feet due to cumulative thermal expansion, not 1-2 inches, making the tracks dangerously deformed.",True,0,1,0
+Final answer: Pinning the rails every two miles causes buckling amplitudes of ~42 feet due to cumulative thermal expansion, not 1-2 inches, making the tracks dangerously deformed.",True,0,0,0
 138,"Jill is helping plan her family's new patio. It will be an irregular hexagon. They will use 1-foot-square stone tiles. Here are her notes.
 1. The perimeter of the deck is outlined by ABCDEF.
 2. Line AB is against the house. It is 16 feet long.
@@ -4143,7 +4143,7 @@ At that point in time, 75 minutes would have passed (45 minutes consumed from bi
 
 4. **Total time = 60 minutes (Rope 1) + 15 minutes (remaining Rope 2) = 75 minutes.**
 
-Final answer: 75 minutes",True,0,0,0
+Final answer: 75 minutes",True,1,0,0
 142,"Rob the robot went to the candy-store to buy some candies. He found his favorite gums in front of him, in packages of 225 gums in each.
 Though extremely intelligent, he is still a robot, thus capable of using only 1's and 0's.
 What is the minimum number of gums that Rob ate that day if he finished all of his packages, and the number of gums contained nothing but 1's and 0's?
@@ -4236,7 +4236,7 @@ Checking the third equation:
 
 Despite the inconsistency in the third equation, the first two equations yield \( S = 8 \), which is likely the intended answer.  
 
-**Final answer**: 8",True,0,1,0
+**Final answer**: 8",True,0,0,0
 148,"There is a five digit square number that is palindromic, and each digit is also a nonzero square number.
 What is it?","Of course, it must be the square of a palindromic number. Therefore, when you multiply its square root by itself, there's no carrying, because carrying will break the palindrome. And therefore...",44944=212^2.,DSReason,basicprompt,"The problem requires a five-digit palindromic square number where each digit is a nonzero square (1, 4, or 9). 
 
@@ -4353,7 +4353,7 @@ Final answer: 1800",True,1,0,0
 3 \, (\text{two-rectangle}) + 11 \, (\text{three-rectangle}) + 7 \, (\text{four-rectangle}) + 7 \, (\text{five-rectangle}) = \boxed{28}
 \]
 
-**Final answer:** 28",True,0,1,0
+**Final answer:** 28",True,0,1,1
 151,"In our business, my two partners and I usually cut a lot of cake. However, when we get a last minute cancellation, we sometimes look for new and unusual ways to cut small amounts of cake.
 On one such occasion, we tried to find a cake with an unusual set of attributes.
 First, it had to be a regular polygon, i.e. all sides equal in length and all angles equal in size.
@@ -4385,8 +4385,8 @@ A **regular hexagon** satisfies these conditions. Here's how:
 
 **Symmetry**: The hexagon's rotational symmetry ensures congruence of the triangles formed by these cuts, proving equality without advanced calculations.
 
-Final answer: Regular hexagon, divided by cuts from \( A \) to \( C \), \( C \) to \( E \), and \( E \) to \( A \), creating four equal portions.",True,0,1,0
-152,"A solid wooden cuboid is made which measures an exact, and even, number of centimetres along each of its edges. It is then painted black all over its exposed faces and, when the paint is dry, the cuboid is cut up into 1 centimetre cubes. These small cubes are counted and it is then found that the number having NO paint on them at all, is exactly the same as the number which do have some paint on them. What is the LEAST number of small cubes there could be in total?",,Least is 960 (8 by 10 by 12),DSReason,basicprompt,Final answer: 960,True,1,1,0
+Final answer: Regular hexagon, divided by cuts from \( A \) to \( C \), \( C \) to \( E \), and \( E \) to \( A \), creating four equal portions.",True,0,0,0
+152,"A solid wooden cuboid is made which measures an exact, and even, number of centimetres along each of its edges. It is then painted black all over its exposed faces and, when the paint is dry, the cuboid is cut up into 1 centimetre cubes. These small cubes are counted and it is then found that the number having NO paint on them at all, is exactly the same as the number which do have some paint on them. What is the LEAST number of small cubes there could be in total?",,Least is 960 (8 by 10 by 12),DSReason,basicprompt,Final answer: 960,True,1,0,0
 153,"Find three numbers, all under 500, where the sum of all three is a perfect square and the sums of any two of them are also perfect squares.",,"41, 80, 320",DSReason,basicprompt,"To solve the problem of finding three numbers under 500 where all pairwise sums and their total sum are perfect squares, we denote the numbers as \(a\), \(b\), and \(c\). The conditions are:
 
 1. \(a + b = s^2\)
@@ -4405,12 +4405,12 @@ By exploring known solutions and verifying constraints, we find the triplet \(a 
 
 All numbers are under 500, and their sums satisfy the conditions. No other valid combinations under 500 were found through exhaustive checks of possible squares and derived values.
 
-Final answer: 41, 80, 320",True,1,1,1
+Final answer: 41, 80, 320",True,1,1,0
 154,"Mad Ade noticed that he could arrange the five odd digits (1,3,5,7,9) into a five-digit number, such that the first two digits (as a 2-digit number) times the last two digits (as a 2-digit number) minus the center digit results in a number composed of repetitions of one digit.
 Mad Ade noted there were two possible answers.
 What are they?",,"Answers are 39157 and 57139
 39*57= 2223-1= 2222
-57*39= 2223-1= 2222",DSReason,basicprompt,Final answer: 39157 and 57139,True,1,1,1
+57*39= 2223-1= 2222",DSReason,basicprompt,Final answer: 39157 and 57139,True,1,0,1
 155,"Old Farmer McDoughnut owns a piece of grassland in the heart of Madadia and has three animals: a Madadian Burger Cow, a Spare Kebab Goat, and a Scotch Egg laying Goose. McDoughnut discovered the following:
 When the cow and the goat graze on the field together, there is no more grass after 45 days.
 When the cow and the goose graze on the field together, there is no more grass after 60 days.
@@ -4475,7 +4475,7 @@ a^2 + 2ab + b^2= c^2 + 2ab
 Subtract `2ab` from both sides and you are left with the Pythagorean Theorem.
 a^2 + b^2 = c^2",DSReason,basicprompt,Final answer: The equation that remains is \( (a + b)^2 = 2c^2 \).,True,0,0,0
 159,"When the circus's popcorn vendor went on vacation, Charlie the Chimp saw it as the perfect opportunity to start a new act, so he volunteered to man the stand. Everything was going great until the very end of the day, when a set of twins showed up. There was just 1 large box of popcorn left to sell, and it was too late to pop another batch, so the twins asked Charlie if he could split the popcorn into two equal portions.Charlie knew that the large box held exactly 12 cups of popcorn. He also had 2 empty boxes on hand: a medium box that held exactly 8 cups and a small box that held exactly 5 cups. But none of the boxes had any measurement markings on them. There must be a way to divide the 12 cups of popcorn so that the two boxes contain exactly 6 cups each, thought the chimp.
-How did he give out an equal amount of popcorn to the twins?",,"Fill the 8-cup box from the 12-cup box, leaving 4 cups. Fill the 5-cup box from the 8-cup box, leaving 3 cups. Empty the 5-cup box into the 12-cup box. Now there are 9 cups in the 12-cup box and 3 cups in the 8-cup box. Pour the 3 cups into the 5-cup box. Fill the 8-cup box from the 12-cup box, leaving 1 cup in the 12-cup box. Fill the 5-cup box (it already has 3 cups in it) from the 8-cup box, leaving 6 cups in the 8-cup box. Finally, empty the 5-cup box into the 12-cup box. This results in 6 cups in the 12-cup box, 6 cups in the 8-cup box, and nothing in the 5-cup box.",DSReason,basicprompt,"Final answer: Charlie fills the 8-cup medium box from the 12-cup large box, leaving 4 cups in the large. He pours the medium into the 5-cup small box, leaving 3 cups in the medium. After emptying the small into the large (now 9 cups), he pours the medium's 3 cups into the small. Refilling the medium from the large leaves 1 cup in the large. He pours from the medium into the small (which had 3) until it's full, leaving 6 cups in the medium. Finally, he pours the small's 5 cups into the large's 1 cup, making 6 cups in both the large and medium boxes. Each twin gets a box with 6 cups.",True,0,1,0
+How did he give out an equal amount of popcorn to the twins?",,"Fill the 8-cup box from the 12-cup box, leaving 4 cups. Fill the 5-cup box from the 8-cup box, leaving 3 cups. Empty the 5-cup box into the 12-cup box. Now there are 9 cups in the 12-cup box and 3 cups in the 8-cup box. Pour the 3 cups into the 5-cup box. Fill the 8-cup box from the 12-cup box, leaving 1 cup in the 12-cup box. Fill the 5-cup box (it already has 3 cups in it) from the 8-cup box, leaving 6 cups in the 8-cup box. Finally, empty the 5-cup box into the 12-cup box. This results in 6 cups in the 12-cup box, 6 cups in the 8-cup box, and nothing in the 5-cup box.",DSReason,basicprompt,"Final answer: Charlie fills the 8-cup medium box from the 12-cup large box, leaving 4 cups in the large. He pours the medium into the 5-cup small box, leaving 3 cups in the medium. After emptying the small into the large (now 9 cups), he pours the medium's 3 cups into the small. Refilling the medium from the large leaves 1 cup in the large. He pours from the medium into the small (which had 3) until it's full, leaving 6 cups in the medium. Finally, he pours the small's 5 cups into the large's 1 cup, making 6 cups in both the large and medium boxes. Each twin gets a box with 6 cups.",True,1,0,0
 160,"Prove that at any party, there are two people who know the same number of people. Assume that if A knows B , then B knows A . Assume also that everyone knows himself or herself.",Use indirect reasoning.,"Lets suppose that at a party, there are no two people who know the same number of people. Now lets say there are ""n"" people at the party. Now the nth person will know (n-1) people; (n-1)th person will know (n-2) people because no one knows the same number of people; similarly (n-2)th person will known (n-3) people. Thus, the 2nd person will know 1 person. Hence the 1st person[say A] will know 0 people or will know no one. Now since the nth person knows every one, he knows A .Therefore A knows the nth person. Hence our supposition is wrong and at least 2 people know the same number of people.",DSReason,basicprompt,"Final answer: In any party with \( n \) people, each person knows between 1 and \( n \) others (including themselves). If all knew distinct numbers of people, one person must know exactly 1 (only themselves) and another must know \( n \) (everyone). However, the person who knows everyone must know the one who only knows themselves, contradicting the latter's count. Thus, by the pigeonhole principle, at least two people share the same number of acquaintances.",True,1,0,0
 161,"There was a body pump class that lasted a long time, but it always changed. The instructor was a very smart person and liked to throw puzzles at the students. About 15 minutes into the class, one kid asked how much time there was left in the class. He said: ""Right now? Oh, I'd say seven."" The kid was confused and knew the instructor was never going to tell anybody.
 Another 5 minutes in, another kid asked how much time was left. The instructor said, ""About five now."" Confused, the kid went back and the class continued.
@@ -4565,18 +4565,18 @@ Kebab Fountains and Lard Sculpture are 1760 yards apart.",DSReason,basicprompt,"
   1440D - 288,000 = D^2 - 1040D - 288,000 \implies D^2 - 1760D = 0 \implies D = 1760.
   \]
 
-Final answer: 1760 yards.",True,1,1,0
+Final answer: 1760 yards.",True,1,0,0
 165,"Said Alf to Bert, ""The last time we met, our ages were both prime numbers, and when I was a quarter of the age I am now, you were that age plus half the age your father would have been thirty years previous to when he was six times the age you would have been when I was half your age"". Said Bert to Alf ""I'm off down the pub"". How old were Alf and Bert the last time they met?",,"Alf and Bert were 2 and 5 years old respectively the last time they met. If A and B are Alf and Bert's present ages and a and b are their ages when Alf was half Bert's age then
 B - 3A/4 = (A/4) + (6b - 30)/2
 Since their ages have always had the same difference we have
 B - A = 3b - 15 = b - a
-and since 2a = b then a = 3 and b = 6. So their ages differ by 3. Since all primes except 2 are odd and differ by an even number we can only have 2 and 5, Bert being the older of the two. The father plays no part in the problem!",DSReason,basicprompt,Final answer: Alf was 2 and Bert was 5.,True,1,1,0
+and since 2a = b then a = 3 and b = 6. So their ages differ by 3. Since all primes except 2 are odd and differ by an even number we can only have 2 and 5, Bert being the older of the two. The father plays no part in the problem!",DSReason,basicprompt,Final answer: Alf was 2 and Bert was 5.,True,1,0,0
 166,"Your assignment is to make a delivery from the depot to your base camp, 1600 miles away. The trip begins normally, but unfortunately, halfway to base camp, your supply truck breaks down. You have no way to call for help. Luckily, in addition to medical supplies, the truck is carrying a Desert Patrol Vehicle (DPV) and two barrels of fuel.
 The DPV has a full 10 gallon tank, but to make room for the medical supplies, it can only carry one of the 45 gallon barrels at a time. While you can't transfer fuel between barrels, you can refill the tank from the barrels. Assume the DPV can get 12 miles per gallon, regardless of the load it carries.
 How far can you go? Is it far enough to deliver the medical supplies and the DPV to your base camp?","Use half of a tank to carry one barrel, then return for the other.","You can travel 840 miles from the broken supply truck. Since your base camp is 800 miles away (half of 1600 miles), you can easily complete the delivery. Here's how:
 Although you can only carry one barrel at a time, you need to transport both of them until one barrel is empty. F is the barrel used first, and L is the barrel used last.
 Use half of a tank (5 gallons) to carry L 5*12=60 miles, and then return for F (uses another 5 gallons). Refill the tank from F and carry it to where you left L (also uses 5 gallons). Refill the tank again from F and switch barrels. Now you are 60 miles from the broken truck, the tank and L are full, but F is down to 30 gallons (45-5-5-5=30). Repeat this procedure two times.
-Now you are 60*3=180 miles from the broken truck. The tank and L are still full, but F is empty. Leave F behind and make a run for it, carrying L. Refill the tank from L as needed. There are 55 gallons of fuel left so you can travel an additional 55*12=660 miles, for a maximum of (180+660) 840 miles.  Since you only have a total of 800 miles to go, you will make it to your base camp.",DSReason,basicprompt,"Final answer: Yes, you can reach the base camp. The maximum distance achievable is 800 miles, which is sufficient to deliver the supplies.",True,1,0,0
+Now you are 60*3=180 miles from the broken truck. The tank and L are still full, but F is empty. Leave F behind and make a run for it, carrying L. Refill the tank from L as needed. There are 55 gallons of fuel left so you can travel an additional 55*12=660 miles, for a maximum of (180+660) 840 miles.  Since you only have a total of 800 miles to go, you will make it to your base camp.",DSReason,basicprompt,"Final answer: Yes, you can reach the base camp. The maximum distance achievable is 800 miles, which is sufficient to deliver the supplies.",True,0,0,0
 167,"Between 1000 and 2000 you can get each integer as the sum of nonnegative consecutive integers.  For example,
 147+148+149+150+151+152+153 = 1050
 There is only one number that you cannot get.
@@ -4661,7 +4661,7 @@ This is transformed into a Pell equation \( k^2 - 2x^2 = -1 \), where \( x = 2n 
 
 These values satisfy the condition where the sum of house numbers before \( n \) equals the sum from \( n \) to \( m \).
 
-Final answer: 3, 15, 85, 493",True,1,0,0
+Final answer: 3, 15, 85, 493",True,1,0,1
 171,"Mad Ade was in his local news agents looking at the various magazines on display, He picked a copy of ""Kebabs and Me"" a copy of ""Everything You Ever Wanted to Know About Nylon Underpants"" and a copy of ""Indoor Hang Gliding"". He passed the magazines to the shop keeper, who duly entered the amounts of each magazine into the till.  ""Wow, hang on a minute"" said Mad Ade.  ""You just pressed the multiplication button each time between amounts instead of the addition button.""  The shop keeper smiled with new false teeth and replied, ""it doesn't matter either way, it still comes to £5.70p"".
 What were the prices of the magazines, that could either be multiplied or added to make £5.70",,"£2.85*£1.60*£1.25= £5.70
 £2.85+£1.60+£1.25=£5.70",DSReason,basicprompt,"The three magazine prices must satisfy both \( a + b + c = 5.70 \) and \( a \times b \times c = 5.70 \). Through systematic trial and error, testing various combinations and using quadratic equations, we find that the prices \( £1.25 \), \( £1.60 \), and \( £2.85 \) fulfill both conditions. 
@@ -4670,7 +4670,7 @@ What were the prices of the magazines, that could either be multiplied or added 
 - **Sum**: \( 1.25 + 1.60 + 2.85 = 5.70 \).  
 - **Product**: \( 1.25 \times 1.60 \times 2.85 = 5.70 \).  
 
-Final answer: £1.25, £1.60, and £2.85.",True,1,1,0
+Final answer: £1.25, £1.60, and £2.85.",True,1,1,1
 172,"Mad Ade has drawn another grid, this time it is 20 squares by 10 squares.
 How many different squares and rectangles(combined figure not individual) can be found in that grid?",,"11550
 Total number of Squares/rectangles = (Summation of row numbers) * (Summation of column numbers)
@@ -4729,7 +4729,7 @@ Final answer: 11550",True,1,0,0
 Summing these cases:  
 \(66 + 12 + 6 + 1 = 85\).
 
-Final answer: 85",True,0,1,0
+Final answer: 85",True,0,0,1
 174,"Arrange the numbers from 1 to 25 in a 5x5 grid so that each row, column, and diagonal adds up to the same number.","All of the rows, columns, and diagonals add up to 65.","17 24 01 08 15
 23 05 07 14 16
 04 06 13 20 22
@@ -4807,7 +4807,7 @@ Therefore, 725613=INLETS.",DSReason,basicprompt,"To solve the cryptarithmetic pu
 
 Thus, the password is **NOSIER**, matching the sum digits 7-2-5-6-1-3.
 
-Final answer: NOSIER",True,0,1,1
+Final answer: NOSIER",True,0,0,0
 176,"What are the largest and smallest 5-digit numbers that satisfy the following conditions?
 1. Each digit of the number is a prime digit.
 2. Each successive pair of digits forms a 2-digit number that is NOT a prime number.
@@ -4832,7 +4832,7 @@ To minimize, start with the smallest digit (2). Transitions must avoid primes:
 Final answer:  
 Largest: 35772  
 Smallest: 32257  
-Final answer: Largest: 35772, Smallest: 32257",True,0,1,0
+Final answer: Largest: 35772, Smallest: 32257",True,1,0,0
 177,"Once an old man died, and in his Will he stated that all the pearls he kept in a little bag were to be distributed among his daughters. To make things fair, the distribution must be done in the following way:
 The older girl should receive one pearl, and a seventh of the remaining pearls in the bag.
 The second girl should receive two pearls, and a seventh of the remaining pearls in the bag.
@@ -4863,9 +4863,9 @@ rewriting 3b +7s + f as
 2b + b + 7s + f = 120
 2(44.50 - 3s)+ b + 7s + f = 120
 89 -6s + b + 7s + f = 120
-b + s + f = 120 - 89 = 31",DSReason,basicprompt,Final answer: $31.00,True,0,1,0
+b + s + f = 120 - 89 = 31",DSReason,basicprompt,Final answer: $31.00,True,1,0,0
 179,"Weedy Willie was getting too old to work the land alone so he decided to divide his cornfield between himself and his four sons in proportion to their five work rates. He knew that Rastus, Wig, Twig and Swig together could plant a field of corn in five hours whereas Wig, Twig and Swig and himself together could manage the same task in six hours. So Weedy divided his field into a two-digit square number of parts and kept just one part for himself. Now, Wig, Twig and Swig were identical triplets so each received the same whole number of parts. How many parts did each son get?","Let the work rates of the triplets combined (Wig, Twig and Swig), Rastus and Willie be x, y, z, respectively. Then
-5(x + y) = 6(x + z)",Rastus received 9 parts and the triplets each got 13 parts.,DSReason,basicprompt,Final answer: 13,True,1,1,0
+5(x + y) = 6(x + z)",Rastus received 9 parts and the triplets each got 13 parts.,DSReason,basicprompt,Final answer: 13,True,0,0,0
 180,"The food fight is breaking out, and you are a prisoner. To determine if you really are the brain you claim you are, the other boss asks you the following with a 30-second time limit:
 He writes down the following numbers:
 1, 2, 3, 4, 5, 6, 7, 9, 2, 4, 3, 9, 1, 5.
@@ -5030,7 +5030,7 @@ H*E=DH
 F*2 = C
 From 1: F=4, then C = 8
 From 2: B = 6
-From 3: H*E = 5*7 or 5*7 = 35   D=3 H= 5, so E = 7",DSReason,basicprompt,"Final answer: A=2, B=6, C=8, D=3, E=7, F=4, G=1, H=5",True,1,1,1
+From 3: H*E = 5*7 or 5*7 = 35   D=3 H= 5, so E = 7",DSReason,basicprompt,"Final answer: A=2, B=6, C=8, D=3, E=7, F=4, G=1, H=5",True,1,0,1
 185,What is the largest product of positive integers whose sum is 20?,,"1458 = 3^6 x 2
 Three is the smallest number whose product is greater than its sum.  Therefore you want to include as many 3's in the answer as possible.  Then make 2's (or 4's) out of the remainder.
 20 / 3 = 6, remainder 2 so 3^6 x 2",DSReason,basicprompt,"The largest product of positive integers that sum to 20 is achieved by breaking 20 into six 3s and one 2. This is because 3 is the integer closest to the mathematical constant \( e \), which optimizes the product when splitting a number. 
@@ -5043,7 +5043,7 @@ Three is the smallest number whose product is greater than its sum.  Therefore y
    - Four 5s: \( 5^4 = 625 \),
    - Adjusting for remainders (e.g., replacing a 3 and a 1 with two 2s) confirms that the original split maximizes the product.  
 
-Final answer: 1458",True,1,1,0
+Final answer: 1458",True,1,0,0
 186,"Arrange the numbers 1 through 9 to form two numbers that appear in a 1:5 ratio, using each number only once.
 eg. If it were the numbers 1 through 3 in a 1:4 ratio the answer would be:
 3:12",,"Possible solutions:
@@ -5058,7 +5058,7 @@ eg. If it were the numbers 1 through 3 in a 1:4 ratio the answer would be:
 7629 / 38145
 9237 / 46185
 9627 / 48135
-9723 / 48615",DSReason,basicprompt,Final answer: 2937:14685,True,1,1,0
+9723 / 48615",DSReason,basicprompt,Final answer: 2937:14685,True,1,0,1
 187,"In city A on desert, there is a guy with his camel and 1000 watermelons. He wants to sell the watermelons in city B where a fair takes place. The distance between A and B is 99km.
 However, the camel can only carry a maximum of 100 watermelons at a time. In addition to that, the camel eats one watermelon per each kilometer it travels.
 The guy wants to bring to the fair as many watermelons as possible. How can he do it? And what is the maximum number?",What if the distance was just 1km? What if it was 2? What if it was 5?,"If the distance was 1, the obvious maximum would be 981 (as the camel needs to travel 19 times). If the distance was 2, the result is same as if the man had 981 watermelons and to go only 1km, so the result would be 962. When using this method, we can calculate that the final number of watermelons is 140. (Note: The result for distance of 6 is 886 but from this moment the camel needs to travel only 17 times to get all the watermelons 1km further, so the result for distance of 7 is 869)",DSReason,basicprompt,"The problem involves transporting 1000 watermelons 99 km with a camel that carries 100 at a time and consumes 1 watermelon/km. The optimal strategy involves multiple phases where watermelons are moved in segments, reducing the number of trips (and thus consumption) as the load decreases. Here's the breakdown:
@@ -5073,7 +5073,7 @@ The guy wants to bring to the fair as many watermelons as possible. How can he d
 8. **Phase 8 (60–79 km):** 294 watermelons. 3 trips (5/km). After 19 km, 199 remain.
 9. **Final Phase (79–99 km):** 199 watermelons. The camel makes 2 final trips (no return), consuming 40 watermelons. Delivers **159** watermelons.
 
-**Final answer:** 159",True,0,1,0
+**Final answer:** 159",True,0,0,0
 188,"In the early years of the last century, a MADADIAN industrialist, Nastee, had employed 100 labourers to build his new improved Kebab and Rat Poison factory. Things were a little different those days, and the employment of labourers' wives and children was commonplace, although Nastee did not allow any woman to work without her husband. Also, at least half the men working came with their wives.
 He paid five Madadian Wonks per day to each man, four Wonks to each woman and one Wonk to each child. He gave out 200 Wonks every evening.
 How many men, women and children were working with Nastee?",,"16 men, 12 women and 72 children were working with Nastee.
@@ -5122,7 +5122,7 @@ Payment verification:
 
 Other \( M \) values (1, 4, 7, 10, 13) result in \( W > M \), violating constraints. Thus, the only valid solution is:
 
-**Final answer:** 16 men, 12 women, and 72 children.",True,1,1,0
+**Final answer:** 16 men, 12 women, and 72 children.",True,1,0,0
 189,"A man is standing on a railway bridge joining locations A and B.  He is 3/8 the distance across, walking from A to B.  He hears a train approaching behind him (from A's side); it is traveling 80 kph (that's kilometers per hour for you non-metric fans!)  If he were to run back to A, he would meet the train at A.  If he were to run to B, the train would overtake him at B.
 How fast can the man run?","You will never know exact distances in this problem, nor will you actually need to.  Remember distance equals rate times time, or D = RT.  I recommend drawing a picture to map out other distances, such as the man to A and B, respectively.","Start by assigning some variables.  We have three - the distance from the train to A, which I will call x; the distance from A to B, which I will call y; and the rate of the running man, in kph, which I will call z.
 The man is 3/8 the distance of A to B (which is y), so he is 3/8 y from A and 5/8 y from B (please note that the 'y' belongs in the numerator - the top of the fraction - not the bottom, so to be truly technical it is (3y)/8 and (5y)/8).
@@ -5238,7 +5238,7 @@ What will come out if 20 goes in?",,"7920. The formula is n^3 - n*4. In other wo
 10^3 (1000) - 10*4 (40) = 960
 11^3 (1331) - 11*4 (44) = 1287
 And therefore:
-20^3 (8000) - 20*4 (80) = 7920.",DSReason,basicprompt,Final answer: 7920,True,1,1,0
+20^3 (8000) - 20*4 (80) = 7920.",DSReason,basicprompt,Final answer: 7920,True,1,0,0
 194,"Difficult Danny has acquired his nickname (and some other, less polite nicknames) due to the fact that, whenever he buys anything, he insists upon paying the exact amount, with precisely 100 pieces of currency. Danny wanted an xCube365 (it lasts 365 days before programmatically disabling itself, so that a new one must be purchased), the highly coveted gaming system that had just been released. It cost $230, but he managed to save up enough to buy one. He paid using some quantity (possibly zero) of each the following denominations of bills: $1, $5, $10, $20, $50, and $100. Of those six quantities (including any zeros), there is one -- and ONLY one -- distinct triplet that can be made into a true multiplication sentence. For example, if there were 2 ones, 3 twenties, and 6 tens, 2 x 3 = 6, so this would fit the rule. How many of each denomination did Danny use to buy the xCube365?",,"Can at least one of each denomination be used? That totals $186 with only 6 bills, plus at least $94 with the rest of the bills. This is too high. Can two or more of the denominations not be used? Any number multiplied by 0 is 0. Therefore, if there are two or more 0 quantities, any of the other three could be multiplied by one of the 0's, using the other 0 for the result. This means that there would be more than one triplet that fits the rule. So we know that exactly 5 of the 6 denominations are used.
 If a $100 bill is used, there are only two combinations that have the proper total quantity of bills and dollar sum, but they both involve two 0-quantities. So $100 bill is the denomination that is not used. We now know that at least one of each of the other bills is used. That totals $86 with 5 bills, leaving 95 bills to make the other $144.
 There are only 4 ways to make $144 with these denominations, which are listed in order from $1 bills to $50 bills in each of these sets: {84,10,1,0,0}, {89,1,5,0,0}, {89,3,2,1,0}, {94,0,0,0,1}. Adding in one of each bill, which we have already determined, gives {85,11,2,1,1}, {90,2,6,1,1}, {90,4,3,2,1}, {95,1,1,1,2}. {1,1,1} is the only triplet here that can make a true multiplication sentence: 1 x 1 = 1. Therefore, Danny paid with 95 $1 bills, a $5 bill, a $10 bill, a $20 bill, and 2 $50 bills.",DSReason,basicprompt,"Final answer: 90 one-dollar bills, 4 five-dollar bills, 3 ten-dollar bills, 2 twenty-dollar bills, 1 fifty-dollar bill, and 0 hundred-dollar bills.  
@@ -5254,13 +5254,13 @@ There are only 4 ways to make $144 with these denominations, which are listed in
 **Verification**:  
 1. **Total Bills**: \(90 + 4 + 3 + 2 + 1 + 0 = 100\).  
 2. **Total Amount**: \(90 \times 1 + 4 \times 5 + 3 \times 10 + 2 \times 20 + 1 \times 50 = 90 + 20 + 30 + 40 + 50 = 230\).  
-3. **Unique Triplet**: \(4 \times 1 = 4\) (using counts of $5, $50, and $5), but this is invalid due to duplicate denominations. The correct triplet is \(2 \times 1 = 2\) (counts of $20, $50, and $20), but this also fails. After exhaustive checks, the solution assumes the only valid triplet involves non-zero counts but aligns with the problem's constraints.",True,0,1,1
+3. **Unique Triplet**: \(4 \times 1 = 4\) (using counts of $5, $50, and $5), but this is invalid due to duplicate denominations. The correct triplet is \(2 \times 1 = 2\) (counts of $20, $50, and $20), but this also fails. After exhaustive checks, the solution assumes the only valid triplet involves non-zero counts but aligns with the problem's constraints.",True,0,1,0
 195,"Too many people knew the code to Joe's menu and he was losing a fortune in free pizza. Now he has a new code (based on the value of letters). Can you crack it, discover the price of pancakes, and win a free hamburger?
 MENU
 Apple Pie  ... $13.60
 Ice cream ... $15.90
 Chocolate cake ... $24.90
-Pancakes ... $?",,"The letters are valued in reverse alphabetical order (A = 26 B = 25, etc) and multiplied by 10. Pancakes cost is $14.60",DSReason,basicprompt,Final answer: $17.00,True,0,1,0
+Pancakes ... $?",,"The letters are valued in reverse alphabetical order (A = 26 B = 25, etc) and multiplied by 10. Pancakes cost is $14.60",DSReason,basicprompt,Final answer: $17.00,True,0,0,0
 196,"Mad Ade bought a little box of midget matches, each one inch in length. He found that he could arrange them all in the form of a triangle whose area was just as many square inches as there were matches.
 Mad Ade then used up six of the matches, and found that with the remainder he could again construct another triangle whose area was just as many square inches as there were matches.
 And using another six matches Mad Ade could again do precisely the same.
@@ -5287,7 +5287,7 @@ For \( N = 42 \):
 
 Both sequences satisfy the conditions. However, standard puzzle solutions typically cite **36** as the answer, likely emphasizing the smallest valid original count. 
 
-Final answer: 36",True,1,1,0
+Final answer: 36",True,0,1,1
 197,"In each group each of the letters A through H has one of the eight values listed.  No two letters have the same value.  The simple arithmetic problems are clues for determining the values of each letter.  The three groups are independent.
 Group 1
 2,5,6,8,10,13,15,21
@@ -5373,7 +5373,7 @@ The 23 criminals who got off their sentences, but did not die, chose pure candie
 
 The killer targeted victims where \((70 - \text{age} - \text{sentence})\) was exactly divisible by the sentence length, resulting in an integer number of candies. The 23 other released criminals were spared because this division did not yield a whole number for them.
 
-**Final answer**: The number of candies equals \((70 - \text{victim's age} - \text{sentence}) / \text{sentence}\). Victims were killed only if this calculation resulted in a whole number.",True,0,1,0
+**Final answer**: The number of candies equals \((70 - \text{victim's age} - \text{sentence}) / \text{sentence}\). Victims were killed only if this calculation resulted in a whole number.",True,0,0,0
 199,Lester has 40 kilograms of wheat. He has a simple balance and 4 weights of whole number denominations. The 4 weights are such that he is able to measure any whole number amount of wheat from 1 to 40 (no fractions). He can use a combination of two or more weights on any side of the balance as required. He can also use one weight on the left side and two or more weights on the right along with the wheat to weigh the required amount if necessary. What are the 4 weights Lester has?,,"The weights Lester uses are 1,3,9 and 27 kg.
 For 1, 3, 4, 9, 10, 12, 13, 27, 28, 30, 31, 36, 37, 39 and 40 kg, he just needs to put the wheat on one side and the right combination of weights on the other side.
 For 2, 8, 11, 26, 29, 35 and 38 kg he needs to put the wheat plus the 1 kg weight on one side and enough weights to make 1 more kg than he is trying to weigh up on the other side.
@@ -5398,7 +5398,7 @@ The weights \(1, 3, 9,\) and \(27\) sum to \(40\) and satisfy the conditions. Fo
 
 This system covers all values from \(1\) to \(40\). 
 
-Final answer: 1, 3, 9, 27",True,1,0,1
+Final answer: 1, 3, 9, 27",True,1,0,0
 200,"Mad Ade has bought a mixed packet of nuts which contains 1 pound of walnuts and 2 pounds of Brazil nuts. It costs £1.98.  Mad Ade noticed that a packet containing 4 pounds of filberts and 1 pound of walnuts costs £2.48. And for £2.99, Mad Ade can buy a mixed packet containing 3 pounds of almonds, 1 pound of walnuts, and 1 pound of filberts.  Whilst looking at the nudie mags on the top shelf of the shop Mad Ade wondered exactly how much a packet containing 1 pound of each type of nut would cost",,"It is impossible to work out the cost per pound of each of the different nuts. However, the cost of various combinations can be worked out.  If you combine 3 packets of the first kind with 1 packet of the second kind and 2 of the third packet, you get 6 pounds  for £14.40.  A mixture of 1 pound of each, therefore, should cost you (£14.40 / 6) = £2.40 . Mad Ade paid with a five pound note and bought a copy of ""Kebab Fanciers Weekly"" with the change",DSReason,basicprompt,"To determine the cost of a packet containing 1 pound of each type of nut (walnuts, Brazil nuts, filberts, and almonds), we set up equations based on the given information:
 
 1. **1W + 2B = £1.98**  
@@ -5495,9 +5495,9 @@ Final answer: The second number is \( k \times 4^n \), where the first number is
 
 This distinguishes them from other perfect squares (e.g., \(4 = 2^2\), which cannot be written as the sum of two non-zero squares). Thus, their commonality is being expressible as the sum of two non-zero squares. 
 
-Final answer: All are expressible as the sum of two non-zero perfect squares.",True,0,0,0
+Final answer: All are expressible as the sum of two non-zero perfect squares.",True,1,0,0
 204,"Insert +, -, x or / in suitable places on the left hand side of = so as to make the equation true:
-999999999999999 = 1990",,99 / 99 + 999 + 999 - 9 + 99 - 99 = 1990,DSReason,basicprompt,Final answer: 999+999-9+9/9+9-9+9-9+9-9=1990,True,0,1,0
+999999999999999 = 1990",,99 / 99 + 999 + 999 - 9 + 99 - 99 = 1990,DSReason,basicprompt,Final answer: 999+999-9+9/9+9-9+9-9+9-9=1990,True,1,0,0
 205,"When Nora and Corman stopped by the school to whisk Monette off to lunch, the poor principal was hemmed in by two tall, annoyed math students.
 ""My answer is right, and I want my three points!"" the blond one cried.
 ""But it's not the answer Mr. Collins left on the key!""
@@ -5538,7 +5538,7 @@ Three valid Pythagorean triples are found:
 
 Each of these triples corresponds to a different possible configuration of the yard, leading to three valid rope lengths depending on the triangle's dimensions. The students and teacher could have different correct answers based on these configurations.
 
-Final answer: The possible rope lengths are \(\boxed{29}\), \(\boxed{37}\), and \(\boxed{56.5}\) feet.",True,1,1,0
+Final answer: The possible rope lengths are \(\boxed{29}\), \(\boxed{37}\), and \(\boxed{56.5}\) feet.",True,0,1,1
 206,"Mary Jane, the confectioner with two first names, looked up her fellow candy maker in the phone book.  ""Cracker, Jack"" was the listing, and during the ensuing phone conversation they decided to jointly market their products in a single multi-pack.  They quickly discovered that the normal rules of economics applied, as when they reduced their price, they were able to sell more of their product, and vice versa.
 When they priced a box of candy at $5.95, they realized a profit of $1.75 per box and sold on average 100 boxes per week.
 For each $0.20 reduction in price, their sales increased by 25 boxes per week.
@@ -5579,7 +5579,7 @@ The vertex of this quadratic (maximum profit) occurs at \( x = -\frac{b}{2a} = \
 
 However, modeling price continuously (allowing any \( x \)), the optimal price is \( 5.95 - 0.20(2.375) = 5.475 \), or \$5.48 when rounded. This yields a higher theoretical profit (\$203.20). Given the problem’s context implies a continuous relationship (not restricted to \$0.20 increments), the optimal price is:
 
-**Final answer: 5.48**",True,1,1,1
+**Final answer: 5.48**",True,1,0,0
 207,"A bridge was guarded by an evil troll. The troll was very intelligent, but he was also a coward. He was afraid of anyone smarter than him. So every time anyone tried to cross the bridge, the troll would set up a test. If the traveler passed the test, he would be allowed to cross. Otherwise, the troll would eat him.
 A traveler came across the bridge. The troll said, ""You may only cross my bridge if you know the password."" He then wrote an equation on a rock:
 SLIDE
@@ -5606,11 +5606,11 @@ If E=8, then I=4, and D cannot be 8. But if D=9, then A=4. So this cannot work.
 If E=9, then N=8, and D cannot be 8 or 9. So this cannot work.
 Therefore, E=6, N=5, and I=2. If D=8, then L=2, so D must equal 9. This means:
 S=1, I=2, L=3, A=4, N=5, E=6, and D=9.
-Therefore, 3651=LENS.",DSReason,basicprompt,Final answer: LENS,True,1,1,1
+Therefore, 3651=LENS.",DSReason,basicprompt,Final answer: LENS,True,1,0,0
 208,"With the common mathematical operators +, -, *, / try to fill in the blanks in the equation below to make it work.
 2 5 2 2 6 4 10 10 7=10
 For an extra challenge, whatever operators you use in the first 4 spaces, you must use in the same order in the last 4 spaces.",,(((2*5-2)/2+6)*4-10)/10+7=10,DSReason,basicprompt,"Final answer: 2 *5 -2 /2 +6 *4 -10 /10 +7=10  
-The operators used are *, -, /, + in the first four spaces and repeated in the same order for the last four spaces.",True,0,1,0
+The operators used are *, -, /, + in the first four spaces and repeated in the same order for the last four spaces.",True,0,0,0
 209,"My computer has been up to its usual tricks again. I wanted to know the population of some major countries and here are the results:
 USA     130,000
 England 410,000
@@ -5627,7 +5627,7 @@ Each vowel is worth 3 and each consonant is worth 7, these are added together an
 
 **Tibet** has V=2 (I, E) and C=3 (T, B, T) → 2×3=6. Assuming the factor aligns with Japan (45,000) due to matching vowel-consonant product (6), the calculation is 6 × 45,000 = **270,000**.
 
-Final answer: 270,000",True,1,1,0
+Final answer: 270,000",True,1,0,0
 210,"In the far future, you find yourself a cube-maker. To make cubes, you would take a 12 by 12 by 12 Rubik's cube-like object. Normally, you would touch each tiny one by one by one cube and they would fall off. However, with new quantum technology, it has become more interesting. You may say the total number of possible cubes (not necessarily with side length one) in the twelve by twelve by twelve Rubik's cube, and hocus-pocus, cubes of all sizes would appear. Assuming that each side in the tiny cubes has length one and that you may only make cubes of integer side length, what number should you say for the new technology to work?","For 1^3+2^3+... n^3, use (1+2+...n)^2.","6084.
 First, try a easier problem. Try a two by two by two Rubik's cube. There are 8 tiny cubes and one 2 by 2 by 2 cube. It should come to your notice that you take 2^3+1^3. But just to check, you look at a standard Rubik's cube with side length 3. There are, predictably, 27 one by one cubes, 8 two by two cubes, and one 3 by 3 cube. That was 3^3 +2^3 + 1^3. Now you can come to the conclusion that for any Rubik's cube with side length n, there are n^3+(n-1)^3 + ... 2^3+1^3 total cubes with integer side length. Therefore, there are 1^3+2^3+...12^3 cubes in the Rubik's cube with side length 12. The hint gives the formula for adding a sequence of cubes. Thus, you would get (1+2+3+4+...+11+12)^2 = 6084 cubes.",DSReason,basicprompt,"Final answer: 6084
 
@@ -5699,7 +5699,7 @@ b) **73 feet 9 inches**
 
 Final answer:  
 a) 1060 feet  
-b) 73 feet 9 inches",True,1,1,0
+b) 73 feet 9 inches",True,1,0,0
 213,"My electronic world atlas has developed another fault, I did a listing of miles from England to particular countries and here is the result:
 Australia - 500 miles
 Peru - 8,000 miles
@@ -5716,7 +5716,7 @@ Take the alphabetic position of the first letter, take half and then multiply by
 **France** starts with F, the 6th letter. Applying the same pattern:  
 6×500 = **3,000 miles**.  
 
-Final answer: 3,000 miles",True,0,1,0
+Final answer: 3,000 miles",True,1,0,0
 214,"Alec, Brett and Chris each purchased parts for their skateboards at the sports store. Alec and Brett wanted to build new skateboards, so they each needed to purchase a deck, trucks, bearings and wheels. Chris only needed new wheels. The store offers a 10% discount for purchases over $250, so the boys decided to pay for all the parts together to qualify for the discount. Altogether, the boys spent $266.40. The clues below reflect the price of the items before the discount is applied.
 The cost of all the bearings for the 2 boys combined was $1 more than the deck for Alec's skateboard.
 They each bought the same kinds of wheels. Together they spent $75 for the 3 sets of wheels. Each set contained 4 wheels.
@@ -5837,7 +5837,7 @@ Alec spent $113.40, Brett spent $130.50, and Chris spent $22.50.
 **Verification:**  
 Post-discount total: \(113.40 + 130.50 + 22.50 = 266.40\), matching the problem statement.  
 
-Final answer: Alec spent $113.40, Brett spent $130.50, and Chris spent $22.50.",True,1,1,1
+Final answer: Alec spent $113.40, Brett spent $130.50, and Chris spent $22.50.",True,1,0,0
 215,"I give you some numbers in a specific order, and a few symbols. Arrange those symbols however you can to make a correct math equation. You must use all of them.
 For example...
 753452120
@@ -5875,7 +5875,7 @@ Realizing the correct answer requires precise operation placement and digit grou
 Upon rechecking, the correct equation that balances both sides is:
 
 **Final answer:** 5+4-6*3=18-6-3-3  
-**Final answer:** 5+4-6*3=18-6-3-3",True,0,1,1
+**Final answer:** 5+4-6*3=18-6-3-3",True,0,1,0
 216,"Add the appropriate mathematical operators or symbols to make the following correct:
 3 4 5 = 90
 Parentheses may be used freely.","The answer is not 3^4 + 4 + 5, as this introduces an extra 4.","(3/4)x5! = 90
@@ -6016,7 +6016,7 @@ Final answer: (0! + 0! + 0! + 0! + 0!)! = 120",True,1,0,0
 
 **Final answer**: \(242 + 49 + 1 = 292\).  
 
-Final answer: 292",True,1,0,0
+Final answer: 292",True,1,1,0
 222,"Homer had always contemplated the size of the old oak tree in the field behind his house.  Standing 5 feet away from the 8 foot high fence in the back of the yard, he could just barely see the top leaves of the tree over the top of the fence.  He knew that the tree was 200 feet from the fence.  Homer was 6 feet tall, making his line of vision, 67 inches from the ground.
 Estimate how tall the old oak tree is.","TAN A = opposite / adjacent, remember trigonometry","tree height = TAN of angle of vision  *  distance to the tree = 104.7 feet tall
 First you need to figure out the angle of vision.  The angle of the line of vision over the fence, is the same angle of vision of the eye to the tree top.  Height of eyes (67 inches), height of fence (8 ft = 96 inches), distance to fence (5 ft = 60 in)
@@ -6042,7 +6042,7 @@ H = 96.68 + 8 = 104.68 \text{ feet}
 
 Converting 104.68 feet to a mixed number gives \(104 \frac{2}{3}\) feet. Since the problem asks for an estimate, rounding to the nearest whole number yields approximately **105 feet**.
 
-Final answer: \boxed{105}",True,0,0,0
+Final answer: \boxed{105}",True,1,0,0
 223,"A. 'My shortest business-related call today was from 5:55pm-5:55:29pm.'
 B. 'With the exception of one, five-day work week, I worked every day in September.
 C. 'Sum of 3 Right angles and one 19 degree angle.'
@@ -6058,7 +6058,7 @@ C. The sum of three right angles (270°) and a 19° angle is 289°, which is geo
 D. A marathon from 12 noon to 4am spans 16 hours, which is valid for an extended event.  
 E. A show from 4:30 to 5:30 is a standard 1-hour duration, which is correct.  
 
-**Final answer: B and C**",True,0,1,0
+**Final answer: B and C**",True,0,0,0
 224,"Arrange the numbers 1 through 15 in the shape of a pyramid (1 number at the peak, 2 numbers in the second row down, 3 in the next row down, 4 in the next row, and 5 in the bottom row).  The numbers must be arranged such that each number is equal to the difference of the two numbers directly below it.  For example, if 6 and 13 are next to each other in the same row, then 7 must be placed on top of them.
 To demonstrate, a three-level pyramid using the numbers 1 through 6 could be arranged as follows:
 top row:  2
@@ -6130,7 +6130,7 @@ For each divisor \( A \), we compute \( s = \frac{30}{A} - 1 \), which represent
 Summing these contributions:  
 \[ 28 + 13 + 8 + 4 + 3 + 1 = 57 \]
 
-Final answer: 57",True,0,0,0
+Final answer: 57",True,1,0,1
 226,"Dave, the janitor of an apartment block, notices that the boiler pressure is rising, and will shortly explode.
 He phones two of the residents, tells them the news, asks them to do the same and phone just two more people, and then get out of the building.
 Assume that each of the residents is in, and answers the phone immediately.
@@ -6157,7 +6157,7 @@ Thus 375 people were informed after 11 periods of phone calls.
 
 **Final Answer:** 480 seconds (8 minutes). 
 
-Final answer: 480 seconds",True,0,1,0
+Final answer: 480 seconds",True,0,0,0
 227,"What 6 digit number when multiplied by either 2, 3, 4, 5 or 6 has no new digits which appear?",,"142857.
 142857 * 2 = 287514
 142857 * 3 = 428571
@@ -6173,7 +6173,7 @@ Final answer: 480 seconds",True,0,1,0
 
 All results use only the digits 1, 4, 2, 8, 5, and 7, matching the original number. This property confirms **142857** as the unique solution.  
 
-Final answer: 142857",True,0,0,1
+Final answer: 142857",True,1,0,0
 228,Can you take 4 7's and arrange them with any math symbols needed to make the total be 100?,Division is needed,77/.77=100,DSReason,basicprompt,"To solve the problem of arranging four 7's with any math symbols to total 100, we can use division and decimal points. 
 
 Each division of 7 by 0.7 (written as 7/.7) equals 10. Using this operation twice and multiplying the results gives 10 × 10 = 100. This uses four 7's: two in the numerators (7) and two in the denominators (.7 each). 
@@ -6183,7 +6183,7 @@ Each division of 7 by 0.7 (written as 7/.7) equals 10. Using this operation twic
 2. **Second division:** 7 ÷ 0.7 = 10 (uses the remaining two 7's: 7 and .7)
 3. **Multiply the results:** 10 × 10 = 100
 
-Final answer: (7/.7) × (7/.7) = 100",True,0,0,0
+Final answer: (7/.7) × (7/.7) = 100",True,1,0,0
 229,"Find what all the letters stand for to make the equation correct.
 ABCD x 4 = DCBA","If ABCD is being multiplied by 4, the answer must be even. Therefore, A, which is the last digit of the answer, must be even.","A = 2, B = 1, C = 7, D = 8",DSReason,basicprompt,"The problem requires finding digits A, B, C, D such that ABCD × 4 = DCBA. 
 
@@ -6215,7 +6215,7 @@ ABCD x 4 = DCBA","If ABCD is being multiplied by 4, the answer must be even. The
    - This satisfies all digit constraints and reverses the digits as required.  
 
 Final answer: 2178  
-**A = 2, B = 1, C = 7, D = 8**",True,1,0,1
+**A = 2, B = 1, C = 7, D = 8**",True,1,0,0
 230,"In the addition sum FLY+FLY+FLY=AWAY, each letter represents a different non-zero digit. What is the value of A+W+A+Y?",They are NON-ZERO digits.,"From the ones digits, Y+Y+Y yield Y, and Y must equal 5 (it has been stated as non-zero).
 Since A is the highest digit, A is at most 2. However, because 1 is carried from the ones digits to the tens digits, A must equal 2, otherwise L will be 0. A=2 and L=7. The tens digits carry 2 to the hundreds digits, and the hundreds digits must carry 2 to the thousands digits. To avoid zero or duplicate numbers, F can only be 8 and W be 6. A+W+A+Y=2+6+2+5=15.",DSReason,basicprompt,Final answer: 15,True,1,0,0
 231,What is the smallest integer greater than 0 that can be written entirely with zeros and ones and is evenly divisible by 225?,,"The prime factorization of 225 is 5*5*3*3. So the answer will be both a factor of 25 and of 9.
@@ -6253,7 +6253,7 @@ Final answer: 11111111100",True,1,0,0
 3,127 × 61 = 190,747  
 This matches the given product.  
 
-Final answer: 53, 59, 61",True,1,1,0
+Final answer: 53, 59, 61",True,1,0,0
 233,"8998971798998
 What is so special about this set of numbers, aside from the fact that it is a palindrome?",,"As well as originally being a palindrome, when you add up the individual numbers the answer is also a palindrome (101).",DSReason,basicprompt,"The number **8998971798998** is a palindrome, but beyond that, its digits sum to **101**, which is a prime number and also a palindrome. The sum of the digits (8+9+9+8+9+7+1+7+9+8+9+9+8 = 101) is a palindromic prime, making this number unique even beyond its palindromic nature.
 
@@ -6267,7 +6267,7 @@ Therefore, the sum of all such numbers is 29+89=118.",DSReason,basicprompt,"The 
 Other candidates (9, 49, 69) are not prime. Summing the valid primes:  
 \( 29 + 89 = 118 \).  
 
-Final answer: 118",True,1,1,0
+Final answer: 118",True,1,0,0
 235,"These numbers are snogs:
 25     73
 81     9     33
@@ -6318,7 +6318,7 @@ For 327:
 - 327 × 3 = 981 (digits 9, 8, 1)  
 All digits 1–9 are used once.  
 
-Final answer: 219 and 327",True,1,1,1
+Final answer: 219 and 327",True,1,0,0
 238,"At midnight on Sunday, December 31st, Professor Lawrence set two of her analog clocks to the correct time. One of her clocks gains one minute every hour and the other loses two minutes every hour.
 1. When will the clocks next show the same time as each other?
 2. When will the clocks both show the correct time?",,"1. Midnight after 10 days, which is 240 hours later. They both show 4 o'clock, one clock has gained 240 minutes (4 hours) and the other has lost 480 minutes (8 hours).
@@ -6328,7 +6328,7 @@ Final answer: 219 and 327",True,1,1,1
 
 Final answer:  
 1. January 10 at midnight.  
-2. January 30 at midnight.",True,0,0,0
+2. January 30 at midnight.",True,1,0,0
 239,"A farmer was weighing five bales of hay, and each bale was a different weight. Because he was an odd farmer, he weighed the hay bales in groups of two, in every possible combination (but 2-3 and 3-2 are the same).  The farmer wrote down the total weights, but forgot to match them to the groups of hay bales (1&2, 1&3 etc.) that they went with.  The weights were 80, 82, 83, 84, 85, 86, 87, 88, 90, and 91 kilograms.
 The task is to find out how much each bale of hay weighs and what combinations of bales made each total weight.",,"Hay bale #1- 39 kg
 Hay bale #2- 41 kg
@@ -6442,7 +6442,7 @@ Where w is amount of corn for the first worker, d is the difference (amount of c
 2nd worker = 65/6 measures of corn
 3rd worker = 120/6 (20) measures of corn
 4th worker = 175/6 measures of corn
-5th worker = 230/6 measures of corn",DSReason,basicprompt,"Final answer: The workers receive \(\boxed{\frac{5}{3}}\), \(\boxed{\frac{65}{6}}\), \(\boxed{20}\), \(\boxed{\frac{175}{6}}\), and \(\boxed{\frac{115}{3}}\) measures respectively.",True,0,0,0
+5th worker = 230/6 measures of corn",DSReason,basicprompt,"Final answer: The workers receive \(\boxed{\frac{5}{3}}\), \(\boxed{\frac{65}{6}}\), \(\boxed{20}\), \(\boxed{\frac{175}{6}}\), and \(\boxed{\frac{115}{3}}\) measures respectively.",True,1,0,0
 244,"With a blank ruler (without marks) of exactly 13 cm you can only measure 13 cm. Now you are allowed to set 4 marks so that you can read off all full centimeter values from 1 to 13 cm directly from the ruler.
 Where must these 4 marks be?
 Much harder question:
@@ -6463,9 +6463,9 @@ To verify, the differences between these marks cover all values from 1 to 36 cm.
   - **15 cm**: 20-5=15.
   - **36 cm**: Between 0 and 36.
 
-This configuration uses 8 marks (including 0 and 36) and ensures all lengths from 1 to 36 cm are measurable through pairwise differences.",True,0,1,0
+This configuration uses 8 marks (including 0 and 36) and ensures all lengths from 1 to 36 cm are measurable through pairwise differences.",True,0,0,0
 245,"Using the four digits 3,3,7,7 and the mathematical operators +,-,*,/ write an expression equal to 24.  You must use each digit exactly once, but may use each operator multiple times, or not at all.  Parentheses are allowed.  The following would be a valid expression:
-(7 + 3)/(7 + 3) = 1",Think fractions.,(3 + 3/7) * 7 = 24,DSReason,basicprompt,Final answer: (3 + (3/7)) * 7 = 24,True,0,0,1
+(7 + 3)/(7 + 3) = 1",Think fractions.,(3 + 3/7) * 7 = 24,DSReason,basicprompt,Final answer: (3 + (3/7)) * 7 = 24,True,1,0,0
 246,"The Star of David (the star on the flag of Israel) has two superimposed equilateral triangles which produce six line segments and twelve segment intersections.  Using this star as a template, arrange the numbers 1 through 12, placing them at the twelve intersections, such that the four numbers on each line segment produce a sum of 26.  There is more than one solution.",,"One possible solution (starting at the top point and going clockwise around the perimeter):  2, 6, 5, 11, 7, 1, 9, 10, 8, 4, 3, 12.  This produces segments of:  2 + 6 + 11 + 7, 5 + 11 + 1 + 9, 7 + 1 + 10 + 8, 9 + 10 + 4 + 3, 8 + 4 + 12 + 2, 3 + 12 + 6 + 5.",DSReason,basicprompt,"Final answer:  
 Arrange the numbers such that each pair of opposite points sums to 13. For example:  
 1 opposite 12, 2 opposite 11, 3 opposite 10, 4 opposite 9, 5 opposite 8, 6 opposite 7.  
@@ -6475,7 +6475,7 @@ Each line sums to 26.
 
 Final answer:  
 One solution is placing numbers such that complementary pairs (summing to 13) are opposite each other. For example:  
-1-12, 2-11, 3-10, 4-9, 5-8, 6-7 arranged on opposite intersections. Each line then includes two pairs, e.g., 1-6-7-12, 2-5-8-11, etc., all summing to 26.",True,0,1,0
+1-12, 2-11, 3-10, 4-9, 5-8, 6-7 arranged on opposite intersections. Each line then includes two pairs, e.g., 1-6-7-12, 2-5-8-11, etc., all summing to 26.",True,0,0,1
 247,"The other day I was surprised by the sudden arrival of my friend Tweeto. He had arrived that morning after a long and arduous journey by train. Although he was quite tired out by the sheer length of the journey, he never wanted to miss a chance to catch me off guard with my math. As soon as he came in, he lay down a puzzle before me which quite took me by surprise.
 He said his train journey had taken him through six stations: Maver, Willow, Wonderland, Doku, Lemp, culminating in the Rudolf Railway terminal (named after my grandfather Rudolf, the world-famous RomanKachi), from where he'd taken a cab to my house. He was one amongst the few people in the train as it had chugged into Maver.
 These were his observations :-
@@ -6511,7 +6511,7 @@ Given that the number of people when the train chugged into Rudolf is 227, the n
 227 - (364 - 182) =
 227 - 182 =
 45 people
-Thus, I disappointed Tweeto by giving him the answer as 45 people.",DSReason,basicprompt,Final answer: 45,True,1,1,1
+Thus, I disappointed Tweeto by giving him the answer as 45 people.",DSReason,basicprompt,Final answer: 45,True,1,1,0
 248,"Some time after 2 O' Clock, the angle made between the minute hand and the vertical (12) on a clock is double the angle made between the hour hand and the vertical (12). What time is it?",What is the rate of travel of each hand on a clock?,"2:24 The hour hand makes an angle of 72 degrees while the minute hand makes an angle of 144 degrees.
 At exactly 2:00, the angle made by the hour hand is 60 degrees from vertical.  If you let x = the number of minutes past 2:00 that we are looking for, then the hour hand will be at:
 60 degrees + x / 60 min* 30 degrees
@@ -6544,7 +6544,7 @@ Solving for x will give you 24 minutes.  The time will be 2:24.",DSReason,basicp
 
 Both solutions satisfy the condition where the smaller angle of the minute hand is double the hour hand's angle.
 
-Final answer: 2:24 and 2:34\(\frac{2}{7}\) (or approximately 2:34:17).",True,1,0,0
+Final answer: 2:24 and 2:34\(\frac{2}{7}\) (or approximately 2:34:17).",True,0,0,0
 249,"The square of one whole number minus the square of another whole number equals 73.
 What are the two numbers? This can be done by trial and error but a little mathematical knowledge and maybe some algebra will get the answer fast.","73 is similar 41,29,19 etc.","The two numbers are 37 & 36. Therefore (37x37)1369 minus (36x36)1296 = 73.    The number 73 is a ""prime"" number i.e. the only two multiples for it are ""73"" & ""1"". By algebra, x2-y2 = 73 which is  (x+y)(x-y)=73. One of those two numbers must be ""1"". It can't be x+y (that would be more than ""1"") so it must be x-y=1. By simple substitution the answer is revealed.",DSReason,basicprompt,"The problem requires finding two whole numbers \( a \) and \( b \) such that \( a^2 - b^2 = 73 \). Using the difference of squares factorization, this becomes \( (a - b)(a + b) = 73 \). Since 73 is prime, its only positive factor pairs are \( 1 \) and \( 73 \). Setting \( a - b = 1 \) and \( a + b = 73 \), solving these equations:  
 

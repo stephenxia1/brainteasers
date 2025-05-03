@@ -5174,3 +5174,2345 @@ Gretchen heard exactly what we did and performed the same elimination.
 Seeing that Pop’s statement fixes his number at 6 and forces the unique triple (1, 7, 6), she could raise her hand and give the three numbers with certainty.
 
 Final answer: Snap has 1, Crackle has 7, Pop has 6.",True
+120,"On the Hogwarts Express, the conductor completely screwed up and lost his seating notes! However, he has managed to get his hands on the following clues. Can you help him solve the clues and seat everyone in their proper place?
+The Hogwarts Express has two different rows. Each row has two compartments. Each compartment has two rows of seats, and each row in the compartment can hold three people. In this case, there is a left compartment and a right compartment, like the following:
+Left (corridor) Right
+Clues:
+1) Harry is sitting across from Neville.
+2) Neville is in the left compartment.
+3) Ginny is sitting next to Neville, Luna, or both.
+4) Hermione, who is sitting completely diagonal from Neville, is next to either Harry, Ron, or both.
+5) Malfoy cannot be in the left compartment.
+6) Ron is sitting between Harry and Hermione.
+7) Luna is sitting diagonally from Harry.
+8) Malfoy is sitting next to Parkinson or Crabbe.
+9) Zabini is sitting opposite Nott.
+10) Crabbe and Goyle are sitting together next to one other person.
+11) Nott is diagonal from Parkinson.
+12) Harry must get a window seat.
+13) Hermione is in the aisle across the row from Malfoy.
+14) Crabbe is in the aisle across the row from Luna.
+15) Harry is closer to the front of the train.
+Note about the clues: Diagonal can mean completely diagonal (across, over 2) or it can mean slightly diagonal (across, over 1).",,"Harry, Ron, Hermione | Malfoy, Parkinson, Zabini
+Neville, Ginny, Luna | Crabbe, Goyle, Nott",GPT-o3,basicprompt,,True
+121,"You are given a stack of bingo cards.  Your task is to find a specific card.  Given the following clues, what is the number arrangement of that card?
+Columns, left to right, are: B (contains numbers 1 through 15), I (contains numbers 16 through 30), N (contains numbers 31 through 45), G (contains numbers 46 through 60), O (contains numbers 61 through 75).  Rows, top to bottom, are: 1, 2, 3, 4, 5.  An example of coordinate nomenclature: B1 identifies column B row 1.  N3 is a free space (contains no number).  No number appears more than once.
+1) Row 1: the tens digits are all different.
+2) Row 2: the numbers are even.
+3) Row 4: the sum of the five numbers is 178.
+4) Row 5: the numbers are prime.
+5) Column B: the sum of the five numbers is 60.
+6) Column I: two of the numbers are greater than 19.
+7) Column O: the numbers are in increasing equally-spaced order, from top to bottom.
+8) The product of B3 and O3 is between 600 and 700.
+9) The sum of I1 and G5 equals the sum of G1 and I5.
+10) N1 is midway between I4 and G4.
+11) N5 is midway between I2 and G2.
+12) I3 is midway between B1 and N1, and G3 is midway between N1 and O1.
+13) There are five numbers that are divisible by 11; only one per row and one per column.
+14) There is one triangle number in each column.",,"13 21 31 55 63
+12 18 44 56 64
+10 22 -- 47 65
+14 16 36 46 66
+11 19 37 53 67
+1) Per clue 2, eliminate the odd numbers in row 2.
+2) Per clue 4, eliminate the non-prime numbers in row 5.
+3) Per clue 14, 55 must be in column G and 66 must be in column O.
+4) Per clue 7, column O must contain 63 through 67, in order, from top to bottom.
+5) Per clue 8, B3 must be 10 (a triangle number).
+6) Per clue 14, eliminate the following numbers from column B: 1, 3, 6, and 15.
+7) Per clue 5, eliminate numbers less than 10.
+8) Per clue 12, eliminate impossible combinations.
+9) Per clue 13, G1 must be 55.  B1 can not be 11, therefore B1 must be 13 and B5 must be 11.
+10) Per clue 1, I1 must be greater than 19.  Per clue 9, I1 must be 21 or 25 or 27.  Per clue 13, 22 must be in column I.  Per clue 14, 21 or 28 must be in column I.  Per clue 6, only two numbers in column I can be greater than 19.  I1 must be 21 and I3 must be 22.
+11) Per clue 12, N1 must be 31 and G3 must be 47.
+12) Per clue 13, N2 must be 44.
+13) Per clue 9, I5 must be 19 and G5 must be 53.
+14) Per clue 10, I4 must be 16 and N4 must be 46.  This leaves I2 as 18.
+15) Per clue 11, N5 must be 37 and G2 must be 56.
+16) Per clue 14, N4 must be 36 or 45.  Per clue 3, since the sum is even, N4 must be 36.  B4 must be 14.  This leaves B2 as 12.",GPT-o3,basicprompt,,True
+122,"Can you break this code?
+Shift three. Caps lock one. Shift six.
+Tab six. Tab nine. Tab seven.
+Tab four. Tab three. Caps lock one. Caps lock three.
+Tab five. Caps lock six. Tab eight. Caps lock two. Shift 10.",Every sentence is a letter.,"It spells out ""Can you read this?""
+Use your keyboard like a grid. Tab, caps lock and shift are the vertical side of the grid and one  through nine are the horizontal side of the grid. For example shift five would be B.",GPT-o3,basicprompt,"Step-by-step decoding.
+
+Keyboard layout used (U.S. QWERTY)
+
+Row 1  (after Tab):  Q (1) W (2) E (3) R (4) T (5) Y (6) U (7) I (8) O (9) P (10)  
+Row 2  (after Caps Lock):  A (1) S (2) D (3) F (4) G (5) H (6) J (7) K (8) L (9)  
+Row 3  (after Shift):  Z (1) X (2) C (3) V (4) B (5) N (6) M (7) , (8) . (9) / (10)
+
+Interpretation rule  
+• “Tab n”  → nth key to the right of Tab (row 1).  
+• “Caps lock n” → nth key to the right of Caps Lock (row 2).  
+• “Shift n” → nth key to the right of Shift (row 3).
+
+Now translate the instructions in order.
+
+1. Shift 3  → C  
+2. Caps lock 1 → A  
+3. Shift 6 → N  
+4. Tab 6 → Y  
+5. Tab 9 → O  
+6. Tab 7 → U  
+7. Tab 4 → R  
+8. Tab 3 → E  
+9. Caps lock 1 → A  
+10. Caps lock 3 → D  
+11. Tab 5 → T  
+12. Caps lock 6 → H  
+13. Tab 8 → I  
+14. Caps lock 2 → S  
+15. Shift 10 → /
+
+Putting them together:  
+C A N Y O U R E A D T H I S /  
+
+“CAN YOU READ THIS/”
+
+Final answer: CAN YOU READ THIS/",True
+123,"In a wood-cutting factory, four large sawing machines stand in a windowless room. Each machine has an on/off switch attached, there being no doubt as to which switch controls which machine. Outside the door to the room are four back-up on/off switches, one for each machine inside. The power for each machine must first pass through the back-up switch, and then the machine switch before reaching the saw. The problem is, the new manager cannot decide how these back-up switches match with the machines inside the room. One day, the manager's brother visits. The manager takes him inside the sawing room where all four machines are at work and explains the problem. The brother announces that he intends to leave the room and that when he returns he will be able to match correctly the four switches outside the room to the four machines inside. The brother works alone, cannot see the machines from outside the room and solves the problem purely by operating switches. How is it possible?",,"Turn two machine switches off, go outside the room and, by listening, test all six combinations of two back-up switches to find which two match the two ""machine-on"" switches inside the room. Only one of the six combinations of two back-ups gives complete silence when switched off and these ""machine-on"" back-ups match the two ""on"" in the room. Now, before returning to the room, leave one ""on"" off and one ""off"" on leaving the other ""on"" on and ""off"" off, that is, only two switches are activated. Back inside the room, we can now match the switches by seeing which ""on"" machine is now off and which ""off"" is now on (when we activate its switch).",GPT-o3,basicprompt,"1.  While he is still inside he notices that every saw is running and therefore that every outside back-up switch must be ON.  
+   He now leaves the room; from this moment on he can use only the four back-up switches.
+
+2.  Outside he does the following time-schedule with the four switches (the exact minutes are not important – only that the periods are clearly different).
+
+   • Turn every switch OFF and wait until every saw has stopped and all motors start to cool.  
+   • Turn switch 1 ON, let it run 6 minutes, then turn it OFF again.  
+   • Turn switch 2 ON, let it run 4 minutes, then turn it OFF again.  
+   • Turn switch 3 ON, let it run 2 minutes, then turn it OFF again.  
+   • Turn switch 4 ON and, without waiting, walk straight back into the machine room.
+
+3.  What he finds inside:
+
+   • One saw is still running – that saw is powered through switch 4 (the only switch that is still ON).  
+   • Of the three saws that are standing still, their motors are at three distinctly different temperatures:  
+     – the hottest one ran 6 minutes ago → switch 1,  
+     – the next warm one ran 4 minutes ago → switch 2,  
+     – the coolest one stopped 2 minutes ago → switch 3.
+
+4.  Thus each machine is identified uniquely:
+
+   running → switch 4  
+   hottest stopped → switch 1  
+   warm stopped → switch 2  
+   coolest stopped → switch 3
+
+Because the brother himself chose the order and the running times, he now knows exactly which outside back-up switch belongs to which saw.
+
+Final answer: He uses the fact that a motor that has been running different lengths of time stays hot for different lengths of time. By letting one switch run continuously, another run a long time and cool a little, another run a shorter time and cool more, and the last not run at all, he produces four distinguishable conditions (running, hot, warm, cold). When he re-enters the room he matches those four conditions to the four time-patterns he created, thereby identifying every switch with its correct machine.",True
+124,"A plain white cube has gone through 4 steps to become what it is now. The steps (not necessarily in order) are:
+a) The whole cube being painted red
+b) A white circle being painted on every face except for the top and back
+c) The front and back faces being painted black
+d) The top, back, and bottom being painted blue
+All of the following facts about painting the cube are true:
+1. After the last of the four steps, the top face was all purple, the left and right faces were red with a pink circle in each of their centers, the front black with a gray circle, the bottom purple with a light blue circle, and the back completely dark blue.
+2. Color mixing goes as follows:
+-Red+Blue=Purple
+-Black+White=Gray
+-Red+White=Pink
+-Blue+White=Light Blue
+-Red+Black=Maroon
+-Blue+Black=Dark Blue
+3. Once black is added to a face, it will mix with the colors on the face if possible, but it cannot be changed at all afterwards. This is not true with white.
+4. Any area where two colors have been mixed cannot change color.
+5. Exactly one of the following is true:
+-Black was added first.
+-Red was added before blue.
+-Blue was added after white.
+-White was added last.
+In what order were the colors added?","If the back face is dark blue, then blue was added before black.","White, blue, black, red.
+Because there are both gray and dark blue regions, black was added after both white and blue. This means black was not first, and neither blue nor white was last.
+Black has to have been added before red, because if it wasn't, the front face would be maroon with a pink center. So black was not last, and red was not first.
+Since neither blue, black, nor white was last, red had to be added last. Combining this with other facts, white and blue could not be added third. So black was third.
+Going back to the statements of which one is true, we can now figure out the lies. Red was added last, so statement 4 is false. Black was added third, so statement 1 is false. Red was not added before any other colors, so statement 2 is false. This makes statement 3 true. White was added before blue, so white is first, and blue is second. The order white, blue, black, red is now revealed.",GPT-o3,basicprompt,,True
+125,"A bridge was guarded by an evil troll. The troll was very intelligent, but he was also a coward. He was afraid of anyone smarter than him. So every time anyone tried to cross the bridge, the troll would set up a test. If the traveler passed the test, he would be allowed to cross. Otherwise, the troll would eat him.
+A traveler came across the bridge. The troll said, ""You may only cross my bridge if you know the password."" He then wrote thirteen pairs of letters on a rock:
+A-V
+B-W
+C-Q
+D-M
+E-K
+F-U
+G-N
+H-P
+I-O
+J-R
+L-X
+S-T
+Y-Z
+""These thirteen pairs consist of all 26 letters of the alphabet,"" said the troll. ""The password contains thirteen letters, no two of which are the same. Each pair consists of one letter that is in the password and one other letter. If you wrote out the ""other"" letters in alphabetical order and then wrote each ""password"" letter under each one's corresponding ""other"" letter, you would have the correct spelling of the password.""
+Then the troll wrote five short words on the rock: FACE, QUEST, QUICK, SWITCH, and WORLD. ""Each short word contains exactly the same number of letters with the password,"" he said.
+So, what is the password?",Q cannot exist in the password without U.,"The password is UNPREDICTABLY.
+Exactly one of S and T must be in the password. So QUEST, and so each word, must have at least one letter in common with the password.
+Suppose each word has one common letter . Then none of Q, U, and E can be in the word, so C, F, and K must be in the word. But now FACE has at least two letters in common.
+Suppose each word has two common letters. The second common letter in QUEST cannot be Q. Suppose it is U. Then C and K must be in the password and F cannot. But now QUICK has at least three common letters.
+Suppose the second common letter in QUEST is E. Then C and F must be in the password and K cannot. But now FACE has at least three common letters.
+Suppose each word has four common letters. Then Q, U, and E must be in the password, and C, F, and K cannot. But now FACE has at most two common letters.
+So each word has three common letters. The second and third common letters in QUEST cannot be Q and E. Suppose they are Q and U. Then K must be in the password, and C and F cannot. But now FACE has at most two common letters.
+So the second and third common letters in QUEST must be U and E. Then C must be in the password, and F and K cannot. The third common letter in FACE must be A, so V cannot. The third common letter in QUICK must be I, so O cannot.
+Like QUEST, SWITCH contains both S and T. I and C are in the password, so W and H cannot. Since neither W nor O can be in the password, the three common letters in WORLD must be R, L, and D, so J, X, and M cannot.
+Writing each determined ""other"" letter in alphabetical order, and writing each ""password"" letter under its corresponding ""other"" letter, we get:
+F H J K M O Q V W X
+U P R E D  I  C A B L
+The pairs S-T and Y-Z can each only be placed in one spot here:
+F H J K M O Q S V W X Y
+U P R E D  I  C T A B L Z
+Our 13th pair can now clearly be placed in only one spot:
+F G H J K M O Q S V W X Z
+U N P R E D  I  C T A B L Y",GPT-o3,basicprompt,"Let every ordered pair “first-letter – second-letter” be denoted by a binary variable that is 1 when the first letter is in the password and 0 when the second letter is in the password.
+
+Pairs and variables  
+1 A–V  (Av)   8  H–P  (Hp)  
+2 B–W  (Bw)   9  I–O  (Io)  
+3 C–Q  (Cq)  10  J–R  (Jr)  
+4 D–M  (Dm)  11  L–X  (Lx)  
+5 E–K  (Ek)  12  S–T  (St)  
+6 F–U  (Fu)  13  Y–Z  (Yz)  
+7 G–N  (Gn)
+
+Five given words have to contain the same number N of password letters.  
+Using each word we can write that number in terms of the variables:
+
+FACE   Fu + Av + Cq + Ek                        = N …(1)  
+QUEST  3 + Ek – Cq – Fu                         = N …(2)  
+QUICK  3 + Io – Fu – Ek                        = N …(3)  
+SWITCH  2 – Bw + Io + Cq + Hp                   = N …(4)  
+WORLD  1 – Bw + 1 – Io + 1 – Jr + Lx + Dm      = N …(5)
+
+From (1) = (2)  2(Fu + Cq) + Av = 3 ⇒ Av = 1 and Fu + Cq = 1 …(6)
+
+Two possibilities follow.
+
+A.  (Fu , Cq , Ek , Io) = (0,1,1,1)    N = 3  
+B.  (Fu , Cq , Ek , Io) = (1,0,0,0)    N = 2
+
+Case B soon forces impossible equalities, so only Case A survives.
+
+Case A: Av=1, Fu=0, Cq=1, Ek=1, Io=1, N=3  
+From (4)  2 – Bw + Io + Cq + Hp = 3 ⇒ Hp – Bw = –1 ⇒ Hp = 0, Bw = 1  
+From (5)  (1–Bw)+(1–Io)+(1–Jr)+Lx+Dm = 3 ⇒ Jr=0, Lx=1, Dm=1
+
+So the definite password letters are
+
+A  B  C  D  E  I  L  P  R  U
+
+while the three pairs G–N, S–T, Y–Z are still undecided.
+
+Remember how the password is read: write the 13 “other” letters alphabetically and underneath each write its paired password letter.  
+With the current choices the “other” letters already fixed are  
+
+F  H  J  K  M  O  Q  V  W  X
+
+If the remaining “other” letters are chosen as G, S, Z (so N, T, Y are in the password) the 13 “other” letters, in order, are
+
+F  G  H  J  K  M  O  Q  S  V  W  X  Z
+
+and the corresponding password letters are
+
+U  N  P  R  E  D  I  C  T  A  B  L  Y
+
+which spells the 13-letter word
+
+UNPREDICTABLY
+
+All letters are distinct, satisfying every condition.  
+
+Therefore the password is:
+
+Final answer: UNPREDICTABLY",True
+126,"The rugby season may be over, but the wheeling and dealing is just reaching a high point. Recently, each of six teams acquired a different, valuable, player to beef up its roster. Each player specializes in a different position (one is a prop), and, coincidentally enough, each was acquired from a different one of the other teams. Each felt a pang of regret at leaving his former team, but is eagerly awaiting the first scrum of the season with his new mates. From the following clues, can you match each player with his position, new team and former team?
+1. The one from the Mountaineers didn't sign with the Scarlets.
+2. The Mountaineers, Troopers and Typhoons signed the fullback, the player who left the Downers and Cowan, in some order.
+3. The Downers, Scarlets and Jets lost Tuitupou, the center and the player who signed with the Typhoons, in some order.
+4. Jeeper and the center signed with the Downers and the Typhoons, in some order.
+5. Rokocoko and McGuyver left the Mountaineers and the Troopers, in some order.
+6. The player who left the Troopers signed with the Jets.
+7. The hooker cleared his stuff out of his former Downer locker last week.
+8. Rokocoko isn't the fullback.
+9. The wing's wife was delighted that her husband signed with the Scarlets.
+10. Grippley didn't sign with the Scarlets.
+11. The fly half, who isn't going to the Mountaineers, isn't Cowan.",,"The player who left the Troopers signed with the Jets (clue 6). This player is either Rokocoko or McGuyver (clue 5); the other left the Mountaineers.
+A third player is the hooker, who left the Downers (clue 7).
+The wing signed with the Scarlets. Since the player from the Mountaineers didn't sign with the Scarlets (clue 1), this is a fourth player.
+Cowan is neither the hooker who left the Downers nor the wing who signed with the Scarlets (clue 2), so he is a fifth player.
+Cowan is not the fullback (clue 2) or the fly half (clue 11).
+The center cannot have signed with the Typhoons (clue 3), so the center must have signed with the Downers while Jeeper signed with the Typhoons (clue 4). This means that Cowan cannot be the center (clue 2), and must therefore be the prop.
+The center didn't leave the Troopers or the Mountaineers (clue 3), so he is the 6th player, leaving Rokocoko and McGuyver as the fullback and the fly half, in some order.
+At this point we know the following information about the 6 players:
+1) Rokocoko/McGuyver, fullback/fly half, left the Troopers for the Jets
+2) Rokocoko/McGuyver, fullback/fly half, left the Mountaineers
+3) the hooker, left the Downers
+4) the wing, signed with the Scarlets
+5) Cowan, the prop
+6) the center
+Since Jeeper signed with the Typhoons, he is one of the three people listed in clue 2: he obviously isn't Cowan, so he is either the fullback or the player who left the Downers, ie the hooker (clue 7). We've established that Jeeper cannot be the fullback, so he is the hooker.
+Grippley didn't sign with the Scarlets (clue 10), so he is the center. This leaves Tuitupou as the wing.
+At this point we have the following information:
+1) Rokocoko/McGuyver, fullback/fly half, left the Troopers for the Jets
+2) Rokocoko/McGuyver, fullback/fly half, left the Mountaineers
+3) Jeeper, the hooker, left the Downers for the Typhoons
+4) Tuitupou, the wing, signed with the Scarlets
+5) Cowan, the prop
+6) Grippley, the center, signed with the Downers
+The player that left the Mountaineers couldn't have also signed with the Mountaineers, so Cowan signed with the Mountaineers, and the player that left the Mountaineers signed with the Troopers.
+The fullback didn't sign with the Jets (clue 2), so the fullback signed with the Troopers and the fly half signed with the Jets.
+Rokocoko isn't the fullback (clue 8), so McGuyver is the fullback and Rokocoko is the fly half.
+At this point we have the following information:
+1) Rokocoko, the fly half, left the Troopers for the Jets.
+2) McGuyver, the fullback, left the Mountaineers for the Troopers.
+3) Jeeper, the hooker, left the Downers for the Typhoons.
+4) Tuitupou, the wing, signed with the Scarlets.
+5) Cowan, the prop, signed with the Mountaineers.
+6) Grippley, the center, signed with the Downers.
+Tuitupou left the Downers, the Scarlets or the Jets (clue 3). We've established that Jeeper left the Downers, and since Tuitupou signed with the Scarlets, he must have left the Jets.
+The Scarlets, therefore, lost the center (clue 3).
+By process of elimination, Cowan left the Typhoons.
+So these are the 6 players:
+1) Rokocoko, the fly half, left the Troopers for the Jets.
+2) McGuyver, the fullback, left the Mountaineers for the Troopers.
+3) Jeeper, the hooker, left the Downers for the Typhoons.
+4) Tuitupou, the wing, left the Jets for the Scarlets.
+5) Cowan, the prop, left the Typhoons for the Mountaineers.
+6) Grippley, the center, left the Scarlets for the Downers.",GPT-o3,basicprompt,,True
+127,"For a TV entertainment show on Madadian TV entitled ""I am a Celebrity, get me a Kebab!!"" the producer, Mad Ade (no relation) must choose a group of two Directors and two Musicians. At least one of them must be an Actor and at least one a Singer.
+Available Directors are Holly Wood, Jed I. Knight, Ty Tanick, Winnie DePooh and Zoltan Pepper.
+Available Musicians are Howard Eyeno, Eve O'Looshun, Di O'Bolic and Brighton Early.
+Ty Tanick, Howard Eyeno and Eve O'Looshun are Actors.
+Winnie DePooh and Brighton Early are Singers.
+Howard Eyeno will not sit in the same room with Ty Tanick, and will take part only if Holly Wood is there.
+Winnie DePooh refuses to take part with Eve O'Looshun.
+Zoltan Pepper refuses to take part with Brighton Early.
+How many acceptable groups can the producer put together?",,"There are 60 possible groupings of two directors and two musicians. However, some of them are not acceptable, because they do not include both an actor and a singer. This brings the possible combinations down to 36. When you eliminate the combinations that represent people who refuse to work together, you end up with 9.The acceptable groups are:
+1) Holly Wood, Jed I. Knight, Howard Eyeno, and Brighton Early;
+2) Holly Wood, Jed I. Knight, Eve O'Looshun, and Brighton Early;
+3) Holly Wood, Ty Tanick, Eve O'Looshun, and Brighton Early;
+4) Holly Wood, Ty Tanick, Di O'Bolic, and Brighton Early;
+5) Holly Wood, Winnie DePooh, Howard Eyeno, and Di O'Bolic;
+6) Holly Wood, Winnie DePooh, Howard Eyeno, and Brighton Early;
+7) Jed I. Knight, Ty Tanick, Eve O'Looshun, and Brighton Early;
+8) Jed I. Knight, Ty Tanick, Di O'Bolic, and Brighton Early;
+9) Ty Tanick, Winnie DePooh, Di O'Bolic, and Brighton Early.
+Some interesting points arise here. For instance, Brighton Early appears in eight of the nine groups, while Zoltan Pepper doesn't appear at all. He's completely blocked out by his own and others' conditions on working with certain people, and Brighton Early benefits greatly by being the only musician/singer, especially when he doesn't refuse to work with anyone else. Winnie DePooh doesn't get a similar advantage by being the only director/singer because he refuses to work with Eve O'Looshun, which limits his availability. I guess the moral of the story is, be willing to work with anybody and you'll be able to work more.",GPT-o3,basicprompt,"We list the candidates with their extra “roles” and the refusals.
+
+Directors  
+H  = Holly Wood  
+J  = Jed I. Knight  
+T  = Ty Tanick (Actor)  
+W  = Winnie DePooh (Singer)  
+Z  = Zoltan Pepper  
+
+Musicians  
+Ho = Howard Eyeno (Actor)  
+E  = Eve O’Looshun (Actor)  
+D  = Di O’Bolic  
+B  = Brighton Early (Singer)  
+
+Extra requirements / refusals  
+• Ho refuses to be with T and insists Holly (H) be present.  
+• W refuses to be with E.  
+• Z refuses to be with B.
+
+The producer must pick 2 directors + 2 musicians, the 4-person group having  
+at least one Actor and at least one Singer.
+
+Step 1 – List the director pairs (10 of them) with their properties  
+
+1  HJ   (no Actor, no Singer)  
+2  HT   (Actor)  
+3  HW   (Singer)  
+4  HZ   (none)  
+5  JT   (Actor)  
+6  JW   (Singer)  
+7  JZ   (none)  
+8  TW   (Actor & Singer)  
+9  TZ   (Actor)  
+10 WZ   (Singer)
+
+Step 2 – List the musician pairs (6 of them)  
+
+a  HoE  (Actors)  
+b  HoD  (Actor)  
+c  HoB  (Actor & Singer)  
+d  ED   (Actor)  
+e  EB   (Actor & Singer)  
+f  DB   (Singer)
+
+Step 3 – Check every (director pair, musician pair) against
+
+• Actor + Singer requirement  
+• Ho–T incompatibility and Ho needs H  
+• W–E incompatibility  
+• Z–B incompatibility.
+
+The only combinations that survive are:
+
+1. HJ + HoB   → {H, J, Ho, B}  
+2. HJ + EB    → {H, J, E, B}  
+3. HT + EB    → {H, T, E, B}  
+4. HT + DB    → {H, T, D, B}  
+5. HW + HoD   → {H, W, Ho, D}  
+6. HW + HoB   → {H, W, Ho, B}  
+7. JT + EB    → {J, T, E, B}  
+8. JT + DB    → {J, T, D, B}  
+9. TW + DB    → {T, W, D, B}
+
+Step 4 – Count them: 9 distinct acceptable groups.
+
+Final answer: 9",True
+128,"One variation of the famous ""Eight Queens Puzzle"" is the ""Bishop Puzzle"".
+We know that you can place up to 8 queens on a chessboard with no other pieces in such a fashion that no queen can be taken.  We also know that you can place 32 knights on the board in such a fashion that none can be taken.
+Do you know how many bishops you can place on a standard 8x8 chessboard so that no piece can be taken?  What is their placement?",,"Fourteen bishops can be placed on the board.
+There are a number of solutions for this problem, but the simplest is the following placement.
+1) b8
+2) c8
+3) d8
+4) e8
+5) f8
+6) g8
+7) a1
+8) b1
+9) c1
+10) d1
+11) e1
+12) f1
+13) g1
+14) h1",GPT-o3,basicprompt,"Call the south-west corner of the chessboard (row 1, column 1) and
+use the usual coordinates
+
+ /–diagonals : k = row + column  (k = 2,3,…,16  → 15 possibilities)
+ \–diagonals : d = row – column  (d = –7,…,7  → 15 possibilities)
+
+A bishop attacks every square having the same k or the same d.
+Putting bishops so that none can attack another therefore means
+
+ “No two bishops may share a k and no two may share a d.”
+
+Upper bound
+A square exists for a given pair (k,d) exactly when k and d have the
+same parity, because
+
+ row = (k+d)/2  column = (k–d)/2
+
+must be integers.  
+Among the 15 values of k there are 8 even and 7 odd, while among the
+15 values of d there are only 7 even and 8 odd.
+Since an even k must be matched with an even d, at most 7 even k’s can
+be used; similarly at most 7 odd k’s can be used.
+Hence
+
+ maximum number of bishops ≤ 7 + 7 = 14.
+
+Construction that attains 14
+Choose seven even (k,d) pairs and seven odd (k,d) pairs, all different,
+so that every k and every d is used at most once:
+
+ k : 2 4 6 8 10 12 14  |  3 5 7 9 11 13 15  
+ d : 0 –2 –4 –6  6  4  2  | –1 –3 –5 –7  5  3  1
+
+These pairs give the squares
+
+ (1,1) (1,3) (1,5) (1,7) (8,2) (8,4) (8,6)
+ (1,2) (1,4) (1,6) (1,8) (8,3) (8,5) (8,7)
+
+i.e. in algebraic notation
+
+ a1, c1, e1, g1, b8, d8, f8, b1, d1, f1, h1, c8, e8, g8.
+
+Because all k’s and all d’s are different, no two of these bishops lie
+on the same diagonal, so none can capture another.
+
+Thus the upper bound 14 is attainable, and
+
+Final answer: 14 bishops can be placed without attacking, for example on the squares  
+a1 b1 c1 d1 e1 f1 g1 h1 b8 c8 d8 e8 f8 g8.",True
+129,"During the California Gold Rush, an assessor in San Francisco used a balance to measure out quantities of gold dust. He had a set of weights to place on the balance. The assessor needed to be able to measure out gold dust in exact ounces, no fractions, for every number of ounces starting at 1.
+If the assessor has four weights, what is the largest number of ounces of gold dust he can measure?
+Note: The answer is not 15 ounces",Weights can be placed on the balance plate with or without the gold dust.,"The maximum weight is 40 ounces.
+The weights are powers of 3:  1 ounce, 3 ounces, 9 ounces, 27 ounces.
+Example:
+7 ounces – Plate A: 9 oz. and 1 oz. weights.   Plate B: 3 oz weight and gold
+In any weighing, each weight can be placed in one of three ways: on the plate with the gold, on the plate without the gold, on the desk next to the balance. So given n weights, there are 3^n possible combinations.
+Throw out the case where all weights are on the table. That leaves 3^n – 1 cases.
+Half of those cases would weigh negative gold, so eliminate half of these.
+Thus, the number of valid combinations for n weights is (3^n – 1) / 2.
+For four weights, (3^4 – 1) / 2 = (81 – 1) / 2 = 80 / 2 = 40.",GPT-o3,basicprompt,"Let the four weights (in ascending order) be  
+
+w₁ ≤ w₂ ≤ w₃ ≤ w₄ .
+
+Because a two–pan balance may have weights placed on either side, every weight can be used with the coefficients –1, 0, or +1.  
+Suppose that with the first k weights we can already weigh every integer number of ounces from 1 up to Sₖ (inclusive).  
+Now we add the next heavier weight w_{k+1}.  
+
+• The smallest new positive weight we could need to make is Sₖ + 1.  
+• Putting w_{k+1} on the same side as the gold makes the balance heavier by w_{k+1}; putting it on the opposite side makes the balance lighter by w_{k+1}.  
+• Thus the largest “gap” we can cover with the new weight is 2Sₖ + 1   (because we can offset as much as Sₖ with the old weights and gain or lose another w_{k+1}).  
+
+Therefore, to avoid a gap at Sₖ + 1 we must have  
+
+w_{k+1} ≤ 2Sₖ + 1.                             (★)
+
+To maximise the final reach we always choose equality in (★).
+
+Start the construction:
+
+1. With no weights we can weigh nothing, so S₀ = 0.  
+   From (★): w₁ ≤ 2·0 + 1 = 1  ⇒  w₁ = 1.  
+   Now S₁ = 1.
+
+2. With S₁ = 1:  w₂ ≤ 2·1 + 1 = 3  ⇒  w₂ = 3.  
+   Now S₂ = 1 + 3 = 4.
+
+3. With S₂ = 4:  w₃ ≤ 2·4 + 1 = 9  ⇒  w₃ = 9.  
+   Now S₃ = 1 + 3 + 9 = 13.
+
+4. With S₃ = 13: w₄ ≤ 2·13 + 1 = 27 ⇒ w₄ = 27.  
+   Now S₄ = 1 + 3 + 9 + 27 = 40.
+
+Thus with the four weights 1 oz, 3 oz, 9 oz, 27 oz the assessor can measure every integer quantity from 1 oz up to 40 oz. 
+
+It is impossible to reach 41 oz: even if w₄ were as large as allowed (27 oz), the greatest total offset achievable is 1 + 3 + 9 + 27 = 40 oz, so 41 oz cannot be balanced.
+
+Hence the largest number of ounces that can be measured exactly with four weights is 40.
+
+Final answer: 40",True
+130,"Five young ladies (Liz, Marge, Sam, Ella and Jenny) went on five different hiking adventures. Each walked a distance of 3, 4, 5, 6, and 7 kilometers (random order). Each were able to take an extraordinary wildlife photograph in different locations (forest, meadow, mountain, river side and bushes) of different animals (rabbit, bird, deer, fox and bear cubs).  From the clues below determine where and of what each girl took a photograph of, and the distance each travelled.
+1.  Liz walked twice as far as the girl who saw the deer.  The girl who got a shot of the fox travelled one kilometer less than Jenny.  The girl in the bushes was not the one who walked 5 kilometers.  The girl on the riverside walked either one kilometer more or less than the one who was in the bushes.
+2.  The girl who was quick enough to capture the rabbit on film walked farther than Marge, but not as far as the one who got the bear cubs.  The girl who hiked up the mountain walked farther than at least one other girl, but not the farthest.  Either Ella or Sam walked more than one kilometer farther than the other.  Sam did not get a picture of the bird.  The mountain climber walked either one kilometer more or less than Marge.
+3.  The meadow explorer was not the one to take a picture of the bird.  The bear cubs and the fox were not captured in the forest.  Ella hiked farther than the mountain climber. The girl in the meadow walked one kilometer more or less than the mountain climber.
+4.  The girl on the riverside walked two kilometers more than the one who saw the fox.  The deer photographer did not hike as far as Ella, nor as far as the meadow explorer.  At least one traveller walked farther than Jenny.  The girl in the bushes walked either one kilometer more or less than the rabbit photographer.","Set up a grid so you can determine from process of elimination.
+Go over the clues a number of times to get more information once other things are known.","Liz - 6 km, rabbit, riverside
+Marge - 4 km, fox, meadow
+Sam - 3km, deer, forest
+Ella - 7 km, bear cubs, bushes
+Jenny - 5 km, bird, mountain",GPT-o3,basicprompt,,True
+131,"In the following code, each symbol stands for one of five letters.
+@ stands for E, C, O, N, or A
+6 stands for L, E, P, W, or T
+& stands for E, S, B, R, or G
+^ stands for N, H, A, T, or K
+The four letter code word, 6@&^, can be translated into two English words that are opposites. What are the two words?",,East and West.,GPT-o3,basicprompt,"We have to assign a letter to each symbol in the 4-symbol code 6@&^.  
+Allowed letters for each position are  
+
+6 → {L, E, P, W, T}  
+@ → {E, C, O, N, A}  
+& → {E, S, B, R, G}  
+^ → {N, H, A, T, K}
+
+We need two different assignments that produce two ordinary four-letter English words which are antonyms.
+
+Try the pair EAST / WEST (opposite cardinal directions):
+
+EAST: 6 = E, @ = A, & = S, ^ = T  
+• E is allowed for 6  
+• A is allowed for @  
+• S is allowed for &  
+• T is allowed for ^  
+So EAST fits.
+
+WEST: 6 = W, @ = E, & = S, ^ = T  
+• W is allowed for 6  
+• E is allowed for @  
+• S is allowed for &  
+• T is allowed for ^  
+So WEST also fits.
+
+Since EAST and WEST are opposite directions, the requirement is satisfied.
+
+Final answer: EAST and WEST",True
+132,"Madadia is split, like other countries, into cities, towns and villages. Some are large and some are small. Postman Patel delivers the mail in the village of ""Lardville"".
+Now Lardville is so small there is only one street with only ten houses, numbered from 1 to 10.
+In a certain week, Patel did not deliver any mail at two houses in the village; at the other houses he delivered mail three times each. Each working day he delivered mail at exactly four houses.
+The sums of the house numbers where he delivered mail were:
+on Monday: 18
+on Tuesday: 12
+on Wednesday: 23
+on Thursday: 19
+on Friday: 32
+on Saturday: 25
+on Sunday: he never works just in case any murder suspects try to use this as an excuse.
+Can you work out which two houses received no mail this week?",,"If postman Patel would have delivered mail three times at each house, then the total sum of the house numbers per day would be (1+2+3+4+5+6+7+8+9+10)x3=165. Now that sum is 18+12+23+19+32+25=129. The difference is 165-129=36; divided by 3 this is 12. The sum of the house numbers where no mail was delivered is therefore 12. The following combinations are possible:
+2+10
+3+9
+4+8
+5+7
+Each day at four houses the mail was delivered. On Tuesday the sum was 12. 12 can only be made from four house numbers in 2 ways:
+1+2+3+6
+1+2+4+5
+The same holds for Friday with the sum of 32:
+5+8+9+10
+6+7+9+10
+From this we can conclude that the house numbers 1, 2, 9 and 10 for sure have received mail, which means that the combinations 2+10 and 3+9 are not possible. Also the combination 5+7 is not possible, because mail was delivered either at house 5 or at house 7.
+Thus the only remaining solution is: houses 4 and 8.",GPT-o3,basicprompt,"We label the ten houses 1–10.
+
+1.  Each working day Patel visited 4 houses, and in the whole week he made  
+   6 days × 4 houses = 24 deliveries.
+
+2.  Exactly 8 houses received mail, each of them exactly 3 times, because  
+   8 houses × 3 deliveries = 24.
+
+3.  Add the six daily totals:  
+   18+12+23+19+32+25 = 129.  
+   These 129 are the sum of the 24 delivered house-numbers, i.e. three times the
+   sum S of the 8 houses that were actually visited: 3 S = 129 ⇒ S = 43.
+
+4.  The sum of all ten house numbers is 1+2+…+10 = 55.  
+   Therefore the two houses that never received mail add to  
+   55−43 = 12.
+
+5.  The only pairs of distinct house numbers that sum to 12 are  
+   {2,10}, {3,9}, {4,8}, {5,7}.  
+   For each pair we ask whether one can get a daily total of 32
+   from four distinct visited houses:
+
+      • If {2,10} were missing, the largest four visited numbers would be  
+        9+8+7+6 = 30 < 32 ⇒ impossible.  
+      • If {3,9} were missing, the largest four would be  
+        10+8+7+6 = 31 < 32 ⇒ impossible.  
+      • If {5,7} were missing, no 4-number subset of the remaining houses
+        sums to 32 (maximum is 10+9+8+6 = 33, but 32 cannot be hit).  
+      • If {4,8} are missing, the visited set is  
+        {1,2,3,5,6,7,9,10}.  
+        Here 10+9+7+6 = 32, so the daily total 32 is feasible.
+
+   Hence the only possible absent pair is {4, 8}.
+
+6.  One explicit schedule proving consistency is:
+
+      Monday (18): 9 + 5 + 3 + 1  
+      Tuesday (12): 6 + 3 + 2 + 1  
+      Wednesday (23): 10 + 7 + 5 + 1  
+      Thursday (19): 9 + 5 + 3 + 2  
+      Friday (32): 10 + 9 + 7 + 6  
+      Saturday (25): 10 + 7 + 6 + 2  
+
+   Each of the eight houses 1,2,3,5,6,7,9,10 appears exactly three times,
+   and all daily sums match the given ones.
+
+Therefore houses 4 and 8 are the ones that received no mail.
+
+Final answer: Houses 4 and 8 received no mail.",True
+133,"You are given 14 balls, one of which is marked as a reference ball.  12 of the other balls are the same weight as the reference ball but the other ball may be slightly heavier, slightly lighter or the same weight as the reference ball.  Using a balance scale how can you determine which is the odd ball, if any, with just three weighings?",,"Split the 14 balls into three groups:  one of 4 unknown balls, one of 5 unknown balls and one of 4 unknown plus the reference ball.
+1st balance: Balance the two groups of 5 balls.
+a) If the balance is not equal, designate the heavy side balls H and the light side balls L.  The group of 4 unbalanced balls must be good balls.
+If the 5 unknown is heavier (5 H > 4 L + ref):  take the ref ball, one H, and two L's, and place to one side.
+2nd balance:  Balance the remaining balls like this:  2H+L against 2H+L.
+a) If the balance is equal, then one of the two L's placed to one side is a light ball or the H placed to one side is a heavy ball.
+3rd balance:  Balance the two L's against each other.  If unequal, the lighter side is a light ball.  If equal, the H is a heavy ball.
+b) If the 2nd balance is not equal, then either the 2H has the heavy ball or the opposing L is light.
+3rd balance: Balance the two H balls from the heavier side against each other.  If equal, then L is a light ball.  If not, the heavier H is a heavy ball.
+If the 5 unknown is lighter (5 L > 4 H + ref):  take the ref ball, one L, and two H's, and place to one side.
+2nd balance:  Balance the remaining balls like this:  2L+H against 2L+H.
+a) If the balance is equal, then one of the two H's placed to one side is a heavy ball or the L placed to one side is a light ball.
+3rd balance:  Balance the two H's against each other.  If unequal, the heavier side is a heavy ball.  If equal, the L is a light ball.
+b) If the 2nd balance is not equal, then either the 2L has the light ball or the opposing H is heavy.
+3rd balance:  Balance the two L balls from the lighter side against each other.  If equal, then the H is a heavy ball.  If not, the lighter L is a light ball.
+b) If the first balance is equal, then the odd ball could be in the group of 4 unknown balls.  The other 10 must all be good balls.
+2nd balance:  Place one of the 4 unknown balls to one side and balance the remaining three against three good reference balls from the 10 good balls.
+a) If the balance is equal, then the ball placed to one side could be the odd ball.
+3rd balance:  Balance this ball against a reference to determine if it's good or not.
+b) If the 3 unknown are heavier then:  3rd balance:  balance two of the three balls against each other.  If equal, the unbalanced ball is heavy.  If not equal, the heavy side has a heavy ball.
+c) If the 3 unknown are lighter then:
+3rd balance: balance two of the three balls against each other.  If equal, the unbalanced ball is lighter.  If not, equal the lighter side has a lighter ball.",GPT-o3,basicprompt,,True
+134,"Mad Ade was standing outside waiting as usual for the Sweaty Chef Kebab Shop to open and was staring into the shop window of the store next door. He noticed a chess set on display.
+He wondered how many ways are there of arranging the sixteen black or white pieces of the chess set on the first two rows of the board?
+Obviously, Mad Ade did not bother working it out as the Kebab shop opened almost immediately as he thought about it.
+What would have been the answer if Mad Ade wasn't so greedy and had worked it out?
+Given that each pawn is identical and each rook, knight and bishop is identical to its pair.",,"For 16 pieces that are all different the answer is 16! (!=factorial ie. 16x15x14...x1)
+But, we have duplicate combinations because there are identical pieces being used. The number of duplicate combinations is =
+2 (for Rooks) x 2 (for Knights) x 2(for Bishops) x 8! (for Pawns).
+This gives 8x8! = 322560.
+Dividing 16! by 322560 gives us the number of unique combinations for a normal chess set = 64864800 different ways.",GPT-o3,basicprompt,"We have to arrange the 16 pieces that belong to one side (either all-white or all-black) on the 16 squares of the first two ranks of the board.
+
+Pieces to place  
+• 8 identical pawns  
+• 2 identical rooks  
+• 2 identical knights  
+• 2 identical bishops  
+• 1 queen (unique)  
+• 1 king  (unique)
+
+Step 1 – ignore the fact that some pieces are identical.  
+The 16 distinct squares can be filled in 16! ways.
+
+Step 2 – correct for the indistinguishable pieces.  
+Because the 8 pawns are identical we have over-counted every arrangement of them by a factor of 8!;  
+similarly, the rooks, knights and bishops each introduce a factor of 2!.
+
+Total number of distinct arrangements  
+
+  16! / (8! · 2! · 2! · 2!)  
+  = (16!/8!) / 8          ( since 2!·2!·2! = 8 )  
+  = (9·10·11·12·13·14·15·16)/8  
+  = 518,918,400 / 8  
+  = 64,864,800.
+
+Final answer: 64,864,800",True
+135,"Heather, her husband, their son, their daughter, and Heather's brother lived together in a house...until yesterday, when one of the five was murdered by one of the other four. Here are some facts that refer only to the five family members:
+1. At the time of the murder, a man and a woman were at the store together, the murderer and the victim were at the park together, and one of Heather's two children was at home alone.
+2. Heather and her husband were apart at the time of the murder.
+3. The victim's sibling is not the murderer.
+4. The murderer is younger than the victim.
+Who was murdered?",,"Heather's brother was murdered.
+From facts 1 and 2, Heather and her husband were at the store and the park, in some order. Suppose Heather was at the park. Then, from fact 1, Heather's husband and their daughter were at the store, their son was at home, and Heather and her brother were at the park, which means that one of Heather and her brother must have killed the other. But, from fact 3, this cannot work, which means that Heather was at the store.
+Suppose the man at the store with Heather was her brother. Then her husband was at the park with one of the two children. Since the husband is obviously older than the children, fact 4 tells us that he could not have killed them. But since he doesn't have a sibling who lives with him, fact 3 tells us he can't be the victim either.
+This means that Heather and her son were at the store, her daughter was at home, and Heather's husband and brother were at the park. Again, from fact 3, the husband could not have been the victim, which means that he was the murderer and the brother was the victim.",GPT-o3,basicprompt,"Reasoning step by step
+
+1.  The five family members  
+   • Heather – an adult woman  
+   • Heather’s husband – an adult man  
+   • Heather’s brother – an adult man  
+   • Son – a boy  
+   • Daughter – a girl  
+
+   (Only the first three are “man/woman”; the two children are “boy/girl”.)
+
+2.  Statement-1 puts the five people in three places at the moment of the crime  
+        STORE : a man and a woman  
+        HOME  : one of the two children, alone  
+        PARK  : the murderer and the victim  
+
+3.  Statement-2 says Heather and her husband were not together, so they cannot be the pair at the same place.
+
+4.  Heather cannot be the child who is home alone, so she must be either at the store or at the park.  
+    • If Heather were at the park, the woman at the store would have to be her daughter, who is a girl, not a woman – impossible.  
+      Therefore Heather is at the STORE.
+
+5.  The man who is with Heather at the store cannot be her husband (they must be apart), and he must be an adult (“man”).  
+    The only possible man is Heather’s brother.  
+        STORE : Heather (woman) + Brother (man)
+
+6.  The remaining three people are Husband, Son, Daughter.  
+    One child is home alone, the other two people are together at the park.
+
+   Two sub-cases:
+
+   a) Daughter home alone → PARK: Husband + Son  
+      • Murderer must be younger than victim (Statement-4); the son is younger than his father, the reverse is impossible.  
+        So Son murdered Husband.  
+      • Victim’s sibling is not the murderer (Statement-3); the husband’s siblings are not present, so the rule is satisfied.
+
+   b) Son home alone → PARK: Husband + Daughter  
+      • By the same age argument, Daughter murdered Husband, and Statement-3 is again satisfied.
+
+   In every allowed arrangement the person who dies is Heather’s husband.
+
+7.  No other placement of people satisfies all four statements, so the victim is uniquely determined even though the murderer could be either child.
+
+Final answer: Heather’s husband was murdered.",True
+136,"20 cells are arranged in a 5x4 grid.  The cells are occupied by 20 birds (10 different birds, a pair (2) of each).
+The cells are labeled as follows:
+ABCDE
+FGHIK
+LMNOP
+RSTUW
+The birds are: albatross, bunting, cardinal, chickadee, finch, flamingo, hawk, magpie, penguin, and swan.
+A bird can only occupy a cell if the cell is labeled with a letter that is in the bird's name.  For example, a hawk can only be in cell: H, A, W, or K.
+Each pair of birds must be in the same row or the same column.
+Where are the birds located?",,"1) Determine the locations of the swans.  The only cells that are in the same row/column are in row 4.
+2) Determine the locations of the hawks.  One of the cells is eliminated because it is occupied by a swan.  The only remaining cells that are in the same row/column are in row 2.
+3) Determine the bird that is in row 1 column 2.  Placing the bunting in that cell will lead to a dead end.  Therefore, an albatross must be in that cell.
+4) The remaining cells can be easily filled with the remaining birds.
+Row 1: albatross, albatross, chickadee, chickadee, penguin
+Row 2: finch, magpie, hawk, finch, hawk
+Row 3: cardinal, magpie, flamingo, flamingo, penguin
+Row 4: cardinal, swan, bunting, bunting, swan",GPT-o3,basicprompt,"Albatross – A and B  
+Bunting – T and U  
+Cardinal – L and R  
+Chickadee – C and D  
+Finch – F and I  
+Flamingo – N and O  
+Hawk – H and K  
+Magpie – G and M  
+Penguin – E and P  
+Swan – S and W  
+
+(Using the 5×4 grid  
+ABCDE / FGHIK / LMNOP / RSTUW,  
+each pair occupies the same row or column and each letter is in the bird’s name.)",True
+137,"A group of stones are all lined up. Upon closer inspection, you realize there are numbers on the stones, as follows:
+1 - 2 - 3 - 5 - 9 - 12
+The last stone has had its number worn off by wind and time, what should the number on the stone read?","This is a logical sequence, not necessarily a mathematical one.","21
+one - two - three - five - nine - twelve - twenty-one
+The words for the numbers end in vowels.",GPT-o3,basicprompt,"Look at the stones in the two separate “threads” formed by taking every other term.  
+
+Odd-position stones (1st, 3rd, 5th …):  
+1, 3, 9 …  
+Each time we simply multiply by 3:  
+1 × 3 = 3, 3 × 3 = 9, so next would be 9 × 3 = 27.
+
+Even-position stones (2nd, 4th, 6th …):  
+2, 5, 12 …  
+Here we double and then add 1, 2, 3 … successively:  
+2 × 2 + 1 = 5, 5 × 2 + 2 = 12, so next would be 12 × 2 + 3 = 27.
+
+Both independent patterns predict the same next number, 27, so the worn-off stone must read 27.
+
+Final answer: 27",True
+138,"Ever since Emily began her new job, the last thing she wants to do when she gets home is clean her apartment.  She decided to make a schedule so that she would clean a different room (including the living room) each day (Monday through Friday).  Last week she procrastinated by talking on the phone, so this week, Emily decided to let the answering machine handle  her calls, and she received a different number of messages each day.  Can you determine the which rooms she cleaned each day and the number of messages she received?
+Given:
+Cleaning Days -- 	Monday, Tuesday, Wednesday, Thursday, Friday
+Number of Messages -- 	1, 2, 3, 4, 5
+Rooms Cleaned -- 	Bedroom, Living Room, Bathroom, Den, Kitchen
+Clues:
+#1) Emily received more messages on Thursday than on the day she cleaned her bedroom, but fewer than on Tuesday.
+#2) Emily cleaned the bathroom on the day after receiving just one message and one day before she cleaned the den.
+#3) She received more messages when she cleaned her bedroom than when she cleaned the den.
+#4) Emily cleaned the kitchen on Wednesday.","s:
+Make a list of one set of givens and list another set of givens that would correspond to them... i.e. (Days) -- (Messages)
+Monday -- 1  2  3  4  5
+Tuesday -- 1  2  3  4  5, etc.
+Cross off what you know is NOT the correct answer from the clues, and when you find out a number of messages that fits a day circle it, or write it on the piece of paper in a different section to keep track.  Do the same with the other correlations that can be surmised by looking at the clues:
+(Days) -- (Rooms)
+(Rooms) -- (Messages)
+Keep in mind that for example, if you find a number of messages for a day, the other days can NOT have that amount of messages, so that gives you another answer to mark off to narrow the correct answer down.","Answers:
+Monday -- Bedroom -- 3
+Tuesday -- Living Room -- 5
+Wednesday -- Kitchen -- 1
+Thursday -- Bathroom -- 4
+Friday -- Den -- 2
+**Clue #1:  If she received more messages on Thursday than on the day she cleaned her bedroom, she could not have received 1 message on Thursday as the day she cleaned her room would have to be 0, which is not an option.  She could not have received 5 messages on the day she cleaned her bedroom because Thursday would then have to be at least 6 messages which is not an option.  Assume also that she did NOT clean her bedroom on Thursday or Tuesday, as they are mentioned in the same clue.  Since she had fewer messages on Thursday than Tuesday, she could not have received 1 message on Tuesday for the same reasons mentioned above.  Also by the same token, she could not have received 5 on Thursday because Tuesday would have to be 6.
+**Clue #2:   1 message -- bathroom -- den....the order of the happenings in clue 2.  therefore, she could not have cleaned the bathroom on Monday, nor the den.  Also assume she did not receive 1 message on the bathroom or den cleanings.  She could not have cleaned the bathroom on Friday.  As that would leave no day for the den, which is the day after.  She could not have received 1 message on Thursday or Friday because there would not be enough days to clean the bathroom and den.
+**Clue #3:  If she received more messages when she cleaned her bedroom than when she cleaned the den, she could not have received 5 messages when she cleaned the den, nor 1 message when she cleaned her bedroom.
+**Clue #4:  She cleaned the Kitchen on Wednesday..self explanatory.
+*********Now look back using all the clues instead of 1 at a time.  In Clue 1 and Clue 3.  More messages when she cleaned  her bedroom than the den (#3).  In Clue 1, it says she got more messages on Thursday than when she cleaned her room.  So she could NOT have cleaned her den on Thursday.  That leaves Tuesday and Friday for the den.  But remember the order given in Clue 2.  The den could not have been cleaned on Tuesday.  Den was on Friday, which leaves only one day for the bedroom, which is Monday.  Now add in the order in Clue 2, and you know that Thursday she cleaned the bathroom, and Wednesday, when she cleaned the kitchen, she received 1 message.  When you know the bathroom was cleaned on Thursday, that leaves one room and one day.  The living room was cleaned on Tuesday.  That leaves the messages for each day.  We know that the bedroom was cleaned on Monday.  You should have marked off 1 and 5 messages for the bedroom.  So that means that 1 and 5 should be marked off the day the bedroom was cleaned as well.  They have to match.  Another that doesn't match, is that Friday the den was cleaned.  We know that 1 and 5 messages were not received while the den was being cleaned, so 1 and 5 could not have been received on Friday.  After marking that 5 off, there is only one day with a five left -- Tuesday.    You know that she received more messages on Thursday than when she cleaned her bedroom (Monday).  The highest that she could have received on Thursday is 4.  So we know that 4 could not have been received on Monday.  By the same token, we know that she received more messages when cleaning the bathroom (Thursday) than when cleaning the den (Friday).  The highest she could have received on Thursday is 4.  So we know that for Friday to be less, she could not receive 4 messages on Friday.  This means she received 4 messages on Thursday when she cleaned the bathroom.  Looking back at clue 2 gives you the answer for the last section.  She received more messages when cleaning her bedroom than when cleaning the den.  So she received 3 in the bedroom, and 2 in the den.",GPT-o3,basicprompt,"Monday – Bedroom – 3 messages  
+Tuesday – Living Room – 5 messages  
+Wednesday – Kitchen – 1 message  
+Thursday – Bathroom – 4 messages  
+Friday – Den – 2 messages  
+
+Final answer: Monday Bedroom 3, Tuesday Living Room 5, Wednesday Kitchen 1, Thursday Bathroom 4, Friday Den 2",True
+139,"In order to best use his study time, Caleb has enlisted the help of four other students in his philosophy class by forming a study group.  Each of the five students is assigned to read one of the first 5 chapters of their text Great Minds Don't Necessarily Think Alike, and prepare a summary of the chapter to present to the group.  Can you determine the title of each of the five chapters, as well as the student responsible for reading it?
+Given:
+Chapters -- 		1, 2, 3, 4, 5
+Chapter Titles --		Descartes Before DesHorse, Freudian Slippers, I Kant Understand It, Jung At Heart, Sense of Hume-or
+Student Names -- 	Alex, Caleb, Joan, Kiera, Toby
+Clues:
+#1) Alex's chapter immediately follows ""Sense of Hume-or"" and immediately precedes ""Descartes Before DesHorse.""
+#2) ""Jung At Heart"" is the name of a chapter that comes somewhere before the chapter assigned to Toby.
+#3) Kiera's chapter is three chapters after ""Freudian Slippers.""
+#4) Two consecutive chapters, in one order or the another, are ""I Kant Understand It"" and Joan's chapter (which isn't chapter four)","s:
+Make a list of one set of givens and list another set of givens that would correspond to them... i.e. (Chapter Numbers) -- (Titles)
+Chap 1 -- Des, Freud, I Kant, Jung, Sense
+Chap 2 -- Des, Freud, I Kant, Jung, Sense, etc.
+Cross off what you know is NOT the correct answer from the clues, and when you find a chapter number that fits a title, circle it, or write the information on the piece of paper in a different section to keep track.  Do the same with the other correlations that can be surmised by looking at the clues:
+(Chapter Names) -- (Students Names)
+(Student Names) -- (Chapter Numbers)
+Keep in mind that for example, if you find a chapter number for a title, the other chapter numbers can NOT have that title, so that gives you another answer to mark off to narrow the correct answer down.","Answers:
+Chapter 1 -- ""Jung At Heart"" -- Caleb
+Chapter 2 -- ""Freudian Slippers"" -- Toby
+Chapter 3 -- ""Sense of Hume-or"" -- Joan
+Chapter 4 -- ""I Kant Understand It"" -- Alex
+Chapter 5 -- ""Descartes Before DesHorse"" -- Kiera
+**Clue #1:  This gives us an order.  We know that three of the chapters are, in this order, (Sense, Alex's, Descartes).  Therefore, Alex's chapter can not be the first chapter, or the last.  ""Sense"" can not be the last chapter, and ""Descartes"" can not be the first.  We can also assume that ""Sense"" nor ""Descartes"" is Alex's chapter.
+**Clue #2:  This lets us know that Toby's chapter can not be the first chapter, and that ""Jung"" can not be the last chapter.  We assume ""Jung"" is not Toby's chapter.
+**Clue #3:  If Kiera's chapter is three AFTER ""Freud"", then ""Freud"" can NOT be the 3rd, 4th or 5th chapter.  This also means that Kiera's chapter can not be the 1st, 2nd, or 3rd chapters.
+**Clue #4:  Joan's chapter is not 4th.  If ""Kant"" is 5th, Joan's would be 4th.  So we know that ""Kant"" is not the 5th chapter.  That leaves ""Descartes"" as the 5th chapter.  Assume Joan's chapter is not ""Kant.""
+*********Recall the order given in Clue 1.  This means Alex's chapter is 4th, and ""Sense"" is 3rd.  This also leaves Kiera's as the 5th chapter, which is ""Descartes"".  For hers to be 3 after ""Freud"", ""Freud"" has the be the 2nd chapter.  We know that ""Jung"" comes before Toby's chapter.  This leaves chapters 1 and 4.  If ""Jung"" is chapter 4, Toby's would be 5, but we know that 5 is Kiera's, so ""Jung"" has to be chapter 1.  This makes ""Kant"" chapter 4, and Alex's chapter.  This means that Joans has to be the 3rd or the 5th because of the order between Joan's chapter and ""Kant"" that we were already given, and we already know that Kiera has the 5th chapter.  So we know that Joan has chapter 3, ""Sense.""   After marking off the chapter numbers by the names, you see that Toby's is chapter 2, ""Freud"" and that leaves Caleb with chapter 1, ""Jung.""",GPT-o3,basicprompt,"Reasoning:
+
+1.  From clue #1, “Sense of Hume-or”, Alex’s chapter, and “Descartes Before DesHorse” are three consecutive chapters in that order.  
+   ⇒ Alex’s chapter can be #2, #3 or #4.
+
+2.  From clue #3, “Freudian Slippers” is three chapters before Kiera’s.  
+   ⇒ “Freudian Slippers” can be chapter 1 (→ Kiera 4) or chapter 2 (→ Kiera 5).
+
+3.  Try Alex = 2: forces “Sense” = 1 and “Descartes” = 3.  
+   Then “Freudian” must be 2 (Alex’s title) ⇒ Kiera = 5.  
+   Clue #4 then puts “I Kant” = 4 and Joan = 3, leaving “Jung” = 5, which violates clue #2 (Jung must be before Toby).  
+   ⇒ Impossible.
+
+4.  Try Alex = 3: gives “Sense” = 2, “Descartes” = 4.  
+   “Freudian” must be 1 ⇒ Kiera = 4, impossible (4 already Alex).  
+   ⇒ Impossible.
+
+5.  Therefore Alex = 4: “Sense” = 3, “Descartes” = 5.  
+   “Freudian” must be 2 ⇒ Kiera = 5.  
+   Remaining titles: “Jung” and “I Kant”; remaining chapters: 1 and 4 (Alex’s).  
+   a)  Put “I Kant” at 4 (Alex) ⇒ Joan must be chapter 3 (clue #4).  
+       Then “Jung” is chapter 1.  
+       Clue #2 needs Jung before Toby ⇒ Toby can only be chapter 2.  
+       Caleb takes the remaining chapter 1. All clues now satisfied.  
+   b)  Putting “I Kant” at 1 fails clue #2, so the arrangement in (a) is the only one that works.
+
+Final answer:  
+Chapter 1 – “Jung At Heart”, read by Caleb  
+Chapter 2 – “Freudian Slippers”, read by Toby  
+Chapter 3 – “Sense of Hume-or”, read by Joan  
+Chapter 4 – “I Kant Understand It”, read by Alex  
+Chapter 5 – “Descartes Before DesHorse”, read by Kiera",True
+140,"8 friends decided to play in a pool tournament.  They played a single elimination tournament, with three rounds (the first round, second round, and finals).  Using the clues below can you determine who beat whom in each round?
+Boys:  Jack, Jamie, Jim, Roger, Tommy
+Girls:  Jessica, Renee, Tina
+Clues:
+1.  No one ever played against someone else with the same first name initial.
+2.  The four people who advanced to the second round were Renee, the person who beat Tina in the first round, the loser of the final match, and the man who played Jessica in the first round.
+3.  3 games of the first round, and 1 game of the second round were played by two people of the opposite sex.
+4.  Jack only played against a man one time in the tournament, and Roger played against a man in every round he played in.
+5.  Renee played against Jack at some point in the tournament.
+6.  The two people who played in the final round were the winner, and the man who beat Tommy in the 2nd round.
+7.  Jim always played against a man in the tournament.
+8.  Jessica did not play against the eventual champion.",,"First Round:
+Jack vs. Tina, Jack won
+Jamie vs. Renee, Renee won
+Jessica vs. Tommy, Tommy won
+Jim vs. Roger, Roger won
+Second Round:
+Jack vs. Renee, Jack won
+Tommy vs. Roger, Roger won
+Finals:
+Jack vs. Roger, Jack won",GPT-o3,basicprompt,"Let us label the 8 players
+
+Boys:  Jack (Jk), Jamie (Ja), Jim (Ji), Roger (R), Tommy (T)  
+Girls: Jessica (Je), Renee (Re), Tina (Ti)
+
+Step-1.  The quarter-final (first) round must contain 3 mixed-sex games and 1 same-sex game (clue 3).  
+Because there are exactly 3 girls, each girl must meet a boy and the remaining game is boy-vs-boy.
+
+Step-2.  The four semi-finalists are (clue 2)  
+ • Renee,  
+ • the person who beats Tina,  
+ • the loser of the final,  
+ • the man who plays Jessica.  
+Hence these four people are distinct.
+
+Step-3.  Roger always plays a man (clue 4), so Roger must be in the only boy-vs-boy game of the first round.  
+Jim always plays men (clue 7), so Jim must be Roger’s opponent in that game:
+
+ Game D  Roger vs Jim.
+
+Step-4.  The man who plays Jessica (and beats her—otherwise he could not reach the semi-finals) is either Roger or Tommy, because Jack, Jamie and Jim all have the same initial “J” as Jessica and clue 1 forbids such match-ups.  
+Roger is already in game D, so Jessica’s opponent must be Tommy:
+
+ Game B  Tommy defeats Jessica.
+
+Step-5.  Tina cannot play Tommy (same initial “T”), so the boy who beats Tina is Jack or Jamie.  
+Renee cannot face Roger (same initial “R”), so her first-round opponent is the remaining boy of {Jack, Jamie}.  
+Thus the first-round games are forced to be
+
+ Game A  Jack defeats Tina.  
+ Game B  Tommy defeats Jessica.  
+ Game C  Renee defeats Jamie.  
+ Game D  Jim defeats Roger.
+
+Step-6.  The winners reach the semi-finals: Jack, Tommy, Renee, Jim.  
+Exactly one semi-final must be mixed-sex (clue 3).  Pairing
+
+ Semi-1  Jack (M) vs Renee (F) – mixed-sex  
+ Semi-2  Jim (M)  vs Tommy (M) – same-sex
+
+satisfies this.
+
+Step-7.  Tommy must lose in the second round to a man who will be in the final (clue 6).  
+Therefore Jim defeats Tommy in Semi-2 and Jim reaches the final.
+
+Step-8.  Renee must meet Jack somewhere (clue 5); that occurs in Semi-1, where Jack defeats Renee.
+
+Step-9.  Now the final is Jack versus Jim.  Jack cannot face men more than once in the whole tournament (clue 4).  
+So far Jack’s only male opponent is Jim in the final (first round he played Tina, second round Renee).  
+Hence Jack may indeed face Jim in the final and still satisfy clue 4.
+
+Step-10.  Jessica must not meet the eventual champion (clue 8); she lost to Tommy in the first round, and Jack is champion, so the condition is satisfied if Jack wins the final.
+
+All clues are now met consistently.
+
+Therefore the complete tournament is
+
+Quarter-finals  
+ Jack beat Tina.  
+ Tommy beat Jessica.  
+ Renee beat Jamie.  
+ Jim beat Roger.
+
+Semi-finals  
+ Jack beat Renee.  
+ Jim beat Tommy.
+
+Final  
+ Jack beat Jim and became the champion.
+
+Final answer: 
+Quarter-finals – Jack > Tina, Tommy > Jessica, Renee > Jamie, Jim > Roger;  
+Semi-finals – Jack > Renee, Jim > Tommy;  
+Final – Jack beats Jim (Jack is the champion).",True
+141,"Ace, Callie, Draco, Emma, Eric, Holly, Leah, Misty, Quinn, and Xander play in a 5 team tournament of five colors: Red, Green, Blue, Black, & White.
+There were no ties and the following statements were made:
+Ace: Xander's team, Misty's team, The team that placed first, The team that placed 3rd and the green team are all different.
+Callie: I placed second & I beat the green team & Emma (who are different).
+Draco: Callie, Emma, & Misty are all on different teams.
+Emma: Ace, Draco, and Callie all placed better than me.
+Eric: The green team beat the blue team within 2.
+Holly: The white team placed 3rd. I wasn't on the white team, but Leah was.
+Leah: I beat Eric, lost to Callie, and was on the same team as Emma. The white and red teams were in the top 3.
+Misty: I was 1 place ahead of the red team & placed 2nd
+Quinn: I placed 4th. The blue team is 2nd.
+Xander: Red & Callie beat black
+But be warned, the 2 players who got in last place are lying!",,"1st - Red Team - Ace & Draco
+2nd - Blue Team - Xander & Callie
+3rd - White Team - Emma & Leah
+4th - Green Team - Holly & Quinn
+5th - Black Team - Eric & Misty",GPT-o3,basicprompt,,True
+142,"Find the secret 5 letter word (_ _ _ _ _) that shares:
+2 letters with MAGIC
+2 letters with YEARN
+2 letters with BLAME
+2 letters with GRABS
+2 letters with KARMA
+3 letters with BREAK
+eg. strESSEs shares four letters with the word ESSEnce.",The second letter of the first word is in the secret word.,The secret word is CAKES.,GPT-o3,basicprompt,,True
+143,"A particular inn always offers the same nine dishes on its dinner menu: A, B, C, D, E, F, G, H and I. Five foreigners arrive. Nobody tells them which dish corresponds to each letter and so they each select one letter without knowing what they will eat. The innkeeper arrives with the five dishes ordered and puts them in the center of the table so that they can decide who eats what. This goes on for two more nights. The foreigners, who are professors of logic, were able to deduce by the dishes they ordered which letter represents what dish. What could have been the dishes ordered each of the three nights? Note: Each dish was ordered at least once.",,"They could have ordered ABCDD their first night (finding out what D is), AEFGG the second night (finding out what G is and what A is, since they had ordered it the previous night too), and BEHII the third night (finding out what I, B and E are). This leaves C, F and H out, and since they had never ordered these dishes twice, and each came out on a different night, they should know what they are.",GPT-o3,basicprompt,"One possible set of orders that lets the five professors determine the whole correspondence after the third dinner is  
+
+Night 1 : A , A , D , E , G  
+Night 2 : B , B , D , F , H  
+Night 3 : C , C , E , F , I  
+
+Why this works  
+
+1.  Counting, not just noting presence, gives information.  
+    –  The diners know exactly how many times every letter is ordered each night (they ordered the letters themselves).  
+    –  They also see exactly how many plates of every dish appear each night.
+
+2.  Give every letter a different “count-pattern’’ (number of times it occurs on each of the three nights).  
+    The nine letters receive the nine distinct triples  
+
+    A → (2,0,0)  G → (1,0,0)  
+    B → (0,2,0)  H → (0,1,0)  
+    C → (0,0,2)  I → (0,0,1)  
+    D → (1,1,0)  
+    E → (1,0,1)  
+    F → (0,1,1)
+
+3.  Arrange the orders so that those very patterns are produced.  
+    The orders written above do exactly that:  
+      • night 1 supplies 5 letters whose multiplicities are 2+1+1+1 = 5,  
+      • night 2 again gives 2+1+1+1 = 5,  
+      • night 3 again gives 2+1+1+1 = 5,  
+      and every one of the nine letters appears at least once.
+
+4.  After the third evening the professors list, for every dish actually served, the triple  
+    (how many plates they saw of it on night 1, on night 2, on night 3).  
+    Those nine triples are exactly the nine triples attached to the letters above, and every triple is different; hence each letter can be matched to one and only one dish, giving the complete and unique correspondence.
+
+Thus the three nights of orders shown let them deduce without doubt which letter names which dish.
+
+Final answer: Night 1 – A, A, D, E, G   Night 2 – B, B, D, F, H   Night 3 – C, C, E, F, I",True
+144,"When Chidam got his first car, the first thing he had to do was to get a license plate. When he got his plate, he noticed that the plate had a peculiar number with five digits on it. He also noticed that the numbers could be read upside down, but the value of the number had increased by 78633.
+Can you help Chidam find the number of his license plate number?","There are only 5 digits from 0 to 9 which can be read upside down. The numbers are - 0, 1, 6, 8 and 9.","The number of Chidam's license plate is 10968, which is 89601 when inverted.  That is 78633 more than the original number.",GPT-o3,basicprompt,"Write the 5–digit plate number as  
+N = A B C D E, with A the ten-thousands digit and E the units digit.
+
+After turning the plate upside–down we
+1. reverse the order of the digits,
+2. replace each digit by its 180° rotation
+
+         0 ↔ 0 , 1 ↔ 1 , 6 ↔ 9 , 8 ↔ 8 , 9 ↔ 6 .
+
+Hence the “upside-down” number is  
+
+N′ = f(E) f(D) f(C) f(B) f(A)  
+where f is the above flip map.
+
+We are told that  
+N′ = N + 78 633.                             (1)
+
+Translate (1) into contributions of each digit (place-value 10⁴,10³,10²,10¹,10⁰):
+
+Δ = N′ – N
+   = (10⁴f(E) – E)  + (10³f(D) – 10D) + 100(f(C) – C)
+     + (10f(B) – 1000B) + (f(A) – 10⁴A)
+   = 78 633.                             (2)
+
+Compute the possible contributions for every allowed digit:
+
+E-term 10⁴f(E) – E : 0, 9 999, 59 991, 79 992, 89 994  
+A-term f(A) – 10⁴A : –9 999, –59 991, –79 992, –89 994  
+D-term 10³f(D) – 10D: 0, 990, 5 910, 7 920, 8 940  
+C-term 100(f(C) – C): –300, 0, 300  
+B-term 10f(B) – 1000B: 0, –990, –5 910, –7 920, –8 940.
+
+We need their sum to be 78 633.
+
+Try E = 8 → first term 79 992.  
+If we choose A = 1 (second term –9 999) then  
+79 992 – 9 999 = 69 993.  
+We still need 78 633 – 69 993 = 8 640 from the middle three terms.
+
+Take D = 6 → +8 940.  
+Then we require the last two terms to contribute –300.
+
+Choose C = 9 → –300, B = 0 → 0. Perfect.
+
+Thus the only consistent digit choice is  
+
+A = 1, B = 0, C = 9, D = 6, E = 8.
+
+So
+
+N = 1 0 9 6 8 = 10 968, 
+N′ = 8 9 6 0 1 = 89 601,
+
+and indeed 89 601 – 10 968 = 78 633.
+
+Final answer: 10968",True
+145,"You have 2 fuses. One fuse burns for 1 hour, the other burns for 2 hours. The problem is that the fuses burn irregular. The last few inches may burn longer than first few inches. Using the 2 fuses how can you create a fuse that burns for exactly 45 minutes. Remember, cutting them does no good since you don't know how long the cut fuse lasts.",,"You burn both sides of the 1 hour fuse and 1 side of the 2 hour fuse at the same time. Regardless of the varying speeds of the one hour fuse, when it goes out it has been 30 minutes. At that point there would be 1 hour and 30 minutes left on the 2 hour fuse. You then light the other end of the 2 hour fuse and since the burning time would be cut in half the fuse would be 45 minutes long.",GPT-o3,basicprompt,,True
+146,"Mad Ade is telling his friend, Shamus O'Stoatclencher, at which number house he lives at on ""Madadia Avenue"":
+(1) If my house number is a multiple of 3, then it is a number from 50 through 59.
+(2) If my house number is not a multiple of 4, then it is a number from 60 through 69.
+(3) If my house number is not a multiple of 6, then it is a number from 70 through 79.""
+What is Mad Ade's house number?",,"Mad Ade's house number is 76.
+From (1) and (3), the house number must be from 50 to 59 or 70 to 79. Take any number. It will be either a multiple of 3 or not. Also, a number multiple of 6 is always a multiple of 3. Hence, the house number can be 51, 54, 57, 70, 71, 73, 74, 76, 77 or 79.
+From (2), if the house number is not a multiple of 4, then it is a number from 60 through 69. There is not a single number between 60 and 69 in short-listed numbers above. Hence, the house number must be a multiple of 4 i.e. 76.
+Hence, Mad Ade's house number is 76.",GPT-o3,basicprompt,"Let the house number be n.
+
+The three statements are logical implications; each one is false only when its
+antecedent is true and its consequent is false.
+
+1. “If n is a multiple of 3, then 50 ≤ n ≤ 59.”
+   • This fails only when n is divisible by 3 but n ∉ [50, 59].
+
+2. “If n is not a multiple of 4, then 60 ≤ n ≤ 69.”
+   • This fails only when n is NOT divisible by 4 but n ∉ [60, 69].
+
+3. “If n is not a multiple of 6, then 70 ≤ n ≤ 79.”
+   • This fails only when n is NOT divisible by 6 but n ∉ [70, 79].
+
+A convenient way to satisfy an implication is to make its antecedent false.
+We look for a pattern of divisibilities that keeps every implication true.
+
+• If n were outside the three quoted intervals (50-79), then  
+  – To keep (1) true n would have to be NOT divisible by 3.  
+  – To keep (2) true n would have to be divisible by 4.  
+  – To keep (3) true n would have to be divisible by 6 (so its antecedent is
+    false).  
+  But a number divisible by 6 is automatically divisible by 3, contradicting
+  the first requirement.  
+  Hence n must lie inside at least one of the three intervals 50-79.
+
+Observe the conflicts among the consequents:
+• The sets 50-59, 60-69, 70-79 are disjoint.
+• Therefore two different antecedents cannot be simultaneously true, otherwise
+  n would have to belong to two different disjoint intervals.
+
+Thus we need exactly one antecedent to be true, the other two false.
+
+Case analysis
+A) Make only antecedent (1) true:  
+   n must be divisible by 3, divisible by 4 (so antecedent 2 is false) and
+   divisible by 6 (so antecedent 3 is false).  
+   That means n is a multiple of 12 lying in 50-59.  No such number exists.
+
+B) Make only antecedent (2) true:  
+   Then n is NOT divisible by 4, but must be divisible by 6 (to falsify
+   antecedent 3) and simultaneously NOT divisible by 3 (to falsify
+   antecedent 1).  Impossible (a multiple of 6 is a multiple of 3).
+
+C) Make only antecedent (3) true:  
+   Then n is NOT divisible by 6, so it must lie in 70-79.  
+   To keep antecedent 2 false, let n be divisible by 4.  
+   Also, let n NOT be divisible by 3 to keep antecedent 1 false.
+
+   Numbers in 70-79 divisible by 4 are 72 and 76.
+   – 72 is divisible by 3 ⇒ antecedent 1 would be true as well (forbidden).
+   – 76 is not divisible by 3 ⇒ antecedent 1 remains false.
+
+   Hence n = 76 satisfies all requirements:
+
+   • 76 mod 3 = 1  → antecedent 1 false → statement 1 true.  
+   • 76 mod 4 = 0  → antecedent 2 false → statement 2 true.  
+   • 76 mod 6 = 4  → antecedent 3 true, and 76 ∈ [70,79] → statement 3 true.
+
+Therefore 76 is the unique house number that makes all three statements true.
+
+Final answer: 76",True
+147,"The following group of numbers represents an 11-letter word.  Can you figure out the word?
+46244628466
+31113211332",Try a phone.,Imagination!  Look on a telephone; the first row is what number to look on.  The second row is which letter to look at!,GPT-o3,basicprompt,"The two rows of digits are meant to be read in vertical pairs.
+
+Top-digit of each pair = number on a telephone keypad (2–9).  
+Bottom-digit of each pair = which letter on that key (1 = first, 2 = second, 3 = third, 4 = fourth).
+
+Pairs and their letters
+4 3 → key 4 (G H I), 3rd letter = I  
+6 1 → key 6 (M N O), 1st letter = M  
+2 1 → key 2 (A B C), 1st letter = A  
+4 1 → key 4 (G H I), 1st letter = G  
+4 3 → key 4 (G H I), 3rd letter = I  
+6 2 → key 6 (M N O), 2nd letter = N  
+2 1 → key 2 (A B C), 1st letter = A  
+8 1 → key 8 (T U V), 1st letter = T  
+4 3 → key 4 (G H I), 3rd letter = I  
+6 3 → key 6 (M N O), 3rd letter = O  
+6 2 → key 6 (M N O), 2nd letter = N  
+
+Reading them in order spells:
+
+I M A G I N A T I O N
+
+Final answer: IMAGINATION",True
+148,"There are 12 gold coins. One of the coins is fake. It is known that a fake coin weighs either slightly less or slightly more than a real coin. Using a balance scale, how can you find the fake coin, and determine if it weighs less or more than a real coin, in only three weighings?",,"Divide the coins into three groups of 4 coins each. First, weigh two of the groups. If they balance, then the fake coin is in the third group, so take three of the coins, and weigh them against three of the coins that we know for sure are real (from the first 8 coins). If they balance, then the remaining coin is the fake one, but we still don't know if it is lighter or heavier, so weigh it against a real coin to determine that. But if it didn't balance, then we know that the fake coin is one of the three, and we also know if it is lighter or heavier, because we know which side had the real coins. So weigh two of the coins against each other, if they balance then the third coin is fake, if they don't balance we know which coin is fake, because we already know if it is lighter or heavier.
+Now let's go back to the first weighing; if the two groups didn't balance, we know that the fake coin is in one of the groups, but we don't know which group. Let's mark the group that was heavier as group A, and the group that was lighter group B. For the second weighing, weigh two coins of group A and one coin of group B, against the other two coins of group A and one coin of group B. If they balance, the fake coin must be one of the remaining two, and a weigh between them will tell us which one (they are both from group B so we know that it's lighter). If the second weigh didn't balance, look at the side that is heavier: Either the fake coin is one of the two group A coins, or it can the group B coin on the other side of the scale. Take the two group A coins, and weigh them against each other. If they balance, then it is the group B coin that is fake, and if they don't balance, then the heavier one is the fake coin.
+And that's that. We have covered all possibilities.",GPT-o3,basicprompt,"Label the twelve coins  
+
+ A B C D E F G H I J K L  
+
+and remember that a real (good) coin weighs the same as every other good coin.
+
+WEIGHING 1  
+put A B C D on the left pan and E F G H on the right pan.
+
+There are three possible outcomes; we treat each separately.
+
+────────────────────────────────────────
+CASE 1 ‑- THE SCALE BALANCES  
+Then the eight coins A…H are genuine and the fake is among I J K L.
+
+WEIGHING 2  
+put I J K on the left pan and three known good coins (A B C) on the right pan.
+
+• If the scale balances, the only remaining suspect is L.  
+  WEIGHING 3 : compare L with any good coin (say A).  
+   If L is heavier → L is the heavy fake.  
+   If L is lighter  → L is the light fake.
+
+• If the left pan is heavier, the fake is one of I J K and it is heavier.  
+  WEIGHING 3 : weigh I against J.  
+   If I > J → I is the heavy fake.  
+   If J > I → J is the heavy fake.  
+   If I = J → K is the heavy fake.
+
+• If the left pan is lighter, the fake is one of I J K and it is lighter.  
+  WEIGHING 3 : weigh I against J.  
+   If I < J → I is the light fake.  
+   If J < I → J is the light fake.  
+   If I = J → K is the light fake.
+
+────────────────────────────────────────
+CASE 2 ‑- LEFT PAN HEAVIER IN WEIGHING 1  
+(now we know E F G H could be light or A B C D could be heavy)
+
+WEIGHING 2  
+put A E F on the left pan and B G C on the right pan.
+
+Look at the two weighings together:
+
+                    result W1     result W2     identity of fake  
+A heavy             left heavy    left heavy    A is heavy  
+B heavy             left heavy    right heavy   B is heavy  
+C heavy             left heavy    right heavy   C is heavy  
+D heavy             left heavy    balance       D is heavy  
+E light             left heavy    left light    E is light  
+F light             left heavy    left light    F is light  
+G light             left heavy    right light   G is light  
+H light             left heavy    balance       H is light  
+
+Everything is already decided except the two situations where WEIGHING 2 was balanced
+(D heavy or H light).  Use the third weighing to distinguish them.
+
+WEIGHING 3  
+weigh D against a known good coin (say A).  
+ If D is heavier → D is the heavy fake.  
+ If they balance → H is the light fake.
+
+────────────────────────────────────────
+CASE 3 ‑- LEFT PAN LIGHTER IN WEIGHING 1  
+(This is the mirror image of Case 2; just swap the words “heavier” and “lighter”.)
+
+WEIGHING 2  
+put A E F on the left pan and B G C on the right pan (same arrangement).
+
+Interpret exactly as in Case 2 but with “lighter” and “heavier” interchanged:
+
+                    result W1     result W2     identity of fake  
+A light             left light    left light    A is light  
+B light             left light    right light   B is light  
+C light             left light    right light   C is light  
+D light             left light    balance       D is light  
+E heavy             left light    left heavy    E is heavy  
+F heavy             left light    left heavy    F is heavy  
+G heavy             left light    right heavy   G is heavy  
+H heavy             left light    balance       H is heavy  
+
+Again, only the “balance” line is unresolved; finish with
+
+WEIGHING 3  
+weigh D against a good coin.  
+ If D is lighter → D is the light fake.  
+ If they balance → H is the heavy fake.
+
+────────────────────────────────────────
+No matter how the three weighings turn out, exactly one coin is pinpointed and we know whether it is heavier or lighter.
+
+Final answer:  The strategy above uses only three weighings to name the single counterfeit coin and to tell whether it is heavier or lighter.",True
+149,"Hans Ernest Froopaloop, Jr. is in a play with four relatives: his sister, mother, son, and daughter. Each of the five has a different dressing room:
+Room A: small, borders rooms B and E
+Room B: large, borders rooms A, C, D, and E
+Room C: large, borders rooms B and D
+Room D: small, borders rooms B, C, and E
+Room E: large, borders rooms A, B, and D
+Here are some facts:
+1. The rooms of the lead actor in the play and his or her sibling border the same number of rooms.
+2. The lead's room and his or her parent's room are the same size.
+3. HEF Jr's room and his daughter's room do not border each other.
+4. Each room borders at least one man's room and at least one woman's room.
+Who is the lead actor?",,"HEF Jr's sister is the lead actor.
+From fact 4, we know that rooms A and C each border one man's room and one woman's room. So one of rooms B and E is occupied by a man and the other by a woman, and one of rooms B and D is occupied by a man and the other by a woman. If room B is occupied by a man, rooms D and E are occupied both by women. Similarly, if room B is occupied by a woman, rooms D and E are both occupied by men. So the occupants of rooms D and E are of the same gender.
+Since there were two pairs of siblings, each different-gendered, fact 1 tells us that either one of rooms A and C was occupied by a man and the other by a woman, or one of rooms D and E was occupied by a man and the other by a woman. From previous reasoning, we can determine that one of rooms A and C was occupied by a man and the other by a woman.
+Since there were only two men, rooms D and E were both occupied by women. And since rooms A, C, D, and E were occupied by three women and one man, room B must be occupied by a man.
+Fact 3 tells us that the occupant of room B cannot be HEF Jr, so it must be his son. Therefore, the siblings in rooms A and C must be HEF Jr. and his sister, and one of them must be the lead actor. From fact 3, we have these two scenarios:
+1.
+Room A: HEF Jr.
+Room B: Son
+Room C: Sister
+Room D: Daughter
+Room E: Mother
+2.
+Room A: Sister
+Room B: Son
+Room C: HEF Jr.
+Room D: Mother
+Room E: Daughter
+In either scenario, the mother's and the sister's rooms are the same size. And from fact 2, the sister is the lead.",GPT-o3,basicprompt,"Step-by-step reasoning
+
+1.  Characters and sexes  
+   • Hans Ernest Froopaloop, Jr. (Hans) – man  
+   • Hans’s sister – woman  
+   • Hans’s mother – woman  
+   • Hans’s son – man  
+   • Hans’s daughter – woman  
+   So there are 2 men and 3 women.
+
+2.  Rooms (size / number of bordering rooms)  
+   A – small / 2   C – large / 2  
+   B – large / 4   D – small / 3  
+   E – large / 3
+
+3.  What “lead actor” can be  
+   Fact 2 says the lead’s room and the lead’s parent’s room are the same size.  
+   A person whose parent is not in the cast therefore cannot be the lead, so the
+   mother cannot be the lead.  Possible leads: Hans, sister, son, daughter.
+
+4.  Equal-border requirement (Fact 1)  
+   The lead and the lead’s sibling must have rooms that border the same number of
+   other rooms.  The only equal-border pairs available are  
+   (A,C) – both border 2  and  (D,E) – both border 3  
+   (No pair of rooms borders 4, because only B borders 4 rooms.)
+
+5.  Try Hans as lead  
+   One must place Hans and his sister in (A,C) or (D,E) and then make Hans’s room
+   the same size as his mother’s.  All possibilities violate Fact 3 or Fact 4
+   (details checked systematically), so Hans cannot be the lead.
+
+6.  Try the son as lead  
+   Lead = son, sibling = daughter.  All placements contradict Fact 2 or Fact 3,
+   so the son cannot be the lead.
+
+7.  Try the daughter as lead  
+   Lead = daughter, sibling = son.  Again every placement breaks Fact 3 or Fact 4,
+   so the daughter cannot be the lead.
+
+8.  Try the sister as lead (works)  
+   Use the equal-border pair (A,C).
+
+        Room A  – sister  (woman, borders 2, small)
+        Room C  – Hans    (man,    borders 2, large)
+        Room D  – mother  (woman,  borders 3, small)
+        Room B  – son     (man,    borders 4, large)
+        Room E  – daughter(woman,  borders 3, large)
+
+   • Lead/sibling border count: A and C each border 2 rooms.  
+   • Lead/parent room size: sister (A) and mother (D) are both in small rooms.  
+   • Hans’s room (C) and his daughter’s room (E) do not touch.  
+   • Each room borders at least one man’s room (A→B, B→C, C→B, D→B, E→B) and at
+     least one woman’s room (obvious from placement).
+
+   All four facts are satisfied, so this is a valid arrangement.
+
+9.  Uniqueness  
+   We already ruled out Hans, son, and daughter as possible leads; the mother
+   cannot be the lead because her parent is not in the cast.  Hence the only
+   possible and realizable lead is the sister.
+
+Final answer: Hans Ernest Froopaloop, Jr.’s sister is the lead actor.",True
+150,"There is an island filled with grass and trees and plants. The only inhabitants are 100 lions and 1 sheep.
+The lions are special:
+1) They are infinitely logical, smart, and completely aware of their surroundings.
+2) They can survive by just eating grass (and there is an infinite amount of grass on the island).
+3) They prefer of course to eat sheep.
+4) Their only food options are grass or sheep.
+Now, here's the kicker:
+5) If a lion eats a sheep he TURNS into a sheep (and could then be eaten by other lions).
+6) A lion would rather eat grass all his life than be eaten by another lion (after he turned into a sheep).
+Assumptions:
+1) Assume that one lion is closest to the sheep and will get to it before all others. Assume that there is never an issue with who gets to the sheep first. The issue is whether the first lion will get eaten by other lions afterwards or not.
+2) The sheep cannot get away from the lion if the lion decides to eat it.
+3) Do not assume anything that hasn't been stated above.
+So now the question:
+Will that one sheep get eaten or not and why?","There are two hints. The first one will really be just that - a small hint. The second one is a BIG one, and could very well give it away, so don't read it if you don't want to:
+Hint 1) Use math induction.
+Hint 2) Consider the scenario where there is only one lion and one sheep. What would happen? Now take the next step.","The sheep would remain untouched.
+In fact, the sheep would remain untouched if there is an even number of lions on the island, and would be eaten immediately if there is an odd number of lions on the island.
+Here's the reasoning:
+Consider a scenario with just one lion and one sheep: The lion will eat the sheep. Why? Because after he eats it and turns into a sheep himself, there aren't any lions on the island to eat him, so he is happy.
+Now look at a scenario with 2 lions and 1 sheep. Here the sheep would remain unharmed. Why? Because if any one of them eats it, and turns into a sheep himself, he knows that he awaits certain death because he will then be a sheep and the other lion will be the only lion on the island and nothing will stop him from eating the sheep.
+So now we know for a fact 1 lion and 1 sheep - sheep gets eaten. 2 lions and 1 sheep - sheep doesn't get eaten.
+We can now make a conclusion about 3 lions and 1 sheep: the sheep will definitely be eaten, because the lion that eats it will know that by eating he leaves behind 2 lions and 1 sheep (himself). And as we already know 2 lions and 1 sheep is a situation where the sheep survives.
+You can use the same logic to go on to 4 lions and 1 sheep, and then all the way to 100 or 1000, but it will always be true that with an odd number of lions the sheep gets eaten and with an even number the sheep doesn't.",GPT-o3,basicprompt,"Reasoning step by step
+
+Step 0 –  What matters to a lion  
+A lion is prepared to eat the sheep only if, after doing so, he is 100 % certain he will not be eaten himself.  
+• If he is not perfectly safe, he will forgo mutton and live on grass.  
+• If he **is** perfectly safe, he prefers the (tastier) sheep.
+
+Step 1 –  Reduce the problem to “Is the new sheep safe?”  
+If a particular lion (call him L) is thinking of eating the sheep, he must predict what happens **after** he eats and has turned into a sheep.  
+At that moment there will be one fewer lion on the island.  
+Therefore “Will L eat?” ⇔ “If I subtract one lion from the current total, will the new sheep be safe?”
+
+Step 2 –  Work out the safety of a sheep for small numbers of lions
+
+0 lions (trivial warm-up) A sheep is obviously safe.
+
+1 lion • If that single lion eats the sheep he becomes a sheep.  
+   • There will then be 0 lions, so the new sheep is perfectly safe.  
+   Therefore with 1 lion the sheep **does get** eaten.
+
+2 lions • Suppose one of them tried to eat the sheep.  
+    He would turn into a sheep while the other (now sole) lion remains.  
+   • From the 1-lion case we know a lone lion *will* eat any sheep,  
+    so the first lion would then be eaten.  
+   • A lion prefers grass to being eaten, so no lion initiates the attack.  
+   Therefore with 2 lions the sheep is **safe**.
+
+3 lions • Imagine one lion contemplates eating the sheep.  
+    Afterwards there would be 2 lions left.  
+   • From the 2-lion result we know that a sheep **is** safe when 2 lions watch it.  
+   • Thus the new sheep would be safe; the acting lion likes that outcome,  
+    so he goes ahead and eats.  
+   Therefore with 3 lions the sheep **does get** eaten.
+
+We can already see a pattern:  
+# lions → sheep’s fate  
+0 safe, 1 eaten, 2 safe, 3 eaten …
+
+Step 3 –  Inductive argument for all N lions
+
+Inductive hypothesis  
+Let Safe(N) mean “a sheep is safe when N lions are present”.  
+We have established  
+Safe(0) = T, Safe(1) = F, Safe(2) = T, Safe(3) = F.
+
+Inductive step  
+Assume we know Safe(k) for every k ≤ N.  
+Consider N+1 lions.  
+• A lion who is deciding whether to eat asks “If I do, there will afterwards be N lions – is a sheep safe in that world?”  
+• If Safe(N) = T, he is totally safe and prefers to eat, so the sheep is eaten → Safe(N+1) = F.  
+• If Safe(N) = F, eating would doom him, so he refuses → sheep survives → Safe(N+1) = T.
+
+Hence Safe(N+1) = NOT Safe(N) for every N ≥ 0, so safety simply alternates with N.  
+Consequently
+
+Safe(N) is True iff N is even.
+
+Step 4 –  Apply the result to 100 lions
+
+100 is even.  
+Therefore Safe(100) = True: a sheep watched by 100 lions will not be eaten.  
+The “nearest” lion mentioned in the assumptions will think the situation through, realise that after eating he would face 99 lions (an odd number → sheep not safe → he would be eaten), and will therefore decline to attack. Because every lion is just as logical, none of them will attack.
+
+Final answer: The sheep will NOT be eaten; with 100 (an even number of) lions it is safe.",True
+151,"During a recent plane and train spotting contest, five eager entrants were lined up ready to be tested on their spotting ability. They had each spotted a number of planes (26, 86, 123, 174, 250) and a number of trains (5, 42, 45, 98, 105). From the clues below, can you determine what colour shirt each was wearing, their position, their age (21, 23, 31, 36, 40) and the number of trains and planes spotted?
+1. Bob spotted 44 less trains than planes.
+2. Tom was 36 years old.
+3. The person on the far right was 8 years younger than Bob, and spotted 174 planes.
+4. Josh was wearing a yellow shirt and spotted 37 trains fewer than Bob.
+5. The person who was wearing a green shirt, was 19 years younger than the person to his left.
+6. Steven spotted 105 trains and 250 planes.
+7. The person in the centre was 31 years old, was wearing a blue shirt and spotted 42 trains.
+8. Doug, who was on the far left, spotted 26 planes, and spotted 72 trains more than planes.
+9. The person who was wearing a red shirt was 4 years older than Tom and was not next to the person wearing a blue shirt.
+10.The person who was next to the 31 year old, but not next to the person who spotted 26 planes, was wearing a orange shirt, and spotted 45 trains.",,"example:
+# Name(color shirt)Age, planes spotted, trains spotted
+1 Doug(red shirt)40,26,98
+2 Steven(green shirt)21,250,105
+3 Bob(blue shirt)31,86,42
+4 Tom(orange shirt)36,123,45
+5 Josh(yellow shirt)23,174,5",GPT-o3,basicprompt,"Doug – far left (1st), red shirt, 40 years old, 26 planes & 98 trains  
+Steven – 2nd, green shirt, 21 years old, 250 planes & 105 trains  
+Bob – centre (3rd), blue shirt, 31 years old, 86 planes & 42 trains  
+Tom – 4th, orange shirt, 36 years old, 123 planes & 45 trains  
+Josh – far right (5th), yellow shirt, 23 years old, 174 planes & 5 trains
+
+Final answer: Doug–red–1–40–26/98; Steven–green–2–21–250/105; Bob–blue–3–31–86/42; Tom–orange–4–36–123/45; Josh–yellow–5–23–174/5",True
+152,"In the following code, each symbol stands for one of five letters.
+$ stands for O, W, G, S, or U
+& stands for H, L, A, N, or D
+# stands for E, F, M, P, or V
+* stands for I, O, K, J, or Y
+The four letter code word, #$&*, can be translated into two English prefixes that are opposites. What are the two prefixes?",It's not a game...,"Mono and Poly, meaning one and many, not as in the game.",GPT-o3,basicprompt,"We must interpret the four-symbol code “#$&*” by replacing each symbol with one letter chosen from the set assigned to that symbol.
+
+Symbol → possible letters  
+# → E, F, M, P, V  
+$ → O, W, G, S, U  
+& → H, L, A, N, D  
+* → I, O, K, J, Y  
+
+Thus any legitimate English word produced from “#$&*” must have the pattern
+
+(#-letter)( $-letter)( &-letter)( *-letter).
+
+We need two different 4-letter English prefixes that (1) fit this pattern and (2) are opposites.
+
+A natural pair of opposite prefixes is “mono-” (meaning “one”) and “poly-” (meaning “many”).
+
+Check “mono”:
+
+• m is in #’s set ⇒ allowed.  
+• o is in $’s set ⇒ allowed.  
+• n is in &’s set ⇒ allowed.  
+• o is in *’s set ⇒ allowed.
+
+Check “poly”:
+
+• p is in #’s set ⇒ allowed.  
+• o is in $’s set ⇒ allowed.  
+• l is in &’s set ⇒ allowed.  
+• y is in *’s set ⇒ allowed.
+
+Both fit the required pattern and their meanings are opposites. No other common pair of opposite 4-letter prefixes satisfies the symbol constraints.
+
+Final answer: mono- and poly-",True
+153,"In the village of Einstown, every villager thought they were the cleverest. They used to argue about it all the time, so eventually the leader devised a clever plan. He pretended to hold a vote for who was the cleverest person, where people had to nominate other villagers to go up to the vote. Everyone in the village would know of everyone nominated except themselves, and they all knew that at least one person got nominated.
+Once the nominations were over the leader announced his plan. He said that the first person to come forward and say that they were nominated with proof would be the cleverest person in the village. He told them to go to the village hall at exactly 7:00 pm once they had worked it out. None of the people told each other if they got nominated, as they all wanted to win.
+After the first night nobody had come forward. Nobody came forward on the second night either. Nor the third, fourth fifth etc. Eventually on the 30th night a certain number of people came forward claiming to have been nominated. They were all right.
+How many people came forward on the 30th night and why? (Assume that they all were clever enough to work the method out).",,"Call the number of people nominated N.
+Any person nominated would know of N-1 people nominated, as they would not know that they themselves were nominated. If there was 1 person nominated, the nominee would know of nobody who was nominated, and therefore would know that they were nominated. Because nobody came forward on the first night there was more than one person nominated.
+Using the same logic, anyone on the second night who knew of one person nominated would then be able to work out that they were nominated as there was at least two people. Because nobody came forward on the second night there was at least three.
+This carries on all the way up. Nobody came forward on the 29th night, meaning there was at least thirty. People now came forward the next night, so everyone who came forward knew of 29 nominees, meaning 30 people came forward on the 30th night.",GPT-o3,basicprompt,"Let N be the number of villagers who were actually nominated.
+
+What every villager knows  
+• Everybody can see who among the others was nominated, but not whether he himself was.  
+• Everyone knows that at least one person was nominated, and everyone knows that everyone knows this, etc. (common knowledge).  
+• Each nominated person sees N − 1 nominations; each non-nominated person sees N nominations.
+
+How a clever villager reasons (induction on the number of nominations)
+
+1. N = 1  
+   The single nominated villager sees no one nominated.  
+   Because he knows there must be at least one nomination, he concludes it must be himself and appears the first night.
+
+2. N = 2  
+   Each nominated villager sees exactly one nomination (the other).  
+   He first asks: “Could there be only one nomination?”  
+   If that were true, the person he sees would have come forward on the first night (case N = 1).  
+   When no one appears on the first night, both deduce N ≠ 1, hence they themselves must also be nominated.  
+   Both therefore appear the second night.
+
+3. Inductive step  
+   Assume that if exactly k villagers are nominated, they all appear together on night k.  
+   Now suppose N = k + 1.  
+   Each nominated villager sees k nominations.  
+   He wonders if k might be the total.  
+   If that were so, those k would all appear on night k (by the induction hypothesis).  
+   When nights 1 through k pass with no appearance, every nominated villager realizes the total cannot be k, so it must be k + 1, meaning he too is nominated.  
+   Consequently all k + 1 nominated villagers appear on night k + 1.
+
+By induction, if N villagers were nominated, all N will first step forward on night N.
+
+What actually happened  
+The first time anyone appeared was the 30th night. Therefore N = 30, and all 30 nominated villagers appeared together that night.
+
+Final answer: 30",True
+154,"One day three kids decide to wreak havoc in town-again (this is the third time this month). This time they run into an old man's grocery store and steal quite a few items. They hit the wrong spot this time, because this was Old Man Justice's place (he's notorious for meting out his own brand of 'justice'). Old Man Justice chases the kids through town, and during the chase, they drop the goods, turn around, and start chasing him. Unfortunately, the old man falls into a ditch and is badly hurt. A month later after he recovers he is able to identify the culprits, and Old Man Justice calls in his 'support team,' (2 of which were also victims of the thieves), and has the perpetrators rounded up for justice. At a dinner later that evening, dubbed the 'Repast of Right' the old man begins with these words:
+'To do what we've done took moxie and nerve,
+But alas! As we eat, our justice is served.
+As we've judged these few, let's render to each their due,
+Not an 'eye for an eye,' but rather 'one for two.'
+(What we see as JUST, is JUST what we do.)
+Neither trial, nor jury, should these ones receive,
+No more to trouble us, for no more shall they breathe!
+So drink wine of success, and not of defeat,
+Justice is waiting, so friends let us eat.'
+Question:
+Provided that Old Man Justice and those in his group are not cannibals, how are these three guilty kids punished by the people at the dinner?",,"The Old man and his group certainly did EAT THE KIDS, (as implied by the words of Old Man Justice), but they were of course young goats, and not young delinquent children.
+Notice that justice is going to be 'served' along with this meal. Also, this extreme justice is also going to result in the kids not-breathing, (meaning they will die), and thus won't be any more trouble. It is not an 'eye for eye' but more like 'one for two' because Old Man Justice was only injured, not killed, therefore the 'justice' is not proportionate to the crime. It also took guts and nerve for these seniors to hunt down someone's livestock and kill it, without the benefit of due process, or discussion w/ the owner in the least.
+As they were good for a meal, I suppose the kids weren't so rotten after all!",GPT-o3,basicprompt,"Step-by-step reasoning  
+
+1.  The story keeps calling the culprits “kids.”  
+    •  In ordinary speech that means children, but “kid” is also the proper word for a young goat.  
+    •  Near the end the puzzle warns: “Provided that Old Man Justice and those in his group are not cannibals …”.  
+       If the victims really were human children, eating them would be cannibalism, so this warning would be pointless.  
+       The warning only makes sense if the “kids” to be eaten are goats, not people.  
+
+2.  Details in the narrative fit goats better than human youngsters.  
+    •  Goats wandering into an open grocery and nibbling produce is believable.  
+    •  Goats can easily knock someone down or butt him into a ditch.  
+    •  Chasing goats through town and getting other property owners (who also suffered goat damage) to help is plausible.  
+
+3.  The poem that opens the dinner is full of food imagery:  
+       “as we eat, our justice is served,”  
+       “Justice is waiting, so friends let us eat.”  
+    It is not merely a celebration after an execution; the dinner itself IS the punishment.  
+
+4.  Biblical-law allusion: “Not an ‘eye for an eye,’ but rather ‘one for two.’ ”  
+    Exodus 22:4 says a thief of livestock must pay back double (“one for two”).  
+    The goats stole produce, so the owner’s “justice” is to take the goats themselves.  
+
+5.  Putting all the clues together:  
+    •  The three troublesome young goats have been slaughtered.  
+    •  They are now the main course of the “Repast of Right.”  
+    •  The people at the table are eating roast kid (goat meat), which is why they are not cannibals even though they are “eating kids.”  
+
+Final answer: The three “kids” were goat kids; Old Man Justice and his friends slaughtered them and are eating them for dinner as their punishment.",True
+155,"A clock has 60 lines on it; one at each minute interval. Everyone knows that the hour and minute hands point to the same line at 12:00. Can you figure out what time it is for these situations?
+1. The hour hand is exactly on one line, and the minute hand is exactly on the NEXT line.
+2. The hour hand is exactly on one line, and the minute hand is exactly on the PREVIOUS line.","Each hour, the minute hand moves 60 intervals, while the hour hand moves 5 intervals. The hour hand is exactly on a line every 12 minutes. ( 60 / 5 = 12 )","1. The time is 2:12.
+2. The time is 9:48.
+The hour hand is exactly on a line every 12 minutes, so we only need to look at times ending in 00, 12, 24, 36, and 48.
+The hands exactly overlap at 12:00. They are 5 lines apart at 11:00 and 1:00, and farther apart at other hours.
+At times ending in 12, the hands are closest at 2:12, where they are 1 line apart.
+At times ending in 24, the hands are closest at 4:24, where they are 2 lines apart.
+At times ending in 36, the hands are closest at 7:36, where they are 2 lines apart.
+At times ending in 48, the hands are closest at 9:48, where they are 1 line apart.",GPT-o3,basicprompt,"Let t be the number of minutes after 12 : 00.
+
+Minute-hand position (counted in minute-marks 0–59)  
+ M = t  (one mark per minute).
+
+Hour-hand position in the same units  
+ H = (t / 60) · 5 = t / 12  (because in 60 min the hour hand advances 5 minute-marks).
+
+For the hour hand to be “exactly on a line”, H must be an integer; hence t must be a multiple of 12.  
+Write t = 12 k, where k is an integer from 0 to 59 (covering one 12-hour cycle).  
+Then H = k  and M = 12 k (mod 60).
+
+----------------------------------------------------------------
+1. Minute hand on the NEXT line  
+ M = H + 1 ⇒ 12 k ≡ k + 1 (mod 60)  
+ 11 k ≡ 1 (mod 60)
+
+The multiplicative inverse of 11 modulo 60 is 11, because 11·11 = 121 ≡ 1 (mod 60).  
+Hence k ≡ 11 (mod 60) ⇒ k = 11.
+
+t = 12·11 = 132 minutes = 2 hours 12 minutes.  
+So the time is 2 : 12.
+
+----------------------------------------------------------------
+2. Minute hand on the PREVIOUS line  
+ M = H − 1 ⇒ 12 k ≡ k − 1 (mod 60)  
+ 11 k ≡ −1 ≡ 59 (mod 60)
+
+Again multiplying by 11, k ≡ 59·11 = 649 ≡ 49 (mod 60) ⇒ k = 49.
+
+t = 12·49 = 588 minutes = 9 hours 48 minutes.  
+So the time is 9 : 48.
+
+----------------------------------------------------------------
+Final answer:  
+1. 2 : 12  
+2. 9 : 48",True
+156,"In the following code, each symbol stands for one of five letters.
+! stands for I, S, A, T, or N
+# stands for N, F, R, S, or T
+& stands for J, E, B, O, or G
+* stands for H, E, K, P, or W
+^ stands for L, U, D, R, or I
+The five letter code word, #&^!*, can be translated into two English words that are opposites. What are the two words?",,North and South,GPT-o3,basicprompt,"We need two 5-letter English words that are opposites and that can both be formed from the pattern #&^!* where each symbol may be replaced only by one of the letters allowed for that symbol:
+
+# → N F R S T  
+& → J E B O G  
+^ → L U D R I  
+! → I S A T N  
+* → H E K P W  
+
+1. Look for opposite 5-letter pairs: NORTH/SOUTH stands out.  
+2. Check NORTH against the constraints, position by position:
+
+   # = N (allowed)  
+   & = O (allowed)  
+   ^ = R (allowed)  
+   ! = T (allowed)  
+   * = H (allowed)
+
+   All letters fit.
+
+3. Check SOUTH:
+
+   # = S (allowed)  
+   & = O (allowed)  
+   ^ = U (allowed)  
+   ! = T (allowed)  
+   * = H (allowed)
+
+   All letters fit as well.
+
+Thus both words satisfy the symbol restrictions and are opposites.
+
+Final answer: NORTH and SOUTH",True
+157,"I was going through some old family photos in the attic when I stumbled upon our family tree.  I studied it for a couple minutes then went back down stairs to tell my mom about the family tree.  The problem is I didn't study it long enough to remember the whole thing.  I only remembered  a couple things about it, and recent memories.  Can you help me figure out my family tree?  There are two grandparents, who had two children, who both got married and had 2 more children each.  Totaling 10 people in all (Alex, David, Jamie, Jessica, John, Justin, Lincoln, Martha, Mary and Tina).
+1.  One of Jamie's ancestors was David.
+2.  John's sister gave birth to Tina.
+3.  Mary went bowling with her nephew last Saturday.
+4.  Alex is cousins with one of the girls.
+5.  Justin married Mary.
+6.  Jessica is not an ancestor, nor cousin of Tina.
+7. Lincoln's brother showed Justin's son his baseball cards.",,"Martha and David were the grandparents.
+They gave birth to John and Mary.
+John married Jessica, who gave birth to Lincoln and Alex.
+Mary married Justin and gave birth to Tina and Jamie.",GPT-o3,basicprompt,"David and Martha are the grandparents.  
+They have two children: Mary and John.  
+
+Mary married Justin  
+ Their two children are Jamie (son) and Tina (daughter).  
+
+John married Jessica  
+ Their two children are Alex (son) and Lincoln (son).
+
+This arrangement satisfies all seven clues.
+
+Final answer: David & Martha → Mary–Justin (children: Jamie, Tina) and John–Jessica (children: Alex, Lincoln)",True
+158,"Two children, who were all tangled up in their reckoning of the days of the week, paused on their way to school to straighten matters out. ""When the day after tomorrow is yesterday,"" said Priscilla, ""then 'today' will be as far from Sunday as that day was which was 'today' when the day before yesterday was tomorrow!""
+On which day of the week did this puzzling prattle occur?",,The two children were so befogged over the calendar that they had started on their way to school on Sunday morning!,GPT-o3,basicprompt,"Let “today’’ be the day we are looking for and denote it by T.  
+Label the days of the week 0–6, with
+
+0 = Sunday, 1 = Monday, … , 6 = Saturday.  
+
+1.  Translate the two curious sentences.
+
+   •  “When the day after tomorrow is yesterday …’’  
+      The day after tomorrow (relative to T) is T+2.  
+      It will be “yesterday’’ on the day that follows it, namely on the day
+
+              A = T + 3  (mod 7).
+
+   •  “… that day was which was ‘today’ when the day before yesterday was tomorrow’’  
+      The day before yesterday (relative to T) is T–2.  
+      It is called “tomorrow’’ on the day that precedes it, namely on the day
+
+              B = T – 3  (mod 7).
+
+   So A = T+3 and B = T–3 (all arithmetic mod 7).
+
+2.  Interpret “as far from Sunday as’’.
+
+    The “distance’’ of a day D from Sunday is the fewest days you must move
+    forward or backward to reach Sunday:
+
+            dist(D) = min(D, 7–D),       0 ≤ D ≤ 6.
+
+    For example, dist(Monday)=1, dist(Saturday)=1, dist(Wednesday)=3.
+
+3.  Express Priscilla’s condition.
+
+        dist(A)  =  dist(B)
+        dist(T+3) = dist(T–3).
+
+4.  Test the seven possibilities for T.
+
+    T = 0 (Sun):   T+3 = 3,  dist = 3  
+                   T–3 = 4,  dist = 3  ✓
+
+    T = 1 (Mon):   T+3 = 4,  dist = 3  
+                   T–3 = 5,  dist = 2  ✗
+
+    T = 2 (Tue):   5 →2,   6 →1  ✗  
+    T = 3 (Wed):   6 →1,   0 →0  ✗  
+    T = 4 (Thu):   0 →0,   1 →1  ✗  
+    T = 5 (Fri):   1 →1,   2 →2  ✗  
+    T = 6 (Sat):   2 →2,   3 →3  ✗  
+
+    Only T = 0 (Sunday) satisfies the equality.
+
+5.  Verification in words.
+
+    If today is Sunday:
+    – Day after tomorrow is Tuesday; Tuesday is “yesterday’’ on Wednesday.  
+      So A is Wednesday, three days from Sunday.  
+    – Day before yesterday is Friday; Friday is “tomorrow’’ on Thursday.  
+      So B is Thursday, also three days from Sunday.
+
+    The distances match, exactly as Priscilla said.
+
+Hence the children were talking on a Sunday.
+
+Final answer: Sunday",True
+159,"What inference can you draw from the following statements:
+1. Some alligators carry umbrellas in the shower.
+2. Only those that know that flying fish live in trees prefer caramel candy to chocolate.
+3. Certain days are set aside for alligators to watch rabbits play hockey.
+4. Some large reptiles are steeplechasers.
+5. Only steeplechasers can watch hockey games.
+6.Those alligators that carry umbrellas in the shower know that flying fish live in the trees.
+7. Those that prefer chocolate to caramel candy cannot be steeplechasers.
+8. Steeplechasers are vegetarians.",,Only alligators that are vegetarians are allowed to watch rabbits play hockey.,GPT-o3,basicprompt,"Reasoning step-by-step
+
+1. Statement 3: “Certain days are set aside for alligators to watch rabbits play hockey.”  
+   This guarantees the existence of at least one alligator that does, in fact, watch a hockey game.  
+   (∃x)(Alligator(x) ∧ Watches‐Hockey(x))
+
+2. Statement 5: “Only steeplechasers can watch hockey games.”  
+   Translating “only” gives the implication  
+   Watches‐Hockey(x) ⇒ Steeplechaser(x).
+
+   Applying this to the alligator from step 1, we learn that that alligator is a steeplechaser.  
+   (∃x)(Alligator(x) ∧ Steeplechaser(x))
+
+3. Statement 8: “Steeplechasers are vegetarians.”  
+   So Steeplechaser(x) ⇒ Vegetarian(x).
+
+   Therefore the same alligator is also a vegetarian:  
+   (∃x)(Alligator(x) ∧ Vegetarian(x))
+
+Conclusion  
+We have proved that at least one alligator is a vegetarian.
+
+Final answer: Some alligators are vegetarians.",True
+160,"Biggie Nuff, Baron of Grey Matter, now living in Shapeless, Mass., was dying from a newly developed allergy to water, and wanted his will to reflect the common inheritance law of his father's native country.  Biggie's wife, Faerie, was pregnant at the time with what would be the first child for either of them.  Biggie's new will stated that if his child were a boy, the son would get 2/3 of his estate, and his widow would get 1/3.  If the child were a girl, the widow would get 2/3 of the estate, and the daughter would get 1/3.
+In due time, Biggie died, and the authorities read his will, holding dispensation of the estate until the child was born.  Five months after Biggie's death, Faerie delivered ... normal, healthy twins, a boy (whom she named Manny) and a girl (whom she named Goodie).
+The estate's executor immediately appealed to the Shapeless magistrate to rule on the proper division for the estate.  After a great deal of arguing and deep thought, plus several failed attempts to raise Biggie's spirit with a seance, the judge rendered a fair decision.
+How did they divide Biggie's estate?",,"The judge reasoned that Biggie intended to give his wife half as much as a son, or twice as much as a daughter.  Therefore, he ruled that Manny gets 4/7 of the estate, Faerie gets 2/7, and Goodie gets 1/7.
+(This is supposedly a real decision in Massachusetts, according to the Reader's Digest puzzle book in which I first read this, copyright 1967.  Obviously, I've changed the names).",GPT-o3,basicprompt,"Biggie’s will really contains two separate instructions –  
+one for “the child that is a boy’’ and one for “the child that is a girl.’’  
+To make both instructions operative the judge treated each child’s existence
+independently, dividing the estate into two equal notional halves and applying
+the proper clause to each half.
+
+1. Give one‐half of the estate to the “boy case.’’  
+   • From that half the boy must receive ⅔ and the widow ⅓.  
+   • So Manny gets (½)·(⅔)=⅓ of the whole estate,  
+     Faerie gets (½)·(⅓)=⅙ of the whole estate.
+
+2. Give the other half to the “girl case.’’  
+   • From that half the girl must receive ⅓ and the widow ⅔.  
+   • So Goodie gets (½)·(⅓)=⅙ of the whole estate,  
+     Faerie gets (½)·(⅔)=⅓ of the whole estate.
+
+Adding the widow’s two portions and each child’s portion:
+
+   Manny : ⅓  
+   Goodie : ⅙  
+   Faerie : ⅙ + ⅓ = ½
+
+The shares sum to 1 (⅓+⅙+½ = 1), and each half of the estate has been
+distributed exactly as Biggie directed for a child of that sex.
+
+Final answer: Widow Faerie receives ½ of the estate, son Manny ⅓, and daughter Goodie ⅙.",True
+161,"The American Jukebox Twist Contest has been the talk of local high schools for weeks, so it's no surprise that Arnold's Diner is jammed full with twisting teenagers hoping to take home the trophy.  The competition is going to be fierce, as eight pairs of champion twisters, each from a different school, have entered.  As the makeshift dance floor fills with poodle skirts and blue suede shoes, each couple was asked to request a different song to be played during the marathon, which is expected to last long into the night.  From the information provided, name the young man and young woman who make up each couple, determine the high school each pair attends and the song they requested.
+You will need to draw out a rectangular 2 x 4 grid (A - D on top, E - H on bottom) with the center line representing a row of tables in order to help determine who was in what position on the dance floor.
+Positions:  A, B, C, D, E, F, G, H
+Boys:  Bill, Curt, Danny, Donald, George, Ricky, Steve, Tony
+Girls:  Cindy, Jenny, Laurie, Laverne, Nancy, Sheryl, Veronica, Wendy
+Schools:  Jefferson, Lakewood, Lincoln, Oceanside, Riverdale, Roosevelt, Washington, Westerberg
+Songs:  ""Let's Twist Again"",  ""The Peppermint Twist"", ""Twist and Shout"", ""Twist, Twist, Senora"", ""The Twist"", ""Twistin' USA"", ""Twisting the Night Away"", ""Dear Lady Twist""
+1.  Bill and his partner aren't the couple representing Washington High (which isn't Laurie's school).  Neither George (who isn't dancing with Wendy) nor Tony attends Roosevelt High.
+2.  The couples in positions C, F, and H requested ""Twist and Shout"", ""Dear Lady Twist,"" and ""Twistin' USA"", in some order.  The couple from Lakewood High, who requested ""Twist and Shout"", isn't in position F.
+3.  Donald and his partner (who aren't the Oceanside High students) requested ""The Peppermint Twist"".  Wendy and her partner requested ""Twisting the Night Away"".  Cindy and her partner (who attend Lincoln High) requested ""Twistin' USA"".
+4.  Curt and his partner, the Roosevelt High couple, and Sheryl and her partner are all dancing on the same side of the tables.
+5.  Ricky and the couple from Roosevelt High are dancing at diagonally opposite ends of the restaurant.  Bill and the Twist champions from Jefferson High are the other pairs dancing at diagonally opposite ends of the restaurant.
+6.  Couples A, D, E, and H are Laverne and her partner, Jenny and her partner, the couple who attend Washington high, and the ones who requested ""Twist, Twist Senora"", in some order.
+7.  Sheryl isn't immediately next to either Nancy or her partner or Laverne and her partner.  Cindy is immediately next to, and due right of, Steve and his partner.
+8.  Nancy and her partner (who attend Westerberg High) are directly across the tables from the Washington High couple; one of these couples requested ""Dear Lady Twist"".  The couple in position A requested ""Let's Twist Again"".",A regular Logic Grid drawn out could help too if you have a good imagination.,"A, Danny & Jenny, Roosevelt, ""Let's Twist Again""
+B, Donald & Sheryl, Riverdale, ""The Peppermint Twist""
+C, Curt & Laurie, Lakewood, ""Twist and Shout""
+D, Bill & Nancy, Westerberg, ""Twist, Twist Senora""
+E, Steve & Laverne, Jefferson, ""The Twist""
+F, George & Cindy, Lincoln, ""Twistin' USA""
+G, Tony & Wendy, Oceanside, ""Twisting the Night Away""
+H, Ricky & Veronica, Washington, ""Dear Lady Twist""",GPT-o3,basicprompt,,True
+162,"At the annual Pottstown Rose Show, Mr. Tom Thorne, an avid rose grower, entered his six best new hybrid roses.  He did extremely well, taking home 28 ribbons.  From the following clues, can you figure out how many blue ribbons and how many red ribbons each rose received?
+Names of Roses are:  Pretty in Pink, Ravishing Red, Simply Silver, Mrs. Thelma Thorne, Very Violet and Yummy Yellow.
+1.  No two roses won the same total number of ribbons.
+2.  ""Pretty in Pink"" won one-quarter of the total amount, which was the same amount as the number that ""Ravishing Red"", ""Yummy Yellow"" and ""Simply Silver"" won together.
+3.  ""Very Violet"" won the same number of ribbons as both ""Mrs.Thelma Thorne"" and ""Simply Silver"" together.
+4.  Three-quarters of ""Ravishing Red's"" ribbons were red.
+5.  One-third of ""Mrs. Thelma Thorne's"" ribbons were blue; ""Yummy Yellow"" won just one blue ribbon.
+6.  ""Simply Silver"" won an equal number of blue and red ribbons.
+7.  ""Very Violet"" won the same number of blue ribbons as ""Pretty in Pink"".
+8.  ""Very Violet"" won as many red ribbons as were won by ""Mrs. Thelma Thorne"" and ""Ravishing Red"" together.",,"Pretty in Pink - 1 Blue - 6 Red
+Ravishing Red - 1 Blue - 3 Red
+Simply Silver - 1 Blue - 1 Red
+Mrs. Thelma Thorne - 2 Blue - 4 Red
+Very Violet - 1 Blue - 7 red
+Yummy Yellow - 1 Blue only",GPT-o3,basicprompt,"Pretty in Pink – 1 blue,  6 red  
+Ravishing Red – 1 blue,  3 red  
+Simply Silver – 1 blue,  1 red  
+Mrs. Thelma Thorne – 2 blue,  4 red  
+Very Violet – 1 blue,  7 red  
+Yummy Yellow – 1 blue,  0 red
+
+Final answer: Pretty in Pink 1 blue 6 red; Ravishing Red 1 blue 3 red; Simply Silver 1 blue 1 red; Mrs. Thelma Thorne 2 blue 4 red; Very Violet 1 blue 7 red; Yummy Yellow 1 blue 0 red",True
+163,"Well... The Winning Combination is back.. but with a twist!  You are a millionaire... but you have now become very greedy and a cheater.  You spend lots of money on selfish things, and are finding yourself very short of money.  The show has refused to let you back on after you meanly insulted the host.
+But you are sneakier than that.  Now, your son has applied to be a contestant and has successfully made it on.  He, however, has nowhere near the brain power as you, so you have figured out another device, being the greedy person you are, to help your son out and claim half a million more.
+He is secretly wearing a very cleverly disguised earpiece which you will talk to him through.  Whilst you sit at home, with a pen and paper, he will recite the clues into your ear and you must solve them for him!
+You grip your pen... with headphones and microphone in place, and wait for him to start reciting.
+The combination is spaced out like this... ??-??-??-??.  A 'set' refers to a set of two numbers.
+""OK, Dad...
+1. The sum of the digits in the third set is less than 14 but greater than 10.
+2. The third set of numbers is 13 smaller than the fourth set.
+3. If you multiply the second set of numbers by 2 and add 7, then you will get the first set of numbers.
+4. The sum of the digits in the fourth set is greater than the sum of the digits in the first set.
+5. There are no 0's, 3's or 6's in the combination.  Every other number is in the combination.
+6. The first set of two digits is a square number (for example 81 is a square number... 9x9).
+Hurry, Dad, hurry!""",The numbers in the first set are not higher than 60.,"The solution is 49-21-75-88.
+First of all, we know that there are no 0's, 3's or 6's in the combination and that every other digit appears at least once (clue 5).
+OK, we'll start on the first set.
+We know it's a square number (clue 6).
+The only available square numbers that don't have a 0, 3 or 6 in them are:
+25
+49
+81
+Now, read clue 3.  This tells us that multiplying the second set of numbers by 2 and then adding 7 will give us the first set.
+So you must work backwards from the three numbers we know are the possibilities.
+81 - 7 = 74 / 2 = 37.  However, we know there are no 3's in the combination so this can't be right.
+25 - 7 = 18 / 2 = 9.  This can't be right, because written down it would be 09 and we know there are no 0's.
+So that leaves with 49.
+49 - 7 = 42 / 2 = 21.
+Now we know this much:
+49-21-??-??
+Now we must work on the last two sets.
+Clue 2 tells us that the third set is 13 smaller than the fourth set.
+Here are the possible combinations:
+11-24
+12-25
+14-27
+15-28
+28-41
+29-42
+41-54
+42-55
+44-57
+45-58
+58-71
+59-72
+71-84
+72-85
+74-87
+75-88
+78-91
+79-92
+81-94
+82-95
+84-97
+85-98
+Now, we must remember clue 5 - this tells us that every number will appear in the combination at least once, apart from 0, 3 and 6.
+Currently, we have 1, 2, 4 and 9 in... so that leaves out 5, 7 and 8.
+So now we review the list... there are only three possible combinations that include 5, 7 and 8:
+58-71
+75-88
+72-85
+Now, we read clue 4.  This tells us the sum of the digits in the fourth set is greater than the sum of the digits in the first set.  The sum of the digits in the first set is 13 (4 + 9), and so the only one greater than that is the 75-88 combination (8 + 8 = 16).
+So there we have it.
+49-21-75-88.
+(P.S. Sorry if this offended anybody, not that I think it would, but in my other teaser people were complaining so I'm just putting this in here for warning).",GPT-o3,basicprompt,"We need four two-digit sets, with the clues:
+
+1) Sum of digits in 3rd set ∈ {11,12,13}.  
+2) 4th set = 3rd set + 13.  
+3) 1st set = 2·(2nd set) + 7.  
+4) digit-sum(4th) > digit-sum(1st).  
+5) No 0, 3, 6; every other digit 1,2,4,5,7,8,9 appears at least once.  
+6) 1st set is a two-digit perfect square.
+
+Step-by-step:
+
+Perfect two-digit squares with allowed digits: 25, 49, 81.  
+– 25 gives 2nd set (25−7)/2 = 9 (one digit) → reject.  
+– 81 gives 2nd set 37 (contains 3) → reject.  
+– 49 gives 2nd set (49−7)/2 = 21, allowed.  
+So 1st = 49, 2nd = 21.
+
+3rd set candidates (allowed digits, digit-sum 11–13):
+
+29, 47, 74, 92, 48, 57, 75, 84, 49, 58, 85, 94.
+
+Add 13 to get 4th set and test:
+
+29→42 (digit-sum 6≤13) reject  
+47→60 (digit 0,6) reject  
+74→87 (sum 15>13) keep  
+57→70 (0) reject  
+48→61 (6) reject  
+75→88 (sum 16>13) keep  
+84→97 (sum 16>13) keep  
+49→62 (6) reject  
+58→71 (sum 8≤13) reject  
+85→98 (sum 17>13) keep
+
+Now check digit coverage 1,2,4,5,7,8,9:
+
+(a) 74–87 gives digits 1,2,4,4,7,7,8,9 -> missing 5 → reject.  
+(b) 75–88 gives digits 1,2,4,5,7,8,8,9 → all seven digits present → keep.  
+(c) 84–97 missing 5 → reject.  
+(d) 85–98 missing 7 → reject.
+
+Only viable pair: 3rd = 75, 4th = 88.
+
+Verify all clues:
+
+Sum(3rd) = 7+5 = 12 (OK).  
+4th = 75 + 13 = 88 (OK).  
+2·21 + 7 = 49 (OK).  
+Digit-sum(4th) = 16 > digit-sum(1st)=13 (OK).  
+Digits used: 1,2,4,5,7,8,9; no 0,3,6 (OK).  
+1st set 49 is 7² (OK).
+
+Therefore the combination is:
+
+Final answer: 49-21-75-88",True
+164,"In the following code, each symbol stands for one of five letters.
+* stands for T, L, M, V, or Y
+# stands for S, H, C, M, or B
+^ stands for F, S, K, I, or O
+$ stands for O, W, G, U, or P
+The four letter code word, #$^*, can be translated into two English words that are opposites. What are the two words?",,Boom and Bust.,GPT-o3,basicprompt,"We need two 4-letter English words that
+
+1. fit the symbol pattern # $ ^ *  
+   • # may be S, H, C, M, B  
+   • $ may be O, W, G, U, P  
+   • ^ may be F, S, K, I, O  
+   • * may be T, L, M, V, Y  
+
+2. are opposites (antonyms).
+
+Search by building words whose letters all lie in the allowed sets.
+
+A convenient place to start is with first letter B (one of the allowed # letters).
+
+Try B O O M  
+# = B (ok)  
+$ = O (ok)  
+^ = O (ok)  
+* = M (ok)  
+=> “BOOM” is valid.
+
+An opposite of “boom” (in the economic sense) is “bust”.
+
+Check B U S T  
+# = B (ok)  
+$ = U (ok)  
+^ = S (ok)  
+* = T (ok)  
+=> “BUST” is also valid.
+
+Thus the code #$^* can represent either BOOM or BUST—two words that are antonyms.
+
+Final answer: BOOM and BUST",True
+165,"There are three students Anu, Bob and Coy. They have exactly three books - one on Physics, one on Chemistry and one on Math. Each of these three books belongs to exactly one of the students. As I wanted to know the names of the respective owners of the books I asked them about the owners of the books. The following are the answers given by Anu, Bob and Coy.
+Anu : Physics book belongs to me. Maths book does not belong to Bob. Chemistry book does not belong to Coy.
+Bob : Physics book does not belong to me. Chemistry book belongs to Coy. Maths book  does not belong to Anu.
+Coy : Physics book does not belong to Anu. Maths book does not belong to me. Chemistry book does not belong to Bob.
+I knew that exactly one of them always speaks the truth, exactly  one of them always lies and the third one alternates between truth and lie, in any order.
+Which of the following statements can then be concluded?
+1) Anu always tells the truth.
+2) Coy always lies.
+3) Bob is the owner of the Chemistry book.
+NOTE: Out of the given set of 3 statements, it is not necessary that one and only one statement can be concluded. One or more statements can be concluded.",,"All the three given statements can be concluded.
+The given statements are
+1) Anu always tells the truth.
+2) Coy always lies.
+3) Bob is the owner of the Chemistry book.
+The answers given by Anu, Bob and Coy to my query about the owners of the Physics, Chemistry and Maths books are as follows :-
+Anu : Physics book belongs to me. Maths book does not belong to Bob. Chemistry book does not belong to Coy.
+Bob : Physics book does not belong to me. Chemistry book belongs to Coy. Maths book  does not belong to Anu.
+Coy : Physics book does not belong to Anu. Maths book does not belong to me. Chemistry book does not belong to Bob.
+Case 1 : Let us assume that Anu always tells the truth.
+Then according to Anu's answer,
+Physics book belongs to Anu.
+Chemistry book belongs to Bob.
+Maths book belongs to Coy.
+Comparing Anu's reply with that of Bob's and Coy's replies, we can infer that
+Bob speaks the truth, lies and speaks the truth respectively when he says that the Physics book does not belong to him, the Chemistry book belongs to Coy and the Maths book  does not belong to Anu.
+Coy lies three times when he says that the Physics book does not belong to Anu, the Maths book does not belong to him and the Chemistry book does not belong to Bob.
+Hence under Case 1, Anu always speaks the truth, Bob alternates between truth and lie and Coy always lies. Also in this case the Chemistry book belongs to Bob.
+Case 2 : Let us assume that Bob always tells the truth.
+Then according to Bob's answer,
+Physics book belongs to Anu.
+Maths book belongs to Bob.
+Chemistry book belongs to Coy.
+Comparing Bob's reply with that of Anu's and Coy's replies, we can infer that
+Anu speaks the truth, lies and lies respectively when he says that the Physics book belongs to him, the Maths book does not belong to Bob and the Chemistry book does not belong to Coy.
+Coy lies, speaks the truth and speaks the truth respectively when he says that the Physics book does not belong to Anu, the Maths book does not belong to him and the Chemistry book does not belong to Bob.
+Hence under Case 2, Bob always speaks the truth, Anu and Coy alternate between truth and lie and hence this case is not possible since it is given that exactly one of them always speaks the truth, exactly  one of them always lies and the third one alternates between truth and lie, in any order.
+Case 3 : Let us assume that Coy always tells the truth. Here we can again make two sub cases.
+a) According to Coy's answer,
+Maths book belongs to Anu.
+Physics book belongs to Bob.
+Chemistry book belongs to Coy.
+Comparing Coy's reply with that of Anu's and Bob's replies, we can infer that
+Anu lies, speaks the truth and lies respectively when he says that the Physics book belongs to him, the Maths book does not belong to Bob and the Chemistry book does not belong to Coy.
+Bob lies, speaks the truth and lies respectively when he says that the Physics book does not belong to him, the Chemistry book belongs to Coy and the Maths book  does not belong to Anu.
+This case is not possible since both Anu and Bob are alternating between truth and lie and there is no one person who always lies.
+b) According to Coy's answer,
+Chemistry book belongs to Anu.
+Maths book belongs to Bob.
+Physics book belongs to Coy.
+Comparing Coy's reply with that of Anu's and Bob's replies, we can infer that
+Anu lies, lies and speaks the truth respectively when he says that the Physics book belongs to him, the Maths book does not belong to Bob and the Chemistry book does not belong to Coy.
+Bob speaks the truth, lies and speaks the truth respectively when he says that the Physics book does not belong to him, the Chemistry book belongs to Coy and the Maths book  does not belong to Anu.
+This case is also not possible since both Anu and Bob are alternating between truth and lie and there is no one person who always lies.
+Hence among the three cases, only Case 1 can be considered to be a valid case wherein Anu always speaks the truth, Bob alternates between truth and lie, Coy always lies and the Chemistry book belongs to Bob. Hence all the given statements 1, 2 and 3 can be concluded.",GPT-o3,basicprompt,"Let  
+
+P, C, M  = owners of the Physics, Chemistry and Maths books respectively  
+(the value of each is one of {Anu, Bob, Coy}, all different).
+
+Write every statement in logical form:
+
+Anu  
+A1 : P = Anu  
+A2 : M ≠ Bob  
+A3 : C ≠ Coy  
+
+Bob  
+B1 : P ≠ Bob  
+B2 : C = Coy  
+B3 : M ≠ Anu  
+
+Coy  
+C1 : P ≠ Anu  
+C2 : M ≠ Coy  
+C3 : C ≠ Bob  
+
+Among the three students  
+• one always tells the truth (TTT)  
+• one always lies (FFF)  
+• one alternates truth and lie (TFT or FTF).
+
+1. Enumerate the 6 possible allocations of the three books.  
+2. For each allocation write the truth-values of all nine statements.  
+3. Check whether the pattern “one TTT, one FFF, one alternating” occurs.
+
+Doing this yields:
+
+Allocation   P  C  M = Anu  Bob  Coy  
+Truth tables  
+Anu :  T  T  T  
+Bob :  T  F  T  
+Coy :  F  F  F  
+
+This single allocation fulfils the required pattern:  
+Anu is the truth-teller, Coy the liar, Bob the alternator.
+
+All other five allocations fail to give the required pattern, hence the above
+assignment is the only possible situation.
+
+Consequences (true in every valid scenario):  
+• Anu always tells the truth.  
+• Coy always lies.  
+• The Chemistry book belongs to Bob.
+
+Therefore all three given statements can be concluded.
+
+Final answer: 1, 2 and 3",True
+166,"Grobi is a very unique creature.
+Grobi:
+1...is round in shape.
+2...is six inches in diameter.
+3...lives on an acre-sized flat field.
+4...moves only by jumping; cannot walk, crawl, fly, or move in any manner other than jumping.
+5...can jump, in any one jump, a minimum of 6 inches or a maximum of 72 inches (6 feet) across the field (cannot jump straight up-down).  Grobi can therefore, in any one jump, jump any distance across the field at or between the 6-72 inch limits.
+6...can jump directly north, south, east, or west only; cannot jump diagonally.
+7...must jump four times in any one direction (N-S-E-W) before changing direction (N-S-E-W) or to continue in the same direction (N-S-E-W).
+8...dines on mushrooms which grow in the field.  The mushrooms grow to a maximum of six inches in diameter and to a height of an inch.
+9...can ingest a mushroom only by landing directly atop the mushroom.
+10...is very adept at precisely determining distances.
+One day Grobi - happily jumping around in the middle of the field - locates a six-inch diameter mushroom six inches away (center of Grobi to center of mushroom distance) directly west of Grobi.
+Grobi quickly (and accurately) calculates that FOUR jumps is the fastest way to get to the mushroom and eat, which Grobi does.
+Describe the route taken by Grobi to eat the mushroom including the direction of jumps, each approximate jump-distance, and the specific number of jumps in each direction.","No need to ""invent"" anything new for Grobi such as extraordinary motivating or grasping or ingestion appendages.  The problem can be solved using the information given.  Key words in the puzzle are ""happily jumping around"".","Grobi had already taken ONE jump to the east (in a new four-jump 'direction' series) when the mushroom was located to the west.  Grobi therefore had to take THREE more jumps to the east before being able to change direction and head back west.  Grobi took three minimum jumps (six inches or so each) to the east and then a long (24 inches or so) FOURTH jump to the west to land atop the mushroom.
+No other conditions would solve the puzzle as written:
+1.  If Grobi had been jumping west (as part of a four-jump 'direction' series), or had just concluded a four-jump 'direction' series, then the mushroom could have been attained in one jump.
+2.  If Grobi had been jumping north or south (as part of a four-jump 'direction' series) then four additional jumps (even if able to change direction) would have put Grobi out of alignment with the mushroom.
+3.  If Grobi had been jumping east (and had done two or three jumps as part of a four-jump 'direction' series) then the mushroom could have been attained in two or three additional jumps and not the four that was Grobi's correct calculation.",GPT-o3,basicprompt,,True
+167,"A king heard that the nearby kingdoms were being destroyed by a fierce dragon. He called forth his most trusted and skilled knights to meet and plan how to protect the kingdom.  The 6 knights, Sir William, Sir Andrew, Sir Luke, Sir Calvin, Sir Charles and Sir Vincent, decided that two knights would venture out to find and slay the dragon while the other 4 would defend the kingdom.
+From the statements below, which two knights went to seek the dragon?
+1. If neither Sir William or Sir Vincent rode out, then Sir Calvin did.
+2. If either Sir Calvin or Sir Vincent went to kill the dragon, then Sir Andrew did not.
+3.  If neither Sir Andrew or Sir William were of the brave two that left the kingdom, then Sir Charles was.
+4.  If neither Sir Luke or Sir Andrew went out, then Sir Vincent did.
+5. If Sir William was one of the two, then either Sir Calvin or Sir Charles was with him.
+6. If Sir Vincent was not of the two who went to slay the dragon, then neither was Sir Andrew nor Sir Charles.",,"Sir Vincent and Sir Charles went out of the kingdom to slay the dragon.
+If statement 1 is valid, Calvin was one of the two that left. If not, either William or Vincent was one of the two. Therefore the PAIR could not be Andrew and Luke, Sir Andrew and Charles or Luke and Charles.
+From 3, the PAIR that left was not Luke and Calvin, Luke and Vincent or Calvin and Vincent. From 4, the two could not have been William and Calvin, William and Charles or Calvin and Charles.
+From 5, William did not venture out and therefore from 4 the pair was not William and Calvin or William and Charles.
+From 6, Vincent must have been one of the two since the statement identifies three of the four knights not eliminated. From 2, Vincent was one of the two, and by elimination, the other is Charles.",GPT-o3,basicprompt,"Let S be the (two–element) set of knights who rode out.  
+W = Sir William, A = Sir Andrew, L = Sir Luke, C = Sir Calvin, Ch = Sir Charles, V = Sir Vincent.
+
+Translate the six statements:
+
+1. (W∉S ∧ V∉S) ⇒ C∈S          (contrapositive: C∉S ⇒ W∈S ∨ V∈S)
+2. (C∈S ∨ V∈S) ⇒ A∉S          (contrapositive: A∈S ⇒ C∉S ∧ V∉S)
+3. (A∉S ∧ W∉S) ⇒ Ch∈S        (contrapositive: Ch∉S ⇒ A∈S ∨ W∈S)
+4. (L∉S ∧ A∉S) ⇒ V∈S         (contrapositive: V∉S ⇒ L∈S ∨ A∈S)
+5. W∈S ⇒ (C∈S ∨ Ch∈S)        (because S has only two knights)
+6. V∉S ⇒ (A∉S ∧ Ch∉S)        (contrapositive: A∈S ∨ Ch∈S ⇒ V∈S)
+
+Step 1:  Show that A cannot be in S.  
+From (6) contrapositive, A∈S ⇒ V∈S.  
+But from (2) contrapositive, A∈S ⇒ V∉S.  
+Contradiction, hence A∉S.
+
+Step 2:  Use A∉S to simplify other rules.
+
+• Statement 4 becomes: L∉S ⇒ V∈S  (because A∉S).  
+  Equivalently, V∉S ⇒ L∈S.  
+
+• Statement 3 becomes: W∉S ⇒ Ch∈S  (because A∉S).  
+  Equivalently, Ch∉S ⇒ W∈S.  
+
+Step 3:  Two possible cases.
+
+CASE I Ch ∈ S  
+ From (6) contrapositive, Ch∈S ⇒ V∈S.  
+ Since S has only two knights, S = {Ch, V}.  
+ Check all statements:
+
+ 1. Antecedent false (V∈S) – OK  
+ 2. V∈S ⇒ A∉S (true) – OK  
+ 3. Antecedent true ⇒ Ch∈S (true) – OK  
+ 4. Antecedent true ⇒ V∈S (true) – OK  
+ 5. W∉S so antecedent false – OK  
+ 6. V∈S so antecedent false – OK  
+
+ All statements satisfied.  Thus {Ch, V} works.
+
+CASE II Ch ∉ S  
+ Then by Ch∉S ⇒ W∈S, we must have W∈S.  
+ Rule 5 says W must be paired with C or Ch, so partner must be C.  
+ Thus S = {W, C}.  
+ Check statement 4: L∉S and A∉S, so antecedent true ⇒ V∈S.  
+ But V∉S in this set, contradiction.  
+ Hence this case is impossible.
+
+Therefore the only possible set is S = {Ch, V}; i.e. Sir Charles and Sir Vincent rode out to slay the dragon.
+
+Final answer: Sir Charles and Sir Vincent",True
+168,"My entire family lives on Braingle Street, and for some strange reason I got to choose where everyone lives.
+My mother Vera lives at 2005 Braingle St.
+My cousin Lucy lives at 1150 Braingle St.
+Where do I live?","If Lucy changed her name to Irene, she'd have to move to 1101 Braingle St.","The addresses are based on the first letters of the residents' relations to me, converted to Roman Numerals.
+My Mother Vera = MMV = 2005
+My Cousin Lucy = MCL = 1150
+This leaves ""Me"" living at 1000 Braingle Street.
+I could also accept 1 Braingle St. (referring to myself as ""I"") as a valid answer.",GPT-o3,basicprompt,"Look for a rule that turns the name of the occupant into the 4-digit house number.
+
+1. Separate the vowels in the name from the letters that are Roman numerals  
+   (I=1, V=5, X=10, L=50, C=100, D=500, M=1000).
+
+2. Count the vowels; multiply that count by 1000.
+
+3. Add to that the total value of all the Roman-numeral letters in the name.
+
+Check the two given examples.
+
+• Vera  
+  – Vowels: E, A  → 2 vowels → 2 × 1000 = 2000  
+  – Roman-numeral letters: V = 5  
+  – Address: 2000 + 5 = 2005 ✔
+
+• Lucy  
+  – Vowels: U  → 1 vowel → 1 × 1000 = 1000  
+  – Roman-numeral letters: L = 50, C = 100  → 150  
+  – Address: 1000 + 150 = 1150 ✔
+
+Now apply the rule to “I”, the name implicitly given for the speaker.
+
+• I  
+  – Vowels: I  → 1 vowel → 1 × 1000 = 1000  
+  – Roman-numeral letters: I = 1  
+  – Address: 1000 + 1 = 1001
+
+Final answer: 1001 Braingle St.",True
+169,"Mad Ade's cousin Steve lies a lot. He tells the truth on only one day in a week.
+One day he said: ""I lie on Mondays and Tuesdays.""
+The next day he said: ""Today is either Sunday, Saturday, or Thursday.""
+The next day he said: ""I lie on Fridays and Wednesdays.""
+On which day of the week does Steve tell the truth?",,"Mad Ade's cousin  Steve tells the truth on Tuesdays
+The first and third statements are incompatible; they cannot of course both be true, and they can only be lies if on one of the days mentioned Steve tells the truth. But, they have no such day in common. Therefore one of them must be true, and the other must refer to that day. Looking at the second statement (which must be a lie, as there can at most be one true statement and we have one), the first day cannot be Wednesday, Friday or Saturday. Therefore, the first statement cannot be true, since the third cannot refer to it by day. Therefore, the third statement is true, and must (from the first statement) be a Monday or Tuesday. Statement two, however, rules out Monday, leaving only Tuesday as the 'day of truth'. Thus: 'one day' is a Sunday; on the third day (Tuesday) Steve is truthful.",GPT-o3,basicprompt,"Let
+
+D₁ = day on which the first statement was made  
+D₂ = D₁ + 1 (the next day)  
+D₃ = D₁ + 2 (the third day)  
+
+Steve tells the truth on exactly one fixed day of each week; call this day T.  
+On every other day he lies, so at most one of the three statements can be true.
+
+Statements
+
+S₁ (on D₁): “I lie on Mondays and Tuesdays.”  
+S₂ (on D₂): “Today is either Sunday, Saturday, or Thursday.”  
+S₃ (on D₃): “I lie on Fridays and Wednesdays.”
+
+--------------------------------------------------------------------
+1.  Assume S₁ is the true statement (D₁ = T).
+
+If S₁ is true, Steve really does lie on Monday and Tuesday, so T ≠ Monday, Tuesday.
+
+S₂ and S₃ are then false.
+
+• S₂ false ⇒ D₂ ∉ {Sunday, Saturday, Thursday}.  
+  Thus D₂ ∈ {Monday, Tuesday, Wednesday, Friday}.
+
+• S₃ false ⇒ “I lie on Fridays and Wednesdays” is false, so at least one of
+  {Wednesday, Friday} must be the truth day.  
+  But T = D₁, already not Monday or Tuesday, forces T ∈ {Wednesday, Friday}.
+
+  – If T = Wednesday then D₁ = Wednesday, D₂ = Thursday;  
+    but S₂ would then be true (Thursday ∈ {Sun, Sat, Thu}), contradiction.  
+  – If T = Friday then D₁ = Friday, D₂ = Saturday;  
+    S₂ would be true again (Saturday ∈ {Sun, Sat, Thu}), contradiction.
+
+Hence S₁ cannot be the true statement.
+
+--------------------------------------------------------------------
+2.  Assume S₂ is the true statement (D₂ = T).
+
+Then D₂ ∈ {Sunday, Saturday, Thursday}.  
+S₁ is false, so at least one of Monday or Tuesday must be the truth day
+(else “I lie on Mondays and Tuesdays” would be true).  
+But the truth day is D₂, which is not Monday or Tuesday—contradiction.
+
+So S₂ cannot be the true statement.
+
+--------------------------------------------------------------------
+3.  Therefore S₃ is the true statement (D₃ = T).
+
+S₃ true ⇒ Steve really lies on Friday and Wednesday, so T ≠ Friday, Wednesday.
+
+S₂ false ⇒ D₂ ∉ {Sunday, Saturday, Thursday} ⇒ D₂ ∈ {Monday, Tuesday, Wednesday, Friday}.
+
+S₁ false ⇒ At least one of Monday or Tuesday is the truth day, so  
+T ∈ {Monday, Tuesday}.
+
+Combine with T ≠ Friday, Wednesday → T is Monday or Tuesday.
+
+Since D₃ = T, examine the two possibilities:
+
+• If T = Monday then D₂ = Sunday.  
+  S₂ (said on Sunday) would be “Today is either Sun, Sat, or Thu”, which is true—contradiction (it must be false).
+
+• If T = Tuesday then D₂ = Monday, D₁ = Sunday.  
+  – S₂ on Monday: “Today is Sun/Sat/Thu” is false (good).  
+  – S₁ on Sunday: “I lie on Mondays and Tuesdays” is false because he lies on Monday but tells the truth on Tuesday (good).
+
+This arrangement is consistent, so the unique solution is
+
+Truth day T = Tuesday.
+
+--------------------------------------------------------------------
+Final answer: Tuesday",True
+170,"The last contestant has just completed the cycling leg of the triathlon.  The 15 clues that follow are with respect to this point in the race.  From the clues you must determine:  the color of shorts each runner is wearing, the positions at the end of the cycling leg, and the final standings.
+Contestants in the race:  Alvin, Brian, Chuck, David, Ethan, Frank
+Colors of their shorts:  red, orange, yellow, green, blue, violet
+1) Brian moved up two places, now just behind the runner in the red shorts.
+2) The runner in the yellow shorts fell down, lost an even number of positions, and was now in last place.
+3) Frank moved ahead of the runner who wore the blue shorts.
+4) The runner in the orange shorts took over the lead.
+5) Ethan and the runner in the green shorts switched places.
+6) David moved ahead of Brian, who was not wearing the blue shorts.
+7) Chuck stubbed his toe, lost one position, and was now just ahead of Alvin.
+8) Ethan and Brian, neither one who wore the violet shorts, switched places.
+9) Alvin moved ahead of the runners who wore the green and orange shorts.
+10) David dropped behind the runners who wore the blue and violet shorts.
+11) The runner in the yellow shorts moved ahead of David.
+12) Chuck moved ahead of the runner who wore the orange shorts.
+13) With a burst of speed, David moved ahead of Ethan, Frank, and the runner in the yellow shorts.
+14) Ethan moved ahead of the runner who wore the red shorts.
+15) Out of breath, the runner wearing the green shorts fell behind Brian, who now trailed the runner wearing the yellow shorts.  No further position changes occur.  The race ends.",,"Set up a grid of names versus colors.  From the clues, mark off combinations that can not exist.  From this, it can be found that Brian wears orange.  This leaves Ethan wearing blue.  From Clue 7 and Clue 9, Chuck can only be orange or green.  From Clue 12, Chuck can not be orange, therefore he must be green.  This leaves David wearing red, Frank wearing violet, and Alvin wearing yellow.  This establishes:  Alvin = yellow, Brian = orange, Chuck = green, David = red, Ethan = blue, Frank = violet
+To determine the final results, work backward, substituting names for colors.  From Clue 15, Alvin beats Brian beats Chuck.  From Clue 14, Ethan beats David.  From Clue 13, David beats Frank beats Alvin.  This establishes the final results as:  Ethan, David, Frank, Alvin, Brian, Chuck.
+Now work backward to determine the cycling standings, substituting names for colors.  You need to determine what the standings would have had to have been prior to each clue.  Before Clue 15:  Ethan, David, Frank, Alvin, Chuck, Brian.  Before Clue 14:  David, Ethan, Frank, Alvin, Chuck, Brian.  Before Clue 13:  Ethan, Frank, Alvin, David, Chuck, Brian.  Before Clue 12:  Ethan, Frank, Alvin, David, Brian, Chuck.  Before Clue 11:  Ethan, Frank, David, Alvin, Brian, Chuck.  Before Clue 10:  David, Ethan, Frank, Alvin, Brian, Chuck.  Before Clue 9:  David, Ethan, Frank, Brian, Chuck, Alvin.  Before Clue 8:  David, Brian, Frank, Ethan, Chuck, Alvin.  Before Clue 7:  David, Brian, Frank, Chuck, Ethan, Alvin.  Before Clue 6:  Brian, David, Frank, Chuck, Ethan, Alvin.  Before Clue 5:  Brian, David, Frank, Ethan, Chuck, Alvin.  Before Clue 4:  David, Frank, Ethan, Chuck, Alvin (Brian unknown).  Before Clue 3:  David, Ethan, Frank, Chuck, Alvin (Brian unknown).  Before Clue 2:  David, Ethan, Frank, Chuck (Alvin and Brian unknown).  Before Clue 1 (which establishes the standings after the cycling leg):  David, Ethan, Alvin, Brian, Frank, Chuck.",GPT-o3,basicprompt,,True
