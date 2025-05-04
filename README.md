@@ -24,4 +24,8 @@ conda install scikit-learn scikit-image pandas matplotlib seaborn tqdm -c pytorc
 
 python -m pip install beautifulsoup4 requests
 python -m pip install nltk
+
+python -m pip install openai
+python -m pip install google-genai
+python -m pip install anthropic
 ```
