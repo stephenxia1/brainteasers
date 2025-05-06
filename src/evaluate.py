@@ -23,6 +23,9 @@ def read_txt_files(directory):
     return instructionSet
 
 def evaluateResponse(client, instructions, modelResponse, solution, evaluationModel):
+    if len(modelResponse) == 0:
+        return None
+    
     retries = 0
     while retries < MAX_RETRIES:
         try:
