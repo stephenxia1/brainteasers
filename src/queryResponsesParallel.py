@@ -58,24 +58,28 @@ modelInfo = {
 def query(question, instructions, model):
     # print("TESTING", model)
 
-    print("QUERYING", model)
+    # print("QUERYING", model)
 
     client = OpenAI(
         api_key= os.getenv(modelInfo[model]["key"]),
         base_url = modelInfo[model]["url"],
     )
 
-    response = client.chat.completions.create(
-        model=modelInfo[model]["modelName"],
-        messages=[
-            {"role": "system", "content": instructions},
-            {"role": "user", "content": question},
-        ],
-        stream=False,
-        timeout=360,
-        max_completion_tokens=10000,
-    )
-    print("RESPONSE", response)
+    try:
+        response = client.chat.completions.create(
+            model=modelInfo[model]["modelName"],
+            messages=[
+                {"role": "system", "content": instructions},
+                {"role": "user", "content": question},
+            ],
+            stream=False,
+            timeout=360,
+            max_completion_tokens=10000,
+        )
+    except Exception as e:
+        print(f"Error querying {model}: {e}")
+        response = None
+    # print("RESPONSE", response)
     return response.choices[0].message.content
 
 def process_task(t):
@@ -84,7 +88,7 @@ def process_task(t):
 def process_pair(index, prompt, question, hint, solution, instructions, model, dataset, name):
     status = True
     results = pd.read_csv(f"../responses/{dataset}/{name}/resultsTemp.csv")
-    print("LOOKING AT PROBLEM", index, "WITH PROMPT", prompt)
+    # print("LOOKING AT PROBLEM", index, "WITH PROMPT", prompt)
     if "hint" in instructions.lower():
         question = f"Question: {question}\n Hint: {hint}"
 
@@ -94,7 +98,7 @@ def process_pair(index, prompt, question, hint, solution, instructions, model, d
     try:
         response = query(question, instructions, model)
     except Exception as e:
-        print(f"Error querying {model} for question {index} on prompt {prompt}: {e}")
+        # print(f"Error querying {model} for question {index} on prompt {prompt}: {e}")
         response = None
         status = False
 
@@ -152,7 +156,7 @@ def main():
                     args.name,
                 )
 
-                print("TASK:", task)
+                # print("TASK:", task)
                 entry = process_task(task)
                 results.append(entry)
                 with open(f'../responses/{args.dataset}/{args.name}/results.jsonl', 'a') as jsonfile:
