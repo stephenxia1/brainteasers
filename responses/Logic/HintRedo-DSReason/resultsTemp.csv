@@ -1,0 +1,119 @@
+ID,Question,Hint,Human Solution,Model,PromptType,Response,Status
+0,"Question: It was good to have the house full of people again; it had been far too quiet since the last of his seven daughters had left for college--seven daughters with seven different majors at seven different schools.  About the only thing they had in common was that they were each dating an athlete, although none of them played the same sport--one was even on his school's fencing team.  He was surprised all the boyfriends had come for Christmas dinner, but he supposed that since he was picking up the tab for the airfare, that a free trip to Hawaii in the winter had something to do with it.  Each of his first three daughters had gone to Ivy League schools--one even to his alma mater at Harvard; his next two ended up at the University of California, at Los Angeles and Berkeley; and his two youngest got accepted to schools abroad--the University of Tokyo had been a bit of a surprise.  Next year, after seven straight years--and for the first time this millennium--he wouldn't be attending a high-school graduation.
+""Honey, we're ready to eat.  Can you get Hank, Ian, James and Kyle?  They're in the backyard playing football.  The other boys wanted to test themselves against the star quarterback,"" his wife called from the dining room.
+The math major said, ""I'll get them Dad!""
+As everyone filed into the dining room, the oldest sister was rehashing the whose-school-and-major-is-better argument with her younger sister about whether Yale or Princeton was a better school and whether history or philosophy was a more useful major.  The argument was practically a Christmas tradition by now.
+The table was arranged with the parents at the two ends and each of the couples seated across from each other with boys seated next to girls along each side.  As usual, Angelina and Danica were sitting next to their parents.  Curiously, all the athletes that used a ball in their sport were sitting on the same side of the table.  Christie, Electra and Edward took their seats first.
+Once everyone was seated the youngest coyly observed, ""I see the biologist is sitting between the two fighters but I'm sitting between the two best passers at the table.""
+""You'd better not make any passes yourself!"" Farrah icily replied.  She hadn't forgiven her sister for stealing her boyfriend when they were in high school and was not happy to see her seated next to her boyfriend now.
+""Lighten up, Farrah"" the biology major joked.  ""He wasn't even that cute.""
+""He was adorable!"" the youngest interjected.
+""Everyone's entitled to their opinion,"" said Brooke.  ""Let's eat!""
+The daughter in the middle seat stood up and said, ""We have an announcement to make!"" After a dramatic pause she screamed ""we're getting married!"" and flashed the new diamond ring on her finger.  The youngest sister squealed with delight at the news.  Her fiance joked to his future mother-in-law, ""I think she said yes just so she can wear the monogrammed sweater you gave me for Christmas.""  The baseball player next to her asked her fiance, ""Wow, what'd that rock set you back?""
+""This calls for a toast!"" roared Dad.
+""Oh Honey, that's wonderful news!"" Mom gushed.  ""I just happen to have some champagne right here.  Lars, I know you don't drink alcohol, but would you mind pouring some champagne for Gabrielle next to you?"" the mother asked, handing the bottle to Lars on her left.  ""Gabrielle, please pass the bottle around,"" she asked and then quickly added, ""But no alcohol for my three babies, or anyone under 21 for that matter.  Honey, there's a store downtown that's having a sale on wedding dresses.  Will you have time to go look at some wedding dresses before you leave?""
+""Sure Mom,"" her daughter answered.  ""We have a late flight out, so I can do that on the day we leave.""
+""Michael and I are celebrating New Years Eve at the Sheraton, Waikiki,"" one of the girls announced.
+""What a coincidence,"" said the boy sitting next to her.  ""We're celebrating New Years at the Sheraton, Los Angeles.  It's within walking distance of our apartment so we won't have to worry if we drink too much.""
+""That sounds like a better plan than we have.  Somehow, just because my car holds a lot of people, I got roped into being the designated driver for the team"" Danica said, looking pointedly at her boyfriend, who gestured to the boy from Princeton saying, ""he gave me the idea!""
+""Girls, your grandmother will be here on Sunday,"" the father announced.  ""She'd really like to see you all.""
+""Sorry Dad,"" the business major replied, ""we have to leave tomorrow.  There's a huge storm predicted to hit the Eastern United States this weekend and we need to get home before they close the airports.  I noticed that each couple is leaving on a different day for six days after we leave.""
+""Sir, we're leaving before Sunday also, so we won't be able to make it either.  I'm just glad we don't have to deal with that storm"" said the wrestler.
+The swimmer and water polo player announced their travel plans.  One of them remarked that even though his girlfriend and he were departing for Oxford University two days earlier, both couples would get home on the same day.
+The physics major said ""I'll be here to see grandma, but unfortunately we're heading back to California before you go look at the wedding gowns.""
+""Well I'm glad you'll at least be here to see your grandma, but I wish you could stay longer"" the dad said.  ""You know you're my favorite since you were my first to major in a physical science like me,"" he joked.  ""I have a tee time at the club on Monday, it's too bad you won't be here,"" the father remarked to the golfer.  ""Kyle's got a game next week but you don't,"" he said to the history major's boyfriend.  ""How about you join me on the links?""
+""Sure!"" the boyfriend replied enthusiastically.
+""Since we're leaving the day after him, if you've got room for two more Dad, we just happened to bring our clubs"" the second oldest said, winking at her boyfriend.
+""It's a foursome then!"" her dad said happily.
+Ian grumbled, ""Hank you lucky dog, I've wanted to play that course for years!""
+The boyfriend of the political science major laughed, ""I'd like to play there also, but Ian, at least I won't have to travel as far as you to get another opportunity.""
+---------
+Identify the boyfriend and his sport, the school, and major for each daughter.  Name the order that the daughters were born in and the day of the week that they leave to go home.  What is the seating arrangement at the dinner table?
+Bonus question: what year is it?
+ Hint: Pay attention to the flow of the conversation, but don't assume more than can be firmly established.
+Also, some information relies on the following facts:
+Christmas is on December 25th.
+New Years Eve is celebrated (usually by drinking too much alcohol) on December 31st.
+Swimming, fencing and wrestling are not games.  Football, baseball, water polo and golf are games played with a ball.
+Fencing and wrestling are combat competitions.
+The game of American football is not a collegiate sport outside the United States; the player that passes the ball is the quarterback; there are more than forty players on a football team.
+Water polo is a game played in a pool with 7 players on each team; points are scored by throwing the ball into the opponents net, which is guarded by the goal keeper; the ball is moved across the pool either by swimming with it or passing it to another player.
+Ivy League schools are located on the East Coast of the United States.  Harvard, Yale and Princeton are all Ivy League schools.
+Oxford University is in Oxford, England.
+Tokyo University is in Tokyo, Japan.
+Los Angeles and Berkeley are cities in California.
+Waikiki is a city in Hawaii.
+Hawaii is in the Pacific Ocean.  The following are approximate distances from Hawaii:
+Berkeley and Los Angeles ~ 2500 miles
+Tokyo ~3900 miles
+Yale, Harvard and Princeton ~5000 miles
+England ~7000 miles
+Biology and physics are physical sciences; none of the other majors is a physical science.
+High school in America typically includes the last three or four years of school before college.
+A designated driver remains sober in order to drive people who've had too much alcohol home.
+A monogram is formed from the first letter of a person's first, last and (sometimes) middle names.","Pay attention to the flow of the conversation, but don't assume more than can be firmly established.
+Also, some information relies on the following facts:
+Christmas is on December 25th.
+New Years Eve is celebrated (usually by drinking too much alcohol) on December 31st.
+Swimming, fencing and wrestling are not games.  Football, baseball, water polo and golf are games played with a ball.
+Fencing and wrestling are combat competitions.
+The game of American football is not a collegiate sport outside the United States; the player that passes the ball is the quarterback; there are more than forty players on a football team.
+Water polo is a game played in a pool with 7 players on each team; points are scored by throwing the ball into the opponents net, which is guarded by the goal keeper; the ball is moved across the pool either by swimming with it or passing it to another player.
+Ivy League schools are located on the East Coast of the United States.  Harvard, Yale and Princeton are all Ivy League schools.
+Oxford University is in Oxford, England.
+Tokyo University is in Tokyo, Japan.
+Los Angeles and Berkeley are cities in California.
+Waikiki is a city in Hawaii.
+Hawaii is in the Pacific Ocean.  The following are approximate distances from Hawaii:
+Berkeley and Los Angeles ~ 2500 miles
+Tokyo ~3900 miles
+Yale, Harvard and Princeton ~5000 miles
+England ~7000 miles
+Biology and physics are physical sciences; none of the other majors is a physical science.
+High school in America typically includes the last three or four years of school before college.
+A designated driver remains sober in order to drive people who've had too much alcohol home.
+A monogram is formed from the first letter of a person's first, last and (sometimes) middle names.","From oldest to youngest the sisters are:
+Who, Boyfriend, Sport, Major, School, Departure day
+----------------------------------------------------------
+Danica, Hank, Water Polo, History, Yale, Tue
+Electra, Edward, Fencing, Philosophy, Princeton, Wed
+Angelina, Lars, Golf, Business, Harvard, Fri
+Gabrielle, James, Wrestling, Poly Sci., UCLA, Sat
+Farrah, Kyle, Football, Physics, Berkeley, Mon.
+Brooke, Michael, Baseball, Biology, Tokyo, Thu
+Christie, Ian, Swimming, Math, Oxford, Sun
+The seating arrangement is:
+---------- Dad ----------
+Hank.............Danica
+Christie..........Ian
+Kyle..............Farrah
+Electra...........Edward
+Michael..........Brooke
+Gabrielle........James
+Lars..............Angelina
+---------- Mom ----------
+The year is 2003.  This is the only year from 2000 to 2007 where Christmas is on a Thursday.",DSReason,hintPrompt,"Final answer:  
+**Daughters (Oldest to Youngest):**  
+1. **Angelina** - Yale University, History major, dating **Kyle** (Golfer). Leaves: December 28.  
+2. **Danica** - Princeton University, Philosophy major, dating **James** (Football quarterback). Leaves: December 29.  
+3. **Christie** - Harvard University, Business major, dating **Michael** (Swimmer). Leaves: December 26.  
+4. **Electra** - UCLA, Physics major, dating **Hank** (Baseball player). Leaves: December 30.  
+5. **Brooke** - UC Berkeley, Biology major, dating **Edward** (Wrestler). Leaves: December 31.  
+6. **Farrah** - University of Oxford, Political Science major, dating **Ian** (Water Polo player). Leaves: December 27.  
+7. **Gabrielle** - University of Tokyo, Mathematics major, dating **Lars** (Fencer). Leaves: January 1.  
+
+**Seating Arrangement:**  
+- **Left side (ball sports):** Mom, Angelina, Kyle, Danica, James, Electra, Hank, Farrah, Ian.  
+- **Right side (non-ball sports):** Dad, Christie, Michael, Brooke, Edward, Gabrielle, Lars.  
+
+**Bonus Year:** 2023 (Dec 25 falls on a Monday; next year is the first without a graduation since 2001).  
+
+Final answer:  
+1. Angelina (Yale, History, Kyle/Golf, Dec 28)  
+2. Danica (Princeton, Philosophy, James/Football, Dec 29)  
+3. Christie (Harvard, Business, Michael/Swim, Dec 26)  
+4. Electra (UCLA, Physics, Hank/Baseball, Dec 30)  
+5. Brooke (Berkeley, Biology, Edward/Wrestling, Dec 31)  
+6. Farrah (Oxford, Political Science, Ian/Water Polo, Dec 27)  
+7. Gabrielle (Tokyo, Math, Lars/Fencing, Jan 1)  
+Seating: Ball-sport couples on left, non-ball on right. Year: 2023.",True

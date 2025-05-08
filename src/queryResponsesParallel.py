@@ -137,7 +137,8 @@ def main():
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
     # instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt'], 'hint_prompt': instructionSet['hint_prompt']}
-    instructionSet = {'solutionSummary': instructionSet['solutionSummary']}
+    # instructionSet = {'solutionSummary': instructionSet['solutionSummary']}
+    instructionSet = {'hintPrompt': instructionSet['hint_prompt']}
 
     results = []
     for prompt in instructionSet:
