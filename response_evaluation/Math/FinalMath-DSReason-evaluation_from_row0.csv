@@ -209,7 +209,7 @@ The sum of their digit sextuplets are square numbers:
 
 These are the only 12-digit numbers that are both perfect squares and have a digit sum of 36. No other 12-digit number shares this combination of properties. 
 
-Final answer: They are the only 12-digit perfect squares with a digit sum of 36.",True,0,1,0
+Final answer: They are the only 12-digit perfect squares with a digit sum of 36.",True,0,1,1
 5,"Two mathematicians, Rex and Ralph, have an ongoing competition to stump each other. Ralph was impressed by the ingenuity of Rex's last attempt using clues involving prime numbers, but he thinks he's got an even better one for Rex. He tells Rex he's thinking of a 6-digit number.
 ""All of the digits are different. The digital sum matches the number formed by the last two digits in the number. The sum of the first two digits is the same as the sum of the last two digits.""
 ""Take the sum of the number, the number rotated one to the left, the number rotated one to the right, the number with the first three and last three digits swapped, the number with the digit pairs rotated to the left, and the number with the digit pairs rotated to the right. The first and last digits of this sum match the last two digits of the number, in some order.""
@@ -562,7 +562,7 @@ Here are some ways to form the numbers from 10 to 38 using the additional operat
 35 = 4! + (4! - SQRT(4)) / SQRT(4)
 36 = 4! + 4 + 4 + 4
 37 = 4! + (4! + SQRT(4)) / SQRT(4)
-38 = 4! + (4 * 4) - SQRT(4)",DSReason,basicprompt,"Final answer: 41. The numbers from 0 to 40 can be formed using four 4s with the allowed operations. For example, 35 = 4! + (4! - √4)/√4, 36 = 4*(4+4) +4, 37 = 4! + (4! +√4)/√4, 38 = 4! +4*4 -√4, 39 = 4! +4*4 -4/4, and 40 = 4! +4*4 +4 -4. However, no valid combination of four 4s yields 41 using the allowed operations.",True,0,1,1
+38 = 4! + (4 * 4) - SQRT(4)",DSReason,basicprompt,"Final answer: 41. The numbers from 0 to 40 can be formed using four 4s with the allowed operations. For example, 35 = 4! + (4! - √4)/√4, 36 = 4*(4+4) +4, 37 = 4! + (4! +√4)/√4, 38 = 4! +4*4 -√4, 39 = 4! +4*4 -4/4, and 40 = 4! +4*4 +4 -4. However, no valid combination of four 4s yields 41 using the allowed operations.",True,0,1,0
 13,"Al and Ben are standing back to back next to a railroad track. When the front of a train passes them, Al starts to walk in the opposite direction of the train, while Ben starts to walk in the same direction as the train. Each stops walking when the back of the train passes him. If the two of them walk at the same speed, and Al walks exactly 30 feet, and Ben walks exactly 45 feet, how long is the train?",,"The train is 180 feet long.
 When the back of the train passes Al, he and Ben have both walked 30 feet, meaning Ben will walk 15 feet more when the train passes him. 30 feet that Al walks plus 45 feet that Ben walks makes 75 feet that the back of the train travels in the same time that Ben walks 15 feet, meaning the train is 5 times as fast as Al and Ben.
 In the time it takes Al to walk 30 feet, the front of the train moves 150 feet. This distance plus the 30 feet that Al has walked equals 180 feet.",DSReason,basicprompt,Final answer: 180 feet,True,1,0,0
@@ -736,7 +736,7 @@ Therefore, the number we are looking for is 381654729.",DSReason,basicprompt,Fin
 
 Such a long chain of divisibility is rare and highlights the number's unique property. Polydivisible numbers are exceptional due to their strict adherence to divisibility rules across increasing lengths, making this a remarkable example.
 
-Final answer: The number is a polydivisible number where each prefix of length n is divisible by n for n from 1 to 18.",True,1,0,0
+Final answer: The number is a polydivisible number where each prefix of length n is divisible by n for n from 1 to 18.",True,0,0,0
 20,"Sandy and Sue each has a whole number of dollars. I ask them how many dollars they have.
 Sandy says: ""If Sue gives me some dollars, we'll have the same amount of money. But if I give Sue the same number of dollars, she'll have twice as much money as I have.""
 Sue says: ""And if you remove the first digit of my wealth and place it to the end, you'll get Sandy's wealth.""
@@ -829,7 +829,7 @@ Final answer: 3^700, 710",True,1,0,0
 2) HGFEDCBA (reversing the digits) is a prime number
 3) all consecutive 2-digit subsets of ABCDEFGH are prime numbers (AB, BC, CD, DE, EF, FG, GH are all prime)
 4) all consecutive 2-digit subsets of HGFEDCBA are prime numbers (HG, GF, FE, ED, DC, CB, BA are all prime)",,"97131379 (97, 71, 13, 31, 13, 37, 79) and its reverse 97313179 (97, 73, 31, 13, 31, 17, 79)
-The only available 2-digit prime numbers are:  11, 13, 17, 19, 31, 37, 71, 73, 79, and 97.  The number pairs that are prime in both directions are:  11/11, 13/31, 17/71, 37/73, and 79/97 (19 is eliminated since its reverse, 91, is not prime).  With these numbers, it can be seen that 9 can only be paired with 7.  Therefore, the solution must be of the form 97????79, 9797????, or ????7979.  ???? must therefore be 1313, 3131, or 3113.  This leaves the possible solution pairs of 97131379/97313179, 97971313/31317979, 97973131/13137979, 97973113/31137979, and 97311379/97311379 (the last pair being a palindrome).  Of these, only 97131379 and its reverse, 97313179, are prime numbers.",DSReason,basicprompt,Final answer: 19739937,True,0,0,1
+The only available 2-digit prime numbers are:  11, 13, 17, 19, 31, 37, 71, 73, 79, and 97.  The number pairs that are prime in both directions are:  11/11, 13/31, 17/71, 37/73, and 79/97 (19 is eliminated since its reverse, 91, is not prime).  With these numbers, it can be seen that 9 can only be paired with 7.  Therefore, the solution must be of the form 97????79, 9797????, or ????7979.  ???? must therefore be 1313, 3131, or 3113.  This leaves the possible solution pairs of 97131379/97313179, 97971313/31317979, 97973131/13137979, 97973113/31137979, and 97311379/97311379 (the last pair being a palindrome).  Of these, only 97131379 and its reverse, 97313179, are prime numbers.",DSReason,basicprompt,Final answer: 19739937,True,0,0,0
 24,"While on your interplanetary vacation, you decide to stop at the planet Quocorri, a planet known for its many mathematical achievements.
 While there, you decide to pick up on some of the Quocorrians mathematical variations. The Quocorrians won't tell you exactly how it works, only that it has some relationship to the Standard English math. They also give you four, true, Quocorrian math problems. They are:
 2+2=9
@@ -1577,7 +1577,7 @@ But if the product is 12^3, the least number is 3889.",DSReason,basicprompt,"The
 
 Thus, **3889** is the minimal number where the product of its digits equals \( 12^3 \), and no smaller valid number exists for other k values.
 
-Final answer: 3889",True,1,1,1
+Final answer: 3889",True,1,1,0
 42,"One day, a frustrated math teacher lost his patience with his students' non-stop chatting. Thus, he decided to give the ultimate hard problem:
 Find the only positive integer number less than 20,000 that is also a sum of three positive integers, all containing exactly 7 factors.
 There was a steady silence. Can you break the silence by figuring it out?","For the prime factorization of positive integer x, we get
@@ -1649,7 +1649,7 @@ First problem: 1, 4, 5
 Second problem: 1, 4, 5, 8  
 Third problem: 1, 4, 5, 8, 11  
 Fourth problem: 1, 4, 5, 8, 11, 14 and 1, 4, 5, 8, 12, 13  
-Last problem: 1, 4, 5, 8, 11, 14, 17",True,1,1,1
+Last problem: 1, 4, 5, 8, 11, 14, 17",True,0,0,1
 46,"Patty O'Furniture, Kurt, & Rod were walking downtown when they spotted a forlorn friend staring at a small object in her hand.  She was propped against a wall, one foot off the ground.
 ""I know her,"" Patty said.  ""She looks like she could use some help.  I think she broke a heel off her shoe.""
 Patty was right; the small object was a 3-inch heel.
@@ -1847,7 +1847,7 @@ and the average of all three numbers is  43 .",DSReason,basicprompt,"To solve th
 
 After exhaustive checking, no other triplet satisfies all conditions.
 
-Final answer: 11, 47, 71",True,1,1,0
+Final answer: 11, 47, 71",True,1,1,1
 53,"It is easy to express 2004 as the sum of distinct positive numbers comprising the same digits:
 2004 = 725 + 752 + 527 or
 2004 = 617 + 671 + 716 or
@@ -1855,7 +1855,7 @@ Final answer: 11, 47, 71",True,1,1,0
 It is harder to write 2003 as the sum of distinct positive numbers with the same digits.
 What are they?",You will need five numbers of three digits each.,127 + 172 + 271 + 712 + 721 = 2003,DSReason,basicprompt,"Final answer: 1093, 1039, and 871.  
 **Note**: The correct answer is typically known to be **1789, 214**, but after extensive reasoning and considering the constraints, the valid answer using the same digits is **389, 839, 775** (though this might not sum correctly; the exact solution requires precise digit permutation which wasn't found here). The verified correct answer is **892, 298, 813** but this also doesn't sum correctly. The actual answer, based on community knowledge, is **769, 691, 543**, but due to the complexity, the precise valid combination is **148, 481, 1374** (summing to 2003 with same digits). However, the accurate answer accepted is **983, 839, 181**.  
-**Correction**: The correct answer is **892, 298, 813**.",True,0,1,1
+**Correction**: The correct answer is **892, 298, 813**.",True,0,1,0
 54,"Which two closest together whole numbers that, when multiplied, produce the pleasant looking number: 1234567890 ?",,"34,227 and  36,070.
 The only factors of 1234567890 are 2, 3, 3, 5, 3607 and 3803. Testing the various products of these factors reveals that 34,227 and 36,070 are the closest pair of numbers that produce 1234567890.",DSReason,basicprompt,"To find the two closest whole numbers that multiply to 1234567890, we start by approximating the square root of the number. The square root of 1234567890 is approximately 35,136.68. Factors closest to each other will be near this value. 
 
@@ -1958,7 +1958,7 @@ So, 41 × 73 = 2993.
 Letters correspond as:  
 H=4, I=1, T=7, O=3, J=2, R=9.  
 
-Final answer: HI=41, TO=73, JRRO=2993",True,0,0,1
+Final answer: HI=41, TO=73, JRRO=2993",True,0,0,0
 61,"Car 1 started from Point A towards point B. At the same time Car 2 started from point B towards A. They crossed each other at point C. After which, Car 1 reached point B in another 9 hrs, and Car 2 reached point A in another 4 hrs. If both the cars maintained a constant speed throughout the journey, and the speed of Car 1 was 36 miles/hr(mph), then what was the speed of Car 2?",,"54 miles/hr.
 Here's how to solve:
 Speed of Car 1 = 36 mph
@@ -2261,7 +2261,7 @@ S.O.D. = 18; P.O.D. = 240
 4. **Smallest Valid Number**:  
    The permutations of 2, 3, 5, 8 in ascending order show that 5328 is the smallest valid number divisible by 37.  
 
-Final answer: 5328",True,1,0,1
+Final answer: 5328",True,1,1,0
 70,"Each letter in the sets of equations below represents a number; substitute the numbers in to make the expressions correct. Each letter always represents the same number.
 ABC/3=JE
 DEF/6=JE
@@ -2274,7 +2274,7 @@ Verification:
 - DEF = 438, 438 ÷ 6 = 73 (JE)
 - GHJ = 657, 657 ÷ 9 = 73 (JE). 
 
-All equations hold with JE=73, and each letter consistently represents its assigned digit.",True,1,0,0
+All equations hold with JE=73, and each letter consistently represents its assigned digit.",True,1,1,0
 71,Arrange the digits 1-9 in a 3x3 square using each once only according to the following rules. Exactly one prime is directly above a prime two less. Each pair of opposite corners sums to the same square total and exactly two columns share another square total. Exactly one prime is directly to the left of a non-prime two greater. Directly above exactly one square digit is a digit four greater. Directly to the right of exactly one cubic digit is a digit one greater,,"897-top
 635-middle
 241-bottom",DSReason,basicprompt,"Final answer:  
@@ -2584,7 +2584,7 @@ Through approximation, we found that the cube of 75,200,000 is approximately \(4
 
 Given the precision of the sequence and the proximity to a large cube, the most plausible conclusion is that **425260376469080434957 is a perfect cube**. Specifically, it is the cube of 75,209,696. This makes it special as it represents the exact cube of a significant integer.
 
-Final answer: The number is the cube of 75209696, i.e., \(75209696^3 = 425260376469080434957\).",True,0,0,0
+Final answer: The number is the cube of 75209696, i.e., \(75209696^3 = 425260376469080434957\).",True,0,1,0
 80,"5   5   5   5   5  = 37
 Can you make a target number 37 by using five 5s?
 You can use any math operator or group the 5s (as in 555)
@@ -3077,7 +3077,7 @@ Simplifying:
 \]
 
 **Final answer:** Yes, the net profit goal of \$20 was achieved with a final profit of \$20.25.  
-Final answer: Yes",True,1,0,1
+Final answer: Yes",True,1,1,0
 93,"Question Mark is very proud with himself. He has just designed his very own function machine. When a number goes into this machine, a different number comes out. A basic formula is used to determine what comes out. If:
 3 -> 90
 4 -> 272
@@ -3309,7 +3309,7 @@ Being witty as his name suggests, Will easily answered this. The question is, ca
 28 , 157 , 4396
 39 , 186 , 7254
 42 , 138 , 5796
-48 , 159 , 7632",DSReason,basicprompt,Final answer: 18 × 297 = 5346,True,1,1,1
+48 , 159 , 7632",DSReason,basicprompt,Final answer: 18 × 297 = 5346,True,0,1,1
 108,"In the equation FORTY+TEN+TEN=SIXTY, each letter represents a different digit. Can you figure out which letter is which digit?",Start from the last digits.,"First, there are ten different letters in this equation: E, F, I, N, O, R, S, T, X, Y. Therefore, every digit from 0 to 9 is used.
 Because the last two digits of TY+EN*2 is TY, EN*2 is divisible by 100, EN must equal 50.
 We get FOR+T*2+1=SIX.
@@ -3321,7 +3321,7 @@ If T=8, then R=X+3, we can have R=6, X=3, or R=7, X=4.
 If R=6, X=3, the remaining digits are 2, 4, 7, and again we can't choose S=F+1.
 If R=7, X=4, the remaining digits are 2, 3, 6, where 3=2+1. Hence S=3, F=2.
 Finally, the remaining digit 6 is for Y.
-Therefore, the equation is 29786+850+850=31486.",DSReason,basicprompt,"Final answer: F=2, O=9, R=7, T=8, Y=6, S=3, I=1, X=4, E=5, N=0. The equation is 29786 + 850 + 850 = 31486.",True,1,1,0
+Therefore, the equation is 29786+850+850=31486.",DSReason,basicprompt,"Final answer: F=2, O=9, R=7, T=8, Y=6, S=3, I=1, X=4, E=5, N=0. The equation is 29786 + 850 + 850 = 31486.",True,1,0,0
 109,"Two cars race around a circular track, in opposite directions, at constant rates. They start at the same point and meet every 30 seconds. If they move in the same direction, they meet every 120 seconds. If the track is 1800 meters long, what is the speed of each car?","1)
 Let  x = rate of car 1 (m/s)
 Let y = rate of car 2  (m/s)
@@ -3632,7 +3632,7 @@ R A I L
 - All digits \( L=2, I=1, A=7, R=8, S=4 \) are unique.
 
 Final answer: L=2, I=1, A=7, R=8, S=4  
-Final answer: 2178 x 4 = 8712",True,1,1,0
+Final answer: 2178 x 4 = 8712",True,1,0,1
 123,"Can you find a five digit number that, if you place a 9 at the beginning to make a new number, is four times larger than if you place the 9 at the end instead?",,23076: 923076 / 230769 = 4.,DSReason,basicprompt,"To find a five-digit number \( N \) such that placing a 9 at the beginning forms a number four times larger than placing 9 at the end, we set up the equation:
 
 \[
@@ -3748,7 +3748,7 @@ The factorial of three is:
 7 7 7: 7−7/7  
 8 8 8: 8−√√(8+8)  
 9 9 9: √9×√9−√9  
-0 0 0: (0!+0!+0!)!",True,0,0,0
+0 0 0: (0!+0!+0!)!",True,1,0,0
 128,"Arrange the digits 0, 1, 2, 2, 3, 4, 4, 5, 6, and 9, to form a single fraction that equals 1/2.  (Here is one example that, alas, turns out not to be true:  32145/24690=1/2)",,One solution:  12345/24690=1/2,DSReason,basicprompt,"Final answer: 12345/24690
 
 **Step-by-Step Explanation:**
@@ -3885,7 +3885,7 @@ Hence, he had worked for 367 days, and had delivered 134689 letters.",DSReason,b
    - Continue checking successive \( n \):
      - \( 367^2 = 134,689 \). Digits: 1, 3, 4, 6, 8, 9 (ascending order).
 
-**Final answer:** The postman worked for 367 days and delivered a total of 134,689 letters.",True,1,1,1
+**Final answer:** The postman worked for 367 days and delivered a total of 134,689 letters.",True,1,1,0
 134,"Bill, Bob, Frank, and Jim, who all drive cabs, work a particularly busy street that runs east and west. The street has no traffic lights. Oddly enough, an equal number of pedestrians walk in each direction at four kilometres per hour. The four cab drivers were discussing the best way to pick up a fare. Bill said he was going to sit beside the curb and wait until a fare came along. Bob said he was going to cruise west at four kilometres an hour; therefore, he would have twice the chance of picking up a fare as Bill. Frank said he was going to cruise east at eight kilometres an hour and his chances were twice as good as either Bill's or Bob's. Jim claimed that they were all wrong. He was going to drive west at 12kmh and his chances of picking up a fare were twice as good as Frank's. Of the claims that were made which were correct and which were wrong?",,"Bill made no claim, Bob's claim was false, Frank's claim was true, and Jim's claim was false. Let's assume that 100 people passed Bill going east at four kph, and 100 people passed him going west at four kph. Bob, who was driving west at four kph, wouldn't pass anyone walking west, but would pass 200 people walking east. This would put him no further ahead than Bill. Frank, who was driving east and 300 people going west. Jim, who was going west at 12kph, would pass 200 people going west and 400 people going east. His statement about doubling his chances over Frank was false.",DSReason,basicprompt,"To determine whose claims are correct, we analyze each driver's strategy based on their relative speeds to pedestrians walking east and west at 4 km/h. The rate of encountering pedestrians is proportional to the relative speed between the cab and pedestrians. 
 
 1. **Bill (stationary):**  
@@ -4410,7 +4410,7 @@ Final answer: 41, 80, 320",True,1,1,0
 Mad Ade noted there were two possible answers.
 What are they?",,"Answers are 39157 and 57139
 39*57= 2223-1= 2222
-57*39= 2223-1= 2222",DSReason,basicprompt,Final answer: 39157 and 57139,True,1,0,1
+57*39= 2223-1= 2222",DSReason,basicprompt,Final answer: 39157 and 57139,True,1,1,0
 155,"Old Farmer McDoughnut owns a piece of grassland in the heart of Madadia and has three animals: a Madadian Burger Cow, a Spare Kebab Goat, and a Scotch Egg laying Goose. McDoughnut discovered the following:
 When the cow and the goat graze on the field together, there is no more grass after 45 days.
 When the cow and the goose graze on the field together, there is no more grass after 60 days.
@@ -4670,7 +4670,7 @@ What were the prices of the magazines, that could either be multiplied or added 
 - **Sum**: \( 1.25 + 1.60 + 2.85 = 5.70 \).  
 - **Product**: \( 1.25 \times 1.60 \times 2.85 = 5.70 \).  
 
-Final answer: £1.25, £1.60, and £2.85.",True,1,1,1
+Final answer: £1.25, £1.60, and £2.85.",True,1,1,0
 172,"Mad Ade has drawn another grid, this time it is 20 squares by 10 squares.
 How many different squares and rectangles(combined figure not individual) can be found in that grid?",,"11550
 Total number of Squares/rectangles = (Summation of row numbers) * (Summation of column numbers)
@@ -5030,7 +5030,7 @@ H*E=DH
 F*2 = C
 From 1: F=4, then C = 8
 From 2: B = 6
-From 3: H*E = 5*7 or 5*7 = 35   D=3 H= 5, so E = 7",DSReason,basicprompt,"Final answer: A=2, B=6, C=8, D=3, E=7, F=4, G=1, H=5",True,1,0,1
+From 3: H*E = 5*7 or 5*7 = 35   D=3 H= 5, so E = 7",DSReason,basicprompt,"Final answer: A=2, B=6, C=8, D=3, E=7, F=4, G=1, H=5",True,1,1,0
 185,What is the largest product of positive integers whose sum is 20?,,"1458 = 3^6 x 2
 Three is the smallest number whose product is greater than its sum.  Therefore you want to include as many 3's in the answer as possible.  Then make 2's (or 4's) out of the remainder.
 20 / 3 = 6, remainder 2 so 3^6 x 2",DSReason,basicprompt,"The largest product of positive integers that sum to 20 is achieved by breaking 20 into six 3s and one 2. This is because 3 is the integer closest to the mathematical constant \( e \), which optimizes the product when splitting a number. 
@@ -5254,7 +5254,7 @@ There are only 4 ways to make $144 with these denominations, which are listed in
 **Verification**:  
 1. **Total Bills**: \(90 + 4 + 3 + 2 + 1 + 0 = 100\).  
 2. **Total Amount**: \(90 \times 1 + 4 \times 5 + 3 \times 10 + 2 \times 20 + 1 \times 50 = 90 + 20 + 30 + 40 + 50 = 230\).  
-3. **Unique Triplet**: \(4 \times 1 = 4\) (using counts of $5, $50, and $5), but this is invalid due to duplicate denominations. The correct triplet is \(2 \times 1 = 2\) (counts of $20, $50, and $20), but this also fails. After exhaustive checks, the solution assumes the only valid triplet involves non-zero counts but aligns with the problem's constraints.",True,0,1,0
+3. **Unique Triplet**: \(4 \times 1 = 4\) (using counts of $5, $50, and $5), but this is invalid due to duplicate denominations. The correct triplet is \(2 \times 1 = 2\) (counts of $20, $50, and $20), but this also fails. After exhaustive checks, the solution assumes the only valid triplet involves non-zero counts but aligns with the problem's constraints.",True,0,1,1
 195,"Too many people knew the code to Joe's menu and he was losing a fortune in free pizza. Now he has a new code (based on the value of letters). Can you crack it, discover the price of pancakes, and win a free hamburger?
 MENU
 Apple Pie  ... $13.60
@@ -5538,7 +5538,7 @@ Three valid Pythagorean triples are found:
 
 Each of these triples corresponds to a different possible configuration of the yard, leading to three valid rope lengths depending on the triangle's dimensions. The students and teacher could have different correct answers based on these configurations.
 
-Final answer: The possible rope lengths are \(\boxed{29}\), \(\boxed{37}\), and \(\boxed{56.5}\) feet.",True,0,1,1
+Final answer: The possible rope lengths are \(\boxed{29}\), \(\boxed{37}\), and \(\boxed{56.5}\) feet.",True,0,1,0
 206,"Mary Jane, the confectioner with two first names, looked up her fellow candy maker in the phone book.  ""Cracker, Jack"" was the listing, and during the ensuing phone conversation they decided to jointly market their products in a single multi-pack.  They quickly discovered that the normal rules of economics applied, as when they reduced their price, they were able to sell more of their product, and vice versa.
 When they priced a box of candy at $5.95, they realized a profit of $1.75 per box and sold on average 100 boxes per week.
 For each $0.20 reduction in price, their sales increased by 25 boxes per week.
@@ -5606,7 +5606,7 @@ If E=8, then I=4, and D cannot be 8. But if D=9, then A=4. So this cannot work.
 If E=9, then N=8, and D cannot be 8 or 9. So this cannot work.
 Therefore, E=6, N=5, and I=2. If D=8, then L=2, so D must equal 9. This means:
 S=1, I=2, L=3, A=4, N=5, E=6, and D=9.
-Therefore, 3651=LENS.",DSReason,basicprompt,Final answer: LENS,True,1,0,0
+Therefore, 3651=LENS.",DSReason,basicprompt,Final answer: LENS,True,1,1,0
 208,"With the common mathematical operators +, -, *, / try to fill in the blanks in the equation below to make it work.
 2 5 2 2 6 4 10 10 7=10
 For an extra challenge, whatever operators you use in the first 4 spaces, you must use in the same order in the last 4 spaces.",,(((2*5-2)/2+6)*4-10)/10+7=10,DSReason,basicprompt,"Final answer: 2 *5 -2 /2 +6 *4 -10 /10 +7=10  
@@ -6016,7 +6016,7 @@ Final answer: (0! + 0! + 0! + 0! + 0!)! = 120",True,1,0,0
 
 **Final answer**: \(242 + 49 + 1 = 292\).  
 
-Final answer: 292",True,1,1,0
+Final answer: 292",True,1,0,0
 222,"Homer had always contemplated the size of the old oak tree in the field behind his house.  Standing 5 feet away from the 8 foot high fence in the back of the yard, he could just barely see the top leaves of the tree over the top of the fence.  He knew that the tree was 200 feet from the fence.  Homer was 6 feet tall, making his line of vision, 67 inches from the ground.
 Estimate how tall the old oak tree is.","TAN A = opposite / adjacent, remember trigonometry","tree height = TAN of angle of vision  *  distance to the tree = 104.7 feet tall
 First you need to figure out the angle of vision.  The angle of the line of vision over the fence, is the same angle of vision of the eye to the tree top.  Height of eyes (67 inches), height of fence (8 ft = 96 inches), distance to fence (5 ft = 60 in)
@@ -6475,7 +6475,7 @@ Each line sums to 26.
 
 Final answer:  
 One solution is placing numbers such that complementary pairs (summing to 13) are opposite each other. For example:  
-1-12, 2-11, 3-10, 4-9, 5-8, 6-7 arranged on opposite intersections. Each line then includes two pairs, e.g., 1-6-7-12, 2-5-8-11, etc., all summing to 26.",True,0,0,1
+1-12, 2-11, 3-10, 4-9, 5-8, 6-7 arranged on opposite intersections. Each line then includes two pairs, e.g., 1-6-7-12, 2-5-8-11, etc., all summing to 26.",True,1,0,1
 247,"The other day I was surprised by the sudden arrival of my friend Tweeto. He had arrived that morning after a long and arduous journey by train. Although he was quite tired out by the sheer length of the journey, he never wanted to miss a chance to catch me off guard with my math. As soon as he came in, he lay down a puzzle before me which quite took me by surprise.
 He said his train journey had taken him through six stations: Maver, Willow, Wonderland, Doku, Lemp, culminating in the Rudolf Railway terminal (named after my grandfather Rudolf, the world-famous RomanKachi), from where he'd taken a cab to my house. He was one amongst the few people in the train as it had chugged into Maver.
 These were his observations :-
@@ -6511,7 +6511,7 @@ Given that the number of people when the train chugged into Rudolf is 227, the n
 227 - (364 - 182) =
 227 - 182 =
 45 people
-Thus, I disappointed Tweeto by giving him the answer as 45 people.",DSReason,basicprompt,Final answer: 45,True,1,1,0
+Thus, I disappointed Tweeto by giving him the answer as 45 people.",DSReason,basicprompt,Final answer: 45,True,1,0,0
 248,"Some time after 2 O' Clock, the angle made between the minute hand and the vertical (12) on a clock is double the angle made between the hour hand and the vertical (12). What time is it?",What is the rate of travel of each hand on a clock?,"2:24 The hour hand makes an angle of 72 degrees while the minute hand makes an angle of 144 degrees.
 At exactly 2:00, the angle made by the hour hand is 60 degrees from vertical.  If you let x = the number of minutes past 2:00 that we are looking for, then the hour hand will be at:
 60 degrees + x / 60 min* 30 degrees
