@@ -83,31 +83,29 @@ def main():
         # dataEntry = data[data['Question'] == question].iloc[0]
         # solution = dataEntry['Answer']
         solution = row['Human Solution']
-        modelResponse = row['Response']
+        modelResponse = str(row['Response'])
 
         # print(row.to_dict().keys())
         # print(row)
 
         if row['PromptType'] == "nl_to_symbol_prompt":
             continue
-
-        if type(modelResponse) == type("string"):
             
-            summary = evaluateResponse(client, evaluationPrompts['summary'], question, modelResponse, solution, args.model)
-            # modelbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], modelResponse, solution, args.model)
-            # humanbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], solution, solution, args.model)
-            responses.at[index, 'Summary'] = summary
-            # responses.at[index, 'ModelBruteForce'] = modelbruteforced
-            # responses.at[index, 'HumanBruteForce'] = humanbruteforced
-            
-            entry = row.to_dict()
+        summary = evaluateResponse(client, evaluationPrompts['summary'], question, modelResponse, solution, args.model)
+        # modelbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], modelResponse, solution, args.model)
+        # humanbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], solution, solution, args.model)
+        responses.at[index, 'Summary'] = summary
+        # responses.at[index, 'ModelBruteForce'] = modelbruteforced
+        # responses.at[index, 'HumanBruteForce'] = humanbruteforced
+        
+        entry = row.to_dict()
 
-            entry["Summary"] = summary
-            # entry["model_bruteforce"] = modelbruteforced
-            # entry["human_bruteforce"] = humanbruteforced
+        entry["Summary"] = summary
+        # entry["model_bruteforce"] = modelbruteforced
+        # entry["human_bruteforce"] = humanbruteforced
 
-            with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations_evaluatedby{args.model}.jsonl', 'a') as jsonfile:
-                jsonfile.write(json.dumps(entry) + "\n")
+        with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations_evaluatedby{args.model}.jsonl', 'a') as jsonfile:
+            jsonfile.write(json.dumps(entry) + "\n")
         
     responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation_from_row{args.from_row}.csv", index=False)
 

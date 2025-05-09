@@ -35,7 +35,8 @@ def evaluateResponse(client, instructions, modelResponse, solution, evaluationMo
                     {"role": "system", "content": instructions},
                     {"role": "user", "content": "STUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution},
                 ],
-                stream = False
+                stream = False,
+                max_completion_tokens=10000,
             )
             # print(response.choices[0].message.content)
             return response.choices[0].message.content
@@ -52,6 +53,8 @@ def evaluateResponse(client, instructions, modelResponse, solution, evaluationMo
         except Exception as e:
             print(f"Unexpected error: {e}")
             break
+    
+    print("Max retries reached. Returning None.")
 
     return None
 
@@ -66,6 +69,8 @@ def main():
 
     # data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
     responses = pd.read_csv(f'../responses/{args.dataset}/{args.name}/resultsAll.csv')
+
+    print("Responses length:", len(responses))
     evaluationPrompts = read_txt_files("../prompting/evaluationPrompts")
 
     os.makedirs(f"../response_evaluation/{args.dataset}/{args.name}", exist_ok=True)
@@ -83,7 +88,7 @@ def main():
         # dataEntry = data[data['Question'] == question].iloc[0]
         # solution = dataEntry['Answer']
         solution = row['Human Solution']
-        modelResponse = row['Response']
+        modelResponse = str(row['Response'])
 
         # print(row.to_dict().keys())
         # print(row)
@@ -91,23 +96,23 @@ def main():
         if row['PromptType'] == "nl_to_symbol_prompt":
             continue
 
-        if type(modelResponse) == type("string"):
+        # if type(modelResponse) == type("string"):
             
-            correctness = evaluateResponse(client, evaluationPrompts['correctness'], modelResponse, solution, args.model)
-            modelbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], modelResponse, solution, args.model)
-            humanbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], solution, solution, args.model)
-            responses.at[index, 'Correct'] = correctness
-            responses.at[index, 'ModelBruteForce'] = modelbruteforced
-            responses.at[index, 'HumanBruteForce'] = humanbruteforced
-            
-            entry = row.to_dict()
+        correctness = evaluateResponse(client, evaluationPrompts['correctness'], modelResponse, solution, args.model)
+        modelbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], modelResponse, solution, args.model)
+        humanbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], solution, solution, args.model)
+        responses.at[index, 'Correct'] = correctness
+        responses.at[index, 'ModelBruteForce'] = modelbruteforced
+        responses.at[index, 'HumanBruteForce'] = humanbruteforced
+        
+        entry = row.to_dict()
 
-            entry["correctness"] = correctness
-            entry["model_bruteforce"] = modelbruteforced
-            entry["human_bruteforce"] = humanbruteforced
+        entry["correctness"] = correctness
+        entry["model_bruteforce"] = modelbruteforced
+        entry["human_bruteforce"] = humanbruteforced
 
-            with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations_evaluatedby{args.model}.jsonl', 'a') as jsonfile:
-                jsonfile.write(json.dumps(entry) + "\n")
+        with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations_evaluatedby{args.model}.jsonl', 'a') as jsonfile:
+            jsonfile.write(json.dumps(entry) + "\n")
         
     responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation_from_row{args.from_row}.csv", index=False)
 
