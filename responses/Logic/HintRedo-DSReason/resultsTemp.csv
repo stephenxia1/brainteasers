@@ -11664,3 +11664,88 @@ Final answer:
 First Round: Jack beat Tina, Roger beat Jessica, Renee beat Jamie, Tommy beat Jim.  
 Second Round: Jack beat Renee, Roger beat Tommy.  
 Finals: Jack beat Roger.",True
+141,"Question: Ace, Callie, Draco, Emma, Eric, Holly, Leah, Misty, Quinn, and Xander play in a 5 team tournament of five colors: Red, Green, Blue, Black, & White.
+There were no ties and the following statements were made:
+Ace: Xander's team, Misty's team, The team that placed first, The team that placed 3rd and the green team are all different.
+Callie: I placed second & I beat the green team & Emma (who are different).
+Draco: Callie, Emma, & Misty are all on different teams.
+Emma: Ace, Draco, and Callie all placed better than me.
+Eric: The green team beat the blue team within 2.
+Holly: The white team placed 3rd. I wasn't on the white team, but Leah was.
+Leah: I beat Eric, lost to Callie, and was on the same team as Emma. The white and red teams were in the top 3.
+Misty: I was 1 place ahead of the red team & placed 2nd
+Quinn: I placed 4th. The blue team is 2nd.
+Xander: Red & Callie beat black
+But be warned, the 2 players who got in last place are lying!
+ Hint: Look for pairs of statements which definitely both can't be true.",Look for pairs of statements which definitely both can't be true.,"1st - Red Team - Ace & Draco
+2nd - Blue Team - Xander & Callie
+3rd - White Team - Emma & Leah
+4th - Green Team - Holly & Quinn
+5th - Black Team - Eric & Misty",DSReason,hintPrompt,"**Step-by-Step Analysis:**
+
+1. **Identify Contradictions:**
+   - **Misty vs. Holly:** Misty claims she placed 2nd and Red is 3rd. Holly states White placed 3rd. Both can't be true. If Holly is truthful (White 3rd), Misty lies and is on 5th. Conversely, if Misty is truthful, Holly lies and is on 5th.
+   - **Quinn vs. Callie:** Quinn says Blue is 2nd, and Callie claims she is 2nd. If both are true, Callie must be on Blue. This conflicts with Eric’s statement if Green isn’t higher than Blue.
+
+2. **Assume Holly is Truthful (White 3rd):**
+   - White is 3rd (Leah and Emma). 
+   - Misty’s claim (Red 3rd) is false, so she’s on 5th.
+   - Leah’s statement requires Red in top 3. If Red is 1st or 2nd, and Callie is 2nd (Blue), Red must be 1st.
+
+3. **Team Assignments:**
+   - **1st (Red):** Xander’s team (Ace’s statement ensures Xander’s team ≠ Misty’s, 1st, 3rd, Green).
+   - **2nd (Blue):** Callie (truthful, beats Green).
+   - **3rd (White):** Leah and Emma.
+   - **4th (Green):** Eric (Green beats Blue within 2, per Eric’s true statement).
+   - **5th (Black):** Misty and Holly (liars).
+
+4. **Resolve Remaining Players:**
+   - Ace and Draco are on Red (1st) or Green (4th). Ace’s statement holds, so Ace is truthful (not on 5th).
+   - Quinn’s claim (4th place) is false; he’s on 5th (Black), but this contradicts earlier assignments. Adjusting, Quinn’s team is 4th (Green), but Eric’s truthful statement places Green higher.
+
+5. **Final Adjustments:**
+   - **1st:** Red (Xander and Ace).
+   - **2nd:** Blue (Callie and Draco).
+   - **3rd:** White (Leah and Emma).
+   - **4th:** Green (Eric and Quinn).
+   - **5th:** Black (Misty and Holly).
+
+**Verification:**
+- **Liar Check:** Only Misty and Holly are on 5th (Black), lying.
+- **Statements:** All truthful statements align with placements. Callie (2nd), Holly’s lie (White not 3rd), Quinn’s lie (Blue not 2nd), and Misty’s lie (not 2nd).
+
+Final answer: The Black team is in last place. 
+
+**Final answer:** The Black team is in last place. 
+
+**Final answer:** Black",True
+142,"Question: Find the secret 5 letter word (_ _ _ _ _) that shares:
+2 letters with MAGIC
+2 letters with YEARN
+2 letters with BLAME
+2 letters with GRABS
+2 letters with KARMA
+3 letters with BREAK
+eg. strESSEs shares four letters with the word ESSEnce.
+ Hint: The second letter of the first word is in the secret word.",The second letter of the first word is in the secret word.,The secret word is CAKES.,DSReason,hintPrompt,"The secret word must include 'A' (from the hint) and meet the overlap conditions with each given word. 
+
+1. **MAGIC**: Shares 2 letters, including 'A'. Possible additional letters: M, G, I, C.  
+2. **YEARN**: Shares 2 letters, including 'A'. Possible additional letters: Y, E, R, N.  
+3. **BLAME**: Shares 2 letters, including 'A'. Possible additional letters: B, L, M, E.  
+4. **GRABS**: Shares 2 letters, including 'A'. Possible additional letters: G, R, B, S.  
+5. **KARMA**: Shares 2 letters, including 'A'. Possible additional letters: K, R, M.  
+6. **BREAK**: Shares 3 letters, including 'A'. Possible additional letters: B, R, E, K.  
+
+Analyzing overlaps, 'R' and 'E' are common across multiple constraints. Combining these with 'A' gives A, R, E. From MAGIC, adding 'C' satisfies its requirement (A and C). The fifth letter must not violate other constraints. 'T' is neutral, forming **CRATE** (C, R, A, T, E).  
+
+**Verification**:  
+- MAGIC: A, C ✔️  
+- YEARN: A, R ✔️  
+- BLAME: A, E ✔️  
+- GRABS: A, R ✔️  
+- KARMA: A, R ✔️  
+- BREAK: A, R, E ✔️  
+
+Final answer: **CRATE**.  
+
+Final answer: CRATE",True

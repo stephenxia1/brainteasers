@@ -10226,3 +10226,142 @@ The highest revenue is **$1,200** when producing **24 chairs** and **48 tables**
 
 Final answer: The factory should produce 24 chairs and 48 tables per hour for a maximum revenue of $1,200.  
 Final answer: \boxed{(24, 48) \text{ tables and chairs}, \$1200}",True
+218,"Question: A man had a clock with an hour hand and a minute hand of the same length and indistinguishable. If the clock was set going at noon, what would be the first time that it would be impossible, by reason of the similarity of the hands, to be sure of the correct time?
+In grappling with this little problem, you may assume that it is possible to indicate fractions of a second. On this assumption, an exact answer can be given.
+ Hint: The first time is after 1:00--note that either the minute hand is 12 times ahead or the minute hand has traveled 12 times more than the hour hand has between two hours",The first time is after 1:00--note that either the minute hand is 12 times ahead or the minute hand has traveled 12 times more than the hour hand has between two hours,"The first time would be 5 and 5\143 minutes past 12, which might also indicate 60\143 minutes past 1. Expressed slightly less accurately, 5 minutes past 12 and about half a minute past 1.",DSReason,hintPrompt,"To determine the first time after noon when the clock hands' positions are ambiguous due to their indistinguishability, we set up equations where swapping the hour and minute hands results in a valid time. Let \( t \) be the minutes after noon for the actual time, and \( t' \) the swapped time.
+
+1. **Equations for Hand Angles**:
+   - Actual time \( t \):
+     - Hour hand: \( 0.5t \) degrees
+     - Minute hand: \( 6t \) degrees
+   - Swapped time \( t' \):
+     - Hour hand: \( 6t \equiv 0.5t' \mod 360 \)
+     - Minute hand: \( 0.5t \equiv 6t' \mod 360 \)
+
+2. **Solving the System**:
+   - From the first equation: \( 0.5t' \equiv 6t \mod 360 \Rightarrow t' \equiv 12t \mod 720 \).
+   - From the second equation: \( 6t' \equiv 0.5t \mod 360 \Rightarrow 12t' \equiv t \mod 720 \).
+   - Substituting \( t' \equiv 12t \mod 720 \) into \( 12t' \equiv t \mod 720 \), we derive \( 143t \equiv 0 \mod 720 \).
+
+3. **Finding the Smallest \( t \)**:
+   - Solve \( 143t = 720k \) for integer \( k \). The smallest \( t > 60 \) minutes (after 1:00) occurs at \( k = 12 \):
+     \[
+     t = \frac{720 \times 12}{143} \approx 60.4196 \text{ minutes after noon.}
+     \]
+
+4. **Conversion to Time**:
+   - \( 60.4196 \) minutes is \( 1 \) hour and \( 0.4196 \) minutes. Converting \( 0.4196 \) minutes to seconds: \( 0.4196 \times 60 \approx 25.175 \) seconds.
+
+**Final Answer**: The first ambiguous time is \( \boxed{\frac{720}{143} \text{ minutes after noon}} \), which is approximately **1:00:25 and \(\frac{25}{143}\) seconds**.
+
+Final answer: \(\boxed{\frac{720}{143} \text{ minutes after noon}}\).",True
+219,"Question: Two and a half artists spend two and a half hours painting two and a half models on two and a half canvases. How many artists are necessary to paint twenty-four models on twenty-four canvases in twenty hours?
+ Hint: nan",,"Three artists would do the trick. This is because twenty-four artists would paint twenty-four models in two and a half hours. Since the available time increases eight-fold (2.5 * 8 = 20), it is possible to reduce the number of painters by the same number of times (24 / 8 = 3).",DSReason,hintPrompt,"The problem involves determining the number of artists required to paint 24 models on 24 canvases in 20 hours, given that 2.5 artists take 2.5 hours to paint 2.5 models. Here's the step-by-step reasoning:
+
+1. **Calculate the initial work rate**:  
+   - Total artist-hours for 2.5 models:  
+     \(2.5 \text{ artists} \times 2.5 \text{ hours} = 6.25 \text{ artist-hours}\).  
+   - Artist-hours per model:  
+     \(\frac{6.25}{2.5} = 2.5 \text{ artist-hours/model}\).
+
+2. **Total artist-hours needed for 24 models**:  
+   \(24 \text{ models} \times 2.5 \text{ artist-hours/model} = 60 \text{ artist-hours}\).
+
+3. **Determine required artists for 20 hours**:  
+   \(\text{Artists} = \frac{60 \text{ artist-hours}}{20 \text{ hours}} = 3\).
+
+Alternative verification using proportionality:  
+- Models are proportional to \( \text{artists} \times \text{time} \).  
+- Scaling factor for models: \( \frac{24}{2.5} = 9.6 \).  
+- Scaling factor for time: \( \frac{20}{2.5} = 8 \).  
+- Artists required: \( \frac{9.6}{8} \times 2.5 = 3 \).
+
+All methods confirm that **3 artists** are needed.  
+
+Final answer: 3  
+**Final answer: 3**",True
+220,"Question: Given five zeroes, using any mathematical operations, can you make a total of 120?
+ Hint: Factorials can get a non-zero number from 0",Factorials can get a non-zero number from 0,"(0!+0!+0!+0!+0!)! = 120
+0! is defined to equal 1.
+(1+1+1+1+1)! = 5! = 120",DSReason,hintPrompt,"To solve the problem of making 120 using five zeros, we utilize factorials as suggested by the hint. Here's the step-by-step reasoning:
+
+1. **Convert each zero to 1**: Applying the factorial operation to each zero:  
+   \(0! = 1\).  
+   This gives five instances of \(1\).
+
+2. **Sum the five ones**:  
+   \(0! + 0! + 0! + 0! + 0! = 1 + 1 + 1 + 1 + 1 = 5\).
+
+3. **Apply factorial to the sum**:  
+   \(5! = 5 \times 4 \times 3 \times 2 \times 1 = 120\).
+
+Thus, combining these steps, the expression is:  
+\[
+(0! + 0! + 0! + 0! + 0!)! = 120
+\]
+
+Final answer: \((0! + 0! + 0! + 0! + 0!)!\)  
+Final answer: \boxed{(0! + 0! + 0! + 0! + 0!)!}",True
+221,"Question: Assuming you have enough coins of 1, 5, 10, 25 and 50 cents, how many ways are there to make change for a dollar?
+ Hint: There are more than 200.",There are more than 200.,There are 292 ways.,DSReason,hintPrompt,"To determine the number of ways to make change for a dollar (100 cents) using 1, 5, 10, 25, and 50-cent coins, we systematically count combinations by iterating through possible quantities of each coin, starting with the largest denomination (50 cents) and working downward. This ensures all valid combinations are accounted for without overlap.
+
+### Step-by-Step Breakdown:
+1. **Case 1: 0 fifty-cent coins**  
+   We must make 100 cents with 25, 10, 5, and 1-cent coins.  
+   - For each number of 25-cent coins \( m \) (0 to 4), compute the remaining amount \( 100 - 25m \).  
+   - For each remaining amount, calculate the number of ways to make it with 10, 5, and 1-cent coins (\( f(n) \)):  
+     \[
+     f(n) = \sum_{p=0}^{\lfloor n/10 \rfloor} \left( \left\lfloor \frac{n - 10p}{5} \right\rfloor + 1 \right)
+     \]
+     Results:  
+     - \( f(100) = 121 \), \( f(75) = 72 \), \( f(50) = 36 \), \( f(25) = 12 \), \( f(0) = 1 \).  
+   - Total for Case 1: \( 121 + 72 + 36 + 12 + 1 = 242 \).
+
+2. **Case 2: 1 fifty-cent coin**  
+   Remaining amount: 50 cents.  
+   - For each number of 25-cent coins \( m \) (0 to 2), compute \( 50 - 25m \).  
+   - Results:  
+     - \( f(50) = 36 \), \( f(25) = 12 \), \( f(0) = 1 \).  
+   - Total for Case 2: \( 36 + 12 + 1 = 49 \).
+
+3. **Case 3: 2 fifty-cent coins**  
+   Exact amount: \( 2 \times 50 = 100 \).  
+   - Only 1 way (using two 50-cent coins).  
+
+### Final Calculation:
+\[
+\text{Total ways} = \text{Case 1} + \text{Case 2} + \text{Case 3} = 242 + 49 + 1 = 292.
+\]
+
+Final answer: 292",True
+222,"Question: Homer had always contemplated the size of the old oak tree in the field behind his house.  Standing 5 feet away from the 8 foot high fence in the back of the yard, he could just barely see the top leaves of the tree over the top of the fence.  He knew that the tree was 200 feet from the fence.  Homer was 6 feet tall, making his line of vision, 67 inches from the ground.
+Estimate how tall the old oak tree is.
+ Hint: TAN A = opposite / adjacent, remember trigonometry","TAN A = opposite / adjacent, remember trigonometry","tree height = TAN of angle of vision  *  distance to the tree = 104.7 feet tall
+First you need to figure out the angle of vision.  The angle of the line of vision over the fence, is the same angle of vision of the eye to the tree top.  Height of eyes (67 inches), height of fence (8 ft = 96 inches), distance to fence (5 ft = 60 in)
+Angle of vision = inverse TAN ( (96 - 67) / 60) = 25.80 degrees
+Distance to tree = 5 ft + 200 ft = 2460 inches
+Tree height from eye level = TAN (25.80 deg) * 2460 inches = 1189 inches
+Tree height estimate = 1189 inches + 67 inches = 104.7 feet
+This is an old lumberjack method of estimating a tree height.  With pure math the height of 104.7 feet is correct.  With the measurement capabilities available to any lumberjack (or any average Homer) precise measurements are not possible.  Thus the need to clarify these calculations as estimates.",DSReason,hintPrompt,"Homer's line of vision forms two similar right triangles due to the line of sight grazing the top of the fence and reaching the tree. 
+
+1. **Convert Homer's eye level to feet**:  
+   \( 67 \text{ inches} \div 12 = 5.583 \text{ feet} \).
+
+2. **Height difference between fence and Homer's eyes**:  
+   \( 8 \text{ ft (fence)} - 5.583 \text{ ft (eyes)} = 2.417 \text{ ft} \).
+
+3. **First triangle (Homer to fence)**:  
+   \( \tan A = \frac{\text{opposite}}{\text{adjacent}} = \frac{2.417}{5} = 0.483 \).
+
+4. **Second triangle (fence to tree)**:  
+   Let \( h \) be the tree's total height. The height above the fence is \( h - 8 \), and the horizontal distance is \( 200 \text{ ft} \).  
+   Using the same \( \tan A \):  
+   \( 0.483 = \frac{h - 8}{200} \).
+
+5. **Solve for \( h \)**:  
+   \( h - 8 = 0.483 \times 200 = 96.6 \),  
+   \( h = 96.6 + 8 = 104.6 \text{ ft} \).
+
+Final answer: 104.6 feet.  
+
+**Final answer**: 104.6 feet.",True
