@@ -10837,3 +10837,91 @@ Represent each day by the unordered pair of colours Peter wears.
 Everything is consistent.
 
 Final answer: yellow and black",True
+195,"Question: At the Christmas party of the ""Sweaty Chef"" kebab shop, the owner Mr Juan, took note of how many people were present. Although he was a bit tipsy when he made his note, and thus made a mistake.  His notes were as follows:-
+1, There were 9 men and children.
+2, There were 2 more women than children.
+3, The number of different man-woman couples possible was 24. Note that if there were 7 men and 5 women, then there would have been 35 man-woman couples possible.
+Also, of the three groups - men, women and children - at the party:
+4, There were 4 of one group.
+5, There were 6 of one group.
+6, There were 8 of one group.
+Exactly one of the above 6 statements is false.
+Can you tell which one is false? Also, how many men, women and children are there at the party?
+ Hint: Can 4,5,6 all be true at the same time?","Can 4,5,6 all be true at the same time?","Statement (4) is false. There are 3 men, 8 women and 6 children.
+Assume that Statements (4), (5) and (6) are all true. Then, Statement (1) is false. But then Statement (2) and (3) both can not be true. Thus, contradictory to the fact that exactly one statement is false.
+So Statement (4) or Statement (5) or Statement (6) is false. Also, Statements (1), (2) and (3) all are true.
+From (1) and (2), there are 11 men and women. Then from (3), there are 2 possible cases - either there are 8 men and 3 women or there are 3 men and 8 women.
+If there are 8 men and 3 women, then there is 1 child. Then Statements (4) and (5) both are false, which is not possible.
+Hence, there are 3 men, 8 women and 6 children. Statement (4) is false.",GPT-o3,hintPrompt,"Let  
+
+m = number of men  
+w = number of women  
+c = number of children  
+
+Write the six statements as mathematical conditions:
+
+1.  m + c = 9                                                  
+2.  w = c + 2                                                  
+3.  m × w = 24                                                
+4.  at least one of m, w, c equals 4                          
+5.  at least one of m, w, c equals 6                          
+6.  at least one of m, w, c equals 8                          
+
+Exactly one of the six statements is wrong.
+
+----------------------------------------------------------------
+Step 1 –  Assume the first three statements are true           
+----------------------------------------------------------------
+If 1, 2 and 3 are all true we can solve for the three numbers.
+
+From (1) m = 9 – c  
+From (2) w = c + 2  
+
+Put these in (3):
+
+(9 – c)(c + 2) = 24  
+−c² + 7c + 18 = 24  
+c² – 7c + 6 = 0  
+(c – 6)(c – 1) = 0 ⇒ c = 6 or c = 1.
+
+•  If c = 6  ⇒  w = 8,  m = 3.  
+•  If c = 1  ⇒  w = 3,  m = 8.
+
+----------------------------------------------------------------
+Step 2 –  Check how many of 4, 5, 6 are satisfied              
+----------------------------------------------------------------
+Case (m,w,c) = (3,8,6):  
+numbers present = {3, 6, 8}.  
+– “4 of one group” is false,  
+– “6 of one group” is true,  
+– “8 of one group” is true.  
+Exactly one statement (No. 4) is false.  This fits the “only one is false” condition.
+
+Case (m,w,c) = (8,3,1):  
+numbers present = {8, 3, 1}.  
+Both statements 4 and 5 are false (there is no group of 4 or 6), giving two false statements, which is not allowed.
+
+So the only viable counts are (m,w,c) = (3, 8, 6) and the only false statement among the six is No. 4.
+
+----------------------------------------------------------------
+Step 3 –  Verify that no other single–false possibility exists  
+----------------------------------------------------------------
+•  Suppose statement 1 were the single false one.  
+   Then statements 4,5,6 would all have to be true, forcing the set {m,w,c} to be {4,6,8}.  
+   No arrangement of 4,6,8 satisfies both m + c = 9 and m × w = 24 simultaneously, so this is impossible.
+
+•  The same kind of check shows that taking statement 2 or statement 3 as the unique false statement also gives contradictions.
+
+Therefore the only consistent scenario is the one already found.
+
+----------------------------------------------------------------
+Conclusion                                                      
+----------------------------------------------------------------
+The owner’s single mistake is statement 4 (“There were 4 of one group”).  
+The actual numbers at the party are
+
+men   = 3  
+women = 8  
+children = 6.
+
+Final answer: Statement 4 is false; there were 3 men, 8 women and 6 children.",True

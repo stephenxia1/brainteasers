@@ -43891,3 +43891,167 @@ But the most direct seems to connect umbrella-carrying alligators to steeplechas
 Given that some alligators carry umbrellas and thus know about flying fish, and steeplechasers must know about flying fish (to prefer caramel), and some alligators are steeplechasers, it's reasonable to infer that some of the umbrella-carrying alligators are steeplechasers.
 
 Final answer: Some alligators that carry umbrellas in the shower are steeplechasers.",True
+160,"Question: Biggie Nuff, Baron of Grey Matter, now living in Shapeless, Mass., was dying from a newly developed allergy to water, and wanted his will to reflect the common inheritance law of his father's native country.  Biggie's wife, Faerie, was pregnant at the time with what would be the first child for either of them.  Biggie's new will stated that if his child were a boy, the son would get 2/3 of his estate, and his widow would get 1/3.  If the child were a girl, the widow would get 2/3 of the estate, and the daughter would get 1/3.
+In due time, Biggie died, and the authorities read his will, holding dispensation of the estate until the child was born.  Five months after Biggie's death, Faerie delivered ... normal, healthy twins, a boy (whom she named Manny) and a girl (whom she named Goodie).
+The estate's executor immediately appealed to the Shapeless magistrate to rule on the proper division for the estate.  After a great deal of arguing and deep thought, plus several failed attempts to raise Biggie's spirit with a seance, the judge rendered a fair decision.
+How did they divide Biggie's estate?
+ Hint: The fraction is in sevenths",The fraction is in sevenths,"The judge reasoned that Biggie intended to give his wife half as much as a son, or twice as much as a daughter.  Therefore, he ruled that Manny gets 4/7 of the estate, Faerie gets 2/7, and Goodie gets 1/7.
+(This is supposedly a real decision in Massachusetts, according to the Reader's Digest puzzle book in which I first read this, copyright 1967.  Obviously, I've changed the names).",DSChat,hintPrompt,"Alright, let's tackle this problem step by step. I'm going to think carefully about how to divide Biggie Nuff's estate based on his will and the situation that unfolded after his death.
+
+### Understanding the Will's Provisions
+
+First, let's summarize what Biggie's will states:
+
+1. **If the child is a boy:**
+   - Son gets 2/3 of the estate.
+   - Widow (Faerie) gets 1/3 of the estate.
+
+2. **If the child is a girl:**
+   - Widow (Faerie) gets 2/3 of the estate.
+   - Daughter gets 1/3 of the estate.
+
+However, what actually happened is that Faerie gave birth to twins: one boy (Manny) and one girl (Goodie). The will doesn't explicitly cover the scenario of twins—one boy and one girl. So, we need to figure out a fair way to distribute the estate based on the given fractions.
+
+### Analyzing the Given Hint
+
+The hint mentions that the fraction is in sevenths. This suggests that the estate should be divided into parts that are multiples of 1/7. 
+
+Let's think about how the original provisions can lead us to sevenths.
+
+### Original Single Child Scenarios
+
+1. **Single Boy:**
+   - Son: 2/3
+   - Widow: 1/3
+   - Total: 2/3 + 1/3 = 1
+
+2. **Single Girl:**
+   - Widow: 2/3
+   - Daughter: 1/3
+   - Total: 2/3 + 1/3 = 1
+
+Now, with twins (a boy and a girl), how can we combine these scenarios?
+
+### Combining Both Scenarios
+
+One approach is to consider that both scenarios are now applicable simultaneously because there's one boy and one girl. 
+
+Let's think about the total shares if we add both scenarios:
+
+- From the boy's perspective:
+  - Son: 2/3
+  - Widow: 1/3
+
+- From the girl's perspective:
+  - Widow: 2/3
+  - Daughter: 1/3
+
+Adding these up:
+- Son: 2/3
+- Daughter: 1/3
+- Widow: 1/3 (from boy) + 2/3 (from girl) = 1
+
+Total: 2/3 (son) + 1/3 (daughter) + 1 (widow) = 2
+
+But the total estate is 1, not 2. So, we can't simply add them directly. 
+
+### Adjusting for the Total Estate
+
+We need the sum of all shares to equal 1. Currently, the sum is 2 when adding both scenarios. So, perhaps we can take the average or find a way to proportionally reduce the shares.
+
+Alternatively, let's think about the ratios implied by the original scenarios.
+
+In the boy scenario:
+- Son : Widow = 2 : 1
+
+In the girl scenario:
+- Widow : Daughter = 2 : 1
+
+Now, with both a son and a daughter, we can think of the widow's share as being influenced by both children.
+
+Let’s denote:
+- Son's share from the boy scenario: S = 2 parts
+- Widow's share from the boy scenario: W_b = 1 part
+- Widow's share from the girl scenario: W_g = 2 parts
+- Daughter's share from the girl scenario: D = 1 part
+
+Now, the widow is involved in both scenarios, so her total share is W_b + W_g = 1 + 2 = 3 parts.
+
+Son is 2 parts, Daughter is 1 part, Widow is 3 parts.
+
+Total parts = 2 (son) + 1 (daughter) + 3 (widow) = 6 parts.
+
+But the hint says the fraction is in sevenths, not sixths. So, this approach might not be correct.
+
+### Re-evaluating the Approach
+
+Perhaps instead of adding the widow's shares, we need to consider that the widow is common to both scenarios, and the children are separate.
+
+Let me think differently: in the boy scenario, the ratio is son:widow = 2:1.
+In the girl scenario, the ratio is widow:daughter = 2:1.
+
+Combining these, we can set up a common ratio where the widow's share is consistent.
+
+Let’s express both ratios with the widow's share as a common multiple.
+
+From boy:
+son : widow = 2 : 1
+
+From girl:
+widow : daughter = 2 : 1
+
+To combine, let's make the widow's share the same in both. 
+
+Multiply the first ratio by 2:
+son : widow = 4 : 2
+
+Now, widow : daughter = 2 : 1
+
+So, combined:
+son : widow : daughter = 4 : 2 : 1
+
+Total parts = 4 + 2 + 1 = 7 parts.
+
+This matches the hint that the fraction is in sevenths!
+
+### Assigning the Shares
+
+Now, divide the estate into 7 equal parts:
+
+- Son (Manny) gets 4/7
+- Widow (Faerie) gets 2/7
+- Daughter (Goodie) gets 1/7
+
+Let's verify if this makes sense based on the original will:
+
+1. For the boy:
+   - Originally, son gets 2/3, widow gets 1/3.
+   - Here, son gets 4/7, widow gets 2/7.
+   - Ratio is 4:2 or 2:1, which matches the original 2:1 for son:widow.
+
+2. For the girl:
+   - Originally, widow gets 2/3, daughter gets 1/3.
+   - Here, widow gets 2/7, daughter gets 1/7.
+   - Ratio is 2:1, which matches the original 2:1 for widow:daughter.
+
+This seems consistent with both original scenarios when considered together.
+
+### Checking for Fairness
+
+Is this division fair?
+
+- The son gets more than the daughter, which aligns with the will favoring the son over the daughter in terms of inheritance.
+- The widow's share is between what she would get with just a son or just a daughter.
+- The total adds up to 4/7 + 2/7 + 1/7 = 7/7 = 1.
+
+Everything checks out.
+
+### Conclusion
+
+After carefully combining the two scenarios from the will and ensuring the ratios are consistent, the fairest division of the estate is:
+
+- Manny (son): 4/7
+- Faerie (widow): 2/7
+- Goodie (daughter): 1/7
+
+Final answer: The estate was divided such that Manny received 4/7, Faerie received 2/7, and Goodie received 1/7.",True

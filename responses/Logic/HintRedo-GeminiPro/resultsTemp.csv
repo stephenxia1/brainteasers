@@ -8622,3 +8622,76 @@ Let's check this assignment: J=C, JE=B, L=A, P=D.
 Imagine the chessboard is set out with reference points 1 to 8 on the vertical and A to H across the horizontal.
 At what positions would the five Queens need to be?
  Hint: A couple queens next to each other can cover a lot.",A couple queens next to each other can cover a lot.,"A5, D5, E5, F5, H1 (multiple correct arrangements, check to see that every single position on the board is attacked by at least one queen)",GeminiPro,hintPrompt,,True
+237,"Question: You are stuck in a room. All that is there is a slip of paper on a table, and many bottles. The only exit is guarded by a heat sensor that will not let you out. The only way out is to drink one of the bottles' contents, and the liquid will cool down your body heat (with no harm to yourself) enough so that the heat sensor doesn't detect you anymore. There are nine bottles on the ground beyond the table. The content of the slip of paper will tell you what each of the bottles are. Find out what all the bottles are, and then find out which one to drink to get out.
+Three of me are poison, and will kill you if you drink.
+Two of me are water, nothing bad will happen with these.
+Two of me are wine, and it will only get you drunk.
+One will heat you up forever, and this room will never let you out. (hinder)
+Only one here will help you, it will cool down your body heat.
+No medium bottles are poison.
+Wine is bad in large doses, so none are large.
+Each of the end bottles have the same contents.
+No matter how help hides, it will be on poison's left side, but its left side is safe.
+No two small bottles are the same.
+The hinderer is harder, for it resides between wine and water.
+The hinder bottle is large, so it works forever.
+Neither big nor medium will save your life.
+Poison is all you will get from the bottle on the far right.
+Water is next to the helper.
+Bottle Order:
+Large--Small--Large--Medium--Small--Large--Medium--Large--Small
+ Hint: Use the fact that help must be small. ",Use the fact that help must be small. ,"Poison--wine--hinder--water--help--poison--wine--water--poison
+Only the middle bottle will save your life.",GeminiPro,hintPrompt,"Here is the step-by-step deduction to find the contents of each bottle and the one to drink:
+
+**Initial Information & Setup:**
+*   There are 9 bottles.
+*   Contents: 3 Poison (P), 2 Water (W), 2 Wine (N), 1 Hinder (H), 1 Helper (L).
+*   Bottle Order and Sizes:
+    B1: Large (Lg)
+    B2: Small (Sm)
+    B3: Large (Lg)
+    B4: Medium (Md)
+    B5: Small (Sm)
+    B6: Large (Lg)
+    B7: Medium (Md)
+    B8: Large (Lg)
+    B9: Small (Sm)
+
+**Applying the Clues:**
+
+1.  **Clue 14:** ""Poison is all you will get from the bottle on the far right.""
+    *   This means B9 = Poison (P).
+    *   *Bottles: B1(?), B2(?), B3(?), B4(?), B5(?), B6(?), B7(?), B8(?), B9(P)*
+    *   *Poisons used: 1/3*
+
+2.  **Clue 8:** ""Each of the end bottles have the same contents.""
+    *   B1 has the same content as B9. Since B9 = P, B1 = Poison (P).
+    *   *Bottles: B1(P), B2(?), B3(?), B4(?), B5(?), B6(?), B7(?), B8(?), B9(P)*
+    *   *Poisons used: 2/3*
+
+3.  **Clue 13 (Hint):** ""Neither big nor medium will save your life.""
+    *   The Helper (L) bottle is not Large (Lg) or Medium (Md). Therefore, the Helper (L) bottle must be Small (Sm).
+    *   Small bottles are B2, B5, B9.
+    *   We know B9 = P, so B9 cannot be L.
+    *   Thus, Helper (L) is either B2 or B5.
+
+4.  **Clue 9:** ""No matter how help hides, it will be on poison's left side, but its left side is safe.""
+    *   This implies the arrangement: [Safe] - [Helper (L)] - [Poison (P)].
+    *   ""Safe"" means not Poison (P) and not Hinder (H). So, ""Safe"" can be Water (W) or Wine (N).
+    *   Consider if L is B2: The arrangement would be [B1(Safe)] - [B2(L)] - [B3(P)].
+        *   For B1 to be ""Safe"", it must be W or N. However, we found B1 = P (from step 2). This is a contradiction.
+        *   Therefore, L cannot be B2.
+    *   Since L must be B2 or B5 (from step 3), and L is not B2, then L must be B5.
+    *   So, B5 = Helper (L). (This is the bottle to drink to get out!)
+    *   *Helper used: 1/1*
+    *   The arrangement for L=B5 is [B4(Safe)] - [B5(L)] - [B6(P)].
+        *   This means B4 must be ""Safe"" (W or N).
+        *   And B6 must be Poison (P).
+    *   *Bottles: B1(P), B2(?), B3(?), B4(W/N), B5(L), B6(P), B7(?), B8(?), B9(P)*
+    *   *Poisons used: B1, B6, B9 are P. So 3/3 Poisons are placed.*
+
+5.  **Clue 15:** ""Water is next to the helper.""
+    *   Helper (L) is B5. So, either B4 = Water (W) or B6 = Water (W).
+    *   We know B6 = P (from step 4). So B6 cannot be W.
+    *   Therefore, B4 = Water (W).
+    *   This is consistent with B4 being ""Safe"" (W or N) from step 4.",True
