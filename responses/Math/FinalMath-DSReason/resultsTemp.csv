@@ -280,3 +280,47 @@ Given that the number of people when the train chugged into Rudolf is 227, the n
 227 - 182 =
 45 people
 Thus, I disappointed Tweeto by giving him the answer as 45 people.",DSReason,mathPrompt,Final answer: 45,True
+248,"Some time after 2 O' Clock, the angle made between the minute hand and the vertical (12) on a clock is double the angle made between the hour hand and the vertical (12). What time is it?",What is the rate of travel of each hand on a clock?,"2:24 The hour hand makes an angle of 72 degrees while the minute hand makes an angle of 144 degrees.
+At exactly 2:00, the angle made by the hour hand is 60 degrees from vertical.  If you let x = the number of minutes past 2:00 that we are looking for, then the hour hand will be at:
+60 degrees + x / 60 min* 30 degrees
+where x/60 min is the fraction of a full hour that has past, and is therefore the fractional distance that the hour hand has moved closer to the 3.  The 30 degrees is the total angle between the 2 and the 3.
+The final position of the minute hand will be:
+x/30 min * 180 degrees
+for the same reasoning as with the hour hand.
+Since the minute hand will make twice the angle with vertical, you can set up the equation:
+2*(60 + x / 60 * 30) = x / 30 * 180
+Solving for x will give you 24 minutes.  The time will be 2:24.",DSReason,mathPrompt,"The problem states that after 2 o'clock, the angle between the minute hand and 12 is double the angle between the hour hand and 12. To solve this:
+
+1. **Formulate angles**:  
+   - The hour hand's angle from 12 at \( t \) minutes past 2 is \( 60 + 0.5t \) degrees.  
+   - The minute hand's angle from 12 is \( 6t \) degrees.  
+
+2. **Equation setup**:  
+   The problem requires \( \text{angle}_{\text{minute}} = 2 \times \text{angle}_{\text{hour}} \). Considering the smaller angle (≤ 180°), two cases arise:  
+   - **Case 1**: \( 6t = 2(60 + 0.5t) \)  
+     Solving:  
+     \( 6t = 120 + t \Rightarrow 5t = 120 \Rightarrow t = 24 \).  
+     Time: **2:24**.  
+   - **Case 2**: \( 360 - 6t = 2(60 + 0.5t) \) (minute hand's reflex angle)  
+     Solving:  
+     \( 360 - 6t = 120 + t \Rightarrow 240 = 7t \Rightarrow t = \frac{240}{7} \approx 34.2857 \) minutes.  
+     Convert \( \frac{240}{7} \) minutes to seconds: \( \frac{2}{7} \times 60 \approx 17.14 \).  
+     Time: **2:34:17**.  
+
+3. **Verification**:  
+   - At 2:24:  
+     - Hour angle: \( 60 + 0.5 \times 24 = 72^\circ \).  
+     - Minute angle: \( 6 \times 24 = 144^\circ \).  
+     \( 144^\circ = 2 \times 72^\circ \).  
+   - At 2:34:17:  
+     - Hour angle: \( 60 + 0.5 \times \frac{240}{7} \approx 77.14^\circ \).  
+     - Minute reflex angle: \( 360 - 6 \times \frac{240}{7} \approx 154.29^\circ \).  
+     \( 154.29^\circ \approx 2 \times 77.14^\circ \).  
+
+Both times satisfy the condition.  
+
+Final answer: 2:24 and 2:34 ²⁄₇ (or 2:34:17).",True
+249,"The square of one whole number minus the square of another whole number equals 73.
+What are the two numbers? This can be done by trial and error but a little mathematical knowledge and maybe some algebra will get the answer fast.","73 is similar 41,29,19 etc.","The two numbers are 37 & 36. Therefore (37x37)1369 minus (36x36)1296 = 73.    The number 73 is a ""prime"" number i.e. the only two multiples for it are ""73"" & ""1"". By algebra, x2-y2 = 73 which is  (x+y)(x-y)=73. One of those two numbers must be ""1"". It can't be x+y (that would be more than ""1"") so it must be x-y=1. By simple substitution the answer is revealed.",DSReason,mathPrompt,"The equation \( x^2 - y^2 = 73 \) factors as \( (x + y)(x - y) = 73 \). Since 73 is prime, its positive integer factor pairs are (1, 73). Setting \( x + y = 73 \) and \( x - y = 1 \), solving these gives \( x = 37 \) and \( y = 36 \). Verification: \( 37^2 - 36^2 = 1369 - 1296 = 73 \). 
+
+Final answer: 37 and 36",True
