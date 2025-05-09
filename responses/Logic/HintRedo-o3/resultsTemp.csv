@@ -10757,3 +10757,83 @@ Blow on every one of the seven jack-o’-lanterns (in any order―order does not
 Each lantern will be toggled three times (by your own blow and by the blows on its two neighbours), i.e. an odd number of times, so every one of the seven ends up extinguished.
 
 Final answer: Blow out every lantern exactly once (in any order); all seven will be left dark.",True
+194,"Question: Every day from Monday through Sunday in this week, Mr. Peter picks two shirts from the five colours red, blue, yellow, green and black. Peter follows the rules:
+1. Peter doesn't use the same combination on two days of this week.
+2. Peter doesn't use the same colour on two consecutive days of this week.
+3. Peter uses some colour on four days.
+4. Peter uses blue and black on Monday.
+5. Peter uses green on Thursday.
+6. Peter doesn't use yellow on Friday.
+7. Peter doesn't combine red with black.
+What colours does Peter use on Saturday?
+ Hint: Start from rules 2 and 3",Start from rules 2 and 3,"From rules 2 and 3, Peter must use one colour on Monday, Wednesday, Friday and Sunday, which can be blue or black.
+If it's black, from rules 1 and 4, Peter must combine black with red, yellow and green on Wednesday, Friday and Sunday, but rule 7 disallows combining black with red.
+Therefore, it's blue, and Peter must combine blue with red, yellow and green on Wednesday, Friday and Sunday. From rule 5, Peter uses green on Thursday, he can't use green on Wednesday or Friday, and only on Sunday.
+From rule 6, Peter doesn't use yellow on Friday, and he can only use red on Friday and yellow on Wednesday.
+Since Peter uses blue, red and green on Friday and Sunday, from rule 2, he can only use black and yellow on Saturday.",GPT-o3,hintPrompt,"Let the five colours be  
+B = blue, K = black, G = green, R = red, Y = yellow.  
+Represent each day by the unordered pair of colours Peter wears.
+
+1.  Start with what is fixed.
+   • Monday: {B,K} (rule 4)
+
+2.  Rule 2 forbids using any colour again on the next day.
+
+3.  Rule 3 says one colour is worn on 4 different days.
+    • Black cannot be that colour, because rule 7 forbids the pair {R,K}.
+      If K were used 4 times we would need 4 distinct pairs with K, but
+      only 3 are allowed ({B,K},{Y,K},{G,K}).  
+    • Green cannot be that colour, because G must be used on Thursday;
+      the only non-consecutive days it could also appear are Tue, Sat,
+      Sun, and Sat & Sun are consecutive – only 3 usable days.  
+    • The same “at most 3 possible days” argument eliminates R and Y.  
+    • Therefore blue is the colour used on 4 days.
+
+   Since no colour may be used on consecutive days, the only pattern
+   for B on 4 days is Mon–Wed–Fri–Sun.
+
+4.  Build the week from Monday onward.
+
+   Tuesday (cannot contain B or K): {R,G} or {Y,G}.  
+   If Tuesday were {Y,G}, then Wednesday (which contains B) could not use Y,  
+   so Wednesday would be {B,R}.  
+   That forces Thursday to contain G, not B or R ⇒ {G,K} or {G,Y}.
+   Friday must contain B but not Y (rule 6) and not G/K from Thursday.
+   That is impossible.  
+   Hence Tuesday = {R,G}.
+
+   Wednesday: must contain B and not repeat Tuesday’s colours Y,G,
+   so Wednesday = {B,Y}.
+
+   Thursday: must contain G, and not B or Y ⇒ {G,K} or {G,R}.
+   • {G,R} would make Friday’s only possible pair {B,K},
+     but {B,K} is a repeat of Monday.  Impossible.
+   • Therefore Thursday = {G,K}.
+
+   Friday: must contain B, must not contain Y (rule 6), nor G or K
+   from Thursday ⇒ Friday = {B,R}.
+
+5.  Determine Saturday and Sunday.
+
+   Friday used B and R, so Saturday cannot use B or R.  
+   Blue must re-appear on Sunday (fourth day), so Saturday cannot use G
+   either (it would clash with Sunday).  
+   Only Y and K remain: Saturday = {Y,K}.
+
+   Sunday must give the fourth distinct blue pair.  
+   The pairs with B used so far are {B,K}, {B,Y}, {B,R};
+   the remaining possible partner is G.  
+   Also Sunday cannot repeat Saturday’s colours, so Sunday = {B,G}.
+
+6.  Check all rules.
+   Mon {B,K}, Tue {R,G}, Wed {B,Y}, Thu {G,K}, Fri {B,R},
+   Sat {Y,K}, Sun {B,G}
+
+   • all seven pairs are distinct (rule 1)  
+   • no colour is used on consecutive days (rule 2)  
+   • blue appears on four days (rule 3)  
+   • given conditions 4–7 are satisfied.
+
+Everything is consistent.
+
+Final answer: yellow and black",True

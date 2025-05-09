@@ -8618,3 +8618,7 @@ Let's check this assignment: J=C, JE=B, L=A, P=D.
 5.  JE!=A => J=C: JE=B, so JE!=A is true. Conclusion J=C must be true. J=C is true. (True)
 6.  L=B => P!=D: L=A, premise L=B is false. (True)
 7.",True
+236,"Question: Mad Ade has placed five Queens on a chessboard, such that every square including those occupied by the Queens are under attack.
+Imagine the chessboard is set out with reference points 1 to 8 on the vertical and A to H across the horizontal.
+At what positions would the five Queens need to be?
+ Hint: A couple queens next to each other can cover a lot.",A couple queens next to each other can cover a lot.,"A5, D5, E5, F5, H1 (multiple correct arrangements, check to see that every single position on the board is attacked by at least one queen)",GeminiPro,hintPrompt,,True
