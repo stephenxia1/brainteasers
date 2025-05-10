@@ -137,7 +137,8 @@ def main():
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
     # instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt']}
-    instructionSet = {'solutionSummary': instructionSet['solutionSummary']}
+    instructionSet = {'mathPrompt': instructionSet['mathPrompt']}
+    # instructionSet = {'solutionSummary': instructionSet['solutionSummary']}
     # instructionSet = {'hintPrompt': instructionSet['hint_prompt']}
 
     results = []
@@ -145,7 +146,7 @@ def main():
         
         for _ in range(args.samples):
             for index, row in itertools.islice(data.iterrows(), min(args.rows, len(data))):
-                # if (index < 223):
+                # if (index < 232):
                 #     continue
                 task = (
                     index,
