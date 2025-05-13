@@ -29184,3 +29184,34 @@ The strategy is:
 Final Answer: The prisoners designate one prisoner as the counter. The counter keeps a tally, starting at zero. The other 22 prisoners agree that on their first visit to the switch room, they will flip switch A. On their second visit, they will again flip switch A. On their third and all subsequent visits, they will flip switch B. The designated counter prisoner agrees that on any visit, if switch A is ON, they will flip switch A OFF and increment their tally by one. If switch A is OFF when they enter, they will flip switch B. When the counter's tally reaches 44, that prisoner declares that all prisoners have visited the switch room.
 
 The final answer is $\boxed{The prisoners can solve this problem.}$.",True
+2,"There is a ten-digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) A + B + C + D + E is a multiple of 6.
+2) F + G + H + I + J is a multiple of 5.
+3) A + C + E + G + I is a multiple of 9.
+4) B + D + F + H + J is a multiple of 2.
+5) AB is a multiple of 3.
+6) CD is a multiple of 4.
+7) EF is a multiple of 7.
+8) GH is a multiple of 8.
+9) IJ is a multiple of 10.
+10) FE, HC, and JA are all prime numbers.","Notice that when combining clues 1 and 2, you have information about the sum of digits. You can do the same for clues 3 and 4. ","5736912480
+A = 5, B = 7, C = 3, D = 6, E = 9, F = 1, G = 2, H = 4, I = 8, J = 0
+1) 5 + 7 + 3 + 6 + 9 = 30, which is a multiple of 6.
+2) 1 + 2 + 4 + 8 + 0 = 15, which is a multiple of 5.
+3) 5 + 3 + 9 + 2 + 8 = 27, which is a multiple of 9.
+4) 7 + 6 + 1 + 4 + 0 = 18, which is a multiple of 2.
+5) 57 is a multiple of 3.
+6) 36 is a multiple of 4.
+7) 91 is a multiple of 7.
+8) 24 is a multiple of 8.
+9) 80 is a multiple of 10.
+10) 19, 43, and 05 are prime numbers.
+A) The sum of digits 0 through 9 is 45.  To satisfy Conditions 1 and 2, a pair of multiples must equal 45.  The only pair that satisfies those conditions are 30 (multiple of 6) and 15 (multiple of 5).  Likewise, to satisfy Conditions 3 and 4, the pair of multiples must be 27 (multiple of 9) and 18 (multiple of 2).
+B) Make lists of the multiples of 3, 4, 7, 8, and 10 (for Conditions 5 through 9).  Delete multiples whose digits are the same (33, 44, 66, 77, 88, 99).
+C) To satisfy Condition 9, J must be 0.  Delete multiples that require 0 in a different location.  For JA to be prime (Condition 10), A must be: 2, 3, 5, or 7.  Delete multiples of 3 that have another digit for A.
+D) For FE and HC to be prime (Condition 10), C and E can not be even or 5.  Delete multiples of 4 and 7 that have another digit for C and E.
+E) Per Condition 4, B + D + F + H + J = 18.  D, H, and J must be even (required to form multiples of even numbers).  To attain the sum of 18 (an even number), B and F must either be both odd or both even.  If both are even, then the sum of those five digits would be 20.  B and F must be odd.  Delete multiples of 3 and 7 that have an even digit for B and F.  The only remaining multiple of 7 is 91.  E is 9 and F is 1.  Delete multiples that require 1 or 9 in a different location.
+F) The only remaining options for AB contain 7.  Delete multiples that require 7 in a different location.  The only remaining options for CD contain 3.  Delete multiples that require 3 in a different location.
+G) To satisfy Condition 1, CD must be 36 and AB must be either 57 or 75.  C is 3 and D is 6.  Delete multiples that require 5, 6, or 7 in a different location.
+H) The only remaining options for GH contain 4.  Delete multiples that require 4 in a different location.
+I) Per Condition 3, A + C + E + G + I = 27.  Since C =3 and I = 9, the other three must total 15.  There is only one combination of remaining multiples (57, 24, and 80) that can satisfy this condition.  A is 5, G is 2, and I is 8.  B is 7 and H is 4.",GeminiFlash,mathPrompt,,True
