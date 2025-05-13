@@ -7,10 +7,10 @@ import openai
 
 # 2) Input/output paths
 INPUT_CSV  = "../../data/braingle/braingle_Math.csv"
-OUTPUT_CSV = "../../data/braingle/braingle_Math_with_categories.csv"
+OUTPUT_CSV = "../../data/braingle/braingle_Math_with_categories_o4mini.csv"
 
 # 3) Model and rate-limit pacing
-MODEL_NAME     = "o3-2025-04-16"
+MODEL_NAME     = "o4-mini-2025-04-16"
 REQUEST_DELAY  = 1.0    # seconds between calls to avoid rate-limit
 
 # ───────── TAXONOMY PROMPT ─────────
