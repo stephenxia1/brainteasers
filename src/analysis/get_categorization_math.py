@@ -51,12 +51,12 @@ Please read the following 10 category labels and their descriptions, then assign
 
 # ───────── FUNCTION TO CALL o3 ─────────
 
-def categorize_with_o3(text: str) -> str:
+def categorize_with_o3(text, answer):
     """
     Sends the problem text to o3 with the taxonomy definitions,
     returns the comma-separated category numbers.
     """
-    prompt = CATEGORY_DEFINITIONS + "\n\nProblem:\n" + text + "\n\nCategories:"
+    prompt = CATEGORY_DEFINITIONS + "\n\nProblem:\n" + text + "\n\nAnswer: \n" + answer + "\n\nCategories:"
     retries = 0
     MAX_RETRIES=5
     RETRY_DELAY=5
@@ -101,18 +101,20 @@ def main():
 
     # Ensure there's a column named e.g. 'question' or 'text' – adjust if needed
     PROBLEM_FIELD = "Question"  # or "title", or however your column is named
+    ANSWER_FIELD = "Answer"
 
     # Create a new column for the categories
     df["categories"] = ""
 
     for idx, row in df.iterrows():
         problem_text = str(row.get(PROBLEM_FIELD, "")).strip()
+        answer_text = str(row.get(ANSWER_FIELD, "")).strip()
         if not problem_text:
             df.at[idx, "categories"] = ""
             continue
 
         try:
-            cats = categorize_with_o3(problem_text)
+            cats = categorize_with_o3(problem_text, answer_text)
             df.at[idx, "categories"] = cats
         except Exception as e:
             print(f"Error on row {idx}: {e}")
