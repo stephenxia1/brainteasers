@@ -1,19 +1,16 @@
 import os
 import time
 import pandas as pd
+from openai import OpenAI
 import openai
-
 # ───────── CONFIG ────────────────
 
-# 1) Set your OpenAI API key (or use environment variable OPENAI_API_KEY)
-openai.api_key = os.getenv("OPENAI_API_KEY", "YOUR_API_KEY_HERE")
-
 # 2) Input/output paths
-INPUT_CSV  = "data/braingle/braingle_Math.csv"
-OUTPUT_CSV = "data/braingle/braingle_Math_with_categories.csv"
+INPUT_CSV  = "../../data/braingle/braingle_Math.csv"
+OUTPUT_CSV = "../../data/braingle/braingle_Math_with_categories.csv"
 
 # 3) Model and rate-limit pacing
-MODEL_NAME     = "o3"
+MODEL_NAME     = "o3-2025-04-16"
 REQUEST_DELAY  = 1.0    # seconds between calls to avoid rate-limit
 
 # ───────── TAXONOMY PROMPT ─────────
@@ -60,23 +57,25 @@ def categorize_with_o3(text: str) -> str:
     returns the comma-separated category numbers.
     """
     prompt = CATEGORY_DEFINITIONS + "\n\nProblem:\n" + text + "\n\nCategories:"
-
-
     retries = 0
     MAX_RETRIES=5
     RETRY_DELAY=5
+    client = OpenAI(
+        api_key= os.getenv("OPENAI_API_KEY"),
+        base_url = "https://api.openai.com/v1"
+    )
     while retries < MAX_RETRIES:
         try:
-            resp = openai.Completion.create(
+            resp = client.chat.completions.create(
                 model=MODEL_NAME,
-                prompt=prompt,
-                max_tokens=10,
-                temperature=0.0,
-                top_p=1.0,
-                n=1,
-                stop=["\n"]
+                messages=[
+                    # {"role": "system", "content": instructions},
+                    {"role": "user", "content": prompt},
+                ],
+                stream=False
             )
-            cats = resp.choices[0].text.strip()
+            cats = resp.choices[0].message.content
+            print(cats)
             return cats
             
         except openai.AuthenticationError:
@@ -101,10 +100,10 @@ def main():
     df = pd.read_csv(INPUT_CSV)
 
     # Ensure there's a column named e.g. 'question' or 'text' – adjust if needed
-    PROBLEM_FIELD = "question"  # or "title", or however your column is named
+    PROBLEM_FIELD = "Question"  # or "title", or however your column is named
 
     # Create a new column for the categories
-    df["categories"] = "Question"
+    df["categories"] = ""
 
     for idx, row in df.iterrows():
         problem_text = str(row.get(PROBLEM_FIELD, "")).strip()
