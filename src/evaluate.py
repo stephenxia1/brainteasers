@@ -22,7 +22,7 @@ def read_txt_files(directory):
                     print(f"Error reading {file_path}: {e}")
     return instructionSet
 
-def evaluateResponse(client, instructions, modelResponse, solution, evaluationModel):
+def evaluateResponse(client, instructions, problem, modelResponse, solution, evaluationModel):
     if len(modelResponse) == 0:
         return None
     
@@ -33,7 +33,7 @@ def evaluateResponse(client, instructions, modelResponse, solution, evaluationMo
                 model = evaluationModel, # 
                 messages=[
                     {"role": "system", "content": instructions},
-                    {"role": "user", "content": "STUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution},
+                    {"role": "user", "content": "PROBLEM:\n" + problem + "\n\nSTUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution},
                 ],
                 stream = False,
                 max_completion_tokens=10000,
@@ -61,7 +61,7 @@ def evaluateResponse(client, instructions, modelResponse, solution, evaluationMo
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", help="Experiment Name", required=True)
-    parser.add_argument("--model", help="Evaluation Model", required=True)
+    parser.add_argument("--model", help="Evaluation Model", required=False, default="o3-2025-04-16")
     parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], required=True)
     parser.add_argument("--from_row", help="Continue evaluation from which row", type=int, default=0, required=False)
 
@@ -84,7 +84,7 @@ def main():
     responses_iloc = responses.iloc[args.from_row:]
 
     for index, row in responses_iloc.iterrows():
-        # question = row['Question']
+        question = row['Question']
         # dataEntry = data[data['Question'] == question].iloc[0]
         # solution = dataEntry['Answer']
         solution = row['Human Solution']
@@ -98,18 +98,18 @@ def main():
 
         # if type(modelResponse) == type("string"):
             
-        correctness = evaluateResponse(client, evaluationPrompts['correctness'], modelResponse, solution, args.model)
-        modelbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], modelResponse, solution, args.model)
-        humanbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], solution, solution, args.model)
+        correctness = evaluateResponse(client, evaluationPrompts['correctness'], question, modelResponse, solution, args.model)
+        modelbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], question, modelResponse, solution, args.model)
+        # humanbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], solution, solution, args.model)
         responses.at[index, 'Correct'] = correctness
         responses.at[index, 'ModelBruteForce'] = modelbruteforced
-        responses.at[index, 'HumanBruteForce'] = humanbruteforced
+        # responses.at[index, 'HumanBruteForce'] = humanbruteforced
         
         entry = row.to_dict()
 
         entry["correctness"] = correctness
         entry["model_bruteforce"] = modelbruteforced
-        entry["human_bruteforce"] = humanbruteforced
+        # entry["human_bruteforce"] = humanbruteforced
 
         with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations_evaluatedby{args.model}.jsonl', 'a') as jsonfile:
             jsonfile.write(json.dumps(entry) + "\n")
