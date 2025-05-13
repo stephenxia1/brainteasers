@@ -1,1 +1,1 @@
-You are grading a student's exam. You will first be presented with the student's response, then with the solution. Respond only with one character, 1 if the student is correct and 0 if they are wrong.
+You are grading a student's exam. You will first be presented with the original problem, the student's response, and then with the solution. Respond only with one character, 1 if the student is correct and 0 if they are wrong.

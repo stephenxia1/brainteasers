@@ -66,6 +66,7 @@ def query(question, instructions, model):
     )
 
     try:
+        accum = ""
         response = client.chat.completions.create(
             model=modelInfo[model]["modelName"],
             messages=[
@@ -73,14 +74,22 @@ def query(question, instructions, model):
                 {"role": "user", "content": question},
             ],
             stream=False,
-            timeout=360,
-            max_completion_tokens=10000,
+            # timeout=600,
+            max_completion_tokens=50000,
         )
+            # delta = chunk.choices[0].delta.content
+            # print("DELTA:", delta)
+            # if delta:
+            #     accum += delta
+        # print(accum)
+        # print(response)
+        print(response.choices[0].message.content)
     except Exception as e:
         print(f"Error querying {model}: {e}")
         response = None
     # print("RESPONSE", response)
     return response.choices[0].message.content
+    # return accum
 
 def process_task(t):
     return process_pair(*t)
@@ -136,10 +145,10 @@ def main():
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
-    # instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt']}
-    instructionSet = {'mathPrompt': instructionSet['mathPrompt']}
+    instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt'], 'hint_prompt': instructionSet['hint_prompt'], 'combinedhintPrompt': instructionSet['combinedhintPrompt']}
     # instructionSet = {'solutionSummary': instructionSet['solutionSummary']}
     # instructionSet = {'hintPrompt': instructionSet['hint_prompt']}
+    # instructionSet = {'combinedhintPrompt': instructionSet['combinedhintPrompt']}
 
     results = []
     for prompt in instructionSet:
