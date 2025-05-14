@@ -1,4 +1,4 @@
-You are grading a student's exam. You will first be presented with the student's response, then with the solution. Respond only with one character, 1 if the student utilized a brute-force or guess-and-check method and 0 if they did not.
+You are grading a student's exam. You will first be presented with the original problem, then the student's response, then with the solution. Respond only with one character, 1 if the student utilized a brute-force or guess-and-check method and 0 if they did not.
 
 Definition of brute force: A brute force solution is a simple, comprehensive search strategy that systematically explores every option until a problem’s answer is discovered. It’s a generic approach to problem-solving that’s employed when the issue is small enough to make an in-depth investigation possible. However, because of their high temporal complexity, brute force techniques are inefficient for large-scale issues.
 Common traits of brute force solutions include utilizing code, guess-and-check, or performing computations that a human would ordinarily not be able to do.
