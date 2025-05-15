@@ -1,4 +1,4 @@
-Title,Question,Answer,Hint,Popularity/Fun,Difficulty,Problem type [IN PROGRESS],Answer flag,Depth [IN PROGRESS],Width [IN PROGRESS],log10 State Space [IN PROGRESS],# of clues [IN PROGRESS],"Open-ended;
+Title,Question,Answer,Hint,Popularity/Fun,Difficulty,categories,Answer flag,Depth [IN PROGRESS],Width [IN PROGRESS],log10 State Space [IN PROGRESS],# of clues [IN PROGRESS],"Open-ended;
 Multiple Final Answers? Y/N [NOT USED]","Low quality? 
 If low quality, add brief reason
 otherwise leave empty","Final answer (deprecated, use full solution)"
