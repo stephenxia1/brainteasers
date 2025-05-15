@@ -385,7 +385,7 @@ or
 Given that N and F must be positive integers, this equation can be solved with brute force or modular arithmetic to yield 3121.","The stranded survivors are not particularly great at math, so the first survivor placed four rotten coconuts as aides to help split the counting pile evenly. Each survivor after also uses the rotten coconuts to help calculate how to split the pile evenly despite there being one spare coconut that will be given to the monkey.
 Of course, being rotten coconuts, these coconuts are put to the side after all the divisions, as no pirate wants to put them in the pile or their stash of coconuts.",2.35,3.12,Number Theory,3121,,,0,,2,2,1
 Palindrome,What is the only non-palindromic integer whose cube is a palindrome?,"2201
-2201^3 = 10662526601",A palindrome is a number that reads the same forward as it does backward.  An example would be 1221. An integer is a number that has no decimal places.  A cube is the result of multiplying a number by itself three times.,2,3.12,SpecialNumber,2201,,,0,1,2,2,1
+2201^3 = 10662526601",A palindrome is a number that reads the same forward as it does backward.  An example would be 1221. An integer is a number that has no decimal places.  A cube is the result of multiplying a number by itself three times.,2,3.12,Special Number,2201,,,0,1,2,2,1
 4+4+4+4=2!,"In ""4+4+4+4=1!"" it was shown that just using addition, subtraction, multiplication, and division, you can form all the numbers from 0 to 9 using exactly four 4's.
 For example: 7 = 4 + 4 - 4/4
 Now if you add the operations square root, factorial, and exponent, what is the first number counting up from zero that can't be formed? How can each number be formed?
@@ -616,7 +616,7 @@ In this system of Quocorrian math, you change the operation to its opposite (+ t
 2001,"Use addition, subtraction, multiplication, division, and parentheses to make the following equation hold.
 9 8 7 6 5 4 3 2 1=2001
 You can't use two or more of the digits to make multiple-digit numbers (i.e. solutions like (987+6-5+4*3)*2+1=2001 are not allowed.)",9*8*(7+6*5)/4*3+2+1=2001.,There is obviously a considerable amount of multiplication given how small 1-9 are compared to 2001,2.52,2.97,Arithmetic,2001,,,0,,1,1,1
-Power Play,"A four digit number (not beginning with 0) can be represented by ABCD. There is one number such that ABCD=A^B*C^D, where A^B means A raised to the B power. Can you find it?",Notice that powers cannot be large (except maybe for 2) since we have a four digit number. The only number is 2592. 2^5 is 32 and 9^2 is 81. 32*81 is 2592.,,2.14,2.97,SpecialNumber,2592,,,0,1,"1,2",2,0
+Power Play,"A four digit number (not beginning with 0) can be represented by ABCD. There is one number such that ABCD=A^B*C^D, where A^B means A raised to the B power. Can you find it?",Notice that powers cannot be large (except maybe for 2) since we have a four digit number. The only number is 2592. 2^5 is 32 and 9^2 is 81. 32*81 is 2592.,,2.14,2.97,Special Number,2592,,,0,1,"1,2",2,0
 The Mystery of Number 11,"Can you find the largest number possible containing any of 9 of 10 digits, considering 0 also a number, that is divisible by 11 without a remainder?
 (Note: each number may appear only one time.)","987652413, is the highest number possible containing any of 9 of 10 digits and is divisible by 11 without a remainder. Start from the largest number 987654321 and check using the divisbility rule of 11 to find a number which works.",Think close to the largest number,2.12,2.97,Number Theory,987652413,,,1,,2,2,1
 Quocorrian Math 2,"After being intrigued by Quocorria's mathematical systems, you decide to extend your stay on this mathematically advanced planet.
@@ -800,7 +800,7 @@ To solve, multiply the LCM by each of the integers 82 through 816.  The four sol
 2438195760 = 12252240 * 199
 3785942160 = 12252240 * 309
 4753869120 = 12252240 * 388
-4876391520 = 12252240 * 398",Use prime factorization to find the LCM of 2-18 (think about why this is important with relation to any of the valid numbers),2.23,2.94,SpecialNumber,"2438195760 = 12252240 * 199
+4876391520 = 12252240 * 398",Use prime factorization to find the LCM of 2-18 (think about why this is important with relation to any of the valid numbers),2.23,2.94,Special Number,"2438195760 = 12252240 * 199
 3785942160 = 12252240 * 309
 4753869120 = 12252240 * 388
 4876391520 = 12252240 * 398",,,1,,2,2,1
@@ -861,7 +861,7 @@ The largest squime has at most eight digits, since it cannot contain
 8 or 0. If we use 2, it must come first because no square or
 2-digit prime ends in 2. No 2-digit prime ends in 5 and only 25 is
 square. If, therefore, we use 5, it must come after 2. So we begin
-with 25.",2.03,2.94,SpecialNumber,"25316479
+with 25.",2.03,2.94,Special Number,"25316479
 25316497
 25364179
 25364197
@@ -1047,7 +1047,7 @@ Make 2003,"It is easy to express 2004 as the sum of distinct positive numbers co
 2004 = 617 + 671 + 716 or
 2004 = 509 + 590 + 905.
 It is harder to write 2003 as the sum of distinct positive numbers with the same digits.
-What are they?",127 + 172 + 271 + 712 + 721 = 2003,You will need five numbers of three digits each.,2.27,2.91,SpecialNumber,2003,,,0,,"2,7",2,0
+What are they?",127 + 172 + 271 + 712 + 721 = 2003,You will need five numbers of three digits each.,2.27,2.91,Special Number,2003,,,0,,"2,7",2,0
 A Pleasing Number,"Which two closest together whole numbers that, when multiplied, produce the pleasant looking number: 1234567890 ?","34,227 and  36,070.
 The only factors of 1234567890 are 2, 3, 3, 5, 3607 and 3803. Testing the various products of these factors reveals that 34,227 and 36,070 are the closest pair of numbers that produce 1234567890.",Use prime factorizations,2.13,2.91,Number Theory,34227 and 36070,,,1,,2,2,1
 Gauss and an Old Professor,"There was a famous mathematician named Karl Friedrich Gauss. When he was young, he entered Gotinga University. One day he met an old professor, and spoke to him. They chatted, and the professor asked Gauss about his age.
@@ -1167,7 +1167,7 @@ Method:
 This one really requires a brute-force approach.  The sigma function (sum of a number's divisors) does not lend itself to 3rd-order analysis (3 numbers past the first one).  Most of the remaining numbers will leave the 100-200 range on the first or second iteration.  I used a small computer program.  The only sequence that stays in bounds for 4 terms is the one given.
 Side notes:
 The name ""Desire Creek"" is a nod to ""Desire Under the Elms"" and the ""Elm Creek Quilt"" books.
-There are 4-cycles of amicable numbers.  However, the least quadruple is a little large, even for Patty's appetite: 1264460, 1547860, 1727636, 1305184.",You can leave out numbers that are primes (sum of proper divisors is 1) or the product of two primes (sum of divisors will be less than 100).  This will shorten your search somewhat.,2.35,2.89,SpecialNumber,"108, 172, 136, and 134",,,1,,"2,5",2,0
+There are 4-cycles of amicable numbers.  However, the least quadruple is a little large, even for Patty's appetite: 1264460, 1547860, 1727636, 1305184.",You can leave out numbers that are primes (sum of proper divisors is 1) or the product of two primes (sum of divisors will be less than 100).  This will shorten your search somewhat.,2.35,2.89,Special Number,"108, 172, 136, and 134",,,1,,"2,5",2,0
 "Paper On, Dude!","The All-Portland Rock-Scissors-Paper League follows the canonical rules: at a given signal, both contestants reveal their choices.  Rock beats scissors, scissors beats paper, and paper beats rock.  However, for tournament play, the stakes are altered.  Losers pay winners 3 chips if the latter wins with ""rock"", 2 points with ""scissors"", and 1 point with ""paper"".  Each minute, everyone must find a new opponent, play one ""throw"", pay off, and get ready for the next switch.
 The players with the most chips at the end of the evening get the big prizes: first place is a bag of Portland cement, second is a hedge trimmer, and third place is a choice of stationery.  Also, any chips you've won are redeemable for drinks at the bar.
 Knowing nothing about the other players' preference, mind games, etc., what's your best strategy (mixture of rock, paper, and scissors) for maintaining your balance of chips throughout the evening?","Randomly throw paper 1/2 the time, rock 1/3 of the time, and scissors the remaining 1/6.
@@ -1266,7 +1266,7 @@ What is the smallest number that meets these requirements??","5328   is the numb
 3/40  =  18/240
 S.O.D. = 18; P.O.D. = 240
 5328 / 37  = 144","Sum of the digits = 18
-Product of the digits = 240",2.27,2.88,SpecialNumber,5328,,,0,,2,2,1
+Product of the digits = 240",2.27,2.88,Special Number,5328,,,0,,2,2,1
 #NAME?,"Each letter in the sets of equations below represents a number; substitute the numbers in to make the expressions correct. Each letter always represents the same number.
 ABC/3=JE
 DEF/6=JE
@@ -1312,12 +1312,12 @@ The progression from one stone to one mass would be:
 The number eleven has nothing to do with the set of weights.",2.43,2.87,Number Theory,The minimum number of weights is 5.,,,0,,7,9,0
 Sum of Cubes,What is the smallest number that is the sum of two different pairs of cubes?,"1729.
 1 cubed + 12 cubed = 1 + 12x12x12 = 1+1728=1729
-10 cubed + 9 cubed = 10x10x10 +9x9x9 = 1000 + 729 = 1729",Cubic inches in a cubic foot might help.,2.28,2.87,SpecialNumber,1729,,,0,1,2,2,1
+10 cubed + 9 cubed = 10x10x10 +9x9x9 = 1000 + 729 = 1729",Cubic inches in a cubic foot might help.,2.28,2.87,Special Number,1729,,,0,1,2,2,1
 Eighth Powers,"There are three 8-digit natural numbers, each of them equals the sum of the eighth powers of its digits.
 Two of them are:
 24678050=256+65536+1679616+5764801+16777216+0+390625+0
 88593477=16777216+16777216+390625+43046721+6561+65536+5764801+5764801
-Do you know what the remaining one is? It does not begin with 0, otherwise it isn't an 8-digit number.","Realize that 24678050 ends with 0, and 1^8 - 0^8 = 1 - 0 = 1, so we get 24678051",It is between 24678050 and 88593477.,2.23,2.87,SpecialNumber,24678051,,,0,,2,2,1
+Do you know what the remaining one is? It does not begin with 0, otherwise it isn't an 8-digit number.","Realize that 24678050 ends with 0, and 1^8 - 0^8 = 1 - 0 = 1, so we get 24678051",It is between 24678050 and 88593477.,2.23,2.87,Special Number,24678051,,,0,,2,2,1
 The Romankachi Clock Problem !!!,"I always remember the days when I was at high school, whiling away my time with my friends. Those were the days when I'd spent the maximum time with my grandfather Rudolf the world-famous Romankachi. He'd come over to our house at one of the weekends leaving behind his Romankachi estate in the village in capable hands. One day when I returned home from school, he put this clock problem in front of me which I was required to solve in the alloted time frame.
 Considering time represented in twelve hour format H:M1M2 where H is a single-digit or a two-digit number indicating the hours and M1 and M2 the digits indicating the minutes (M1 representing the tens digit of the minutes and M2 the units digit of the minutes), he wanted me to find out that in a day how such instances would occur so that H is exactly divisible by M1 and gives M2 as quotient?
 He further added that if H:M1M2 was the time represented in 24-hour format instead of a 12-hour format, then how many instances were there in a day such that H is exactly divisible by M1 giving M2 as the quotient? In the 24 hour format, 12 o' clock midnight is represented as 00:00.","Clearing the scope of the problem, we have to divide H by M1 getting M2 as the quotient with remainder as 0.
@@ -1609,7 +1609,7 @@ Checking this finds that
 599^36 ~ 9.7 x 10^99
 600^36 ~ 1.03 x 10^100
 Since zero is not a natural number, 1^36 = 1 is the first such number and 599^36 is the last, giving 599 numbers.",Represent any such numbers as N^y where y is some positive real number,2.39,2.85,Number Theory,599,,,0,,2,2,1
-Prime Number,What is the 1000th prime number?,7919,It is smaller than 10000,2,2.85,SpecialNumber,7919,,,0,1,2,2,1
+Prime Number,What is the 1000th prime number?,7919,It is smaller than 10000,2,2.85,Special Number,7919,,,0,1,2,2,1
 Add to a Square Number,"A, B and C are positive integers such that 3^A+5^B+7^C is a square number.
 What is the minimum value of this square number?","With three different primes, many numbers can be achieved and it is worth starting smaller to see if smaller squares can be obtained. We then see that 3^3+5^1+7^2=81.","It's smaller than you think, especially since you have 3, 5, and 7",1.87,2.85,Number Theory,81,,,0,1,2,2,1
 Slush Shack,"You have a small shack in a parking lot, out of which you sell slushes for a few hours a day.  You sell them in 4 sizes: small (12 oz), medium (20 oz), large (32 oz), and x-large (40 oz), and you charge $1.50, $2.25, $3.75, and $4.50 for each size, respectively.  The cups cost you 3 cents for small, 5 cents for medium, 8 cents for large, and 10 cents for x-large, and the slush ingredients cost you 6 cents per ounce.  Today, you are having a special: with every slush purchased, the customer receives a coupon for a free small slush.  You figure that this special will increase sales for the day, but that the losses (due to giving out free slushes in the future) will cut the profit down to a much-below-average day.  Your hope, though, is that it will help by drawing more regular customers in the long run.  Your goal is to profit $20 even after the coupon losses.  Through the day, medium was the best-selling size -- they sold exactly 4 times as many as smalls! -- followed by large, then x-large, and finally small.  At the end of the day, the profit (not accounting for the coupons) from your sales was $46.50.  Did you make the $20 net profit goal?
@@ -1895,7 +1895,7 @@ But there is only one pair of numbers with a triple-digit result and its reversi
 What are the 2 numbers?","The numbers are 497 and 2:
 497 + 2 = 499
 and
-497 * 2 = 994",One number has 1 digit and the other has 3.,2.44,2.8,SpecialNumber,The numbers are 497 and 2,,,0,1,2,1,0
+497 * 2 = 994",One number has 1 digit and the other has 3.,2.44,2.8,Special Number,The numbers are 497 and 2,,,0,1,2,1,0
 Weird Numbers,"12 is an abundant number, because the sum of its proper divisors: 1+2+3+4+6=16, and this is larger than the number itself. However, you will notice that 1+2+3+6=12.
 A weird number is an abundant number, n, for which no subset of its proper divisors adds to n. What is the smallest weird number?","The number needs a lot of prime factors for the sum to exceed the number--a factor of 2 is pretty important to get a large enough factor, and then the next prime factor being at least 5 is good so the small primes are less granular and the sum might only barely exceed th number; The smallest weird number is 70.
 The next three being 836, 4030 and 5830.",They are very rare indeed. The smallest is somewhere between 50 and 100.,2.29,2.8,Number Theory,The smallest weird number is 70.,,,0,,2,2,1
@@ -1917,7 +1917,7 @@ A right cylinder, with a diameter congruent to its height is inscribed in a righ
 Next we can cross-multiply to get 12x=60-10x. If we add 10x on both sides, we get 22x=60, and dividing 22 from both sides yields x=60/22=30/11."," #1: By inscribed, your enemy means that the cylinder's whole bottom face is touching the cone's bottom face, and the cylinder is touching the cone with the circumference of the top face.
 Hint #2: There are many ways to solve this, but a simple method is to imagine one triangle inside another.",2.1,2.8,Geometry,30/11,,,0,,4,4,1
 A Very Good Year,"The year 1978 has an unusual property. When you add the 19 to the 78, the total is the same as the middle two digits (97). What will be the next year to have this same property?","Note that the hundreds digit must be at least as large as the sum of the thousands and tens digits. -- then use this as a starting point and test hundreds digits for the smallest possible solutions The next year to have the same property will be 2307.
-23 + 07 = 30",Note that the hundreds digit must be at least as large as the sum of the thousands and tens digits... why?,2.74,2.79,SpecialNumber,2307,,,0,,2,"2,5",0
+23 + 07 = 30",Note that the hundreds digit must be at least as large as the sum of the thousands and tens digits... why?,2.74,2.79,Special Number,2307,,,0,,2,"2,5",0
 Divisorama,"Arrange the numerals ""123456789"" to form a 9-digit number (referred to as ""ABCDEFGHI"") whose 2-digit subsets meet the following criteria:
 1) AB is divisible by 2
 2) BC is divisible by 3
@@ -1928,7 +1928,7 @@ Divisorama,"Arrange the numerals ""123456789"" to form a 9-digit number (referre
 7) GH is divisible by 8
 8) HI is divisible by 9
 There are two solutions.","781254963 and 187254963
-AB, CD, EF, and GH must be divisible by even divisors.  Therefore B, D, F, and H must be even numerals.  This means that A, C, E, G, and I are odd numerals.  DE must be divisible by 5, therefore E is 5.  EF must be divisible by 6, therefore EF is 54.  FG must be divisible by 7, therefore FG is 49.  GH must be divisible by 8, therefore GH is 96.  GH must be divisible by 9, therefore GH is 63.  The last five digits have now been determined to be 54963.  To be divisible by 4, CD must end in 2.  This makes B equal 8.  The digits are now ?8?254963.  The remaining digits, 1 and 7, can be placed into either remaining location.","B, D, F, and H must be even",2.52,2.79,SpecialNumber,781254963 and 187254963,,,0,,2,2,1
+AB, CD, EF, and GH must be divisible by even divisors.  Therefore B, D, F, and H must be even numerals.  This means that A, C, E, G, and I are odd numerals.  DE must be divisible by 5, therefore E is 5.  EF must be divisible by 6, therefore EF is 54.  FG must be divisible by 7, therefore FG is 49.  GH must be divisible by 8, therefore GH is 96.  GH must be divisible by 9, therefore GH is 63.  The last five digits have now been determined to be 54963.  To be divisible by 4, CD must end in 2.  This makes B equal 8.  The digits are now ?8?254963.  The remaining digits, 1 and 7, can be placed into either remaining location.","B, D, F, and H must be even",2.52,2.79,Special Number,781254963 and 187254963,,,0,,2,2,1
 The Liars' Rail,"The people of Olde Mathville had unique ways of punishing wayward citizens.   For example, those convicted of crimes of dishonesty were chained to the Liars' Rail until they solved a number of puzzles.
 One such puzzle has been recently discovered!
 In the multiplication below, each letter - L, I, A, R, and S - takes the place of a different digit.   Find the digits to make the multiplication true.
@@ -1950,7 +1950,7 @@ One possible solution guide:
 * I=0 is rejected as '3' tens have been carried forward from multiplying 4x8; the 3 must be added to 7 to give 0 in the bottom line, and we cannot have 4 x __ = 7.
 ... so I=1
 ... so A=7 (the only way to get a 1 in the tens column of the product)",The product of S x L must be less than 10.  Combining that with the need for S x R to end in L limits the possibilities quickly.,2.48,2.79,Logic,"L=2, I=1, A=7, R=8, and S=4",,,0,,8,8,1
-Can You Find the Number?,"Can you find a five digit number that, if you place a 9 at the beginning to make a new number, is four times larger than if you place the 9 at the end instead?",23076: 923076 / 230769 = 4.,The first digit of this number must be 2,2.46,2.79,SpecialNumber,23076,,,0,,2,3,0
+Can You Find the Number?,"Can you find a five digit number that, if you place a 9 at the beginning to make a new number, is four times larger than if you place the 9 at the end instead?",23076: 923076 / 230769 = 4.,The first digit of this number must be 2,2.46,2.79,Special Number,23076,,,0,,2,3,0
 Wheel Machine,"I have a machine which has four cog wheels in constant mesh. The largest cog has 242 teeth and the others have 160, 64 and 22 respectively. How many revolutions must the largest cog make before each of the cogs is back in its starting position?","160 revolutions.
 The least common multiple of 242=2*11^2, 160=2^5*5, 64=2^6 and 22=2*11 is 2^6*5*11^2=38720.
 38720/242=160.",The least common multiple is helpful,2.43,2.79,Number Theory,160 revolutions,,,0,,2,2,1
@@ -2108,7 +2108,7 @@ Clue #6- ""If A, B, and C are re-arranged from least to greatest, a 3-digit prim
 After Clue #6, we have one possibility: 617.
 617 is the mystery number.","Make a list and organize your possibilities. It will lead down to one answer.
 The 3-digit prime numbers are:
-101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, and 997.",2.5,2.76,SpecialNumber,617,,,1,,"2,8","2,8",1
+101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, and 997.",2.5,2.76,Special Number,617,,,1,,"2,8","2,8",1
 Park It Ranger,"Ranger Cadet Bu Star has just been given the task of moving the five cases of Park Pop soda at the Weiss Pavilion to the Wirth Pavilion, which is 5 miles away. For transportation, Bu must use a MoJoPed, a moped which runs on Park Pop. It can carry, at most, its rider and 25 bottles of soda, i.e., one case in its cargo carrier and one bottle in its fuel tank. It gets one mile to the bottle and is currently empty; it will only move under Pop power. How many unopened bottles can Bu deliver to the second pavilion?
 Comments to triflers:
 The bottles and cases are hi-tech, so there are no concerns about theft or littering. They can stay parked or be discarded anywhere. Yes, the constant rate of fuel use is unreal, and yes, of course, I am asking for the maximum number of bottles!","80
@@ -2152,7 +2152,7 @@ Original Number,"Take a five-digit number and reverse it. Subtract the original 
 How many different possibilities does the original number have?","Suppose that the original number is abcde. Then edcba-abcde=33957.
 Since e>a, we must have e=a+3 and therefore d=b+4, and c can be any digit.
 a can be 1 to 6 and e 4 to 9, b can be 0 to 5 and d 4 to 9, each pair has 6 possibilities, and c has 10 possibilities.
-Therefore, the original number has 6*6*10=360 different possibilities.",Work from the first and last digits.,2.47,2.75,SpecialNumber,360 different possibilities,,,0,,"2,7",2,0
+Therefore, the original number has 6*6*10=360 different possibilities.",Work from the first and last digits.,2.47,2.75,Special Number,360 different possibilities,,,0,,"2,7",2,0
 Mice & Ropes,"You have two identical ropes and three mice.  Each mouse bites off the rope at a different biting speed.  All three biting speeds are constant.
 Mouse(A) bites off one rope in 60 minutes.
 Mouse(B) bites off one rope in 90 minutes.
@@ -2211,7 +2211,7 @@ Sharks 2,"The Boldavian navy has a rigorous training program.  In order to gradu
 Since there were 4 times as many cadets, there were 28 cadets.  The number of cadet legs is equal to the square of the number of sharks, which would be 49 legs.  49 legs is 14 more than the number of cadet and shark heads: 7 sharks plus 28 cadets equals 35 heads.
 Note that although all of the cadets survived, nothing was said about possible injuries.  In fact, each shark had bitten off one leg from each of 7 cadets.  This explains the shortage of legs, since 28 cadets should have had 56 legs, not 49.  Also note the statement of the second cadet, who said 'the number of legs they NOW had ...'.","Set up systems of equations; notice that legs could be lost (""they now had"")",2.46,2.74,Algebra,7,,,0,,3,"3,8",0
 A Five Digit Palindromic Square,"There is a five digit square number that is palindromic, and each digit is also a nonzero square number.
-What is it?",44944=212^2.,"Of course, it must be the square of a palindromic number. Therefore, when you multiply its square root by itself, there's no carrying, because carrying will break the palindrome. And therefore...",2.38,2.74,SpecialNumber,44944,,,0,,2,2,1
+What is it?",44944=212^2.,"Of course, it must be the square of a palindromic number. Therefore, when you multiply its square root by itself, there's no carrying, because carrying will break the palindrome. And therefore...",2.38,2.74,Special Number,44944,,,0,,2,2,1
 Boutique Bouquets ...,"The owner of a Romankachi flower boutique follows a particular pattern for his business. During a period of inflation, he raises his prices by Y% and during a slowdown he decreases his existing prices by Y%. After a year in which there was inflation first, followed by a slowdown, the cost of a Red Rose bouquet  decreases by 162 Roka (Roka being the native Romankachi currency). After another year in which there was inflation once more followed by a slowdown, the cost of this bouquet reduces by a further 147.42 Roka. What was the original price of the  Red Rose bouquet ?","The original price of the  Red Rose bouquet is 1800 Roka.
 Let the original price of the Red Rose bouquet  be 'B' Roka.
 It is given that during a period of inflation, he raises his prices by Y% and during a slowdown he decreases his existing prices by Y%.
@@ -2277,12 +2277,12 @@ The pieces from two arrangements follow:
 1) ABCD, DEFG, ADH, and DGH.
 2) ABCD, EFGH, ADH, and DEH.",,0,,4,4,1
 Small Cubes,"A solid wooden cuboid is made which measures an exact, and even, number of centimetres along each of its edges. It is then painted black all over its exposed faces and, when the paint is dry, the cuboid is cut up into 1 centimetre cubes. These small cubes are counted and it is then found that the number having NO paint on them at all, is exactly the same as the number which do have some paint on them. What is the LEAST number of small cubes there could be in total?",Least is 960 (8 by 10 by 12),"Basically, the volume of the cuboid is double the volume of the cuboid with each dimension decreased by 2",2.31,2.73,Algebra,960,,,0,,7,4,0
-Three Squares a Day,"Find three numbers, all under 500, where the sum of all three is a perfect square and the sums of any two of them are also perfect squares.","41, 80, 320","For more convenient differences, some of the numbers might be smaller",2.3,2.73,SpecialNumber,"41, 80, 320",,,0,1,2,2,1
+Three Squares a Day,"Find three numbers, all under 500, where the sum of all three is a perfect square and the sums of any two of them are also perfect squares.","41, 80, 320","For more convenient differences, some of the numbers might be smaller",2.3,2.73,Special Number,"41, 80, 320",,,0,1,2,2,1
 Mad Ade's Simple Math,"Mad Ade noticed that he could arrange the five odd digits (1,3,5,7,9) into a five-digit number, such that the first two digits (as a 2-digit number) times the last two digits (as a 2-digit number) minus the center digit results in a number composed of repetitions of one digit.
 Mad Ade noted there were two possible answers.
 What are they?","Answers are 39157 and 57139
 39*57= 2223-1= 2222
-57*39= 2223-1= 2222",The repeated digit must be even,2.27,2.73,SpecialNumber,39157 and 57139,,,1,,2,8,0
+57*39= 2223-1= 2222",The repeated digit must be even,2.27,2.73,Special Number,39157 and 57139,,,1,,2,8,0
 Madadian Farm Animals,"Old Farmer McDoughnut owns a piece of grassland in the heart of Madadia and has three animals: a Madadian Burger Cow, a Spare Kebab Goat, and a Scotch Egg laying Goose. McDoughnut discovered the following:
 When the cow and the goat graze on the field together, there is no more grass after 45 days.
 When the cow and the goose graze on the field together, there is no more grass after 60 days.
@@ -2337,7 +2337,7 @@ According to the Pascal triangle, the two coefficients at either end of of the e
 1+1+123456789+123456789=246913580
 The digit 7 is absent from this sum.","In any binomial expression (a+b)^c, the smallest coefficients are 1, 1, c, and c",2.27,2.72,Combinatorics,7,,,0,,7,7,1
 50% Larger,"Find the smallest number such that if its rightmost digit is placed at its left end, the new number so formed is precisely 50% larger than the original number.","We know the repeating pattern for 1/7 and can try to observe k* 999999/7. The answer is 285714.
-If its rightmost digit is placed at its left end, the new number is 428571 which is 50% larger than the original number 285714.",Think about a repeating decimal pattern,2.26,2.72,SpecialNumber,285714,,,0,,2,2,1
+If its rightmost digit is placed at its left end, the new number is 428571 which is 50% larger than the original number 285714.",Think about a repeating decimal pattern,2.26,2.72,Special Number,285714,,,0,,2,2,1
 Madadian Ferries,"On the great ""Chilli"" lake of Madadia are two ferry boats that transport tourists from one side to the other.
 One boat is the ""Lead Balloon"", the other is the ""Iceberg Magnet"".  They travel from the Kebab Fountains on the east side of the lake and the Lard Sculpture on the west side of the lake.
 Each ferry travels at a constant speed, although the ""Lead Balloon"" is faster than the ""Iceberg Magnet"".
@@ -2367,7 +2367,7 @@ Consecutive numbers,"Between 1000 and 2000 you can get each integer as the sum o
 147+148+149+150+151+152+153 = 1050
 There is only one number that you cannot get.
 What is this number?","1024
-Only powers of 2 are not reachable, and the next number is 2048.",I hope you got the power!,2.72,2.71,SpecialNumber,1024,,,0,,2,2,1
+Only powers of 2 are not reachable, and the next number is 2048.",I hope you got the power!,2.72,2.71,Special Number,1024,,,0,,2,2,1
 Question Mark's Function Machine MKIII,"Question Mark cannot get enough of changing the formula to his function machine. This time, one number goes in, but TWO numbers come out. If:
 9 -> 576 & 72
 10 -> 810 & 90
@@ -2456,7 +2456,7 @@ Prime Ponderings,"What are the largest and smallest 5-digit numbers that satisfy
 Smallest - 32257
 Prime digits are 2, 3, 5 and 7.  Taken as pairs, the only combinations that fit criterion 2 are:
 22, 25, 27, 32, 33, 35, 52, 55, 57, 72, 75 and 77.
-Of that list, 33 is the only number that contains a 3 as the second digit and so for criterion 3 to be satisfied, 3 can only appear at the start of the 5-digit numbers.  From there it is simply a matter of choosing the next digits using the list above so that criterion 2 is satisfied, making sure that criterion 3 is also satisfied.",Look at clue 2 first and narrow down some choices,2.71,2.7,SpecialNumber,"Largest - 35772
+Of that list, 33 is the only number that contains a 3 as the second digit and so for criterion 3 to be satisfied, 3 can only appear at the start of the 5-digit numbers.  From there it is simply a matter of choosing the next digits using the list above so that criterion 2 is satisfied, making sure that criterion 3 is also satisfied.",Look at clue 2 first and narrow down some choices,2.71,2.7,Special Number,"Largest - 35772
 Smallest - 32257",,,0,,"2,8","2,8",1
 Pearls and Girls,"Once an old man died, and in his Will he stated that all the pearls he kept in a little bag were to be distributed among his daughters. To make things fair, the distribution must be done in the following way:
 The older girl should receive one pearl, and a seventh of the remaining pearls in the bag.
@@ -2496,7 +2496,7 @@ He writes down the following numbers:
 1, 2, 3, 4, 5, 6, 7, 9, 2, 4, 3, 9, 1, 5.
 The following numbers are used to create 7 distinct 2-digit prime numbers. Note that 1, 2, 3, 4, 5, and 9 must be used exactly twice while 6 and 7 must be used exactly once. What is the sum of those prime numbers?","313
 2, 4, and 6 cannot be in the one's place because that would make the number divisible by 2. 5 cannot also be in the ones place because that would make it divisible by 5. Thus, the sum of the primes is 10(2+4+5+6+2+4+5) + 1+3+7+9+1+3+9 = 313
-It is also possible to figure out the prime numbers, although that will probably take longer than 30 seconds.","Note that any 2 digit number can be written as 10t+u, where t is the ten's digit, and u is the one's digit.",2.22,2.7,SpecialNumber,313,,,0,,2,"2,7",0
+It is also possible to figure out the prime numbers, although that will probably take longer than 30 seconds.","Note that any 2 digit number can be written as 10t+u, where t is the ten's digit, and u is the one's digit.",2.22,2.7,Special Number,313,,,0,,2,"2,7",0
 Circle's Corner,"Consider the two lines AO and BO.  These two lines intersect at point O and are perpendicular to each other.
 If you were to draw a circle that were to intersect these two lines at points A and B and only at points A and B, what would be the smallest integral size of the larger arc AB in degrees?","181 degrees.
 If you created a circle with points A, B, and O on it, since angle AOB is a right angle, line AB is the diameter of this circle.  Therefore, arc AB would be 180 degrees if it actually were to intersect O as well as A and B.
@@ -3102,7 +3102,7 @@ No New Digits,"What 6 digit number when multiplied by either 2, 3, 4, 5 or 6 has
 142857 * 3 = 428571
 142857 * 4 = 571428
 142857 * 5 = 714285
-142857 * 6 = 857142",Think about a common repeating decimal pattern,2.71,2.62,SpecialNumber,142857,,,0,,2,2,1
+142857 * 6 = 857142",Think about a common repeating decimal pattern,2.71,2.62,Special Number,142857,,,0,,2,2,1
 7777,Can you take 4 7's and arrange them with any math symbols needed to make the total be 100?,Note that 77 and 77 can be separated to some form of the identity (77/77 = 1) but then we can use a decimal point to get 77/.77 and 77/.77=100,Division is needed,2.55,2.62,Arithmetic,77/.77,,,0,,1,1,1
 Alphabet Math,"Find what all the letters stand for to make the equation correct.
 ABCD x 4 = DCBA","4000A + 400B + 40C + 4D = 4000D + 400C + 40B + 4A; natural for A and D to be 2 and 8 because 8*4 = 32 and ends in 2 while 2*4 = 8--then it follows from easier brute force to finish the problem as you notice that no other combination of A and D is very suitable considering that D is limited to being even; A = 2, B = 1, C = 7, D = 8","If ABCD is being multiplied by 4, the answer must be even. Therefore, A, which is the last digit of the answer, must be even.",2.4,2.62,Logic,"A = 2, B = 1, C = 7, D = 8",,,0,,8,8,1
@@ -3115,8 +3115,8 @@ To prove this let's consider any five digit number, abcde. This number can be ex
 a*10000 + b*1000 + c*100 + d*10 + e = a*(9999+1) + b*(999+1) + c*(99+1) + d*(9+1) + e*1 = a*9999 + b*999 + c*99 + d*9 + a + b + c + d + e =
 9*(a*1111 + b*111 + c*11 + d*1) + a + b + c + d + e .
 9*(a*1111 + b*111 + c*11 + d*1) must be divisible by 9 because it is a factor of 9. So if a+b+c+d+e is also a factor of 9 then the entire number must be a factor of 9. Note also that the remainder of abcde/9 is the same as the remainder of (a+b+c+d+e)/9.
-The smallest number consisting of all 1's and divisible by 9 is thus 111,111,111. Adding the two zeros at the end results in the answer to the problem: 11,111,111,100.",,2.29,2.62,SpecialNumber,"11,111,111,100",,,0,,2,2,1
-Three Consecutive Primes,"Which three consecutive prime numbers, when multiplied together, give the product 190747?","60^3 = 216000; 50^3 = 125000; 53, 59 and 61.",50^2 = 125000,2.26,2.62,SpecialNumber,"53, 59 and 61.",,,0,,2,2,1
+The smallest number consisting of all 1's and divisible by 9 is thus 111,111,111. Adding the two zeros at the end results in the answer to the problem: 11,111,111,100.",,2.29,2.62,Special Number,"11,111,111,100",,,0,,2,2,1
+Three Consecutive Primes,"Which three consecutive prime numbers, when multiplied together, give the product 190747?","60^3 = 216000; 50^3 = 125000; 53, 59 and 61.",50^2 = 125000,2.26,2.62,Special Number,"53, 59 and 61.",,,0,,2,2,1
 8998971798998,"8998971798998
 What is so special about this set of numbers, aside from the fact that it is a palindrome?","Long numbers typically involve dividing the numbers into portions or adding the digits; being given the palindrome is a slight inkling to something about the pattern--As well as originally being a palindrome, when you add up the individual numbers the answer is also a palindrome (101).",Thinkm about other ways to find a palindrome,2.15,2.62,Pattern,when you add up the individual numbers the answer is also a palindrome,,,0,,2,2,1
 Find the Sum,Find the sum of all prime numbers between 1 and 100 that are simultaneously 1 greater than a multiple of 4 and 1 less than a multiple of 5.,"Numbers that are 1 greater than a multiple of 4 are 5, 9, 13, 17, 21... where 9 is 1 less than a multiple of 5. lcm(4, 5)=20, therefore the pattern repeats in each 20 numbers.
@@ -3135,10 +3135,10 @@ Which of these numbers are snogs?
 53     49     62
 8     4     18","The numbers 17, 49, and 57 are snogs.
 Snogs are each one more than a multiple of 8.",Snogs are one more than...,2.53,2.61,Pattern,"17, 49, and 57",,,0,,2,2,1
-The Order,"There is a five-digit number having digits 1-9, no two digits being identical. Two are prime numbers, two are square numbers, and one is neither. The third digit is twice the fifth, the fourth is six greater than the second and the last is three less than the first.","Third and fourth digits cannot be prime -- if the third is 2, then last is 1 and first is 4, but then the fourth is 9 and there are three squares; if the fourth is 7, then second is 1 and then either the last is 2 or 4 but either we have too many primes or a reoccurrence of 7; in fact, the second must be 3 and the fourth must be 9 since the third and fifth must be two powers of 2 and must contain one of 2 and 8; the last being 2 has too many primes so the last digit must be 4, so we get 73894",Third and fourth digits cannot be prime,2.33,2.61,SpecialNumber,73894,,,0,,"8,2",8,0
+The Order,"There is a five-digit number having digits 1-9, no two digits being identical. Two are prime numbers, two are square numbers, and one is neither. The third digit is twice the fifth, the fourth is six greater than the second and the last is three less than the first.","Third and fourth digits cannot be prime -- if the third is 2, then last is 1 and first is 4, but then the fourth is 9 and there are three squares; if the fourth is 7, then second is 1 and then either the last is 2 or 4 but either we have too many primes or a reoccurrence of 7; in fact, the second must be 3 and the fourth must be 9 since the third and fifth must be two powers of 2 and must contain one of 2 and 8; the last being 2 has too many primes so the last digit must be 4, so we get 73894",Third and fourth digits cannot be prime,2.33,2.61,Special Number,73894,,,0,,"8,2",8,0
 "192, 384, 576","There are four three-digit numbers that share this property: the number itself, its double and its triple contain each digit from 1 to 9 exactly once. For example, 192 is one of them because 192, 384, 576 contain 1 to 9 each once. 273 is another one of them because 273, 546, 819 contain 1 to 9 each once.
 Can you find the other two numbers that also have this property?","219 and 327.
-Just swap 19 and 2, swap 27 and 3, and you'll get them.","Yes, it's EASIER than you think. The problem statement itself is a hint",2.7,2.6,SpecialNumber,219 and 327,,,0,,2,2,1
+Just swap 19 and 2, swap 27 and 3, and you'll get them.","Yes, it's EASIER than you think. The problem statement itself is a hint",2.7,2.6,Special Number,219 and 327,,,0,,2,2,1
 Two Clocks 2,"At midnight on Sunday, December 31st, Professor Lawrence set two of her analog clocks to the correct time. One of her clocks gains one minute every hour and the other loses two minutes every hour.
 1. When will the clocks next show the same time as each other?
 2. When will the clocks both show the correct time?","1. Midnight after 10 days, which is 240 hours later. They both show 4 o'clock, one clock has gained 240 minutes (4 hours) and the other has lost 480 minutes (8 hours).
@@ -3192,7 +3192,7 @@ b) The number formed by adding 1 to the product of Fred's and my ages considered
 The two things that I could definitely say about the above integer value are :-
 1) It is a perfect square.
 2) The number formed is square of a number 1 more than my age in that year.
-Example: when I was 6, Fred was    8-> (6*8)+1 gives 49 which is the square of 7, a number 1 more than my age(6) in that year.",I'm exactly two years elder to Lavi and exactly two years younger to Fred.,2.08,2.6,SpecialNumber,"1) It is a perfect square.
+Example: when I was 6, Fred was    8-> (6*8)+1 gives 49 which is the square of 7, a number 1 more than my age(6) in that year.",I'm exactly two years elder to Lavi and exactly two years younger to Fred.,2.08,2.6,Special Number,"1) It is a perfect square.
 2) The number formed is square of a number 1 more than my age in that year.",,,0,,2,2,1
 Ahmes's Papyrus,"About 2000 B.C. there lived Ahmes, a royal secretary and mathematician of the Pharaoh Amenemhat III. In 1853 an Englishman Rhind found one of Ahmes's papyruses near the temple of Ramses II in Thebes. The papyrus is a rectangle 33 cm wide and about 5 m long. There is the following math brain teaser on it (besides others).
 100 measures of corn must be divided among 5 workers, so that the second worker gets as many measures more than the first worker, as the third gets more than the second, the fourth more than the third and the fifth more than the fourth. The first two workers shall get seven times less measures of corn than the three others.
