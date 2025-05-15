@@ -100,7 +100,7 @@ def main():
     args = parser.parse_args()
     os.makedirs(f"../responses/Math/{args.name}", exist_ok=True)
 
-    data = pd.read_csv(f'../responses/Math/FinalMath-o3/resultsAll.csv')
+    data = pd.read_csv(f'../responses/Math/FinalMath-DSChat/resultsAll.csv')
     outputs = pd.DataFrame(columns=['ID', 'Question', 'Hint', 'Human Solution', 'Model', 'PromptType', 'Response', 'Status', 'StepCount','Steps', 'Creative', 'Rudimentary'])
 
     instructionSet = {
@@ -163,7 +163,7 @@ def main():
 
                     #print(response)
 
-    outputs.to_csv(f"../responses/Math/{args.name}/stepcountresults.csv", index=False)
+    outputs.to_csv(f"../responses/Math/{args.name}/dscstepcountresults.csv", index=False)
 
 if __name__ == "__main__":
     main()
