@@ -7371,3 +7371,3246 @@ doors is
 C  →  F  →  D  →  A  →  B  →  E.
 
 Final answer: C, F, D, A, B, E",True
+180,"Question: In a distant planet called Zlymph (pronounced: zl-i-mf) there were 6 different creatures there.
+One was called Fymphy.
+Another was called Lymfry.
+Yet another was called Phyzygwy.
+The next one was called Blympy.
+Hyjyky was the name of another one.
+Finally, there was the Jygzyll.
+What you are trying to find out is the following things using the clues after this:
+What they enjoyed to eat,
+What they hated to eat,
+and what planet they were originally from.
+Choose from the following:
+Food: Humans, other creatures, dragons, dirt from the planet, metal, and salt.
+Planets: Venus, Pluto, Sun, Mercury, Jupiter, and Uranus.
+CLUES!
+1. The one who hates dirt from the planet was from Uranus.
+2. The Blympy hates what the Jygzyll loves.
+3. The one who loves humans is from a gas planet.
+4. The Fymphy should be dehydrated.
+5. The Lymfry hates what the Fymphy loves.
+6. The one who hates humans is from Pluto.
+7. The one who loves dragons is from Venus.
+8. The Jygzyll hates what the Lymfry loves.
+9. The Hyjyky loves what the Phyzygwy hates.
+10. The Hyjyky hates what the Blympy loves.
+11. The Blympy hates what the Phyzygwy loves.
+12. The Jygzyll loves what the Fymphy hates.
+13. The Fymphy loves an organism that is both an herbivore and a carnivore.
+14. The Lymfry loves a mythical creature.
+15. No human can get near the place the Blympy is from.
+16. The Phyzygwy is from Mercury.
+17. The Blympy loves dirt from the planet.
+ Hint: Salt = dehydration",Salt = dehydration,"Fymphy: Loves salt (clue 4), hates humans (clue 6), and is from Pluto (clue 6).
+Lymfry: Loves dragons (clue 14), Hates salt (clue 4/5), and is from Venus (7).
+Blympy: Loves dirt from the planet (clue 17), hates metal, (clue 11), and is from the sun (clue 15).
+Jygzyll: Loves humans (clue 12), hates dragons (clue 8), and is from Jupiter (clue 3).
+Phyzygwy: Loves metal (clue 11), hates other creatures (clue 9), and is from Mercury (clue 16).
+Hyjyky: Loves other creatures (clue 9), hates dirt from the planet (clue 10), and is from Uranus (clue 1).",GPT-o3,combinedhintPrompt,I was unable to find a logically-consistent assignment satisfying all of the numbered clues simultaneously.,True
+181,"Question: Mad Ade is once more perched outside the ""Sweaty Chef Kebab Shop"" waiting for it to open. He glances at his new digital watch and notices that the time and date display used 10 digits in its HH:MM:SS Month/Day format.
+It was 17:59:56 09/03.
+Mad Ade wondered to himself, if all ten digits 0-9 appear on the display, what is (a) the earliest, and (b) the latest date and time in the year this could happen?
+Obviously he didn't work out the answer as the doors opened and his mind turned to more important things.
+What would the answer be?
+ Hint: There are 5 digits positions which all must be 5 or less. Use this to deduce that the first spot must be a 1.",There are 5 digits positions which all must be 5 or less. Use this to deduce that the first spot must be a 1.,"A, The earliest time of the year is 17:48:59 03/26
+B, The latest time of the year is 17:56:43 09/28",GPT-o3,combinedhintPrompt,"We write the display as  
+
+H H : M M : S S   M o / d d  
+
+and call the ten digit–places  
+
+1 2 3 4 5 6 7 8 9 10  
+H​T H​O M​T M​O S​T S​O M​T d g M​O d T d O  
+
+(The colons and the slash are not digits.)
+
+Basic restrictions  
+
+• H​T ∈ {0,1,2}, H​O ∈ {0-9} with H​O ≤ 3 if H​T = 2.  
+• M​T , S​T ∈ {0-5}.  
+• M​T (month–tens) = 0 or 1.  
+• d T ∈ {0-3} (and in February only 0-2).  
+
+Thus the five places H​T, M​T, S​T, M​T, d T can only contain the six low digits 0-5.  
+Because every digit 0-9 must appear exactly once, the four high
+digits 6,7,8,9 have to occupy the five “free” places H​O, M​O, S​O, M​O, d O;  
+consequently
+
+(1)  H​T cannot be 2 (then H​O ≤3 and we would have only 4 free places for the four
+high digits, leaving nowhere for the sixth low digit).  
+(2)  Therefore H​T = 1.  
+(3)  M​T=0 (because 1 is already used).
+
+Hence the month is 0x and cannot use the digit 1.  
+Month 02 is impossible (day-tens would have to repeat 0,1 or 2),  
+so the earliest possible month is March (03).
+
+–––––––––––––––– EARLIEST ––––––––––––––––
+
+With month = 03 we already have 0,1,3 used.  
+To avoid a second low digit outside the restricted five positions,
+day-tens must be the remaining low digit 2, and day-ones has to be one
+of the high digits.  
+The smallest resulting day is therefore 26.
+
+Used so far: 0,1,2,3 and 6.  
+Among the still unused low digits 4 and 5 we must put one in M​T and one in S​T;  
+the smaller assignment (M​T=4, S​T=5) gives the smaller time.
+
+The four high digits left are 7,8,9 and (after using 6 in the day) they must go to
+H​O, M​O, S​O.  
+To minimise the clock we take
+
+H​O = 7 → hour 17  
+M​O = 8 → minute 48  
+S​O = 9 → second 59  
+
+All ten digits are now used once and all calendar/time conditions are met:
+
+17 : 48 : 59 03 / 26
+
+So the earliest instant is
+
+(a) 17:48:59 on 26 March.
+
+–––––––––––––––– LATEST ––––––––––––––––
+
+Because H​T = 1, no month containing another 1 is allowed, so
+October (10), November (11) and December (12) are ruled out;
+the latest possible month is therefore 09 (September).
+
+Month 09 consumes the digits 0 and 9 together with the already fixed 1.
+Among the low digits still free (2,3,4,5) three must go to
+d T, M​T, S​T.  To have the largest date we choose
+
+d T = 2 , d O = 8 → day 28 (29 would repeat the 9 of the month,
+30 would repeat the 0).
+
+Now the remaining digits are 3,4,5,6,7.  
+To maximise the time we take
+
+H​O = 7 → hour 17  
+M​T = 5 , M​O = 6 → minute 56  
+S​T = 4 , S​O = 3 → second 43
+
+Again every digit 0-9 appears exactly once and all constraints are satisfied:
+
+17 : 56 : 43 09 / 28
+
+Hence the latest instant is
+
+(b) 17:56:43 on 28 September.
+
+
+Final answer:  
+(a) 17:48:59 on 26 March  
+(b) 17:56:43 on 28 September",True
+182,"Question: You've been placed on a course of expensive medication in which you are to take one tablet of Sildenafil and one tablet of Citrate daily. You must be careful that you take just one of each because taking more of either can have serious side effects.
+Taking Sildenafil without taking Citrate, or vice versa, can also be very serious, because they must be taken together in order to be effective. In summary, you must take exactly one of the Sildenafil pills and one of the Citrate pills at one time. Therefore, you open up the Sildenafil bottle, and you tap one Sildenafil pill into your hand. You put that bottle aside and you open the Citrate bottle. You do the same, but by mistake, two Citrates fall into your hand with the Sildenafil pill.
+Now, here's the problem. You weren't watching your hand as the pills fell into it, so you can't tell the Sildenafil pill apart from the two Citrate pills. The pills look identical. They are both the same size, same weight (10 micrograms), same color (Blue), same shape (perfect square), same everything, and they are not marked differently in any way.
+What are you going to do? You cannot tell which pill is which, and they cost $300 a piece, so you cannot afford to throw them away and start over again. How do you get your daily dose of exactly one Sildenafil and exactly one Citrate without wasting any of the pills?
+ Hint: You can cut pills in half",You can cut pills in half,"Carefully cut each of the three pills in half, and carefully separate them into two piles, with half of each pill in each pile. You do not know which pill is which, but you are 100% sure that each of the two piles now contains two halves of Citrate and half of Sildenafil. Now go back into the Sildenafil bottle, take out a pill, cut it in half, and add one half to each stack. Now you have two stacks, each one containing two halves of Sildenafil and two halves of Citrate. Take one stack of pills today, and save the second stack for tomorrow.",GPT-o3,combinedhintPrompt,"1. Place the three indistinguishable tablets that are in your hand on the table.  
+   – You know they consist of 1 Sildenafil (S) and 2 Citrates (C).
+
+2. With a pill-cutter (or a clean razor blade) cut EACH of the three tablets exactly in half.  
+   – You now have six half-tablets.  
+   – From every original tablet one half lies on the left, the other half on the right.
+
+3. Make two piles, pile A and pile B, by putting  
+   • one half of every tablet into pile A,  
+   • the other half of every tablet into pile B.  
+
+   Because the original set was {S, C, C}, each pile now contains  
+        ½ S  +  ½ C  +  ½ C  =  ½ S  + 1 C.  
+
+   In words: each pile already holds a full day’s quantity of Citrate and half a day’s quantity of Sildenafil.
+
+4. Open the Sildenafil bottle, take ONE new Sildenafil tablet, and cut it in half.  
+   – Add one of those halves to pile A and the other half to pile B.
+
+   After this addition each pile contains  
+        (½ S  + ½ S)  + 1 C  =  1 S  + 1 C.
+
+5. Swallow the contents of pile A now.  
+   – This gives you exactly one full Sildenafil dose and one full Citrate dose for today.
+
+6. Keep pile B (well labelled) for tomorrow.  
+   – Tomorrow you will again take exactly one full Sildenafil dose and one full Citrate dose, with no tablet wasted and no risk of an incorrect dose.
+
+Thus you obtain today’s required medication without discarding or mis-dosing any pill, and every tablet you paid for is fully used.",True
+183,"Question: The first chess tournament ended. Bab, Beb, Bib, Bob and Bub became good friends, and returned to their houses.
+They told their wives about the tournament. Their wives were also chess players, and they decided to hold another tournament.
+This time, each of the 10 players was going to play against each other player once, with an exception that no games were played between the couples. So a total of 40 games would be played.
+After some days passed, they decided to have a get-together. Bub asked the other people how many matches until then they had played.
+Something fun was that Bub heard 9 different answers.
+How many matches until then had Mrs. Bub played?
+ Hint: If you can't figure it out, draw a diagram.","If you can't figure it out, draw a diagram.","Each player could play at most 8 matches, so the answers Bub heard was 0, 1, 2, 3, 4, 5, 6, 7, 8 in some order.
+Assume without loss of generality that it was Bab that had played 8 matches. Then all players except Mrs. Bab must have played against Bab, and it must have been Mrs. Bab who had played no matches.
+Then, assume without loss of generality that Beb had played 7 matches, and then all players except Mrs. Bab and Mrs. Beb must have played against Beb, and it must have been Mrs. Beb who had played 1 match.
+Repeat this and we know that Mrs. Bub had played 4 matches.",GPT-o3,combinedhintPrompt,,False
+184,"Question: Al, Ben, Carl, and Dan live in four adjacent apartments. The apartments are set up like this:
+|1|2|3|4|
+with apartment 1 being the westernmost apartment and apartment 4 being the easternmost. One of the four is the landlord. Here are some facts:
+1. If Carl does not live next to Ben, then Al is the landlord and he lives in apartment 1.
+2. If Al lives east of Carl, then Dan is the landlord and he lives in apartment 4.
+3. If Ben does not live next to Dan, then Carl is the landlord and he lives in apartment 3.
+4. If Dan lives east of Al, then Ben is the landlord and he lives in apartment 2.
+Who is the landlord?
+ Hint: All four facts are in the form of ""hypothesis and conclusion"" statements. If the hypothesis of such a statement is false, the whole statement is true. If the conclusion is true, the whole statement is true. However, if the hypothesis is true and the conclusion is false, the statement is false. This means that each statement has either a false hypothesis or a true conclusion.","All four facts are in the form of ""hypothesis and conclusion"" statements. If the hypothesis of such a statement is false, the whole statement is true. If the conclusion is true, the whole statement is true. However, if the hypothesis is true and the conclusion is false, the statement is false. This means that each statement has either a false hypothesis or a true conclusion.","Carl is the landlord.
+Obviously only one conclusion is true at most. Let us suppose that all conclusions are false. This would mean that each hypothesis is also false. From facts 1 and 3, Ben lives next to both Carl and Dan, and therefore between Carl and Dan. Then either Al lives east of both Carl and Dan (contradicting fact 4) or Carl and Dan both live east of Al (contradicting fact 2.) So there must be exactly one true hypothesis, which will be paired with the one true conclusion. Obviously each of the three false conclusions is paired with a false hypothesis.
+If conclusion 1 is true, then Al lives in apartment 1. But since hypothesis 4 is false, Al has to live east of Dan. So this cannot be right.
+If conclusion 2 is true, then Dan lives in apartment 4. But since hypothesis 4 is false, Al must live east of Dan. So this cannot be right, either.
+If conclusion 4 is true, Ben lives in apartment 2. Then, since hypotheses 1 and 3 are false, Ben lives between Carl and Dan, putting Al in apartment 4. But since hypothesis 2 is false, Carl must live east of Al. Therefore, conclusion 3 is true.",GPT-o3,combinedhintPrompt,"We denote by  
+
+A, B, C, D the four men,  
+1, 2, 3, 4 the apartments counted from west to east,  
+L the landlord.
+
+Each of the four given sentences is of the form “IF (hypothesis) THEN (conclusion)”.
+For every sentence to be true we must have, for each of them,
+
+ either the hypothesis is false  
+ or    the whole conclusion is true.
+
+The four sentences therefore translate into the following logical conditions.
+
+(1)  (C not next to B) ⇒ (L = A and A = 1)  
+  So either C is next to B, or else A is landlord and lives in 1.
+
+(2)  (A east of C) ⇒ (L = D and D = 4)  
+  So either A is not east of C, or else D is landlord and lives in 4.
+
+(3)  (B not next to D) ⇒ (L = C and C = 3)  
+  So either B is next to D, or else C is landlord and lives in 3.
+
+(4)  (D east of A) ⇒ (L = B and B = 2)  
+  So either D is not east of A, or else B is landlord and lives in 2.
+
+Because there is exactly one landlord, at most one of the four conclusions can be true.
+We examine the four possible landlords in turn.
+
+──────────────────
+1.  Assume L = A.
+
+• If A were in apartment 1, sentence (4) would have true hypothesis
+  (D must be east of A) and false conclusion, contradicting truth of (4).  
+• If A were not in apartment 1, sentence (1) forces C next to B; sentences (3) and (4)
+  then force B to be next to both C and D and at the same time D to lie west of A.
+  A short check of the four positions shows this is impossible.
+
+Therefore A cannot be landlord.
+
+──────────────────
+2.  Assume L = D.
+
+• If D were in apartment 4, sentence (4) again has true hypothesis and false conclusion,
+  contradicting truth of (4).  
+• If D is not in 4, sentences (1), (3) and (4) all demand that B be next to both C and D
+  with D lying west of A and A lying west of C.  No ordering of the four men in the
+  four apartments fulfils all those adjacency and ordering requirements.
+
+Hence D cannot be landlord.
+
+──────────────────
+3.  Assume L = C.
+
+Sentence (3) then tells us that C must be in apartment 3, for otherwise its conclusion
+would be false and its hypothesis would have to be false too, which is impossible
+(because B might or might not be next to D).  So fix
+
+ C = 3  and  C is landlord.
+
+Now examine the other sentences.
+
+• Sentence (1):  its conclusion is false (A is not landlord), so its hypothesis
+  must be false – therefore C is next to B.  With C in 3, we must have  
+
+ B = 2 or B = 4.
+
+• Sentence (2):  its conclusion is false (D is not landlord), so its hypothesis
+  must be false – therefore A is not east of C; hence  
+
+ A = 1 or A = 2.
+
+• Sentence (4):  its conclusion is false (B is not landlord), so its hypothesis
+  must be false – therefore D is not east of A; thus  
+
+ D lies west of A.
+
+Try the possibilities consistent with the distinct apartments 1–4.
+
+If B = 2, then C = 3 (fixed) and B next to C are satisfied, leaving apartments 1 and 4
+for A and D with D west of A.  Taking D = 1, A = 4 violates “A not east of C”.
+Hence B cannot be 2.
+
+Therefore B = 4.  Then the remaining two apartments 1 and 2 go to A and D, with
+D west of A.  The only way is  
+
+ D = 1, A = 2.
+
+Check every sentence:
+
+(1)  C (3) is next to B (4) ⇒ hypothesis is false ⇒ sentence true.  
+(2)  A (2) is not east of C (3) ⇒ hypothesis false ⇒ sentence true.  
+(3)  Conclusion (C landlord & C = 3) is exactly true.  
+(4)  D (1) is not east of A (2) ⇒ hypothesis false ⇒ sentence true.
+
+All four sentences are satisfied with the arrangement
+
+ 1 : D  2 : A  3 : C (landlord)  4 : B.
+
+──────────────────
+The only consistent possibility is that Carl is the landlord (living in apartment 3).
+
+Final answer: Carl",True
+185,"Question: In the following code, each symbol stands for one of five letters.
+@ stands for M, O, F, L, or V
+$ stands for B, N, R, E, or J
+% stands for T, F, B, L, or A
+! stands for W, T, S, E, or I
+# stands for F, O, A, T, or L
+The five letter code word, %$#@!, can be translated into two English words that are opposites. What are the two words?
+ Hint: Prepositions",Prepositions,Above and Below,GPT-o3,combinedhintPrompt,Final answer: ABOVE and BELOW,True
+186,"Question: Two friends, Joe and Smoe, were born in May, one in 1932, the other a year later. Each had an antique grandfather clock of which he was extremely proud. Both of the clocks worked fairly well considering their age, but one clock gained ten seconds per hour while the other one lost ten seconds per hour. On a day in January, the two friends set both clocks correctly at 12:00 noon. ""Do you realize,"" asked Joe, ""that the next time both of our clocks will show exactly the same time will be on your 47th birthday?"" Smoe agreed. Who is older, Joe or Smoe?
+ Hint: To find the answer, we have to find how long it will be before the clocks show the same time again","To find the answer, we have to find how long it will be before the clocks show the same time again","To find the answer, we have to find how long it will be before the clocks show the same time again. This is when the slow clock loses six hours, and the fast one gains six hours. This will take 90 days. In 90 days they will come together at 6:00. On a calendar, there are 90 days between noon January 31, and noon May 1 in years with no leap year. If Smoe had been born in 1933, his 47th birthday would have been in 1980, a leap year. This means that Smoe must be older, born in 1932, and the time of this problem is 1979.",GPT-o3,combinedhintPrompt,"Let the two clocks be perfect at 12:00 noon on some January day.  
+Suppose Joe’s clock gains 10 s every hour while Smoe’s loses 10 s every hour (the argument is unchanged if the roles are reversed).
+
+1.  Relative rate of separation  
+   The two readings separate at  
+      10 s / h  +  10 s / h  = 20 seconds per real hour.
+
+2.  When will the dials read the same again?  
+   Two ordinary grandfather-clock dials are identical whenever their readings differ by an exact integral multiple of 12 h (one full revolution of the hour hand).  
+   The first non-trivial coincidence therefore occurs when the faster clock is 12 h ahead of the slower one, i.e. when the separation is 12 h = 43 200 s.
+
+   Time required = 43 200 s ÷ 20 (s/h) = 2 160 h.
+
+   2 160 h = 2 160 ÷ 24 = 90 days.
+
+   Hence the first repeat of identical readings is exactly 90 days after they were set.
+
+3.  Relating the 90 days to the birthday  
+   Joe tells Smoe that this first coincidence will occur on Smoe’s 47th birthday, which is in May.  
+   Therefore
+
+      (January setting date)  + 90 days  =  (May birthday).
+
+   Let the birthday be the m-th of May in the year of the 47th birthday.  
+   Count the day numbers (Day 1 = 1 Jan) in an ordinary (non-leap) year:
+
+      Day number of 1 May = 31 (Jan) + 28 (Feb) + 31 (Mar) + 30 (Apr) + 1
+                          = 121.
+      Day number of m May = 120 + m.
+
+   Subtracting 90 days, the January setting date has day number
+
+      120 + m – 90 = 30 + m.
+
+   For this to lie in January (day numbers 1–31) we must have
+
+      1 ≤ 30 + m ≤ 31  ⇒  m = 1.
+
+   Thus in an ordinary year the only possibility is
+
+      Setting date : 31 January,  
+      Coincidence  : 1 May (Smoe’s birthday).
+
+   In a leap year February has 29 days; then
+
+      Day number of m May = 121 + m, 
+      121 + m – 90 = 31 + m ≥ 32,
+
+   which is already February.  Hence the required 90-day interval places the birthday in **a non-leap year** whose 1 May is the 47th birthday.
+
+4.  Which year is it?  
+   If Smoe was born in May 1932, the 47th birthday is May 1979 — a non-leap year.  
+   If Smoe was born in May 1933, the 47th birthday is May 1980 — a leap year, impossible by the calculation above.
+
+   Therefore Smoe must be the one born in 1932.
+
+Hence Smoe is the older friend (47 on 1 May 1979), and Joe is the younger, born in 1933.
+
+Final answer: Smoe is older than Joe.",True
+187,"Question: You have four jugs:
+A: 10-liter jug, filled with water
+B: 10-liter jug, filled with water
+C: 10-liter jug, empty
+D:  9-liter jug, empty
+Your objective is to end up having 1 liter in any 10-liter jug and 4 liters in 9-liter jug.
+You have nothing else at your disposal and you can not measure using eye or shape of jugs.
+Also water can only be transferred between jugs and not dumped out from any of the jugs.
+ Hint: Not much of a hint, but it can be solved in 20 steps.","Not much of a hint, but it can be solved in 20 steps.","If we label jugs as stated in problem , ABCD, with 9-liter jug being D, problem can be solved in 20 steps, as shown below. Each step is shown in one row, where line start with number of step, followed by information from what jug we poured water into what jug, and how much ... ie.   A -> (9) -> D means we poured 9 liters of water from jug A (being 1st 10-liter jug) to jug D (being 9-liter jug). Finally in row we show how much water we have in each jug after performed this step.
+---------------------------------
+#s  From-Qty-To     A  B  C  D
+---------------------------------
+0:                =  10 10  0  0
+1:  A ->( 9)->  D =   1 10  0  9
+2:  D ->( 9)->  C =   1 10  9  0
+3:  A ->( 1)->  D =   0 10  9  1
+4:  B ->( 8)->  D =   0  2  9  9
+5:  D ->( 9)->  A =   9  2  9  0
+6:  A ->( 1)->  C =   8  2 10  0
+7:  B ->( 2)->  D =   8  0 10  2
+8:  C ->( 7)->  D =   8  0  3  9
+9:  D ->( 2)->  A =  10  0  3  7
+10:  D ->( 7)->  B =  10  7  3  0
+11:  A ->( 9)->  D =   1  7  3  9
+12:  A ->( 1)->  C =   0  7  4  9
+13:  D ->( 9)->  A =   9  7  4  0
+14:  A ->( 3)->  B =   6 10  4  0
+15:  B ->( 9)->  D =   6  1  4  9
+16:  B ->( 1)->  C =   6  0  5  9
+17:  D ->( 4)->  A =  10  0  5  5
+18:  D ->( 5)->  B =  10  5  5  0
+19:  A ->( 9)->  D =   1  5  5  9
+20:  D ->( 5)->  B =   1 10  5  4
+After 20th step we end up with 1 liter in first 10-liter jug (A), and 4 liters in 9-liter jug (D), as requested in problem.",GPT-o3,combinedhintPrompt,,False
+188,"Question: Ole Santa's pack held thirty toys
+Made by his elfin crew;
+And though none made the same amount,
+Each elf made more than two.
+The elf named Cher made one more Christmas toy
+Than the elf who dressed in reds,
+But Cher made one less Christmas toy
+Than the elf who made the sleds.
+Spry Johnny Elf made racing cars;
+Five toys were made by Jane.
+The elf who dressed in yellow suits
+Made each and every train.
+The elf who always dressed in green
+Made one-third as many as Sue;
+Cute Marcia elf was dressed in orange,
+And one elf dressed in blue.
+The elf who made the spinning tops
+Made the most toys of them all.
+Another perky smiling elf
+Made each and every ball.
+Ole Santa's pack held thirty gifts
+All tagged for girls and boys.
+From the clues that you've been given,
+Now guess who made the toys!
+ Hint: This puzzle involves five elves dressed in five different colors each making a different toy. Figure out the numbers that fit these conditions and can add up to thirty!",This puzzle involves five elves dressed in five different colors each making a different toy. Figure out the numbers that fit these conditions and can add up to thirty!,"Cute Marcia was in orange and made seven sleds.
+Sue was in blue and made nine spinning tops.
+Jane was in red and made five balls.
+Spry Johnny was in green and made three racing cars.
+Cher was in yellow and made six trains.",GPT-o3,combinedhintPrompt,"Cher – 6 trains, dressed in yellow  
+Johnny – 3 racing cars, dressed in green  
+Jane – 5 balls, dressed in red  
+Sue – 9 spinning tops, dressed in blue  
+Marcia – 7 sleds, dressed in orange  
+
+Final answer: Cher made 6 trains and wore yellow; Johnny made 3 racing cars and wore green; Jane made 5 balls and wore red; Sue made 9 spinning tops and wore blue; Marcia made 7 sleds and wore orange.",True
+189,"Question: You are back on the same game show with four other contestants. You didn't realise last time that the winner gets another appearance on the show! You now have another chance to win half a million dollars and become a millionaire! The objective is to crack the combination of the safe using the clues. The first person to do so will win $500,000.
+The safe combination looks like this:
+??-??-??-??
+A digit can be used more than once in the code, and there are no zeroes.
+Here are the clues:
+1. When adding the first number of the third set with the second number of the second set, you will get a number below 8.
+2. The only digits not used in the code are 5 and 7.
+3. When adding the two digits of the first set together, you will not get 10.
+4. If you multiply the second set by 4, you will get the fourth set reversed.
+5. No set has a number above 90.
+6. The product of both the digits in the first set is below 30 but above 20.
+7. One of the number sets is 66.
+8. There is only one 8 in the combination, and it is in the last set.
+Now, get cracking!
+
+ Hint: ??-??-66-??",??-??-66-??,"The set is 39-21-66-48.
+First of all, the second clue tells you there are no 5's or 7's in the combination.
+Now we go to the fourth clue. It tells you that if you multiply the second set by 4, you will get the fourth set reversed. There are only a few numbers that will satisfy this:
+11, 12, 16, 21, 22, 23 and 24.
+Now we skip down to clue 8, which tells us there is one 8 only, and it is in the last set. It could either be the first digit or the second digit.
+However, this eliminates these numbers from being in the second set: 11, 16, 23 and 24. Now, only 12, 21 and 22 are the possibilities for being in the second set.
+Now, let's look at clue 7. This tells us that 66 is one of the four number sets. We know it can't be in the second, or fourth, and since clue six tells us the product of the two numbers in the first set ranges from 21-29, 66 must go in the third set.
+??-??-66-??
+Now we must look at the first clue. The first number of the third set (6) plus the second number of the second set will get a number below 8. This means it cannot be 12 or 22, because they would both total 8. This means that the second set of numbers is 21. Making good progress!
+??-21-66-??
+Now, we come back to clue 4 which tells us the second set multiplied by 4 equals the fourth set reversed. 21 multiplied by 4 is 84, which when reversed is 48!
+??-21-66-48
+Now, we come back to clue 6, which tells us the product of the digits in the first set is above 20 but below 30. These are the only numbers that satisfy that condition - and remember, no 5's, 7's or 8's are left in the combination:
+39 (3 * 9 = 27)
+46 (4 * 6 = 24)
+64 (6 * 4 = 24)
+93 (9 * 3 = 27)
+Now, we look at clue 5. This eliminates 93. Now, come to clue 3. This tells us the sum of the two digits in the first set does not equal 10. This eliminates 46 and 64. The only number left is.... 39!
+Now you have your answer;
+39-21-66-48
+Congratulations!!! You won, again!! You are over the moon! You have become the first millionaire in five generations of your family history!!",GPT-o3,combinedhintPrompt,Final answer: 39-21-66-48,True
+190,"Question: A warden at a prison decides to give some prisoners a chance to escape by working together to solve a puzzle. He prepares a colored hat for every one of them and tells them the rules. The hats can be either black or white and will be placed on everyone's head.  The prisoners will get a chance to discuss a strategy together, which they will all follow, then they will be marched out into a large room where they will see everybody else's hat color. Each prisoner will then simultaneously guess which of the two hat colors they have. If every one of them is right, or every one of them is wrong, they will all go free. However, the prisoners will not be allowed to communicate in any way during this process. Also, the warden will hear their strategy and place hats any way he can to prevent them from going free. What strategy do they use to escape?
+ Hint: Think about it for two people and then three people. What will be the difference between what a white hatted person sees and a black hatted person sees?",Think about it for two people and then three people. What will be the difference between what a white hatted person sees and a black hatted person sees?,"Every prisoner should count up how many black hats they see. If they count an odd number of black hats, they say that they have a black hat. If they count an even number of black hats, then they say that they have a white hat.",GPT-o3,combinedhintPrompt,"Final answer:  
+Agree in advance that “white” will represent 1 and “black” will represent 0, and that the prisoners want the total number of 1’s (white hats) to be even.
+
+When the hats are on:
+
+1. Each prisoner counts how many white hats he can see on the others.  
+2. If he sees an even number of white hats he announces “black”;  
+   if he sees an odd number of white hats he announces “white”.
+
+Why it works  
+Let W be the actual total number of white hats (mod 2).  
+For prisoner j let sᱼ = 1 if his own hat is white and 0 if it is black.  
+He sees W − sᱼ white hats, whose parity is Pᱼ = W ⊕ sᱼ.  
+He therefore guesses gᱼ = Pᱼ.
+
+Compare gᱼ with the true color sᱼ:
+
+gᱼ ⊕ sᱼ = (W ⊕ sᱼ) ⊕ sᱼ = W.
+
+• If W = 0 (an even number of white hats), then gᱼ = sᱼ for every j: every guess is correct.  
+• If W = 1 (an odd number of white hats), then gᱼ ≠ sᱼ for every j: every guess is wrong.
+
+Thus the whole group is either entirely right or entirely wrong, so the prisoners always win, no matter how the warden chooses the hats.",True
+191,"Question: Madadian Multi-Squillionaire Sheik Ratelunroll has bought four prestige cars from the Madadian Motor Company (MMC) - The Silver Dream, The Golden Pleasure, The Devine Lightning, and a The Rusting Bucket, - as presents for his sons' birthdays, all of which are next week (strange things like this happen in Madadia all the time). Given the following information, what will each son get?
+1, Derek will not get The Golden Pleasure unless Berrick gets The Silver Dream and Eric gets The Rusting Bucket.
+2, Berrick will not get The Rusting Bucket unless Merick gets The Devine Lightning and Derek gets The Silver Dream.
+3, Eric will not get The Devine Lightning unless Derek gets The Golden Pleasure and Berrick gets The Silver Dream.
+4, Derek will not get The Silver Dream unless Merick gets The Devine Lightning and Eric gets The Rusting Bucket.
+5, Berrick will not get The Silver Dream unless Derek gets The Devine Lightning and Eric gets The Rusting Bucket.
+6, Derek will not get The Devine Lightning unless Berrick gets The Golden Pleasure and Merick gets The Silver Dream.
+7, Merick will not get The Devine Lightning unless Berrick gets The Golden Pleasure and Derek gets The Rusting Bucket.
+8, Derek will not get The Rusting Bucket unless Berrick gets The Devine Lightning and Eric gets The Golden Pleasure.
+9, Merick will not get The Silver Dream unless Eric gets The Golden Pleasure.
+ Hint: Starting with the simplest requirement, #9, assume that Eric does in fact get The Golden Pleasure, then Merick gets The Silver Dream.","Starting with the simplest requirement, #9, assume that Eric does in fact get The Golden Pleasure, then Merick gets The Silver Dream.","Starting with the simplest requirement, #9, assume that Eric does in fact get The Golden Pleasure, then Merick gets The Silver Dream. This leaves The Rusting Bucket and The Devine Lightning for Berrick and Derek. Going to rule #8, Eric already has The Golden Pleasure, so if Berrick gets The Devine Lightning, then Derek can have The Rusting Bucket. This gives us the following that complies with rules 8 & 9:
+Eric = The Golden Pleasure
+Merick = The Silver Dream
+Berrick = The Devine Lightning
+Derek = The Rusting Bucket
+Now, to see if this works, just check it out against rules 1 through 7, where you'll find no rules are violated and everyone's happy except Derek who got stuck with The Rusting Bucket.",GPT-o3,combinedhintPrompt,"Let  
+
+SD = The Silver Dream,  
+GP = The Golden Pleasure,  
+DL = The Devine Lightning,  
+RB = The Rusting Bucket,  
+
+and denote by D, B, E, M the four sons Derek, Berrick, Eric, Merick.  
+Each statement is of the form “If X gets Y then …”, i.e. an implication.
+
+(1) D = GP  ⇒  B = SD & E = RB  
+(2) B = RB  ⇒  M = DL & D = SD  
+(3) E = DL  ⇒  D = GP & B = SD  
+(4) D = SD  ⇒  M = DL & E = RB  
+(5) B = SD  ⇒  D = DL & E = RB  
+(6) D = DL  ⇒  B = GP & M = SD  
+(7) M = DL  ⇒  B = GP & D = RB  
+(8) D = RB  ⇒  B = DL & E = GP  
+(9) M = SD  ⇒  E = GP
+
+--------------------------------------------------------------------
+Step 1.  Eric cannot receive DL.  
+If E = DL, statement (3) forces D = GP and B = SD; but with D = GP statement (1) then forces E = RB as well.  
+E would have to be both DL and RB – impossible.  Hence
+
+                                       E ≠ DL.                     (10)
+
+--------------------------------------------------------------------
+Step 2.  Eric must receive GP.  
+
+(a) Suppose E = RB.  
+Try every possible car for Derek:
+• D = GP → by (1) B = SD & E = RB, and by (5) B = SD forces D = DL – contradiction.  
+• D = SD → by (4) M = DL & E = RB, and by (7) M = DL forces D = RB – contradiction.  
+• D = DL → by (6) B = GP & M = SD; then (9) gives E = GP – contradiction.  
+No choice for D works, so E ≠ RB.
+
+(b) Suppose E = SD.  
+Again test Derek’s possibilities:
+• D = GP is impossible by (1) because it would require E = RB.  
+• D = DL is impossible by (6) because it would give M = SD, duplicating SD.  
+• D = RB is impossible by (8) because it would give E = GP.  
+So E ≠ SD.
+
+The only remaining car for Eric is GP.
+
+                                       E = GP.                      (11)
+
+--------------------------------------------------------------------
+Step 3.  Determine Derek’s car.
+
+With E = GP:
+
+• D = GP is impossible – car already taken.  
+• D = DL is impossible: from (6) we would need B = GP (also already taken).  
+• D = SD is impossible: from (4) it would force E = RB, contradicting (11).  
+
+Hence Derek must receive the remaining possibility,
+
+                                       D = RB.                      (12)
+
+--------------------------------------------------------------------
+Step 4.  Determine Berrick’s car.
+
+From (8) with D = RB we have
+
+                                       B = DL.                      (13)
+
+--------------------------------------------------------------------
+Step 5.  Determine Merick’s car.
+
+The cars GP, RB, DL are now taken, so Merick receives
+
+                                       M = SD.                      (14)
+
+Check statement (9): M = SD implies E = GP, which is already true; all other implications have their antecedent false or their consequent satisfied, so every rule is fulfilled.
+
+--------------------------------------------------------------------
+Step 6.  Uniqueness.
+
+We already showed in Step 2 that E ≠ RB and E ≠ SD and in (10) that E ≠ DL; thus E must be GP, which forces Derek, Berrick and Merick as found above.  Therefore the solution is unique.
+
+--------------------------------------------------------------------
+Final answer:  
+Derek receives the Rusting Bucket,  
+Berrick receives the Devine Lightning,  
+Eric receives the Golden Pleasure,  
+Merick receives the Silver Dream.",True
+192,"Question: Thirty fans hire a bus to attend a football game. On the way to the stadium, they realize that exactly half of them are fans of one team and the other half are fans of the other team. With still some way to go before reaching the stadium, the bus develops mechanical problems and the driver announces to his passengers that the only way to continue the journey is for half of them to get out and walk. There is a huge fight that doesn't stop until the driver speaks to them again and suggests a way of selecting the passengers who are to get off the bus.
+""All of you,"" he said, ""get into a big circle. When you are ready, beginning at this spot, I'll count nine people clockwise. The ninth person leaves the circle and continues on foot. Then I'll count another nine starting from where I stopped, and the ninth person leaves the circle and continues on foot. And so on until fifteen people have left the circle.""
+Suppose that you are one of the fans. How should you arrange all the other fans of your team so that none of them will have to leave?
+ Hint: Just keep counting in circles and see where you each spot lands",Just keep counting in circles and see where you each spot lands,"If the two teams are A and B and you are a supporter of team A and don't want any of your fellow supporters to end up walking to the stadium, organize them in a circle starting at the point where the driver starts and reading clockwise as follows: A, A, A, A, B, B, B, B, B, A, A, B, A, A, A, B, A, B, B, A, A, B, B, B, A, B, B, A, A, B.",GPT-o3,combinedhintPrompt,"Number the places in the circle 1, 2, … , 30 clockwise, letting place 1 be the person at the spot from which the driver begins to count (you yourself can stand there).  
+Starting with that person as “one”, the driver repeatedly removes every ninth person.  
+Writing down, step by step, who is the ninth each time gives
+
+1st out: 9  
+2nd out: 18  
+3rd out: 27  
+4th out: 6  
+5th out: 16  
+6th out: 26  
+7th out: 7  
+8th out: 19  
+9th out: 30  
+10th out: 12  
+11th out: 24  
+12th out: 8  
+13th out: 22  
+14th out: 5  
+15th out: 23
+
+After fifteen people have been removed the counting stops, and the positions that have been taken out are
+
+5, 6, 7, 8, 9, 12, 16, 18, 19, 22, 23, 24, 26, 27, 30.
+
+Consequently the positions that never get called are
+
+1, 2, 3, 4, 10, 11, 13, 14, 15, 17, 20, 21, 25, 28, 29.
+
+Put every supporter of the other team in the fifteen “called” places (5, 6, 7, 8, 9, 12, 16, 18, 19, 22, 23, 24, 26, 27, 30) and place yourself and all the rest of your own team in the fifteen “safe” places (1, 2, 3, 4, 10, 11, 13, 14, 15, 17, 20, 21, 25, 28, 29).  
+When the driver counts off nines exactly those fifteen opponents will step out and every member of your team will still be on the bus.
+
+Final answer: Arrange your team in places 1, 2, 3, 4, 10, 11, 13, 14, 15, 17, 20, 21, 25, 28 and 29 (counting clockwise from the driver’s starting point) and put the rival supporters in the remaining positions.",True
+193,"Question: It appears that you have angered the spirit of Halloween by failing to revere the Great Pumpkin, and now a curse has befallen you.  On the walkway to your house is a Ward of Seven Jack O'Lanterns arranged in a circle.  If midnight comes and any of the seven are still lit, a dark reaper and seven dark horses with seven dark riders shall visit thy abode.  They shall surround thy domicile and, while circling it, they will proceed to pelt thy dwelling with eggs and cream of shaving.  And come morn there will be a great mess to be reckoned with.  Verily.  So you better get those lanterns out.
+You quickly discover something odd about these lanterns.  When you blow out the first one, the lanterns on either side extinguish as well!  But there is more.  If you blow out a lantern adjacent to one that is extinguished, the extinguished one(s) will relight.  It seems that blowing on any lantern will change the state of three - the one you blew on and its two neighbors.  Finally, you can blow on an extinguished lantern and it will relight, and its neighbors will light/extinguish as applicable.  After trying once and finding all seven lit again, you decide, being the excellent puzzler, you sit down and examine this closer.  But hurry, I hear the beating of many hooves...
+ Hint: If you examine the setup carefully, you'll note a number of facts which make the puzzle easier to solve by deduction.  First, blowing on a lantern is a commutative property; blowing on lanterns 1, 5, then 3 is the same as blowing on 3, then 1, and then 5.  No matter what order the lanterns are blown on, if the same lanterns are blown on the same number of times, the result won't change. ","If you examine the setup carefully, you'll note a number of facts which make the puzzle easier to solve by deduction.  First, blowing on a lantern is a commutative property; blowing on lanterns 1, 5, then 3 is the same as blowing on 3, then 1, and then 5.  No matter what order the lanterns are blown on, if the same lanterns are blown on the same number of times, the result won't change. ","If you examine the setup carefully, you'll note a number of facts which make the puzzle easier to solve by deduction.  First, blowing on a lantern is a commutative property; blowing on lanterns 1, 5, then 3 is the same as blowing on 3, then 1, and then 5.  No matter what order the lanterns are blown on, if the same lanterns are blown on the same number of times, the result won't change.  For that reason, blowing on a lantern twice is as good as not blowing on it at all.  And three times is as good as one time. So, it seems that it should be able to be done in seven steps or less.
+What else can we tell about the solution?  Since each operation changes the state of three lanterns, and there are 7 lanterns, and each lantern must change its state an odd number of times, it's a safe bet that there will need to be an odd number of steps.  We can easily see it can't be done in 1 or 3 steps, so it must be 5 or 7.  Trying 5 steps comes up with 3 different patterns that are not symmetrical and fail to leave all lanterns extinguished.  So that leaves 7 steps and to your surprise, based on the commutative property, the easiest solution is to blow on each one in order!  So doing this, the Great Pumpkin has decided to give you a treat for figuring this out and you find all seven lanterns full of candy the next morning!  Congratulations!",GPT-o3,combinedhintPrompt,"Because every blow “flips’’ the state of three consecutive lanterns, only the parity (odd/even number) of blows on each lantern matters.  Treat one blow as 1 and “no blow’’ as 0, work modulo 2, and number the lanterns 0–6 round the circle.
+
+Let xi ∈ {0,1} be the number of times we blow on lantern i.  
+A lantern goes out iff it is flipped an odd number of times, so for every i we must have
+
+xi-1  +  xi  +  xi+1  = 1 (mod 2). (1)
+
+(Indices are taken modulo 7.)
+
+Step 1.  Show that no lantern can be left un-blown (xi ≠ 0).
+
+Assume, to the contrary, that x0 = 0.  
+Equation (1) with i = 0 gives x6 + x1 = 1, so x6 = x1 = 1.
+
+Now use (1) successively round the circle:
+
+i = 1: x0 + x1 + x2 = 1  ⇒ 0 + 1 + x2 = 1  ⇒ x2 = 0  
+i = 2: x1 + x2 + x3 = 1  ⇒ 1 + 0 + x3 = 1  ⇒ x3 = 0  
+i = 3: x2 + x3 + x4 = 1  ⇒ 0 + 0 + x4 = 1  ⇒ x4 = 1  
+i = 4: x3 + x4 + x5 = 1  ⇒ 0 + 1 + x5 = 1  ⇒ x5 = 0  
+i = 5: x4 + x5 + x6 = 1  ⇒ 1 + 0 + x6 = 1  ⇒ x6 = 0,
+
+but we already had x6 = 1, a contradiction.  
+Hence every lantern must in fact be blown at least once.
+
+Step 2.  Each lantern is blown exactly once.
+
+If every xi is at least 1, subtract 1 from each xi; the new variables x′i = xi − 1 still satisfy (1).  
+Repeating Step 1 with the x′i shows that no x′i can be 1, so every x′i = 0, i.e. every xi = 1.
+
+Thus the unique solution of (1) is
+
+x0 = x1 = … = x6 = 1.
+
+Interpretation.
+
+Blow on every jack-o’-lantern exactly once (the order is irrelevant).  
+Each lantern then receives flips from itself and its two neighbours—three flips in all, an odd number—so every light goes out.
+
+Final answer: Blow on each of the seven jack-o’-lanterns exactly once (in any order); afterwards all seven will be extinguished.",True
+194,"Question: Every day from Monday through Sunday in this week, Mr. Peter picks two shirts from the five colours red, blue, yellow, green and black. Peter follows the rules:
+1. Peter doesn't use the same combination on two days of this week.
+2. Peter doesn't use the same colour on two consecutive days of this week.
+3. Peter uses some colour on four days.
+4. Peter uses blue and black on Monday.
+5. Peter uses green on Thursday.
+6. Peter doesn't use yellow on Friday.
+7. Peter doesn't combine red with black.
+What colours does Peter use on Saturday?
+ Hint: Start from rules 2 and 3",Start from rules 2 and 3,"From rules 2 and 3, Peter must use one colour on Monday, Wednesday, Friday and Sunday, which can be blue or black.
+If it's black, from rules 1 and 4, Peter must combine black with red, yellow and green on Wednesday, Friday and Sunday, but rule 7 disallows combining black with red.
+Therefore, it's blue, and Peter must combine blue with red, yellow and green on Wednesday, Friday and Sunday. From rule 5, Peter uses green on Thursday, he can't use green on Wednesday or Friday, and only on Sunday.
+From rule 6, Peter doesn't use yellow on Friday, and he can only use red on Friday and yellow on Wednesday.
+Since Peter uses blue, red and green on Friday and Sunday, from rule 2, he can only use black and yellow on Saturday.",GPT-o3,combinedhintPrompt,Final answer: Yellow and Black,True
+195,"Question: At the Christmas party of the ""Sweaty Chef"" kebab shop, the owner Mr Juan, took note of how many people were present. Although he was a bit tipsy when he made his note, and thus made a mistake.  His notes were as follows:-
+1, There were 9 men and children.
+2, There were 2 more women than children.
+3, The number of different man-woman couples possible was 24. Note that if there were 7 men and 5 women, then there would have been 35 man-woman couples possible.
+Also, of the three groups - men, women and children - at the party:
+4, There were 4 of one group.
+5, There were 6 of one group.
+6, There were 8 of one group.
+Exactly one of the above 6 statements is false.
+Can you tell which one is false? Also, how many men, women and children are there at the party?
+ Hint: Can 4,5,6 all be true at the same time?","Can 4,5,6 all be true at the same time?","Statement (4) is false. There are 3 men, 8 women and 6 children.
+Assume that Statements (4), (5) and (6) are all true. Then, Statement (1) is false. But then Statement (2) and (3) both can not be true. Thus, contradictory to the fact that exactly one statement is false.
+So Statement (4) or Statement (5) or Statement (6) is false. Also, Statements (1), (2) and (3) all are true.
+From (1) and (2), there are 11 men and women. Then from (3), there are 2 possible cases - either there are 8 men and 3 women or there are 3 men and 8 women.
+If there are 8 men and 3 women, then there is 1 child. Then Statements (4) and (5) both are false, which is not possible.
+Hence, there are 3 men, 8 women and 6 children. Statement (4) is false.",GPT-o3,combinedhintPrompt,"Let  
+
+M = number of men  
+W = number of women  
+C = number of children  
+
+Translate the owner’s notes (the statements are numbered as in the problem).
+
+1.  M + C = 9                                                        …(i)  
+2.  W = C + 2                                                        …(ii)  
+3.  M · W = 24                                                      …(iii)  
+
+Statements 4, 5, 6 talk only about the three sizes that appear among M, W, C:
+
+4.  “One group numbered 4.”  
+5.  “One group numbered 6.”  
+6.  “One group numbered 8.”
+
+Exactly one of the six statements is wrong.
+
+--------------------------------------------------------------------
+Step 1 – Show that not all of 4, 5, 6 can be true
+--------------------------------------------------------------------
+If 4, 5, 6 were all correct, the three groups would have to be 4, 6 and 8 in some order.  
+Trying the six permutations of (4, 6, 8) for (M, W, C) never satisfies (i)–(iii) simultaneously, and always makes at least two of the first three statements fail.  
+Hence “all of 4, 5, 6 true” is impossible, so at least one of them is the single false statement.
+
+--------------------------------------------------------------------
+Step 2 – Solve (i)–(iii)
+--------------------------------------------------------------------
+Keep 1, 2, 3 true and solve for integer C.
+
+From (i): M = 9 − C  
+From (ii): W = C + 2  
+
+Insert these in (iii):
+
+(9 − C)(C + 2) = 24  
+⇒ −C² + 7C + 18 = 24  
+⇒ C² − 7C + 6 = 0  
+⇒ (C − 1)(C − 6) = 0  
+
+So C = 1 or C = 6.
+
+• If C = 1: M = 8, W = 3  
+• If C = 6: M = 3, W = 8
+
+--------------------------------------------------------------------
+Step 3 – Decide which of 4, 5, 6 is false
+--------------------------------------------------------------------
+Case 1 (C, M, W) = (1, 8, 3) gives group–sizes 8, 3, 1.  
+That has neither a 4 nor a 6, so both statements 4 and 5 would be false – contradiction.
+
+Case 2 (C, M, W) = (6, 3, 8) gives group-sizes 6, 3, 8.  
+• There is a group of 6  → statement 5 is true.  
+• There is a group of 8  → statement 6 is true.  
+• There is NO group of 4 → statement 4 is false.  
+
+Hence exactly one statement (statement 4) is false, and the other five are true, satisfying the requirement.
+
+--------------------------------------------------------------------
+Conclusion
+--------------------------------------------------------------------
+The single incorrect note is statement 4, the claim that “There were 4 of one group.”
+
+Numbers actually present:  
+Men = 3, Women = 8, Children = 6.",True
+196,"Question: Write on a piece of paper a 5x5 letter square using the alphabet, minus the letter Q, where A is in the upper left-hand corner and Z is in the lower right-hand corner.  After you have done this, can you tell me which letter comes just above the letter which comes between the letter just before the letter just below B and the letter just before the letter just above Y?
+ Hint: One step at a time",One step at a time,"The letter is G.
+The two letters to initially find are F & S. The letter above the one which is between them is G.",GPT-o3,combinedhintPrompt,"Construct the required 5 × 5 square by writing the alphabet (omitting Q) row by row from left to right:
+
+A  B  C  D  E  
+F  G  H  I  J  
+K  L  M  N  O  
+P  R  S  T  U  
+V  W  X  Y  Z  
+
+( A is the upper-left corner and Z the lower-right, exactly as demanded.)
+
+Now follow the sentence, one clause at a time.
+
+1. “the letter just below B”  
+   B is in row 1 column 2; just below it (row 2 column 2) is G.
+
+2. “the letter just before [that]”  
+   Alphabetically just before G is F.
+
+   So far we have the letter F.
+
+3. “the letter just above Y”  
+   Y is in row 5 column 4; just above it (row 4 column 4) is T.
+
+4. “the letter just before [that]”  
+   Alphabetically just before T is S.
+
+   Now we have F and S.
+
+5. “the letter which comes between [F] and [S]”  
+   Counting in the alphabet (with Q missing) F is the 6th letter, S the 18th.  
+   Mid-way between them is the 12th letter, L.
+
+6. “the letter which comes just above [L]”  
+   L is in row 3 column 2; the square cell immediately above it (row 2 column 2) contains G.
+
+Therefore the letter asked for is
+
+Final answer: G",True
+197,"Question: Kevin's class picture has 28 photos arranged in a 7 x 4 grid.  The photos in the top row are numbered 1 through 7 from left to right, with the photos in the remaining rows similarly numbered.  Given the following clues (bordering includes horizontal, vertical, and diagonal), where is Kevin's picture?
+X X X X X X X (1 - 7)
+X X X X X X X (8 - 14)
+X X X X X X X (15 - 21)
+X X X X X X X (22 - 28)
+1) There are 11 boys and 17 girls.
+2) No boy is next to another boy horizontally or vertically.
+3) There are no more than three boys in each row.
+4) One column has only girls.
+5) Three boys are not along the edge of the picture.
+6) The second boy is at an odd position.
+7) The range of the boys' positions is 24.
+8) The median of the boys' positions is 12 or 13 or 14.
+9) There are boys in two corners.
+10) Kevin occupies an even position, and is the only boy who borders a unique number of girls.
+ Hint: There are five boys prior to the median, meaning that there are three boys in each of the first two rows. ","There are five boys prior to the median, meaning that there are three boys in each of the first two rows. ","A) There are five boys prior to the median, meaning that there are three boys in each of the first two rows.  If the first boy is at location 4, then there could only be two boys in the first row.  The first boy must be located before position 4, therefore a girl must occupy: 28 (clue 7).  The second boy can not be at position 4 (clue 6).  The earliest position that the third boy could occupy is position 5.  Therefore, a girl must occupy: 4.
+B) If boys are at positions 1 (a corner) and 25 (clue 7), then a boy would have to be at either position 7 or 22 (clue 9).  In either case, more than three boys would not be along the edge of the picture, violating clue 5.  Therefore, a girl must occupy: 1.  Boys must occupy: 7 and 22 (clue 9).  Girls must occupy: 6, 14, 15, and 23.
+C) For three boys to be in the first row, the second boy must occupy: 5 (which also satisfies clue 6).  A girl must occupy 12.  Per clue 8, a boy must occupy: 13.  A girl must occupy: 20.  To avoid violating clue 5, boys must occupy: 8 and 21.  A girl must occupy: 9.
+D) Clues 8 and 9 have now been satisfied, and 16 of the 28 positions have been filled.  To satisfy clues 1 through 7, the last 12 positions can be filled in four different ways.  However, only one of those ways will satisfy clue 10.  In the three ways that do not work, the boy that borders a unique number of girls is located at an odd position.
+Step A       Step B       Step C       Step D
+xxxGxxx      GxxGxGB      GxxGBGB      GBGGBGB
+xxxxxxx      xxxxxxG      BGxxGBG      BGBGGBG
+xxxxxxx      Gxxxxxx      GxxxxGB      GBGGGGB
+xxxxxxG      BGxxxxG      BGxxxxG      BGBGBGG
+The boys in the first row border (3, 4, 2) girls.
+The boys in the second row border (3, 6, 5) girls.
+The boys in the third row border (4, 4) girls.
+The boys in the fourth row border (2, 4, 5) girls.
+The only boy that borders a unique number of girls is the boy who borders six girls, which is at position 10.  Kevin is at position 10.",GPT-o3,combinedhintPrompt,,False
+198,"Question: Consider a grid of size 4 x 4 (i.e. sixteen squares), where all squares should get a color. The colored grid should meet the following conditions:
+4 squares should be colored blue,
+3 squares should be colored red,
+3 squares should be colored white,
+3 squares should be colored green,
+3 squares should be colored yellow, and
+How can these squares be arranged so that no color appears more than once in any horizontal, vertical, or diagonal line?
+ Hint: Start by placing the blues. ",Start by placing the blues. ,"There are multiple possible answers. Just check that the conditions in the original problem statement hold: 
+4 squares should be colored blue,
+3 squares should be colored red,
+3 squares should be colored white,
+3 squares should be colored green,
+3 squares should be colored yellow, and
+How can these squares be arranged so that no color appears more than once in any horizontal, vertical, or diagonal line?
+
+One possible arrangement:
+W B G R
+R Y W B
+B G R Y
+Y W B G",GPT-o3,combinedhintPrompt,"One convenient way to satisfy the rule “no colour appears more than once in any horizontal, vertical or diagonal line’’ is to make every colour behave like a set of non-attacking queens.  
+Begin therefore by putting the four blue squares in one of the two 4-queens patterns that exist on a 4 × 4 board; take  
+
+        (1,3), (2,1), (3,4), (4,2).
+
+Because every blue is on a different row, column, ↘-diagonal and ↗-diagonal, no second blue can ever occur on any of those lines.
+
+Place the three red squares so that they are still mutually non-attacking.  A suitable choice is  
+
+        (1,1), (2,4), (3,2).
+
+Next do the same for the three white squares.  One workable set is  
+
+        (1,4), (2,2), (4,3).
+
+Up to this point every row and every column already contains three different colours, and none of the three colours repeats on any diagonal.
+
+The six empty cells that remain are  
+
+        (1,2)  (2,3)  (3,1)  (3,3)  (4,1)  (4,4).
+
+They have to be divided into two more mutually non-attacking triples.  
+Choose  
+
+        green  :  (1,2), (3,3), (4,1)  
+        yellow :  (2,3), (3,1), (4,4).
+
+Each of the two triples again occupies distinct rows, columns, ↘-diagonals and ↗-diagonals.
+
+The completed 4 × 4 array is therefore
+
+        R  G  B  W
+        B  W  Y  R
+        Y  R  G  B
+        G  B  W  Y
+
+(R = red, G = green, B = blue, W = white, Y = yellow).
+
+Count check  
+Blue : 4;  Red, White, Green, Yellow : 3 each.
+
+Line-check  
+In every row, column and diagonal each colour appears at most once.
+
+Hence the above colouring satisfies all the stated conditions.
+
+Final answer:  
+Row 1 : Red – Green – Blue – White  
+Row 2 : Blue – White – Yellow – Red  
+Row 3 : Yellow – Red – Green – Blue  
+Row 4 : Green – Blue – White – Yellow",True
+199,"Question: I woke up late that morning to welcome a bright sunny day after a long and hectic week. It was a holiday and I was determined to spend the day playing cards with my friend Tweeto. Tweeto's favorite card game was the Romankachi card game.
+The rules of the game are as follows :-
+1) One person 'serves' and the other 'receives' cards in each round.
+2) The person who serves cards in the round gains 2 cards if he wins the round and loses only 1 card if he loses the round.
+3) On the other hand, the person who receives cards in the round, gains only 1 card if he wins the round and loses 2 cards if he loses the round.
+4) Finally the person who wins in one round, serves in the next round.
+5) The game is stopped when a player loses all his cards.
+We started off with 5 cards each and I served in the first round.
+At the end of three rounds if I had exactly 4 cards then which of the following statements must be true:-
+A) Tweeto must have won exactly two rounds.
+B) I must have won the first round.
+C) Tweeto must have won the third round.
+NOTE: Out of the given set of 3 statements, it is not necessary that one and only one statement is true. One or more statements may be true.
+ Hint: First, think about what possible results could lead to you having 4 cards?","First, think about what possible results could lead to you having 4 cards?","Statements A and C must be true.
+The rules of the Romankachi card game are given below.
+1) One person 'serves' and the other 'receives' cards in each round.
+2) The person who serves cards in the round gains 2 cards if he wins the round and loses only 1 card if he loses the round.
+3) On the other hand, the person who receives cards in the round, gains only 1 card if he wins the round and loses 2 cards if he loses the round.
+4) Finally the person who wins in one round, serves in the next round.
+5) The game is stopped when a player loses all his cards.
+The given statements are
+A) Tweeto must have won exactly two rounds.
+B) I must have won the first round.
+C) Tweeto must have won the third round.
+Since we started the card game with 5 cards each and I started of the first round, at the end of three rounds I can have 4 cards due to any one of the following two results.
+First Result :
+I served in the first round and won. Hence I served in the second round but lost. Tweeto served in the third round and again I lost thus ending up with 4 cards.
+The number of cards with me and Tweeto is tabulated below.
+Round      Me    Tweeto
+Initially     5           5
+Round 1    7           3
+Round 2    6           4
+Round 3    4           6
+Applying the given statements  to the above table, we can observe that statements A and C are true since Tweeto won exactly two rounds and Tweeto won the third round. Statement B is true here because I won the first round.
+Second Result :
+I served in the first round and lost. Hence Tweeto served in the second round but he lost. I served in the third round and I lost thus ending up with 4 cards.
+The number of cards with me and Tweeto is tabulated below.
+Round     Me    Tweeto
+Initially     5           5
+Round 1    4           6
+Round 2    5           5
+Round 3    4           6
+Applying the given statements  to the above table, we can observe that statements A and C are true since Tweeto won exactly two rounds and Tweeto won the third round. Statement B is false here because I lost the first round.
+Hence it is clear from both the results that statements A and C must be true for me to end up with 4 cards at the end of three rounds.",GPT-o3,combinedhintPrompt,"Let M = myself, T = Tweeto.  
+Start: M has 5 cards, T has 5 cards.  
+Round-by-round card change for M (according to the rules)
+
+ • Server & wins  → +2  
+ • Server & loses → –1  
+ • Receiver & wins → +1  
+ • Receiver & loses → –2  
+
+M serves in Round 1 and after the three rounds must have 4 cards; i.e. the total change in M’s cards over the three rounds is –1.
+
+--------------------------------------------------------------------
+Case 1 M wins Round 1  
+Change: +2 (M now 7).  
+M therefore serves Round 2.
+
+ Round 2  
+ • If M wins again (+2) the running total after two rounds is +4; the last
+   round could decrease M’s cards by at most 2, so ending with 4 cards is
+   impossible.  
+ • Hence M must lose Round 2 (–1).  Running total: +1.  
+   T now serves Round 3 and M is the receiver.  
+ Round 3 must give M –2 (receiver & loses) to reach the required –1
+ overall.  
+ Therefore sequence: W L L (M wins 1st, T wins 2nd & 3rd).
+
+--------------------------------------------------------------------
+Case 2 M loses Round 1  
+Change: –1 (M now 4).  
+T therefore serves Round 2 and M is receiver.
+
+ Round 2  
+ • If M loses again (–2) M would fall to 2 cards and could gain at most
+   1 in the last round; ending with 4 cards is impossible.  
+ • So M must win Round 2 (+1).  M is now back at 5 cards and will serve
+   Round 3.  
+ Round 3 must then be a loss for M (–1) to finish at 4 cards.  
+ Therefore sequence: L W L (T wins 1st & 3rd, M wins 2nd).
+
+--------------------------------------------------------------------
+These two sequences are the only ones that satisfy all the conditions.
+
+Consequences common to both sequences
+• T wins exactly two of the three rounds.  
+• T wins the third round.  
+• M wins the first round in one sequence but loses it in the other.
+
+Thus the statements that must be true are
+
+A) “Tweeto must have won exactly two rounds.”  
+C) “Tweeto must have won the third round.”
+
+Statement B is not guaranteed.
+
+Final answer: A and C",True
+200,"Question: Phil Fegit was sitting in his bedroom watching the torrential rain pour down on his home town of MADADIA.  The water had caused floods throughout the town and water over six feet deep had forced people to abandon the downstairs of their homes and they had to retreat to the upstairs rooms. The yearly Kebab harvest had been washed away as the downpour had continued unabated for a full month.
+Just at that moment Phil's wife, Norma, walked into the bedroom and he commented upon the rain. She replied that she could really care less. No matter how much Phil tried to stress the importance of the rain falling in Madadia, she refused to take it seriously.
+How come?
+ Hint: nan",,"Phil was watching a news report about his home town on TV, he had recently moved away from the area and it was sunny where he was.
+His wife wasn't from Madadia, hence she didn't care what happened there.",GPT-o3,combinedhintPrompt,"Phil wasn’t looking out of the bedroom window at real weather at all; he was looking at a screen.  
+“Madadia” was the make-believe town he had built in a city-simulation game (the absurd “kebab harvest” is a giveaway). The month-long cloudburst, the six-foot-deep flood and the townsfolk crowding upstairs were merely events generated inside that game. Norma understood that nothing in the real world was in danger, so, quite sensibly, she couldn’t be bothered to worry about it.  
+
+Final answer: the rain was only happening in the computer game Phil was playing, so Norma did not care.",True
+201,"Question: There were 9 portraits of animals (bear, cat, dog, hamster, horse, lion, monkey, mouse, and tiger) on a wall of a museum.  As I was studying them, I tripped and fell into the wall and they all fell down. I have to get them back up on the wall in the correct order before I get into some serious trouble.  I only remember a couple of things about the order of the portraits.  Can you help me figure out the order of the portraits using the clues I remember about them?
+They were displayed as follows:
+Note: The Letter and Numbers in the graph are labels for their corresponding rows.
+...........A...............B.............C
+1    _________ l _________ l _________
+2    _________ l _________ l _________
+3    _________ l _________ l _________
+Clues:
+1.  The bear is in the same row as the hamster.
+2.  Two portraits in both rows 3 and C have two animals that start with the same letter.
+3.  The horse is in the same row as the monkey.
+4.  The dog is in 2A.
+5.  Either the lion or the tiger is below the cat.
+6.  The monkey is either above or below the dog.
+7.  The dog is not next to the tiger.
+ Hint: Monkey, mouse, hamster, horse are the only two pairs with same letter. Focus on this","Monkey, mouse, hamster, horse are the only two pairs with same letter. Focus on this","bear      l cat        l hamster
+dog       l lion       l tiger
+monkey l mouse  l horse",GPT-o3,combinedhintPrompt,"We label the wall as a 3 × 3 grid, rows numbered 1 ( top ) to 3 ( bottom ) and columns lettered A ( left ) to C ( right ).
+
+             A     B     C  
+     1  __  __  __  
+     2  __  __  __  
+     3  __  __  __
+
+Facts copied from the statement
+
+(1) Dog is at 2A.  
+(2) Monkey is directly above or below the dog ⇒ 1A or 3A.  
+(3) Horse is in the same row as monkey.  
+(4) Bear is in the same row as hamster.  
+(5) Either lion or tiger is somewhere below the cat in the same column.  
+(6) Dog is not next to tiger (horizontally).  
+(7) Row 3 and column C each contain a pair of animals whose names start with the same letter.  
+     (The only possible pairs are {Monkey, Mouse} and {Hamster, Horse}.)
+
+Step 1:  Put monkey in row 3, column A  
+If monkey were in 1A, then horse would also be in row 1; row 3 could not then contain either of the needed pairs, so 1A is impossible.  
+Thus
+
+     3A = Monkey.    Consequently horse is also in row 3.
+
+Step 2:  Form the required pair in row 3  
+With monkey in row 3, the only possible same-initial pair there is Monkey–Mouse.  
+Place mouse in row 3, column B and horse in row 3, column C:
+
+     Row 3:   3A Monkey 3B Mouse 3C Horse.
+
+Row 3 now satisfies condition (7).
+
+Step 3:  Satisfy the pair condition in column C  
+Column C already contains Horse, so to create an H-pair put Hamster somewhere else in column C.  
+Choose 1C for Hamster (2C will be needed later):
+
+     1C = Hamster.
+
+Step 4:  Put bear in the same row as hamster  
+Hamster is in row 1, so bear must also go in row 1.  
+Place bear at 1A (the only empty slot in that row so far):
+
+     Row 1:   1A Bear 1B __ 1C Hamster.
+
+Step 5:  Position the cat and the animal below it  
+Cat cannot go in column A (dog and monkey are already below) nor in column C (hamster and horse are below), so cat must be at 1B.
+
+Cat is now in column B; condition (5) requires lion or tiger somewhere below it in the same column.  
+Put that animal at 2B (3B is already mouse).  
+
+But dog (2A) may not be adjacent to tiger, so 2B cannot be tiger.  
+Therefore 2B is Lion.
+
+Step 6:  Finish row 2 and check the dog–tiger restriction  
+Row 2 currently has Dog at 2A and Lion at 2B.  The only animal not yet placed is Tiger, and the only empty square is 2C.  
+Putting Tiger in 2C is not adjacent to Dog in 2A, so condition (6) is satisfied.
+
+The completed wall
+
+             A          B          C  
+     1   Bear     Cat     Hamster  
+     2   Dog      Lion    Tiger  
+     3   Monkey   Mouse   Horse
+
+Verification of every clue
+
+1. Bear and hamster share row 1 ✔  
+2. Row 3 has Monkey & Mouse, column C has Hamster & Horse ✔  
+3. Horse and monkey share row 3 ✔  
+4. Dog is at 2A ✔  
+5. Lion (below) is under Cat in column B ✔  
+6. Monkey (3A) is below Dog (2A) ✔  
+7. Dog (2A) is not next to Tiger (2C) ✔
+
+All conditions are met uniquely.
+
+Final answer:  
+Row 1 (left-to-right) Bear, Cat, Hamster  
+Row 2 (left-to-right) Dog, Lion, Tiger  
+Row 3 (left-to-right) Monkey, Mouse, Horse",True
+202,"Question: In the purely fictitious land of Fiddledeboox, the Minister of Finance emerged from a top-level meeting.   Reporters had gathered to hear his announcement about either an increase or a decrease in either wages, subsidies or tax levels.
+It was widely known that this Minister [M] told the truth to reporters [R] only once in every three statements.
+M:  Well, I can tell you that it's about subsidies.
+R:  Are they going down again?
+M:  Nothing is going down.
+R:  So it's good news for the people?
+M:  Of course.  Either subsidies are going down or there will be a wage increase.
+While others jostled to ask the next question, one logically minded newshound was already leaving with the hot headline news.
+From the Minister's three statements above, can you also deduce the truth?
+ Hint: Assume each statement, in turn, to be true.  Then examine the truth or otherwise of the others.
+Or check the statements in the light of each of the six possibilities.","Assume each statement, in turn, to be true.  Then examine the truth or otherwise of the others.
+Or check the statements in the light of each of the six possibilities.","It was a tax increase.
+Solution:
+Remember that only one statement can be true.
+If (1) is true then either (2) or (3) will be true as well.  So (1) is a lie.
+If (3) is true, either (1) or (2) would be also true.  So (3) is a lie.
+If (2) is true, it must be either wages or taxes going up or (1) would be true.  It cannot be wages, making (3) true, so taxes are increasing.
+There are other ways of deducing this gloomy news.",GPT-o3,combinedhintPrompt,"Because the Minister tells the truth exactly once in every group of three remarks, among the three answers he gives the reporters only one can be true and the other two must be false.
+
+Label his three statements
+
+S1 : “It’s about subsidies.”  
+S2 : “Nothing is going down.”  
+S3 : “Either subsidies are going down or there will be a wage increase.”
+
+The six possible pieces of news are
+
+Wi  – wages are going up     Ti – taxes are going up  
+Wd – wages are going down  Td – taxes are going down  
+Si  – subsidies are going up  Sd – subsidies are going down  
+
+Evaluate each statement under each possibility:
+
+•  S1 is true exactly when the change concerns subsidies (Si or Sd).  
+•  S2 is true exactly when the change is an increase (Wi, Si, Ti).  
+•  S3 is true exactly when either subsidies go down or wages go up (Sd or Wi).
+
+Check the six possibilities:
+
+Wi: F T T (two truths)  
+Wd: F F F (zero truths)  
+Si: T T F (two truths)  
+Sd: T F T (two truths)  
+Ti: F T F (one truth)  ← works  
+Td: F F F (zero truths)
+
+Only the possibility “taxes are going up” (Ti) makes exactly one of the three statements true. Therefore that is the real announcement, and it gives the lone truthful sentence (S2: “Nothing is going down.”).
+
+Final answer: Taxes are going up.",True
+203,"Question: There are 2008 eggs lying in front of you. I am also with you waiting to start the game. The goal of the game is to be the person to take that very last egg (or eggs) to win. You and I can each only take between 1 and 100 eggs at a time. You go first. How many eggs must you take initially in order to always win (assuming we both play perfectly)?
+ Hint: By a perfect game, that means over any two turns, the sum of the number of eggs  you and I take is the same (except of course, excluding the initial move you make).","By a perfect game, that means over any two turns, the sum of the number of eggs  you and I take is the same (except of course, excluding the initial move you make).","89 eggs.
+In order to see this, look at the smallest way possible to guarantee a win; you leave me with 101 eggs. If I take 1 egg, you take all 100; if I take 100 eggs, you take the last one. Therefore you would always win.
+If you try with 202, I can take from 1 to 100, so there is 201 to 102 left. Then you would take 100 or 1 egg(s) in order to leave me with 101 again. By simple analysis, you must take 101 eggs over two rounds in order to get down to 101.
+19*101 = 1919, so we must take 2008-1919 = 89 eggs to start off with a multiple of 101.",GPT-o3,combinedhintPrompt,"Observe that each player may remove any whole number of eggs from 1 up to 100 inclusive.  
+If, after your turn, the number of eggs that remain is a multiple of 101, you can always
+force a win with the following “mirror” strategy:
+
+Strategy  
+Whenever your opponent removes x eggs (1 ≤ x ≤ 100), you immediately remove 101 – x eggs  
+(also between 1 and 100).  Thus the two moves together always take away exactly 101 eggs, so
+after every complete pair of turns the total remaining is still a multiple of 101.  
+Eventually only 101 eggs will be left; whatever x your opponent removes, you can take
+101 – x eggs and claim the very last one(s).
+
+Therefore, to guarantee victory you must begin by leaving a multiple of 101 on the table.
+
+Calculation  
+2008 ÷ 101 gives a remainder of
+
+2008 – 19·101 = 2008 – 1919 = 89.
+
+Hence 2008 – 89 = 1919 = 19·101 is a multiple of 101.
+
+Since 89 is within the allowed range 1–100, taking 89 eggs initially lets you adopt the
+mirror strategy thereafter and ensures you take the final egg(s).
+
+Final answer: 89",True
+204,"Question: There are 3 numbers 0-9.
+Eric knows the product and says, ""I know the numbers.""
+Then, everyone is told that one digit is exactly one greater than another.
+Then, Luke is told one of the numbers and says, ""Eric lied.""
+Then you are told the numbers add up to 11.
+What are the numbers?
+ Hint: There are only so many combinations if two of the digits must be adjacent...",There are only so many combinations if two of the digits must be adjacent...,"0, 5, 6
+Eric knows the product and claimed that he knows the numbers.
+Luke is told a number and then he knows Eric lied.
+If Luke had received an 8, the combination could be 8,8,8, which is the only combination that multiplies to 512; Luke wouldn't know Eric lied.
+If Luke received 6, the combination could be 6,7,7 which is the only combination that multiplies to 294, so Luke wouldn't know Eric lied.
+If Luke received 2 or 7; 2x7x7=98.
+4 or 5; 4x5x5=100.
+3 or 9; 3x9x9=243.
+1; 1x1x1=1.
+Luke would only know that Eric lied if Luke was given a 0.
+Therefore one of the digits is 0.
+The remaining two digits must add to 11 because 11-0=11.
+Two of the digits are one apart so that leaves:
+0 & 1 + 10
+5 & 6 + 0
+However, 10 isn't an option so it must be 0, 5, 6.",GPT-o3,combinedhintPrompt,,False
+205,"Question: What would be the missing letter ?
+O Q L H R
+I J F E Q
+--------------
+F G F C ?
+ Hint: Think mathematically.",Think mathematically.,"The missing letter is A.
+Number the letters in order eg: A=1 B=2 C=3 etc.. then subtract the middle from the top, to give the bottom number. Assign that number to the appropriate letter to give the answer.",GPT-o3,combinedhintPrompt,"First write each letter’s position in the English alphabet  
+(A = 1, B = 2, … , Z = 26).
+
+Row 1:  O  Q  L  H  R  →  15 17 12  8 18  
+Row 2:  I  J  F  E  Q  →   9 10  6  5 17  
+Row 3:  F  G  F  C  ?  →   6  7  6  3  ?
+
+Now compare the numbers column by column:
+
+Column 1: 15 − 9 = 6  → F  
+Column 2: 17 − 10 = 7 → G  
+Column 3: 12 − 6 = 6  → F  
+Column 4: 8 − 5 = 3   → C  
+
+So the third-row letter in each column equals:
+
+(position in Row 1) − (position in Row 2).
+
+Apply the same rule to column 5:
+
+Row 1 position − Row 2 position = 18 − 17 = 1.
+
+Position 1 corresponds to the letter A.
+
+Final answer: A",True
+206,"Question: It is a sunny and warm spring day in Cipher, South Decoder. Fans at the baseball park have come to see their own Cipher Solvers play their rivals, the Rockford Peaches, in the first game of the season. Everyone is hoping for a good show.
+The home fans became very vocal as 5 of their players (Tim, Hank, K.C., Flynn, and Jimmy Blake) either made an exciting play to allow runs to score, or made an embarrassing error - or both!
+Scorecard
+Names: Tim, Hank, K.C., Flynn, Jimmy Blake
+Positions: pitcher, catcher, 3rd base, shortstop, left field
+RBIs: 0, 1, 2, 3, 4
+Errors: 0, 1, ?, 2, 3
+First Inning
+By the end of the game, two players were charged with the same number of errors, either 1 or 2. This number (?) is to be deduced from the clues.
+Second Inning
+No player ended up with the same number of errors and RBIs.
+Third Inning
+The left fielder had his 1 RBI when, with runners at 1st and 3rd, he hit one over the head of the Peaches' 2nd baseman and into right field.
+Fourth Inning
+Jimmy Blake earned his 2 RBIs when he hit a triple, allowing the center fielder and the 3rd baseman to score.
+Fifth Inning
+Flynn had his 1 error when he missed a throw to 1st base.
+Sixth Inning
+Tim, who posted either 2 or 3 RBIs, ended up with 1 error more than the pitcher after he (Tim) quite literally dropped the ball.
+Seventh Inning
+The player who finished with no RBIs and 2 errors, including fumbling a fly ball, doesn't play 3rd base.
+Eighth Inning
+The player who had his 3 RBIs with a game-tying in-the-park home run that had the fans on their feet, scored at least 1 error, but he had fewer errors than the shortstop.
+Ninth Inning
+K.C. ended the game with 2 fewer errors than the catcher, who let a wild pitch get past him so that the Peaches regained the lead.
+Can you determine which position the boys played, as well as how many runs batted in (RBI) and errors they made?
+ Hint: nan",,"Hank (catcher) with 0 RBIs and 2 errors
+K.C. (left field) with 1 RBI and 0 errors
+Jimmy Blake (shortstop) with 2 RBIs and 3 errors
+Tim (3rd base) with 3 RBIs and 2 errors
+Flynn (pitcher) with 4 RBIs and 1 error",GPT-o3,combinedhintPrompt,,False
+207,"Question: A bridge was guarded by an evil troll. The troll was very intelligent, but he was also a coward. He was afraid of anyone smarter than him. So every time anyone tried to cross the bridge, the troll would set up a test. If the traveler passed the test, he would be allowed to cross. Otherwise, the troll would eat him.
+Three travelers, Al, Ben and Carl, came across the bridge. The troll told them, ""You may only cross my bridge if you know the password."" He wrote five three-letter words on a rock. The five words were HOE, OAR, PAD, TOE, and VAT.
+He then said, ""I will tell each of you a different letter from the password. If you know what the password is, I will let you pass. But don't tell anyone else your letter."" He then whispered a letter from the password to each traveler so that neither of the other two could hear him.
+Then the troll asked Al, ""Do you know what the password is?"" ""Yes,"" said Al, and the troll let him pass.
+Then the troll asked Ben, ""Do you know what the password is?"" ""Yes,"" said Ben, and the troll let him pass.
+Then the troll asked Carl, ""Do you know what the password is?"" ""Yes,"" said Carl, and the troll let him pass.
+So, what is the password?
+ Hint: 1. Ben used Al's answer, and Carl used both Al's and Ben's answers.
+2. Al's letter could not have been E.","1. Ben used Al's answer, and Carl used both Al's and Ben's answers.
+2. Al's letter could not have been E.","The password was HOE.
+The only letters unique to one of the five words were D, H, P, R, and V. One of these letters must have been Al's, since he could determine the password. The only word without any of these letters is TOE. So the password could not have been TOE.
+Ben knew this and now had four words to think of. The only letters unique to one word were D, E, H, P, R, T, and V. The password must have contained at least two unique letters, one for Al and the other for Ben, since they were both able to determine the password. The only word with only one of these letters was OAR. So OAR could not have been the password.
+Carl knew this and now had three words to think of. The only letters unique to one word were D, E, H, O, P, T, and V. The password must have included three of these letters, since all three were able to determine the password. The only one of the three words containing three such letters was HOE, so this must have been the password.",GPT-o3,combinedhintPrompt,Final answer: HOE,True
+208,"Question: In the following code, each symbol stands for one of five letters.
+! stands for R, U, O, N, or V
+? stands for U, D, L, W, or J
+@ stands for A, G, P, E, or Y
+; stands for O, M, I, C, or S
+The four letter code word, @!;?, can be translated into two English words that are opposites. What are the two words?
+ Hint: Morality",Morality,Good and Evil.,GPT-o3,combinedhintPrompt,Final answer: GOOD and EVIL,True
+209,"Question: Adam, Ben and Cyril were born in 1309, 1310 and 1311 on the same road in old Jerusalem. They lived their whole life there, and all lived to be over 60. They also had a full active life. However, they never crossed paths with each other. Why should that be so?
+ Hint: Calendar differences?",Calendar differences?,"Adam was a Muslim, Ben was a Christian and Cyril was a Jew. Adam was born in 1309 of the Muslim calendar, Ben 1310 in the Christian calendar and Cyril 1311 in the Jewish calendar. Cyril was born over 3000 years before Ben, who in turn was born 619 years before Adam.",GPT-o3,combinedhintPrompt,"Final answer:  Because the three “years” are taken from three different calendars that coexist in Jerusalem, the boys were in fact born many centuries apart.
+
+•  Adam’s Jewish family dated documents in the old “Seleucid” era that Jews in the Near-East used for legal contracts.  Year 1309 of that era is 1309 – 312 = 998 CE.
+
+•  Ben’s Christian family used the western Christian calendar.  Year 1310 there is the ordinary year 1310 CE.
+
+•  Cyril’s Muslim family wrote dates according to the Hegira (Islamic) calendar.  Year 1311 AH corresponds to about 1893 CE (1311×0.97023 ≈ 1272; 622 + 1272 ≈ 1894).
+
+Thus the births occurred in 998 CE, 1310 CE and 1893 CE – roughly three hundred and then five hundred years apart.  
+Each man lived his whole life on the same street and reached well over sixty, but by the time the second was born the first had already been dead for centuries, and the third was not born until long after the second had died.  Their lives therefore never overlapped and their paths could not possibly have crossed, even though the street was the same.",True
+210,"Question: In the following code, each symbol stands for one of five letters.
+* stands for L, T, K, C, or N
+) stands for D, O, E, H, or S
++ stands for N, G, I, O, or X
+( stands for Y, T, E, P, or F
+_ stands for R, B, M, A, or S
+The five letter code word, (+_*), can be translated into two English words that are opposites. What are the two words?
+ Hint: In music...",In music...,Forte and Piano.,GPT-o3,combinedhintPrompt,"Because the coded word is the sequence of symbols  
+
+(  +  _  *  )
+
+we must choose, for each position, a letter from the set assigned to that symbol:
+
+(  → {Y, T, E, P, F}  
++  → {N, G, I, O, X}  
+_  → {R, B, M, A, S}  
+*  → {L, T, K, C, N}  
+)  → {D, O, E, H, S}
+
+We look for two five-letter English words that
+
+1. fit these five independent letter restrictions, and  
+2. are opposites of one another.  
+
+With the hint “In music…”, the natural opposite pair is
+
+FORTE (loud) and PIANO (soft).
+
+Check FORTE:
+
+( → F (allowed)  
++ → O (allowed)  
+_ → R (allowed)  
+* → T (allowed)  
+) → E (allowed)
+
+Check PIANO:
+
+( → P (allowed)  
++ → I (allowed)  
+_ → A (allowed)  
+* → N (allowed)  
+) → O (allowed)
+
+Both words satisfy the symbol restrictions, and in musical terminology they are exact opposites.
+
+Final answer: FORTE and PIANO",True
+211,"Question: The following statements were made by each of eight people at a family reunion. They are each referring to one of the other seven people (in other words the person being referred to in the first statement, Maria, is making one of the other statements). Can you determine who made each statement? Assume that all parents are married and that all married couples are heterosexual, married only once, still married, and attending together.
+1.  ""I am Maria's niece.""
+2.  ""Christopher is my only cousin.""
+3.  ""Clarissa is my brother's wife.""
+4.  ""I am Donna's sister.""
+5.  ""Jonathan is my uncle.""
+6.  ""Theodore is my brother.""
+7.  ""Ben is my nephew.""
+8.  ""Judy is my daughter.""
+ Hint: I started with the women:  I used statements 1 and 3 to put Maria and Clarissa in the older generation, respectively. Keep deducing...","I started with the women:  I used statements 1 and 3 to put Maria and Clarissa in the older generation, respectively. Keep deducing...","1.  Donna
+2.  Ben
+3.  Theodore
+4.  Judy
+5.  Christopher
+6.  Jonathan
+7.  Maria
+8.  Clarissa
+I had trouble coming up with a nice, straightforward logical solution for this problem so I had to use a little trial and error.  Since no grandchildren are mentioned, I assumed that there were only two generations present.  I started with the women:  I used statements 1 and 3 to put Maria and Clarissa in the older generation, respectively.  Then I used statements 4 and 8 to put Donna and Judy in the younger generation, as sisters.  Statement 7 puts Ben in the younger generation.  If Christopher is also in the younger generation, then Ben must be Donna and Judy's brother and either Ben or Donna says statement 2.  If Theodore and Jonathan are in the older generation, then Jonathan must be Clarissa's husband and Theodore must be Jonathan's brother (Statement 3).  Statement 1 has to be said by Donna, since she is the only girl left in the younger generation who could say that.  This leaves Ben saying statement 2.  By elimination, Clarissa must give statement 8 and Maria statement 7.  The only thing left is for Christopher to make statement 5.",GPT-o3,combinedhintPrompt,,False
+212,"Question: In the following code, each symbol stands for one of five letters.
+- stands for E, O, L, C, or W
+= stands for J, K, U, R, or S
+* stands for B, O, P, F, or C
++ stands for D, G, I, M, or A
+/ stands for F, N, H, E, or R
+The five letter code word, */+-=, can be translated into two English words that are opposites. What are the two words?
+ Hint: Law",Law,Order and Chaos.,GPT-o3,combinedhintPrompt,Final answer: ORDER and CHAOS,True
+213,"Question: runway : cinema
+answer : ?
+Directions: Ratios usually involve numbers.  This word ratio is a little different in that all four words in the ratio are somehow related.  Can you find a word that completes the ratio?
+(Note: there is more than one possible answer.)
+ Hint: Look within the spellings...",Look within the spellings...,"Any 6-letter word with the letters ""se"" in the middle will complete the word ratio. Possible answers include the words absent, assert, bisect, desert, insect, itself, losers, misery, museum, resent, unseen, wisely, etc.
+The middle two letters of each of the words in the ratio represents a direction. The embedded directions relate to the position of the word within the ratio.
+ruNWay: ciNEma
+anSWer: abSEnt",GPT-o3,combinedhintPrompt,"Take a careful look at the six-letter words already given.
+
+runway        → letters 3 and 4 are N W   = “north-west”
+cinema        → letters 3 and 4 are N E   = “north-east”
+
+Thus each of the first two words hides one of the four principal inter-cardinal
+(compass) directions in its centre.
+
+answer        → letters 3 and 4 are S W   = “south-west”
+
+To complete the ratio we need a six-letter word whose 3rd and 4th letters are
+S E (“south-east”).  Any such word will work, and there are many possibilities.
+For example:
+
+L O S E R S
+1 2 3 4 5 6
+
+Here the middle pair S E gives the required final direction.
+
+Therefore one acceptable completion of the ratio is
+
+runway : cinema :: answer : losers
+
+(Other correct six-letter words with S E in the middle – e.g. “basely”, “masers”,
+“posers”, etc. – would also satisfy the condition.)
+
+Final answer: losers",True
+214,"Question: John, Paul, George, and Ringo were playing a card game. Each player had three cards, one of the four suits was the ""high suit."" When each player played one card, this was a ""trick."" The first card played in a trick was the ""leading suit."" Here are the cards in each man's hand:
+John: club, heart, diamond
+Paul: club, spade, spade
+George: club, heart, heart
+Ringo: spade, diamond, diamond
+If possible, each player had to play the leading suit for each trick. If they couldn't do that, they had to play the high suit. And if they couldn't do that, they could play any card. A player who won a trick had to lead the next trick. Each of the three tricks consisted of the leading card, exactly one other card of the same suit, exactly one card of the high suit which won its player the trick, and exactly one other card. Which suit was the high suit?
+ Hint: This makes the puzzle too easy. Please stop reading if you don't want it to be too easy.
+Lucy in the sky with...","This makes the puzzle too easy. Please stop reading if you don't want it to be too easy.
+Lucy in the sky with...","The high suit is diamonds.
+The first trick obviously required two cards of the leading suit, and since everyone had to play the leading suit if possible, there had to be two people who had at least one card of the first leading suit. But since John, Paul, and George each had a club, the first leading suit could not have been a club.
+If the first leading suit was a heart, then the high suit had to be a card of which only one of Paul and Ringo had. This means it could only have been a club or a diamond. Similarly, if the first leading suit was a spade, the high suit could only have been a diamond, and if the leading suit was a diamond, the high suit could only have been a heart or a spade.
+If the first leading suit was a heart, the second trick was led by either Paul or Ringo, and the leading suit had to be a spade. If the first leading suit was a spade, the second trick was led by John, and the leading suit could have been a club or a heart. If the first leading suit was a diamond, the second trick was led by either Paul or George, and the leading suit was a club. Now we can deduce the six possible leading suits and high suits for the whole game:
+1. heart, heart, club
+spade, spade, club
+diamond, diamond, club
+2. heart, heart, diamond
+spade, spade, diamond
+club, club, diamond
+3. spade, spade, diamond
+club, club, diamond
+heart, heart, diamond
+4. spade, spade, diamond
+heart, heart, diamond
+club, club, diamond
+5. diamond, diamond, heart
+club, club, heart
+spade, spade, heart
+6. diamond, diamond, spade
+club, club, spade
+heart, heart, spade
+Game 1 cannot be possible because Paul would have led the spade and John and George would both have played a club, making two cards of the high suit. Games 5 and 6 cannot be possible because no one had both hearts and spades. This leaves only games 2, 3, and 4, which all have diamonds as the high suit.",GPT-o3,combinedhintPrompt,"Let the (unknown) trump suit be T.  
+Because every suit occurs exactly three times in the four hands and every trick contains
+“exactly one card of the high suit,” all three cards of T must be played – one in each of
+the three tricks.
+
+For a player to be the unique trump-player in a trick, the leading suit must be a suit that
+he does ​not​ possess; otherwise he would be obliged to follow suit instead of trumping.
+
+I.  Assume T = hearts.  
+ John holds one heart, George two.  
+ John lacks only spades, so John could trump only in a spade-led trick.  
+ But George also lacks spades, so he too would have to trump in that same trick – giving
+two hearts in one trick, contradicting the condition “exactly one.”  
+ Therefore hearts cannot be high.
+
+II. Assume T = spades.  
+ Paul holds two spades, Ringo one.  
+ Paul lacks hearts and diamonds; he would have to trump in an H-led and a D-led trick.  
+ Ringo lacks clubs and hearts; to use his single spade he must trump in a C- or H-led
+trick.  
+ Hence at least one trick must be heart-led, forcing ​both​ Paul and Ringo to trump in the
+same trick – again impossible.  
+ So spades cannot be high.
+
+III. Assume T = clubs.  
+ John, Paul and George have one club each.  
+ John lacks spades, so he would trump in a spade-led trick.  
+ George lacks spades as well, so he would have to trump in that same spade-led trick,
+producing two clubs.  
+ Thus clubs cannot be high.
+
+The only remaining possibility is
+
+IV. T = diamonds.
+
+Show that diamonds really can work.
+
+Trick 1 George leads a heart.  
+ George ♥, John ♥ (must follow)  
+ Paul cannot follow and has no diamond ⇒ plays his club (off-suit)  
+ Ringo cannot follow and ​does​ have a diamond ⇒ plays ♦ and wins.
+
+Trick 2 Ringo (the winner) leads his spade.  
+ Ringo ♠, Paul ♠ (must follow)  
+ John cannot follow ⇒ plays his ♦ and wins.  
+ George cannot follow and has no diamonds ⇒ plays a heart (off-suit).
+
+Trick 3 John (the winner) leads his remaining club.  
+ John ♣, George ♣ (must follow)  
+ Paul cannot follow and has no diamonds ⇒ plays his remaining spade (off-suit)  
+ Ringo cannot follow ⇒ plays his second ♦ and wins.
+
+Each trick contains
+• the leading card,  
+• exactly one other card of the leading suit,  
+• exactly one diamond (the high suit) which wins the trick, and  
+• exactly one other card,  
+
+and the winner of every trick leads the next.
+
+Hence the rules can be satisfied only when the high suit is diamonds.
+
+Final answer: diamonds",True
+215,"Question: Mad Ade sat at home, waiting for his favourite TV program ""I'm a celebrity, Get me a Kebab"" to start. He glanced at his clock and began to wonder strange and wondrous things, but that is another story altogether.
+He realised that he could leave 6 adjacent numbers of the face of a clock intact and rearrange the other 6 in such a way that the sum of every pair of adjacent numbers is prime.
+Unfortunately the TV program started at that point so he never actually got around to doing it. Can you find the two possible solutions to Mad Ade's clock teaser?
+ Hint: Part of it is making sure each number is odd...",Part of it is making sure each number is odd...,"Imagining the number on a clock face in a clockwise order they would be
+1 2 3 4 7 10 9 8 5 6 11 12
+Or
+1 2 3 4 9 10 7 6 5 8 11 12",GPT-o3,combinedhintPrompt,"Because the sum of two adjacent numbers has to be (an odd) prime, every neighbouring pair on the clock must consist of one odd and one even number.  
+The ordinary clock already alternates odd / even, so every number must stay on a place of the same parity.
+
+1.  Decide which six consecutive positions can be left unchanged.  
+   Going round the usual clock the only neighbouring pairs whose sum is NOT prime are  
+
+          4 + 5 = 9 , 7 + 8 = 15 , 10 + 11 = 21.
+
+   Hence the six–long arc that is left untouched must not contain any of these three pairs.  
+   The unique such arc is
+
+          11 – 12 – 1 – 2 – 3 – 4 .
+
+   These six numbers stay exactly where they are.
+
+2.  The movable numbers are therefore  
+
+          5 , 6 , 7 , 8 , 9 , 10
+
+   which have to be permuted over the remaining six places
+
+          5 o’clock (odd place), 6 o’clock (even), 7 o’clock (odd),
+          8 o’clock (even), 9 o’clock (odd), 10 o’clock (even).
+
+   Write the unknown entries
+
+          4 | a | b | c | d | e | f | 11
+               (a-f are, in order, the numbers to be found)
+
+   with the conditions (all sums prime)
+
+          4+a , a+b , b+c , c+d , d+e , e+f , f+11.
+
+   Parity forces  
+          a,c,e ∈ {5,7,9}   and   b,d,f ∈ {6,8,10}.
+
+3.  Working from the fixed ends:
+
+   • 4+a must be prime ⇒ a ≠ 5 (because 4+5=9).  
+     So a is 7 or 9.
+
+   • f+11 must be prime ⇒ f is 6 or 8 (11+10 is not prime).
+
+   Two systematic parity–respecting trials give exactly two ways to satisfy every prime–sum
+   requirement:
+
+   (i)  a=7 , b=10 , c=9 , d=8 , e=5 , f=6
+
+   (ii) a=9 , b=10 , c=7 , d=6 , e=5 , f=8
+
+4.  Translating back to the clock–face:
+
+   Solution 1 (clockwise from 12):
+
+        12 , 1 , 2 , 3 , 4 , 7 , 10 , 9 , 8 , 5 , 6 , 11
+
+   Solution 2 (clockwise from 12):
+
+        12 , 1 , 2 , 3 , 4 , 9 , 10 , 7 , 6 , 5 , 8 , 11
+
+   Checking either arrangement shows that every pair of neighbouring numbers indeed adds
+   to a prime (all the sums obtained are  
+   23,13,3,5,7,11,17,19,17,13,11,17 or  
+   23,13,3,5,7,13,19,17,13,11,13,19 respectively).
+
+Therefore Mad Ade could have produced exactly the two clock-faces above.
+
+Final answer:  
+12 – 1 – 2 – 3 – 4 – 7 – 10 – 9 – 8 – 5 – 6 – 11  
+or  
+12 – 1 – 2 – 3 – 4 – 9 – 10 – 7 – 6 – 5 – 8 – 11",True
+216,"Question: There are 10 people who could be the owner of the bank. They all sit in separate chairs across a long table facing north. The table is made of aluminium. The owner of the bank sits next to M. M sits on the left side of the banker. M sits next to C. C sits 4 places to the left of L. L sits next to O and rarely talks to S, E or Z, because they hate him and because they sit on the far right of the bank. O does not sit next to the owner of the bank. The two people left are F and T. T hates the owner of the bank and is considering resigning. Give the names of all the bankers from left to right.
+ Hint: Think from the banker's point of view and draw a diagram.",Think from the banker's point of view and draw a diagram.,TCMBFLOSEZ.,GPT-o3,combinedhintPrompt,"We label the ten seats 1 (extreme left) through 10 (extreme right).
+
+1.  “M sits on the left side of the banker and the banker sits next to M.”
+    ⇒ the two seats must be … M | Banker … with M immediately to the banker’s left.
+
+2.  “M sits next to C.”
+    Since M’s right‐hand seat is already taken by the banker, C must be on M’s left.
+    ⇒ … C | M | Banker …
+
+3.  “C sits four places to the left of L.”
+    Counting seats, L is four seats to the right of C, so
+
+       C  M  Banker  □  L
+
+   (the □ is one still–unknown person).
+
+4.  “L sits next to O” and “O does not sit next to the banker.”
+    If O were on L’s left it would be only two seats from the banker, i.e. adjacent to him,
+    which is forbidden.  So O must be on L’s right:
+
+       C  M  Banker  □  L  O
+
+5.  Seats 8, 9, 10 are reserved for “S, E or Z, who sit on the far right.”
+    Therefore O cannot occupy any of those seats, so O must be in seat 7 at the latest.
+    That forces C to be in seat 2 (otherwise O would be too far right):
+
+       1   2   3       4        5   6   7   8   9   10
+           C   M   Banker   □   L   O   –   –   –    
+
+6.  The far–right seats 8–10 are occupied by S, E, Z in some order.
+
+7.  The remaining two people are F and T, with “T hates the banker.”
+    To keep T away from the banker, put T in seat 1 and F in seat 5 (the □):
+
+       1    2    3       4        5   6   7   8   9   10
+       T    C    M    Banker     F   L   O   S   E   Z
+
+All ten conditions are now satisfied:
+
+• Banker is next to M, with M on his left.  
+• M is next to C.  
+• C is four seats left of L.  
+• L is next to O.  
+• O is not next to the banker.  
+• S, E, Z occupy the three far-right seats.  
+• The only seats left for F and T are 1 and 5, and the hater T is not beside the banker.
+
+Hence the unique seating arrangement from left to right is
+
+T, C, M, Banker, F, L, O, S, E, Z.",True
+217,"Question: You and your spouse invite four other couples to a party. During the course of the conversation, it is discovered that, prior to the party, each person except you was acquainted with a different number of the people present. Assuming the acquaintance relationship is symmetric (i.e., if you are acquainted with someone, that person is also acquainted with you), then how many people did your spouse know prior to the party? How many people did you know?
+ Hint: Start with the assumption that everybody knows their own spouses -- which means that everybody there knew at least one person.",Start with the assumption that everybody knows their own spouses -- which means that everybody there knew at least one person.,"Start with the assumption that everybody knows their own spouses -- which means that everybody there knew at least one person. Discounting yourself, everyone knows a different number of people, which means that (again, discounting yourself) one person knows one, one person knows two, one person knows three, etc., up to one person who knows nine people (everybody else). Number the people (besides yourself) according to how many people they know, so that person 1 is the one who knows one person, person 2 is the one who knows two people, etc.
+Now pair up people with their spouses. If person 9 knows everybody else, s/he must be the only person who knows person 1, because person 1 only knows one person. So they must be married. Person 8 knows everybody except for person 1. Person 2 therefore knows person 8 and person 9. Person 9 is married to person 1, so person 2's spouse must be person 8. Person 7 knows everybody except for persons 1 and 2. Person 3 therefore knows persons 7, 8, and 9. Persons 8 and 9 are married to persons 2 and 1 respectively, so person 3's spouse must be person 7. Person 6 knows everybody except for persons 1, 2, and 3. Person 4 therefore knows persons 6, 7, 8, and 9. The only one of those not yet paired up is person 6, so person 4 and person 6 must be married.
+This leaves person 5, who knows everyone except persons 1, 2, 3, and 4. These five people, therefore, must be persons 6, 7, 8, 9, and you. Since you are the only one of these five not yet paired up, person 5 must be your spouse. So your spouse knew five people prior to the party.
+The above also determines that the people who know you are persons 5, 6, 7, 8, and 9. So you knew five people prior to the party also.",GPT-o3,combinedhintPrompt,"Let the ten persons present be arranged in couples  
+C₁ , C₂ , C₃ , C₄ and C₅ = (you , your spouse).  
+For every person the “degree’’ means the number of people (among the other nine) he or she already knew before the party.  
+Because everyone knows his / her own spouse, every degree is at least 1 and at most 9.
+
+1.  Degrees of the nine people who are **not** you  
+   By the statement, those nine degrees are all different, hence they must be  
+   1,2,3,4,5,6,7,8,9 (one occurrence of each).
+
+2.  The person with degree 1 and the person with degree 9 are married  
+   • The degree-1 person knows exactly one person – his / her spouse.  
+   • The degree-9 person knows everybody, so in particular knows the degree-1 person.  
+   Since acquaintance is symmetric, the degree-1 person therefore knows the degree-9 person; consequently they must be husband and wife.  
+   So couple C₁ has degrees (1, 9) whose sum is 10.
+
+3.  Remove that couple and repeat  
+   Strike the couple (1, 9) from consideration.  
+   Among the eight people left the degrees are still all different, namely  
+   2,3,4,5,6,7,8.  
+   Again the smallest degree (now 2) belongs to someone who knows only his / her spouse;  
+   the largest degree (now 8) belongs to someone who knows everybody that is left, hence also the degree-2 person.  
+   Therefore the couple with degrees (2, 8) is identified, and their degrees again add to 10.
+
+4.  Continue inductively  
+   Repeating the same argument we successively obtain the couples  
+   (3, 7) and (4, 6), each time the two degrees summing to 10.
+
+5.  The only degree left among the nine is 5  
+   After forming the four couples above, of the nine different degrees only 5 has not been used.  
+   The person whose degree is 5 must therefore be your spouse.
+
+6.  Your own degree  
+   Every couple we have found has degrees that add to 10, and this rule must hold for the last couple as well; hence
+
+        (degree of your spouse) + (your degree) = 10
+                                  5           + (your degree) = 10
+                                        your degree          = 5.
+
+   Thus you yourself knew 5 people before the party.
+
+Answer.
+
+Your spouse had already known 5 of the people present, and you had also already known 5 of them.
+
+Final answer: Your spouse knew 5 people, and you yourself also knew 5 people.",True
+218,"Question: Nick has always wanted one, so he goes out and buys a brand new one for £5000.  Unfortunately the next day he breaks it, so he goes out again and gets another brand new one. This time however, it only costs him £25. The next day someone offers to buy it off of him for £6000.
+What is it ?
+ Hint: nan",,A personalised number plate.,GPT-o3,combinedhintPrompt,Final answer: a personalised car registration/number plate,True
+219,"Question: Four friends named Jane, June, Jean and Jenny discovered that, if a different non-zero integer was assigned to each letter of their names and added together, it produced their ages.
+June is 17, Jenny is two years older, while Jane and Jean are both sweet 16.  All the girls agree that June is in her prime.  Can you find the numbers the girls assigned to each letter of their names?
+(There are two possible answers.)
+ Hint: prime...",prime...,"J=2; U=7; N=5; E=3; A=6; Y=4
+or
+J=3; U=7; N=5; E=2; A=6; Y=4
+The little clue 'June is in her prime' should have helped, as it suggests that all the numbers in her name are prime numbers.  As the total is 17 all the numbers must be less than 10, so:
+J=2; U=7; N=5; E=3  (or J=3; U=7; N=5; E=2)
+Setting these numbers in the word Jane or Jean we can conclude that
+16=2+A+5+3, so A=6.
+Putting these numbers in the word Jenny in the same way we find Y=4.",GPT-o3,combinedhintPrompt,"Let  
+
+J , A , N , E , U , Y  
+
+be the (different, non–zero) integers assigned to the six letters that appear in the four names.  
+From the wording we have  
+
+Jane : J + A + N + E = 16 …………… (1)  
+Jean : J + A + N + E = 16     (the same relation)  
+June : J + U + N + E = 17 ………… (2)  
+Jenny : J + E + N + N + Y = 19 … (3)
+
+--------------------------------------------------------------------
+1.  Eliminate U and Y
+
+Subtract (1) from (2): U – A = 1 ⇒ U = A + 1 ……… (4)  
+
+Subtract (2) from (3): N + Y – U = 2  
+Use (4): N + Y – (A + 1) = 2 ⇒ N + Y = A + 3 ……… (5)
+
+Hence everything is governed by (1), (4) and (5).
+
+--------------------------------------------------------------------
+2.  Use the hint “prime …”
+
+The girls say that “June is in her prime”; we interpret this to mean that
+every letter–value must itself be a prime number.  
+If A and U are primes and (4) holds, the only possibilities are
+
+ A = 2 , U = 3   or   A = −3 , U = −2
+
+(the only pairs of different primes that differ by 1).
+
+--------------------------------------------------------------------
+2a.  The pair A = 2 , U = 3
+
+With A = 2, equation (5) gives N + Y = 5.  
+Because N and Y must be primes different from 2 and 3, this is impossible.  
+Hence no solution arises from this pair.
+
+--------------------------------------------------------------------
+2b.  The pair A = −3 , U = −2
+
+Now (5) gives N + Y = 0 ⇒ Y = –N,  
+so Y is the negative of the (positive) prime N.
+
+Put A = −3 in (1):
+
+ J + E + N = 19 ……………………………………… (6)
+
+We need three different positive primes whose sum is 19.  
+The only such set is {3, 5, 11}.  (A short check of the prime triples <19
+shows this is unique.)
+
+Thus J , E , N are 3, 5 and 11 in some order, with N chosen first (because
+Y = –N must also be prime).
+
+• If N = 5 ⇒ Y = −5 and {J , E} = {3 , 11}.  
+• If N = 11 ⇒ Y = −11 and {J , E} = {3 , 5}.
+
+Swapping J and E does not change any of the four age–equations (each
+contains the combination J + E), so each choice of N gives only one
+essentially different assignment.
+
+--------------------------------------------------------------------
+3.  The two possible assignments
+
+Solution 1  
+J = 3  A = −3  N = 5  E = 11  U = −2  Y = −5
+
+Solution 2  
+J = 3  A = −3  N = 11 E = 5  U = −2  Y = −11
+
+Check for Solution 1  
+Jane 3 + (−3) + 5 + 11 = 16  
+June 3 + (−2) + 5 + 11 = 17  
+Jenny 3 + 11 + 5 + 5 + (−5) = 19  
+
+Check for Solution 2  
+Jane 3 + (−3) + 11 + 5 = 16  
+June 3 + (−2) + 11 + 5 = 17  
+Jenny 3 + 5 + 11 + 11 + (−11) = 19  
+
+All conditions are met and all letter–values are distinct primes, giving the
+two solutions requested.",True
+220,"Question: Some office workers were holding a daily pool on the number of doughnuts their boss would eat each weekday morning during March. Each person set aside funds in their desk with which to bet. Each day from Monday, March 3rd, they all bet a dollar - Kevin bet on 2, Kate on 3 and Kathy on 3.5 doughnuts. Kathy won twice as many times as Kevin, who was right once more than Kate; sometimes there was no winner. By April, they all had $20 in their desks. How much was the most anyone could have had in their desk at the beginning of March?
+ Hint: The pot does not accumulate if there is no winner - each person gets his ""stake"" back.","The pot does not accumulate if there is no winner - each person gets his ""stake"" back.","$27
+There would be 21 working days in a March where the first weekday is the third.  The combination of wins in which anyone will have lost the most money has a total of 19 wins (10 for Kathy, 5 for Kevin and 4 for Kate).  In this scenario, Kate would have lost 15 times ($15) and won 4 times ($8), for a net loss of $7.  Since she now has $20, she must have started with $27.",GPT-o3,combinedhintPrompt,"Let  
+
+ K = number of days Kevin is exactly right,  
+ T = number of days Kate is exactly right,  
+ H = number of days Kathy is exactly right.  
+
+From the statement  
+
+ H = 2K  (“Kathy won twice as many times as Kevin”)  
+ K = T + 1 (“Kevin was right once more than Kate”).
+
+So T = K – 1 and H = 2K.  (1)
+
+Step 1.  How many days were bets made?  
+March 3, 2014 was a Monday and March 31 a Monday, so the weekday mornings were  
+
+ 3–7, 10–14, 17–21, 24–28, 31  → 5 + 5 + 5 + 5 + 1 = 21 days.  (2)
+
+Step 2.  How many of those 21 days had a winner?  
+Each winning day is won by exactly one of the three, so
+
+ K + T + H = K + (K – 1) + 2K = 4K – 1.  (3)
+
+Because there were only 21 betting days,
+
+ 4K – 1 ≤ 21  ⇒ K ≤ 5.  (4)
+
+Since Kate must win at least 0 times, K ≥ 1.  Thus 1 ≤ K ≤ 5.
+
+Step 3.  Net gain / loss for each player.  
+On a winning day the winner nets +$2 (takes the $3 pot having put up $1),
+each loser nets –$1.  Hence
+
+ Kevin:  G_Kevin = 2K – (T + H)  
+ Kate:   G_Kate  = 2T – (K + H)  
+ Kathy:  G_Kathy = 2H – (K + T).
+
+Insert (1):
+
+ G_Kevin = 2K – (K – 1 + 2K) = 1 – K,  
+ G_Kate  = 2(K – 1) – (K + 2K) = –K – 2,  
+ G_Kathy = 2(2K) – (K + K – 1) = 2K + 1.  (5)
+
+Step 4.  Starting amounts.  
+They all finish with $20, so
+
+ Start = 20 – (net gain).
+
+Thus
+
+ S_Kevin = 20 – (1 – K) = 19 + K,  
+ S_Kate  = 20 – (–K – 2) = 22 + K,  
+ S_Kathy = 20 – (2K + 1) = 19 – 2K.  (6)
+
+For a starting amount to be non-negative we need 19 – 2K ≥ 0 ⇒ K ≤ 9,
+already satisfied by (4).
+
+Step 5.  Who can have the most at the start?  
+From (6):
+
+ S_Kate – S_Kevin = 3 > 0  
+ S_Kate – S_Kathy = (22 + K) – (19 – 2K) = 3 + 3K > 0.
+
+Therefore the largest starting balance is always Kate’s, S_Kate = 22 + K,
+and it grows with K.  The maximum possible K is 5 (from (4)), so
+
+ S_Kate(max) = 22 + 5 = $27.  (7)
+
+Step 6.  Feasibility of K = 5.  
+With K = 5 we have T = 4, H = 10; total winning days 4·5 – 1 = 19,
+leaving 2 days with no winner, well within the 21 days.  
+Starting balances would be
+
+ Kevin 24,  Kate 27,  Kathy 9,
+
+all non-negative, and Kathy never needs to lose more than $8 in a row,
+so every day’s $1 stake can always be covered.  Hence the arrangement is
+possible.
+
+Consequently $27 is the greatest amount anyone could have begun with.
+
+Final answer: $27",True
+221,"Question: When world-famous Madadian philosopher Torks G'Arbage was imprisoned for being a disturbing influence and relieving himself in a public place, he was held in high esteem by his guards, many of whom had followed Torks' teachings. All four of the guards hoped that something would occur that would facilitate his escape. One evening, the guard who was on duty accidentally on purpose left the cell door open so that Torks G'Arbage could leave for distant parts.
+Torks G'Arbage did not attempt to escape, as it was his philosophy that if you accept society's rules, you must also accept its punishments. However, the open door was considered by the Madadian authorities to be a serious matter. It was not clear which guard was on that evening. When questioned, the four guards made the following statements in their defence:
+Norris McDim:
+A) I did not leave the door open.
+B) Morris was the one who did it.
+Nobby Shifty:
+A) I was not the one who was on duty that evening.
+B) Norris was on duty.
+Morris the Daft:
+A) Nobby was the one on duty that evening.
+B) I hoped Torks G'Arbage would escape.
+Robby O'Mental:
+A) I did not leave the door open.
+B) I was not surprised that Torks G'Arbage did not attempt to escape.
+Considering that, in total, three statements are true and five statements are false, which guard is guilty?
+ Hint: For each person, assume they did it. Count how many truthful statements there are?","For each person, assume they did it. Count how many truthful statements there are?","Robby left the door open.
+The one truth given is that all 4 guards hoped that Torks G'Arbage would escape, so statement B from Morris is a truth.
+There are only 3 truthful statements.
+If Norris had done it, then Nobby made 2 truthful statements and Robby's statement A would be true; making a total of 4 truths, so it can't be Norris.
+If Nobby had done it, statement A from Norris would be true, both of Morris's statements would be true, and Robby's statement A would be true; again a total of 4, so it can't be Nobby.
+If Morris had left the cell open, both of Norris's statements would be true, as would Nobby's statement A, Morris's statement B, and Robby's statement A; a total of 5 truths.
+In Robby's case, in detail:
+Norris A True
+B False
+Nobby A True
+B False
+Morris A False
+B True
+Dave A False
+B False (why did he bother to leave the
+cell door open?)",GPT-o3,combinedhintPrompt,"Let 
+
+D = the guard who was on duty that evening (the one who purposely left the cell-door open).  
+For every guard two statements were made; altogether eight statements were uttered, of which exactly three are true.
+
+Step 1  –  Note the two statements whose truth is fixed by the story itself  
+“All four of the guards hoped that something would occur that would facilitate his escape.”
+Hence every guard really did hope that Torks would escape, so
+
+• Morris B  (“I hoped Torks G'Arbage would escape.”) is certainly TRUE.  
+
+Whether anybody was, or was not, surprised that Torks refused to walk out is not stated, so
+
+• Robby B  (“I was not surprised that Torks G'Arbage did not attempt to escape.”) may be either true or false.
+
+Step 2  –  Examine each possible choice of D  
+
+(When a guard is D, the two facts that hold are: he WAS on duty and he DID leave the door open.)
+
+––––––––––––––––––––––––––––––––––––––––––  
+A.  Suppose D = Norris  
+
+True / False list  
+Norris A F, Norris B F,  
+Nobby A T, Nobby B T,  
+Morris A F, Morris B T,  
+Robby A T, Robby B ?  
+
+With Robby B either T or F we obtain 4 or 5 true statements, never 3.  
+Hence D ≠ Norris.
+
+––––––––––––––––––––––––––––––––––––––––––  
+B.  Suppose D = Nobby  
+
+True / False list  
+Norris A T, Norris B F,  
+Nobby A F, Nobby B F,  
+Morris A T, Morris B T,  
+Robby A T, Robby B ?  
+
+Again we get at least 4 truths, never 3.  
+Hence D ≠ Nobby.
+
+––––––––––––––––––––––––––––––––––––––––––  
+C.  Suppose D = Morris  
+
+True / False list  
+Norris A T, Norris B T,  
+Nobby A T, Nobby B F,  
+Morris A F, Morris B T,  
+Robby A T, Robby B ?  
+
+Already 5 statements are true; impossible.  
+Hence D ≠ Morris.
+
+––––––––––––––––––––––––––––––––––––––––––  
+D.  Suppose D = Robby  
+
+True / False list  
+Norris A T, Norris B F,  
+Nobby A T, Nobby B F,  
+Morris A F, Morris B T,  
+Robby A F, Robby B ?  
+
+So far exactly 3 statements (Norris A, Nobby A, Morris B) are true.  
+To keep the total at 3 we must have Robby B false.  
+That is perfectly possible (Robby may well have been surprised).  
+Thus we obtain precisely 3 true and 5 false statements.
+
+Since only this last assignment fulfils the required “3 true, 5 false” condition, the guard who was on duty and who left the door open has to be
+
+Robby O’Mental.
+
+Final answer: Robby O’Mental",True
+222,"Question: John, Pete, Tom, George, and Steve are brothers. One day, one of them broke a window. When their father asked them who did it, they gave the following answers:
+John: ""It was Pete or Tom.""
+Pete: ""It was neither George nor me.""
+Tom: ""Both of you are lying.""
+Steve: ""No, only one of them is lying.""
+George: ""No, Steve, you are wrong.""
+Then their mother added: ""Three of my sons are telling the truth, but I do not believe what the two others said.""
+Who broke the window?
+ Hint: If you find it difficult to use logic alone, then use trial and error by assuming each one of the five sons broke the window, and list whether they are telling a lie or the truth.","If you find it difficult to use logic alone, then use trial and error by assuming each one of the five sons broke the window, and list whether they are telling a lie or the truth.","By assuming that each of the five brothers broke the window and seeing how many told the truth, only Tom can be the person who broke the window.",GPT-o3,combinedhintPrompt,"Let C be the son who broke the window, and evaluate each boy’s statement in terms of C.
+
+1. John (J): “It was Pete or Tom.”  
+  J is true  ⇔  C = Pete or C = Tom.
+
+2. Pete (P): “It was neither George nor me.”  
+  P is true  ⇔  C ≠ George and C ≠ Pete.
+
+3. Tom (T): “Both of you are lying.”  (“Both” refers to John and Pete.)  
+  T is true  ⇔  J is false and P is false.  
+  T is false  ⇔  at least one of J, P is true.
+
+4. Steve (S): “No, only one of them is lying.”  (“Them” = John and Pete.)  
+  S is true  ⇔  exactly one of J, P is false (i.e. J ⊕ P).  
+  S is false  ⇔  J and P have the same truth value.
+
+5. George (G): “No, Steve, you are wrong.”  
+  G is true  ⇔  S is false.  
+  G is false ⇔  S is true.
+
+Mother’s condition: exactly three of the five statements are true; the other two are false.
+
+Step 1.  Note that S and G are negations of each other (only one can be true).  
+ Therefore one of {S,G} is true and the other is false.
+
+Step 2.  Suppose S were true.  
+ Then G would be false, giving 1 true so far.  
+ Since S true means J ⊕ P, exactly one of {J,P} is true, and T must be false (because T needs both J and P to be false).  
+ Total truths would then be at most 1 (S) + 1 (J or P) = 2 < 3.  
+ Contradiction.  Hence S is not true.
+
+Step 3.  Therefore S is false and G is true.  We already have one true statement (G).  
+ Since S is false, J and P have the same truth value (both true or both false).
+
+Step 4.  We still need exactly two more true statements among J, P, T.
+
+• If J and P were both false, then T would be true (because it asserts they are lying).  
+ That would give exactly two true statements (T and G), not three.  Reject.
+
+• Therefore J and P must both be true, making T false.  
+ Now the true statements are J, P, G — exactly three, satisfying the mother.
+
+Step 5.  Determine C from J and P being true.
+
+J true ⇒ C is Pete or Tom.  
+P true ⇒ C ≠ George and C ≠ Pete.  
+Hence C must be Tom.
+
+Verification:
+
+ John: true (Tom).  
+ Pete: true (not George, not Pete).  
+ Tom: false (“Both … lying” is wrong).  
+ Steve: false (“only one … lying” is wrong).  
+ George: true (“Steve, you are wrong”).
+
+Exactly three truths: John, Pete, George.
+
+Final answer: Tom.",True
+223,"Question: A telephone number has the form ABC-DEF-GHIJ, where each letter represents a different digit. The digits in each part of the number are in decreasing order; that is, ABC, DEF, and GHIJ. Furthermore, D, E, and F are consecutive even digits; G, H, I, and J are consecutive odd digits; and A+B+C=9. What is A?
+ Hint: The consecutive even digits DEF can be 420, 642 or 864, while the consecutive odd digits GHIJ can be 7531 or 9753.","The consecutive even digits DEF can be 420, 642 or 864, while the consecutive odd digits GHIJ can be 7531 or 9753.","The consecutive even digits DEF can be 420, 642 or 864, while the consecutive odd digits GHIJ can be 7531 or 9753.
+Since A+B+C=9, none of them can be 9, and GHIJ must be 9753, and one of A, B, C is 1.
+The other two add up to 8, which is obtained by 8+0.
+Therefore, A, the biggest number of the three, is 8.",GPT-o3,combinedhintPrompt,"Because the ten letters A,B,C,D,E,F,G,H,I,J must all represent different digits, they must in fact use every digit 0–9 exactly once.
+
+1.  DEF consists of three consecutive even digits written in decreasing order, so  
+    DEF ∈ {864, 642, 420}. 
+2.  GHIJ consists of four consecutive odd digits written in decreasing order, so  
+    GHIJ ∈ {9753, 7531}.  
+
+Examine each of the six possible pairs (DEF, GHIJ).  
+For each pair list the digits already used and then the three remaining digits, which must be A, B, C.  These three must satisfy A > B > C and A+B+C = 9.
+
+(1) DEF = 864, GHIJ = 9753  
+    Used: 8,6,4,9,7,5,3 → left {0,1,2}; sum 3 ≠ 9.
+
+(2) DEF = 864, GHIJ = 7531  
+    Used: 8,6,4,7,5,3,1 → left {0,2,9}; sum 11 ≠ 9.
+
+(3) DEF = 642, GHIJ = 9753  
+    Used: 6,4,2,9,7,5,3 → left {0,1,8}; sum 0+1+8 = 9 ✔  
+    Arranged in decreasing order gives ABC = 810 (8 > 1 > 0).
+
+(4) DEF = 642, GHIJ = 7531  
+    Left {0,8,9}; sum 17 ≠ 9.
+
+(5) DEF = 420, GHIJ = 9753  
+    Left {1,6,8}; sum 15 ≠ 9.
+
+(6) DEF = 420, GHIJ = 7531  
+    Left {6,8,9}; sum 23 ≠ 9.
+
+Only case (3) satisfies all conditions, so
+ABC = 810 and therefore A = 8.
+
+Final answer: 8",True
+224,"Question: I have 3 dads and 4 sisters. My immediate family (living in my house) consists of 7. Two of my sisters only have 2 dads. How is this possible?
+ Hint: My nephew lives with me and I'm the middle child.",My nephew lives with me and I'm the middle child.,"I have a biological dad, who I don't know. An adopted dad- my sisters' dad and a step dad- who lives with me. My two younger sisters never knew my biological dad. My oldest sister (19) lives by herself. Her son lives with me, my 3 other sisters, my mom, and step dad.",GPT-o3,combinedhintPrompt,"One way – and the simplest way – to make every single sentence in the riddle true is the following.
+
+1.  Mum has been married three different times, always remaining on good terms with her former husbands.  
+   • first husband  = Dad 1 (Adam)  
+   • second husband = Dad 2 (Ben)  
+   • third husband  = Dad 3 (Chris)    (current husband – he is the one who actually lives in the house today)
+
+2.  Children born in those marriages  
+   • to Dad 1 and Mum: Sister A, Sister B  
+   • to Dad 2 and Mum: Me (I am the third child, i.e. the middle one), Sister C  
+   • to Dad 3 and Mum: Sister D  
+
+   So there are five children in all – myself and four girls.
+
+3.  Adoptions / “extra” dads  
+   • When Mum married Ben he legally adopted Sisters A and B.  
+   • When Mum later married Chris he adopted all four older children.  
+     (He is also the biological father of the youngest girl, Sister D.)
+
+   Therefore  
+   • I and the two younger girls each have three dads (our own father Ben plus Adam and Chris, who have both adopted us).  
+   • The two eldest girls have only two dads (their own father Adam and their adoptive father Ben).  
+
+   This is exactly what the riddle says: “Two of my sisters only have two dads.”
+
+4.  Who actually lives in the house?  
+   • Mum  
+   • Dad 3 (Chris) – Mum’s present husband  
+   • the five children  
+
+   That is 1 + 1 + 5 = 7 people, just as stated: “My immediate family (living in my house) consists of 7.”
+
+5.  Why is there a nephew in the house?  
+   Sister A (the oldest) is already a mother.  Her little boy – my nephew – naturally lives with his mum, so the nephew is also in the house, though he is not counted in the “immediate family of seven” (parents and their own children only).
+
+Everything now matches the information in the problem:
+
+• I have 3 dads  – my biological father (Ben) and the two men who have adopted me.  
+• I have 4 sisters.  
+• Two of those sisters – the two eldest – each have only 2 dads.  
+• There are exactly 7 members in the immediate household.  
+• I am the middle child.  
+• My nephew lives with us.
+
+Final answer:  the children are half-siblings whose mother has married three times; because each successive husband adopted (or helped raise) the earlier children, some of the children have three dads while the two oldest girls have only two. This arrangement yields five children (the narrator is the middle one), their mother and her present husband living together – seven people – with the narrator’s nephew (child of the eldest sister) also in the home.",True
+225,"Question: There are three brothers: Al, Ben, and Carl. Two of the three brothers are boxers. Here are some facts:
+1. The shorter of Al and Ben is the older boxer.
+2. The younger of Ben and Carl is the shorter boxer.
+3. The taller of Al and Carl is the younger boxer.
+Which brother is not a boxer?
+ Hint: Try to come up with a potential ordering of their heights and ages. ",Try to come up with a potential ordering of their heights and ages. ,"Carl is not a boxer.
+From fact 1, we know that Carl is not the older boxer.
+From fact 3, we know that Ben is not the younger boxer.
+We now have three possible scenarios:
+1. Al is the younger boxer and Ben is the older boxer.
+2. Ben is the older boxer and Carl is the younger boxer.
+3. Al is the older boxer and Carl is the younger boxer.
+If scenario 1 is true, fact 1 tells us that Ben is shorter than Al.
+If scenario 2 is true, fact 1 tells us that Ben is shorter than Al; fact 3 tells us that Carl is taller than Al, making Ben shorter than Carl.
+If scenario 3 is true, fact 3 tells us that Carl is taller than Al.
+We can now expand our three scenarios:
+1. Al is the younger, taller boxer, and Ben is the older, shorter boxer.
+2. Ben is the older, shorter boxer, and Carl is the younger, taller boxer.
+3. Al is the older, shorter boxer, and Carl is the younger, taller boxer.
+Scenario 2 cannot be possible because it contradicts fact 2 by making the younger of Ben and Carl the taller boxer.
+Fact 2 also tells us that Al is not the shorter boxer, so scenario 3 cannot be possible, either.
+Therefore, scenario 1 is true, which means that Carl is not a boxer.",GPT-o3,combinedhintPrompt,"Let  
+
+H(A), H(B), H(C) = the brothers’ heights,  
+
+A(A), A(B), A(C) = their ages.  
+
+Exactly TWO of the brothers are boxers; call them the Older Boxer and the Younger Boxer (by age).  
+Among those two we can also speak of the Shorter Boxer and the Taller Boxer (by height).
+
+Translate each statement.
+
+1.  “The shorter of Al and Ben is the older boxer.”
+        Shorter{A,B}  =  Older Boxer.          …(1)
+
+2.  “The younger of Ben and Carl is the shorter boxer.”
+        Younger{B,C}  =  Shorter Boxer.        …(2)
+
+3.  “The taller of Al and Carl is the younger boxer.”
+        Taller{A,C}   =  Younger Boxer.        …(3)
+
+Define
+
+X = Shorter{A,B},      Y = Younger{B,C},      Z = Taller{A,C}.
+
+From (1)–(3) we have  
+
+X = Older Boxer, Y = Shorter Boxer, Z = Younger Boxer.
+
+Because there are only two boxers, the three symbols X, Y, Z cannot all be different.  
+But Older Boxer and Younger Boxer must be distinct, so X ≠ Z.  
+Therefore Y must coincide with one of them:
+
+Case I Y = X (Shorter Boxer is also Older Boxer)  
+Case II  Y = Z (Shorter Boxer is also Younger Boxer)
+
+––––––––––––––––––––––––––––––––––––––––
+Case I :  Y = X  
+
+Then X = Y is one boxer, Z is the other.
+
+Y = X  ⇒  Shorter{A,B}  =  Younger{B,C}.  
+The only brother who can be both “shorter of A & B” and “younger of B & C” is Ben, because
+
+• if Ben is shorter than Al, he is Shorter{A,B};  
+• if Ben is younger than Carl, he is Younger{B,C}.
+
+Thus Ben is the Older Boxer and the Shorter Boxer.
+
+Z (the other boxer) is Taller{A,C}.  
+If Z were Carl, Carl would have to be younger than Ben (he is the Younger Boxer), contradicting “Ben younger than Carl”.  
+Hence Z must be Al.
+
+So
+
+Boxers:  Al (younger, taller) and Ben (older, shorter)  
+Non-boxer:  Carl.
+
+All three statements are satisfied:
+
+• Ben is shorter than Al and is the older boxer.  
+• Ben (younger of Ben & Carl) is indeed the shorter boxer.  
+• Al (taller of Al & Carl) is the younger boxer.
+
+Case II :  Y = Z  
+
+Here Y = Z would have to be both Younger Boxer and Shorter Boxer.  
+The brother equal to Y = Younger{B,C} is either Ben or Carl, while
+Z = Taller{A,C} is either Al or Carl; the only common candidate is Carl.
+Assume Y = Z = Carl:
+
+– Carl younger than Ben (makes him Younger{B,C});  
+– Carl taller than Al (makes him Taller{A,C}).
+
+The remaining boxer X = Shorter{A,B} must then be Al or Ben but cannot be Carl.
+
+• If X = Al, Al must be shorter than Ben and older than Carl.  
+  Then the two boxers are Al (older) and Carl (younger).  
+  Since Carl is taller than Al, Carl cannot be the Shorter Boxer, contradicting (2).
+
+• If X = Ben, Ben must be shorter than Al and older than Carl.  
+  The boxers would be Ben (older) and Carl (younger).  
+  Ben is shorter than Carl, so Carl again is not the Shorter Boxer, contradicting (2).
+
+Thus Case II is impossible.
+
+––––––––––––––––––––––––––––––––––––––––
+Only Case I works, and it forces Al and Ben to be the two boxers.
+
+Therefore the brother who is not a boxer is Carl.
+
+Final answer: Carl",True
+226,"Question: Andy dislikes the catcher. Ed's sister is engaged to the second baseman. The center fielder is taller than the right fielder. Harry and the third baseman live in the same building. Paul and Allen each won $20 from the pitcher at pinochle. Ed and the outfielders play poker during their free time. The pitcher's wife is the third baseman's sister. The pitcher, catcher, and infielders except Allen, Harry, and Andy, are shorter than Sam. Paul, Andy, and the shortstop lost $50 each at the racetrack. Paul, Harry, Bill, and the catcher took a trouncing from the second baseman at pool. Sam is involved in a divorce suit. The catcher and the third baseman each have two children. Ed, Paul, Jerry, the right fielder, and the center fielder are bachelors. The others are married. The shortstop, the third baseman, and Bill each cleaned up $100 betting on the fight. One of the outfielders is either Mike or Andy. Jerry is taller than Bill. Mike is shorter than Bill. Each of them is heavier than the third baseman.
+Using these facts, determine the names of the men playing the various positions on the baseball team.
+ Hint: ""The pitcher, catcher, and infielders except Allen, Harry, and Andy"" implies these three people are part of the union of pitcher, catcher, infielders. The puzzle is filled with these kinds of hints","""The pitcher, catcher, and infielders except Allen, Harry, and Andy"" implies these three people are part of the union of pitcher, catcher, infielders. The puzzle is filled with these kinds of hints","Harry is the pitcher, Allen the catcher, Paul the first baseman, Jerry the second baseman, Andy the third baseman, Ed the shortstop, Sam the left fielder, Mike the right fielder, and Bill the center fielder.",GPT-o3,combinedhintPrompt,,False
+227,"Question: On Sunday, December 22, four Madadian cruise ships - W, X, Y, Z - started their series of winter cruises to various ports around Madadia.
+Ship W left at 4:00 PM on Sunday, December 22, for a series of 8-days cruises to Madport.
+Ship X left at 4:30 PM on Sunday, December 22, for a series of alternating 11-days and 13-days cruises to Adeville.
+Ship Y left at 5:00 PM on Sunday, December 22, for a series of 5-days cruises to Kebabtown.
+Ship Z left on Monday for a series of 7-days cruises.
+Each ship is scheduled to return back early in the morning after the last day of the cruise and leave again late in the afternoon of the same day.
+On how many days occasions between December 22 and February 28 will three ships be moored at the port?
+ Hint: Find out the days on when each ship will be in port",Find out the days on when each ship will be in port,"On no occasions (other than start date December 22) between December 22 and February 28, three ships will be moored at the port.
+Find out the days on when each ship will be in port:
+Ship W will be in port on days 1, 9, 17, 25, 33, 41, 49, 57 and 65.
+Ship X will be in port on days 1, 12, 25, 36, 49, 60 and 73.
+Ship Y will be in port on days 1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56, 61 and 66.
+Ship Z will be in port on days 1, 2, 9, 16, 23, 30, 37, 44, 51, 58 and 65.
+From above data, it is clear that - on no occasion (other than December 22) will three ships be moored at the port.
+Also, on 8 occasions, there will be 2 ships moored at the port.",GPT-o3,combinedhintPrompt,"Cruise-length schedule for each ship
+
+(“Return early in the morning of the last day, sail again late that afternoon.”  
+Hence a ship is in port only on its turn-around day; on all other days it is at sea.)
+
+1.  W : 8-day cycles, first departure Sunday 22 Dec.  
+    Turn-around days (every 8th day)  
+    22 Dec, 30 Dec, 7 Jan, 15 Jan, 23 Jan, 31 Jan, 8 Feb, 16 Feb, 24 Feb.
+
+2.  X : 11-day, 13-day, 11-day … starting Sunday 22 Dec.  
+    22 Dec, 2 Jan, 15 Jan, 26 Jan, 8 Feb, 19 Feb.
+
+3.  Y : 5-day cycles, first departure Sunday 22 Dec.  
+    22 Dec, 27 Dec, 1 Jan, 6 Jan, 11 Jan, 16 Jan, 21 Jan, 26 Jan,  
+    31 Jan, 5 Feb, 10 Feb, 15 Feb, 20 Feb, 25 Feb.
+
+4.  Z : 7-day cycles, first departure Monday 23 Dec  
+    (the ship is still alongside until it leaves that afternoon).  
+    23 Dec, 30 Dec, 6 Jan, 13 Jan, 20 Jan, 27 Jan, 3 Feb, 10 Feb, 17 Feb, 24 Feb.
+
+Counting ships in port on every turn-around day from 22 Dec to 28 Feb:
+
+• 22 Dec – all four ships (4).  
+• Every other listed date – never more than two ships coincide.
+  (Pairs occur on 15 Jan, 26 Jan, 8 Feb, 10 Feb, 24 Feb, etc., but
+  no date has three ships and only one date has four.)
+
+Therefore there is no day on which exactly three ships are alongside.
+
+Final answer: 0",True
+228,"Question: Henry and Gretchen are going to play a game.  Henry explains, ""You and I will take turns saying numbers.  The first person will say a number between 1 and 10.  Then the other person will say a number that is at least 1 higher than that number, and at most 10 higher.  We will keep going back and forth in this way until one of us says the number 50.  That person wins.  I'll start.""
+""Not so fast!"" says Gretchen.  ""I want to win, so I will start.""
+What number should Gretchen say to start?
+ Hint: By following this strategy, she is assured a victory.  Think of all of the numbers she will want to say.","By following this strategy, she is assured a victory.  Think of all of the numbers she will want to say.","She wants to say, ""6.""
+The series of numbers she will say is 6, 17, 28, 39, 50.
+Since she wants to say 50, she needs Henry to say a number between 40 and 49.  Therefore, she wants to say 39.
+Knowing she wants to say 39, she needs Henry to say a number between 29 and 38.  So she wants to say 28.  Following this same logic recursively, she will want to say 17, and she will want to say 6 to start the game, and be assured victory.",GPT-o3,combinedhintPrompt,Final answer: 6,True
+229,"Question: One of four people - two men (Jack and Mike) and two women (Carol and Lily) - was murdered.
+The following facts refer to the people mentioned:
+(a) Jack's sister argued exactly once with Carol's legal husband after the murder.
+(b) Mike's sister argued twice with the victim's legal spouse after the murder. Who was the victim?
+ Hint: They may or may not share sisters?",They may or may not share sisters?,"Mike is the victim.
+If Mike's sister and Jack's sister are the same person, then (a) reads ""Lily argued exactly once with (Mike or Jack)"" and (b) reads ""Lily argued twice with (the same Mike or Jack)"".  These two statements contradict each other.  Therefore Mike's sister must be different from Jack's sister.
+If this is the case then there are two possibilities:
+1)  Jack and Carol are brother and sister.  Mike and Lily are brother and sister.  Jack is married to Lily and Mike is married to Carol.  If this is the case, then (a) reads ""Carol argued once with Mike"" and (b) reads ""Lily argued twice with herself"", leaving Jack dead.  Since Lily did not likely argue with herself, this is not the solution.
+2)  Jack and Lily are brother and sister.  Mike and Carol are brother and sister.  Jack is married to Carol and Lily is married to Mike.  If this is the case, then (a) reads ""Lily argued once with Jack"" and (b) reads ""Carol argued twice with Lily"", leaving Mike dead.  Since there are no contradictions, this is the solution.",GPT-o3,combinedhintPrompt,"Let the four people be
+
+ Jack (J)    Mike (M)    Carol (C)    Lily (L)
+
+Because only the two men can be “legal husbands”, Carol must be married to one of them.
+
+Step 1.  Decide who Carol’s husband is.  
+ • Suppose Carol is married to Mike.  
+  Then Carol’s husband is Mike.  
+  Statement (a): “Jack’s sister argued once with Carol’s husband” means Jack’s sister argued once with Mike, so Jack’s sister ≠ Mike’s sister (otherwise she would have argued both once and twice with the same man).  
+  Statement (b) will later force Mike’s sister to quarrel after the murder.  A careful case-check (Jack, Lily, or Carol as victim) shows that in every possibility Mike’s sister would either have to be the murder victim (and thus unable to quarrel) or would have to quarrel with herself – impossible.  Hence the assumption “Carol married to Mike” is impossible.
+
+ • Therefore Carol must be married to Jack.  From now on we have
+  Carol’s husband = Jack.
+
+Step 2.  Identify Jack’s sister.  
+ Because a man cannot legally marry his own sister, Jack’s sister cannot be Carol.  
+ Therefore Jack’s sister is Lily.
+
+ Statement (a) now reads:
+  Lily argued exactly once with Jack (after the murder).
+
+ Since Jack did that arguing after the murder, Jack himself must be alive, so
+  the victim is not Jack.
+
+Step 3.  Test the remaining people as possible victims.
+
+ • Could Lily be the victim?  No—she is Jack’s sister and argued after the murder, so she must be alive.
+
+ • Could Carol be the victim?  
+  If Carol were murdered, her husband (Jack) would be the widower.  
+  Statement (b) says Mike’s sister argued twice with Jack.  
+  Mike’s sister can only be Lily (the only living woman left), but Lily has already argued once with Jack (by (a)); she cannot both argue once and twice with the same man.  Contradiction.
+
+ • The only remaining candidate is Mike.
+
+Step 4.  Check that Mike can indeed be the victim.
+
+ Because Carol is Mike’s sister (the only woman not yet related to Mike) and Lily is alive and not Mike’s sister, Mike can be married to Lily.  Then
+
+  – Jack’s sister (Lily) argued once with Jack (satisfying (a)).  
+  – Mike’s sister (Carol) argued twice with Mike’s widow Lily (satisfying (b)).  
+
+ All relationships are legal (no one is married to a sibling), every quarrel occurs between living people, and both statements (a) and (b) are met exactly.
+
+Since every other possibility leads to a contradiction, the murdered person must be Mike.
+
+Final answer: Mike",True
+230,"Question: Walter, Xavier, Yoshi, and Zeke crossed a river in a tiny rowboat. They all started on the same side of the river. They made three trips from the starting side to the destination side, and two trips from the destination side to the starting side. Here are some facts:
+1. On each trip from the starting side of the river to the destination side, two people were in the boat, but only one person rowed the boat, and that person rowed the boat for the entire trip.
+2. On each return trip, only one person was in the boat.
+3. Walter is the weakest of the group. He could only row the boat if no one else is in it.
+4. Xavier is the second weakest of the group. He can only row the boat if he is by himself or if Yoshi, the lightest of the group, is a passenger.
+5. Each man rowed the boat at least once.
+Who rowed twice?
+ Hint: Fact 5 tells us that Walter had to row the boat at least once, but fact 3 tells us that he had to go by himself. This means he could only row the boat on a return trip,.","Fact 5 tells us that Walter had to row the boat at least once, but fact 3 tells us that he had to go by himself. This means he could only row the boat on a return trip,.","Yoshi rowed twice.
+Fact 5 tells us that Walter had to row the boat at least once, but fact 3 tells us that he had to go by himself. This means he could only row the boat on a return trip, which means he rowed on at least one return trip.
+The man who rowed twice could not have rowed on two trips from the starting side to the destination side, because he would have had to make a third trip by himself back to the starting side. So the man who rowed twice must have made a return trip at least once.
+Now we know that if Walter made two trips, they must both have been return trips, and Xavier, Yoshi, and Zeke each rowed for one of the other three trips. If Walter made only one trip, the other person who made a return trip must have been the person who rowed twice (Xavier, Yoshi, or Zeke) and that person would also have made one of the other three trips. So the three trips from the starting side to the destination side must have been rowed by Xavier, Yoshi, and Zeke.
+Fact 1 tells us that Xavier's trip to the destination side must have had a passenger, and fact 4 tells us that that passenger must have been Yoshi. Yoshi would have had to row back to row his trip to the destination side, or else Yoshi rowed to the destination side, then back to the start, then got rowed across by Xavier.",GPT-o3,combinedhintPrompt,"Let  
+
+• S be the starting bank,  
+• D be the destination bank,  
+
+and number the five trips the boat makes
+
+1. S → D (two men)  
+2. D → S (one man)  
+3. S → D (two men)  
+4. D → S (one man)  
+5. S → D (two men)
+
+Only the man at the oars matters; call him the “rower’’ of the trip.
+
+Basic facts
+
+a)  Five trips mean five rowers.  
+b)  By Fact 5 every man rows at least once; therefore exactly one man rows twice.  
+c)  Walter (W) can row only when he is alone, so he can row only on a return
+   trip (2 or 4).  
+d)  Xavier (X) can row S → D only if Yoshi (Y) is his passenger; he may row a
+   return trip alone.  
+e)  Zeke (Z) has no restrictions.
+
+Step 1.  Walter rows exactly once  
+Walter must row on a return trip.  
+Suppose he rowed both return trips 2 and 4.  
+He would have to be a passenger on trips 1 and 3 in order to reach D before
+each of his rows back.  
+After trip 4 only two men would be on D and Walter would stand on S beside one
+other man.  Trip 5 would have to carry those two to D, but
+X cannot row with Walter (his passenger would not be Y), and Walter himself
+cannot row with anyone.  Hence trip 5 could not be made—contradiction.  
+Therefore Walter rows exactly once, on either trip 2 or trip 4.
+
+Step 2.  Who can be the double rower?  
+Because Walter occupies one return trip, only one return trip is left.
+Therefore a man who rows twice has two possibilities:
+
+   • he rows the other return trip and one outward trip, or  
+   • he rows two outward trips.
+
+We check the three candidates X, Z, Y in turn.
+
+Xavier twice?  
+(i)  Suppose X rows one return trip.  Then the two return trips are rowed by
+W and X, leaving no return trip for Y or Z, yet both of them still have to
+row at least once—impossible.  
+(ii)  Suppose X rows two outward trips.  Each time, by his restriction, Y
+must be his passenger, so Y must be on S before both of those crossings.
+That would require Y to row back twice, but only one return trip is free
+(after Walter’s).  Impossible again.  
+Thus X cannot be the double rower.
+
+Zeke twice?  
+Z has no restrictions, so if he rows twice he must row the remaining return
+trip and one outward trip (he cannot take both return trips, one is Walter’s).
+After Z rows back, only one outward trip is left (trip 5), but both X and Y
+still must row at least once.  Since only one trip remains, this is
+impossible.  
+Hence Z cannot be the double rower.
+
+Yoshi twice  
+The only man left is Yoshi, so he must be the one who rows twice.  It
+remains to show that this is feasible, and indeed it is.
+
+A complete schedule
+
+Trip 1 X rows, Y passenger (S → D)  
+Trip 2 Y rows alone (D → S)  
+Trip 3 Y rows, W passenger (S → D)  
+Trip 4 W rows alone (D → S)  
+Trip 5 Z rows, W passenger (S → D)
+
+After trip 5 all four men are on the destination bank, the five rowers are
+
+X Y Y W Z ,
+
+and every fact in the problem is respected.
+
+Exactly one man—Yoshi—has rowed twice.
+
+Final answer: Yoshi",True
+231,"Question: There is a famous diamond displayed in a room that measures 15 meters by 15 meters by 15 meters. The room is made entirely of concrete blocks and the floor is covered with a thick carpet. The only thing in the room is the diamond that is housed under a glass cube. The glass cube stands on a one-meter pedestal in the centre of the room. Alarm wires spaced eight centimetres apart and running parallel to each other lie under the carpet. The alarm will trigger if more than four kilograms of pressure is applied to any individual wire. Will Carlo who weighs 74 kilograms was able to steal the famous diamond using the following equipment: a five meter 2 x 4 board, four leather straps (each two meters long and five cm wide), a hammer, and a saw. How could he do it without triggering the alarm?
+ Hint: How can he spread out his weight?",How can he spread out his weight?,"Will Carlo stole the diamond in the following manner: First, he cut five meter 2 x 4 boards in half. Then using the available straps, he fastened the two boards to his feet like skies. With the boards strapped to his feet, his weight was displacing enough so that he did not exceed the wire's weight tolerance and triggers the alarm. Carlo then slowly and carefully walked to the centre of the room, smashed the glass cube with the hammer, took the diamond and returned the same way he came in.",GPT-o3,combinedhintPrompt,"The alarm will sound as soon as any single wire buried under the carpet is loaded with more than 4 kg.  
+Because Will Carlo’s mass (≈ 74 kg) is fixed, his only hope is to make sure that, whenever he is on the carpet, his weight is divided among at least  
+
+ 74 kg ÷ 4 kg = 18.5  
+
+i.e. 19 different wires at the same time.
+
+DATA ABOUT THE ROOM AND THE MATERIALS  
+• Wires are parallel and 8 cm (0.08 m) apart.  
+• A 5 m “2 × 4” actually measures about 5 cm wide and 5 m long.  
+• Four leather straps: each 2 m long and 5 cm wide.  
+• A saw and a hammer are also available.
+
+STEP 1 ‑ MAKE TWO LONG “SKIS”  
+1. Saw the 5-m plank exactly in the middle, producing two 2.5-m boards.  
+   (Length 2.5 m  = 250 cm.)  
+2. Lay each board flat: its 5-cm width will rest on the carpet and its 250-cm length will run **perpendicular** to the hidden wires.
+
+STEP 2 ‑ ATTACH THE “SKIS” TO HIS FEET  
+3. Using the four leather straps, lash one 2.5-m board under each shoe, like very long snow-shoes or skis.  
+   – Two straps fasten the front and rear of the right “ski,” the other two the left “ski.”  
+   – The straps are 5 cm wide, so they do not create any appreciable pressure peaks of their own.
+
+STEP 3 ‑ VERIFY THAT NO WIRE TAKES TOO MUCH LOAD  
+4. A board 2.5 m long placed perpendicular to the wires covers  
+
+ 2.5 m ÷ 0.08 m ≈ 31 wires.  
+
+   Even if Carlo’s full weight is on one foot (37 kg), every wire under that foot bears at most  
+
+ 37 kg ÷ 31 ≈ 1.2 kg < 4 kg.  
+
+   Hence the alarm cannot be triggered while he is standing or walking on these “skis.”
+
+STEP 4 ‑ WALK TO THE DIAMOND  
+5. Starting from the solid doorway threshold (concrete, no wires), Carlo steps onto the carpet on his improvised skis and simply walks to the glass-covered pedestal in the middle of the 15 m room.  
+   – Turning and manoeuvring are easy because the room is 15 m square while each ski is only 2.5 m long.
+
+STEP 5 ‑ TAKE THE DIAMOND  
+6. Standing safely on his skis he uses the hammer to break the glass cube, removes the diamond, puts it in a pocket, and skis back to the door.  
+7. At every moment his weight (plus the small additional weight of the diamond) is still spread over at least 31 wires; no wire ever feels more than 4 kg.
+
+RESULT  
+Because he always distributes his load over far more than 19 parallel wires, the pressure on each individual wire stays below the 4 kg threshold, so the alarm never activates. Carlo leaves with the famous diamond.
+
+Final answer: He cut the 5-metre board into two 2.5-metre planks, strapped one plank under each foot with the leather straps to make very long “snow-shoes” (skis), then walked across the carpet—each 2.5 m plank resting perpendicular to about 31 wires, so no wire carried more than ≈1.2 kg—reached the pedestal, smashed the glass with his hammer, pocketed the diamond, and skied back out; the alarm never registered more than 4 kg on any single wire.",True
+232,"Question: One day, in baking class, 15 students were baking cakes when the fire alarm went off. Everyone exited the building, but when they got back, they found someone had dumped all the sugar into two of the batter-filled bowls. Everyone was puzzled over what to do until Alice had an idea: why not mix the batters together and then separate the contents back in the bowls. Here is what happened in chronological order:
+Alice mixed with Flare
+June pours some into Emma's
+Luke mixed with Callie
+June mixed with Gabbi
+Flare mixed with Gabbi
+Watt mixed with Tina
+Flare mixed with Tina
+Luke mixed with Flare
+Gabbi mixed with Callie
+Daniel, Emma, & Alice mixed with each other
+Oscar mixed with Quinn
+Misty mixed with Callie
+Alice, Misty, & Oscar mixed with each other
+Tina mixed with Emma
+Kaleb mixed with Quinn
+June mixed with Daniel
+Luke mixed with June
+Ryan, Luke, & Watt mixed with each other
+Callie, Alice, & Flare mixed with each other
+Kaleb pours some into Daniel's
+Watt mixed with Ryan
+Watt pours some into Kaleb's
+Daniel mixed with Luke
+Misty mixed with Gabbi
+Kaleb mixed with Tina
+Emma & Quinn had no sugar; which 2 bowls started with sugar?
+Everyone was able to figure it out.
+ Hint: Everyone was able to figure it out.",Everyone was able to figure it out.,"Luke & Callie
+To start, it can't be Emma or Quinn or anyone who mixed/gave to them. This leaves Flare, Luke, Callie, Gabbi, Watt, Misty, and Ryan.
+It can't be Flare because he exchanged with Alice before Alice exchanged with Emma. It can't be Watt because he mixed with Tina before Tina exchanged with Emma. This leaves Luke, Callie, Gabbi, Misty, and Ryan.
+It can't be Gabbi because she mixed with Flare before Flare mixed with Tina who mixed with Emma later. This leaves Luke, Callie, Misty, and Ryan.
+If only one of Luke & Callie started with sugar it wouldn't be solvable because no interactions happened before them and the outcome would be the same, therefore the solution is either Misty and Ryan or Luke and Callie.
+However, it can't be Ryan and Misty because they can't give June sugar!",GPT-o3,combinedhintPrompt,Final answer: Misty’s bowl and Ryan’s bowl were the two that originally received all of the sugar.,True
+233,"Question: Hans Ernest Froopaloop, Jr. will marry one of three women: Audrey, Brenda, and Charlotte. Here are some facts:
+1. Of Audrey and Brenda:
+a. Either they both have blue eyes or neither has blue eyes.
+b. One has red hair and the other does not.
+2. Of Audrey and Charlotte:
+a. Either they both have red hair or neither has red hair.
+b. One is 5'11"" and the other is not.
+3. Of Brenda and Charlotte:
+a. One has blue eyes and the other does not.
+b. One is 5'11"" and the other is not.
+4. Of the three characteristics; blue eyes, red hair and 5'11"":
+a. If any of the three women has exactly two of the three characteristics, Mr. Froopaloop will marry the one with the least number of characteristics.
+b. If any of the three women has exactly one of the three characteristics, Mr. Froopaloop will marry the one with the greatest number of characteristics.
+Who will Mr. Froopaloop marry?
+ Hint: Start with facts 1a and 3a",Start with facts 1a and 3a,"Mr. Froopaloop will marry Charlotte.
+Facts 1a and 3a tell us that Charlotte is either the only one with blue eyes or the only one without blue eyes. Facts 1b and 2a tell us that Brenda is either the only one with red hair or the only one without red hair. Facts 2b and 3b tell us that Charlotte is either the only one who is 5'11"" or the only one who isn't 5'11"". Fact 4 tells us that no one woman can have one characteristic while another has two characteristics. This gives us two scenarios:
+1. Audrey has blue eyes, does not have red hair, and is 5'11"". Brenda has blue eyes, red hair, and is 5'11"". Charlotte does not have blue eyes, does not have red hair, and is not 5'11"".
+2. Audrey does not have blue eyes, has red hair, and is not 5'11"". Brenda does not have blue eyes, does not have red hair, and is not 5'11"". Charlotte has blue eyes, red hair, and is 5'11"".
+Fact 4a tells us that in scenario 1, Mr. Froopaloop will marry Charlotte. Fact 4b tells us that in scenario 2, Mr. Froopaloop will marry...Charlotte.",GPT-o3,combinedhintPrompt,,False
+234,"Question: Draw a diagram of the Fantasylands to help you with this teaser...
+Beethoven's Wig has been stolen again!  Instead of hiding it in a box, the enemy, who remains anonymous, has hidden it inside one of four castles.  Each castle is located in a different fantasyland and has a creature guarding its gates.  Use the clues below to put the lands in order (1st,2nd,3rd, and 4th), figure out which castle belongs in which land, which creature belong to which castle, and help Beethoven reclaim his wig!
+Object: Beethoven's Wig
+Fantasylands: Lothlorien, Mordor, Narnia, and Malacandra.
+Creatures: Dragon, Troll, Giant, and Balrog.
+Castles: Stone, Gold, Glass, and Silver.
+1.  Narnia is to the left of Lothlorien, which is to the right of the Balrog.
+2.  The Stone Castle is to the right of the Wig, and is placed at either Malacandra or Lothlorien.
+3.  The Giant is not at Lothlorien and is not in the same place as the wig.
+4.  The Balrog is not in Lothlorien, but he stays at the Stone Castle.
+5.  The Troll doesn't live at the Golden Castle, which is to the left of where the Balrog stays and to the right of the Silver Castle.
+6.  Mordor is to the left of the Dragon, who stays at the second place.
+7.  The Troll is not at the Silver Castle, which is 1 fantasyland to the left of the wig.
+ Hint: Mordor and Lothlorien must be at the edges of the sequence",Mordor and Lothlorien must be at the edges of the sequence,"Mordor is the first fantasyland.  It contains the Giant and the Silver Castle.
+Narnia is the second land.  It has the Dragon, the Golden Castle, and the Wig.
+Malacandra is the third land.  It has the Stone Castle and the Balrog.
+Lothlorien is the fourth land.  It contains the Troll and the Glass Castle.",GPT-o3,combinedhintPrompt,"1st position (leftmost):  
+Fantasyland – Mordor  
+Castle – Silver Castle  
+Creature – Giant  
+
+2nd position:  
+Fantasyland – Narnia  
+Castle – Gold Castle  
+Creature – Dragon  
+(Beethoven’s Wig is hidden here.)
+
+3rd position:  
+Fantasyland – Malacandra  
+Castle – Stone Castle  
+Creature – Balrog  
+
+4th position (rightmost):  
+Fantasyland – Lothlorien  
+Castle – Glass Castle  
+Creature – Troll  
+
+Final answer: Beethoven’s Wig is in the Gold Castle of Narnia (second position); the full left-to-right order is  
+Mordor–Silver–Giant, Narnia–Gold–Dragon (with the Wig), Malacandra–Stone–Balrog, Lothlorien–Glass–Troll.",True
+235,"Question: Just before the end of the term four high school students were discussing their chances for certain grades. The following remarks contain the gist of their hopes and fears.
+Jack: We'll all get different grades. If I get an A, then Lucy will get a D.
+Jean: If Lucy gets a C, then Jack will get a D. Jack will get a better grade than Paul.
+Lucy: If Jean doesn't get an A, then Jack will get a C. If I get a B, then Paul won't get a D.
+Paul: If Lucy gets an A, then I'll get a B. if Jean doesn't get a B, I won't either.
+When the final examinations were graded and the term marks made out each of the four passed, and strange as it may seem, each received a grade that checked exactly with all the ideas they had previously expressed.
+What grade did each receive?
+ Hint: Is it possible for Jack to get an A? Also note that Paul is below Jack",Is it possible for Jack to get an A? Also note that Paul is below Jack,"Jack, Jean, Lucy, and Paul received B, A, D, and C, respectively.",GPT-o3,combinedhintPrompt,"Jack – B  
+Jean – A  
+Lucy – D  
+Paul – C  
+
+Final answer: Jack B, Jean A, Lucy D, Paul C",True
+236,"Question: Mad Ade has placed five Queens on a chessboard, such that every square including those occupied by the Queens are under attack.
+Imagine the chessboard is set out with reference points 1 to 8 on the vertical and A to H across the horizontal.
+At what positions would the five Queens need to be?
+ Hint: A couple queens next to each other can cover a lot.",A couple queens next to each other can cover a lot.,"A5, D5, E5, F5, H1 (multiple correct arrangements, check to see that every single position on the board is attacked by at least one queen)",GPT-o3,combinedhintPrompt,,False
+237,"Question: You are stuck in a room. All that is there is a slip of paper on a table, and many bottles. The only exit is guarded by a heat sensor that will not let you out. The only way out is to drink one of the bottles' contents, and the liquid will cool down your body heat (with no harm to yourself) enough so that the heat sensor doesn't detect you anymore. There are nine bottles on the ground beyond the table. The content of the slip of paper will tell you what each of the bottles are. Find out what all the bottles are, and then find out which one to drink to get out.
+Three of me are poison, and will kill you if you drink.
+Two of me are water, nothing bad will happen with these.
+Two of me are wine, and it will only get you drunk.
+One will heat you up forever, and this room will never let you out. (hinder)
+Only one here will help you, it will cool down your body heat.
+No medium bottles are poison.
+Wine is bad in large doses, so none are large.
+Each of the end bottles have the same contents.
+No matter how help hides, it will be on poison's left side, but its left side is safe.
+No two small bottles are the same.
+The hinderer is harder, for it resides between wine and water.
+The hinder bottle is large, so it works forever.
+Neither big nor medium will save your life.
+Poison is all you will get from the bottle on the far right.
+Water is next to the helper.
+Bottle Order:
+Large--Small--Large--Medium--Small--Large--Medium--Large--Small
+ Hint: Use the fact that help must be small. ",Use the fact that help must be small. ,"Poison--wine--hinder--water--help--poison--wine--water--poison
+Only the middle bottle will save your life.",GPT-o3,combinedhintPrompt,"Number the bottles 1–9 from left to right.
+
+Sizes (given):     
+1 L 2 S 3 L 4 M 5 S 6 L 7 M 8 L 9 S
+
+Step 1.  Ends are the same and the far-right bottle is poison.  
+⇒ 1 and 9 are Poison.
+
+Step 2.  Three poisons are required and no medium bottle may be poison.  
+⇒ exactly one more poison is somewhere among 2,3,5,6,8.
+
+Step 3.  “Neither big nor medium will save your life” and the hint says Help is small.  
+⇒ Help = one of the small bottles 2,5 (9 is poison).
+
+Step 4.  “No matter how help hides, it will be on poison’s left side, but its left side is safe.”  
+If Help were bottle 2, its left neighbour (1) would be poison, contradicting “its left side is safe”.  
+⇒ Help is bottle 5.  
+Hence bottle 4 is safe (not poison) and bottle 6 is the third poison (Help is on poison’s immediate left).
+
+We now have  
+1 P 2 ? 3 ? 4 ? 5 Help 6 P 7 ? 8 ? 9 P
+
+Step 5.  The hinder (heater) bottle:  
+• “Hinder is large” ⇒ it is 1,3,6 or 8.  
+• “Hinder resides between wine and water.”  
+Bottle 8 cannot qualify (one neighbour, 9, is poison), and 1 or 6 cannot (an end bottle has only one neighbour).  
+⇒ Hinder is bottle 3.  
+Therefore bottles 2 and 4 (its neighbours) are one Wine and one Water in some order.
+
+Step 6.  “Wine is bad in large doses, so no wine is large.”  
+Thus bottle 8 (large, not poison, not hinder) cannot be wine; it must be Water.
+
+Step 7.  Tally the required totals (3 P, 2 W, 2 Wine, 1 Hinder, 1 Help).  
+We already have  
+Poisons: 1,6,9 (all three found)  
+Help: 5  
+Hinder: 3  
+Waters: 8 plus either 2 or 4  
+Wines: the remaining two safe bottles, one of which is medium 7.
+
+Step 8.  “Water is next to the helper.”  
+Helper is bottle 5, so either bottle 4 or 6 must be water. 6 is poison, hence 4 is water.  
+Consequently 2 is wine.
+
+Step 9.  Medium bottle 7 is still unassigned; since we now have one wine (2) and only medium 7 is still free to be wine, set 7 = wine.  The water count is already met (4 and 8).
+
+Final assignment  
+1 (Large) Poison  
+2 (Small) Wine  
+3 (Large) Hinder (heater)  
+4 (Medium) Water  
+5 (Small) Help (coolant) ← drink this one  
+6 (Large) Poison  
+7 (Medium) Wine  
+8 (Large) Water  
+9 (Small) Poison
+
+All clues are satisfied:
+
+• 3 Poison (1,6,9) • 2 Water (4,8) • 2 Wine (2,7)  
+• 1 Hinder (3, large, between wine 2 and water 4)  
+• Help is small (5), on poison’s left, with safe bottle on its own left (4 water)  
+• No medium is poison; no large is wine; ends match; small bottles differ; etc.
+
+Final answer: Drink the 5th bottle (the small bottle in the middle); the complete lineup is  
+Poison, Wine, Hinder, Water, Help, Poison, Wine, Water, Poison.",True
+238,"Question: You have the following equations:
+a + c = a
+b - c = c
+c / b = c
+a * a = b
+You also know that a, b, c have the values 0, 1 and 2, but not necessarily in that order.
+But to make matters more complicated the symbols + - * / have been mixed up: all you know is that each represents a different arithmetical operation (addition, subtraction, multiplication or division).
+Can you work out the values of a, b and c, and what each of the symbols actually mean?
+ Hint: The only thing you should assume about the arithmetical symbols is that no two represent the same operation.",The only thing you should assume about the arithmetical symbols is that no two represent the same operation.,"a = 1
+b = 2
+c = 0
++ = -
+- = *
+* = +
+/ = /
+(Yes, the division symbol escaped the bedlam!)",GPT-o3,combinedhintPrompt,"Begin with  
+a * a = b.  
+The four ordinary operations give:
+
+• If “*” really means × : 0²=0 or 1²=1 – b would equal a (not allowed, the three numbers must be different).  
+• If “*” means – : a–a=0 ⇒ b=0, again b=a.  
+• If “*” means ÷ : a÷a=1 ⇒ b=1, so b=a once more.  
+• If “*” means + : a+a=b.  
+ Since the only way to obtain a different number from 0, 1, 2 is 1+1=2, we get  
+ a = 1, b = 2, and therefore c = 0.  
+Thus “*” must be ordinary addition.
+
+Now look at a + c = a, i.e. 1 + 0 = 1.  
+“+” cannot be addition (already taken by “*”).  
+The only remaining operation that leaves the first operand unchanged when the second is 0 is subtraction (1–0=1).  
+So “+” is ordinary subtraction.
+
+Next use b – c = c, i.e. 2 – 0 = 0.  
+With “–” already reserved for some unused operation, the only one that makes 2 (operation) 0 equal 0 is multiplication (2 × 0 = 0).  
+Hence “–” is ordinary multiplication.
+
+The last symbol “/” must therefore stand for the one operation left, ordinary division.  
+Check c / b = c → 0 ÷ 2 = 0, which is true.
+
+All four equations are now satisfied with distinct operations.
+
+Result  
+a = 1, b = 2, c = 0  
+“+” means subtraction  
+“–” means multiplication  
+“*” means addition  
+“/” means division",True
+239,"Question: You are in a game show with four other contestants.  The objective is to crack the combination of the safe using the clues, and the first person to do so will win $500,000.
+The safe combination looks like this:
+??-??-??-??
+A digit can be used more than once in the code, and there are no leading zeroes.
+Here are the clues:
+1. The third set of two numbers is the same as the first set reversed.
+2. There are no 2's, 3's, 4's or 5's in any of the combination.
+3. If you multiply 4 by the third set of numbers, you will get the fourth set of numbers.
+4. If you add the first number in the first set with the first number in the second set you will get 8.
+5. The second set of numbers is not greater than 20.
+6. The second number in the second set multiplied by the second number in the fourth set equals one higher than the numbers in the first set.
+And get moving, I think another contestant has almost figured it out!
+ Hint: Clue 3 says if you multiply 4 by the third set of numbers you will get the fourth set of numbers.  From this, you can tell a 1 is the first number in the third set - any other number would be too high.","Clue 3 says if you multiply 4 by the third set of numbers you will get the fourth set of numbers.  From this, you can tell a 1 is the first number in the third set - any other number would be too high.","The combination is 71-19-17-68.
+From the second clue, we know that there are no 2's, 3's, 4's or 5's in any of the sets.  Therefore, only 1's, 6's, 7's, 8's and 9's could be in the remaining spots.
+Clue 3 says if you multiply 4 by the third set of numbers you will get the fourth set of numbers.  From this, you can tell a 1 is the first number in the third set - any other number would be too high.
+11 * 4 = 44
+16 * 4 = 64
+17 * 4 = 68
+18 * 4 = 72
+19 * 4 = 76
+Of these, 17 * 4 and 19 * 4 are the only ones that are possible; as the answer of the other numbers contains a number which we know is not in the combination.
+Now we skip all the way to clue 5, which tells us the second set of numbers is not greater than 20.  This means that the first digit of that set is also a 1.
+So far, we know this much:
+??-1?-1?-??
+Now, we can come to clue 4, which tells us if you add the first number in the first set with the first number in the second set you will get 8.  The first number in the second set is 1, so the first number in the first set must be 7.  Since the first clue tells us the first set is the third set reversed, and we know that a 1 is the first number in the third set, a 1 must be the second number in the first set and a 7 must be the second number in the third set.
+So far, we know this much:
+71-1?-17-??
+Now, the third set (17) multiplied by 4 will get us 68.  Now we know the fourth set is 68.
+71-1?-17-68
+Now we come to the final clue.  This tells us the second number in the second set (unknown) multiplied by the second number in the fourth set (8) equals one higher than the numbers in the first set.  We know that the first set is 71, so adding one to that (72) and then dividing it by 8 will get us 9.  So, the finished combination is:
+71-19-17-68",GPT-o3,combinedhintPrompt,"We denote the four two-digit “sets” of the combination by  
+
+AB – CD – EF – GH ,  
+
+where each letter stands for one digit.
+
+Condition-by-condition deduction
+
+1.  Third set is the first set reversed  
+  EF = BA.                                                       …(1)
+
+2.  Allowed digits  
+  No 2,3,4 or 5 may appear; permitted digits are 0,1,6,7,8,9.
+
+3.  Four times the third set equals the fourth set  
+  4 × EF = GH, and GH must still be a two-digit number (≤ 99). …(2)
+
+4.  Sum of the first digits of the first and second sets  
+  A + C = 8.                                                    …(3)
+
+5.  The value of the second set does not exceed 20  
+  CD ≤ 20.                                                      …(4)
+
+6.  (second digit of 2nd set) × (second digit of 4th set)  
+    = one higher than the first set  
+  D × H = AB + 1.                                              …(5)
+
+Step 1 – Narrow EF with (2) and the digit restriction  
+Because EF is two-digit and 4·EF ≤ 99, we need EF ≤ 24.  
+Digits 2,3,4,5 are forbidden, so the only admissible EF between 10 and 24 are
+
+10, 11, 16, 17, 18, 19.
+
+Their products with 4 give:
+
+10 → 40 (involves digit 4)  ✗  
+11 → 44 (has digit 4)       ✗  
+16 → 64 (has digit 4)       ✗  
+17 → 68 all digits allowed  ✓  
+18 → 72 (has digit 2)       ✗  
+19 → 76 all digits allowed  ✓  
+
+Hence EF ∈ {17, 19} and correspondingly GH ∈ {68, 76}.
+
+Step 2 – Use relation (1) to find AB  
+If EF = 17, then AB = 71.  
+If EF = 19, then AB = 91.
+
+Step 3 – Apply (3): A + C = 8  
+
+• With AB = 71, A = 7 ⇒ C = 1.  
+• With AB = 91, A = 9 ⇒ C = –1 (impossible).  
+
+Thus the second possibility is discarded.  
+We must have  
+
+AB = 71, EF = 17, GH = 68, C = 1.
+
+Step 4 – Determine CD with (4)  
+CD ≤ 20 and its tens digit is C = 1, so CD can be  
+10, 11, 16, 17, 18, or 19 (all digits allowed).
+
+Step 5 – Satisfy (5): D × H = AB + 1  
+Here H = 8 and AB + 1 = 71 + 1 = 72.  
+So D × 8 = 72 ⇒ D = 9.
+
+Check that CD = 19 is on our short list and fulfills CD ≤ 20. It does.
+
+Step 6 – Verify every condition  
+Combination obtained: 71-19-17-68.
+
+1. Third set 17 = reverse of 71 ✔  
+2. Digits {7,1,1,9,1,7,6,8} contain no 2,3,4,5 ✔  
+3. 4 × 17 = 68 ✔  
+4. 7 + 1 = 8 ✔  
+5. 19 ≤ 20 ✔  
+6. 9 × 8 = 72 = 71 + 1 ✔
+
+All clues are met.
+
+Final answer: 71-19-17-68",True
+240,"Question: Five men at a board games club meet once a week to play their favourite board game 'Hollywood Quest'. In this game each space is colour coded one of five colours, each one representing a category of questions.
+The five categories are Books, Celebrities, Films, Music, Television.
+The five colours are blue, green, grey, orange and purple.
+Can you name all five men, their favorite categories and the colours represented by those categories?
+CLUES
+1. Mr Everett prefers the purple coloured squares.
+2. Mr Harper likes Films category best, which is not the blue nor the orange squares.
+3. Johns Sanders doesn't like literature-based questions.
+4. Patrick's favourite colour is the blue (this is not the colour of the TV questions).
+5. The grey squares indicate a player must answer a question about books, and Mr Erwin won't land on these if he can help it.
+6. Graham prefers the celebrities category.
+7. James avoids the green and orange squares.
+8. Kendal is the fifth surname, and Paul the missing first name.
+ Hint: Clues 1,2 and 5 should help you work out the colour Mr Harper likes.
+Work out Johns Sanders' favourite colour.
+You should now be able to work out the colours of all five subjects.","Clues 1,2 and 5 should help you work out the colour Mr Harper likes.
+Work out Johns Sanders' favourite colour.
+You should now be able to work out the colours of all five subjects.","Graham Everett, purple, celebrities
+James Kendal, grey, books
+John Sanders, orange, TV
+Patrick Erwin, blue, music
+Paul Harper, green, films",GPT-o3,combinedhintPrompt,"Graham Everett – favourite category: Celebrities – colour: purple  
+Paul Harper  – favourite category: Films    – colour: green  
+John Sanders  – favourite category: Television – colour: orange  
+Patrick Erwin – favourite category: Music   – colour: blue  
+James Kendal – favourite category: Books   – colour: grey  
+
+Colours of the five subjects  
+Books  → grey  
+Celebrities → purple  
+Films  → green  
+Music  → blue  
+Television → orange  
+
+John Sanders’ favourite colour is therefore orange.",True
+241,"Question: In Major League Baseball, the World Series is a best of seven series.  The first team to win four games is the champion.  The Series is scheduled so that one team hosts the first two games and the last two games, while the other team hosts the middle three games.  The World Series ends as soon as one team wins four games, so the Series could be completed in as few as four games.
+In this fantasy Series, the New York Yankees played the Los Angeles Dodgers.  Los Angeles hosted the first two games.  The final scores of the games were:
+Game 1:  4 to 3
+Game 2:  6 to 5 (11 innings)
+Game 3:  11 to 7
+Game 4:  16 to 9
+Game 5:  9 to 6 (10 innings)
+Game 6:  2 to 1
+Game 7:  13 to 8 (13 innings)
+Which team won the World Series?
+ Hint: In baseball, the home team bats last.  ","In baseball, the home team bats last.  ","Seven games were played, which means that the teams split the first six games, each team winning three games.  It does not matter who won each of the first six games, since neither team had yet to win four games.  The winner of game 7 will have won four games, and therefore, the World Series.
+The team that hosts the first two games also hosts the last two games.  Since Los Angeles hosted the first two games, game 7 was in Los Angeles.  In baseball, the home team bats last.  Los Angeles batted last in game 7.  Since game 7 went 13 innings, Los Angeles would have batted in the bottom of the inning.  In this situation, the home team can never win by more than four runs.  When the home team bats in the last inning, the game ends as soon as the winning run is scored.  The only way the home team can win by more than one run is via a home run, in which case all runners on base at the time can score.  A grand slam home run would only provide a margin of four runs.  Therefore, the home team's margin of victory in an extra-inning game can never exceed four runs.  The final score was 13 to 8, a margin of five runs.  Los Angeles, being the home team, could not have won by that margin.  The game was tied 8 to 8 going into the 13th inning.  New York scored five runs in the top of the 13th inning.
+Therefore, the New York Yankees won the World Series, four games to three.",GPT-o3,combinedhintPrompt,"Because the Dodgers were given the home-field advantage, the home parks were
+
+• Games 1, 2, 6, 7  – Los Angeles (home)  
+• Games 3, 4, 5      – New York (home)
+
+Game 7 was therefore played in Los Angeles.  
+Its final score was 13–8 after 13 innings, a five-run margin.
+
+Key fact about extra-inning games:
+
+The home team bats last.  As soon as the home side scores the run that puts it ahead, the game ends immediately.  
+Consequently the most the home team can win by in an extra inning is four runs (the maximum that can score on the final “walk-off’’ play is a grand-slam home run).
+
+But Game 7 was decided by FIVE runs.  
+Therefore the home team (Los Angeles) could not have been the winner; the visiting team (New York) must have scored the runs in the top half of the 13th and then held the Dodgers scoreless in the bottom half.
+
+Hence New York won Game 7.
+
+Since a seventh game is played only when the first six games leave the Series tied 3–3, New York’s victory in Game 7 gives it the required fourth win.
+
+Final answer: the New York Yankees won the World Series.",True
+242,"Question: A tourist group of 86 people broke up into two groups. The smaller group went to the beach, and the bigger group went to see a water mill. The following statements are all true. How many people were in each group?
+a) A quarter of the people in one of the groups is more than the number of people in the other group.
+b) One of the groups contains 6 times as many women as men.
+c) One of the groups contains only married couples.
+d) The number of people in one of the groups is divisible by 4.
+e) One of the groups contains 8 times as many people who are younger than 50 as those who are at least 50 years old.
+ Hint: Set up an equation.",Set up an equation.,"The first thing is to make this question an equation. The equation is x+y=86. x is the larger group and y is the smaller group. So, y=86-x. So, x+86-x=86. If the first statement is true then ¼(x)>y. Since y=86-x, then ¼(x)>86-x. Now find out the greatest possible number that will satisfy the equation ¼(x)>86-x. The largest number y could be is 17. The smallest number x could be is 69.
+If c) is true, then one of the groups must be even since ""couples"" are the multiples of 2 (1 couple consists of 2 people, 2 couples consists of 4 people). Then, you figure out that 1 group affects the other group. If there is 1 more person in group x, then there is one less person in group y. So, that means that both group must be even or else both groups are odd and no group will satisfy c). So x must consist of 70, 72, 74, 76, 78, 80, 82, 84, or 86 people and y must consist of 16, 14, 12, 10, 8, 6, 4, 2, or 0 people. Now try to make the groups satisfy e). Substitute c for young people and o for old people. The equation is 8o=c. So, o+c equals the number of people in one of the groups. If c=8o, then that will mean o+8o equals the number of people in one of the groups. Then, simplified the equation.
+o+8o=9o.
+So 9o equal the number of people in one of the groups. So one of the groups has to be a multiple of 9. Since y consists of a group that has 16 people or under, then the only multiple of 9 is 9. But the groups have to consist of an even number of people, so group x must satisfy e). The only multiples of 9 above 70 and under 86 are 72 and 81. But, the number has to be even. So, group x consists of 72 people and y consists of 14 people.
+So, the answer is that there are 72 people that went to see the water mill and 14 people went to the beach.",GPT-o3,combinedhintPrompt,"Let the two group–sizes be  
+ small = x and large = y, with x + y = 86 and x < y.  
+
+--------------------------------------------------------------------
+1.  From statement (a)  
+
+ A quarter of the large group is more than the small group:  
+  y⁄4 > x.  
+
+ Substitute x = 86 − y : y⁄4 > 86 − y  
+  ⟺ y > 344 − 4y ⟺ 5y > 344 ⟺ y > 68.8.  
+
+ Hence y ≥ 69 and x = 86 − y ≤ 17.  
+--------------------------------------------------------------------
+2.  The remaining statements involve simple divisibility conditions.
+
+ (b) “6 times as many women as men’’  ⇒  the group–size is a multiple of 7.  
+ (c) “only married couples’’ ⇒  that group–size is even (multiple of 2).  
+ (d) “group divisible by 4’’ ⇒  the size is a multiple of 4.  
+ (e) “8 times as many younger (<50) as older (≥50)” ⇒  size is a multiple of 9.
+
+ So among the two numbers x and y we must have  
+ • one multiple of 4, • one multiple of 7, • one multiple of 9  
+ (the same group may satisfy several of these).
+
+--------------------------------------------------------------------
+3.  List the possible pairs (y , x = 86 − y) with y ≥ 69 :
+
+ y : 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85  
+ x : 17 16 15 14 13 12 11 10  9  8  7  6  5  4  3  2  1  
+
+ Check divisibility by 4, 7, 9:
+
+ • (70,16): lacks a multiple of 9  
+ • (72,14): 72 is divisible by 4 and 9, 14 by 7  ✔  
+ • (76,10): lacks a multiple of 9  
+ • (77, 9): lacks a multiple of 4  
+ • (78, 8): lacks a multiple of 7  
+ • (80, 6): lacks a multiple of 7 or 9  
+ • (81, 5): lacks a multiple of 4 or 7  
+ • (84, 2): lacks a multiple of 9  
+ All others have none of 4,7,9.
+
+ Hence the only pair satisfying all three divisibility requirements is  
+
+  y = 72 and x = 14.
+--------------------------------------------------------------------
+4.  Show that every original statement can indeed be fulfilled with these sizes.
+
+ Group A : 14 people  Group B : 72 people  
+
+ (a) ¼ · 72 = 18 > 14 ✓  
+
+ (b) Let Group A have 12 women and 2 men (12 = 6·2) ✓  
+
+ (c) Let Group B consist solely of 36 married couples (36 men, 36 women) ✓  
+
+ (d) 72 is divisible by 4 ✓  
+
+ (e) In Group B take 64 people younger than 50 and 8 people at least 50  
+   (64 = 8·8; total = 72) ✓  
+
+ All five statements are simultaneously satisfied.
+--------------------------------------------------------------------
+Therefore the division of the tourist party is uniquely determined:
+
+Final answer: 14 people in the smaller group and 72 people in the larger group.",True
+243,"Question: This teaser is a mixture of logic and math. In a number pyramid, the numbers 0-9 are each used once and formed into a pyramid, with one digits at the top, and right below it two digits, below those three digits, and below those four, all arranged in pyramid form. I can not show you a pyramid due to formatting issues.
+In this puzzle, you will follow the clues given, and using these clues, create a number pyramid. There is only one answer.
+Clues:
+1. The number at the apex, or top, of the pyramid minus the leftmost number in the fourth row equals 7.
+2. The middle, or second, number in the third row minus the rightmost number in the third row equals 4.
+3. The four numbers in row 4 sum to 8.
+4. In the second row, the rightmost number minus the leftmost number equals 1.
+5. The four rightmost numbers in each row sum to 25.
+6. The numbers 1 and 2 are not adjacent to each other.
+ Hint: The apex of this pyramid is 9.",The apex of this pyramid is 9.,"Here is the way the number pyramid is filled out:
+Row 1: 9
+Row 2: 6, 7
+Row 3: 3, 8, 4
+Row 4: 2, 0, 1, 5",GPT-o3,combinedhintPrompt,"Step 1 – put the hint in place  
+The apex is 9.
+
+Step 2 – use Clue 1  
+9 – (leftmost number of bottom row) = 7 ⇒ leftmost of bottom row = 2.
+
+Step 3 – use Clue 3  
+The four bottom‐row numbers sum to 8.  
+Since 2 is already there, the remaining three bottom numbers must sum to 6.
+
+Distinct digits 0-9 that sum to 6 and do not repeat 2 are {0,1,5}.  
+Thus bottom row (row 4) is the set {2,0,1,5} in some order.
+
+Step 4 – use Clue 5  
+Rightmost numbers of the four rows sum to 25.  
+Rightmosts are: row 1 → 9, row 2 → (2,2), row 3 → (3,3), row 4 → (4,4).
+
+(2,2)+(3,3)+(4,4)=25–9 = 16.               (★)
+
+Step 5 – use Clue 4  
+Row 2: right – left = 1, so let row 2 be x , x+1.
+
+Step 6 – use Clue 2  
+Row 3: middle – right = 4, so let row 3 middle/right be y , y–4.
+
+Step 7 – combine with (★)  
+(2,2) = x+1, (3,3)= y–4, (4,4)= one of {0,1,5}.  
+Plugging into (★): (x+1)+(y–4)+(4,4)=16 ⇒ x+y+(4,4)=19.
+
+The only choice (checking (4,4)=0,1,5) that keeps x and y single distinct digits 0-9 is (4,4)=5, giving
+x+y=14.
+
+The distinct single-digit solutions are (x,y) = (6,8) or (8,6).  
+But x cannot be 8 (then x+1=9 duplicating the apex), so pick x=6, y=8.
+
+Thus
+Row 2 = 6 7, Row 3 (middle,right)= 8 4.
+
+Step 8 – finish Row 3  
+Digits used so far: 9,6,7,8,4,2,5.  
+The only unused digit left for the leftmost of row 3 is 3.  
+Row 3 becomes 3 8 4.
+
+Step 9 – place the last two bottom digits {0,1}  
+Row 4 so far: 2 _ _ 5.  
+Because of Clue 6, 1 must not be adjacent to 2.  
+Adjacency to 2 occurs in positions (4,2) and (3,1); hence 1 cannot be (4,2).  
+Place 1 at (4,3) and 0 at (4,2).
+
+Step 10 – check every clue  
+Row 4 sum: 2+0+1+5 = 8 ✔  
+Apex – bottom-left: 9–2 = 7 ✔  
+Row 2 right–left: 7–6 = 1 ✔  
+Row 3 middle–right: 8–4 = 4 ✔  
+Rightmost sum: 9+7+4+5 = 25 ✔  
+1 and 2 are not adjacent ✔
+
+The unique pyramid is therefore
+
+            9
+          6   7
+        3   8   4
+      2   0   1   5
+
+Final answer:  
+9 / 6 7 / 3 8 4 / 2 0 1 5",True
+244,"Question: Mad Ade, Daft Derrick, Sue Denim, two pieces of Madadian ""Kebabrie"" Cheese, two pieces of Madadian ""Chillirella"" Cheese, and ""Beef Curry"" the dog were on their way to the annual Madadian combined Cheese and Dog show (it's Madadian, these things happen).
+Mad Ade's ""Kebabretta"" scooter can only carry two objects at a time.
+Mad Ade, Daft Derrick and Sue Denim can all drive the scooter. If Mad Ade is not around, Daft Derrick will eat the ""Kebabrie""; if Daft Derrick is not around, Mad Ade will eat the ""Chillirella"". If Sue Denim is not around, ""Beef Curry"" will eat the cheese and bite Mad Ade and Daft Derrick.
+Can they all get to the Cheese/Dog show without anything bad happening?
+If so, what's the smallest number of trips needed (each way counts as one trip)?
+ Hint: Sue Denim should go first with someone",Sue Denim should go first with someone,"Yes, they can do it, and the smallest number of trips is 17. There are essentially two ways of doing this in 17 steps. One way is:
+Sue Denim and ""Beef Curry""; Sue Denim; Sue Denim and ""Kebabrie""; Sue Denim and ""Beef Curry""; Mad Ade and ""Kebabrie""; Mad Ade; Daft Derrick and Mad Ade; Daft Derrick; Sue Denim and ""Beef Curry""; Mad Ade; Daft Derrick and Mad Ade; Daft Derrick; Daft Derrick and ""Chillirella""; Sue Denim and ""Beef Curry""; Sue Denim and ""Chillirella""; Sue Denim; Sue Denim and ""Beef Curry"".
+The other method is to do this in reverse. Another way of looking at it is that we're swapping ""Kebabrie"" and ""Chillirella"", Daft Derrick and Mad Ade, since from the point of view of the other restrictions this changes nothing.",GPT-o3,combinedhintPrompt,Final answer: It is impossible – no sequence of scooter trips can move the whole party without one of the forbidden “bad happenings” occurring.,True
+245,"Question: The answer I give is yes, but what I mean is no.
+What was the question?
+ Hint: nan",,Do you mind?,GPT-o3,combinedhintPrompt,"Final answer: The question was “Do you mind if I … ?” (e.g., “Do you mind if I sit here?”).  
+A reply of “Yes” literally agrees that one DOES mind, which in effect means “No, you may not.”",True
+246,"Question: Recently, Snow White's seven dwarfs met up with three of their friends and went to the cinema to see Bambi. From the clues below, can you determine the order in which they stood in the ticket queue?
+Grumpy was in front of Dopey. Stumpy was behind Sneezy and Doc. Doc was in front of Droopy and Happy.
+Sleepy was behind Stumpy, Smelly and Happy.
+Happy was in front of Sleepy, Smelly and Bashful.
+Bashful was behind Smelly, Droopy and Sleepy.
+Sneezy was in front of Dopey. Smelly was in front of Grumpy, Stumpy and Sneezy.
+Dopey was in front of Droopy.
+Sleepy was in front of Grumpy and Bashful.
+Dopey was behind Sneezy, Doc and Sleepy.
+Stumpy was in front of Dopey. Smelly was behind Doc.
+ Hint: Lots of people must be behind Doc...",Lots of people must be behind Doc...,"Doc
+Happy
+Smelly
+Sneezy
+Stumpy
+Sleepy
+Grumpy
+Dopey
+Droopy
+Bashful",GPT-o3,combinedhintPrompt,"Start by translating every statement into an “in-front-of” ( < ) relation.  
+People:  Doc, Grumpy, Happy, Sleepy, Bashful, Sneezy, Dopey and the three friends Smelly, Stumpy, Droopy.
+
+1  Grumpy < Dopey  
+2  Sneezy < Stumpy and Doc < Stumpy  
+3  Doc < Droopy and Doc < Happy  
+4  Stumpy < Sleepy, Smelly < Sleepy, Happy < Sleepy  
+5  Happy < Sleepy, Happy < Smelly, Happy < Bashful  
+6  Smelly < Bashful, Droopy < Bashful, Sleepy < Bashful  
+7  Sneezy < Dopey  
+8  Smelly < Grumpy, Smelly < Stumpy, Smelly < Sneezy  
+9  Dopey < Droopy  
+10 Sleepy < Grumpy and Sleepy < Bashful  
+11 Sneezy < Dopey, Doc < Dopey, Sleepy < Dopey  
+12 Stumpy < Dopey  
+13 Doc < Smelly
+
+Step 1:  Who can be first?  
+Every name except Doc is required to be behind someone.  Thus Doc must head the queue.
+
+Step 2:  Delete Doc and every relation containing Doc.  
+The only remaining person with no one in front of him is Happy, so Happy must be 2nd.
+
+Step 3:  Remove Happy.  
+Now Smelly has no predecessors left, so Smelly is 3rd.
+
+Step 4:  Remove Smelly.  
+Sneezy is now predecessor–free ⇒ Sneezy is 4th.
+
+Step 5:  Remove Sneezy.  
+Stumpy becomes predecessor-free ⇒ Stumpy is 5th.
+
+Step 6:  Remove Stumpy.  
+Sleepy becomes predecessor-free ⇒ Sleepy is 6th.
+
+Step 7:  Remove Sleepy.  
+Grumpy is now predecessor-free ⇒ Grumpy is 7th.
+
+Step 8:  Remove Grumpy.  
+Dopey now has no one in front of him ⇒ Dopey is 8th.
+
+Step 9:  Remove Dopey.  
+Droopy is predecessor-free ⇒ Droopy is 9th.
+
+Step 10:  The only person left is Bashful, so Bashful is 10th.
+
+Final check:  Every original inequality is satisfied by the line
+Doc < Happy < Smelly < Sneezy < Stumpy < Sleepy < Grumpy < Dopey < Droopy < Bashful.
+
+Final answer: Doc, Happy, Smelly, Sneezy, Stumpy, Sleepy, Grumpy, Dopey, Droopy, Bashful",True
+247,"Question: You are a spy trying to gain access to a high profile building that contains very classified information. The only thing standing between you and those secrets is a keypunch security system containing the digits 1-9 that will open the door to the building. Your spy agency has provided you details about the order of the keys you need to enter:
+1. Each digit is pressed once and only once.
+2. No two consecutive digits are pressed consecutively.
+3. The digits 2 and 4 are pressed 2nd and 4th in some order; the digits 6 and 8 are pressed 6th and 8th in some order.
+4. The sum of the first 5 digits pressed is 19; the sum of the last 5 digits pressed is 27.
+As you wonder why your agency couldn't just write down the sequence for you, you crack the code and enter the building.
+What sequence of keys did you press on the security system to get into the building?
+ Hint: You can figure out the 5th digit to enter from clue 4 and some algebra.",You can figure out the 5th digit to enter from clue 4 and some algebra.,"5, 2, 7, 4, 1, 8, 3, 6, 9
+From  clue 4, the sum of the first 4 digits to be pressed, the last 4 digits to be pressed, and two times the 5th digit to be pressed is 19 + 27 = 46. The sum of the first and last 4 digits to be pressed and the 5th digit must be the sum of the digits 1-9, from clue 1. This sum is 45, meaning the 5th digit is 46-45 = 1.
+From clues 2 and 3, 2 must be the 2nd digit and 4 must be the 4th digit.
+From clue 3, 7 must be the 1st or 3rd digit pressed since it can not be pressed before or after the 6 or 8. From clue 4, this means 5 must be pressed 1st or 3rd. But, from clue 2, it can not be the 3rd digit, so it must be the first, meaning 7 is the 3rd digit pressed.
+That leaves 3, 6, 8, and 9 as the last 4 digits to be pressed. If 8 were pressed 8th, then the 9 must be pressed 6th, a contradiction with clue 4. So 8 must be pressed 6th meaning 9 is to be pressed last. This leaves 6 to be entered 8th and 3 to be entered 7th.",GPT-o3,combinedhintPrompt,Final answer: 527418369,True
+248,"Question: In a mathematics contest, A, B, C, D, E, F, G and H got the top eight places. The teacher asked them to guess who got first.
+A said: ""Either F or H is first.""
+B said: ""I'm first.""
+C said: ""G is first.""
+D said: ""B is not first.""
+E said: ""A is wrong.""
+F said: ""Neither I nor H is the first.""
+G said: ""C is not first.""
+H said: ""I agree with A.""
+The teacher told them that exactly three of them guessed correctly. Then, who got first?
+ Hint: It's OK to use trial and error, however, there might be better methods.","It's OK to use trial and error, however, there might be better methods.","Since B and D contradict each other, exactly one of them must be true.
+Since A and H agree with each other while E and F are against them, exactly two of these four must be true.
+Therefore, neither C nor G guessed correctly. Since G guessed that C is not first, C must be first.",GPT-o3,combinedhintPrompt,"Let First denote the pupil who really came in first, and for each pupil X let  
+T_X = “statement of X is true’’ (value 1) or false (value 0).
+
+Write down each statement in logical form.
+
+A : First = F or First = H.  
+B : First = B.  
+C : First = G.  
+D : First ≠ B.  
+E : “A is wrong’’  ⇔ T_E = 1-T_A.  
+F : First ≠ F and First ≠ H.  
+G : First ≠ C.  
+H : “I agree with A’’; i.e. H asserts that A is correct, so T_H = T_A.
+
+------------------------------------------------
+1.  Count of true statements
+
+Total true = T_A + T_B + T_C + T_D + T_E + T_F + T_G + T_H  
+            = T_A + T_B + T_C + T_D + (1-T_A) + T_F + T_G + T_A   (using T_E and T_H)  
+            = 1 + (T_A + T_B + T_C + T_D + T_F + T_G).
+
+The teacher said exactly three statements are correct, so
+
+      T_A + T_B + T_C + T_D + T_F + T_G = 2.      (★)
+
+Thus among those six particular statements precisely two are true.
+
+------------------------------------------------
+2.  Test every possible winner (only eight cases)
+
+For each candidate compute the six values in (★).
+
+(1) First = A : 0+0+0+1+1+1 = 4  (not 2)  
+(2) First = B : 0+1+0+0+1+1 = 3  (not 2)  
+(3) First = C : 0+0+0+1+1+0 = 2  OK  
+(4) First = D : 0+0+0+1+1+1 = 3  (not 2)  
+(5) First = E : 0+0+0+1+1+1 = 3  (not 2)  
+(6) First = F : 1+0+0+1+0+1 = 3  (not 2)  
+(7) First = G : 0+0+1+1+1+1 = 4  (not 2)  
+(8) First = H : 1+0+0+1+0+1 = 3  (not 2)
+
+Only case (3) satisfies condition (★). Therefore
+
+      First = C.
+
+------------------------------------------------
+3.  Verify the three correct guesses
+
+With First = C the truth values are
+
+A (F), B (F), C (F), D (T), E (T), F (T), G (F), H (F),
+
+so exactly D, E and F are correct—three statements as required.
+
+Hence the information is consistent and unique.
+
+Final answer: C",True
+249,"Question: Serena has received a box of chocolates as a birthday present. The box contains 12 chocolates of different shapes (one is hemispherical) and flavours (four of which are: dark chocolate, white chocolate-hazelnut, tiramisu and milk chocolate-cherry). The 12 chocolates are divided into three rows of 4 chocolate per line. With the help of the clues and the drawing, can you figure out the shape, the flavour and the position in the box of each chocolate?
+1. The following four chocolates are in the same row (but not necessarily in this
+order): the flower-shaped chocolate (which isn't gianduia flavour), the dark
+chocolate-orange chocolate (which isn't pentagonal-shaped), the chocolate just below the white chocolate and the heart-shaped milk chocolate-cognac flavoured chocolate.
+2. Every row contains only one chocolate made from dark chocolate and only one
+from milk chocolate and they aren't next to each other.
+3. The cremino flavoured chocolate is just to the left of the heart-shaped chocolate and just above the trapezoid-shaped one.
+4. The hexagonal-shaped chocolate is just below the dark chocolate-orange one and is in the same row as the dark chocolate-hazelnut one but further to the right.
+5. Both the caramel chocolate and the square-shaped chocolate (which isn't made from dark chocolate) are in the central part of the box but neither in the same row nor one below the other.
+6. The round chocolate (which isn't dark chocolate-orange flavour) is further to the left than the pentagonal-shaped chocolate (which isn't #4) but further to the right than the gianduia flavoured one. These three chocolates are in different rows.
+7. Chocolate #5 isn't the cremino flavoured chocolate. The two white-chocolate chocolates are in the first two rows. The rectangular-shaped chocolate is next to the oval-shaped milk chocolate. Chocolate #9 isn't rhombus-shaped. The triangularshaped
+chocolate is #1.
+ Hint: Dark chocolate is first.",Dark chocolate is first.,"Solution:
+Position - Shape - Flavour
+1 - Triangular - Dark chocolate
+2 - Square - Gianduia
+3 - Rectangular - White chocolate
+4 - Oval - Milk chocolate
+5 - Flower - White chocolate-hazelnut
+6 - Rhombus - Dark chocolate-orange
+7 - Round - Cremino
+8 - Heart - Milk chocolate-cognac
+9 - Hemispherical - Dark chocolate hazelnut
+10 - Hexagonal - Tiramisu
+11 - Trapezoid - Caramel
+12 - Pentagonal - Milk chocolate-cherry",GPT-o3,combinedhintPrompt,,False
