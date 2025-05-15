@@ -155,7 +155,7 @@ def main():
         
         for _ in range(args.samples):
             for index, row in itertools.islice(data.iterrows(), min(args.rows, len(data))):
-                # if (index < 232):
+                # if (index < 37):
                 #     continue
                 task = (
                     index,
