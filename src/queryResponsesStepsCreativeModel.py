@@ -93,12 +93,12 @@ def main():
     #print(client.models.list())   # should include “o3-2025-04-16”
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", help="Experiment Name", required=True)
-    #parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic", "Logic1"], required=True)
+    parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic", "Logic1"], required=True)
     parser.add_argument("--rows", help="Number of rows to sample", type=int, default=1, required=False)
     parser.add_argument("--samples", help="Number of samples to run", type=int, default=1, required=False)
     
     args = parser.parse_args()
-    os.makedirs(f"../responses/Math/{args.name}", exist_ok=True)
+    os.makedirs(f"../responses/{args.dataset}/{args.name}", exist_ok=True)
 
     data = pd.read_csv(f'../responses/Math/FinalMath-DSChat/resultsAll.csv')
     outputs = pd.DataFrame(columns=['ID', 'Question', 'Hint', 'Human Solution', 'Model', 'PromptType', 'Response', 'Status', 'StepCount','Steps', 'Creative', 'Rudimentary'])
@@ -163,7 +163,7 @@ def main():
 
                     #print(response)
 
-    outputs.to_csv(f"../responses/Math/{args.name}/dscstepcountresults.csv", index=False)
+    outputs.to_csv(f"../responses/{args.dataset}/{args.name}/dscstepcountresults2.csv", index=False)
 
 if __name__ == "__main__":
     main()
