@@ -1,0 +1,103 @@
+You are grading a student's exam. You will first be presented with the original problem, then the student's response, then with the solution. Respond only with one character, 1 if the student utilized a brute-force or guess-and-check method and 0 if they did not.
+
+Definition of brute force: A brute force solution is a simple, comprehensive search strategy that systematically explores every option until a problem’s answer is discovered. It’s a generic approach to problem-solving that’s employed when the issue is small enough to make an in-depth investigation possible. However, because of their high temporal complexity, brute force techniques are inefficient for large-scale issues.
+Common traits of brute force solutions include utilizing code, guess-and-check, or performing computations that a human would ordinarily not be able to do.
+
+For example, take the following two problems:
+
+PROBLEM 1:
+"After being marooned on an island, a group of five people spent some time obtaining a lot of coconuts. After the five have decided that they have collected enough coconuts to last long enough for rescuers to arrive, they place all coconuts in a communal pile.
+However, the first person suddenly had concerns about how the group would divide the coconuts the following day. In the dead of the night, the first survivor divided the pile into five equal piles of whole coconuts, gave one remaining coconut to a passing monkey, hid their share of the coconuts (one-fifth of the pile), and mixed the four other piles to cover his tracks before going back to sleep.
+The second survivor had the same exact train of thought, and proceeded to divide the pile into five equal piles of whole coconuts, give one remaining coconut to a passing monkey, hide their share of the coconuts (one-fifth of the pile), and mix back together the other four piles before going back to sleep.
+In an ironic twist of fate, the other three survivors also had the same line of reasoning as the other two survivors and proceeded to do exactly the same thing (divide the pile, give one remaining coconut to a passing monkey, etc.). In a twist of fate, none of the survivors woke up to the other survivors taking their share from the pile.
+When the group woke up in the morning, everyone could see that the pile was substantially reduced, but since every survivor took from the pile, no one said anything to incriminate themselves. Nonetheless, the survivors divided the reduced pile of coconuts into five equal shares of whole coconuts one last time, this time without any remaining coconuts to give to any monkeys.
+What is the least number of whole coconuts the pile can have before the night?"
+
+Here is an example solution for the above example problem that use brute-force:
+
+EXAMPLE BRUTE-FORCE SOLUTION:
+
+Beginning from 1 and counting upwards, we check each number and simulate the number of coconuts that remain at the end, and check if it is an integer.
+After using code to simulate the distribution of coconuts, we see that 3121 is the smallest possible number of starting coconuts such that every condition is satisfied.
+
+Here are two example solutions that do not use brute-force:
+
+EXAMPLE NON-BRUTE-FORCE SOLUTION 1:
+
+"First, we start with 5^5 coconuts. This is the smallest number that can be divided evenly into fifths, have a fifth removed and the process repeated five times, with no coconuts going to the monkey.
+Four of the 5^5 coconuts are rotten and placed aside. When the remaining supply of coconuts is divided into fifths, there will of course be one non-rotten coconut left over to give to the monkey.
+After the first person has taken his share, and the monkey has his coconut, we put the four rotten coconuts back with the others to make a pile of 5^4 coconuts. This can be evenly divided by 5. Before making this next division, however, we again put the four rotten coconuts aside so that the division will leave an extra coconut for the monkey.
+This procedure - borrowing the rotten coconuts only long enough to see that an even division into fifths can be made, then putting them aside again - is repeated at each division. After the sixth and last division, the rotten coconuts remain on the side, the property of no one.
+The rotten coconuts aren't actual coconuts, since they end up the property of no one, but since we see that 5^5 coconuts can be divided neatly with the use of the four rotten coconuts, the answer is 5^5 - 4, or 3121 coconuts."
+
+EXAMPLE NON-BRUTE-FORCE SOLUTION 2:
+
+"Let
+ N₀ = original pile size
+ a, b, c, d, e = the shares each sailor hides
+ N₁,…,N₅ = pile sizes after the 1st,…,5th night splits
+Night‑by‑night equations
+First sailor: N₀ = 5a + 1, N₁ = 4a
+Second sailor: N₁ = 5b + 1, N₂ = 4b
+Third sailor: N₂ = 5c + 1, N₃ = 4c
+Fourth sailor: N₃ = 5d + 1, N₄ = 4d
+Fifth sailor: N₄ = 5e + 1, N₅ = 4e
+Morning division: N₅ must be divisible by 5, so 4e ≡ 0 (mod 5) ⇒ e = 5m.
+Work backward
+e = 5m
+4d = 5e + 1 = 25m + 1 ⇒ d = (25m + 1)/4 → m ≡ 3 (mod 4)
+ Let m = 4n + 3, so d = 25n + 19
+4c = 5d + 1 = 125n + 96 ⇒ c = (125n + 96)/4 → n ≡ 0 (mod 4)
+ Let n = 4p, so c = 125p + 24
+4b = 5c + 1 = 625p + 121 ⇒ b = (625p + 121)/4 → p ≡ 3 (mod 4)
+ Let p = 4q + 3, so b = 625q + 499
+4a = 5b + 1 = 3125q + 2496 ⇒ a = (3125q + 2496)/4 → q ≡ 0 (mod 4)
+ Let q = 4r, so a = 3125r + 624
+Initial pile
+N₀ = 5a + 1 = 5(3125r + 624) + 1 = 15625r + 3121
+Choosing the smallest non‑negative r (r = 0) gives the least possible pile:
+N₀ = 3121 coconuts.
+Final answer: 3121"
+
+
+PROBLEM 2:
+
+""The wedding reception was winding down as Bill Johnson, the father of the bride, held forth to anyone who was left to hear his report on the fiscal damages.
+"That's the last one married off - thank goodness! That's been one wedding a year for the last four years I've had to pay for. Alice got married three years ago, then Barbara, Cheryl, and now Denise. They've all gotten married on the same day, June 30th, for some reason, and each girl had to have her three sisters as the bridesmaids, but could they share a color scheme? No - each one had to have her own colors. God forbid they should be able to reuse the bridesmaids' dresses, let alone share a wedding dress. Alice tried to persuade Denise to reuse her color scheme, but Denise said she had lived with her older sister's hand-me-downs long enough.
+Funny thing, though - each bride managed to get married when her age was just the same as the sum of the digits of the ages of her three sisters. You don't see that every day, I bet. But why couldn't they share something that costs money instead of this trivia?"
+Bill didn't mention how old his daughters are, but he's given us enough information to work out all four ages. How old are they?""
+
+EXAMPLE BRUTE-FORCE SOLUTION:
+"Let A,B,C,D be the current ages of Alice, Barbara, Cheryl, and Denise, respectively.  The weddings took place in consecutive years on June 30, with Alice married 3 years ago, Barbara married 2 years ago, Cheryl married 1 year ago, Denise married this year.
+At the time of each wedding, the bride’s age equaled the sum of the digits of her three sisters’ ages (all measured at that same moment).
+
+Hence we get the following system of equations.  (Here sd(x) denotes "sum of the decimal digits of $x$.")
+
+1. Alice’s wedding (3 years ago): A-3 = sd(B-3)+sd(C-3)+sd(D-3)
+2. Barbara’s wedding (2 years ago): B-2 = sd(A-2)+sd(C-2)+sd(D-2)
+3. Cheryl’s wedding (1 year ago): C-1 = sd(A-1)+sd(B-1)+sd(D-1)
+4. Denise’s wedding (this year): D = sd(A)+sd(B)+sd(C)
+
+Since each daughter’s wedding-age is the sum of three sums-of-digits, each wedding-age cannot be too large—realistically in the high teens through late 20s.
+Likewise, one checks small "teen" ages and sees the sums-of-digits would likely be too small to match each sister’s wedding-age.  So one expects the sisters to be somewhere in their 20s (possibly with one slightly younger).
+Hence we restrict attention to ages roughly between 15 and 30.
+When one solves the system by doing a systematic check on all possible combinations of A, B, C, D to see which are consistent with the above equations, two solutions pop out: (A,B,C,D) = (27,28,20,21) or (A,B,C,D) = (27,28,29,30)
+
+However, the puzzle includes the remark: "Alice tried to persuade Denise to reuse her color scheme, but Denise said she had lived with her older sister’s hand-me-downs long enough."
+That line indicates Denise is younger than Alice.  In the second solution, D=30 but A=27, making Denise older than Alice, contradicting the statement.  By contrast, in the first solution, D=21 and A=27, so Denise is indeed younger than Alice (and also younger than Barbara). That is consistent with the puzzle’s storyline.
+Hence the (27, 28, 29, 30) possibility is discarded by the puzzle’s "Denise is younger than Alice" clue.
+
+Therefore the only consistent solution is:
+Alice is 27, Barbara is 28, Cheryl is 20, and Denise is 21."
+
+EXAMPLE NON-BRUTE-FORCE SOLUTION:
+"You can use the fact that any non-negative integer is congruent to the sum of its digits, mod 9. If a, b, c, and d are the present ages of the four women, that gives us four linear congruences:
+d = a + b + c (mod 9)
+c-1 = (a-1)+(b-1)+(d-1) (mod 9)
+b-2 = (a-2)+(c-2)+(d-2) (mod 9)
+a-3 = (b-3)+(c-3)+(d-3) (mod 9).
+
+Solving for the four variables, we get: a=0, b=1, c=2, d=3 (all mod 9). It remains to find four integers congruent to these numbers that will satisfy the digit addition property.
+If we go back 3 years to Alice's wedding, we have: a-3=6, b-3=7, c-3=8, and d-3=9 (mod 9). Now all numbers less than 79 that are congruent to 7 also have a digit sum of 7, and likewise numbers congruent to 8 less than 89 have a digit sum of 8, and numbers congruent to 9 (except 0) less than 99 have a digit sum of 9. We can rule out such high ages, because each woman must have a turn being the sum of her sister's ages' digits, and the maximum sum of digits for three ages less than 199 is 54 (for 99, 99, and 99). Likewise, we can rule out zero as a valid age for Denise three years ago, because she needs to have an age now that can be the sum of the digits of three other valid ages. So Alice three years ago must have been 7+8+9=24, making her 27 now.
+Now go back 2 years to Barbara's wedding. Alice we now know was 25. Cheryl's age was congruent to 9 (mod 9), so she must have had a digit sum of 9. Denise's age was congruent to 1 (mod 9), so she must have had a digit sum of 10 unless she was 10 years old herself (we have previously ruled out 1 as a valid age). But if Denise was 10, then Barbara would have been 17 two years ago, and this year Alice and Barbara together would be contributing 2+7+1+9 = 19 years to Denise's age, contradicting the assumption that she was 10 two years ago. So Denise had a digit sum of 10 two years ago, and Barbara was therefore 2+5+9+10=26 at the time of her wedding, hence 28 now.
+Now consider Cheryl's wedding last year. Alice was 26 and Barbara was 27. Denise's age was congruent to 2 (mod 9), so she must have had a digit sum of either 2 or 11. If it was 11, then Cheryl would have been 11+2+6+2+7=28 then, making her 29 now. But then Denise would have to be 2+7+2+8+2+9=30 now to Alice's 27, contradicting the information that Alice was her older sister. So Denise's digit sum must have been 2 last year, making Cheryl 19 then, and Denise 21 now."

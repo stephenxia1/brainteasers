@@ -1,8 +1,12 @@
 import pandas as pd
 import argparse
-import os
+import os, json, time
 import numpy as np
 from openai import OpenAI
+import openai
+
+MAX_RETRIES = 5
+RETRY_DELAY = 5 
 
 def read_txt_files(directory):
     instructionSet = {}
@@ -18,26 +22,58 @@ def read_txt_files(directory):
                     print(f"Error reading {file_path}: {e}")
     return instructionSet
 
-def evaluateResponse(client, instructions, modelResponse, solution):
-    response = client.responses.create(
-        model="o3-2025-04-16",
-        instructions=instructions,
-        input="STUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution,
-        max_output_tokens=10000,
-    )
-    return response.output_text
+def evaluateResponse(client, instructions, problem, modelResponse, solution, evaluationModel):
+    if len(modelResponse) == 0:
+        return None
+    
+    retries = 0
+    while retries < MAX_RETRIES:
+        try:
+            response = client.chat.completions.create(
+                model = evaluationModel, # 
+                messages=[
+                    {"role": "system", "content": instructions},
+                    {"role": "user", "content": "PROBLEM:\n" + problem + "\n\nSTUDENT RESPONSE:\n" + modelResponse + "\n\nSOLUTION:\n" + solution},
+                ],
+                stream = False,
+                max_completion_tokens=10000,
+            )
+            # print(response.choices[0].message.content)
+            return response.choices[0].message.content
+
+        except openai.AuthenticationError:
+            print("Authentication failed: Invalid API key.")
+            break  # Don't retry on bad key
+
+        except (openai.RateLimitError, openai.InternalServerError, openai.APIConnectionError, openai.APITimeoutError) as e:
+            print(f"Retryable error occurred: {e}. Retrying in {RETRY_DELAY} seconds...")
+            retries += 1
+            time.sleep(RETRY_DELAY)
+
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+            break
+    
+    print("Max retries reached. Returning None.")
+
+    return None
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", help="Experiment Name", required=True)
+    parser.add_argument("--model", help="Evaluation Model", required=False, default="o3-2025-04-16")
     parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], required=True)
+    parser.add_argument("--from_row", help="Continue evaluation from which row", type=int, default=0, required=False)
 
     args = parser.parse_args()
 
-    data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
-    responses = pd.read_csv(f'../responses/{args.dataset}/{args.name}/results.csv')
+    # data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
+    responses = pd.read_csv(f'../responses/{args.dataset}/{args.name}/resultsAll.csv')
 
+    print("Responses length:", len(responses))
     evaluationPrompts = read_txt_files("../prompting/evaluationPrompts")
+
+    os.makedirs(f"../response_evaluation/{args.dataset}/{args.name}", exist_ok=True)
 
     client = OpenAI(
         api_key= os.getenv("OPENAI_API_KEY")
@@ -45,17 +81,40 @@ def main():
 
     responses['Correct'] = np.nan
 
-    for index, row in responses.iterrows():
+    responses_iloc = responses.iloc[args.from_row:]
+
+    for index, row in responses_iloc.iterrows():
         question = row['Question']
-        dataEntry = data[data['Question'] == question].iloc[0]
-        solution = dataEntry['Answer']
-        modelResponse = row['Response']
+        # dataEntry = data[data['Question'] == question].iloc[0]
+        # solution = dataEntry['Answer']
+        solution = row['Human Solution']
+        modelResponse = str(row['Response'])
 
-        correctness = evaluateResponse(client, evaluationPrompts['correctness'], modelResponse, solution)
+        # print(row.to_dict().keys())
+        # print(row)
 
+        if row['PromptType'] == "nl_to_symbol_prompt":
+            continue
+
+        # if type(modelResponse) == type("string"):
+            
+        correctness = evaluateResponse(client, evaluationPrompts['correctness'], question, modelResponse, solution, args.model)
+        modelbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], question, modelResponse, solution, args.model)
+        # humanbruteforced = evaluateResponse(client, evaluationPrompts['brute-force'], solution, solution, args.model)
         responses.at[index, 'Correct'] = correctness
+        responses.at[index, 'ModelBruteForce'] = modelbruteforced
+        # responses.at[index, 'HumanBruteForce'] = humanbruteforced
         
-    responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation.csv", index=False)
+        entry = row.to_dict()
+
+        entry["correctness"] = correctness
+        entry["model_bruteforce"] = modelbruteforced
+        # entry["human_bruteforce"] = humanbruteforced
+
+        with open(f'../response_evaluation/{args.dataset}/{args.name}/resultsEvaluations_evaluatedby{args.model}.jsonl', 'a') as jsonfile:
+            jsonfile.write(json.dumps(entry) + "\n")
+        
+    responses.to_csv(f"../response_evaluation/{args.dataset}/{args.name}-evaluation_from_row{args.from_row}.csv", index=False)
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,31 @@
+Please read the following 10 category labels and their descriptions, then assign the given math brain‐teaser to one of these buckets.  Respond with a number for the category only, e.g., 6.
+
+1. Arithmetic & Mental-Calculation  
+   Puzzles where the main task is to juggle +, -, ×, ÷ quickly or cleverly (e.g. “Make 24” style).
+
+2. Number-Theory & Divisibility  
+   Teasers hinging on primes, factors, remainders, digital roots, etc.
+
+3. “Where’s the Dollar?” — Algebraic Word Puzzles  
+   Word riddles whose twist is a hidden algebraic mismatch or variable.
+
+4. Geometry & Spatial Reasoning  
+   Problems about areas, angles, tilings, or “think outside the box” dot puzzles.
+
+5. Sequences, Series & Patterns  
+   “Find the next term” or “explain the rule” puzzles (e.g. Fibonacci).
+
+6. Probability & Expected-Value  
+   Dice, cards, urns, Monty Hall-style counterintuitive odds questions.
+
+7. Combinatorics & Optimization  
+   “How many ways…?” or “minimum moves/time” challenges (e.g. bridge-and-torch).
+
+8. Logic-Driven Math Teasers  
+   Numeric logic–constraint puzzles (Zebra-style, knights-and-knaves with numbers).
+
+9. Measurement, Time & Rates  
+   Clock puzzles, rope-timers, filling/draining tanks, travellers-meet questions.
+
+10. Recreational Algorithms & Move-Counting Games  
+    Recursive/algorithmic games (Tower of Hanoi, peg-solitaire, Rubik’s-cube).

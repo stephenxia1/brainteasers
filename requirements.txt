@@ -3,6 +3,6 @@ numpy
 requests
 beautifulsoup4
 tqdm 
-openai
+openai # use the latest version
 matplotlib
 seaborn

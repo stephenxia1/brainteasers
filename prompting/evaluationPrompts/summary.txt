@@ -1,0 +1,35 @@
+You will be given a problem, the solution to the problem, and a student's summary of the solution. Output 1 if the student's summary is adequate, and 0 otherwise.
+
+A solution summary is considered adequate if it encompasses all steps of the original solution with sufficient detail.
+If a solution summary has an error, it is automatically considered inadequate.
+
+Here is an example problem, and its solution:
+Problem: Al and Ben are standing back to back next to a railroad track. When the front of a train passes them, Al starts to walk in the opposite direction of the train, while Ben starts to walk in the same direction as the train. Each stops walking when the back of the train passes him. If the two of them walk at the same speed, and Al walks exactly 30 feet, and Ben walks exactly 45 feet, how long is the train?
+Solution: The train is 180 feet long.
+
+When the back of the train passes Al, he and Ben have both walked 30 feet, meaning Ben will walk 15 feet more when the train passes him. 30 feet that Al walks plus 45 feet that Ben walks makes 75 feet that the back of the train travels in the same time that Ben walks 15 feet, meaning the train is 5 times as fast as Al and Ben.
+
+In the time it takes Al to walk 30 feet, the front of the train moves 150 feet. This distance plus the 30 feet that Al has walked equals 180 feet.
+
+
+Here is an example of an adequate summary:
+
+1. Ben must hvae walked 30 feet at the time when the back of the train passed Al.
+2. Ben will walk another 15 feet until the train passes him, and the train must travel 75 feet (which is the total ending distance between Al and Ben).
+3. Therefore, the front of the train had to have moved 150 feet while Al is moving, plus 30 feet when Al moved (for a total of 180 feet).
+
+Here is another example of an adequate summary:
+
+1. Observe that while Al is walking, Ben walks the same distance.
+2. Compute the remaining distance Ben has to walk, and compute the total distance the train travels in this time between Al stopping and Ben stopping, and use that to compute the ratio of the speed between the train and Ben.
+3. Compute how far the train had to have moved while Al was moving, and add on the distance that Al moved.
+
+
+Here is an example of an inadequate summary (due to missing detail):
+1. The ratio of the speed of the train to Ben's speed is 5.
+2. Therefore, the total distance traveled is 30*6 = 180 feet.
+
+Here is another example of an inadequate summary (due to incorrectness):
+1. Ben must hvae walked 30 feet at the time when the back of the train passed Al.
+2. Ben will walk another 15 feet until the train passes him, and the train must travel 75 feet (which is the total ending distance between Al and Ben).
+3. Therefore, the front of the train had to have moved 150 feet while Al is moving, so the answer is 150 feet.

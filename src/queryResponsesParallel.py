@@ -58,20 +58,38 @@ modelInfo = {
 def query(question, instructions, model):
     # print("TESTING", model)
 
+    # print("QUERYING", model)
+
     client = OpenAI(
         api_key= os.getenv(modelInfo[model]["key"]),
         base_url = modelInfo[model]["url"],
     )
 
-    response = client.chat.completions.create(
-        model=modelInfo[model]["modelName"],
-        messages=[
-            {"role": "system", "content": instructions},
-            {"role": "user", "content": question},
-        ],
-        stream=False
-    )
+    try:
+        accum = ""
+        response = client.chat.completions.create(
+            model=modelInfo[model]["modelName"],
+            messages=[
+                {"role": "system", "content": instructions},
+                {"role": "user", "content": question},
+            ],
+            stream=False,
+            # timeout=600,
+            max_completion_tokens=50000,
+        )
+            # delta = chunk.choices[0].delta.content
+            # print("DELTA:", delta)
+            # if delta:
+            #     accum += delta
+        # print(accum)
+        # print(response)
+        print(response.choices[0].message.content)
+    except Exception as e:
+        print(f"Error querying {model}: {e}")
+        response = None
+    # print("RESPONSE", response)
     return response.choices[0].message.content
+    # return accum
 
 def process_task(t):
     return process_pair(*t)
@@ -79,15 +97,17 @@ def process_task(t):
 def process_pair(index, prompt, question, hint, solution, instructions, model, dataset, name):
     status = True
     results = pd.read_csv(f"../responses/{dataset}/{name}/resultsTemp.csv")
-    print("LOOKING AT PROBLEM", index, "WITH PROMPT", prompt)
+    # print("LOOKING AT PROBLEM", index, "WITH PROMPT", prompt)
     if "hint" in instructions.lower():
         question = f"Question: {question}\n Hint: {hint}"
 
+    if "SolutionSummary" in name:
+        question = f"Question: {question}\n Solution: {solution}"
 
     try:
         response = query(question, instructions, model)
     except Exception as e:
-        print(f"Error querying {model} for question {index} on prompt {prompt}: {e}")
+        # print(f"Error querying {model} for question {index} on prompt {prompt}: {e}")
         response = None
         status = False
 
@@ -125,12 +145,18 @@ def main():
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
 
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
+    instructionSet = {'basicprompt': instructionSet['basicprompt'], 'mathPrompt': instructionSet['mathPrompt'], 'hint_prompt': instructionSet['hint_prompt'], 'combinedhintPrompt': instructionSet['combinedhintPrompt']}
+    # instructionSet = {'solutionSummary': instructionSet['solutionSummary']}
+    # instructionSet = {'hintPrompt': instructionSet['hint_prompt']}
+    # instructionSet = {'combinedhintPrompt': instructionSet['combinedhintPrompt']}
 
     results = []
     for prompt in instructionSet:
         
         for _ in range(args.samples):
             for index, row in itertools.islice(data.iterrows(), min(args.rows, len(data))):
+                # if (index < 37):
+                #     continue
                 task = (
                     index,
                     prompt,
@@ -143,6 +169,7 @@ def main():
                     args.name,
                 )
 
+                # print("TASK:", task)
                 entry = process_task(task)
                 results.append(entry)
                 with open(f'../responses/{args.dataset}/{args.name}/results.jsonl', 'a') as jsonfile:

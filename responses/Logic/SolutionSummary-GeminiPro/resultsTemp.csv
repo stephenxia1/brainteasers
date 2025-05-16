@@ -1,0 +1,347 @@
+ID,Question,Hint,Human Solution,Model,PromptType,Response,Status
+0,"Question: It was good to have the house full of people again; it had been far too quiet since the last of his seven daughters had left for college--seven daughters with seven different majors at seven different schools.  About the only thing they had in common was that they were each dating an athlete, although none of them played the same sport--one was even on his school's fencing team.  He was surprised all the boyfriends had come for Christmas dinner, but he supposed that since he was picking up the tab for the airfare, that a free trip to Hawaii in the winter had something to do with it.  Each of his first three daughters had gone to Ivy League schools--one even to his alma mater at Harvard; his next two ended up at the University of California, at Los Angeles and Berkeley; and his two youngest got accepted to schools abroad--the University of Tokyo had been a bit of a surprise.  Next year, after seven straight years--and for the first time this millennium--he wouldn't be attending a high-school graduation.
+""Honey, we're ready to eat.  Can you get Hank, Ian, James and Kyle?  They're in the backyard playing football.  The other boys wanted to test themselves against the star quarterback,"" his wife called from the dining room.
+The math major said, ""I'll get them Dad!""
+As everyone filed into the dining room, the oldest sister was rehashing the whose-school-and-major-is-better argument with her younger sister about whether Yale or Princeton was a better school and whether history or philosophy was a more useful major.  The argument was practically a Christmas tradition by now.
+The table was arranged with the parents at the two ends and each of the couples seated across from each other with boys seated next to girls along each side.  As usual, Angelina and Danica were sitting next to their parents.  Curiously, all the athletes that used a ball in their sport were sitting on the same side of the table.  Christie, Electra and Edward took their seats first.
+Once everyone was seated the youngest coyly observed, ""I see the biologist is sitting between the two fighters but I'm sitting between the two best passers at the table.""
+""You'd better not make any passes yourself!"" Farrah icily replied.  She hadn't forgiven her sister for stealing her boyfriend when they were in high school and was not happy to see her seated next to her boyfriend now.
+""Lighten up, Farrah"" the biology major joked.  ""He wasn't even that cute.""
+""He was adorable!"" the youngest interjected.
+""Everyone's entitled to their opinion,"" said Brooke.  ""Let's eat!""
+The daughter in the middle seat stood up and said, ""We have an announcement to make!"" After a dramatic pause she screamed ""we're getting married!"" and flashed the new diamond ring on her finger.  The youngest sister squealed with delight at the news.  Her fiance joked to his future mother-in-law, ""I think she said yes just so she can wear the monogrammed sweater you gave me for Christmas.""  The baseball player next to her asked her fiance, ""Wow, what'd that rock set you back?""
+""This calls for a toast!"" roared Dad.
+""Oh Honey, that's wonderful news!"" Mom gushed.  ""I just happen to have some champagne right here.  Lars, I know you don't drink alcohol, but would you mind pouring some champagne for Gabrielle next to you?"" the mother asked, handing the bottle to Lars on her left.  ""Gabrielle, please pass the bottle around,"" she asked and then quickly added, ""But no alcohol for my three babies, or anyone under 21 for that matter.  Honey, there's a store downtown that's having a sale on wedding dresses.  Will you have time to go look at some wedding dresses before you leave?""
+""Sure Mom,"" her daughter answered.  ""We have a late flight out, so I can do that on the day we leave.""
+""Michael and I are celebrating New Years Eve at the Sheraton, Waikiki,"" one of the girls announced.
+""What a coincidence,"" said the boy sitting next to her.  ""We're celebrating New Years at the Sheraton, Los Angeles.  It's within walking distance of our apartment so we won't have to worry if we drink too much.""
+""That sounds like a better plan than we have.  Somehow, just because my car holds a lot of people, I got roped into being the designated driver for the team"" Danica said, looking pointedly at her boyfriend, who gestured to the boy from Princeton saying, ""he gave me the idea!""
+""Girls, your grandmother will be here on Sunday,"" the father announced.  ""She'd really like to see you all.""
+""Sorry Dad,"" the business major replied, ""we have to leave tomorrow.  There's a huge storm predicted to hit the Eastern United States this weekend and we need to get home before they close the airports.  I noticed that each couple is leaving on a different day for six days after we leave.""
+""Sir, we're leaving before Sunday also, so we won't be able to make it either.  I'm just glad we don't have to deal with that storm"" said the wrestler.
+The swimmer and water polo player announced their travel plans.  One of them remarked that even though his girlfriend and he were departing for Oxford University two days earlier, both couples would get home on the same day.
+The physics major said ""I'll be here to see grandma, but unfortunately we're heading back to California before you go look at the wedding gowns.""
+""Well I'm glad you'll at least be here to see your grandma, but I wish you could stay longer"" the dad said.  ""You know you're my favorite since you were my first to major in a physical science like me,"" he joked.  ""I have a tee time at the club on Monday, it's too bad you won't be here,"" the father remarked to the golfer.  ""Kyle's got a game next week but you don't,"" he said to the history major's boyfriend.  ""How about you join me on the links?""
+""Sure!"" the boyfriend replied enthusiastically.
+""Since we're leaving the day after him, if you've got room for two more Dad, we just happened to bring our clubs"" the second oldest said, winking at her boyfriend.
+""It's a foursome then!"" her dad said happily.
+Ian grumbled, ""Hank you lucky dog, I've wanted to play that course for years!""
+The boyfriend of the political science major laughed, ""I'd like to play there also, but Ian, at least I won't have to travel as far as you to get another opportunity.""
+---------
+Identify the boyfriend and his sport, the school, and major for each daughter.  Name the order that the daughters were born in and the day of the week that they leave to go home.  What is the seating arrangement at the dinner table?
+Bonus question: what year is it?
+ Solution: From oldest to youngest the sisters are:
+Who, Boyfriend, Sport, Major, School, Departure day
+----------------------------------------------------------
+Danica, Hank, Water Polo, History, Yale, Tue
+Electra, Edward, Fencing, Philosophy, Princeton, Wed
+Angelina, Lars, Golf, Business, Harvard, Fri
+Gabrielle, James, Wrestling, Poly Sci., UCLA, Sat
+Farrah, Kyle, Football, Physics, Berkeley, Mon.
+Brooke, Michael, Baseball, Biology, Tokyo, Thu
+Christie, Ian, Swimming, Math, Oxford, Sun
+The seating arrangement is:
+---------- Dad ----------
+Hank.............Danica
+Christie..........Ian
+Kyle..............Farrah
+Electra...........Edward
+Michael..........Brooke
+Gabrielle........James
+Lars..............Angelina
+---------- Mom ----------
+The year is 2003.  This is the only year from 2000 to 2007 where Christmas is on a Thursday.","Pay attention to the flow of the conversation, but don't assume more than can be firmly established.
+Also, some information relies on the following facts:
+Christmas is on December 25th.
+New Years Eve is celebrated (usually by drinking too much alcohol) on December 31st.
+Swimming, fencing and wrestling are not games.  Football, baseball, water polo and golf are games played with a ball.
+Fencing and wrestling are combat competitions.
+The game of American football is not a collegiate sport outside the United States; the player that passes the ball is the quarterback; there are more than forty players on a football team.
+Water polo is a game played in a pool with 7 players on each team; points are scored by throwing the ball into the opponents net, which is guarded by the goal keeper; the ball is moved across the pool either by swimming with it or passing it to another player.
+Ivy League schools are located on the East Coast of the United States.  Harvard, Yale and Princeton are all Ivy League schools.
+Oxford University is in Oxford, England.
+Tokyo University is in Tokyo, Japan.
+Los Angeles and Berkeley are cities in California.
+Waikiki is a city in Hawaii.
+Hawaii is in the Pacific Ocean.  The following are approximate distances from Hawaii:
+Berkeley and Los Angeles ~ 2500 miles
+Tokyo ~3900 miles
+Yale, Harvard and Princeton ~5000 miles
+England ~7000 miles
+Biology and physics are physical sciences; none of the other majors is a physical science.
+High school in America typically includes the last three or four years of school before college.
+A designated driver remains sober in order to drive people who've had too much alcohol home.
+A monogram is formed from the first letter of a person's first, last and (sometimes) middle names.","From oldest to youngest the sisters are:
+Who, Boyfriend, Sport, Major, School, Departure day
+----------------------------------------------------------
+Danica, Hank, Water Polo, History, Yale, Tue
+Electra, Edward, Fencing, Philosophy, Princeton, Wed
+Angelina, Lars, Golf, Business, Harvard, Fri
+Gabrielle, James, Wrestling, Poly Sci., UCLA, Sat
+Farrah, Kyle, Football, Physics, Berkeley, Mon.
+Brooke, Michael, Baseball, Biology, Tokyo, Thu
+Christie, Ian, Swimming, Math, Oxford, Sun
+The seating arrangement is:
+---------- Dad ----------
+Hank.............Danica
+Christie..........Ian
+Kyle..............Farrah
+Electra...........Edward
+Michael..........Brooke
+Gabrielle........James
+Lars..............Angelina
+---------- Mom ----------
+The year is 2003.  This is the only year from 2000 to 2007 where Christmas is on a Thursday.",GeminiPro,solutionSummary,,True
+1,"Question: The warden meets with 23 new prisoners when they arrive. He tells them, ""You may meet today and plan a strategy. But after today, you will be in isolated cells and will have no communication with one another.
+""In the prison there is a switch room which contains two light switches labeled A and B, each of which can be in either the 'on' or the 'off' position. BOTH SWITCHES ARE IN THEIR OFF POSITIONS NOW.*  The switches are not connected to anything.
+""After today, from time to time whenever I feel so inclined, I will select one prisoner at random and escort him to the switch room. This prisoner will select one of the two switches and reverse its position. He must move one, but only one of the switches. He can't move both but he can't move none either. Then he'll be led back to his cell.""
+""No one else will enter the switch room until I lead the next prisoner there, and he'll be instructed to do the same thing. I'm going to choose prisoners at random. I may choose the same guy three times in a row, or I may jump around and come back.""
+""But, given enough time, everyone will eventually visit the switch room as many times as everyone else. At any time any one of you may declare to me, 'We have all visited the switch room.'
+""If it is true, then you will all be set free. If it is false, and somebody has not yet visited the switch room, you will be fed to the alligators.""
+*note - the only difference from Scenario B, the original position of the 2 switches are known.
+ Solution: 1.        Appoint a ""scorekeeper"" and the other 22 prisoners as ""transmitters"".
+2.        When a transmitter enter the switch room for the first time, he will flick switch B ON if he sees it in the OFF position.  Alternatively, he will flick switch A if he sees switch B is in the ON position and waits for his next visit.  The transmitter's mission is to find ONE opportunity to flick switch B to the ON position.  After he completes his mission, he will flick switch A for all subsequent visits.  In short, each transmitter's role is to send a signal to the scorekeeper that he has been to the switch room.
+3.        The scorekeeper's role is to flick off switch B whenever he sees it in the ON position.  Each time he flicks off switch B he adds 1 to his score.  When he sees switch B is already OFF, he flicks switch A instead and does not add to the score.  As soon as he accumulates 22, he reports to the Warden.","Assuming that:
+A) There is no restriction on the amount of time the prisoners could take before sending the notice to the warden that everyone has been to the switch room at least once.
+B) There is no restriction on the number of time each prisoner can visit the switch room
+C) The warden will not attempt any foul moves, such as intentionally not bringing a certain prisoner to the switch room forever.","1.        Appoint a ""scorekeeper"" and the other 22 prisoners as ""transmitters"".
+2.        When a transmitter enter the switch room for the first time, he will flick switch B ON if he sees it in the OFF position.  Alternatively, he will flick switch A if he sees switch B is in the ON position and waits for his next visit.  The transmitter's mission is to find ONE opportunity to flick switch B to the ON position.  After he completes his mission, he will flick switch A for all subsequent visits.  In short, each transmitter's role is to send a signal to the scorekeeper that he has been to the switch room.
+3.        The scorekeeper's role is to flick off switch B whenever he sees it in the ON position.  Each time he flicks off switch B he adds 1 to his score.  When he sees switch B is already OFF, he flicks switch A instead and does not add to the score.  As soon as he accumulates 22, he reports to the Warden.",GeminiPro,solutionSummary,"Okay, here's a summary of the solution, broken down into logical steps:
+
+**Summary of the Solution:**
+
+The prisoners designate one person as the ""Scorekeeper"" and the remaining 22 as ""Transmitters."" Switch B is used as the primary communication channel for Transmitters to signal they have visited, and Switch A is used as a general-purpose toggle to satisfy the ""must flip one switch"" rule when Switch B isn't the correct one to flip. The Scorekeeper tracks the signals from Switch B until they have counted 22 unique signals, at which point they can confidently declare that everyone has visited.
+
+**Reasoning in Simple Steps:**
+
+1.  **Step 1: Designate Roles.**
+    *   **Logical Completeness:** The strategy requires distinct responsibilities.
+    *   **Action:** The 23 prisoners designate one person as the ""Scorekeeper"" and the other 22 as ""Transmitters."" This is done during their initial meeting.
+    *   **Consistency:** This sets up the foundation for the rest of the plan, defining who does what.
+
+2.  **Step 2: Define the Transmitter's Protocol (Signaling their visit).**
+    *   **Logical Completeness:** Each of the 22 Transmitters needs a way to signal their presence to the Scorekeeper exactly once.
+    *   **Action:**
+        *   A Transmitter's primary goal is to turn Switch B ON *one time*.
+        *   If a Transmitter enters and Switch B is OFF, AND they have *not yet* turned Switch B ON before: They flip Switch B to ON. They now consider their signaling task complete.
+        *   If a Transmitter enters and Switch B is ON, OR if they *have already* turned Switch B ON in a previous visit: They flip Switch A.
+    *   **Consistency:** This ensures each Transmitter attempts to send one clear signal (B moving from OFF to ON) and uses Switch A for all other mandatory flips (either because B is already ON, or their one signal has already been sent). Both switches start OFF, providing a clean state for the first Transmitter aiming to turn B ON.
+
+3.  **Step 3: Define the Scorekeeper's Protocol (Counting visits and resetting the signal).**
+    *   **Logical Completeness:** The Scorekeeper needs a way to reliably count the signals from the 22 Transmitters and know when all have signaled.
+    *   **Action:**
+        *   The Scorekeeper keeps a mental count, initialized at 0.
+        *   If the Scorekeeper enters and Switch B is ON: They flip Switch B to OFF and increment their mental count by 1. This action ""consumes"" a Transmitter's signal and resets Switch B for another Transmitter to use.
+        *   If the Scorekeeper enters and Switch B is OFF: They flip Switch A. Their count does not change.
+    *   **Consistency:** The Scorekeeper only counts when they actively turn Switch B OFF, ensuring each count corresponds to a unique signal from a Transmitter. Flipping Switch A when B is already OFF fulfills the ""must flip a switch"" rule without falsely incrementing the count.
+
+4.  **Step 4: The Declaration.**
+    *   **Logical Completeness:** The Scorekeeper needs a condition to make the final declaration.
+    *   **Action:** When the Scorekeeper's mental count reaches 22 (meaning they have registered a signal from each of the other 22 prisoners), they declare to the warden that everyone has visited the switch room.
+    *   **Consistency:** Since the Scorekeeper has personally visited (by virtue of being the Scorekeeper and entering the room to perform their duties) and has counted 22 distinct signals from the Transmitters, all 23 prisoners must have visited the switch room by this point.",True
+2,"Question: There is a ten-digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) A + B + C + D + E is a multiple of 6.
+2) F + G + H + I + J is a multiple of 5.
+3) A + C + E + G + I is a multiple of 9.
+4) B + D + F + H + J is a multiple of 2.
+5) AB is a multiple of 3.
+6) CD is a multiple of 4.
+7) EF is a multiple of 7.
+8) GH is a multiple of 8.
+9) IJ is a multiple of 10.
+10) FE, HC, and JA are all prime numbers.
+ Solution: 5736912480
+A = 5, B = 7, C = 3, D = 6, E = 9, F = 1, G = 2, H = 4, I = 8, J = 0
+1) 5 + 7 + 3 + 6 + 9 = 30, which is a multiple of 6.
+2) 1 + 2 + 4 + 8 + 0 = 15, which is a multiple of 5.
+3) 5 + 3 + 9 + 2 + 8 = 27, which is a multiple of 9.
+4) 7 + 6 + 1 + 4 + 0 = 18, which is a multiple of 2.
+5) 57 is a multiple of 3.
+6) 36 is a multiple of 4.
+7) 91 is a multiple of 7.
+8) 24 is a multiple of 8.
+9) 80 is a multiple of 10.
+10) 19, 43, and 05 are prime numbers.
+A) The sum of digits 0 through 9 is 45.  To satisfy Conditions 1 and 2, a pair of multiples must equal 45.  The only pair that satisfies those conditions are 30 (multiple of 6) and 15 (multiple of 5).  Likewise, to satisfy Conditions 3 and 4, the pair of multiples must be 27 (multiple of 9) and 18 (multiple of 2).
+B) Make lists of the multiples of 3, 4, 7, 8, and 10 (for Conditions 5 through 9).  Delete multiples whose digits are the same (33, 44, 66, 77, 88, 99).
+C) To satisfy Condition 9, J must be 0.  Delete multiples that require 0 in a different location.  For JA to be prime (Condition 10), A must be: 2, 3, 5, or 7.  Delete multiples of 3 that have another digit for A.
+D) For FE and HC to be prime (Condition 10), C and E can not be even or 5.  Delete multiples of 4 and 7 that have another digit for C and E.
+E) Per Condition 4, B + D + F + H + J = 18.  D, H, and J must be even (required to form multiples of even numbers).  To attain the sum of 18 (an even number), B and F must either be both odd or both even.  If both are even, then the sum of those five digits would be 20.  B and F must be odd.  Delete multiples of 3 and 7 that have an even digit for B and F.  The only remaining multiple of 7 is 91.  E is 9 and F is 1.  Delete multiples that require 1 or 9 in a different location.
+F) The only remaining options for AB contain 7.  Delete multiples that require 7 in a different location.  The only remaining options for CD contain 3.  Delete multiples that require 3 in a different location.
+G) To satisfy Condition 1, CD must be 36 and AB must be either 57 or 75.  C is 3 and D is 6.  Delete multiples that require 5, 6, or 7 in a different location.
+H) The only remaining options for GH contain 4.  Delete multiples that require 4 in a different location.
+I) Per Condition 3, A + C + E + G + I = 27.  Since C =3 and I = 9, the other three must total 15.  There is only one combination of remaining multiples (57, 24, and 80) that can satisfy this condition.  A is 5, G is 2, and I is 8.  B is 7 and H is 4.","Notice that when combining clues 1 and 2, you have information about the sum of digits. You can do the same for clues 3 and 4. ","5736912480
+A = 5, B = 7, C = 3, D = 6, E = 9, F = 1, G = 2, H = 4, I = 8, J = 0
+1) 5 + 7 + 3 + 6 + 9 = 30, which is a multiple of 6.
+2) 1 + 2 + 4 + 8 + 0 = 15, which is a multiple of 5.
+3) 5 + 3 + 9 + 2 + 8 = 27, which is a multiple of 9.
+4) 7 + 6 + 1 + 4 + 0 = 18, which is a multiple of 2.
+5) 57 is a multiple of 3.
+6) 36 is a multiple of 4.
+7) 91 is a multiple of 7.
+8) 24 is a multiple of 8.
+9) 80 is a multiple of 10.
+10) 19, 43, and 05 are prime numbers.
+A) The sum of digits 0 through 9 is 45.  To satisfy Conditions 1 and 2, a pair of multiples must equal 45.  The only pair that satisfies those conditions are 30 (multiple of 6) and 15 (multiple of 5).  Likewise, to satisfy Conditions 3 and 4, the pair of multiples must be 27 (multiple of 9) and 18 (multiple of 2).
+B) Make lists of the multiples of 3, 4, 7, 8, and 10 (for Conditions 5 through 9).  Delete multiples whose digits are the same (33, 44, 66, 77, 88, 99).
+C) To satisfy Condition 9, J must be 0.  Delete multiples that require 0 in a different location.  For JA to be prime (Condition 10), A must be: 2, 3, 5, or 7.  Delete multiples of 3 that have another digit for A.
+D) For FE and HC to be prime (Condition 10), C and E can not be even or 5.  Delete multiples of 4 and 7 that have another digit for C and E.
+E) Per Condition 4, B + D + F + H + J = 18.  D, H, and J must be even (required to form multiples of even numbers).  To attain the sum of 18 (an even number), B and F must either be both odd or both even.  If both are even, then the sum of those five digits would be 20.  B and F must be odd.  Delete multiples of 3 and 7 that have an even digit for B and F.  The only remaining multiple of 7 is 91.  E is 9 and F is 1.  Delete multiples that require 1 or 9 in a different location.
+F) The only remaining options for AB contain 7.  Delete multiples that require 7 in a different location.  The only remaining options for CD contain 3.  Delete multiples that require 3 in a different location.
+G) To satisfy Condition 1, CD must be 36 and AB must be either 57 or 75.  C is 3 and D is 6.  Delete multiples that require 5, 6, or 7 in a different location.
+H) The only remaining options for GH contain 4.  Delete multiples that require 4 in a different location.
+I) Per Condition 3, A + C + E + G + I = 27.  Since C =3 and I = 9, the other three must total 15.  There is only one combination of remaining multiples (57, 24, and 80) that can satisfy this condition.  A is 5, G is 2, and I is 8.  B is 7 and H is 4.",GeminiPro,solutionSummary,"Here's a summary of the solution's reasoning, broken down into simple, logical steps:
+
+1.  **Determine Group Sums (Condition A):**
+    *   The sum of all unique digits (0-9) is 45.
+    *   Given A+B+C+D+E is a multiple of 6 (Clue 1) and F+G+H+I+J is a multiple of 5 (Clue 2), and their total is 45, the only pair of multiples summing to 45 is 30 and 15. Thus, A+B+C+D+E = 30 and F+G+H+I+J = 15.
+    *   Similarly, A+C+E+G+I is a multiple of 9 (Clue 3) and B+D+F+H+J is a multiple of 2 (Clue 4). The sum of five distinct digits must be at least 0+1+2+3+4=10. The only pair of multiples summing to 45 that respects this is 27 and 18. Thus, A+C+E+G+I = 27 and B+D+F+H+J = 18.
+
+2.  **Initial Digit Placement and Constraints (Conditions B, C, D):**
+    *   From Clue 9 (IJ is a multiple of 10), J must be 0.
+    *   From Clue 10 (JA is prime), and J=0, 0A must be prime. This means A can only be 2, 3, 5, or 7 (for 02, 03, 05, 07 to be prime representations).
+    *   From Clue 10 (FE and HC are prime), E and C cannot be 0, 2, 4, 5, 6, or 8 (as the unit digit of a two-digit prime, excluding primes like 2 itself, which is not possible here). So, C and E must be among {1, 3, 7, 9}.
+
+3.  **Deduce Parity of B and F, then Determine E and F (Condition E):**
+    *   We know B+D+F+H+J = 18 (from Step 1) and J=0 (from Step 2). So, B+D+F+H = 18.
+    *   From Clue 6 (CD is a multiple of 4), D must be even.
+    *   From Clue 8 (GH is a multiple of 8), H must be even.
+    *   Since D and H are even, for B+D(even)+F+H(even) = 18 (even), B and F must have the same parity (both odd or both even).
+    *   If B and F were both even, then B, D, F, H, J would all be even. The smallest five distinct even digits (0,2,4,6,8) sum to 20, which contradicts B+D+F+H+J = 18.
+    *   Therefore, B and F must both be odd.
+    *   Considering EF is a multiple of 7 (Clue 7), F is odd, E is from {1,3,7,9}, and FE is prime (Clue 10). Checking possibilities for EF (e.g., E=9, F=1 -> EF=91, which is 7*13; FE=19 which is prime): The only pair satisfying these, along with F being odd and E being from {1,3,7,9} and not yet used, is E=9 and F=1. (EF=91, FE=19 prime).
+
+4.  **Determine C and D (Conditions F, G):**
+    *   With E=9, F=1, J=0 identified, and A from {2,3,5,7}, B is odd (not 1 or 9).
+    *   From A+B+C+D+E = 30 and E=9, we have A+B+C+D = 21.
+    *   C is from {1,3,7,9} (not 1 or 9, so C is 3 or 7). D is even. CD is a multiple of 4 (Clue 6). HC (H is even, C is 3 or 7) must be prime (Clue 10).
+    *   Testing possibilities for C and D: If C=3, then CD could be 32 or 36.
+        *   If CD=32 (D=2): A+B+3+2=21 => A+B=16.
+            *   Possible (A,B) using A from {5,7} (2,3 used/constrained), B odd (not 1,9): A=5, B=11 (not digit); A=7, B=9 (E=9, conflict).
+        *   If CD=36 (D=6): A+B+3+6=21 => A+B=12.
+            *   Possible (A,B) using A from {5,7}, B odd (not 1,9): A=5, B=7 (AB=57, mult of 3). JA=05 (prime). This fits.
+            *   Possible (A,B): A=7, B=5 (AB=75, mult of 3). JA=07 (prime). This also fits initially.
+    *   The solution proceeds with CD=36, so C=3, D=6.
+
+5.  **Determine Remaining Digits (A, B, G, H, I) (Conditions H, I):**
+    *   Digits determined: C=3, D=6, E=9, F=1, J=0.
+    *   From A+C+E+G+I = 27 (Step 1): A+3+9+G+I = 27 => A+G+I = 15.
+    *   Remaining digits for A,B,G,H,I are {2,4,5,7,8}.
+    *   AB is 57 or 75 (from Step 4, A is 5 or 7, B is the other). GH is a multiple of 8 (Clue 8), IJ=I0.
+    *   Case 1: AB=57 (A=5, B=7).
+        *   Then 5+G+I = 15 => G+I = 10.
+        *   Remaining for G,H,I: {2,4,8}.
+        *   If G=2, I=8 (G+I=10). H must be 4. GH=24 (mult of 8). IJ=80 (mult of 10).
+        *   This gives: A=5, B=7, C=3, D=6, E=9, F=1, G=2, H=4, I=8, J=0.
+        *   Check Clue 10 primes: FE=19 (prime), HC=43 (prime), JA=05 (prime). All conditions are met.
+    *   Case 2: AB=75 (A=7, B=5).
+        *   Then 7+G+I = 15 => G+I = 8.
+        *   Remaining for G,H,I: {2,4,8}.
+        *   If G=2, I=6 (not available). If G=4, I=4 (not unique). No solution here with {2,4,8}.
+    *   Therefore, the unique solution found in Case 1 is the answer.
+
+6.  **Final Number:**
+    A=5, B=7, C=3, D=6, E=9, F=1, G=2, H=4, I=8, J=0.
+    The number is 5736912480.",True
+3,"Question: There is a ten-digit mystery number (no leading 0), represented by ABCDEFGHIJ, where each numeral, 0 through 9, is used once.  Given the following clues, what is the number?
+1) Either A = B / 3 or A = G + 3.
+2) Either B = I - 4 or B = E + 4.
+3) Either C = J + 2 or C = F * 3.
+4) Either D = G * 4 or D = E / 3.
+5) Either E = J - 1 or E = D / 4.
+6) Either F = B * 2 or F = A - 4.
+7) Either G = F + 1 or G = I - 3.
+8) Either H = A / 2 or H = C * 3.
+9) Either I = H + 3 or I = D / 2.
+10) Either J = H - 2 or J = C * 2.
+ Solution: 5038612947
+A = 5, B = 0, C = 3, D = 8, E = 6, F = 1, G = 2, H = 9, I = 4, J = 7
+1) A = G + 3 = 2 + 3 = 5.
+2) B = I - 4 = 4 - 4 = 0.
+3) C = F * 3 = 1 * 3 = 3.
+4) D = G * 4 = 2 * 4 = 8.
+5) E = J - 1 = 7 - 1 = 6.
+6) F = A - 4 = 5 - 4 = 1.
+7) G = F + 1 = 1 + 1 = 2.
+8) H = C * 3 = 3 * 3 = 9.
+9) I = D / 2 = 8 / 2 = 4.
+10) J = H - 2 = 9 - 2 = 7.
+A) Check each letter for any value that it can not be on the left side of an equation.  For example, A can not be 0, as B would also have to be 0 or G would have to be negative.  On the first pass through the letters, the following can be determined: A not 0, C not 0, C not 1, D not 0, D not 5, D not 6, D not 7, D not 9, E not 9, F not 7, F not 9, G not 8 (because F not 7), H not 0, H not 5, H not 7, H not 8, I not 0, I not 3 (because H not 0 and D not 6), I not 8 (because H not 5), J not 3 (because H not 5), J not 5 (because H not 7), and J not 9.
+B) Make a second pass through the letters.  The following can be determined: C not 5, C not 7, D not 3, E not 4, E not 8, and G not 0.
+C) Make a third pass.  The following can be determined: B not 8.
+D) For D, only four numbers are still valid: 1, 2, 4, and 8.  Plug each of these numbers into D and check the resulting flow of equations.  If D = 1, then the resulting flow will lead to J having to be both 4 and 0.  If D = 2, then the resulting flow will lead to 2 also being assigned to G.  If D = 4, then the resulting flow will lead to 4 also being assigned to either A or I.  If D = 8, then G = 2, F = 1, and A = 5.
+E) For E, four numbers are still valid: 0, 3, 6, and 7.  Plug each number into E and check the resulting flow.  If E = 0, then the flow will lead to J being assigned 1, which has already been assigned to F.  If E = 3, then the flow will lead to C being assigned 2, which has already been assigned to G.  If E = 7, then the flow will lead to J being assigned 8, which has already been assigned to D.  If E = 6, then J = 7, H = 9, and C = 3.
+F) The only remaining value for I is 4, which leaves 0 being assigned to B.","Check each letter for any value that it can not be on the left side of an equation.  For example, A can not be 0, as B would also have to be 0 or G would have to be negative.","5038612947
+A = 5, B = 0, C = 3, D = 8, E = 6, F = 1, G = 2, H = 9, I = 4, J = 7
+1) A = G + 3 = 2 + 3 = 5.
+2) B = I - 4 = 4 - 4 = 0.
+3) C = F * 3 = 1 * 3 = 3.
+4) D = G * 4 = 2 * 4 = 8.
+5) E = J - 1 = 7 - 1 = 6.
+6) F = A - 4 = 5 - 4 = 1.
+7) G = F + 1 = 1 + 1 = 2.
+8) H = C * 3 = 3 * 3 = 9.
+9) I = D / 2 = 8 / 2 = 4.
+10) J = H - 2 = 9 - 2 = 7.
+A) Check each letter for any value that it can not be on the left side of an equation.  For example, A can not be 0, as B would also have to be 0 or G would have to be negative.  On the first pass through the letters, the following can be determined: A not 0, C not 0, C not 1, D not 0, D not 5, D not 6, D not 7, D not 9, E not 9, F not 7, F not 9, G not 8 (because F not 7), H not 0, H not 5, H not 7, H not 8, I not 0, I not 3 (because H not 0 and D not 6), I not 8 (because H not 5), J not 3 (because H not 5), J not 5 (because H not 7), and J not 9.
+B) Make a second pass through the letters.  The following can be determined: C not 5, C not 7, D not 3, E not 4, E not 8, and G not 0.
+C) Make a third pass.  The following can be determined: B not 8.
+D) For D, only four numbers are still valid: 1, 2, 4, and 8.  Plug each of these numbers into D and check the resulting flow of equations.  If D = 1, then the resulting flow will lead to J having to be both 4 and 0.  If D = 2, then the resulting flow will lead to 2 also being assigned to G.  If D = 4, then the resulting flow will lead to 4 also being assigned to either A or I.  If D = 8, then G = 2, F = 1, and A = 5.
+E) For E, four numbers are still valid: 0, 3, 6, and 7.  Plug each number into E and check the resulting flow.  If E = 0, then the flow will lead to J being assigned 1, which has already been assigned to F.  If E = 3, then the flow will lead to C being assigned 2, which has already been assigned to G.  If E = 7, then the flow will lead to J being assigned 8, which has already been assigned to D.  If E = 6, then J = 7, H = 9, and C = 3.
+F) The only remaining value for I is 4, which leaves 0 being assigned to B.",GeminiPro,solutionSummary,"Okay, here's a summary of the solution's reasoning, broken down into logical steps:
+
+**Overall Strategy:** The solution uses a process of elimination and constraint propagation, followed by targeted trial-and-error (or case analysis) on digits with the fewest remaining possibilities.
+
+**Step-by-Step Reasoning:**
+
+1.  **Understand Constraints and Setup:**
+    *   The goal is to assign a unique digit from 0 to 9 to each letter A through J.
+    *   A cannot be 0 (no leading zero).
+    *   For each letter, exactly one of the two given conditional equations must be true.
+
+2.  **Initial Elimination Pass (based on inherent properties of equations):**
+    *   For each letter (A-J), examine both its possible equations.
+    *   Rule out values for that letter if an equation would:
+        *   Lead to a non-integer result for another letter (e.g., if C = F\*3 and C=1, then F=1/3, which is not allowed).
+        *   Lead to a negative value for another letter (e.g., if A = G+3 and A=1, then G=-2, not allowed).
+        *   Require A to be 0.
+        *   Force a digit to be outside the 0-9 range.
+        *   Create an immediate self-contradiction for unique digits (e.g., if A = B/3 and A=0, B=0, which is not allowed as A cannot be 0).
+    *   This first pass (detailed in section A of the provided solution) significantly reduces the possible values for many letters (e.g., A ≠ 0; C ≠ 0, 1; D ≠ 0, 5, 6, 7, 9).
+
+3.  **Iterative Elimination Passes (propagating constraints):**
+    *   Re-examine the possible values for each letter.
+    *   The eliminations made in the previous step for some letters can now further restrict the possibilities for other letters they are related to via the equations.
+    *   For example, if G cannot be 7 (because F cannot be 6 due to an earlier elimination), then any equation relying on G=7 can be invalidated for its corresponding letter.
+    *   These subsequent passes (sections B and C of the solution) narrow down the options further (e.g., C ≠ 5, 7; B ≠ 8).
+
+4.  **Targeted Case Analysis (Starting with Highly Constrained Letters):**
+    *   Identify a letter that has very few remaining possible values after the elimination rounds. The solution focuses on D, which has only 1, 2, 4, or 8 as possibilities.
+    *   For each possible value of D:
+        *   Assume that value.
+        *   Determine which of D's two equations *must* be true (the other will be false or lead to an invalid state).
+        *   Follow the chain of logical deductions: this assignment for D (and its chosen equation) will set the values for other connected letters.
+        *   Check for contradictions at each step:
+            *   Is a digit assigned a value already taken?
+            *   Is a digit forced to be non-integer or out of range?
+            *   Does it conflict with previously established impossible values?
+        *   The solution finds that D=1, D=2, and D=4 lead to contradictions.
+        *   Assuming D=8 leads to a consistent path: D=8 implies G=2 (using D=G\*4). G=2 implies F=1 (using G=F+1). F=1 implies A=5 (using A=G+3, since A=5 means F=A-4 -> 1=5-4, also true, but A=G+3 -> 5=2+3 is the one chosen by the solution as the primary implication).
+    *   At this point, A=5, D=8, F=1, G=2 are provisionally set.
+
+5.  **Continue Case Analysis with Newly Constrained Letters:**
+    *   With A, D, F, G now known, re-evaluate other letters. The solution identifies E as having few remaining options (0, 3, 6, 7).
+    *   Test each possible value for E, checking for consistency with the already assigned A, D, F, G and the unique digit rule.
+        *   E=0, E=3, E=7 lead to contradictions (e.g., requiring a digit already used).
+        *   Assuming E=6 is consistent: E=6 implies J=7 (using E=J-1). J=7 implies H=9 (using J=H-2). H=9 implies C=3 (using H=C\*3).
+    *   At this point, A=5, C=3, D=8, E=6, F=1, G=2, H=9, J=7 are provisionally set.
+
+6.  **Determine Remaining Digits:**
+    *   The only digits not yet assigned are 0 and 4. The only letters not yet assigned are B and I.
+    *   Consider I. One of its equations is I=D/2. Since D=8, I=8/2=4. This is a valid, unused digit. (The other option I=H+3 would be I=9+3=12, invalid).
+    *   This leaves B to be the only remaining digit, 0. Check B's equations: B=I-4 => 0=4-4. This is true. (The other option B=E+4 => 0=6+4=10, invalid).
+
+7.  **Final Verification:**
+    *   Confirm that all assigned values (A=5, B=0, C=3, D=8, E=6, F=1, G=2, H=9, I=4, J=7) are unique digits from 0-9.
+    *   Confirm that A is not 0.
+    *   Confirm that for each letter, one of its two conditional equations is satisfied by the assigned values (as demonstrated in the solution's final check).",True

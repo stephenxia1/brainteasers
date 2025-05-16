@@ -1,5 +1,4 @@
 .vscode
-data
 **/bash/
 **/__pycache__
 **/.DS_Store
@@ -14,3 +13,5 @@ data
 **/*.npy
 **/*.npz
 src/test.py
+src/export_api_keys.sh
+src/batchQuery.py
