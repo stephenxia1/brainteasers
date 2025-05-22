@@ -44,13 +44,13 @@ Comment out models to skip evaluation on them.
 '''
 modelInfo = {
     "GPT-o3" : {"key": "OPENAI_API_KEY", "modelName": "o3-2025-04-16", "url": "https://api.openai.com/v1"},
-    "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
-    "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-exp-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
-    "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com"},
-    "DSReason" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-reasoner", "url": "https://api.deepseek.com"},
-    "Qwen1" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "url": "https://api.together.xyz/v1"},
-    "Qwen14" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B", "url": "https://api.together.xyz/v1"},
-    "Qwen70" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B", "url": "https://api.together.xyz/v1"},
+    # "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    # "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-exp-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    # "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com"},
+    # "DSReason" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-reasoner", "url": "https://api.deepseek.com"},
+    # "Qwen1" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "url": "https://api.together.xyz/v1"},
+    # "Qwen14" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B", "url": "https://api.together.xyz/v1"},
+    # "Qwen70" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B", "url": "https://api.together.xyz/v1"},
 }
 
 def query(question, instructions, hint, model):
@@ -85,7 +85,7 @@ def query(question, instructions, hint, model):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", help="Experiment Name", required=True)
-    parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], required=True)
+    parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic", "Math_rewritten"], required=True)
     parser.add_argument("--rows", help="Number of rows to sample", type=int, default=1, required=False)
     parser.add_argument("--samples", help="Number of samples to run", type=int, default=1, required=False)
     
@@ -95,13 +95,20 @@ def main():
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
     outputs = pd.DataFrame(columns=['ID', 'Question', 'Model', 'PromptType', 'Response', 'Status'])
 
-    instructionSet = read_txt_files("../prompting/brainteaserPrompts")
-    # print("Instructions:", instructions)
+    instructionSet = read_txt_files("../prompting/brainteaserPrompts") 
+    # print("Instructions:", instructions) 
 
     for index, row in data.iterrows():
         if index >= args.rows:
             break
+        
+        
+        print(index)
+        print(row['Question'])
+        if row['Question'] == None:
+            print("Empty")
 
+        
         for _ in range(args.samples):
 
             for prompt in instructionSet:
@@ -110,6 +117,10 @@ def main():
                     question = row['Question']
                     solution = row['Answer']
                     hint = row['Hint']
+                    print(instructions)
+                    print(question)
+                    print(solution)
+                    print(hint)
 
                     try:
                         response = query(question, instructions, hint, model)

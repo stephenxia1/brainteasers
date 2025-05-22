@@ -1,0 +1,2776 @@
+ID,Question,Hint,Human Solution,Model,PromptType,Response,Status
+1,"Let $N$ be a positive integer expressed in base $10$ with leftmost digit $d$ and remaining part $r$ (which may include leading zeros), so that  
+\[
+N = d\cdot 10^{k} + r,
+\]
+where $1\le d\le 9$ and $k\ge 1$ is the number of digits of $r$.  
+Define
+\[
+M = 10r + d,
+\]
+the integer obtained by moving the first digit of $N$ to the right end of the number (i.e., rotating $N$ to the left once).
+
+Determine the least positive integer $N$ such that  
+\[
+M = \frac{3}{2}\,N.
+\]","The number has 16 digits.  I repeat, the number has 16 digits.","1,176,470,588,235,294
+x 1.5 =
+1,764,705,882,352,941
+Here's how you find the number:
+You needed to find a repeating fraction such that the number of repeating digits is one less than the number. This would be a prime number, and seven is the lowest number with this property. With this property, every digit in the repeating fraction appears in each place exactly once (i.e., every repeated digit appears as the first digit after the decimal exactly once for n/p where p > n > 0).
+Now you need to find any occurrences where the nth digit is followed by the 1.5nth digit.  'n' will obviously be even.
+The repeating digits in 1/7 and their corresponding 'n' where the digits are the first digit after the decimal point are:
+142857 - repeating digits
+132645 - n
+The ordered pairs of adjacent values of n are (1,3), (3,2), (2,6), (6,4), (4,5) and (5,1).  None of these has the second number equal to one and a half times the first number.
+The next prime number p with a repeating fraction for 1/p containing p-1 repeating digits is 17.  The repeating digits for 1/17 are:
+.0588235294117647
+The easiest way to assign 'n' for each digit is to list all of the digit pairs in order:
+XX - n (digit)
+05 - 1 (1)
+11 - 2 (11)
+17 - 3 (12)
+23 - 4 (5)
+29 - 5 (8)
+35 - 6 (6)
+41 - 7 (10)
+47 - 8 (15)
+52 - 9 (7)
+58 - 10 (2)
+64 - 11 (14)
+70 - 12 (16)
+76 - 13 (13)
+82 - 14 (4)
+88 - 15 (3)
+94 - 16 (9)
+Checking the even-numbered values of n in the above table reveals that ALL even values of n less than 2/3 of 17 are followed by the 1.5n digit.  The values of n are and their digit places are:
+2,3 (11,12)
+4,6 (5,6)
+6,9 (6,7)
+8,12 (15,16)
+10,15 (2,3)
+So the five smallest numbers with this property are:
+1176470588235294
+2352941176470588
+3529411764705882
+4705882352941176
+5882352941176470
+Notice that 2352941176470588 can be rotated TWICE, yielding 1.5 times the number each time since the 4->6->9 n digits are in order.",GPT-o3,basicprompt,"Let  
+
+ N = d·10ᵏ + r  (1)  
+ M = 10 r + d   (2)  
+
+with 1 ≤ d ≤ 9 and r having exactly k decimal digits (so 10ᵏ ≤ 10·r + d < 10ᵏ⁺¹).
+
+Requirement: M = (3/2) N.  
+Substituting (1) and (2):
+
+ 10 r + d = (3/2)(d·10ᵏ + r)
+
+Multiply by 2 and collect terms:
+
+ 20 r + 2d = 3d·10ᵏ + 3r  
+ 17 r = d(3·10ᵏ – 2)    (3)
+
+--------------------------------------------------------------------
+1.  The divisibility constraint  
+
+17 is prime and 1 ≤ d ≤ 9, so gcd(d,17)=1.  
+Therefore (3) can hold only if  
+
+ 3·10ᵏ – 2 ≡ 0 (mod 17) ⇔ 10ᵏ ≡ 12 (mod 17).  (4)
+
+Compute powers of 10 modulo 17:  
+
+10¹≡10, 10²≡15, 10³≡14, 10⁴≡4, 10⁵≡6, 10⁶≡9, 10⁷≡5, 10⁸≡16,  
+10⁹≡7, 10¹⁰≡2, 10¹¹≡3, 10¹²≡13, 10¹³≡11, 10¹⁴≡8, 10¹⁵≡12.
+
+The first k satisfying (4) is  
+
+ k = 15.
+
+--------------------------------------------------------------------
+2.  The value of r  
+
+With k = 15, equation (3) gives  
+
+ r = d(3·10¹⁵ – 2)/17.  (5)
+
+--------------------------------------------------------------------
+3.  Ensuring r has at most k digits  
+
+We must have r < 10¹⁵.  From (5):
+
+ r < 10¹⁵   ⇔   d(3·10¹5 – 2) < 17·10¹⁵  
+      ⇔   3d < 17       (because 10¹⁵ » 2)
+
+Hence d ≤ 5.  
+To obtain the smallest possible N we pick the smallest admissible d, namely d = 1.
+
+--------------------------------------------------------------------
+4.  Computing r and N for d = 1  
+
+r = (3·10¹⁵ – 2)/17  
+  = (3 000 000 000 000 000 – 2)/17  
+  = 2 999 999 999 999 998 / 17  
+  = 176 470 588 235 294. (15 digits)
+
+Now  
+
+N = d·10¹5 + r  
+  = 1 000 000 000 000 000 + 176 470 588 235 294  
+  = 1 176 470 588 235 294.
+
+--------------------------------------------------------------------
+5.  Verification  
+
+M = 10 r + d  
+  = 1 764 705 882 352 940 + 1  
+  = 1 764 705 882 352 941.
+
+Compute (3/2) N:
+
+(3/2)·N = 1.5 × 1 176 470 588 235 294  
+        = 1 764 705 882 352 941 = M, as required.
+
+--------------------------------------------------------------------
+6.  Minimality  
+
+• k = 15 is minimal because (4) fails for all k < 15.  
+• d = 1 is the smallest digit allowed by 3d < 17.  
+Therefore the obtained N is the least positive integer fulfilling the condition.
+
+Final answer: 1176470588235294",True
+5,"Let $N=\overline{abcdef}$ be a $6$-digit integer written in base $10$ whose digits $a,b,c,d,e,f$ are pairwise distinct and with $a\neq0$.  Define the following five related integers.  
+
+• $N_1$ is obtained from $N$ by rotating its digits one place to the left: $N_1=\overline{bcdefa}$.  
+• $N_2$ is obtained from $N$ by rotating its digits one place to the right: $N_2=\overline{fabcde}$.  
+• $N_3$ is obtained from $N$ by swapping its first three and last three digits: $N_3=\overline{defabc}$.  
+• $N_4$ is obtained by grouping the digits of $N$ into the three blocks $\overline{ab},\overline{cd},\overline{ef}$ and then rotating these blocks one place to the left: $N_4=\overline{cdefab}$.  
+• $N_5$ is obtained by rotating those same two-digit blocks one place to the right: $N_5=\overline{efabcd}$.
+
+Let 
+\[
+T = N + N_1 + N_2 + N_3 + N_4 + N_5.
+\]
+
+The integer $N$ satisfies all of the following conditions:
+
+1.  $\displaystyle a+b+c+d+e+f \;=\; \overline{ef};$  
+2.  $\displaystyle a+b \;=\; e+f;$  
+3.  the first and last digits of $T$ are exactly $e$ and $f$ (in either order);  
+4.  each of the two-digit numbers $\overline{ab},\ \overline{cd},\ \overline{ef}$ is prime.
+
+Determine $N$.","The digital sum is the sum of the digits in the number. The digital sum of 247 is 2+4+7 = 13.
+The digit pairs in 125690 are 12 56 90. These are also the numbers formed by the digit pairs.
+Rotating 123456 one to the left gives 234561;
+Rotating 123456 one to the right gives 612345;
+Rotating the digit pairs in 567890 to the left gives 789056;
+Rotating the digit pairs in 567890 to the right gives 905678.","416723
+Here's how Rex determined Ralph's number:
+The insight Rex needed to solve this involves the number produced by the sum of the six numbers created from configurations of the digits in the number. Assign ABCDEF to the digits in Ralph's number. The six numbers Ralph had Rex add together were:
+ABCDEF
+BCDEFA
+FABCDE
+DEFABC
+CDEFAB
+EFABCD
+Notice that the six digits in each column in this summation are the six digits in the number. This means that the sum of each column will be the digital sum of the number. If that digital sum is represented by A+B+C+D+E+F = XY, then the problem is equivalent to adding:
+XXXXXX0
++YYYYYY
+The first and last digits will be X and Y only if 10 > X + Y. If X + Y is greater than 9, then the first digit will be X+1. Since both the digital sum of the number (A+B+C+D+E+F) and the first and last digit of the sum of the numbers match the digits XY, you know that 10 > X + Y. When Rex realized this relation he smiled because he knew that he had enough information now.
+The digital sum of the number must be between 0+1+2+3+4+5 = 15 and 9+8+7+6+5+4 = 39. Since each of the digit pairs in the number form a prime number, the digital sum must be a prime number in this range. There are only six prime numbers in this range: 17, 19, 23, 29, 31, and 37. 19, 29 and 37 are eliminated since 1+9 > 9, 2+9 > 9 and 3+7 > 9.
+The sum of the first two digits must match the sum of the last two digits (X+Y). For 31, 3+1=4, but the only other way to make four without repeating any digits is 0+4. Zero and four can't form a prime number, so the digital sum can't be 31. This leaves 17 and 23.
+For the digital sum to be 17, the digits must be either 0+1+2+3+4+7 = 17 or 0+1+2+3+5+6 = 17. Only 0, 1, 2, 3, 4, 7 has both a 1 and 7 to make the last two digits be 17. However, there is no pair of remaining digits with a sum of 1+7 = 8, so the digital sum can't be 17 and therefore must be 23.
+If the last two digits are 23, then the first two digits must total 2+3 = 5. The possibilities are 0+5 = 5 and 1+4 = 5. There is one prime number possible with each of these pairs: 05 and 41. The first two digits of the number can't be 05 because then the number would be a 5-digit number and Ralph's number has six digits. So the first two digits are 41 and the last two digits are 23.
+Since the sum of all the digits is 23, then the sum of the middle two digits must be 23 - (2+3) - (4+1) = 13. There are two pairs of the remaining digits that total 13: 5+8 = 13, and 6+7 = 13. Sixty-seven is the only prime number that can be formed from these pairs, so the middle two digits are 67 and Ralph's number is 416723.",GPT-o3,basicprompt,"Let the six digits of  
+N = 𝑎𝑏𝑐𝑑𝑒𝑓  (𝑎 ≠ 0, all digits different).
+
+From the conditions
+
+(1)  a+b+c+d+e+f = 10e + f,  
+(2)  a+b = e+f,
+
+subtract (2) twice from (1):
+
+(c+d)+2(e+f) = 10e+f  
+⇒ c+d = 8e − f.      (★)
+
+Because c+d ≤ 9+8 = 17, the right–hand side must be ≤ 17, so 8e − f ≤ 17.
+With f being 1,3,7,9 (a two-digit prime must end in one of these) the only possible tens digit e is 1 or 2.
+
+•  e = 1  
+ 8e − f = 8 − f.  
+ The only admissible f (1,3,7,9 and distinct from 1) is f = 3, giving c+d = 5.  
+ But then a+b = e+f = 4, and no two-digit prime ab with a+b = 4 exists using unused distinct digits.  
+ Thus e = 1 is impossible.
+
+•  e = 2  
+ Compute c+d and test primality of ef = 2f:
+
+ f = 1 ⇒ ef = 21 (not prime) – discard.  
+ f = 3 ⇒ ef = 23 (prime), c+d = 16−3 = 13.  
+ f = 7 ⇒ ef = 27 (not prime) – discard.  
+ f = 9 ⇒ ef = 29 (prime), c+d = 16−9 = 7.
+
+Case 1 (e,f) = (2,3), so ef = 23 (prime) and  
+ c+d = 13.  Among the pairs of distinct digits summing to 13 the only one giving a prime cd is (6,7) → 67 (prime).  
+ Now a+b = e+f = 5.  With remaining digits {0,1,4,8,9} the unique way to obtain a two-digit prime ab with a+b = 5 is a = 4, b = 1 → 41 (prime).
+
+This yields the six distinct digits 4,1,6,7,2,3, i.e. N = 416 723.
+
+Case 2 (e,f) = (2,9), so ef = 29 (prime) and  
+ c+d = 7.  The only prime cd obtainable is 43, using digits 4 and 3.  
+ Then a+b = 11, but no remaining pair of distinct digits can form a two-digit prime whose digits sum to 11.  
+ Hence this case fails.
+
+Therefore the sole candidate is N = 416 723.  It remains to check condition 3.
+
+Compute the six related numbers:
+
+N  = 416 723  
+N₁ = 167 234  
+N₂ = 341 672  
+N₃ = 723 416  
+N₄ = 672 341  
+N₅ = 234 167  
+
+T = N+N₁+N₂+N₃+N₄+N₅ = 2 555 553.
+
+The first digit of T is 2 and the last digit is 3, exactly the digits e and f (in order), so condition 3 is satisfied.
+
+All four given conditions are now met.
+
+Final answer: 416723",True
+6,"\[
+\textbf{Problem.}
+\]
+
+A piece of property is the shape of a regular \(n\)-gon whose side length is \(L\) feet.  
+Centered on the lot is a smaller, similar, regular \(n\)-gon house whose sides are each tangent to a circular concrete foundation of radius \(r\) feet.
+
+\begin{itemize}
+    \item The shortest distance from the foundation’s circumference to the boundary of the lot is exactly \(2r\) feet.
+    \item A circular atrium of diameter equal to \(\dfrac1{10}\) of the lot’s \emph{diameter}\footnote{The diameter of the lot is the greatest possible distance between two points on its boundary.} is located at the center of the house.
+    \item During excavation a straight section of pipe of length \(L\) feet was found passing through the center of the house; its endpoints lie on two (distinct) sides of the house, and the pipe divides the area of the house into two congruent regions.
+    \item After construction the pipe was installed as a gate across one side of the lot, and fencing having total length \(400\text{ ft}\) was erected along the other \(n-1\) sides.
+\end{itemize}
+
+Determine, in square feet, the total area contained inside the exterior walls of the house (this area includes all walls, stairwells, hallways, etc.).","A regular polygon has the length of all sides and arc of all interior angles equal.
+The first thing you need to determine is the number of sides for Ralph's house.  The rest solves in a fairly straight-forward manner once this is determined.","2,730 sq. feet
+Rex realized that he would need to know the number of sides on Ralph's house in order to make use of the only measurement Ralph gave him, which was the perimeter minus the length of one side for the property.  The length of a side of the property needed to be the length of the pipe that bisected the area of the house.  The length of the pipe is the key to figuring out how many sides the house has.
+The house is a regular polygon inscribed in the circle that is the foundation.  Since the closest edge of the property is equal to the diameter of the foundation, then the property must be a similar polygon circumscribed around a circle with a diameter three times the size of the foundation.
+The minimum and maximum length line segments that can bisect the area of a regular polygon are calculated differently for even- and odd-sided polygons.
+For an even-sided polygon inscribed in a circle of radius r, the maximum line segment has its ends at two opposite vertices and the length is 2r. The minimum line segment goes from the middle of one edge to the middle of the opposite edge.  The distance from the edge to the center of a polygon is the apothem, so the minimum line segment is two times the apothem a.
+For an odd-sided polygon the maximum bisector goes from a vertex to the middle of the opposite side, so the maximum is r + a. As with an even-sided polygon, the minimum bisector for an odd-sided polygon extends through the center of the polygon and at an angle halfway between two adjacent maximum bisectors.
+2Pi radians = 360 degrees.  The central angle between any two adjacent vertices on a polygon with n sides is then 2Pi/n and the angle between a vertex radius and the apothem is half that or Pi/n.  The apothem and the radius form two sides of a right triangle, with the third side formed by one half of the side bisected by the apothem.  For a regular polygon with n sides of length s this gives the following relationships:
+a = r*Cos(Pi/n)
+r = a/Cos(Pi/n)
+s = 2*a*Tan(Pi/n)
+Rex assigns one as the radius of the foundation.  This makes the apothem of the property three and the side of the property is:
+2*3*Tan(Pi/n) = 6*Tan(Pi/n)
+So where Min(n) and Max(n) are the minimum and maximum length of a bisector for an n-sided polygon inscribed in a unit circle, Rex needs to find an integer value for n that satisfies the inequality:
+Max(n) >= 6*Tan(Pi/n) >= Min(n)
+Since Rex is pretty sure there's only one solution, he figures first he'll just use the minimum and maximum functions for even-sided polygons.  The minimum and maximum for odd-sided polygons will be within this range, so he might find an odd-sided polygon that doesn't satisfy the equation, but he won't miss any that do.  This gives:
+2 >= 6*Tan(Pi/n) >= 2*Cos(Pi/n)
+Taking just the first part of the inequality gives:
+2 >= 6*Tan(Pi/n)
+1/3 >= Tan(Pi/n)
+atan(1/3) >= Pi/n
+atan(1/3) / Pi >= 1/n
+n >= Pi/atan(1/3)
+n >= 9.8
+He tries 10 and finds that:
+Max(10) = 2 >
+6*Tan(Pi/10) = 1.95 >
+Min(10) = Cos(Pi/10) = 1.90
+Now Rex knows that Ralph's house has ten sides and is a regular decagon.  That makes the length of the pipe and of a side of the larger decagon 400/9 = 44 4/9 = 44.444.. feet.  From the equation above:
+44.444 = 2*a*Tan(Pi/10)
+a = 44.444 / Tan(Pi/10) ~ 68.393
+So the radius of the larger circle is 68.393 feet and the radius of the foundation is 68.393/3 = 22.798, which is also the radius of the house decagon.  The apothem and length of a side for the house are:
+a = 22.798 * Cos(Pi/10) = 21.682
+s = 2 * 21.682 * Tan(Pi/10) = 14.090
+The side and apothem are the base and height of one of the ten triangles formed by two vertex radii and a side.  The area of one of these triangles is then
+14.090 * 21.682 / 2 = 152.75
+and the area of the decagon is 10 * 152.75 = 1527.5.  Now Rex just needs to know the size of the atrium to calculate the square footage of the house.  The radius of the atrium is one-tenth the radius of the large decagon, which is
+r = 68.393 / Cos(Pi/10) = 71.913
+so the area of the atrium is
+(71.913 / 10)^2 * Pi = 162.47
+and the area of the two floors in Ralph's house is
+(1527.5 - 162.47) * 2 = 2730.0 square feet.",GPT-o3,basicprompt,,False
+8,"For a positive integer $x$, let
+\[
+s(x)=\text{(sum of the decimal digits of }x),\qquad   
+s^{(1)}(x)=s(x),\qquad   
+s^{(k+1)}(x)=s\bigl(s^{(k)}(x)\bigr)\ (k\ge 1),
+\]
+and let  
+$\operatorname{rev}(x)$ denote the integer obtained by reversing the decimal digits of $x$
+(e.g. $\operatorname{rev}(247)=742$).
+
+Find all positive integers $N$ that satisfy the following six conditions.
+
+1. The sum of the prime factors of $N$ is 1400. 
+
+2.  Both $N-1$ and $N+1$ are the product of exactly five (not necessarily distinct) primes.
+
+3.  The union of the sets of prime divisors of $N-1$, $N$, and $N+1$ contains exactly $13$ distinct primes.
+
+4.  For every prime $p\mid N$ the number $s(p)$ is prime.  
+    If
+    \[
+      P=\prod_{p\mid N}s(p),
+    \]
+    then $s(P)$ is prime, $s(N)$ is prime, and
+    \[
+      s(N)=\operatorname{rev}\!\bigl(s(P)\bigr)\ne s(P).
+    \]
+
+5.  Write $N$ with $2m$ digits ($m\ge 2$) as
+    \[
+      N=d_1d_2\dots d_{2m}\quad(d_1\ne 0).
+    \]
+    Among the digits $d_1,\dots,d_{2m}$, the only prime digits (that is, digits $2,3,5,$ or $7$) are the two middle digits $d_m,d_{m+1}$, and the two-digit number $10d_m+d_{m+1}$ is prime.
+
+6.  The three-digit integer $d_1d_2d_3$ is prime, and the three numbers
+    \[
+       s(d_1d_2d_3),\qquad s^{(2)}(d_1d_2d_3),\qquad s^{(3)}(d_1d_2d_3)
+    \]
+    are all prime.
+
+It is known that exactly two integers satisfy Conditions 1–6, and that exactly one of these two integers is divisible by $13$.
+
+(a) Determine the two integers satisfying Conditions 1–5.  
+(b) Specify which of them is NOT divisible by $13$.","You don't have to factor any numbers to find the answer, nor do you need to determine the primality of any numbers larger than 1000.
+The problem is as much about logic as it is about math.","The two numbers Ralph finds are 443,794 and 887,314.  Rex's number is 887,314.
+887313 = 3 x 7 x 29 x 31 x 47
+887314 = 2 x 487 x 911
+887315 = 5 x 11 x 13 x 17 x 73
+Here's how Ralph did it:
+First, since the three adjacent numbers don't share any prime numbers, the middle number must be even, otherwise both the other numbers would have to be divisible by 2.  If one of the factors in Rex's number is two, then the other two factors must add up to 1400 - 2 = 1398.
+The maximum product of two numbers that add up to 1398 is 699 x 699, so the upper bound for Rex's number is 2 x 699 x 699 = 977,202.
+The product of the first ten odd prime numbers is
+3 x 5 x 7 x 11 x 13 x 17 x 19 x 23 x 29 x 31 = 100,280,245,065
+This is the minimum value for the product of Rex's number minus one times Rex's number plus one.  Therefore the square root of this number is the lower bound for Rex's number.  The square root of 100,280,245,065 ~ 316,670.  So now Ralph knows that Rex's number is an even number between 316,670 and 977,202.  He figures this could be found by brute force given the other clues.  (In fact, 887,314 is the only number in this range that is between two numbers with five or more unique prime factors, but Ralph doesn't know that.)
+The digital sum of the prime factors of the number are prime numbers, one of which is 2.  The other two must be prime numbers between 316,670 / 1,398 ~ 227 and 1,398.  The maximum digital sum for numbers in this range is 3 x 9 = 27, so the maximum value for the product of the three prime digital sums is 2 x 23 x 23 = 1,058.  The digital sum of this number is also prime.  The maximum digital sum in this range is 27, so the digital sum of this product is a prime number less than 27.
+The largest digital sum for a number in the range 316,670 to 977,202 is 6 x 9 = 54.  This means that the digital sum of the number must be a prime number less than 54 that is a different prime number less than 27 when reversed.  There are four prime numbers less than 54 that are a different prime number when reversed: 13, 17, 31 and 37.  The digital sum of Rex's number must be 31.
+The middle two digits are prime.  For there to be a middle two digits, the number of digits in the number must be even.  So now the upper bound for the number is 977,202.  The number formed by the middle two digits must also be prime.  There are only four two-digit prime numbers composed of prime digits: 23, 37, 53 and 73.  The number formed by the first three digits is prime, so the third digit can't be 2 or 5.  The middle two digits must be either 37 or 73.
+Since the sum of the first three digits is a prime number, the sum must be one of 5, 7, 11, 13, 17, 19 or 23.  Since the number must start with a 4, 6, 8 or 9, the minimum value for the first three digits is 403, which eliminates 5 as a digital sum.  The digital sum of the digital sum of the first three digits must be prime, so it can't be 13, 17 or 19.  This leaves 7, 11 or 23 as the digital sum of the first three digits.
+Since the only possibility for the first three digits totaling 7 is 403, Ralph did a couple of quick calculations to determine that 403 = 13 x 31, so it isn't prime.  So the digital sum of the first three digits must be either 11 or 23 and the digital sum of the last three digits must be 20 or 8.
+There are only four ways to make a digital sum of 11 for the first three digits that ends in a three or seven and starts with 4, 6, 8 or 9: 407, 443, 623 and 803.  Ralph does a couple more quick calculations and determines that 407 = 11 x 37, 623 = 7 x 89 and 803 = 11 x 73, but that 443 is prime.  If 443 are the first three digits, then the last three digits must total 20, start with a 7 and end with a 4, 6 or 8.  There is only three ways to do this: 758, 776 and 794.  The fifth digit can't be prime, so only 794 is possible.  This gives the first number 443,794.
+If the first three digits total 23, start with a 4, 6, 8 or 9, and end with a 3 or 7, then the choices are 887 and 977.  The second digit in 977 is prime, so the only choice is 887.  Ralph checks and finds that 887 is prime.  If the first three numbers are 887 then the last three must start with a 3, end with a 4, 6 or 8 and total 8.  Only 314 is possible, giving the second number 887,314.
+When Rex tells Ralph one of the numbers is divisible by 13, Ralph finds that 443,794 = 13 x 34,138.  Since 13 can't be one of the prime factors of the number, the number must be 887,314.",GPT-o3,basicprompt,I am sorry – I have not been able to find two integers that fulfil Conditions 1–5 and can therefore not answer parts (a) and (b).,True
+10,"\begin{problem}
+A pile of coconuts is to be shared by five castaways.  
+During each of \emph{five} consecutive night–time turns, a different castaway performs the following procedure:
+
+\begin{enumerate}
+    \item The castaway divides the current pile into $5$ equal whole–number piles and finds exactly $1$ coconut left over.
+    \item The extra coconut is discarded (it is \emph{not} returned to the pile).
+    \item The castaway hides one of the five equal piles for himself.
+    \item The remaining four equal piles are pushed together to form the next pile.
+\end{enumerate}
+
+After all five castaways have taken a turn in this way, the pile that remains in the morning is divided equally among the five castaways with \emph{no} remainder.
+
+What is the least possible positive integer number of coconuts that could have been in the original pile?
+\end{problem}","The stranded survivors are not particularly great at math, so the first survivor placed four rotten coconuts as aides to help split the counting pile evenly. Each survivor after also uses the rotten coconuts to help calculate how to split the pile evenly despite there being one spare coconut that will be given to the monkey.
+Of course, being rotten coconuts, these coconuts are put to the side after all the divisions, as no pirate wants to put them in the pile or their stash of coconuts.","First, we start with 5^5 coconuts. This is the smallest number that can be divided evenly into fifths, have a fifth removed and the process repeated five times, with no coconuts going to the monkey.
+Four of the 5^5 coconuts are rotten and placed aside. When the remaining supply of coconuts is divided into fifths, there will of course be one non-rotten coconut left over to give to the monkey.
+After the first person has taken his share, and the monkey has his coconut, we put the four rotten coconuts back with the others to make a pile of 5^4 coconuts. This can be evenly divided by 5. Before making this next division, however, we again put the four rotten coconuts aside so that the division will leave an extra coconut for the monkey.
+This procedure - borrowing the rotten coconuts only long enough to see that an even division into fifths can be made, then putting them aside again - is repeated at each division. After the sixth and last division, the rotten coconuts remain on the side, the property of no one.
+The rotten coconuts aren't actual coconuts, since they end up the property of no one, but since we see that 5^5 coconuts can be divided neatly with the use of the four rotten coconuts, the answer is 5^5 - 4, or 3121 coconuts.
+Alternatively, we can set up a system of equations to solve the problem. For each step, we can establish a system of equations:
+F = (N5)/5
+N5 = 4(N4)/5 - 1
+N4 = 4(N3)/5 - 1
+N3 = 4(N2)/5 - 1
+N2 = 4(N1)/5 - 1
+N1 = 4(N)/5 - 1
+F is the final share of coconuts, and N is the initial pile of coconuts. N1 corresponds to the pile after the first survivor was done taking their share, N2 corresponds to the pile after the second survivor was done taking their share, and so on and so forth.
+Substitution results in the following equation:
+(4^5)N = (5^6)F + (4 * 5^5) - 4^6
+or
+1024N = 15625F + 8404
+Given that N and F must be positive integers, this equation can be solved with brute force or modular arithmetic to yield 3121.",GPT-o3,basicprompt,"Let  
+
+x₀ = number of coconuts in the original pile  
+x₁, x₂, x₃, x₄, x₅ = sizes of the pile after the 1st, 2nd, 3rd, 4th and 5th night respectively  
+( x₅ is the pile found in the morning).
+
+Night-time rule  
+“divide by 5, remainder 1, throw that 1 away, hide one fifth, push the other four fifths together”
+
+translates into the recurrence
+
+xᵢ = 4·(xᵢ₋₁ – 1) / 5   (i = 1,2,3,4,5)        (1)
+
+We also know that the morning pile x₅ is divisible by 5:
+
+x₅ ≡ 0  (mod 5).                                     (2)
+
+--------------------------------------------------------------------
+1.  Work backwards
+--------------------------------------------------------------------
+It is more convenient to invert (1):
+
+xᵢ₋₁ = (5/4)·xᵢ + 1.                                 (3)
+
+Start with x₅ = 5k  (k ≥ 0 integer) by (2).
+
+• Using (3) once  
+  x₄ = (5/4)·(5k) + 1 = 25k/4 + 1.  
+  25k/4 must be an integer ⇒ 25k divisible by 4 ⇒ k = 4m.
+
+Hence  
+x₅ = 5k = 20m,  
+x₄ = 25m + 1.
+
+• Second step  
+  x₃ = (5/4)·(25m+1) + 1 = (125m + 9)/4.  
+  For integrality 125m + 9 ≡ 0 (mod 4).  
+  Since 125 ≡ 1 and 9 ≡ 1 (mod 4) this is m + 1 ≡ 0 (mod 4) ⇒ m = 4n + 3.
+
+So  
+x₃ = 125n + 96,  
+x₄ = 100n + 76,  
+x₅ = 20(4n+3) = 80n + 60.
+
+• Third step  
+  x₂ = (5/4)·x₃ + 1 = (5/4)(125n+96) + 1  
+      = (625n + 480)/4 + 1 = (625n + 484)/4.  
+  Need 625n + 484 ≡ 0 (mod 4).  
+  Because 625 ≡ 1, 484 ≡ 0 (mod 4) this means n ≡ 0 (mod 4).  
+  Let n = 4p.
+
+Thus  
+x₂ = 625p + 121.
+
+• Fourth step  
+  x₁ = (5/4)·x₂ + 1 = (5/4)(625p+121) + 1  
+      = (3125p + 605)/4 + 1 = (3125p + 609)/4.  
+  Require 3125p + 609 ≡ 0 (mod 4).  
+  Since 3125 ≡ 1, 609 ≡ 1 (mod 4), we need p + 1 ≡ 0 (mod 4) ⇒ p = 4q + 3.
+
+So  
+x₁ = 3125q + 2496.
+
+• Fifth (last) step gives the original pile  
+  x₀ = (5/4)·x₁ + 1 = (5/4)(3125q + 2496) + 1  
+      = (15625q + 12480)/4 + 1 = (15625q + 12484)/4.
+
+For integrality: 15625q + 12484 ≡ 0 (mod 4).  
+Because 15625 ≡ 1 and 12484 ≡ 0 (mod 4), we need q ≡ 0 (mod 4).  
+Put q = 4r.
+
+Finally
+
+x₀ = (15625·4r + 12484)/4 = 15625r + 3121.
+
+--------------------------------------------------------------------
+2.  Smallest positive solution
+--------------------------------------------------------------------
+Take the smallest non–negative r, namely r = 0:
+
+x₀ = 3121.
+
+--------------------------------------------------------------------
+3.  Verification
+--------------------------------------------------------------------
+Starting with 3121:
+
+night 1: 3121 = 5·624 + 1 → throw 1, hide 624, leave 4·624 = 2496  
+night 2: 2496 = 5·499 + 1 → throw 1, hide 499, leave 1996  
+night 3: 1996 = 5·399 + 1 → throw 1, hide 399, leave 1596  
+night 4: 1596 = 5·319 + 1 → throw 1, hide 319, leave 1276  
+night 5: 1276 = 5·255 + 1 → throw 1, hide 255, leave 1020  
+
+morning: 1020 = 5·204 with no remainder.
+
+Everything matches the required procedure.
+
+--------------------------------------------------------------------
+Final answer: 3121",True
+11,"Problem.
+
+An integer is said to be a palindrome if its base-$10$ representation reads the same from left to right as from right to left.
+
+Determine the unique positive integer $n$ satisfying both of the following conditions:
+
+1. $n$ itself is \emph{not} a palindrome;
+2. $n^{3}$ \emph{is} a palindrome.
+
+Give the value of $n$.",A palindrome is a number that reads the same forward as it does backward.  An example would be 1221. An integer is a number that has no decimal places.  A cube is the result of multiplying a number by itself three times.,"2201
+2201^3 = 10662526601",GPT-o3,basicprompt,"Let n be the required positive integer and 
+x = n³ its (palindromic) cube.
+
+1.  The last digit.  
+   If n ends in 0, x would begin with 0 – impossible.  
+   The table of last–digits of cubes is  
+
+         n (mod 10) : 0 1 2 3 4 5 6 7 8 9  
+         n³ (mod 10): 0 1 8 7 4 5 6 3 2 9.  
+
+   Since the first and last digits of a palindrome coincide,
+   only the pair 1 ↔ 1 is possible (because the first digit
+   of x cannot be 0,2,3,4,5,6,7,8 or 9 when n ≥ 10).  
+   Hence  
+
+            n ≡ 1 (mod 10).                         (1)
+
+2.  Write n in the form n = 10a + 1  (a ≥ 1).  
+    Expand the cube:
+
+         n³ = (10a + 1)³
+             = 1000 a³ + 300 a² + 30 a + 1.        (2)
+
+    In (2) the term 1000a³ ends with three zeros, so the
+    last three digits of n³ are
+
+         L = 300 a² + 30 a + 1  (taken modulo 1000). (3)
+
+    Since x is a palindrome, its last three digits are the
+    reverse of its first three digits.  Call the first three
+    digits F.  Thus  
+
+           F  =  reverse(L).                       (4)
+
+3.  The tens digit of L.  
+    In (3) the term 300a² is a multiple of 100, so it does
+    NOT influence the tens digit; that digit is
+
+           (30a)/10  ≡ 3a  (mod 10).               (5)
+
+    But the tens digit of a palindrome equals the tens digit
+    of F, which is the *hundreds* digit of L.  In particular,
+    for (4) to hold the tens digit of L must be 0.  From (5)
+
+           3a ≡ 0  (mod 10)  ⇒  a ≡ 0  (mod 10).   (6)
+
+    So write a = 10b  (b ≥ 1).  Put this in (3):
+
+           L = 300·(10b)² + 30·10b + 1
+             = 300·100 b² + 300 b + 1
+             ≡ 300 b + 1   (mod 1000).             (7)
+
+4.  The hundreds digit of L.  
+    From (7) the hundreds digit is the hundreds digit of
+    300b, i.e. the units digit of 3b.  For (4) we need
+
+           hundreds digit of L  = 6,               (8)
+
+    because the reverse of _6 0 1_ is _1 0 6_.  
+    Thus from (7)
+
+           3b ≡ 6  (mod 10)  ⇒  b ≡ 2  (mod 10).   (9)
+
+    So b = 10k + 2  (k ≥ 0) and therefore
+
+           a = 10b = 100k + 20.                    (10)
+
+5.  Matching the first three digits.  
+    The first three digits of n³ come almost entirely from
+    the term 1000a³ in (2); they are exactly the first
+    three digits of a³.  Condition (4) demands
+
+           first three digits of a³ = 106.         (11)
+
+    Test the values allowed by (10):
+
+           a = 20      ⇒ a³ =          008 000   (fails)
+           a = 120     ⇒ a³ =        1 728 000   (first digits 001)
+           a = 220     ⇒ a³ =       10 648 000   (first digits 106 ✓)
+           a = 320     ⇒ a³ =       32 768 000   (first digits 327)
+           a = 420     ⇒ a³ =       74 088 000   (first digits 740)
+           …  (larger a give first digits >106).
+
+    Only a = 220 gives the required leading block 106.
+
+6.  Construct n.  
+    With a = 220,
+
+           n = 10a + 1 = 2201.
+
+    Compute the cube once to be sure:
+
+           2201³ = 10 662 526 601,
+
+    whose digits read the same forwards and backwards, while
+    2201 itself clearly is not a palindrome.
+
+7.  Uniqueness.  
+    The deductions above showed:
+      • n must end in 1  (step 1);
+      • a must be a multiple of 10 whose last two digits are 20
+        (steps 3 & 4);
+      • among those, only a = 220 yields compatible leading
+        digits (step 5).
+    Hence no other positive integer can satisfy both required
+    conditions.
+
+Final answer: 2201",True
+13,"\begin{problem}
+A train of constant speed passes a point $P$ on a straight track.  
+At the instant the \emph{front} of the train is at $P$, two pedestrians located at $P$ begin walking at the same constant speed:  
+one walks in the \emph{same} direction as the train, while the other walks in the \emph{opposite} direction.  
+Each pedestrian stops walking precisely when the \emph{back} of the train passes him.  
+
+If the pedestrian walking opposite the train travels $30$ feet and the pedestrian walking with the train travels $45$ feet, determine the length of the train, in feet.
+\end{problem}",Try to get a ratio between the train's speed and the speed of Al and Ben,"The train is 180 feet long.
+When the back of the train passes Al, he and Ben have both walked 30 feet, meaning Ben will walk 15 feet more when the train passes him. 30 feet that Al walks plus 45 feet that Ben walks makes 75 feet that the back of the train travels in the same time that Ben walks 15 feet, meaning the train is 5 times as fast as Al and Ben.
+In the time it takes Al to walk 30 feet, the front of the train moves 150 feet. This distance plus the 30 feet that Al has walked equals 180 feet.",GPT-o3,basicprompt,"We denote  
+vₜ = speed of the train (ft/s)  
+vₚ = walking speed of each pedestrian (ft/s)  
+L = length of the train (ft)
+
+At t = 0 the front of the train is at point P, where both pedestrians start walking.
+
+Pedestrian walking opposite the train  
+• Relative speed of the train’s back to this pedestrian = vₜ + vₚ  
+• Time until the back passes him: t₁ = L / (vₜ + vₚ)  
+He walks 30 ft in that time, so vₚ t₁ = 30 → t₁ = 30 / vₚ.
+
+Therefore  
+30 / vₚ = L / (vₜ + vₚ). (1)
+
+Pedestrian walking with the train  
+• Relative speed of the train’s back to this pedestrian = vₜ − vₚ  
+• Time until the back passes him: t₂ = L / (vₜ − vₚ)  
+He walks 45 ft in that time, so vₚ t₂ = 45 → t₂ = 45 / vₚ.
+
+Hence  
+45 / vₚ = L / (vₜ − vₚ). (2)
+
+Equate the two expressions for L obtained from (1) and (2):
+
+30(vₜ + vₚ) = 45(vₜ − vₚ)  
+2(vₜ + vₚ) = 3(vₜ − vₚ)  
+2vₜ + 2vₚ = 3vₜ − 3vₚ  
+−vₜ + 5vₚ = 0 ⇒ vₜ = 5vₚ.
+
+Substitute vₜ = 5vₚ into (1):
+
+L = 30(vₜ + vₚ)/vₚ = 30(5vₚ + vₚ)/vₚ = 30·6 = 180.
+
+Thus the train is 180 feet long.
+
+Final answer: 180",True
+14,"\[
+\textbf{Swap–Time Problem}
+\]
+
+On an ideal \(12\)-hour analog clock the minute hand makes one revolution every \(60\) minutes, while the hour hand makes one revolution every \(12\) hours.  
+Define a \emph{Swap Time} to be a time at which exchanging the positions of the hour hand and the minute hand still yields a configuration that occurs at some (possibly different) valid time on the same clock.
+
+\begin{enumerate}
+    \item[(a)]  Determine every Swap Time that occurs after \(1{:}00{:}00.00\) and before \(2{:}00{:}00.00\).  
+    Express each answer in the form 
+    \[
+        1{:}\!MM{:}SS. \! SS,
+    \]
+    rounded to the nearest hundredth of a second.
+
+    \item[(b)]  How many Swap Times occur during one complete \(12\)-hour cycle (from \(12{:}00\) up to, but not including, the next \(12{:}00\))?
+\end{enumerate}
+
+(Ignore any distinction between a.m. and p.m.)",Represent the minute hand and hour hand's paths with equations and notice that the fraction the minute hand is through th whole circle must be equivalent to eh fraction of the hour hand between two hour markers,"A) Noon is a Swap Time. Since both hands are pointing at 12, swapping them generates the exact same valid time. In fact, all eleven times when the hands point in the exact same
+direction are Swap Times.
+B) Let's do some math.
+Rule 1) For a valid time, the fraction of the minute hand's progress around the full circle must be equal to the fraction of the hour hand's progress between two numbers. For example, when the minute hand points at the 6, halfway around the clock, the hour hand must be pointed halfway between two numbers.
+Rule 2) For a Swap Time, it must also be true that the fraction of the progress of the hour hand around the full circle is equal to the fraction of the progress of the minute hand between two numbers.
+Let H = hour hand angle in degrees
+Let M = minute hand angle in degrees
+Note that there are 360/12 = 30 degrees between numbers on the clock.
+Rule 1
+H = <angle to number> + <angle past number>
+H = 30 * i + <minute hand progress> / 30 : i = 0, 1, 2,..., 11
+H = 30 * i + (M / 360) / 30
+H = 30 * i + M / 12
+Rule 2
+M = 30 * j + H / 12 : j = 0, 1, 2,..., 11
+Substituting for H:
+M = 30 * j + (30 * i + M / 12) / 12
+M = 30 * j + 5 * i / 2 + M / 144
+143 * M / 144 = 30 * j + 5 * i / 2
+M = 144 / 143 * (30 * j + 5 * i / 2) : i = 0,1,2,...,11 j = 0,1,2,...,11
+Let s be the number of seconds that have elapsed in the current hour.
+Since the minute hand moves at 0.1 degrees per second (360 deg / 3600 s), s = 10 * M
+s = 10 * [144 / 143 * (30 * j + 5 * i / 2)] : i = 0,1,2,...,11 j = 0,1,2,...,11
+To find all Swap Times between 1:00 and 2:00, set i = 1 and check all values of j.
+j = 0, s = 25.17482517, time = 1:00:25.17
+j = 1, s = 327.2727273, time = 1:05:27.27
+Remaining swap times are
+1:10:29.37
+1:15:31.47
+1:20:33.57
+1:25:35.66
+1:30:37.76
+1:35:39.86
+1:40:41.96
+1:45:44.06
+1:50:46.15
+1:55:48.25
+Swap Time occur every 12 * 3600 / 143 = 302.0979 seconds.
+There are 143 total swap times.",GPT-o3,basicprompt,"Reasoning
+
+Let t   be the number of hours after 12 : 00 (so 12 : 00 itself is t = 0, 1 : 00 is t = 1, etc.).  
+For any real t (0 ≤ t<12) the two hands form the pair of angles
+
+ hour-hand H(t) = 30 t (degrees)  
+ minute-hand M(t) = 360 · fractional part of t = 360(t – ⌊t⌋).
+
+Swap Time definition  
+A time t is a Swap Time if there exists another time t′ such that the two hands interchange their positions, i.e.
+
+ M(t) ≡ H(t′) (mod 360)  and  H(t) ≡ M(t′) (mod 360).  (1)
+
+Because the right–hand sides of (1) are always between 0° and 360° (inclusive of 0°, exclusive of 360°), the modular congruences are in fact ordinary equalities; no wrap-around is needed.
+
+1.  Swap Times inside one particular hour
+
+Fix an integer h0 with 0 ≤ h0 ≤ 11 and look in the interval
+
+ h0 : 00 : 00  ≤  clock time  <  (h0+1) : 00 : 00,
+
+i.e. t = h0 + m with 0 ≤ m<1.  Put t′ = k + m′ where k is an integer 0…11 and 0 ≤ m′<1.
+
+From (1):
+
+ 360 m = 30k + 30 m′            (2)  
+ 30(h0 + m) = 360 m′.           (3)
+
+Equation (3) immediately gives
+
+ m′ = (h0 + m)/12.              (4)
+
+Insert (4) into (2):
+
+ 360 m = 30k + 30·(h0 + m)/12  
+     = 30k + 2.5(h0 + m).
+
+Multiply by 2 to clear the fraction and collect like terms:
+
+ 720 m – 5 m = 60 k + 5 h0  
+        ⇒ 715 m = 60 k + 5 h0.         (5)
+
+Thus, for each integer k letting
+
+ m = (60 k + 5 h0)/715                     (6)
+
+produces a Swap Time, provided 0 ≤ m<1.
+
+2.  How many k’s work?
+
+• If h0 = 0,1,…,10 then the largest numerator (k = 11) is 60·11 + 5 h0 ≤ 60·11 + 50 = 710 < 715, so all twelve values k = 0,1,…,11 give legal m’s.
+
+• If h0 = 11, the case k = 11 gives numerator 60·11 + 55 = 715, i.e. m = 1 which is the next hour and must be excluded.  Hence only k = 0,1,…,10 work, giving eleven solutions.
+
+Therefore each of the first eleven hours contributes 12 Swap Times and the last hour (11 : 00–12 : 00) contributes 11.
+
+Total Swap Times in one 12-hour cycle:
+ 11·12 + 11 = 143.                                             (Answer to part (b))
+
+3.  Explicit list between 1 : 00 and 2 : 00
+
+Take h0 = 1 in (6):
+
+ m = (60 k + 5)/715  (k = 0,1,…,11).
+
+Convert m to clock-readout 1 : MM : SS.SS (minutes = 60 m, seconds = 60 · fractional part of minutes) and round to the nearest 0.01 s:
+
+k = 0  1 : 00 : 25.17  
+k = 1  1 : 05 : 27.27  
+k = 2  1 : 10 : 29.37  
+k = 3  1 : 15 : 31.47  
+k = 4  1 : 20 : 33.57  
+k = 5  1 : 25 : 35.66  
+k = 6  1 : 30 : 37.76  
+k = 7  1 : 35 : 39.86  
+k = 8  1 : 40 : 41.96  
+k = 9  1 : 45 : 44.06  
+k = 10  1 : 50 : 46.15  
+k = 11  1 : 55 : 48.25
+
+These are all the Swap Times in the interval (1 : 00, 2 : 00).
+
+Final answer:  
+(a) 1:00:25.17, 1:05:27.27, 1:10:29.37, 1:15:31.47, 1:20:33.57, 1:25:35.66, 1:30:37.76, 1:35:39.86, 1:40:41.96, 1:45:44.06, 1:50:46.15, 1:55:48.25  
+(b) 143",True
+15,"Let  
+
+• $T$ be the current age (in years) of Tommy, the oldest child,  
+• $I$ be the current age of Timmy,  
+• $A$ be the current age of Tammy,  
+• $R$ be the current age of Tracey,  
+• $Y$ be the current age of Tony, the youngest child, and  
+• $M$ be the current age of their mother.  
+
+Assume all ages are positive integers and 
+\[
+T > I > A > R > Y>0 .
+\]
+
+The following conditions are known.  
+
+1.  At present, Tammy is three times as old as Timmy was when Tony was born:
+   \[
+   A = 3\,(I-Y).
+   \]
+
+2.  When Tony was born (that is, $Y$ years ago) the mother’s age was a positive integer that was divisible by each of her children’s ages at that time:
+   \[
+   T-Y,\; I-Y,\; A-Y,\; R-Y \;\Big| \; M-Y .
+   \]
+
+3.  Except for the year of Tony’s birth, the only other year in which more than two of the children’s ages simultaneously divided the mother’s age was the year in which  
+   Tracey’s age equaled one-half of Tammy’s current age, i.e.\ the year when Tracey was $\dfrac{A}{2}$ years old.
+
+4.  When the mother turns $50$, Tony will be exactly as old as the mother was when Tommy was born:
+   \[
+   50-\bigl(M-Y\bigr)=M-T .
+   \]
+
+Determine the current ages $T, I, A, R, Y,$ and $M$.","Set x = Mum's age when she gave birth to Tommy = Tony's age when Mum turns 50;
+y = Tommy's age when Tony was born
+z = Mum's age when Tony was born; there are only a limited number of possible values of y and z and on can perform casework","Tommy is 23, Timmy is 19, Tammy is 18, Tracey is 16, Tony is 13 and Mum is 43.
+Solution:
+x = Mum's age when she gave birth to Tommy = Tony's age when Mum turns 50;
+y = Tommy's age when Tony was born
+z = Mum's age when Tony was born
+From Tammy's last statement, 2x + y = 50 and it can be deduced that x = z - y, where y is a factor of z.  By combining the two equations you get 2z = 50 + y The only possible solutions for that equation so that y is also a factor of z are (z = 26, y = 2) and (z = 30, y = 10).  Only 30 has four or more factors, so Mum was 30 and Tommy was 10 when Tony was born.
+This means that of the remaining factors of 30, Timmy was 6, 5 or 3, Tammy was 5, 3 or 2 and Tracey was 3, 2 or 1.  This makes Tammy 18, 15 or 9 now.  The only other time where the ages of more than two of the children were factors of Mum's age was when Tracey was half what Tammy is now, so Tammy must be 18 now.
+In the second multiple-factors-of-Mum's-age year, Tracey was therefore 9.  When Tony was born, Tracey was either 3, 2 or 1, giving possible time differences of 6, 7 or 8 years, which correspond to Tony's age in the second multiple-factors-of-Mum's-age year.  It also means Mum was 36, 37 or 38 that year.  37 is prime and 38 has factors of 1, 2 and 19, and as Tony was at least 6, it means that Mum must have been 36 that year.
+Going back to when Tony was born we have that Mum was 30, Tommy was 10, Timmy was 6, Tracey was 3, and as the middle child Tammy must have been 5.  If Tammy is 18 now then Tony is 13, Tracey is 16, Timmy is 19, Tommy is 23 and Mum is 43.",GPT-o3,basicprompt,"T = 23,  I = 19,  A = 18,  R = 16,  Y = 13,  M = 43",True
+16,"\[
+\textbf{Problem.}\qquad
+\begin{aligned}
+&\text{Four sisters—Alice, Barbara, Cheryl, and Denise—were married on June }30\text{ in four}\\[-2pt]
+&\text{consecutive years.  Alice was married first, three years ago; Barbara two years ago;}\\[-2pt]
+&\text{Cheryl one year ago; and Denise this year.  Each sister’s birthday occurs before}\\[-2pt]
+&\text{June }30,\text{ so that her age in \emph{whole years} on her wedding day is an integer.}
+\end{aligned}
+\]
+
+Let  
+\[
+A,\;B,\;C,\;D
+\]
+denote, respectively, the current ages (in years) of Alice, Barbara, Cheryl, and Denise on the day of Denise’s wedding (the most recent wedding).  
+
+For any positive integer \(n\) let  
+\[
+s(n)=\text{(sum of the decimal digits of }n).
+\]
+
+On the day of each wedding, the bride’s age was equal to the sum of the decimal digits of the ages of her three sisters \emph{at that moment}.  Hence
+
+\[
+\begin{aligned}
+D &= s(A)+s(B)+s(C),\\[2pt]
+C-1 &= s(A-1)+s(B-1)+s(D-1),\\[2pt]
+B-2 &= s(A-2)+s(C-2)+s(D-2),\\[2pt]
+A-3 &= s(B-3)+s(C-3)+s(D-3).
+\end{aligned}
+\]
+
+Determine the ordered quadruple \((A,B,C,D)\) of positive integers that satisfies all four equations.","1. Any non-negative integer is congruent to the sum of its digits, mod 9.  (They have the same remainder when divided by 9.)
+2. Each daughter was between 17 and 33 at the time of her wedding.","Alice is 27, Barbara is 28, Cheryl is 20, and Denise is 21, 21 = 2+7+2+8+2+0.
+A year ago, they were 26, 27, 19, and 20, 19 = 2+6+2+7+2+0.
+Two years ago, they were 25, 26, 18, and 19, 26 = 2+5+1+8+1+9.
+Three years ago, they were 24, 25, 17, and 18, 24 = 2+5+1+7+1+8.
+You can solve this one by trial and error (particularly with the hint), but you can also use the fact that any non-negative integer is congruent to the sum of its digits, mod 9.  If a, b, c, and d are the present ages of the four women, that gives us four linear congruences:
+d = a + b + c (mod 9)
+c-1 = (a-1)+(b-1)+(d-1) (mod 9)
+b-2 = (a-2)+(c-2)+(d-2) (mod 9)
+a-3 = (b-3)+(c-3)+(d-3) (mod 9).
+Solving for the four variables, we get: a=0, b=1, c=2, d=3 (all mod 9).  It remains to find four integers congruent to these numbers that will satisfy the digit addition property.   If you use the age restriction in the hint, you can omit some of the following analysis, but I present it here in full to show that the solution is truly unique even without the hint.
+If we go back 3 years to Alice's wedding, we have: a-3=6, b-3=7, c-3=8, and d-3=9 (mod 9).  Now all numbers less than 79 that are congruent to 7 also have a digit sum of 7, and likewise numbers congruent to 8 less than 89 have a digit sum of 8, and numbers congruent to 9 (except 0) less than 99 have a digit sum of 9.   We can rule out  such high ages, because each woman must have a turn being the sum of her sister's ages' digits, and the maximum sum of digits for three ages less than 199 is 54 (for 99, 99, and 99).  Likewise, we can rule out zero as a valid age for Denise three years ago, because she needs to have an age now that can be the sum of the digits of three other valid ages.  So Alice three years ago must have been 7+8+9=24, making her 27 now.
+Now go back 2 years to Barbara's wedding.  Alice we now know was 25.  Cheryl's age was congruent to 9 (mod 9), so she must have had a digit sum of 9.  Denise's age was congruent to 1 (mod 9), so she must have had a digit sum of 10 unless she was 10 years old herself (we have previously ruled out 1 as a valid age). But if Denise was 10, then Barbara would have been 17 two years ago, and this year Alice and Barbara together would be contributing 2+7+1+9 = 19 years to Denise's age, contradicting the assumption that she was 10 two years ago.  So Denise had a digit sum of 10 two years ago, and Barbara was therefore 2+5+9+10=26 at the time of her wedding, hence 28 now.
+Now consider Cheryl's wedding last year.  Alice was 26 and Barbara was 27.  Denise's age was congruent to 2 (mod 9), so she must have had a digit sum of either 2 or 11.  If it was 11, then Cheryl would have been 11+2+6+2+7=28 then, making her 29 now.  But then Denise would have to be 2+7+2+8+2+9=30 now to Alice's 27, contradicting the information that Alice was her older sister.  So Denise's digit sum must have been 2 last year, making Cheryl 19 then, and Denise 21 now.",GPT-o3,basicprompt,"Reasoning
+1.  Because a number and its digit-sum are congruent mod 9, reducing the four wedding-day equations modulo 9 gives  
+   D ≡ A+B+C, C ≡ A+B+D−2, B ≡ A+C+D−4, A ≡ B+C+D−6 (mod 9).  
+   Solving this system yields the unique residue pattern  
+   A ≡ 0, B ≡ 1, C ≡ 2, D ≡ 3 (mod 9).
+
+2.  Let s(x) denote the digit–sum of x.  
+   Since A is a positive multiple of 9 not exceeding 84 (see the problem’s initial bounds), s(A)=9.  
+   For numbers that are 1, 2, 3 mod 9 we have  
+
+  s(B)=1 or 10 (depending on whether B=1 or ≥19),  
+  s(C)=2 or 11 (C=2,11,20 or ≥29),  
+  s(D)=3 or 12 (D≤30 or ≥39).
+
+3.  Equation (1) gives D = s(A)+s(B)+s(C) = 9 + s(B) + s(C).  
+   Thus the only feasible values for D are 12, 21 or 30.
+
+   • D = 12 forces s(B)=1 and s(C)=2; this makes equation (2) impossible.  
+   • D = 21 forces {s(B),s(C)} = {1,11} or {10,2}; both make equation (2) impossible.  
+   • Hence D = 30, and necessarily s(B)=10, s(C)=11.
+
+4.  So we must have B ≡1 (mod 9) with s(B)=10 (i.e. B = 19, 28, 37, 46, 55, 64, 73, 82) and  
+   C ≡2 (mod 9) with s(C)=11 (i.e. C = 29, 38, 47, 56, 65, 74, 83).
+
+5.  Equation (2): C−1 = s(A−1)+s(B−1)+s(29) = s(A−1)+9+11.  
+   This forces C = 29 and s(A−1)=8.  Any multiple of 9 from 9 to 81 satisfies s(A−1)=8.
+
+6.  Equation (3): B−2 = s(A−2)+9+10 = 26, so B = 28.
+
+7.  Equation (4): A−3 = 7+8+9 = 24, hence A = 27.
+
+8.  The quadruple (A,B,C,D) = (27,28,29,30) obeys all four original equations:
+   • 30 = 9+10+11  
+   • 28 = 8+9+11  
+   • 26 = 7+9+10  
+   • 24 = 7+8+9.
+
+Therefore the sisters’ current ages on the day of Denise’s wedding are 27, 28, 29 and 30.
+
+Final answer: (27, 28, 29, 30)",True
+20,"\[
+\textbf{Problem.}
+\]
+Let \(S\) and \(T\) be positive integers, each at most \(1\,000\,000\), representing the numbers of dollars owned by Sandy and Sue, respectively.  
+Suppose the following two conditions hold.
+
+1.  There exists a positive integer \(d\) such that
+\[
+T-d = S+d
+\quad\text{and}\quad
+T+d = 2(S-d).
+\]
+
+2.  Write \(T\) in decimal form as \(T = a\cdot10^{k}+b\), where \(a\in\{1,2,\dots,9\}\) is its leading digit and \(0\le b<10^{k}\).  
+   Moving this leading digit to the right end produces Sandy’s amount:
+\[
+S = 10b+a.
+\]
+
+Determine the ordered pair \((S,T)\).
+","First get the ratio, then get their amount.","Let X and Y be Sandy's and Sue's amounts of money, respectively. Let Z be the number of dollars in Sandy's statement.
+Then X+Z=Y-Z and 2(X-Z)=Y+Z. Solving this we get X=5Z and Y=7Z.
+According to Sue's statement, let A be the first digit of Sue's wealth, B be the remaining digits, and n be the number of digits, then Y=A*10^(n-1)+B and X=10B+A.
+7X=5Y
+7*(10B+A)=5*(A*10^(n-1)+B)
+(5*10^(n-1)-7)A=65B
+Since 65B is divisible by 5 and 5*10^(n-1)-7 is not, A must equal 5. We get:
+5*10^(n-1)-7=13B
+The least value of n such that 5*10^(n-1)-7 is a multiple of 13 is 6:
+499993=38461*13
+The next is 12, which makes them have more than 1 million dollars. Hence n=6 and B=38461.
+Therefore, Sandy has 384615 dollars and Sue has 538461 dollars.",GPT-o3,basicprompt,"Let the numbers of dollars Sandy and Sue have be  
+
+ S and T ( ≤ 1 000 000),  
+
+and let d be the positive integer whose existence is asserted in condition 1.  
+
+------------------------------------------------------------
+1.  Solving the two “d–equations”
+
+ T − d = S + d and T + d = 2(S − d).
+
+From the first, T = S + 2d.  
+Insert this into the second:
+
+ (S + 2d) + d = 2(S − d)  
+ S + 3d = 2S − 2d  
+ 5d = S.
+
+Hence
+
+ S = 5d, T = S + 2d = 7d,
+
+so S : T = 5 : 7 and T ≤ 1 000 000 ⇒ d ≤ 142 857.
+
+------------------------------------------------------------
+2.  Translating the digit-moving condition
+
+Write T in decimal as T = a·10^k + b (a is the leading digit, 1 ≤ a ≤ 9, 0 ≤ b < 10^k).  
+Moving that leading digit to the right gives
+
+ S = 10b + a.
+
+With S = 5d and T = 7d this becomes
+
+ 5d = 10b + a,  7d = a·10^k + b.
+
+Eliminate b:  b = (5d − a)/10.  Substitute:
+
+ 7d = a·10^k + (5d − a)/10  
+⇒ 70d = a(10^{k+1} − 1) + 5d  
+⇒ 65d = a(10^{k+1} − 1).
+
+Thus
+
+ d = a(10^{k+1} − 1)/65.  (★)
+
+------------------------------------------------------------
+3.  Making d an integer
+
+Because 65 = 5·13 and a ≤ 9, the fraction (★) is integral iff
+
+• 5 divides a, and  
+• 13 divides 10^{k+1} − 1.
+
+The first bullet forces a = 5.  
+
+The second says 10^{k+1} ≡ 1 (mod 13).  The order of 10 modulo 13 is 6, so k+1 must be a multiple of 6.  
+Since T ≤ 1 000 000, k+1 (the number of digits of T) can be at most 6, hence k+1 = 6 and k = 5.
+
+------------------------------------------------------------
+4.  Computing d, S, and T
+
+Take n = k+1 = 6.  Then 10^6 − 1 = 999 999, and with a = 5,
+
+ d = 5·999 999 / 65 = 4 999 995 / 65 = 76 923.
+
+Hence
+
+ S = 5d = 5·76 923 = 384 615,  
+ T = 7d = 7·76 923 = 538 461.
+
+------------------------------------------------------------
+5.  Verification
+
+• Moving the leading digit of T = 538 461 to the end indeed gives 384 615 = S.  
+• d = 76 923 satisfies
+
+ T − d = 538 461 − 76 923 = 461 538 = S + d,  
+ T + d = 538 461 + 76 923 = 615 384 = 2(S − d).
+
+All conditions are met, and T ≤ 1 000 000.
+
+The construction above shows these values are unique.
+
+Final answer: (384 615, 538 461)",True
+21,"\[
+\textbf{Problem.}\quad
+\text{Find the least positive integer } N \text{ that satisfies}
+\]
+\[
+N \equiv 1 \pmod m \qquad \text{for every integer } m \text{ with } 2 \le m \le 10,
+\]
+\[
+N \equiv 0 \pmod{11}.
+\]
+\[
+\text{What is } N?
+\]","Recall that if n is a prime number, (n-1)!+1 is divisible by n.","10!+1=3628801 eggs. This is an answer, but not the minimum.
+The least common multiple of 1 to 11 is 27720.
+3628801=27720*130+25201.
+Therefore, the old lady had at least 25201 eggs.",GPT-o3,basicprompt,"Step-by-step reasoning
+
+1.  For the simultaneous congruences  
+   N ≡ 1 (mod m)  for every m = 2,3,…,10,  
+   N must satisfy N ≡ 1 modulo the least common multiple of 2 through 10.
+
+2.  Compute that least common multiple.  
+      2 = 2  
+      3 = 3  
+      4 = 2²  
+      5 = 5  
+      6 = 2·3  
+      7 = 7  
+      8 = 2³  
+      9 = 3²  
+     10 = 2·5  
+
+   Take the highest power of each prime:  
+     2³, 3², 5, 7.  
+   LCM = 2³·3²·5·7 = 8·9·5·7 = 2520.
+
+   Hence N ≡ 1 (mod 2520).
+
+3.  Also, N ≡ 0 (mod 11).
+
+4.  Use the Chinese Remainder Theorem (gcd(2520,11)=1).  
+   Write N = 2520k + 1.  
+   Require 2520k + 1 ≡ 0 (mod 11).
+
+   Since 2520 ≡ 1 (mod 11) (because 2520 − 1 = 2519 = 11·229),  
+   we get 2520k + 1 ≡ k + 1 (mod 11).  
+
+   We need k + 1 ≡ 0 (mod 11) ⇒ k ≡ −1 ≡ 10 (mod 11).  
+   The smallest non-negative k with this property is k = 10.
+
+5.  Compute N:  
+   N = 2520·10 + 1 = 25200 + 1 = 25201.
+
+6.  Verification:  
+   • N mod 11 = 25201 ÷ 11 = 2291 remainder 0 → OK.  
+   • N mod 2520 = 1 → hence N mod m = 1 for every m from 2 to 10 → OK.
+
+Final answer: 25201",True
+27,"Let $N$ be a $9$-digit positive integer whose decimal representation uses nine distinct digits selected from the set $\{0,1,2,3,4,5,6,7,8,9\}$, with no leading zero.  
+Determine the greatest possible value of $N$ such that $11 \mid N$.",Think close to the largest number,"987652413, is the highest number possible containing any of 9 of 10 digits and is divisible by 11 without a remainder. Start from the largest number 987654321 and check using the divisbility rule of 11 to find a number which works.",GPT-o3,basicprompt,"Let the 9–digit number be  
+N = d₁d₂d₃d₄d₅d₆d₇d₈d₉  (d₁ ≠ 0, all digits different).
+
+1.  Which nine digits must be used?  
+   The largest possible digit–set is {1,2,3,4,5,6,7,8,9}; any set that replaces one of these digits by 0 gives a lexicographically smaller arrangement, because the 0 would necessarily stand no later than the last position.  
+   Hence we have to arrange exactly the digits 1…9.
+
+2.  Divisibility–by–11 condition.  
+   With positions counted from the left, let  
+      Sₒ = d₁+d₃+d₅+d₇+d₉  (odd positions, 5 digits)  
+      Sₑ = d₂+d₄+d₆+d₈      (even positions, 4 digits).  
+   For 11 | N we need Sₒ − Sₑ ≡ 0 (mod 11).  
+   Since 1+2+…+9 = 45, we have Sₒ = 45 − Sₑ, hence  
+
+        45 − 2Sₑ ≡ 0 (mod 11)  ⇔  2Sₑ ≡ 45 ≡ 1 (mod 11)  
+        ⇔ Sₑ ≡ 6 (mod 11).
+
+   With four distinct digits 1…9, Sₑ can be 6, 17 or 28.  
+   •  6 is impossible: the smallest possible sum is 1+2+3+4 = 10.  
+   •  28 would force the 4–digit even set to contain the digit 9, which is
+      already reserved for the leading (odd) position d₁.  
+   Thus Sₑ must equal 17.
+
+3.  All 4–element subsets of {1,…,9} whose sum is 17 are
+
+   {1,2,5,9}, {1,2,6,8}, {1,3,4,9}, {1,3,5,8}, {1,3,6,7},  
+   {1,4,5,7}, {2,3,4,8}, {2,3,5,7}, {2,4,5,6}.            (∗)
+
+4.  Maximising the number.
+
+   •  d₁ must be 9 (largest possible leading digit).  
+   •  To make the whole number as large as possible, d₂ must be the
+     largest digit not equal to 9 that can occur in an even position.  
+     That is 8, so we must choose a set from (∗) that contains 8.  
+     The only such sets are  
+        E₁ = {1,2,6,8}, E₂ = {1,3,5,8}, E₃ = {2,3,4,8}.
+
+   •  Having fixed d₂ = 8, we next maximise d₃ (odd position).
+     The largest still–available digit is 7, so d₃ = 7 for every candidate.
+
+   •  Among the remaining digits of each Ei, place the largest one in the
+     next even position d₄ so as to get the largest possible number:
+
+        –  E₁ gives d₄ = 6, residual even digits 2,1.  
+        –  E₂ gives d₄ = 5, residual even digits 3,1.  
+        –  E₃ gives d₄ = 4, residual even digits 3,2.
+
+     So d₄ is largest (namely 6) when we use E₁ = {1,2,6,8}.  
+     Any number arising from E₂ or E₃ is already smaller at the fourth
+     digit, hence can never beat the one obtained from E₁.
+
+   •  Using E₁, the unused digits after the first four places are
+        odd-pool : 3,4,5            even-pool : 1,2.
+     To keep maximising lexicographically, fill the remaining positions
+     successively with the largest available digit of the correct parity:
+
+        d₅ = 5, d₆ = 2, d₇ = 4, d₈ = 1, d₉ = 3.
+
+   This produces the number
+        N = 9 8 7 6 5 2 4 1 3 = 987 652 413.
+
+5.  Check of the 11-divisibility:
+
+        Sₑ = 8 + 6 + 2 + 1 = 17, Sₒ = 9 + 7 + 5 + 4 + 3 = 28,  
+        Sₒ − Sₑ = 11  ⇒  11 | N.
+
+6.  Optimality.
+
+   •  Any admissible N must start with 9.  
+   •  If d₂ < 8 the number is smaller than 987 652 413, so d₂ = 8.  
+   •  Given d₂ = 8, the maximal d₃ is 7; we use it.  
+   •  With d₁d₂d₃ fixed as 987, the largest possible d₄ is 6, attainable
+     only with the even-digit set {1,2,6,8}.  
+   •  After fixing the first four places as 9876, the greedy choice made
+     above puts the remaining digits in the unique lexicographically
+     greatest order.
+
+   Therefore no larger 9–digit permutation of the digits 1…9 can be
+   divisible by 11, and 987 652 413 is indeed the greatest possible N.
+
+Final answer: 987652413",True
+30,"\[
+\textbf{Problem.}
+\]
+
+Two termites, $A$ and $B$, eat wood at constant rates.  
+\[
+\begin{aligned}
+&\text{Termite }A: && 1\text{ inch every }3\text{ minutes},\\
+&\text{Termite }B: && 1\text{ inch every }4\text{ minutes}.
+\end{aligned}
+\]
+
+You also have two straight sticks: one $12$ inches long and one $16$ inches long.
+
+You have no way of measuring the numerical length of any piece of wood at any moment, nor a way of measuring any length of time. You can, however, at any time, determine whether or not the two sticks are exactly the same length. Assuming that any action, including assigning termites to sticks, or comparing the stick sizes, can be done instantaneously, design an algorithm which allows you to measure a time length of exactly 61 minutes. ",,"Start the slow termite eating the longer stick.  It will take the slow termite 16 minutes to eat the 4 inches that will make the sticks the same size.  When the sticks are the same size, start the fast termite on the other stick.  This termite will finish his 12 inch stick in 36 minutes.  That's 52 minutes elapsed so far and the slow termite still has 3 inches left on his stick.  Remove the slow termite and let the fast termite finish off the 3 inches in 9 minutes for a total of 61 minutes.",GPT-o3,basicprompt,"Step-by-step algorithm
+
+0.  The two termites and the two sticks are ready.  No other pieces of wood or measuring devices are used.
+
+1.  Put termite B (the slower one, 1 inch/4 min) on the 16-inch stick.  
+    Leave the 12-inch stick untouched.
+
+2.  Repeatedly compare the two sticks.  
+    The first moment they are exactly the same length is when
+
+          16 − (t/4)  =  12 ,
+
+    i.e. after t = 16 minutes; but we do not have to know that number,
+    we only have to recognise the equality.  Call this instant T₁.
+
+    At T₁ both sticks are 12 inches long.
+
+3.  At T₁ immediately put termite A (the faster one, 1 inch/3 min) onto
+    the untouched 12-inch stick.  Let termite B continue on its own stick.
+
+4.  Watch the stick that termite A is eating.
+    When it disappears completely, call that instant T₂
+    (we can see when a stick vanishes).
+
+    •  Interval T₂ − T₁ = 36 minutes, because A needs
+       12 inches × 3 min/inch = 36 min to finish its stick.
+    •  During those same 36 minutes termite B shortens its stick by
+       36 min × (1 inch/4 min) = 9 inches.
+       Hence, at T₂ B’s stick is 12 − 9 = 3 inches long.
+
+5.  At T₂ pick termite B off its stick (action is instantaneous) and
+    move termite A onto the remaining 3-inch piece.
+    From now on termite A alone eats that piece.
+
+6.  Termite A’s rate is 1 inch/3 min, so 3 inches take exactly 9 minutes.
+    When the last piece disappears, call that instant T₃.
+
+    Interval T₃ − T₂ = 9 minutes.
+
+7.  Total elapsed time
+
+          T₃ − 0  =  (T₁ − 0) + (T₂ − T₁) + (T₃ − T₂)
+                   = 16 min + 36 min + 9 min
+                   = 61 minutes.
+
+The disappearance of the very last fragment of wood therefore occurs
+exactly 61 minutes after the procedure began.
+
+Throughout the process we used only the permitted operations:
+• assigning or removing termites,
+• checking whether two sticks are the same length,
+• noticing when a stick has disappeared.
+
+Hence the algorithm correctly measures a time interval of precisely
+61 minutes.
+
+Final answer: put termite B on the 16-inch stick, wait until the two sticks are equal, then put termite A on the untouched stick; when A finishes, move A to the remainder of B’s stick; when that last piece vanishes, exactly 61 minutes have passed.",True
+34,"\[
+\textbf{Problem.}\;
+\]
+A solid sphere is pierced by drilling a straight cylindrical hole whose axis passes through the center of the sphere.  
+The hole has length \(6\text{ cm}\) (the distance between the two circular openings).  
+Return the volume of the remaining solid in the form \(k\pi\), for some positive real number \(k\). 
+
+"," for a hard solution:
+The sphere's diameter (2r) must be the same as the length of the cylinder (H) plus the height of the two caps (2h), so 2r=H+2h.
+A right-angled triangle is formed by the radius of the cylinder (R) and half the height of the cylinder (H/2), with the radius of the sphere (r) forming the hypotenuse. Using Pythagoras, R^2+(H/2)^2=r^2.
+Hint for an easy solution:
+Assume there is a real answer. Therefore, the answer does not depend on the radius of the hole (R). Use whatever value is easiest.","The volume is exactly 36Pi cm^3 (about 113.1 cm^3).
+Hard solution:
+The sphere's diameter (2r) must be the same as the length of the cylinder (H) plus the height of the two caps (2h), so 2r=H+2h.
+Thus, 2h=2r-H and H=6, so 2h=2r-6 or simply h=r-3.
+A right-angled triangle is formed by the radius of the cylinder (R) and half the height of the cylinder (H/2), with the radius of the sphere (r) forming the hypotenuse. Using Pythagoras: R^2+(H/2)^2=r^2.
+Thus, R^2=r^2-(H/2)^2 and H=6, so R^2=r^2-9.
+Volume of cap = (1/6)Pi(3R^2+h^2)h
+(replace R^2 and h with values computed above)
+= (1/6)Pi(3(r^2-9)+(r-3)^2)(r-3)
+= (1/6)Pi(3r^2-27+r^2-6r+9)(r-3)
+= (1/6)Pi(4r^2-6r-18)(r-3)
+= (1/6)Pi(4r^3-6r^2-18r-12r^2+18r+54)
+= (1/6)Pi(4r^3-18r^2+54)
+= (2/3)Pi(r^3)-3Pi(r^2)+9Pi
+Volume of cylinder = Pi(R^2)H
+(replace R^2 with value computed above, and H with given value of 6)
+= Pi(r^2-9)6
+= 6Pi(r^2)-54Pi
+Volume of sphere remaining = sphere - 2 caps - cylinder
+= [ (4/3)Pi(r^3) ] - [ 2 ((2/3)Pi(r^3)-3Pi(r^2)+9Pi) ] - [ 6Pi(r^2)-54Pi ]
+= [ (4/3)Pi(r^3) ] - [ (4/3)Pi(r^3)-6Pi(r^2)+18Pi ] - [ 6Pi(r^2) - 54Pi ]
+= (4/3)Pi(r^3) - (4/3)Pi(r^3) + 6Pi(r^2) - 18Pi - 6Pi(r^2) + 54Pi
+= 36Pi
+Easy solution:
+Assume the hole is infinitely small (i.e. a radius of 0). Then, the volume of the cylinder (and the volume of the caps) is 0. The height of the cap is 0, so the radius of the sphere (r) is 3cm (half of the length of the cylindrical hole). Thus:
+Volume of sphere remaining = sphere - 2 caps - cylinder
+= (4/3)Pi(r^3) - 0 - 0
+= (4/3)Pi(3^3)
+= 36Pi",GPT-o3,basicprompt,"We need only the length of the “napkin ring’’ (the distance between the two circular openings), not the original sphere’s radius.  
+
+Let  
+
+• R = radius of the original sphere,  
+• r = radius of the drilled cylindrical hole,  
+• h = length of the hole = 6 cm.  
+
+Because the hole’s axis passes through the sphere’s center, geometry gives  
+ h = 2√(R² − r²) = 6  ⇒ R² − r² = 9. (1)
+
+Take the z–axis along the drill.  At height z the sphere’s cross-sectional radius is √(R² − z²).  
+The cylindrical hole removes a concentric disc of radius r whenever that disc lies inside the sphere (i.e. for |z| ≤ h/2 = 3).  
+Thus, for |z| ≤ 3 the remaining cross-sectional area is
+
+A(z) = π[(R² − z²) − r²] = π[(R² − r²) − z²] = π(9 − z²) (using (1)).
+
+For |z| > 3 the cylindrical hole completely covers the sphere’s cross-section, leaving no material, so A(z) = 0 there.
+
+Hence the volume V of the remaining solid is
+
+V = ∫_{–3}^{3} A(z) dz  
+ = π ∫_{–3}^{3} (9 − z²) dz  
+ = π [9z − z³/3]_{–3}^{3}  
+ = π[(27 − 9) − (–27 + 9)]  
+ = π(18 + 18)  
+ = 36π.
+
+Remark (Napkin-Ring Theorem).  The result V = 36π cm³ is exactly the volume of a sphere whose radius equals h/2 = 3 cm; the original sphere’s size is irrelevant.
+
+Final answer: 36π",True
+35,"\[
+\textbf{Problem.}
+\]
+
+A right circular cylinder is \emph{inscribed} in a cube: the cylinder is tangent to all six faces of the cube, so its height and diameter are both equal to the side length \(s\) (in meters) of the cube.
+
+On the floor of the cube (one face of the cube) a rectangular office is to be built in a corner.  
+Its two walls lie along the two edges of the floor that meet at that corner, and its farthest interior corner lies exactly on the circular boundary of the cylinder’s base.  
+The floor dimensions of this office are \(16\text{ m}\) by \(8\text{ m}\).
+
+\begin{enumerate}
+    \item[(a)] Determine the side length \(s\) of the cube.
+    \item[(b)] After the cylindrical opening is removed, the remaining solid region of the cube will be filled with wood that costs \$10 per cubic meter.  
+          Using \(\pi \approx 3.14\), find, to the nearest \$1000, the total cost of the wood.
+\end{enumerate}",Formulate an equation where the hypotenuse of the two squared unknown distances will equal the radius of the building.,"Formulate an equation where the hypotenuse of the two squared unknown distances will equal the radius of the building.
+(Since our answer only needs two dimensions, we will convert them into square (building), circle (open area), and rectangle (corner office).
+[The Pythagorean theorem will solve for the root of the radius]
+Let a represent the length of the rectangle, then x-a be the radius of the circle minus the length of the rectangle, same to b (to width of the rectangle):
+a^2 + b^2 = x^2
+(x - a)^2 + (x - b)^2 = x^2
+x^2 = (x - 16)(x - 16) + (x - 8)(x - 8)
+[Use foil to expand the brackets]
+x^2 = (x^2 - 16x - 16x + 256) + (x^2 - 8x - 8x + 64)
+x^2 = 2x^2 - 48x + 320
+[Order as a quadratic equation]
+x^2 - 48x + 320 = 0
+[Factor the equation using the quadratic formula with X excluded]
+Let a equal 1, b equal 48, and c equal 320 as temporary variables in the factoring equation:
+x = -b{+/-}[b^2 - 4ac]^1/2 / 2a
+x = -48{+/-}[2304 - 1280]^1/2 / 2
+x = -48{+/-}32 / 2
+x = -40    and     x = -8
+[Input those numbers into the now factored equation]
+(x - 40)(x - 8) = 0
+If the radius were 8, then that would mean the corner office would end up extending into the circular area (because the corner office is 16 x 8).
+Therefore, the diameter of the cylinder or the dimensions of the building must be 40 * 2 (radius x 2) to make 80m x 80m.
+Alternate: The volume of the building is expressed by:
+v = l * w * h
+But remember, since the cylinder is open space, we need to figure it too.
+The volume of the cylinder is expressed by:
+v = pi(r^2) * h
+Therefore, the volume of solid wood is the volume of the building less the empty area:
+v = [l * w * h] - [pi(r^2) * h]
+v = [80 * 80 * 80] - [pi(40^2) * 80]
+v ~= 512 000 - 402124
+v ~= 109 876 m^3
+If wood is $10 per m^3:
+10 * 109876 = $1 098 760",GPT-o3,basicprompt,"Reasoning
+
+1.  Let the cube sit with one face in the \(xy\)-plane, its lower-left rear corner at the origin, and its side length be \(s\) m.  
+    Hence that floor is the square  
+    \[0\le x\le s,\;0\le y\le s.\]
+
+2.  The cylinder that is inscribed in the cube has
+
+        radius      r = s/2 ,
+        centre      C = (s/2 , s/2) ,
+        height      h = s .
+
+3.  The rectangular office occupies the rectangle  
+    \(0\le x\le 16,\;0\le y\le 8\).  
+    Its farthest interior corner is the point  
+    \(P=(16,\,8)\).
+
+4.  “P lies on the boundary of the cylinder’s base’’ means
+        CP = r.
+
+    Using the coordinates,
+
+        (16 − s/2)² + (8 − s/2)²  =  (s/2)².          (1)
+
+    Expand (1):
+
+        (s²/4 − 16s + 256) + (s²/4 − 8s + 64) = s²/4
+        ⇒  s²/2 − 24s + 320 = s²/4
+        ⇒  multiply by 4:      2s² − 96s + 1280 = s²
+        ⇒  s² − 96s + 1280 = 0.
+
+5.  Solve the quadratic:
+
+        Discriminant  Δ = 96² − 4·1280 = 4096 = 64²,
+        s = (96 ± 64)/2 ⇒  s = 16  or  s = 80.
+
+    The rectangle already uses the full 16 m edge in the x-direction; the only cube that is “just large enough’’ to permit the office while remaining tangent to the cylinder is therefore
+
+        s = 16 m.
+
+    (For s = 80 the office is still in the corner but the cube is unnecessarily huge; the intended physical situation is the minimal one.)
+
+6.  Volume to be filled with wood (cube minus cylinder):
+
+        V_cube      = s³       = 16³ = 4096 m³,
+        V_cylinder  = πr²h      = π·8²·16 = 1024π ≈ 1024·3.14 = 3215.36 m³,
+
+        V_wood      = 4096 − 3215.36 ≈ 880.64 m³.
+
+7.  Cost at \$10 per m³:
+
+        cost ≈ 10 · 880.64 = \$8 806.4 ≈ \$9 000   (to the nearest \$1000).
+
+Final answer: (a) \(s = 16\ \text{m}\); (b) approximately \$9 000.",True
+36,"Let a man follow these rules.
+
+1.  On every calendar day except February 29 he  
+    • smokes exactly $n$ cigarettes,  
+    • consumes fixed amounts of coffee and cream, and  
+    • buys and reads one newspaper.  
+    On February 29 he consumes none of these three items.
+
+2.  He replenishes each supply the instant it is exhausted, buying  
+    • one newspaper at a time,  
+    • one pack of $20$ cigarettes at a time,  
+    • one half-pint of cream at a time, and  
+    • one one-pound can of coffee at a time.  
+
+    Consequently he buys  
+    • a newspaper every $1$ day,  
+    • a pack of cigarettes every $p$ days,  
+    • a half-pint of cream every $q$ days, and  
+    • a can of coffee every $r$ days,  
+
+    where $1 < p < q < r$ and all four numbers are positive integers.  
+    Because a pack contains $20$ cigarettes and he smokes $n$ cigarettes on each smoking day, we have
+    \[
+       p \;=\; \frac{20}{\,n\,}.
+    \]
+
+3.  He happened to purchase all four items on the same day, Sunday, 14 June 2015 (Flag Day).  
+    The next day on which he again purchased all four items was Monday, 4 July 2016, exactly $386$ days later.
+
+Determine $n$, the number of cigarettes he smokes on a typical day.",Flag Day (USA) is June 14,"4 cigarettes a day.
+The purchases are made according to 4 different cycles. There are 385 days from Flag Day until July Fourth of the following year excluding Leap Day. These purchasing cycles intersect every 385 days and are thus in the set of factors for 385 (1, 5, 7, 11, and 385). Since the newspaper is purchased every day, and the coffee and cream are purchased more often then the pack of cigarettes, then the pack is purchased either every 5 days or every 7 days.  The pack contains 20 cigarettes which only has the factor 5 in common with the possible cycle for the cigarettes.  Therefore a pack of 20 is purchased every 5 days.",GPT-o3,basicprompt,"Step 1 –  Count the “smoking days’’ in the given interval  
+From Sunday 14 June 2015 to Monday 4 July 2016 there are 386 calendar days.  
+Exactly one of those days – 29 February 2016 – is a day on which the man neither smokes, drinks, nor reads.  
+Hence the number of days on which he actually consumes any of the three items is  
+
+385 = 386 − 1.
+
+Call these 385 days the active (consumption) days of the interval.
+
+Step 2 –  How often can all three non-newspaper purchases coincide?  
+On an active day he
+
+• buys a pack of cigarettes every p days,  
+• buys a half–pint of cream every q days,  
+• buys a pound of coffee every r days,
+
+with 1 < p < q < r and all three numbers integral.  
+Viewed in “active–day’’ time, the three purchases will coincide precisely every
+
+LCM(p, q, r)
+
+active days, and they cannot coincide sooner.  
+Since the first such coincidence after 14 June 2015 occurred 385 active days later, we must have
+
+LCM(p, q, r) = 385.                                   (1)
+
+Step 3 –  Factor 385 and list the possible (p , q , r)  
+385 = 5 · 7 · 11.  
+Because (1) says the least common multiple of p, q, r is 5·7·11, each of p, q, r must be a divisor of 385 and, up to order, the only triple satisfying 1 < p < q < r is
+
+(p , q , r) = (5 , 7 , 11).                          (2)
+
+Step 4 –  Use the cigarette condition  
+For cigarettes the problem gives
+
+p = 20 / n.                                            (3)
+
+The positive divisors of 20 are 1, 2, 4, 5, 10, 20.  
+From (2) the only value among those that can serve as p is p = 5.  
+Substituting p = 5 into (3):
+
+5 = 20 / n  ⇒  n = 4.
+
+Thus the man smokes exactly 4 cigarettes on every smoking day.
+
+Final answer: 4",True
+37,"Problem.
+
+Let \(a,b,c,d\) be any four integers satisfying \(7\le a,b,c,d\le 23\).
+For each of the four numbers, multiply it by each of the other three, then multiply
+those three results together; that is,
+\[
+M_a=(ab)(ac)(ad),\quad
+M_b=(ba)(bc)(bd),\quad
+M_c=(ca)(cb)(cd),\quad
+M_d=(da)(db)(dc).
+\]
+
+Define
+\[
+Q=M_aM_bM_cM_d,\qquad
+R=\frac{Q}{abcd}-abcd .
+\]
+
+Determine the remainder when \(R\) is divided by \(10\).
+
+","There will be no fractional portion to discard.
+Oh, and the ages of Rex's daughters are irrelevant.","Zero.
+Choose four positive integers, A, B, C and D.
+Step 1 yields:
+A: AB, AC, AD
+B: BA, BC, BD
+C: CA, CB, CD
+D: DA, DB, DC
+Step 2 yields:
+A: (A^3)BCD
+B: (B^3)ACD
+C: (C^3)ABD
+D: (D^3)ABC
+Step 3 yields:
+(ABCD)^6
+Step 4 yields:
+((ABCD)^6)/(ABCD) = (ABCD)^5
+For any positive integer x, x mod 10 = (x^5) mod 10.  Therefore,
+(ABCD)^5 mod 10 = (ABCD) mod 10
+and
+((ABCD)^5 - (ABCD)) mod 10 = 0",GPT-o3,basicprompt,"Let  
+
+ M_a = (ab)(ac)(ad), M_b = (ba)(bc)(bd), M_c = (ca)(cb)(cd), M_d = (da)(db)(dc).
+
+1.  Express the M’s in powers of a, b, c, d  
+
+ M_a = a·b · a·c · a·d = a³bcd  
+ M_b = b³acd  
+ M_c = c³abd  
+ M_d = d³abc  
+
+2.  Form Q  
+
+ Q = M_a M_b M_c M_d  
+   = (a³bcd)(b³acd)(c³abd)(d³abc).
+
+   Collect the exponents of each letter:
+
+ • a appears with powers 3 + 1 + 1 + 1 = 6  
+ • b appears with powers 1 + 3 + 1 + 1 = 6  
+ • c appears with powers 1 + 1 + 3 + 1 = 6  
+ • d appears with powers 1 + 1 + 1 + 3 = 6.
+
+   Hence  
+
+ Q = (abcd)⁶.
+
+3.  Compute R  
+
+ Q/(abcd) = (abcd)⁶ /(abcd) = (abcd)⁵,  
+
+ R = (abcd)⁵ – abcd.
+
+4.  Work modulo 10  
+
+   Set x ≡ abcd (mod 10).  
+   Then  
+
+ R ≡ x⁵ – x (mod 10).
+
+   For every integer x we have x⁵ ≡ x (mod 10), because  
+   • modulo 2, x⁵ ≡ x,  
+   • modulo 5, Fermat gives x⁵ ≡ x (since 5 is prime),  
+   and the congruences combine by the Chinese Remainder Theorem.
+
+   Consequently, x⁵ – x ≡ 0 (mod 10).
+
+Therefore R is always a multiple of 10, and its remainder upon division by 10 is 0.
+
+Final answer: 0",True
+38,"\[
+\textbf{Problem.}\;
+\text{Let } N \text{ be a }10\text{-digit positive integer written in base }10\text{ that uses each digit }0,1,2,\dots ,9\text{ exactly once}.\\
+\text{Suppose further that }N\text{ is divisible by every integer from }2\text{ to }18\text{, inclusive}.\\
+\text{Determine one possible value of }N.
+\]",Use prime factorization to find the LCM of 2-18 (think about why this is important with relation to any of the valid numbers),"First, use prime factorization to determine the lowest common multiple (LCM).
+2 = 2
+3 = 3
+4 = 2 * 2
+5 = 5
+6 = 2 * 3
+7 = 7
+8 = 2 * 2 * 2
+9 = 3 * 3
+10 = 2 * 5
+11 = 11
+12 = 2 * 2 * 3
+13 = 13
+14 = 2 * 7
+15 = 3 * 5
+16 = 2 * 2 * 2 * 2
+17 = 17
+18 = 2 * 3 * 3
+LCM = 2 * 2 * 2 * 2 * 3 * 3 * 5 * 7 * 11 * 13 * 17 = 12252240.
+The smallest 10-digit number that is a multiple of the LCM is 1004683680 (12252240 * 82).  The largest 10-digit number that is a multiple of the LCM is 9997827840 (12252240 * 816).  The solution must be somewhere between these two numbers.
+To solve, multiply the LCM by each of the integers 82 through 816.  The four solutions are:
+2438195760 = 12252240 * 199
+3785942160 = 12252240 * 309
+4753869120 = 12252240 * 388
+4876391520 = 12252240 * 398",GPT-o3,basicprompt,"The integer must be a multiple of the least common multiple of all the integers from 2 to 18.
+
+1.  Compute that least common multiple.  
+   The highest powers of the relevant primes are  
+   2⁴·3²·5·7·11·13·17 = 16·9·5·7·11·13·17 = 12252240.  
+   Call this number L.
+
+2.  A ten–digit number which is divisible by every integer 2–18 therefore has the form  
+   N = k·12252240,   with 82 ≤ k ≤ 816  
+   (because 10⁹ ≤ N < 10¹⁰).
+
+3.  L ends in the three–digit block 240, so every multiple ends in 0; hence the required
+    pandigital number has 0 as its final digit.  
+    Examining 240·k (mod 1000) shows that the last three digits cycle every 25 values of k
+    through the set  
+
+          240, 480, 720, 960, 200, 440, 680, 920, 160, …
+           
+    eliminating at once those k whose last-three-digit block would
+    contain another 0 or a repeated digit.
+
+4.  Starting with k = 82 and adding 12252240 each time, one checks those 735 admissible
+    multiples.  The first one which contains each digit 0–9 exactly once occurs for
+
+          k = 199.
+
+    Indeed
+          12252240 × 199 = 2438195760.
+
+    Its digits are 2,4,3,8,1,9,5,7,6,0 – each digit 0–9 appears exactly once.
+
+5.  Because 12252240 is the least common multiple of 2–18, every multiple of it, and in
+    particular 2438195760, is divisible by each of the numbers 2,3,4,…,18.
+
+Hence
+
+Final answer: 2438195760",True
+39,"Problem
+
+Let 
+\[
+P(x)=30+6\ln(x+2),
+\]
+where $x$ (in millions of dollars) represents a company’s expenditure on research and $P(x)$ (in millions of dollars) represents the resulting profit.  At present the company spends $5$ million dollars on research.
+
+Determine the amount $d$ (in millions of dollars) the company must increase their spending by so that its profit equals $80$ million dollars.  (Here $\ln$ denotes the natural logarithm.)",1) assume all number's have millions as units.,"P(5) = 30 + 6 log(5 + 2)
+----------------------------
+log 2
+= 46.84 million dollars
+80 = 30 + 6 log2 (x + 2)
+50 / 6 = log2 (x + 2)
+250/6 = (x + 2)
+x = 320.54 million dollars.
+Therefore: increase in spending = 320.54 - 5 = 315.54 million",GPT-o3,basicprompt,"We want the new level of research spending to be $5+d$ (in millions of dollars).  
+The profit function is  
+
+  P(x)=30+6 ln(x+2).
+
+We need P(5+d)=80.
+
+1.  Set up the equation  
+ 30 + 6 ln[(5+d)+2] = 80
+
+2.  Simplify  
+ 6 ln(7+d) = 50  
+ ln(7+d) = 50/6 = 25/3
+
+3.  Exponentiate  
+ 7+d = e^{25/3}
+
+4.  Solve for d  
+ d = e^{25/3} − 7
+
+5.  Numerical value  
+ e^{25/3} ≈ 4 160.262 → d ≈ 4 160.262 − 7 ≈ 4 153.262.
+
+Thus the company would have to raise its research spending by about 4 153 million dollars (≈ \$4.15 billion).
+
+Final answer: d = e^{25/3} − 7 ≈ 4 153 million dollars",True
+42,"Let \(n<20\,000\) be a positive integer that can be written in the form  
+\[
+n = x + y + z,
+\]
+where \(x,\;y,\;z\) are positive integers, each having exactly \(7\) positive divisors.  It is known that there is exactly one such integer \(n\) less than \(20\,000\).  Determine \(n\).","For the prime factorization of positive integer x, we get
+x=[y(sub 1)^K (sub 1)][y(sub 2)^ K (sub 2)]..., where y sub(n) is a prime number, and K sub(n) is the power to which y sub(n) is raised, we can figure out the number of prime factors by:
+[K(sub 1) + 1][K(sub 2) + 1]...
+For example, the prime factorization of 228 is (2^2)(3^1)(19^1). 228 has 12 factors, since (2+1)(1+1)(1+1) = 12.","16,418.
+First, you need to figure out the separate integers. If you have read the hint, you would know how to use prime factorization to your advantage. The only way to get 7 as the number of factors is 1 x 7. So the prime factorization of any number with 7 factors is n^6 times x^0, where n and x are both primes. But if you look, x^0, for all nonzero values of x, is 1! So, any number with exactly 7 factors must be a prime raised to the sixth power. This yields 2^6 +3^6+5^6 = 16418. Any prime 7 or greater to the sixth power is greater than 20,000.",GPT-o3,basicprompt,"Because every exponent in the divisor–count formula  
+d( n)=∏(e i +1) must be an integer ≥1, the only way to obtain exactly seven divisors is  
+
+ (e 1 +1)(e 2 +1)… =7 ,
+
+and since 7 is prime the single non-unit factor must be 7 itself.  
+Hence every number that has exactly seven positive divisors is a sixth power of a prime:
+
+ x=p 6 , y=q 6 , z=r 6  (p ,q ,r primes).
+
+----------------------------------------------------------------
+1.  Sixth powers that may be used
+
+For p 6 to be ≤n<20 000, only the primes 2, 3 and 5 are possible, because  
+7 6 =117 649 already exceeds 20 000.  Thus the only candidates are
+
+ 2 6 =64, 3 6 =729, 5 6 =15 625.
+
+----------------------------------------------------------------
+2.  The large summand must be used exactly once
+
+If none of x,y,z equals 15 625, then x,y,z∈{64,729}.  
+Summing three such numbers gives, respectively,
+
+ 64+64+64 = 192  
+ 64+64+729 = 857  
+ 64+729+729 = 1522  
+ 729+729+729 = 2187,
+
+all four <20 000.  
+Since the problem states that there is only one admissible n below 20 000, this case is impossible: we would already have four different n.
+
+Therefore 15 625 must appear, but it cannot appear twice (two copies already exceed 20 000).  Hence exactly one of x,y,z equals 15 625.
+
+----------------------------------------------------------------
+3.  The two small summands cannot be equal
+
+With exactly one 15 625 present, the remaining two summands are chosen from {64,729}.  
+There are three possibilities:
+
+ 15 625+64+ 64 = 15 753  
+ 15 625+64+729 = 16 418  
+ 15 625+729+729 = 17 083.
+
+Suppose the equal–summand option 15 625+64+64 were legal.  
+Because 729 itself has seven divisors, replacing one 64 by 729 would yield the
+second sum above, still <20 000, contradicting the given uniqueness of n.
+The same contradiction arises from 15 625+729+729.
+Hence the two small summands must be different; they must be 64 and 729.
+
+----------------------------------------------------------------
+4.  The unique value of n
+
+Thus x=64, y=729, z=15 625, and
+
+ n = 64 + 729 + 15 625 = 16 418.
+
+No other combination satisfies all the requirements, so this is the single admissible integer below 20 000.
+
+Final answer: 16418",True
+45,"\[
+\textbf{Stamp–Packing Problems}
+\]
+
+For a fixed positive integer \(k\), let  
+\[
+\{d_1,d_2,\dots ,d_k\},\qquad 1\le d_1< d_2<\cdots <d_k,
+\]
+be \(k\) distinct stamp denominations (in cents).  
+
+
+We say that a set of denominations \emph{covers} the range \(1,2,\dots ,N\) if every integer postage value from \(1\) cent up to \(N\) cents can be obtained as a sum of at most three (not necessarily distinct) elements of the set.
+
+In each of the five independent problems below, determine one set of denominations satisfying the given conditions.  Give your answer for every part as an ordered list \(d_1<d_2<\cdots <d_k\).
+
+\begin{enumerate}[(a)]
+    \item (Three denominations)  Find \(d_1<d_2<d_3\) that cover the range \(1\)–\(15\).
+
+    \item (Four denominations)  Find \(d_1<d_2<d_3<d_4\) that cover the range \(1\)–\(24\).
+
+    \item (Five denominations)  Find \(d_1<d_2<d_3<d_4<d_5\) that cover the range \(1\)–\(36\).
+
+    \item (Six denominations)  Find \emph{both} distinct 6-element sets of denominations that cover the range \(1\)–\(52\).
+
+    \item (Seven denominations)  Find \(d_1<d_2<d_3<d_4<d_5<d_6<d_7\) that cover the range \(1\)–\(70\).
+\end{enumerate}
+
+Note:  A denomination set is considered correct for a part if it meets the coverage condition; when more than one set exists (parts (d) and (e)), any valid answer will receive full credit.",This is related to the Chicken McNugget theorm,"First: Three stamps: 1 - 4 - 5 go up to 15
+Second: Four stamps: 1 - 4 - 7 - 8 up to 24
+Third: Five stamps: 1 - 4 - 6 - 14 - 15 up to 36
+Fourth: Six stamps: 1 - 3 - 7 - 9 - 19 - 24 (and the other set is: 1 - 4 - 6 - 14 - 17 - 29) up to 52
+Last problem: Seven stamps: 1 - 4 - 5 - 15 - 18 - 27 - 34 up to 70.",GPT-o3,basicprompt,,False
+46,"Let $R$, $K$, $P$, and $E$ be positive integers satisfying  
+\[
+R+K+P+E = N,
+\qquad\text{where }N\equiv 0\pmod{100}.
+\]
+
+For any share $X\in\{R,K,P,E\}$, define $X^\%=\dfrac{100X}{N}$, the (integer) percentage of the total represented by $X$.
+
+The four shares are related in the cyclic order  
+Rod $\rightarrow$ Kurt $\rightarrow$ Patty $\rightarrow$ Eileen $\rightarrow$ Rod by the conditions
+\[
+\begin{aligned}
+K &= 2R^\%,\\
+P &= 2K^\%,\\
+E &= 2P^\%,\\
+R &= 2E^\%.
+\end{aligned}
+\]
+
+Determine the ordered quadruple $(R,K,P,E)$.",They got a total of 600 Rnkfurers.,"Rod        405, 67.5% ... 67.5 * 2 = 135
+Kurt        135, 22.5% ... 22.5 * 2 = 45
+Patti        45, 7.5% ... 7.5 * 2 = 15
+Eileen        15
+TOTAL 600
+Method:
+Let E, P, K, and R stand for the quantity each of them had.  Let T be the total, R+K+P+E.  The math works much like last time, but with four-hundredths instead of percentages.
+Since four times Rod's percentage equals Kurt's quantity, and so on for the other three students, we get
+2 * 100 * R/T = K.  Rearranging ...
+R = K * T/200.  Now, for the other students ...
+K = P * T/200
+P = E * T/200
+Now, look at the common factor, T/200.  Let's call this F, the factor relating one quantity to the next.
+P = E * F
+K = P * F = E * F^2
+R = K* F = E * F^3
+and T = E*(1+F+F^2+F^3)
+-------------
+Since E, P, and K are each four times a percentage, and those percentages are less than the whole order, E+P+K<200.  All the order amounts are integers; an exhaustive search shows that there are no solutions for F<1.  Since F=1 is ""cheating"", F>1, which means K>P>E, and E<200/3.
+E+P+K=E*(1+F+F^2)<200, so
+F cannot be more than 13;
+K is a multiple of a perfect square (numerator of F^2);
+E is a multiple of a perfect cube (denominator of F^3); the cube cannot be more than 4 (4*4*4).
+Now, a brute-force search of the finite possibilities for F (numerator 1-13, denominator 1-4) and possible multiples that leave E+P+K<200, we end with only one option where the total is a multiple of 100: F=3 and E=15.",GPT-o3,basicprompt,"Let  
+
+r = R% , k = K% , p = P% , e = E%  (integers, r+k+p+e = 100).
+
+1.  Translate the given relations into equations that involve both the shares and the percentages.
+
+ K = 2 r, P = 2 k, E = 2 p, R = 2 e.                         (1)
+
+ Because r = (100 R)/N, the first and last of (1) give  
+ rN = 200 e ⇒ N = 200 e / r.                                    (2)
+
+ Using (2) in the definition of k,
+
+ k = 100K/N = 100·2r / N = 200r / N = 200r /(200e/r) = r² / e.  (3)
+
+ Similarly, p = k r / e, and again from the definition of e,
+
+ e = 100E/N = 100·2p / N ⇒ e = 200p / N = 200p /(200e/r) = p r / e  
+                    ⇒ e² = p r ⇒ p = e² / r.         (4)
+
+2.  Equate the two expressions for p from (3) and (4):
+
+ k r / e = e² / r ⇒ k r² = e³.                                 (5)
+
+ But from (3), k = r² / e.  Substitute this into (5):
+
+ (r² / e) r² = e³ ⇒ r⁴ = e⁴ ⇒ r = e (positive integers).      (6)
+
+3.  With r = e, equations (3) and (4) give k = r and p = r.  
+ Hence all four percentages are equal, so
+
+ r = k = p = e = 100/4 = 25.                                     (7)
+
+4.  Find N from (2):
+
+ N = 200 e / r = 200·25 / 25 = 200.                              (8)
+
+5.  Recover the shares from their percentages:
+
+ R = 25% of 200 = 50, K = 25% of 200 = 50,  
+ P = 25% of 200 = 50, E = 25% of 200 = 50.                       (9)
+
+These satisfy all the original relations:
+ K = 2·R% = 2·25 = 50, etc.
+
+Final answer: (50, 50, 50, 50)",True
+47,"\[
+\textbf{Problem.}
+\]
+
+Consider a rectangular chessboard consisting of \(4\) rows and \(12\) columns (thus \(48\) unit squares in total).  
+A knight moves in the usual chess manner: two squares in one orthogonal direction and one square in the perpendicular direction.
+
+Is it possible for the knight to perform a \emph{closed tour} of this board—that is, to start on some square, visit every square \emph{exactly once}, and return to its starting square after the \(48^{\text{th}}\) move?  
+Provide a proof for your answer.","If you can't figure it out, try coloring Cakeland in another way:
+a d a d...
+b c b c...
+c b c b...
+d a d a...
+Then there are 12 squares of each color.","Color Cakeland as follows, i.e. each column alternatively abcd and dcba:
+a d a d...
+b c b c...
+c b c b...
+d a d a...
+Then there are 12 squares of each color. Again we suppose that the lower left corner is black. Then a and c are normal white squares while b and d are normal black squares. Additionally, we notice that each a-square must be preceded and followed by a b-square. This will require more b-squares than a-squares, but there are 12 squares of each color.
+Therefore, the knight couldn't achieve his goal.",GPT-o3,basicprompt,"Answer:  No – a closed knight’s tour on a board with 4 rows can never exist, and in particular it cannot exist on a 4 × 12 board.
+
+Proof.  
+Let m ≤ n.  In 1991 W. Schwenk completely classified the rectangular boards that admit a (necessarily Hamiltonian) knight’s tour.  His theorem says
+
+A rectangular m × n board possesses a knight’s tour if and only if  
+(1) m and n are not both odd,  
+(2) m ≠ 1, 2, 4, and  
+(3) (m, n) ≠ (3, 4), (3, 6) or (3, 8).
+
+(The result covers both open and closed tours; a closed tour, being a Hamiltonian cycle, is of course impossible whenever an open tour is impossible.)
+
+In the present problem m = 4 and n = 12.  Condition (2) already excludes every board whose smaller side equals 4, so a knight’s tour – open or closed – cannot exist on a 4 × 12 board.  Hence a fortiori no closed tour is possible.
+
+Final answer:  No, a closed knight’s tour on the 4 × 12 board is impossible.",True
+48,"\[
+\textbf{Balcony Construction}
+\]
+
+A theater balcony is to be constructed as follows:
+
+• The balcony floor is a solid wooden disk of uniform thickness \(30\text{ cm}\).
+
+• The floor must be exactly \(4\text{ m}\) above the stage floor.  
+  A spotlight is mounted \(7\text{ m}\) above the stage floor, directly above the center of the balcony.  
+  The spotlight is aimed downward so that its light makes a \(45^{\circ}\) angle with the (horizontal) stage floor and exactly illuminates the entire balcony floor.  
+  (Assume the spotlight beam is a perfect cone; ignore any spread.)
+
+• Along the semicircular edge visible to the audience (the “front half’’ of the disk) a wooden railing is attached.  
+  This railing is a rectangular solid of height \(1\text{ m}\) and thickness \(10\text{ cm}\) that follows the outer semicircular edge of the floor.
+
+Pine lumber costs \(\$1\) per \(5000\text{ cm}^3\) (tax already included).  
+What is the total cost, in dollars, of the wood required to build the balcony (floor \emph{and} railing)?
+
+
+(Use \(100\text{ cm}=1\text{ m}\) and \(2.54\text{ cm}=1\text{ inch}\) as needed.)","If the floor of the balcony is 4 meters from the ground, and the room is 7 meters, then the floor is 3 meters from the spotlight. If the spot light shines at a 45 degree angle and the spot light will cover the entire balcony precisely when it is positioned above the middle of the balcony, then the radius of the balcony floor will be 3 meters (if the hypotenuse of a triangle is at a 45 degree angle to the y axis (and the side x is 90 degrees to the side y), the side x will always equal the side y and the remaining side will be the hypotenuse of those [the rules of an isosceles triangle]).","[SEE HINT]
+Therefore, the stage will be solved by the formula for a cylinder, [pi(r)^2]h where r = 300cm and h = 30cm (rule 3).
+The balcony now needs a 100 cm x 10 cm solid fence. This now defies the simple rules of perimeter, you must incorporate the loss of radius per added centimeter towards the middle. In other words, you solve for the perimeter 10 times with the thickness valued as 1, incorporating the new radius each time. Remember, since it is only on one half, each answer must be halved.
+2pi(r) finds the perimeter. Then multiplied by the height will be formulated 2pi(r)h where r = 300cm and h = 100cm. Since we only need half of that, it will be [2pi(r)h]/2 = pi(r)h.
+Then we need to find the 9 other rings incorporating the loss of radius.
+pi(r-1)h + pi(r-2)h + pi(r-3)h + pi(r-4)h + pi(r-5)h + pi(r-6)h + pi(r-7)h + pi(r-8)h + pi(r-9)h
+This added to pi(r)h will yield the volume of the fence surrounding half of the stage.
+Thus, the final equation will be:
+let a represent the height of the room, then b represent the height of the balcony off the floor, then f represent the thickness of the balcony floor, then r represent a-b or the radius of the balcony floor, then h represent the height of the fence.
+V = {[pi(a-b)^2]f + [pi(r)h + pi(r-1)h + pi(r-2)h + pi(r-3)h + pi(r-4)h + pi(r-5)h + pi(r-6)h + pi(r-7)h + pi(r-8)h + pi(r-9)h]}
+= {[pi(90000)30] + [pi(300)100 + pi(299)100 + pi(298)100 ... ... pi(291)100]}
+= {(2 700 000pi) + [30 000pi + 29 900pi + 29 800pi + 29 700pi ... ... 29 100pi]}
+~= 8482300.16469244 + 928340.629135783
+~= 9410640.79382822 cm^3
+If pine is cheap at exactly $1 per 5000cm^3, tax included,
+the price is then:
+P ~= (9410640.79382822 / 5000) * 1.00
+~= $1882.13",GPT-o3,basicprompt,"Step 1 – Find the balcony radius  
+The centre of the balcony floor is 4 m above the stage, while the spotlight is 7 m above the stage, i.e. 3 m above the balcony floor.
+
+A ray on the edge of the light-cone meets the balcony floor at its rim and makes a 45° angle with the horizontal stage floor.  
+For such a ray
+
+ tan 45° = (vertical drop)/(horizontal run) = 3 m / R,
+
+so R = 3 m = 300 cm.
+
+Step 2 – Volume of the wooden floor  
+Thickness = 30 cm.  
+Radius = 300 cm.
+
+V_floor = πR²h = π(300 cm)²(30 cm)  
+      = π(90 000)(30) = 2 700 000 π cm³.
+
+Step 3 – Volume of the wooden railing  
+The railing is only on the “front half’’ of the rim, i.e. along a semicircle.
+
+Length of that semicircle = ½(2πR) = πR = π(300 cm) = 300 π cm.  
+Cross–sectional area = (thickness)(height) = (10 cm)(100 cm) = 1 000 cm².
+
+V_railing = (cross–sectional area)(length)  
+      = 1 000 cm² · 300 π cm  
+      = 300 000 π cm³.
+
+Step 4 – Total volume of wood  
+V_total = V_floor + V_railing  
+     = 2 700 000 π + 300 000 π  
+     = 3 000 000 π cm³.
+
+Step 5 – Cost of the lumber  
+Price: $1 per 5 000 cm³.  
+
+Cost = V_total / 5 000  
+   = (3 000 000 π) / 5 000  
+   = 600 π dollars  
+   ≈ \$1 885 (to the nearest dollar).
+
+Final answer: $\boxed{600\pi\ \text{dollars}\ \approx\ \$1{,}885}$",True
+50,"\[
+\textbf{Problem.}
+\]
+
+Fix a positive real number \(r\) and, for each integer \(k\ge 2,\) let \(C_k\) be a circle of radius \(kr.\)  
+Define \(f(k)\) to be the greatest integer \(n\) for which \(n\) non-overlapping circles of radius \(r\) can be placed entirely inside \(C_k\) (circles may be tangent to each other and/or to \(C_k\)).  
+
+It is readily verified that
+\[
+f(2)=2 \quad\text{and}\quad f(3)=7.
+\]
+
+Determine the ordered quadruple
+\[
+\bigl(f(4),\,f(5),\,f(6),\,f(7)\bigr).
+\]","I would say ""go and chop down your trees"" but Greenpeace people might sue me.","For 4D (four times the diameter) ring, place the 2D ring exactly at the center inside 4D, and you will have donut-shaped empty space with a width of a D ring, around the 2D. The number of rings to be fit in this vacancy, R, is determined from the formula
+R < (n - 1)*pi
+where n is the nth times the diameter and R is an integer.
+This formula is derived from the fact that the circumference of a polygon with R sides (made up by connecting all the nucleus of the rings in the donut area) is always smaller (actually is inscribed in) than the locus of the donut area. This locus is, of course, neither the donut's outer nor inner ring, but the one in between those two.
+In a 4D ring:
+central 2D = 2
+R < (4 - 1)*pi = 9
+number of rings, x = 2 + 9 = 11
+In 5D ring with 3D center:
+x = 7 + 12 = 19
+6D: x = 11 + 15 = 26
+7D: x = 19 + 18 = 37
+The center for nth ring is always the (n - 2)th one. This calculation is based on the hypothesis that the accumulated/shared empty spaces (outside small rings) among central and donut area is small enough to fit for another ring.",GPT-o3,basicprompt,"After rescaling we may assume that the small circles have radius 1 and that the container-circle  
+
+Cₖ :  x²+y² ≤ k²  (k = 4,5,6,7)
+
+has radius k.  
+For a small circle to lie completely inside Cₖ its centre must satisfy  
+
+  0 ≤ ρ := √(x²+y²) ≤ k–1.                     (1)
+
+In what follows we construct packings containing  
+
+12, 19, 28 and 37 circles for k = 4,5,6,7 respectively, and then prove that no packing can
+contain more.
+
+-------------------------------------------------
+1.  A convenient family of concentric “hexagonal rings”
+-------------------------------------------------
+
+Place one circle with centre at the origin.  
+For every positive integer s put six circles with centres at distance 2s from the origin, the
+centres forming a regular hexagon whose side length is 2.  
+Up to the layer s the numbers of circles that have been placed are  
+
+N(s) = 1 + 6 + 12 + … + 6s = 1 + 3s(s+1).        (2)
+
+The outermost centres of that layer are exactly 2s units from the origin, so the packing
+will be contained in Cₖ provided 2s + 1 ≤ k, i.e. s ≤ k–1.
+
+For k = 4,5,6,7 we obtain from (2)
+
+   k = 4 : s = 1 → N = 7   
+   k = 5 : s = 2 → N = 19  
+   k = 6 : s = 2 → N = 19  
+   k = 7 : s = 3 → N = 37. 
+
+All these arrangements lie strictly inside their container–circles, so they can still be
+slightly modified.  We do so only for k = 4 and k = 6.
+
+-------------------------------------------------
+2.  Completing the packings
+-------------------------------------------------
+
+k = 4.  
+With s = 1 we have 7 circles and the free space near the boundary is large enough to accept
+five more.  Putting those five at the vertices of a regular pentagon whose circum-radius
+is 3 gives a total of
+
+f(4) ≥ 7 + 5 = 12.                                (3)
+
+k = 5.  The hexagonal arrangement with s = 2 already yields 19 circles, so
+
+f(5) ≥ 19.                                        (4)
+
+k = 6.  
+Again start with the 19-circle pattern (s = 2).  
+Because the container radius now equals 6 we may add nine further circles with centres
+lying on the circle ρ = 5 at the vertices of a regular nonagon.  That gives
+
+f(6) ≥ 19 + 9 = 28.                               (5)
+
+k = 7.  Here the whole three-ring hexagonal pattern fits (s = 3), so
+
+f(7) ≥ 37.                                        (6)
+
+
+-------------------------------------------------
+3.  The upper bounds
+-------------------------------------------------
+
+Fix k and divide Cₖ into the concentric annuli
+
+A₀ : 0 ≤ ρ ≤ 1, 
+A₁ : 1 ≤ ρ ≤ 2, 
+…, 
+A_{k–2} : (k–2) ≤ ρ ≤ (k–1).                     (7)
+
+Because two different centres have distance ≥ 2, the angular span occupied by a circle
+whose centre lies in Aᵢ is at least
+
+Δθᵢ = 2 arcsin(1/(i+½)).                         (8)
+
+Consequently the maximal number nᵢ of centres that an annulus Aᵢ can contain satisfies
+
+nᵢ ≤ 2π / Δθᵢ = π /(arcsin(1/(i+½))).            (9)
+
+Using (9) one finds successively
+
+k = 4 : n₀=1, n₁≤4, n₂≤7 → total ≤ 12  
+k = 5 : n₀=1, n₁≤4, n₂≤7, n₃≤7 → total ≤ 19  
+k = 6 : n₀=1, n₁≤4, n₂≤7, n₃≤9 → total ≤ 28  
+k = 7 : n₀=1, n₁≤4, n₂≤7, n₃≤9, n₄≤16 → total ≤ 37.    (10)
+
+-------------------------------------------------
+4.  Conclusion
+-------------------------------------------------
+
+The constructions (3)-(6) give the lower bounds  
+12, 19, 28, 37, while (10) shows that these numbers cannot be surpassed.  Hence
+
+f(4) = 12,   f(5) = 19,   f(6) = 28,   f(7) = 37.
+
+Final answer: (12,19,28,37)",True
+51,"\[
+\textbf{Problem.}
+\]
+A right square pyramid has four congruent isosceles triangular lateral faces, and can be constructed by combining 1029 congruent blocks.
+Planes parallel to the base are placed at heights
+\[
+1\ \text{ft},\;2\ \text{ft},\;\dots,\;(h-1)\ \text{ft}
+\]
+above the base, partitioning the pyramid into \(h\) horizontal slices, such that no plane intersects through the interior of any block.
+Determine \(h\), the height of the pyramid in feet.",You might want to start at the top.,"It is 7 feet tall.
+The top tier is also the peak. Suppose it is a single block and see how the numbers behave.
+Its four triangular surfaces share edges with its square base; the length of each such edge we will call b. (Assuming this length is 1 foot will also work.) The peak is a smaller pyramid so its volume, v1 = ( b * b * 1 ) / 3. Because a second tier will not change any of the angles involved, new triangles will be similar to old and all changes in measurement of length will be proportional. A pyramid 2 tiers tall would have v2 = ( 2*b * 2*b * 2 ) / 3 = 8*v1. For 3 tiers, v3 = ( 3*b * 3*b * 3 ) / 3 = 27*v1. It becomes clear that a cube number must be a factor of the number of blocks.
+1029 = 3 * 7^3, so there are 7 tiers. (The peak being formed by 3 separate blocks, every tier has 3 times as many blocks as in the supposition. Because 7 is a prime number, there is no smaller number of tiers which would satisfy the question.)",GPT-o3,basicprompt,"Let  
+
+• h = total height of the pyramid in feet (also the number of 1-ft–thick horizontal slices),  
+• v = volume of one block (all blocks are congruent),  
+• n_k = number of blocks that lie entirely in the k-th slice, the slice between heights k – 1 and k (k = 1,2,…,h).
+
+Step 1.  Each block has height 1.  
+Because planes are placed at every integer height 1,2,…,h–1, any block whose height exceeded 1 ft would be cut by one of those planes.  Therefore every block spans exactly one slice; equivalently, each slice contains whole blocks only, and its volume equals n_k v.
+
+Step 2.  Volume of a single slice.  
+Let B be the area of the base, so the whole pyramid has volume
+
+  V_total = (1/3) Bh = 1029 v.                (1)
+
+At height z (0 ≤ z ≤ h) the cross–section is a square whose side length scales linearly:  
+s(z) = s(0)·(1 – z/h).  
+Hence its area is
+
+  A(z) = B(1 – z/h)^2.
+
+The volume of the k-th slice is
+
+  V_k = ∫_{k-1}^{k} A(z) dz  
+    = B ∫_{k-1}^{k} (1 – z/h)^2 dz  
+    = B/(3h^2) · [(h – k + 1)^3 – (h – k)^3].            (2)
+
+Set n = h – k (so n runs from h–1 down to 0).  Using (n+1)^3 – n^3 = 3n^2 + 3n + 1, (2) becomes  
+
+  V_k = B/(3h^2) · (3n^2 + 3n + 1).                       (3)
+
+Step 3.  Relating the slice volumes to the block count.  
+Since V_k = n_k v, dividing (3) by v gives  
+
+  n_k = (B/(3h^2))/v · (3n^2 + 3n + 1).                 (4)
+
+Let t = (B/(3h^2))/v.  Because all n_k must be integers and the set {3n^2+3n+1 | n = 0,1,…,h–1} contains 1 (when n = 0), the factor t itself must be a positive integer.  Therefore
+
+  n_k = t(3n^2 + 3n + 1).                                (5)
+
+Step 4.  Total number of blocks.  
+Sum (5) over all n = 0,1,…,h–1:
+
+  N = Σ_{n=0}^{h-1} n_k
+    = t Σ_{n=0}^{h-1} (3n^2 + 3n + 1).
+
+Compute the sum:
+
+  Σ 3n^2 = 3(h–1)h(2h–1)/6,  
+  Σ 3n   = 3(h–1)h/2,  
+  Σ 1    = h.
+
+Adding and simplifying yields
+
+  Σ (3n^2 + 3n + 1) = h^3.
+
+Hence
+
+  N = t h^3.                                             (6)
+
+Step 5.  Use the given total 1029.  
+With N = 1029,
+
+  1029 = t h^3.                                         (7)
+
+Because t is a positive integer, h^3 must divide 1029.  Factor 1029:
+
+  1029 = 3·7^3.
+
+The perfect cubes dividing 1029 are 1^3 = 1 and 7^3 = 343.  
+Since 1029 blocks certainly cannot fit into a pyramid only 1 ft high, we must have
+
+  h^3 = 343 ⇒ h = 7.
+
+(Equation (7) then forces t = 1029 / 343 = 3, so each slice contains 3(3n^2 + 3n + 1) blocks, which are integers as required.)
+
+Therefore the height of the pyramid is
+
+Final answer: 7",True
+53,"\[
+\textbf{Problem.}\quad
+\]
+
+Let \(x<y<z\) be positive integers satisfying the following conditions:
+
+1.  Each of \(x,\;y,\;z\) is a three–digit integer (its first digit is non–zero).  
+2.  The base-\(10\) representations of \(x,\;y,\) and \(z\) are rearrangements of the same three digits; that is, \(y\) and \(z\) are obtained from \(x\) by permuting its digits.  
+3.  The three integers are pairwise distinct.  
+4.  Their sum is
+   \[
+   x+y+z = 2003.
+   \]
+
+Determine the ordered triple \((x,y,z)\).",You will need five numbers of three digits each.,127 + 172 + 271 + 712 + 721 = 2003,GPT-o3,basicprompt,"Let the three digits that appear in the numbers be \(a,\;b,\;c\) (each \(0\le a,b,c\le 9\), and at least one of them non-zero so that a permutation can have a non-zero hundreds digit).
+
+Because every one of the three numbers \(x,\;y,\;z\) is a rearrangement of these same digits, each of them has the same digit–sum  
+\[
+s=a+b+c .
+\]
+
+Hence (using the fact that a number is congruent to the sum of its digits modulo \(3\))
+
+\[
+x\equiv s\pmod 3,\qquad
+y\equiv s\pmod 3,\qquad
+z\equiv s\pmod 3 .
+\]
+
+Adding the three congruences gives  
+\[
+x+y+z\equiv 3s\equiv 0\pmod 3 .
+\]
+
+But the stated sum is \(x+y+z=2003\), and  
+\[
+2003\equiv 2\pmod 3 .
+\]
+
+This contradicts the necessity that the sum be divisible by \(3\).  
+Therefore there is no ordered triple \((x,y,z)\) of three–digit positive integers satisfying all four conditions.
+
+Final answer: no such triple exists.",True
+54,"\[
+\textbf{Problem.} \qquad
+\text{Let } m \le n \text{ be positive integers satisfying } mn = 1234567890.
+\]
+Among all such pairs \((m,n)\), choose the one for which \(n-m\) is minimized.  
+Determine that ordered pair \((m,n)\).",Use prime factorizations,"34,227 and  36,070.
+The only factors of 1234567890 are 2, 3, 3, 5, 3607 and 3803. Testing the various products of these factors reveals that 34,227 and 36,070 are the closest pair of numbers that produce 1234567890.",GPT-o3,basicprompt,"Factor the number.
+
+1234567890  
+= 10 · 123456789  
+= 2 · 5 · 123456789  
+
+123456789 = 9 · 13 717 421 = 3² · 13 717 421  
+
+13 717 421 = 3607 · 3803 (both primes)
+
+Hence
+1234567890 = 2 · 3² · 5 · 3607 · 3803.  
+
+The six prime factors are
+  2, 3, 3, 5, 3607, 3803.
+
+For m ≤ n with mn = 1234567890 we must choose a subset of these primes for m (the rest go to n).  
+Write S = √1234567890 ≈ 35 136.4.  
+We need the subset product ≤ S that is closest to S; the corresponding n will then be ≥ S and the difference n−m will be smallest.
+
+List all subset products not exceeding S:
+
+with 3607:
+ 3607, 7214, 10821, 18035, 21642, 32463
+
+with 3803:
+ 3803, 7606, 11409, 19015, 22818, 34227
+
+(all others are ≤90 and far from S).
+
+Compute their distances from S:
+
+32463  → |S−m| = 2673  
+34227  → |S−m| = 909   ← closest  
+next closest is 32463.
+
+Thus the best choice is
+
+m = 34227 = 3·3·3803  
+n = 36070 = 2·5·3607.
+
+Check:
+34227 · 36070 = (9·3803)(10·3607) = 90·13 717 421 = 1 234 567 890.
+
+Difference: n − m = 36070 − 34227 = 1843, and no other factor pair gives a smaller gap.
+
+Final answer: (34227, 36070)",True
+1,"Let $N$ be a positive integer expressed in base $10$ with leftmost digit $d$ and remaining part $r$ (which may include leading zeros), so that  
+\[
+N = d\cdot 10^{k} + r,
+\]
+where $1\le d\le 9$ and $k\ge 1$ is the number of digits of $r$.  
+Define
+\[
+M = 10r + d,
+\]
+the integer obtained by moving the first digit of $N$ to the right end of the number (i.e., rotating $N$ to the left once).
+
+Determine the least positive integer $N$ such that  
+\[
+M = \frac{3}{2}\,N.
+\]","The number has 16 digits.  I repeat, the number has 16 digits.","1,176,470,588,235,294
+x 1.5 =
+1,764,705,882,352,941
+Here's how you find the number:
+You needed to find a repeating fraction such that the number of repeating digits is one less than the number. This would be a prime number, and seven is the lowest number with this property. With this property, every digit in the repeating fraction appears in each place exactly once (i.e., every repeated digit appears as the first digit after the decimal exactly once for n/p where p > n > 0).
+Now you need to find any occurrences where the nth digit is followed by the 1.5nth digit.  'n' will obviously be even.
+The repeating digits in 1/7 and their corresponding 'n' where the digits are the first digit after the decimal point are:
+142857 - repeating digits
+132645 - n
+The ordered pairs of adjacent values of n are (1,3), (3,2), (2,6), (6,4), (4,5) and (5,1).  None of these has the second number equal to one and a half times the first number.
+The next prime number p with a repeating fraction for 1/p containing p-1 repeating digits is 17.  The repeating digits for 1/17 are:
+.0588235294117647
+The easiest way to assign 'n' for each digit is to list all of the digit pairs in order:
+XX - n (digit)
+05 - 1 (1)
+11 - 2 (11)
+17 - 3 (12)
+23 - 4 (5)
+29 - 5 (8)
+35 - 6 (6)
+41 - 7 (10)
+47 - 8 (15)
+52 - 9 (7)
+58 - 10 (2)
+64 - 11 (14)
+70 - 12 (16)
+76 - 13 (13)
+82 - 14 (4)
+88 - 15 (3)
+94 - 16 (9)
+Checking the even-numbered values of n in the above table reveals that ALL even values of n less than 2/3 of 17 are followed by the 1.5n digit.  The values of n are and their digit places are:
+2,3 (11,12)
+4,6 (5,6)
+6,9 (6,7)
+8,12 (15,16)
+10,15 (2,3)
+So the five smallest numbers with this property are:
+1176470588235294
+2352941176470588
+3529411764705882
+4705882352941176
+5882352941176470
+Notice that 2352941176470588 can be rotated TWICE, yielding 1.5 times the number each time since the 4->6->9 n digits are in order.",GPT-o3,mathPrompt,"Let  
+
+ N = d·10ᵏ + r  (1)  
+
+be the decimal representation of the positive integer N, where  
+
+ 1 ≤ d ≤ 9 (the first digit)  
+ k ≥ 1  (the number of remaining digits)  
+ 0 ≤ r ≤ 10ᵏ – 1.
+
+Rotating the first digit to the right end gives  
+
+ M = 10 r + d.  (2)
+
+The condition to be met is  
+
+ M = (3/2) N.  (3)
+
+--------------------------------------------------------------------
+1.  Forming the Diophantine equation
+--------------------------------------------------------------------
+Substituting (1) and (2) into (3) and clearing the denominator:
+
+ 10 r + d = (3/2)(d·10ᵏ + r)  
+⇔ 20 r + 2 d = 3 d·10ᵏ + 3 r  
+⇔ 17 r = d(3·10ᵏ – 2).  (4)
+
+--------------------------------------------------------------------
+2.  A divisibility requirement
+--------------------------------------------------------------------
+Because 1 ≤ d ≤ 9 and 17 is prime (>9), gcd(d,17)=1.  
+Hence (4) can hold only if
+
+ 17 | (3·10ᵏ – 2).  (5)
+
+Thus k is determined solely by the congruence
+
+ 3·10ᵏ ≡ 2 (mod 17).  (6)
+
+--------------------------------------------------------------------
+3.  Solving the congruence
+--------------------------------------------------------------------
+Since 10¹⁶ ≡ 1 (mod 17), 10 has order 16 modulo 17.  
+Multiplying (6) by the inverse of 3 modulo 17 (3⁻¹ ≡ 6):
+
+ 10ᵏ ≡ 12 (mod 17).  (7)
+
+Powers of 10 modulo 17 give
+
+k : 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15  
+10ᵏ(mod 17): 10 15 14 4 6 9 5 16 7 2 3 13 11 8 12
+
+The first occurrence of 12 is at k = 15.  
+Therefore the smallest allowable k is
+
+ k = 15.  (8)
+
+--------------------------------------------------------------------
+4.  Computing r
+--------------------------------------------------------------------
+Because (5) is satisfied for k = 15, from (4)
+
+ r = d(3·10¹⁵ – 2)/17.  (9)
+
+Compute the constant
+
+ 3·10¹⁵ – 2 = 2 999 999 999 999 998,  
+ (3·10¹⁵ – 2)/17 = 176 470 588 235 294.  (10)
+
+Denote
+
+ X = 176 470 588 235 294.  (11)
+
+Then (9) is
+
+ r = d·X.  (12)
+
+--------------------------------------------------------------------
+5.  Controlling the size of r
+--------------------------------------------------------------------
+r must satisfy 0 ≤ r ≤ 10¹⁵ – 1.  
+Since 10¹⁵ = 1 000 000 000 000 000,
+
+ d·X < 1 000 000 000 000 000.  (13)
+
+Because X ≈ 1.7647 × 10¹⁴,
+
+ 5·X = 882 352 941 176 470 (< 10¹⁵),  
+ 6·X = 1 058 823 529 411 764 (> 10¹⁵).
+
+Hence 1 ≤ d ≤ 5.  
+To minimise N we take the smallest possible digit,
+
+ d = 1.  (14)
+
+Thus, with d = 1,
+
+ r = X = 176 470 588 235 294, (a 15-digit number, as required)  
+ N = d·10¹⁵ + r = 1 000 000 000 000 000 + 176 470 588 235 294  
+   = 1 176 470 588 235 294.  (15)
+
+--------------------------------------------------------------------
+6.  Verification
+--------------------------------------------------------------------
+Rotate N once to the left:
+
+ M = 10 r + d  
+   = 1 764 705 882 352 940 + 1  
+   = 1 764 705 882 352 941.  (16)
+
+Compute (3/2) N :
+
+ (3/2) N = (3/2)·1 176 470 588 235 294  
+     = 1 764 705 882 352 941,  (17)
+
+matching (16).  Hence the condition M = (3/2) N is satisfied.
+
+--------------------------------------------------------------------
+7.  Minimality of N
+--------------------------------------------------------------------
+• No smaller k works, since k = 15 is the smallest solution to (6).  
+• For this k, N = d·10¹⁵ + d·X = d(10¹⁵ + X) increases with d.  
+  Choosing the minimal admissible d = 1 therefore gives the least N.
+
+--------------------------------------------------------------------
+Final answer: 1 176 470 588 235 294",True
+5,"Let $N=\overline{abcdef}$ be a $6$-digit integer written in base $10$ whose digits $a,b,c,d,e,f$ are pairwise distinct and with $a\neq0$.  Define the following five related integers.  
+
+• $N_1$ is obtained from $N$ by rotating its digits one place to the left: $N_1=\overline{bcdefa}$.  
+• $N_2$ is obtained from $N$ by rotating its digits one place to the right: $N_2=\overline{fabcde}$.  
+• $N_3$ is obtained from $N$ by swapping its first three and last three digits: $N_3=\overline{defabc}$.  
+• $N_4$ is obtained by grouping the digits of $N$ into the three blocks $\overline{ab},\overline{cd},\overline{ef}$ and then rotating these blocks one place to the left: $N_4=\overline{cdefab}$.  
+• $N_5$ is obtained by rotating those same two-digit blocks one place to the right: $N_5=\overline{efabcd}$.
+
+Let 
+\[
+T = N + N_1 + N_2 + N_3 + N_4 + N_5.
+\]
+
+The integer $N$ satisfies all of the following conditions:
+
+1.  $\displaystyle a+b+c+d+e+f \;=\; \overline{ef};$  
+2.  $\displaystyle a+b \;=\; e+f;$  
+3.  the first and last digits of $T$ are exactly $e$ and $f$ (in either order);  
+4.  each of the two-digit numbers $\overline{ab},\ \overline{cd},\ \overline{ef}$ is prime.
+
+Determine $N$.","The digital sum is the sum of the digits in the number. The digital sum of 247 is 2+4+7 = 13.
+The digit pairs in 125690 are 12 56 90. These are also the numbers formed by the digit pairs.
+Rotating 123456 one to the left gives 234561;
+Rotating 123456 one to the right gives 612345;
+Rotating the digit pairs in 567890 to the left gives 789056;
+Rotating the digit pairs in 567890 to the right gives 905678.","416723
+Here's how Rex determined Ralph's number:
+The insight Rex needed to solve this involves the number produced by the sum of the six numbers created from configurations of the digits in the number. Assign ABCDEF to the digits in Ralph's number. The six numbers Ralph had Rex add together were:
+ABCDEF
+BCDEFA
+FABCDE
+DEFABC
+CDEFAB
+EFABCD
+Notice that the six digits in each column in this summation are the six digits in the number. This means that the sum of each column will be the digital sum of the number. If that digital sum is represented by A+B+C+D+E+F = XY, then the problem is equivalent to adding:
+XXXXXX0
++YYYYYY
+The first and last digits will be X and Y only if 10 > X + Y. If X + Y is greater than 9, then the first digit will be X+1. Since both the digital sum of the number (A+B+C+D+E+F) and the first and last digit of the sum of the numbers match the digits XY, you know that 10 > X + Y. When Rex realized this relation he smiled because he knew that he had enough information now.
+The digital sum of the number must be between 0+1+2+3+4+5 = 15 and 9+8+7+6+5+4 = 39. Since each of the digit pairs in the number form a prime number, the digital sum must be a prime number in this range. There are only six prime numbers in this range: 17, 19, 23, 29, 31, and 37. 19, 29 and 37 are eliminated since 1+9 > 9, 2+9 > 9 and 3+7 > 9.
+The sum of the first two digits must match the sum of the last two digits (X+Y). For 31, 3+1=4, but the only other way to make four without repeating any digits is 0+4. Zero and four can't form a prime number, so the digital sum can't be 31. This leaves 17 and 23.
+For the digital sum to be 17, the digits must be either 0+1+2+3+4+7 = 17 or 0+1+2+3+5+6 = 17. Only 0, 1, 2, 3, 4, 7 has both a 1 and 7 to make the last two digits be 17. However, there is no pair of remaining digits with a sum of 1+7 = 8, so the digital sum can't be 17 and therefore must be 23.
+If the last two digits are 23, then the first two digits must total 2+3 = 5. The possibilities are 0+5 = 5 and 1+4 = 5. There is one prime number possible with each of these pairs: 05 and 41. The first two digits of the number can't be 05 because then the number would be a 5-digit number and Ralph's number has six digits. So the first two digits are 41 and the last two digits are 23.
+Since the sum of all the digits is 23, then the sum of the middle two digits must be 23 - (2+3) - (4+1) = 13. There are two pairs of the remaining digits that total 13: 5+8 = 13, and 6+7 = 13. Sixty-seven is the only prime number that can be formed from these pairs, so the middle two digits are 67 and Ralph's number is 416723.",GPT-o3,mathPrompt,"Let  
+
+  N = 𝑎𝑏𝑐𝑑𝑒𝑓  ( six distinct decimal digits, a ≠ 0 )
+
+and form N₁,…,N₅ as in the statement.  
+----------------------------------------------------------------
+1.  A structural identity for T
+----------------------------------------------------------------
+Because each of N, N₁,…,N₅ contains every digit once in every
+place–value 10⁵,10⁴,…,10⁰, the digit x contributes  
+
+  x(10⁵+10⁴+10³+10²+10¹+10⁰)=x·111 111  
+
+to the sum T.  Hence  
+
+  T = 111 111 (a+b+c+d+e+f).                        (1)
+----------------------------------------------------------------
+2.  Using the given digit–sum equalities
+----------------------------------------------------------------
+Condition 1 gives  
+
+  a+b+c+d+e+f = 10e+f.                              (2)
+
+Condition 2 gives  
+
+  a+b = e+f.                                        (3)
+
+With (2) and (3):
+
+  10e+f = (a+b)+(c+d)+(e+f)
+         = (e+f)+(c+d)+(e+f)
+         = 2(e+f)+c+d,
+
+so   c+d = 8e – f.                                   (4)
+----------------------------------------------------------------
+3.  Consequences of (1) and Condition 3
+----------------------------------------------------------------
+From (1) and (2) we have  
+
+  T = 111 111·(10e+f).
+
+Because 111 111 ends in 1, the last digit of T is f.  
+For 10 ≤ 10e+f ≤ 39 we quickly verify
+
+  111 111·k = 1 … for k =10–18,
+             2 … for k =19–27,
+             3 … for k =28–36,
+             4 … for k =37–39.
+
+Thus the leading digit of T is exactly e.  
+So Condition 3 is automatically satisfied once (2) holds.
+----------------------------------------------------------------
+4.  Restricting e and f
+----------------------------------------------------------------
+Since the digit–sum 10e+f cannot exceed 9+8+7+6+5+4 = 39,
+e ∈ {1,2,3}.  
+Because 𝑒𝑓 must be a two–digit prime (Condition 4), the pairs
+available are
+
+ e = 1 : 13, 17;  
+ e = 2 : 23, 29;  
+ e = 3 : 31, 37.  
+----------------------------------------------------------------
+5.  Case work
+----------------------------------------------------------------
+CASE 1 e = 1  
+
+ • f = 3  ⇒  c+d = 8–3 = 5.  
+  The only prime with digit–sum 5 is 23, but 2 or 3 duplicate
+  digits already used. Impossible.  
+ • f = 7 gives c+d = 1 (< 2).  Impossible.  
+So e ≠ 1.
+
+CASE 2 e = 2  
+
+(i) f = 3 (ef = 23 prime)  
+  c+d = 16–3 = 13.  
+  The only two–digit prime with sum 13 is 67 ⇒ c=6,d=7.  
+  Now a+b = e+f = 5, and the only prime with sum 5 and
+  new digits is 41 ⇒ a=4,b=1.  
+  All six digits 4,1,6,7,2,3 are distinct; ab =41, cd =67,
+  ef =23 are prime.  
+  Hence N = 416 723 satisfies every condition.
+
+(ii) f = 9 (ef = 29 prime)  
+  c+d = 16–9 = 7.  The possibilities cd = 43 or 61.
+  • cd = 43 duplicates 3 when ab must sum to 11 – impossible.  
+  • cd = 61 leaves ab to be a prime of digit–sum 11, but then
+   ab = 47 duplicates no digit; however
+   T = 111 111·29 = 3 222 219 starts with 3 ≠ e = 2,
+   contradicting Condition 3.  
+  So no solution here.
+
+CASE 3 e = 3  
+
+ • f = 1 gives c+d = 23 (>17). Impossible.  
+ • f = 7 gives c+d = 17.  The only prime is 89 ⇒ c=8,d=9.
+  Then a+b = 10, needing a two–digit prime of sum 10 with no
+  repeated digit; none exists (19 repeats 9, 37 repeats 7,
+  47 non-prime, etc.).  Impossible.
+
+Hence the single achievable case is e = 2 , f = 3.
+----------------------------------------------------------------
+6.  Verification
+----------------------------------------------------------------
+N = 416 723  
+
+Digit sum 4+1+6+7+2+3 = 23 = ef  
+a+b = 4+1 = 5 = e+f  
+
+T = 111 111·23 = 2 555 553  
+  (first digit 2 = e, last digit 3 = f)  
+
+ab = 41, cd = 67, ef = 23 — all prime;  
+all digits distinct; a = 4 ≠ 0.
+
+Every requirement is met.
+----------------------------------------------------------------
+Final answer: 416723",True
+6,"\[
+\textbf{Problem.}
+\]
+
+A piece of property is the shape of a regular \(n\)-gon whose side length is \(L\) feet.  
+Centered on the lot is a smaller, similar, regular \(n\)-gon house whose sides are each tangent to a circular concrete foundation of radius \(r\) feet.
+
+\begin{itemize}
+    \item The shortest distance from the foundation’s circumference to the boundary of the lot is exactly \(2r\) feet.
+    \item A circular atrium of diameter equal to \(\dfrac1{10}\) of the lot’s \emph{diameter}\footnote{The diameter of the lot is the greatest possible distance between two points on its boundary.} is located at the center of the house.
+    \item During excavation a straight section of pipe of length \(L\) feet was found passing through the center of the house; its endpoints lie on two (distinct) sides of the house, and the pipe divides the area of the house into two congruent regions.
+    \item After construction the pipe was installed as a gate across one side of the lot, and fencing having total length \(400\text{ ft}\) was erected along the other \(n-1\) sides.
+\end{itemize}
+
+Determine, in square feet, the total area contained inside the exterior walls of the house (this area includes all walls, stairwells, hallways, etc.).","A regular polygon has the length of all sides and arc of all interior angles equal.
+The first thing you need to determine is the number of sides for Ralph's house.  The rest solves in a fairly straight-forward manner once this is determined.","2,730 sq. feet
+Rex realized that he would need to know the number of sides on Ralph's house in order to make use of the only measurement Ralph gave him, which was the perimeter minus the length of one side for the property.  The length of a side of the property needed to be the length of the pipe that bisected the area of the house.  The length of the pipe is the key to figuring out how many sides the house has.
+The house is a regular polygon inscribed in the circle that is the foundation.  Since the closest edge of the property is equal to the diameter of the foundation, then the property must be a similar polygon circumscribed around a circle with a diameter three times the size of the foundation.
+The minimum and maximum length line segments that can bisect the area of a regular polygon are calculated differently for even- and odd-sided polygons.
+For an even-sided polygon inscribed in a circle of radius r, the maximum line segment has its ends at two opposite vertices and the length is 2r. The minimum line segment goes from the middle of one edge to the middle of the opposite edge.  The distance from the edge to the center of a polygon is the apothem, so the minimum line segment is two times the apothem a.
+For an odd-sided polygon the maximum bisector goes from a vertex to the middle of the opposite side, so the maximum is r + a. As with an even-sided polygon, the minimum bisector for an odd-sided polygon extends through the center of the polygon and at an angle halfway between two adjacent maximum bisectors.
+2Pi radians = 360 degrees.  The central angle between any two adjacent vertices on a polygon with n sides is then 2Pi/n and the angle between a vertex radius and the apothem is half that or Pi/n.  The apothem and the radius form two sides of a right triangle, with the third side formed by one half of the side bisected by the apothem.  For a regular polygon with n sides of length s this gives the following relationships:
+a = r*Cos(Pi/n)
+r = a/Cos(Pi/n)
+s = 2*a*Tan(Pi/n)
+Rex assigns one as the radius of the foundation.  This makes the apothem of the property three and the side of the property is:
+2*3*Tan(Pi/n) = 6*Tan(Pi/n)
+So where Min(n) and Max(n) are the minimum and maximum length of a bisector for an n-sided polygon inscribed in a unit circle, Rex needs to find an integer value for n that satisfies the inequality:
+Max(n) >= 6*Tan(Pi/n) >= Min(n)
+Since Rex is pretty sure there's only one solution, he figures first he'll just use the minimum and maximum functions for even-sided polygons.  The minimum and maximum for odd-sided polygons will be within this range, so he might find an odd-sided polygon that doesn't satisfy the equation, but he won't miss any that do.  This gives:
+2 >= 6*Tan(Pi/n) >= 2*Cos(Pi/n)
+Taking just the first part of the inequality gives:
+2 >= 6*Tan(Pi/n)
+1/3 >= Tan(Pi/n)
+atan(1/3) >= Pi/n
+atan(1/3) / Pi >= 1/n
+n >= Pi/atan(1/3)
+n >= 9.8
+He tries 10 and finds that:
+Max(10) = 2 >
+6*Tan(Pi/10) = 1.95 >
+Min(10) = Cos(Pi/10) = 1.90
+Now Rex knows that Ralph's house has ten sides and is a regular decagon.  That makes the length of the pipe and of a side of the larger decagon 400/9 = 44 4/9 = 44.444.. feet.  From the equation above:
+44.444 = 2*a*Tan(Pi/10)
+a = 44.444 / Tan(Pi/10) ~ 68.393
+So the radius of the larger circle is 68.393 feet and the radius of the foundation is 68.393/3 = 22.798, which is also the radius of the house decagon.  The apothem and length of a side for the house are:
+a = 22.798 * Cos(Pi/10) = 21.682
+s = 2 * 21.682 * Tan(Pi/10) = 14.090
+The side and apothem are the base and height of one of the ten triangles formed by two vertex radii and a side.  The area of one of these triangles is then
+14.090 * 21.682 / 2 = 152.75
+and the area of the decagon is 10 * 152.75 = 1527.5.  Now Rex just needs to know the size of the atrium to calculate the square footage of the house.  The radius of the atrium is one-tenth the radius of the large decagon, which is
+r = 68.393 / Cos(Pi/10) = 71.913
+so the area of the atrium is
+(71.913 / 10)^2 * Pi = 162.47
+and the area of the two floors in Ralph's house is
+(1527.5 - 162.47) * 2 = 2730.0 square feet.",GPT-o3,mathPrompt,,False
+8,"For a positive integer $x$, let
+\[
+s(x)=\text{(sum of the decimal digits of }x),\qquad   
+s^{(1)}(x)=s(x),\qquad   
+s^{(k+1)}(x)=s\bigl(s^{(k)}(x)\bigr)\ (k\ge 1),
+\]
+and let  
+$\operatorname{rev}(x)$ denote the integer obtained by reversing the decimal digits of $x$
+(e.g. $\operatorname{rev}(247)=742$).
+
+Find all positive integers $N$ that satisfy the following six conditions.
+
+1. The sum of the prime factors of $N$ is 1400. 
+
+2.  Both $N-1$ and $N+1$ are the product of exactly five (not necessarily distinct) primes.
+
+3.  The union of the sets of prime divisors of $N-1$, $N$, and $N+1$ contains exactly $13$ distinct primes.
+
+4.  For every prime $p\mid N$ the number $s(p)$ is prime.  
+    If
+    \[
+      P=\prod_{p\mid N}s(p),
+    \]
+    then $s(P)$ is prime, $s(N)$ is prime, and
+    \[
+      s(N)=\operatorname{rev}\!\bigl(s(P)\bigr)\ne s(P).
+    \]
+
+5.  Write $N$ with $2m$ digits ($m\ge 2$) as
+    \[
+      N=d_1d_2\dots d_{2m}\quad(d_1\ne 0).
+    \]
+    Among the digits $d_1,\dots,d_{2m}$, the only prime digits (that is, digits $2,3,5,$ or $7$) are the two middle digits $d_m,d_{m+1}$, and the two-digit number $10d_m+d_{m+1}$ is prime.
+
+6.  The three-digit integer $d_1d_2d_3$ is prime, and the three numbers
+    \[
+       s(d_1d_2d_3),\qquad s^{(2)}(d_1d_2d_3),\qquad s^{(3)}(d_1d_2d_3)
+    \]
+    are all prime.
+
+It is known that exactly two integers satisfy Conditions 1–6, and that exactly one of these two integers is divisible by $13$.
+
+(a) Determine the two integers satisfying Conditions 1–5.  
+(b) Specify which of them is NOT divisible by $13$.","You don't have to factor any numbers to find the answer, nor do you need to determine the primality of any numbers larger than 1000.
+The problem is as much about logic as it is about math.","The two numbers Ralph finds are 443,794 and 887,314.  Rex's number is 887,314.
+887313 = 3 x 7 x 29 x 31 x 47
+887314 = 2 x 487 x 911
+887315 = 5 x 11 x 13 x 17 x 73
+Here's how Ralph did it:
+First, since the three adjacent numbers don't share any prime numbers, the middle number must be even, otherwise both the other numbers would have to be divisible by 2.  If one of the factors in Rex's number is two, then the other two factors must add up to 1400 - 2 = 1398.
+The maximum product of two numbers that add up to 1398 is 699 x 699, so the upper bound for Rex's number is 2 x 699 x 699 = 977,202.
+The product of the first ten odd prime numbers is
+3 x 5 x 7 x 11 x 13 x 17 x 19 x 23 x 29 x 31 = 100,280,245,065
+This is the minimum value for the product of Rex's number minus one times Rex's number plus one.  Therefore the square root of this number is the lower bound for Rex's number.  The square root of 100,280,245,065 ~ 316,670.  So now Ralph knows that Rex's number is an even number between 316,670 and 977,202.  He figures this could be found by brute force given the other clues.  (In fact, 887,314 is the only number in this range that is between two numbers with five or more unique prime factors, but Ralph doesn't know that.)
+The digital sum of the prime factors of the number are prime numbers, one of which is 2.  The other two must be prime numbers between 316,670 / 1,398 ~ 227 and 1,398.  The maximum digital sum for numbers in this range is 3 x 9 = 27, so the maximum value for the product of the three prime digital sums is 2 x 23 x 23 = 1,058.  The digital sum of this number is also prime.  The maximum digital sum in this range is 27, so the digital sum of this product is a prime number less than 27.
+The largest digital sum for a number in the range 316,670 to 977,202 is 6 x 9 = 54.  This means that the digital sum of the number must be a prime number less than 54 that is a different prime number less than 27 when reversed.  There are four prime numbers less than 54 that are a different prime number when reversed: 13, 17, 31 and 37.  The digital sum of Rex's number must be 31.
+The middle two digits are prime.  For there to be a middle two digits, the number of digits in the number must be even.  So now the upper bound for the number is 977,202.  The number formed by the middle two digits must also be prime.  There are only four two-digit prime numbers composed of prime digits: 23, 37, 53 and 73.  The number formed by the first three digits is prime, so the third digit can't be 2 or 5.  The middle two digits must be either 37 or 73.
+Since the sum of the first three digits is a prime number, the sum must be one of 5, 7, 11, 13, 17, 19 or 23.  Since the number must start with a 4, 6, 8 or 9, the minimum value for the first three digits is 403, which eliminates 5 as a digital sum.  The digital sum of the digital sum of the first three digits must be prime, so it can't be 13, 17 or 19.  This leaves 7, 11 or 23 as the digital sum of the first three digits.
+Since the only possibility for the first three digits totaling 7 is 403, Ralph did a couple of quick calculations to determine that 403 = 13 x 31, so it isn't prime.  So the digital sum of the first three digits must be either 11 or 23 and the digital sum of the last three digits must be 20 or 8.
+There are only four ways to make a digital sum of 11 for the first three digits that ends in a three or seven and starts with 4, 6, 8 or 9: 407, 443, 623 and 803.  Ralph does a couple more quick calculations and determines that 407 = 11 x 37, 623 = 7 x 89 and 803 = 11 x 73, but that 443 is prime.  If 443 are the first three digits, then the last three digits must total 20, start with a 7 and end with a 4, 6 or 8.  There is only three ways to do this: 758, 776 and 794.  The fifth digit can't be prime, so only 794 is possible.  This gives the first number 443,794.
+If the first three digits total 23, start with a 4, 6, 8 or 9, and end with a 3 or 7, then the choices are 887 and 977.  The second digit in 977 is prime, so the only choice is 887.  Ralph checks and finds that 887 is prime.  If the first three numbers are 887 then the last three must start with a 3, end with a 4, 6 or 8 and total 8.  Only 314 is possible, giving the second number 887,314.
+When Rex tells Ralph one of the numbers is divisible by 13, Ralph finds that 443,794 = 13 x 34,138.  Since 13 can't be one of the prime factors of the number, the number must be 887,314.",GPT-o3,mathPrompt,I am unable to complete the problem.,True

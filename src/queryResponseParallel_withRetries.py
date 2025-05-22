@@ -12,7 +12,7 @@ from tqdm.contrib.concurrent import process_map
 import json
 from gemini_call import gemini_generate
 
-MAX_RETRIES = 5
+MAX_RETRIES = 2
 RETRY_DELAY = 5  # seconds
 
 def readPrompt(path):
@@ -51,12 +51,12 @@ Comment out models to skip evaluation on them.
 modelInfo = {
     # "GPT-4o-mini" : {"key": "OPENAI_API_KEY", "modelName": "gpt-4o-mini-2024-07-18", "url": "https://api.openai.com/v1"},
     "GPT-o3" : {"key": "OPENAI_API_KEY", "modelName": "o3-2025-04-16", "url": "https://api.openai.com/v1"},
-    "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
-    "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-exp-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
-    "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com"},
+    # "GeminiFlash" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-flash-preview-04-17", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    # "GeminiPro" : {"key": "GEMINI_API_KEY", "modelName": "gemini-2.5-pro-exp-03-25", "url":"https://generativelanguage.googleapis.com/v1beta/openai"},
+    # "DSChat" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-chat", "url": "https://api.deepseek.com"},
     "DSReason" : {"key": "DEEPSEEK_API_KEY", "modelName": "deepseek-reasoner", "url": "https://api.deepseek.com"},
-    "Qwen1" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "url": "https://api.together.xyz/v1"},
-    "Qwen14" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B", "url": "https://api.together.xyz/v1"},
+    # "Qwen1" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B", "url": "https://api.together.xyz/v1"},
+    # "Qwen14" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Qwen-14B", "url": "https://api.together.xyz/v1"},
     "Qwen70" : {"key": "TOGETHER_API_KEY", "modelName": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B", "url": "https://api.together.xyz/v1"},
 }
 
@@ -158,7 +158,7 @@ def process_pair(index, prompt, question, hint, solution, instructions, model, d
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--name", help="Experiment Name", required=True)
-    parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic"], required=True)
+    parser.add_argument("--dataset", help="Dataset to run on", choices=["Math", "Logic", "Math_rewritten"], required=True)
     parser.add_argument("--rows", help="Number of rows to sample", type=int, default=1, required=False)
     parser.add_argument("--samples", help="Number of samples to run", type=int, default=1, required=False)
     parser.add_argument("--model", help="Model to run on", choices=modelInfo.keys(), required=False, default="GPT-o3")
@@ -168,8 +168,15 @@ def main():
     pd.DataFrame(columns=['ID', 'Question', 'Hint', 'Human Solution', 'Model', 'PromptType', 'Response', 'Status']).to_csv(f"../responses/{args.dataset}/{args.name}/resultsTemp.csv", index=False)
 
     data = pd.read_csv(f'../data/braingle/braingle_{args.dataset}.csv')
-
+    data = data.fillna('')
     instructionSet = read_txt_files("../prompting/brainteaserPrompts")
+    
+    # skipIndices = {
+    #     "GPT-o3": [0, 6], 
+    #     "DSReason": [],
+    #     "Qwen70": [],
+    # }
+    
 
     results = []
     for prompt in instructionSet:
@@ -187,6 +194,19 @@ def main():
                     args.dataset,
                     args.name,
                 )
+                print(index)
+                print(row['Question'])
+                if len(row['Question']) < 1:
+                    print("Empty question")
+                    continue
+                if index < 49:
+                    print("Skipping ahead...")
+                    continue
+
+                # if index in skipIndices[args.model]:
+                #     print("Skipping index", index)
+                #     continue
+
 
                 entry = process_task(task)
                 results.append(entry)
