@@ -1,3 +1,0 @@
-Without solving the problem, convert the following problem statement into a symbolic form, using logic statements.
-
-Finish your response with "Symbolic Prompt: " followed by your converted problem statement.
