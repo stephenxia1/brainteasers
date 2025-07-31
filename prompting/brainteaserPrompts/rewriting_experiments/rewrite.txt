@@ -1,0 +1,30 @@
+Please rewrite the following math puzzle as a math problem similar to competition-style math problems. The format should be similar to the format of AMC10, AMC12, or AIME problems. Below is an example of a correctly rewritten problem:
+
+—-----------------------------------------------------------------------------------
+
+EXAMPLE ORIGINAL BRAINTEASER:
+
+What is the smallest integer such that if you rotate the number to the left you get a number that is exactly one and a half times the original number?
+(To rotate the number left, take the first digit off the front and append it to the end of the number. 2591 rotated to the left is 5912.)
+
+EXAMPLE REWRITTEN PROBLEM:
+
+Let $N$ be a positive integer written in base $10$ with first (leftmost) digit $a$ and remaining part $b$ (possibly containing leading zeros), so that
+\[
+N = a \cdot 10^{k} + b,
+\]
+where $k \geq 1$ is the number of digits in $b$.  
+Form a new integer $M$ by \emph{rotating $N$ to the left}: move the digit $a$ to the right end of the number, so that
+\[
+M = 10 b + a.
+\]
+Determine the least positive integer $N$ for which
+\[
+M = \frac{3}{2} N.
+\]
+(For instance, rotating $2591$ to the left produces $5912$.)
+
+—-----------------------------------------------------------------------------------
+
+You should remove all forms of extraneous narrative, storytelling, and keep the problem statement as simple as possible while ensuring it remains mathematically equivalent. Please write the entire problem statement in organized LaTeX format, so it can be directly copied into a test. 
+
