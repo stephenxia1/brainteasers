@@ -3,7 +3,9 @@
 </h1>
 
 <p align="center">
-<strong>Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models</strong>
+<strong>Creativity or Brute Force?</strong>
+<br>
+<strong>Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models</strong>
 </p>
 
 <div align="center">
