@@ -18,7 +18,7 @@ This is the official implementation of [**Creativity or Brute Force? Using Brain
 ```bibtex
 @article{han2025creativity,
   title={Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models},
-  author={Han, Simeng and Xia, Stephen and Zhang, Grant and Dai, Howard and Liu, Chen and Chen, Lichang and Nguyen, Hoang Huy and Mei, Hongyuan and Mao, Jiayuan and McCoy, R. Thomas},
+  author={Han, Simeng and Dai, Howard and Xia, Stephen and Zhang, Grant and Liu, Chen and Chen, Lichang and Nguyen, Hoang Huy and Mei, Hongyuan and Mao, Jiayuan and McCoy, R. Thomas},
   journal={Advances in neural information processing systems},
   year={2025}
 }
