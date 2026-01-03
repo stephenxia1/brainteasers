@@ -2,12 +2,6 @@
 <code>Brainteaser</code>
 </h1>
 
-<p align="center">
-<strong>Creativity or Brute Force?</strong>
-<br>
-<strong>Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models</strong>
-</p>
-
 <div align="center">
 
 [![arXiv](https://img.shields.io/badge/arXiv-firebrick)](https://arxiv.org/abs/2505.10844)
@@ -18,9 +12,7 @@
 
 </div>
 
-<br>
-
-This is the official implementation of [**Brainteaser**](https://arxiv.org/abs/2505.10844), NeurIPS 2025.
+This is the official implementation of [**Creativity or Brute Force? Using Brainteasers as a Window into the Problem-Solving Abilities of Large Language Models**](https://arxiv.org/abs/2505.10844), NeurIPS 2025.
 
 ## Citation
 ```bibtex
